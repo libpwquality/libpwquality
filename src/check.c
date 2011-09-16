@@ -1,0 +1,509 @@
+/*
+ * libpwquality main API code for quality checking
+ *
+ * See the end of the file for Copyright and License Information
+ */
+
+#include "config.h"
+
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include <crack.h>
+
+#include "pwquality.h"
+#include "pwqprivate.h"
+
+#ifdef MIN
+#undef MIN
+#endif
+#define MIN(_a, _b) (((_a) < (_b)) ? (_a) : (_b))
+
+/* Helper functions */
+
+/*
+ * test for a palindrome - like `R A D A R' or `M A D A M'
+ */
+static int
+palindrome(const char *new)
+{
+        int i, j;
+
+        i = strlen (new);
+
+        for (j = 0; j < i; j++)
+                if (new[i - j - 1] != new[j])
+                        return 0;
+
+        return 1;
+}
+
+/*
+ * Calculate how different two strings are in terms of the number of
+ * character removals, additions, and changes needed to go from one to
+ * the other
+ */
+
+static int 
+distdifferent(const char *old, const char *new,
+              size_t i, size_t j)
+{
+        char c, d;
+
+        if ((i == 0) || (strlen(old) < i)) {
+                c = 0;
+        } else {
+                c = old[i - 1];
+        }
+
+        if ((j == 0) || (strlen(new) < j)) {
+                d = 0;
+        } else {
+                d = new[j - 1];
+        }
+        return (c != d);
+}
+
+static int
+distcalculate(int **distances, const char *old, const char *new,
+              size_t i, size_t j)
+{
+        int tmp = 0;
+
+        if (distances[i][j] != -1) {
+                return distances[i][j];
+        }
+
+        tmp = distcalculate(distances, old, new, i - 1, j - 1);
+        tmp = MIN(tmp, distcalculate(distances, old, new, i, j - 1));
+        tmp = MIN(tmp, distcalculate(distances, old, new, i - 1,     j));
+        tmp += distdifferent(old, new, i, j);
+
+        distances[i][j] = tmp;
+
+        return tmp;
+}
+
+static int
+distance(const char *old, const char *new)
+{
+        int **distances = NULL;
+        size_t m, n, i, j;
+        int r = -1;
+
+        m = strlen(old);
+        n = strlen(new);
+        distances = malloc(sizeof(int*) * (m + 1));
+        if (distances == NULL)
+                return -1;
+
+        for (i = 0; i <= m; i++) {
+                distances[i] = malloc(sizeof(int) * (n + 1));
+                if (distances[i] == NULL)
+                        goto allocfail;
+
+                for(j = 0; j <= n; j++) {
+                        distances[i][j] = -1;
+                }
+        }
+
+        for (i = 0; i <= m; i++) {
+                distances[i][0] = i;
+        }
+
+        for (j = 0; j <= n; j++) {
+                distances[0][j] = j;
+        }
+
+        r = distcalculate(distances, old, new, m, n);
+
+allocfail:
+        for (i = 0; i <= m; i++) {
+                if (distances[i]) {
+                        memset(distances[i], 0, sizeof(int) * (n + 1));
+                        free(distances[i]);
+                }
+        }
+        free(distances);
+
+        return r;
+}
+
+static int
+similar(pwquality_settings_t *pwq,
+        const char *old, const char *new)
+{
+        int dist;
+
+        dist = distance(old, new);
+
+        if (dist < 0)
+                return PWQ_ERROR_MEM_ALLOC;
+
+        if (dist >= pwq->diff_ok) {
+                return 0;
+        }
+
+        if (strlen(new) >= (strlen(old) * 2)) {
+                return 0;
+        }
+
+        /* passwords are too similar */
+        return PWQ_ERROR_TOO_SIMILAR;
+}
+
+/*
+ * count classes of charecters
+ */
+
+static int
+numclass(pwquality_settings_t *pwq,
+         const char *new)
+{
+        int digits = 0;
+        int uppers = 0;
+        int lowers = 0;
+        int others = 0;
+        int total_class;
+        int i;
+        int retval;
+
+        for (i = 0; new[i]; i++) {
+                if (isdigit(new[i]))
+                        digits = 1;
+                else if (isupper(new[i]))
+                        uppers = 1;
+                else if (islower(new[i]))
+                        lowers = 1;
+                else
+                        others = 1;
+        }
+
+        total_class = digits + uppers + lowers + others;
+
+        return total_class;
+}
+
+/*
+ * a nice mix of characters
+ * the credit (if positive) is a maximum value that is subtracted from
+ * the minimum allowed size of the password if letters of the class are
+ * present in the password
+ */
+static int
+simple(pwquality_settings_t *pwq, const char *new)
+{
+        int digits = 0;
+        int uppers = 0;
+        int lowers = 0;
+        int others = 0;
+        int size;
+        int i;
+
+        for (i = 0; new[i]; i++) {
+                if (isdigit(new[i]))
+                        digits++;
+                else if (isupper(new[i]))
+                        uppers++;
+                else if (islower(new[i]))
+                        lowers++;
+                else
+                        others++;
+        }
+
+        if ((pwq->dig_credit >= 0) && (digits > pwq->dig_credit))
+                digits = pwq->dig_credit;
+
+        if ((pwq->up_credit >= 0) && (uppers > pwq->up_credit))
+                uppers = pwq->up_credit;
+
+        if ((pwq->low_credit >= 0) && (lowers > pwq->low_credit))
+                lowers = pwq->low_credit;
+
+        if ((pwq->oth_credit >= 0) && (others > pwq->oth_credit))
+                others = pwq->oth_credit;
+
+        size = pwq->min_length;
+
+        if (pwq->dig_credit >= 0)
+                size -= digits;
+        else if (digits < pwq->dig_credit * -1)
+                return PWQ_ERROR_MIN_DIGITS;
+
+        if (pwq->up_credit >= 0)
+                size -= uppers;
+        else if (uppers < pwq->up_credit * -1)
+                return PWQ_ERROR_MIN_UPPERS;
+
+        if (pwq->low_credit >= 0)
+                size -= lowers;
+        else if (lowers < pwq->low_credit * -1)
+                return PWQ_ERROR_MIN_LOWERS;
+
+        if (pwq->oth_credit >= 0)
+                size -= others;
+        else if (others < pwq->oth_credit * -1)
+                return PWQ_ERROR_MIN_OTHERS;
+
+        if (size <= i)
+                return 0;
+
+        return PWQ_ERROR_MIN_LENGTH;
+}
+
+/*
+ * too many same consecutive characters
+ */
+
+static int
+consecutive(pwquality_settings_t *pwq, const char *new)
+{
+        char c;
+        int i;
+        int same;
+
+        if (pwq->max_repeat == 0)
+                return 0;
+
+        for (i = 0; new[i]; i++) {
+                if (i > 0 && new[i] == c) {
+                        ++same;
+                        if (same > pwq->max_repeat)
+                                return 1;
+                } else {
+                        c = new[i];
+                        same = 1;
+                }
+        }
+        return 0;
+}
+
+static char *
+str_lower(char *string)
+{
+	char *cp;
+
+	if (!string)
+		return NULL;
+
+	for (cp = string; *cp; cp++)
+		*cp = tolower(*cp);
+	return string;
+}
+
+static char *
+x_strdup(const char *string)
+{
+        if (!string)
+                return NULL;
+        return strdup(string);
+}
+
+static int
+password_check(pwquality_settings_t *pwq,
+               const char *new, const char *old)
+{
+        int rv = 0;
+        char *oldmono = NULL, *newmono, *wrapped = NULL;
+
+        newmono = str_lower(x_strdup(new));
+        if (!newmono)
+                rv = PWQ_ERROR_MEM_ALLOC;
+
+        if (!rv && old) {
+                oldmono = str_lower(x_strdup(old));
+                if (oldmono)
+                        wrapped = malloc(strlen(oldmono) * 2 + 1);
+                if (wrapped) {
+                        strcpy (wrapped, oldmono);
+                        strcat (wrapped, oldmono);
+                } else {
+                        rv = PWQ_ERROR_MEM_ALLOC;
+                }
+        }
+
+        if (!rv && palindrome(newmono))
+                rv = PWQ_ERROR_PALINDROME;
+
+        if (!rv && oldmono && strcmp(oldmono, newmono) == 0)
+                rv = PWQ_ERROR_CASE_CHANGES_ONLY;
+
+        if (!rv && oldmono)
+                rv = similar(pwq, oldmono, newmono);
+
+        if (!rv)
+                rv = simple(pwq, new);
+
+        if (!rv && wrapped && strstr(wrapped, newmono))
+                rv = PWQ_ERROR_ROTATED;
+
+        if (!rv && numclass(pwq, new) < pwq->min_class)
+                rv = PWQ_ERROR_MIN_CLASSES;
+
+        if (!rv && consecutive(pwq, new))
+                rv = PWQ_ERROR_MAX_CONSECUTIVE;
+
+        if (newmono) {
+                memset(newmono, 0, strlen(newmono));
+                free(newmono);
+        }
+
+        if (oldmono) {
+                memset(oldmono, 0, strlen(oldmono));
+                free(oldmono);
+        }
+
+        if (wrapped) {
+                memset(wrapped, 0, strlen(wrapped));
+                free(wrapped);
+        }
+
+        return rv;
+}
+
+/* this algorithm is an arbitrary one, fine-tuned by testing */
+static int
+password_score(pwquality_settings_t *pwq, const char *password)
+{
+        int len;
+        int score;
+        int i;
+        int j;
+        unsigned char freq[256];
+        unsigned char *buf;
+
+        len = strlen(password);
+
+        if ((buf = malloc(len)) == NULL)
+                /* should get enough memory to obtain a nice score */
+                return 0;
+
+        score = (len - pwq->min_length) * 2;
+
+        memcpy(buf, password, len);
+
+        for (j = 0; j < 3; j++) {
+
+                memset(freq, 0, sizeof(freq));
+
+                for (i = 0; i < len - j; i++) {
+                        ++freq[buf[i]];
+                        if (i < len - j - 1)
+                                buf[i] = abs(buf[i] - buf[i+1]);
+                }
+
+                for (i = 0; i < sizeof(freq); i++) {
+                        if (freq[i])
+                                ++score;
+                }
+        }
+
+        memset(buf, 0, len);
+        free(buf);
+        
+        score += numclass(pwq, password) * 2;
+
+        score = (score * 100)/(3 * pwq->min_length +
+                               + PWQ_NUM_CLASSES * 2);
+        
+        score -= 50;
+        
+        if (score > 100)
+                score = 100;
+        if (score < 0)
+                score = 0;
+                
+        return score;
+}
+
+/* check the password according to the settings
+ * it returns either score <0-100>, negative error number,
+ * and in case of PWQ_ERROR_CRACKLIB also auxiliary
+ * error message returned from cracklib;
+ * the old password is optional */
+int
+pwquality_check(pwquality_settings_t *pwq, const char *password,
+        const char *oldpassword, const char **error)
+{
+        const char *msg;
+        int score;
+
+        if (password == NULL || *password == '\0') {
+                return PWQ_ERROR_EMPTY_PASSWORD;
+        }
+
+        if (oldpassword && strcmp(oldpassword, password) == 0) {
+                return PWQ_ERROR_SAME_PASSWORD;
+        }
+
+        msg = FascistCheck(password, pwq->dict_path);
+        if (msg) {
+                if (error)
+                        *error = msg;
+                return PWQ_ERROR_CRACKLIB_CHECK;
+        }
+
+        score = password_check(pwq, password, oldpassword);
+        if (score == 0) {
+                score = password_score(pwq, password);
+        }
+
+        return score;
+}
+
+/*
+ * Copyright (c) Cristian Gafton <gafton@redhat.com>, 1996.
+ *                                              All rights reserved
+ * Copyright (c) Red Hat, Inc, 2011
+ * Copyright (c) Tomas Mraz <tm@t8m.info>, 2011
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, and the entire permission notice in its entirety,
+ *    including the disclaimer of warranties.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ * 3. The name of the author may not be used to endorse or promote
+ *    products derived from this software without specific prior
+ *    written permission.
+ *
+ * ALTERNATIVELY, this product may be distributed under the terms of
+ * the GNU Public License, in which case the provisions of the GPL are
+ * required INSTEAD OF the above restrictions.  (This clause is
+ * necessary due to a potential bad interaction between the GPL and
+ * the restrictions contained in a BSD-style copyright.)
+ *
+ * THIS SOFTWARE IS PROVIDED `AS IS'' AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
+ * INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+ * OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * The following copyright was appended for the long password support
+ * added with the libpam 0.58 release:
+ *
+ * Modificaton Copyright (c) Philip W. Dalrymple III <pwd@mdtsoft.com>
+ *       1997. All rights reserved
+ *
+ * THE MODIFICATION THAT PROVIDES SUPPORT FOR LONG PASSWORD TYPE CHECKING TO
+ * THIS SOFTWARE IS PROVIDED `AS IS'' AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
+ * INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+ * OF THE POSSIBILITY OF SUCH DAMAGE.
+ */

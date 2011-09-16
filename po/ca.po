@@ -1,0 +1,202 @@
+# Catalan translations for Linux-PAM package.
+# This file is distributed under the same license as the Linux-PAM package.
+#
+# This file is translated according to the glossary and style guide of
+#   Softcatalà. If you plan to modify this file, please read first the page
+#   of the Catalan translation team for the Fedora project at:
+#   http://www.softcatala.org/projectes/fedora/
+#   and contact the previous translator
+#
+# Aquest fitxer s'ha de traduir d'acord amb el recull de termes i la guia
+#   d'estil de Softcatalà. Si voleu modificar aquest fitxer, llegiu si
+#   us plau la pàgina de catalanització del projecte Fedora a:
+#   http://www.softcatala.org/projectes/fedora/
+#   i contacteu l'anterior traductor/a.
+#
+# TRADUCTORS
+# Xavier Queralt Mateu <xqueralt@gmail.com>, 2008
+# Albert Carabasa Giribet <albertc@asic.udl.cat>, 2009
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: linux-PAM\n"
+"Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
+"POT-Creation-Date: 2011-09-16 14:36+0200\n"
+"PO-Revision-Date: 2009-05-18 16:10+0200\n"
+"Last-Translator: Albert Carabasa Giribet <albertc@asic.udl.cat>\n"
+"Language-Team: Catalan <fedora@softcatala.net>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/pam_pwquality.c:22
+#, c-format
+msgid "New %s%spassword: "
+msgstr "Nova contrasenya de %s%s: "
+
+#: src/pam_pwquality.c:24
+#, c-format
+msgid "Retype new %s%spassword: "
+msgstr "Torneu a escriure la nova contrasenya de %s%s: "
+
+#: src/pam_pwquality.c:25
+msgid "Sorry, passwords do not match."
+msgstr "Les contrasenyes no coincideixen."
+
+#: src/pam_pwquality.c:104
+#, fuzzy
+msgid "memory allocation error"
+msgstr "Error de conversa"
+
+#: src/pam_pwquality.c:106
+msgid "is the same as the old one"
+msgstr "és la mateixa que l'antiga"
+
+#: src/pam_pwquality.c:108
+msgid "is a palindrome"
+msgstr "és un palíndrom"
+
+#: src/pam_pwquality.c:110
+msgid "case changes only"
+msgstr "només canvien les majúscules i minúscules"
+
+#: src/pam_pwquality.c:112
+msgid "is too similar to the old one"
+msgstr "és massa semblant a l'antiga"
+
+#: src/pam_pwquality.c:118
+msgid "is too simple"
+msgstr "és massa senzilla"
+
+#: src/pam_pwquality.c:120
+msgid "is rotated"
+msgstr "està girada"
+
+#: src/pam_pwquality.c:122
+msgid "not enough character classes"
+msgstr "no hi ha suficients classes de caràcters"
+
+#: src/pam_pwquality.c:124
+msgid "contains too many same characters consecutively"
+msgstr "conté massa caràcters idèntics consecutius"
+
+#: src/pam_pwquality.c:126 src/pwscore.c:57
+msgid "No password supplied"
+msgstr "No s'ha proporcionat cap contrasenya"
+
+#: src/pam_pwquality.c:130
+msgid "Error in service module"
+msgstr "Error en el mòdul de servei"
+
+#: src/pam_pwquality.c:198
+#, c-format
+msgid "BAD PASSWORD: %s"
+msgstr "CONTRASENYA INCORRECTA: %s"
+
+#: src/pwscore.c:20
+#, c-format
+msgid "Usage: %s\n"
+msgstr ""
+
+#: src/pwscore.c:21
+#, c-format
+msgid ""
+"       The command reads the password to be scored from the standard input.\n"
+msgstr ""
+
+#: src/pwscore.c:31 src/pwmake.c:28
+#, fuzzy
+msgid "Memory allocation error"
+msgstr "Error de conversa"
+
+#: src/pwscore.c:33
+#, fuzzy
+msgid "The password is the same as the old one"
+msgstr "és la mateixa que l'antiga"
+
+#: src/pwscore.c:35
+#, fuzzy
+msgid "The password is a palindrome"
+msgstr "és un palíndrom"
+
+#: src/pwscore.c:37
+msgid "The password differs with case changes only"
+msgstr ""
+
+#: src/pwscore.c:39
+#, fuzzy
+msgid "The password is too similar to the old one"
+msgstr "és massa semblant a l'antiga"
+
+#: src/pwscore.c:41
+msgid "The password contains too few digits"
+msgstr ""
+
+#: src/pwscore.c:43
+msgid "The password contains too few uppercase letters"
+msgstr ""
+
+#: src/pwscore.c:45
+msgid "The password contains too few lowercase letters"
+msgstr ""
+
+#: src/pwscore.c:47
+msgid "The password contains too few non-alphanumeric characters"
+msgstr ""
+
+#: src/pwscore.c:49
+msgid "The password is too short"
+msgstr ""
+
+#: src/pwscore.c:51
+msgid "The password is just rotated old one"
+msgstr ""
+
+#: src/pwscore.c:53
+#, fuzzy
+msgid "The password does not contain enough character classes"
+msgstr "no hi ha suficients classes de caràcters"
+
+#: src/pwscore.c:55
+#, fuzzy
+msgid "The password contains too many same characters consecutively"
+msgstr "conté massa caràcters idèntics consecutius"
+
+#: src/pwscore.c:59
+#, c-format
+msgid "The password fails the dictionary check - %s"
+msgstr ""
+
+#: src/pwscore.c:62 src/pwmake.c:34
+msgid "Unknown error"
+msgstr "Error desconegut"
+
+#: src/pwscore.c:91
+#, c-format
+msgid "Error: %s\n"
+msgstr ""
+
+#: src/pwscore.c:100
+#, c-format
+msgid "Password quality check failed: %s\n"
+msgstr ""
+
+#: src/pwmake.c:20
+#, c-format
+msgid "Usage: %s <entropy-bits>\n"
+msgstr ""
+
+#: src/pwmake.c:30
+msgid "Cannot obtain random numbers from the RNG device"
+msgstr ""
+
+#: src/pwmake.c:32
+msgid "Password generation failed - required entropy too low for settings"
+msgstr ""
+
+#: src/pwmake.c:56
+#, fuzzy
+msgid "Error: Memory allocation error"
+msgstr "Error de conversa"

@@ -1,0 +1,189 @@
+# translation of pam.tip.mr.po to marathi
+# Copyright (C) YEAR Linux-PAM Project
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sandeep Shedmake <sandeep.shedmake@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: pam.tip.mr\n"
+"Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
+"POT-Creation-Date: 2011-09-16 14:36+0200\n"
+"PO-Revision-Date: 2009-04-14 11:31+0530\n"
+"Last-Translator: Sandeep Shedmake <sandeep.shedmake@gmail.com>\n"
+"Language-Team: marathi\n"
+"Language: mr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: src/pam_pwquality.c:22
+#, c-format
+msgid "New %s%spassword: "
+msgstr "नवीन गुप्तशब्द %s%sp: "
+
+#: src/pam_pwquality.c:24
+#, c-format
+msgid "Retype new %s%spassword: "
+msgstr "नवीन गुप्तशब्द %s%sp पुन्हा टाइप करा: "
+
+#: src/pam_pwquality.c:25
+msgid "Sorry, passwords do not match."
+msgstr "माफ करा, गुप्तशब्द जुळत नाही."
+
+#: src/pam_pwquality.c:104
+#, fuzzy
+msgid "memory allocation error"
+msgstr "संवाद त्रुटी"
+
+#: src/pam_pwquality.c:106
+msgid "is the same as the old one"
+msgstr "प्रविष्ट केलेले जुण्या प्रमाणेच आहे"
+
+#: src/pam_pwquality.c:108
+msgid "is a palindrome"
+msgstr "पॅलींड्रोम आहे"
+
+#: src/pam_pwquality.c:110
+msgid "case changes only"
+msgstr "फक्त आकार बदलाव"
+
+#: src/pam_pwquality.c:112
+msgid "is too similar to the old one"
+msgstr "प्रविष्ट केलेले जुण्या नुरूपच आहे"
+
+#: src/pam_pwquality.c:118
+msgid "is too simple"
+msgstr "खूपच सोपे आहे"
+
+#: src/pam_pwquality.c:120
+msgid "is rotated"
+msgstr "स्तर बदलविले गेले"
+
+#: src/pam_pwquality.c:122
+msgid "not enough character classes"
+msgstr "अतिरिक्त अक्षर गट उपलब्ध नाही"
+
+#: src/pam_pwquality.c:124
+msgid "contains too many same characters consecutively"
+msgstr "पाठोपाठ खूप जास्त समान अक्षर आढळले"
+
+#: src/pam_pwquality.c:126 src/pwscore.c:57
+msgid "No password supplied"
+msgstr "गुप्तशब्द दिलेला नाही"
+
+#: src/pam_pwquality.c:130
+msgid "Error in service module"
+msgstr "सेवा विभाग अंतर्गत त्रुटी आढळली"
+
+#: src/pam_pwquality.c:198
+#, c-format
+msgid "BAD PASSWORD: %s"
+msgstr "अयोग्य गुप्तशब्द: %s"
+
+#: src/pwscore.c:20
+#, c-format
+msgid "Usage: %s\n"
+msgstr ""
+
+#: src/pwscore.c:21
+#, c-format
+msgid ""
+"       The command reads the password to be scored from the standard input.\n"
+msgstr ""
+
+#: src/pwscore.c:31 src/pwmake.c:28
+#, fuzzy
+msgid "Memory allocation error"
+msgstr "संवाद त्रुटी"
+
+#: src/pwscore.c:33
+#, fuzzy
+msgid "The password is the same as the old one"
+msgstr "प्रविष्ट केलेले जुण्या प्रमाणेच आहे"
+
+#: src/pwscore.c:35
+#, fuzzy
+msgid "The password is a palindrome"
+msgstr "पॅलींड्रोम आहे"
+
+#: src/pwscore.c:37
+msgid "The password differs with case changes only"
+msgstr ""
+
+#: src/pwscore.c:39
+#, fuzzy
+msgid "The password is too similar to the old one"
+msgstr "प्रविष्ट केलेले जुण्या नुरूपच आहे"
+
+#: src/pwscore.c:41
+msgid "The password contains too few digits"
+msgstr ""
+
+#: src/pwscore.c:43
+msgid "The password contains too few uppercase letters"
+msgstr ""
+
+#: src/pwscore.c:45
+msgid "The password contains too few lowercase letters"
+msgstr ""
+
+#: src/pwscore.c:47
+msgid "The password contains too few non-alphanumeric characters"
+msgstr ""
+
+#: src/pwscore.c:49
+msgid "The password is too short"
+msgstr ""
+
+#: src/pwscore.c:51
+msgid "The password is just rotated old one"
+msgstr ""
+
+#: src/pwscore.c:53
+#, fuzzy
+msgid "The password does not contain enough character classes"
+msgstr "अतिरिक्त अक्षर गट उपलब्ध नाही"
+
+#: src/pwscore.c:55
+#, fuzzy
+msgid "The password contains too many same characters consecutively"
+msgstr "पाठोपाठ खूप जास्त समान अक्षर आढळले"
+
+#: src/pwscore.c:59
+#, c-format
+msgid "The password fails the dictionary check - %s"
+msgstr ""
+
+#: src/pwscore.c:62 src/pwmake.c:34
+msgid "Unknown error"
+msgstr "अपरिचित चूक"
+
+#: src/pwscore.c:91
+#, c-format
+msgid "Error: %s\n"
+msgstr ""
+
+#: src/pwscore.c:100
+#, c-format
+msgid "Password quality check failed: %s\n"
+msgstr ""
+
+#: src/pwmake.c:20
+#, c-format
+msgid "Usage: %s <entropy-bits>\n"
+msgstr ""
+
+#: src/pwmake.c:30
+msgid "Cannot obtain random numbers from the RNG device"
+msgstr ""
+
+#: src/pwmake.c:32
+msgid "Password generation failed - required entropy too low for settings"
+msgstr ""
+
+#: src/pwmake.c:56
+#, fuzzy
+msgid "Error: Memory allocation error"
+msgstr "संवाद त्रुटी"

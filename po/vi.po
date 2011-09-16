@@ -1,0 +1,190 @@
+# Vietnamese translation for pam
+# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# This file is distributed under the same license as the pam package.
+# Ubuntu Vietname translators <ubuntu-l10n-vi@lists.launchpad.net>, 2009-2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pam\n"
+"Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
+"POT-Creation-Date: 2011-09-16 14:36+0200\n"
+"PO-Revision-Date: 2011-06-04 17:58+0700\n"
+"Last-Translator: Lê Trường An <truongan@linuxmail.org>\n"
+"Language-Team: Vietnamese <du-an-most@lists.hanoilug.org>\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Launchpad-Export-Date: 2011-06-04 10:52+0000\n"
+"X-Generator: Launchpad (build 13144)\n"
+
+#: src/pam_pwquality.c:22
+#, c-format
+msgid "New %s%spassword: "
+msgstr "Mật khẩu %s%s mới: "
+
+#: src/pam_pwquality.c:24
+#, c-format
+msgid "Retype new %s%spassword: "
+msgstr "Nhập lại mật khẩu %s%s mới: "
+
+#: src/pam_pwquality.c:25
+msgid "Sorry, passwords do not match."
+msgstr "Xin lỗi, mật khẩu không khớp."
+
+#: src/pam_pwquality.c:104
+#, fuzzy
+msgid "memory allocation error"
+msgstr "Lỗi giao tiếp"
+
+#: src/pam_pwquality.c:106
+msgid "is the same as the old one"
+msgstr "là giống như cũ"
+
+#: src/pam_pwquality.c:108
+msgid "is a palindrome"
+msgstr "là một xâu palindrome"
+
+#: src/pam_pwquality.c:110
+msgid "case changes only"
+msgstr "chỉ thay đổi chữ thường/hoa"
+
+#: src/pam_pwquality.c:112
+msgid "is too similar to the old one"
+msgstr "quá giống cái cũ"
+
+#: src/pam_pwquality.c:118
+msgid "is too simple"
+msgstr "quá đơn giản"
+
+#: src/pam_pwquality.c:120
+msgid "is rotated"
+msgstr "được sử dụng lại"
+
+#: src/pam_pwquality.c:122
+msgid "not enough character classes"
+msgstr "không đủ các lớp nhân vật"
+
+#: src/pam_pwquality.c:124
+msgid "contains too many same characters consecutively"
+msgstr "chứa quá nhiều kí tự giống nhau liên tiếp"
+
+#: src/pam_pwquality.c:126 src/pwscore.c:57
+msgid "No password supplied"
+msgstr "Không có mật khẩu được cung cấp"
+
+#: src/pam_pwquality.c:130
+msgid "Error in service module"
+msgstr "Lỗi trong mô-đun dịch vụ"
+
+#: src/pam_pwquality.c:198
+#, c-format
+msgid "BAD PASSWORD: %s"
+msgstr "Mật khẩu không an toàn: %s"
+
+#: src/pwscore.c:20
+#, c-format
+msgid "Usage: %s\n"
+msgstr ""
+
+#: src/pwscore.c:21
+#, c-format
+msgid ""
+"       The command reads the password to be scored from the standard input.\n"
+msgstr ""
+
+#: src/pwscore.c:31 src/pwmake.c:28
+#, fuzzy
+msgid "Memory allocation error"
+msgstr "Lỗi giao tiếp"
+
+#: src/pwscore.c:33
+#, fuzzy
+msgid "The password is the same as the old one"
+msgstr "là giống như cũ"
+
+#: src/pwscore.c:35
+#, fuzzy
+msgid "The password is a palindrome"
+msgstr "là một xâu palindrome"
+
+#: src/pwscore.c:37
+msgid "The password differs with case changes only"
+msgstr ""
+
+#: src/pwscore.c:39
+#, fuzzy
+msgid "The password is too similar to the old one"
+msgstr "quá giống cái cũ"
+
+#: src/pwscore.c:41
+msgid "The password contains too few digits"
+msgstr ""
+
+#: src/pwscore.c:43
+msgid "The password contains too few uppercase letters"
+msgstr ""
+
+#: src/pwscore.c:45
+msgid "The password contains too few lowercase letters"
+msgstr ""
+
+#: src/pwscore.c:47
+msgid "The password contains too few non-alphanumeric characters"
+msgstr ""
+
+#: src/pwscore.c:49
+msgid "The password is too short"
+msgstr ""
+
+#: src/pwscore.c:51
+msgid "The password is just rotated old one"
+msgstr ""
+
+#: src/pwscore.c:53
+#, fuzzy
+msgid "The password does not contain enough character classes"
+msgstr "không đủ các lớp nhân vật"
+
+#: src/pwscore.c:55
+#, fuzzy
+msgid "The password contains too many same characters consecutively"
+msgstr "chứa quá nhiều kí tự giống nhau liên tiếp"
+
+#: src/pwscore.c:59
+#, c-format
+msgid "The password fails the dictionary check - %s"
+msgstr ""
+
+#: src/pwscore.c:62 src/pwmake.c:34
+msgid "Unknown error"
+msgstr "Lỗi không rõ"
+
+#: src/pwscore.c:91
+#, c-format
+msgid "Error: %s\n"
+msgstr ""
+
+#: src/pwscore.c:100
+#, c-format
+msgid "Password quality check failed: %s\n"
+msgstr ""
+
+#: src/pwmake.c:20
+#, c-format
+msgid "Usage: %s <entropy-bits>\n"
+msgstr ""
+
+#: src/pwmake.c:30
+msgid "Cannot obtain random numbers from the RNG device"
+msgstr ""
+
+#: src/pwmake.c:32
+msgid "Password generation failed - required entropy too low for settings"
+msgstr ""
+
+#: src/pwmake.c:56
+#, fuzzy
+msgid "Error: Memory allocation error"
+msgstr "Lỗi giao tiếp"

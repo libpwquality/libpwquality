@@ -1,0 +1,188 @@
+# translation of Linux-PAM.po to Kazakh
+# Copyright (C) 2009 Linux-PAM Project
+# This file is distributed under the same license as the PACKAGE package.
+# Baurzhan Muftakhidinov@gmail.com
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Linux-PAM 1.0.3\n"
+"Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
+"POT-Creation-Date: 2011-09-16 14:36+0200\n"
+"PO-Revision-Date: 2009-02-26 13:07+0600\n"
+"Last-Translator: Baurzhan M. <baurthefirst@gmail.com>\n"
+"Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+#: src/pam_pwquality.c:22
+#, c-format
+msgid "New %s%spassword: "
+msgstr "%s%sүшін жаңа пароль: "
+
+#: src/pam_pwquality.c:24
+#, c-format
+msgid "Retype new %s%spassword: "
+msgstr "%s%sүшін жаңа парольді қайта енгізіңіз: "
+
+#: src/pam_pwquality.c:25
+msgid "Sorry, passwords do not match."
+msgstr "Кешіріңіз, парольдер өзара сәйкес емес."
+
+#: src/pam_pwquality.c:104
+#, fuzzy
+msgid "memory allocation error"
+msgstr "Сұхбат қатесі"
+
+#: src/pam_pwquality.c:106
+msgid "is the same as the old one"
+msgstr "алдыңғысына сәйкес болып тұр"
+
+#: src/pam_pwquality.c:108
+msgid "is a palindrome"
+msgstr "палиндром болып тұр"
+
+#: src/pam_pwquality.c:110
+msgid "case changes only"
+msgstr "өзгерістер таңбалардың регистрінде ғана"
+
+#: src/pam_pwquality.c:112
+msgid "is too similar to the old one"
+msgstr "ескі парольге өте ұқсас"
+
+#: src/pam_pwquality.c:118
+msgid "is too simple"
+msgstr "өте оңай болып тұр"
+
+#: src/pam_pwquality.c:120
+msgid "is rotated"
+msgstr "аударылған ескі пароль"
+
+#: src/pam_pwquality.c:122
+msgid "not enough character classes"
+msgstr "керек таңбалар кластары жоқ"
+
+#: src/pam_pwquality.c:124
+msgid "contains too many same characters consecutively"
+msgstr "құрамында бірдей таңбалардың тізбегі бар"
+
+#: src/pam_pwquality.c:126 src/pwscore.c:57
+msgid "No password supplied"
+msgstr "Пароль көрсетілмеді"
+
+#: src/pam_pwquality.c:130
+msgid "Error in service module"
+msgstr "Қызмет модулінде қате"
+
+#: src/pam_pwquality.c:198
+#, c-format
+msgid "BAD PASSWORD: %s"
+msgstr "ҚАТЕ ПАРОЛЬ: %s"
+
+#: src/pwscore.c:20
+#, c-format
+msgid "Usage: %s\n"
+msgstr ""
+
+#: src/pwscore.c:21
+#, c-format
+msgid ""
+"       The command reads the password to be scored from the standard input.\n"
+msgstr ""
+
+#: src/pwscore.c:31 src/pwmake.c:28
+#, fuzzy
+msgid "Memory allocation error"
+msgstr "Сұхбат қатесі"
+
+#: src/pwscore.c:33
+#, fuzzy
+msgid "The password is the same as the old one"
+msgstr "алдыңғысына сәйкес болып тұр"
+
+#: src/pwscore.c:35
+#, fuzzy
+msgid "The password is a palindrome"
+msgstr "палиндром болып тұр"
+
+#: src/pwscore.c:37
+msgid "The password differs with case changes only"
+msgstr ""
+
+#: src/pwscore.c:39
+#, fuzzy
+msgid "The password is too similar to the old one"
+msgstr "ескі парольге өте ұқсас"
+
+#: src/pwscore.c:41
+msgid "The password contains too few digits"
+msgstr ""
+
+#: src/pwscore.c:43
+msgid "The password contains too few uppercase letters"
+msgstr ""
+
+#: src/pwscore.c:45
+msgid "The password contains too few lowercase letters"
+msgstr ""
+
+#: src/pwscore.c:47
+msgid "The password contains too few non-alphanumeric characters"
+msgstr ""
+
+#: src/pwscore.c:49
+msgid "The password is too short"
+msgstr ""
+
+#: src/pwscore.c:51
+msgid "The password is just rotated old one"
+msgstr ""
+
+#: src/pwscore.c:53
+#, fuzzy
+msgid "The password does not contain enough character classes"
+msgstr "керек таңбалар кластары жоқ"
+
+#: src/pwscore.c:55
+#, fuzzy
+msgid "The password contains too many same characters consecutively"
+msgstr "құрамында бірдей таңбалардың тізбегі бар"
+
+#: src/pwscore.c:59
+#, c-format
+msgid "The password fails the dictionary check - %s"
+msgstr ""
+
+#: src/pwscore.c:62 src/pwmake.c:34
+msgid "Unknown error"
+msgstr "Белгісіз қате"
+
+#: src/pwscore.c:91
+#, c-format
+msgid "Error: %s\n"
+msgstr ""
+
+#: src/pwscore.c:100
+#, c-format
+msgid "Password quality check failed: %s\n"
+msgstr ""
+
+#: src/pwmake.c:20
+#, c-format
+msgid "Usage: %s <entropy-bits>\n"
+msgstr ""
+
+#: src/pwmake.c:30
+msgid "Cannot obtain random numbers from the RNG device"
+msgstr ""
+
+#: src/pwmake.c:32
+msgid "Password generation failed - required entropy too low for settings"
+msgstr ""
+
+#: src/pwmake.c:56
+#, fuzzy
+msgid "Error: Memory allocation error"
+msgstr "Сұхбат қатесі"

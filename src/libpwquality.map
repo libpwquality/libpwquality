@@ -1,0 +1,15 @@
+LIBPWQUALITY_1.0 {
+  global:
+    pwquality_default_settings;
+    pwquality_free_settings;
+    pwquality_read_config;
+    pwquality_set_option;
+    pwquality_set_int_value;
+    pwquality_set_str_value;
+    pwquality_get_int_value;
+    pwquality_get_str_value;
+    pwquality_generate;
+    pwquality_check;
+  local:
+    *;
+};

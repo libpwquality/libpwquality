@@ -1,0 +1,6 @@
+This is a libpwquality library for password quality checks
+and generation of a random passwords that pass the checks.
+
+NOTES:
+
+This library uses the cracklib as a dependency.

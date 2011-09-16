@@ -1,0 +1,181 @@
+# translation of Linux-PAM.po to cs_CZ
+# This file is distributed under the same license as the Linux-PAM package.
+# Copyright (C) 2005-2009 Linux-PAM Project.
+# Klara Cihlarova <koty@seznam.cz>, 2005, 2006.
+# Tomas Mraz <t8m@centrum.cz>, 2005, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: Linux-PAM\n"
+"Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
+"POT-Creation-Date: 2011-09-16 14:36+0200\n"
+"PO-Revision-Date: 2009-03-24 15:22+0100\n"
+"Last-Translator: Tomas Mraz <t8m@centrum.cz>\n"
+"Language-Team: cs_CZ <cs@li.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms:  nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: KBabel 1.10.2\n"
+
+#: src/pam_pwquality.c:22
+#, c-format
+msgid "New %s%spassword: "
+msgstr "Nové %s%sheslo: "
+
+#: src/pam_pwquality.c:24
+#, c-format
+msgid "Retype new %s%spassword: "
+msgstr "Opakujte nové %s%sheslo: "
+
+#: src/pam_pwquality.c:25
+msgid "Sorry, passwords do not match."
+msgstr "Hesla se neshodují."
+
+#: src/pam_pwquality.c:104
+msgid "memory allocation error"
+msgstr "chyba alokace paměti"
+
+#: src/pam_pwquality.c:106
+msgid "is the same as the old one"
+msgstr "je stejné jako předcházející"
+
+#: src/pam_pwquality.c:108
+msgid "is a palindrome"
+msgstr "je palindrom"
+
+#: src/pam_pwquality.c:110
+msgid "case changes only"
+msgstr "pouze mění velikost"
+
+#: src/pam_pwquality.c:112
+msgid "is too similar to the old one"
+msgstr "je příliš podobné předcházejícímu"
+
+#: src/pam_pwquality.c:118
+msgid "is too simple"
+msgstr "je příliš jednoduché"
+
+#: src/pam_pwquality.c:120
+msgid "is rotated"
+msgstr "je posunuté"
+
+#: src/pam_pwquality.c:122
+msgid "not enough character classes"
+msgstr "nemá dostatek různých druhů znaků"
+
+#: src/pam_pwquality.c:124
+msgid "contains too many same characters consecutively"
+msgstr "obsahuje příliš mnoho stejných znaků za sebou"
+
+#: src/pam_pwquality.c:126 src/pwscore.c:57
+msgid "No password supplied"
+msgstr "Nezadáno heslo"
+
+#: src/pam_pwquality.c:130
+msgid "Error in service module"
+msgstr "Chyba v modulu služby"
+
+#: src/pam_pwquality.c:198
+#, c-format
+msgid "BAD PASSWORD: %s"
+msgstr "ŠPATNÉ HESLO: %s"
+
+#: src/pwscore.c:20
+#, c-format
+msgid "Usage: %s\n"
+msgstr "Použití: %s\n"
+
+#: src/pwscore.c:21
+#, c-format
+msgid ""
+"       The command reads the password to be scored from the standard input.\n"
+msgstr "        Příkaz čte hodnocené heslo ze standardního vstupu.\n"
+
+#: src/pwscore.c:31 src/pwmake.c:28
+msgid "Memory allocation error"
+msgstr "Chyba alokace paměti"
+
+#: src/pwscore.c:33
+msgid "The password is the same as the old one"
+msgstr "Heslo je stejné jako předcházející"
+
+#: src/pwscore.c:35
+msgid "The password is a palindrome"
+msgstr "Heslo je palindrom"
+
+#: src/pwscore.c:37
+msgid "The password differs with case changes only"
+msgstr "Heslo se odlišuje pouze změnou velikosti písmen"
+
+#: src/pwscore.c:39
+msgid "The password is too similar to the old one"
+msgstr "Heslo je příliš podobné předcházejícímu"
+
+#: src/pwscore.c:41
+msgid "The password contains too few digits"
+msgstr "Heslo obsahuje příliš málo číslic"
+
+#: src/pwscore.c:43
+msgid "The password contains too few uppercase letters"
+msgstr "Heslo obsahuje příliš málo velkých písmen"
+
+#: src/pwscore.c:45
+msgid "The password contains too few lowercase letters"
+msgstr "Heslo obsahuje příliš málo malých písmen"
+
+#: src/pwscore.c:47
+msgid "The password contains too few non-alphanumeric characters"
+msgstr "Heslo obsahuje příliš málo jiných znaků než číslic a písmen"
+
+#: src/pwscore.c:49
+msgid "The password is too short"
+msgstr "Heslo je příliš krátké"
+
+#: src/pwscore.c:51
+msgid "The password is just rotated old one"
+msgstr "Heslo je pouze rotací starého hesla"
+
+#: src/pwscore.c:53
+msgid "The password does not contain enough character classes"
+msgstr "Heslo nemá dostatek různých druhů znaků"
+
+#: src/pwscore.c:55
+msgid "The password contains too many same characters consecutively"
+msgstr "Heslo obsahuje příliš mnoho stejných znaků za sebou"
+
+#: src/pwscore.c:59
+#, c-format
+msgid "The password fails the dictionary check - %s"
+msgstr "Heslo neprošlo kontrolou slovníkem - %s"
+
+#: src/pwscore.c:62 src/pwmake.c:34
+msgid "Unknown error"
+msgstr "Neznámá chyba"
+
+#: src/pwscore.c:91
+#, c-format
+msgid "Error: %s\n"
+msgstr "Chyba: %s\n"
+
+#: src/pwscore.c:100
+#, c-format
+msgid "Password quality check failed: %s\n"
+msgstr "Chyba kontroly kvality hesla: %s\n"
+
+#: src/pwmake.c:20
+#, c-format
+msgid "Usage: %s <entropy-bits>\n"
+msgstr "Použití: %s <počet-bitů-entropie>\n"
+
+#: src/pwmake.c:30
+msgid "Cannot obtain random numbers from the RNG device"
+msgstr "Nebylo možno získat náhodná čísla z RNG zařízení"
+
+#: src/pwmake.c:32
+msgid "Password generation failed - required entropy too low for settings"
+msgstr "Generování hesla selhalo - požadovaná entropie je příliš malá vzhledem k nastavení"
+
+#: src/pwmake.c:56
+msgid "Error: Memory allocation error"
+msgstr "Chyba: Alokace paměti selhala"
