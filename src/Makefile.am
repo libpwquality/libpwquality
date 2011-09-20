@@ -23,7 +23,7 @@ libpwquality_la_LDFLAGS = -no-undefined $(libpwquality_version_script) \
 
 libpwquality_la_LIBADD = @LIBCRACK@
 
-libpwquality_la_SOURCES = generate.c check.c settings.c
+libpwquality_la_SOURCES = generate.c check.c settings.c error.c
 
 pam_pwquality_la_LDFLAGS = -no-undefined -avoid-version -module
 
