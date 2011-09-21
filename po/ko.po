@@ -228,38 +228,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "알 수 없는 오류"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "인증 대화 오류"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "이전 암호와 같음"
-
-#~ msgid "is a palindrome"
-#~ msgstr "앞뒤 어느쪽에서 읽어도 같은 문맥임"
-
-#~ msgid "case changes only"
-#~ msgstr "대소문자만 변경"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "이전 암호와 유사함"
-
-#~ msgid "is too simple"
-#~ msgstr "너무 간단함"
-
-#~ msgid "is rotated"
-#~ msgstr "교체됨"
-
-#~ msgid "not enough character classes"
-#~ msgstr "문자 클래스가 부족합니다  "
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "너무 많은 동일한 문자가 연속적으로 포함되어있습니다   "
-
-#~ msgid "Error in service module"
-#~ msgstr "서비스 모듈에서 오류 발생"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "인증 대화 오류"

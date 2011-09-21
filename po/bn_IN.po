@@ -229,38 +229,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "অজানা সমস্যা"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "Conversation অর্থাৎ তথ্য বিনিময়কালীন সমস্যা"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "পুরোনোটির অনুরূপ"
-
-#~ msgid "is a palindrome"
-#~ msgstr "উভমুখী শব্দ"
-
-#~ msgid "case changes only"
-#~ msgstr "শুধুমাত্র হরফের ছাঁদ পরিবর্তন করা হয়েছে"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "পুরোনো পাসওয়ার্ডের সমতূল্য"
-
-#~ msgid "is too simple"
-#~ msgstr "জটিল নয়"
-
-#~ msgid "is rotated"
-#~ msgstr "ঘোরানো হয়েছে"
-
-#~ msgid "not enough character classes"
-#~ msgstr "পর্যাপ্ত অক্ষর শ্রেণী উপস্থিত নেই"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "একই অক্ষর অত্যাধিক বার ক্রমাগত ব্যবহার করা হয়েছে"
-
-#~ msgid "Error in service module"
-#~ msgstr "পরিসেবা মডিউলে সমস্যা"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "Conversation অর্থাৎ তথ্য বিনিময়কালীন সমস্যা"

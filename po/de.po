@@ -230,37 +230,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "Unbekannter Fehler"
-
-#~ msgid "memory allocation error"
-#~ msgstr "Fehler beim Allozieren von Speicher"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "ist das gleiche wie das Alte"
-
-#~ msgid "is a palindrome"
-#~ msgstr "ist ein Palindrome"
-
-#~ msgid "case changes only"
-#~ msgstr "nur Änderungen bei der Gross-/Kleinschreibung"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "ist dem alten zu ähnlich"
-
-#~ msgid "is too simple"
-#~ msgstr "ist zu einfach"
-
-#~ msgid "is rotated"
-#~ msgstr "wurde gedreht"
-
-#~ msgid "not enough character classes"
-#~ msgstr "nicht genug unterschiedliche Arten von Zeichen"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "das gleiche Zeichen wurde so oft hintereinander verwendet"
-
-#~ msgid "Error in service module"
-#~ msgstr "Fehler im Service-Modul"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "Fehler beim Allozieren von Speicher"

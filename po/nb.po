@@ -226,35 +226,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "Ukjent feil"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "Dialogfeil"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "er det samme som det gamle"
-
-#~ msgid "is a palindrome"
-#~ msgstr "er et palindrom"
-
-#~ msgid "case changes only"
-#~ msgstr "kun endring av små/store bokstaver"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "er for likt det gamle"
-
-#~ msgid "is too simple"
-#~ msgstr "er for enkelt"
-
-#~ msgid "is rotated"
-#~ msgstr "er rotert"
-
-#~ msgid "not enough character classes"
-#~ msgstr "ikke nok tegnklasser"
-
-#~ msgid "Error in service module"
-#~ msgstr "Feil i tjenestemodul"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "Dialogfeil"

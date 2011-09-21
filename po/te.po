@@ -232,38 +232,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "తెలియని దోషము"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "సంభాషణా దోషము"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "ఇది పాతదేనా"
-
-#~ msgid "is a palindrome"
-#~ msgstr "పాలిండ్రోమా"
-
-#~ msgid "case changes only"
-#~ msgstr "కేస్ మార్పులు మాత్రమే"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "పాతదానికి మరీ దగ్గరపోలికగావుంది"
-
-#~ msgid "is too simple"
-#~ msgstr "మరీ సరళంగావుంది"
-
-#~ msgid "is rotated"
-#~ msgstr "ఇది పర్యాయంగానా"
-
-#~ msgid "not enough character classes"
-#~ msgstr "సరిపోవునంత కారెక్టర్ క్లాసెస్ లేవు"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "ఒకదానితర్వాత వొకటి అదే అక్షరాలు చాలావున్నాయి"
-
-#~ msgid "Error in service module"
-#~ msgstr "సేవా మాడ్యూల్‌నందు దోషము"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "సంభాషణా దోషము"

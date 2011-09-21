@@ -228,38 +228,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "未知的錯誤"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "交談錯誤"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "與舊的密碼相同"
-
-#~ msgid "is a palindrome"
-#~ msgstr "是一個回文"
-
-#~ msgid "case changes only"
-#~ msgstr "僅變更大小寫"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "與舊的密碼太相似"
-
-#~ msgid "is too simple"
-#~ msgstr "太簡單"
-
-#~ msgid "is rotated"
-#~ msgstr "已旋轉"
-
-#~ msgid "not enough character classes"
-#~ msgstr "字元類別不足"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "包含了太多連續的相同字元"
-
-#~ msgid "Error in service module"
-#~ msgstr "服務模組發生錯誤"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "交談錯誤"

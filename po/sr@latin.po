@@ -232,38 +232,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "Nepoznata greška"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "Greška u razgovoru"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "ista je kao i stara"
-
-#~ msgid "is a palindrome"
-#~ msgstr "palindrom je"
-
-#~ msgid "case changes only"
-#~ msgstr "samo promene veličine slova"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "suviše je slična prethodnoj"
-
-#~ msgid "is too simple"
-#~ msgstr "suviše je jednostavna"
-
-#~ msgid "is rotated"
-#~ msgstr "izokrenuta je"
-
-#~ msgid "not enough character classes"
-#~ msgstr "nema dovoljno klasa znakova"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "sadrži previše istih znakova uzastopno"
-
-#~ msgid "Error in service module"
-#~ msgstr "Greška u uslužnom modulu"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "Greška u razgovoru"

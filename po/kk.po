@@ -228,38 +228,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "Белгісіз қате"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "Сұхбат қатесі"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "алдыңғысына сәйкес болып тұр"
-
-#~ msgid "is a palindrome"
-#~ msgstr "палиндром болып тұр"
-
-#~ msgid "case changes only"
-#~ msgstr "өзгерістер таңбалардың регистрінде ғана"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "ескі парольге өте ұқсас"
-
-#~ msgid "is too simple"
-#~ msgstr "өте оңай болып тұр"
-
-#~ msgid "is rotated"
-#~ msgstr "аударылған ескі пароль"
-
-#~ msgid "not enough character classes"
-#~ msgstr "керек таңбалар кластары жоқ"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "құрамында бірдей таңбалардың тізбегі бар"
-
-#~ msgid "Error in service module"
-#~ msgstr "Қызмет модулінде қате"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "Сұхбат қатесі"

@@ -232,38 +232,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "Onbekende fout"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "Conversatie fout"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "is hetzelfde als het oude"
-
-#~ msgid "is a palindrome"
-#~ msgstr "is een palindroom"
-
-#~ msgid "case changes only"
-#~ msgstr "alleen veranderingen in hoofd/kleine letters"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "lijkt te veel op het oude"
-
-#~ msgid "is too simple"
-#~ msgstr "is te eenvoudig"
-
-#~ msgid "is rotated"
-#~ msgstr "is omgedraaid"
-
-#~ msgid "not enough character classes"
-#~ msgstr "niet genoeg karakter klasses"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "bevat teveel dezelfde opeenvolgende karakters"
-
-#~ msgid "Error in service module"
-#~ msgstr "Fout in service module"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "Conversatie fout"

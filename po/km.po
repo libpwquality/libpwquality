@@ -226,32 +226,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "មិន​ស្គាល់​កំហុស"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "កំហុស​សន្ទនា"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "ដូច​គ្នា​នឹង​ពាក្យ​សម្ងាត់​ចាស់"
-
-#~ msgid "is a palindrome"
-#~ msgstr "ត្រឡប់​ចុះ​ឡើង"
-
-#~ msgid "case changes only"
-#~ msgstr "គ្រាន់​តែ​ផ្លាស់ប្ដូរ​លក្ខណៈ​អក្សរ​ប៉ុណ្ណោះ​"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "ស្រដៀង​គ្នា​ណាស់​នឹង​ពាក្យ​សម្ងាត់​ចាស់"
-
-#~ msgid "is too simple"
-#~ msgstr "សាមញ្ញ​ពេក"
-
-#~ msgid "is rotated"
-#~ msgstr "បាន​បង្វិល"
-
-#~ msgid "Error in service module"
-#~ msgstr "កំហុស​នៅ​ក្នុង​ម៉ូឌុល​សេវា"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "កំហុស​សន្ទនា"

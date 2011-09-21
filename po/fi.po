@@ -227,32 +227,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "Tuntematon virhe"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "Keskusteluvirhe"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "on sama kuin vanha"
-
-#~ msgid "is a palindrome"
-#~ msgstr "on palindromi"
-
-#~ msgid "case changes only"
-#~ msgstr "vain kirjainkoko muutos"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "on liian samankaltainen vanhan kanssa"
-
-#~ msgid "is too simple"
-#~ msgstr "on liian yksinkertainen"
-
-#~ msgid "is rotated"
-#~ msgstr "on kierrätetty"
-
-#~ msgid "Error in service module"
-#~ msgstr "Virhe palvelumoduulissa"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "Keskusteluvirhe"

@@ -224,32 +224,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "Iphutha elingaziwa"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "Iphutha lengxoxo"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "iyafana nendala"
-
-#~ msgid "is a palindrome"
-#~ msgstr "iyi-palindrome"
-
-#~ msgid "case changes only"
-#~ msgstr "kushintshe onobumba kuphela"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "ifana kakhulu nendala"
-
-#~ msgid "is too simple"
-#~ msgstr "ilula kakhulu"
-
-#~ msgid "is rotated"
-#~ msgstr "ijikelezisiwe"
-
-#~ msgid "Error in service module"
-#~ msgstr "Iphutha kwimoduli yesevisi"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "Iphutha lengxoxo"

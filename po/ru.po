@@ -232,39 +232,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "Неизвестная ошибка"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "Ошибка диалога"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "совпадает со старым"
-
-#~ msgid "is a palindrome"
-#~ msgstr "является палиндромом"
-
-#~ msgid "case changes only"
-#~ msgstr "изменения только в регистре"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "слишком похож на старый"
-
-#~ msgid "is too simple"
-#~ msgstr "слишком простой"
-
-#~ msgid "is rotated"
-#~ msgstr "является результатом чередования"
-
-#~ msgid "not enough character classes"
-#~ msgstr "слишком мало символов различных типов"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "содержит слишком длинную последовательность одинаковых символов"
-
-#  Translators: error message
-#~ msgid "Error in service module"
-#~ msgstr "Ошибка в модуле службы"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "Ошибка диалога"

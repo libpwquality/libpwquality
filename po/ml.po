@@ -228,38 +228,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "അപരിചിതമായ പിശക്"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "സംവാദത്തിലുളള പിശക്"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "പഴയത് പോലെ തന്നെയാകുന്നതു്"
-
-#~ msgid "is a palindrome"
-#~ msgstr "ഒരു പാലിന്‍ഡ്രോം ആണു്"
-
-#~ msgid "case changes only"
-#~ msgstr "അക്ഷരങ്ങളുടെ വലിപ്പം മാത്രം മാറുന്നതു്"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "പഴയതിന് സാമ്യമുള്ളതു്"
-
-#~ msgid "is too simple"
-#~ msgstr "സാധാരണയുള്ളതു്"
-
-#~ msgid "is rotated"
-#~ msgstr "is rotated"
-
-#~ msgid "not enough character classes"
-#~ msgstr "മതിയായ ക്യാരക്ടര്‍ ക്ലാസ്സുകള്‍ ലഭ്യമല്ല"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "അടുത്തടുത്ത് ഒരേപോലുള്ള അനവധി അക്ഷരങ്ങളുണ്ടു്"
-
-#~ msgid "Error in service module"
-#~ msgstr "സര്‍വീസ് മൊഡ്യൂളില്‍ പിഴവ്"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "സംവാദത്തിലുളള പിശക്"

@@ -229,38 +229,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "不明なエラー"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "会話エラー"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "パスワードが古いものと同じです。"
-
-#~ msgid "is a palindrome"
-#~ msgstr "前後どちらから読んでも同じパスワードです。"
-
-#~ msgid "case changes only"
-#~ msgstr "大文字小文字を変えただけのパスワード"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "古いものと似ています"
-
-#~ msgid "is too simple"
-#~ msgstr "簡単すぎます"
-
-#~ msgid "is rotated"
-#~ msgstr "回転しています"
-
-#~ msgid "not enough character classes"
-#~ msgstr "文字クラスが不十分です"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "連続的な同一文字が多く含まれ過ぎです"
-
-#~ msgid "Error in service module"
-#~ msgstr "サービスモジュールのエラー"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "会話エラー"

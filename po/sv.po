@@ -229,38 +229,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "Okänt fel"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "Konversationsfel"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "är samma som det gamla"
-
-#~ msgid "is a palindrome"
-#~ msgstr "är ett palindrom"
-
-#~ msgid "case changes only"
-#~ msgstr "endast ändringar i gemener och versaler"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "är för likt det gamla"
-
-#~ msgid "is too simple"
-#~ msgstr "är för enkelt"
-
-#~ msgid "is rotated"
-#~ msgstr "är roterat"
-
-#~ msgid "not enough character classes"
-#~ msgstr "för få teckenklasser"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "innehåller för många tecken av samma sort i följd"
-
-#~ msgid "Error in service module"
-#~ msgstr "Fel i tjänstemodul"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "Konversationsfel"

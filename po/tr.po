@@ -230,38 +230,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "Bilinmeyen hata"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "Etkileşim hatası"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "eskisi ile aynı"
-
-#~ msgid "is a palindrome"
-#~ msgstr "bir palindrom (iki yönden aynı şekilde okunuyor)"
-
-#~ msgid "case changes only"
-#~ msgstr "sadece büyük-küçük harf değişimi"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "eskisine çok benziyor"
-
-#~ msgid "is too simple"
-#~ msgstr "çok basit"
-
-#~ msgid "is rotated"
-#~ msgstr "değiştirilmiş"
-
-#~ msgid "not enough character classes"
-#~ msgstr "yetersiz karakter sınıfı"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "aynı karakterleri arka arkaya içeriyor"
-
-#~ msgid "Error in service module"
-#~ msgstr "Servis modülünde hata"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "Etkileşim hatası"

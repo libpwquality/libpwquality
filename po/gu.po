@@ -231,38 +231,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "અજ્ઞાત ભૂલ"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "વાર્તાલાપ ભૂલ"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "એ જૂના જેવો જ છે"
-
-#~ msgid "is a palindrome"
-#~ msgstr "એ પેલીન્ડ્રોમ છે"
-
-#~ msgid "case changes only"
-#~ msgstr "કેસ ફેરફાર માત્ર"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "એ જૂના સાથે એકદમ સરખો છે"
-
-#~ msgid "is too simple"
-#~ msgstr "એ ખૂબ સાદો છે"
-
-#~ msgid "is rotated"
-#~ msgstr "એ ફેરવાયેલ છે"
-
-#~ msgid "not enough character classes"
-#~ msgstr "પૂરતા અક્ષર વર્ગો નથી"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "એકપછી એક ઘણા બધા સરખા અક્ષરોને સમાવે છે"
-
-#~ msgid "Error in service module"
-#~ msgstr "સેવા મોડ્યુલમાં ભૂલ"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "વાર્તાલાપ ભૂલ"

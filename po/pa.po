@@ -229,38 +229,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "ਅਣਜਾਣੀ ਗਲਤੀ"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "ਤਬਦੀਲੀ ਗਲਤੀ"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "ਪੁਰਾਣੇ ਵਰਗਾ ਹੈ"
-
-#~ msgid "is a palindrome"
-#~ msgstr "ਇੱਕ palindrome ਹੈ"
-
-#~ msgid "case changes only"
-#~ msgstr "ਸਿਰਫ ਅੱਖਰ ਤਬਦੀਲੀ"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "ਪੁਰਾਣੇ ਨਾਲ ਬਹੁਤ ਮਿਲਦਾ-ਜੁਲਦਾ ਹੈ"
-
-#~ msgid "is too simple"
-#~ msgstr "ਬਹੁਤ ਸਧਾਰਨ ਹੈ"
-
-#~ msgid "is rotated"
-#~ msgstr "ਘੁੰਮਾਇਆ ਹੈ"
-
-#~ msgid "not enough character classes"
-#~ msgstr "ਲੋੜੀਂਦੀਆਂ ਅੱਖਰ ਸ਼੍ਰੇਣੀਆਂ ਨਹੀਂ ਹਨ"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "ਲਗਾਤਾਰ ਬਹੁਤ ਸਾਰੇ ਮਿਲਦੇ-ਜੁਲਦੇ ਅੱਖਰ ਸ਼ਾਮਿਲ ਹਨ"
-
-#~ msgid "Error in service module"
-#~ msgstr "ਸੇਵਾ ਮੈਡੀਊਲ ਵਿੱਚ ਗਲਤੀ"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "ਤਬਦੀਲੀ ਗਲਤੀ"

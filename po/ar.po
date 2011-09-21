@@ -225,32 +225,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "خطأ غير معروف"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "خطأ في المحادثة"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "لا يوجد اختلاف عن كلمة السر القديمة"
-
-#~ msgid "is a palindrome"
-#~ msgstr "كلمة سر يمكن قراءتها من الجهتين"
-
-#~ msgid "case changes only"
-#~ msgstr "لم يتم سوى تغيير حالة الأحرف"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "كلمة السر الجديدة شديدة الشبه بكلمة السر القديمة"
-
-#~ msgid "is too simple"
-#~ msgstr "كلمة السر شديدة البساطة"
-
-#~ msgid "is rotated"
-#~ msgstr "كلمة مرور ملتفة"
-
-#~ msgid "Error in service module"
-#~ msgstr "خطأ في الوحدة النمطية للخدمة"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "خطأ في المحادثة"

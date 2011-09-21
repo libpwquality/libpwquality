@@ -230,38 +230,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "Lỗi không rõ"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "Lỗi giao tiếp"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "là giống như cũ"
-
-#~ msgid "is a palindrome"
-#~ msgstr "là một xâu palindrome"
-
-#~ msgid "case changes only"
-#~ msgstr "chỉ thay đổi chữ thường/hoa"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "quá giống cái cũ"
-
-#~ msgid "is too simple"
-#~ msgstr "quá đơn giản"
-
-#~ msgid "is rotated"
-#~ msgstr "được sử dụng lại"
-
-#~ msgid "not enough character classes"
-#~ msgstr "không đủ các lớp nhân vật"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "chứa quá nhiều kí tự giống nhau liên tiếp"
-
-#~ msgid "Error in service module"
-#~ msgstr "Lỗi trong mô-đun dịch vụ"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "Lỗi giao tiếp"

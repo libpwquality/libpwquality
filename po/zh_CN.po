@@ -229,38 +229,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "未知的错误"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "转换错误"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "与旧密码相同"
-
-#~ msgid "is a palindrome"
-#~ msgstr "是回文"
-
-#~ msgid "case changes only"
-#~ msgstr "仅更改了大小写"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "与旧密码过于相似"
-
-#~ msgid "is too simple"
-#~ msgstr "过于简单"
-
-#~ msgid "is rotated"
-#~ msgstr "是旧密码的循环"
-
-#~ msgid "not enough character classes"
-#~ msgstr "没有足够的字符分类"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "包含过多连续相同的字符"
-
-#~ msgid "Error in service module"
-#~ msgstr "服务模块存在错误"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "转换错误"

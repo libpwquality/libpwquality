@@ -232,38 +232,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "अनजान त्रुटि"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "रूपांतरक त्रुटि"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "पुराने की तरह समान है"
-
-#~ msgid "is a palindrome"
-#~ msgstr "एक पालिनड्रोम है"
-
-#~ msgid "case changes only"
-#~ msgstr "स्थिति परिवर्तन सिर्फ"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "पुराने के बहुत समान है"
-
-#~ msgid "is too simple"
-#~ msgstr "बहुत सरल है"
-
-#~ msgid "is rotated"
-#~ msgstr "घुमाया गया है"
-
-#~ msgid "not enough character classes"
-#~ msgstr "पर्याप्त वर्ण वर्ग नहीं"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "कई समान वर्ण लगातार  समाहित करता है"
-
-#~ msgid "Error in service module"
-#~ msgstr "सेवा मॉड्यूल में त्रुटि"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "रूपांतरक त्रुटि"

@@ -228,38 +228,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "ಗೊತ್ತಿರದ ದೋಷ"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "ಸಂವಾದಾತ್ಮಕ ದೋಷ"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "ಇದು ಹಳೆಯದರ ಹಾಗೆಯೇ ಇದೆ"
-
-#~ msgid "is a palindrome"
-#~ msgstr "ಇದು ಒಂದು ಸಮಾನ ಪೂರ್ವಾಪರವಾಗಿದೆ (palindrome)"
-
-#~ msgid "case changes only"
-#~ msgstr "ಕೇವಲ ಕೇಸ್ ಗಳ ಬದಲಾವಣೆಯಾಗಿದೆ ಅಷ್ಟೆ"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "ಇದು ಹಳೆಯದಕ್ಕೆ ಬಹಳಷ್ಟು ಹೋಲುತ್ತದೆ"
-
-#~ msgid "is too simple"
-#~ msgstr "ಇದು ಬಹಳ ಸರಳವಾಗಿದೆ"
-
-#~ msgid "is rotated"
-#~ msgstr "ಇದು ತಿರುಗಿಸಲಾಗಿದೆ"
-
-#~ msgid "not enough character classes"
-#~ msgstr "ಸಾಕಷ್ಟು ಕ್ಯಾರೆಕ್ಟರ್ ವರ್ಗಗಳು ಇಲ್ಲ"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "ಇದು ಒಂದೇ ಬಗೆಯ ಬಹಳಷ್ಟು ಕ್ಯಾರೆಕ್ಟರುಗಳನ್ನು ಅನುಕ್ರಮವಾಗಿ ಹೊಂದಿದೆ"
-
-#~ msgid "Error in service module"
-#~ msgstr "ಸೇವಾ ಮಾಡ್ಯೂಲಿನಲ್ಲಿ ದೋಷ"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "ಸಂವಾದಾತ್ಮಕ ದೋಷ"

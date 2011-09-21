@@ -231,38 +231,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "Ismeretlen hiba"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "Beszélgetési hiba"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "ugyanaz, mint a régi"
-
-#~ msgid "is a palindrome"
-#~ msgstr "palindrom"
-
-#~ msgid "case changes only"
-#~ msgstr "csak a kis/nagybetűkben változott"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "túl hasonló a régihez"
-
-#~ msgid "is too simple"
-#~ msgstr "túl egyszerű"
-
-#~ msgid "is rotated"
-#~ msgstr "forgatva"
-
-#~ msgid "not enough character classes"
-#~ msgstr "elégtelen betűosztály"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "túl sok egymást követő betű egyezik meg"
-
-#~ msgid "Error in service module"
-#~ msgstr "Hiba a szervizmodulban"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "Beszélgetési hiba"

@@ -230,38 +230,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "Невідома помилка"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "Помилка обміну даними"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "такий самий, як і старий"
-
-#~ msgid "is a palindrome"
-#~ msgstr "— це паліндром"
-
-#~ msgid "case changes only"
-#~ msgstr "тільки зміни в регістрі"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "занадто подібний до старого"
-
-#~ msgid "is too simple"
-#~ msgstr "занадто простий"
-
-#~ msgid "is rotated"
-#~ msgstr "чергується"
-
-#~ msgid "not enough character classes"
-#~ msgstr "недостатнє використання класів символів"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "містить забагато послідовних однакових символів"
-
-#~ msgid "Error in service module"
-#~ msgstr "Помилка в модулі служби"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "Помилка обміну даними"

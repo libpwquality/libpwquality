@@ -228,38 +228,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "अपरिचित चूक"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "संवाद त्रुटी"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "प्रविष्ट केलेले जुण्या प्रमाणेच आहे"
-
-#~ msgid "is a palindrome"
-#~ msgstr "पॅलींड्रोम आहे"
-
-#~ msgid "case changes only"
-#~ msgstr "फक्त आकार बदलाव"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "प्रविष्ट केलेले जुण्या नुरूपच आहे"
-
-#~ msgid "is too simple"
-#~ msgstr "खूपच सोपे आहे"
-
-#~ msgid "is rotated"
-#~ msgstr "स्तर बदलविले गेले"
-
-#~ msgid "not enough character classes"
-#~ msgstr "अतिरिक्त अक्षर गट उपलब्ध नाही"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "पाठोपाठ खूप जास्त समान अक्षर आढळले"
-
-#~ msgid "Error in service module"
-#~ msgstr "सेवा विभाग अंतर्गत त्रुटी आढळली"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "संवाद त्रुटी"

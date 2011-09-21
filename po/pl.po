@@ -230,38 +230,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "Nieznany błąd"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "Błąd rozmowy"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "jest identyczne ze starym"
-
-#~ msgid "is a palindrome"
-#~ msgstr "jest palindromem"
-
-#~ msgid "case changes only"
-#~ msgstr "ma zmienioną tylko wielkość znaków"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "jest za bardzo podobne do poprzedniego"
-
-#~ msgid "is too simple"
-#~ msgstr "jest za proste"
-
-#~ msgid "is rotated"
-#~ msgstr "jest obrócone"
-
-#~ msgid "not enough character classes"
-#~ msgstr "za mało klas znaków"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "zawiera za dużo takich samych znaków po sobie"
-
-#~ msgid "Error in service module"
-#~ msgstr "Błąd w module usługi"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "Błąd rozmowy"

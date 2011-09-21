@@ -242,38 +242,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "Error desconegut"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "Error de conversa"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "és la mateixa que l'antiga"
-
-#~ msgid "is a palindrome"
-#~ msgstr "és un palíndrom"
-
-#~ msgid "case changes only"
-#~ msgstr "només canvien les majúscules i minúscules"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "és massa semblant a l'antiga"
-
-#~ msgid "is too simple"
-#~ msgstr "és massa senzilla"
-
-#~ msgid "is rotated"
-#~ msgstr "està girada"
-
-#~ msgid "not enough character classes"
-#~ msgstr "no hi ha suficients classes de caràcters"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "conté massa caràcters idèntics consecutius"
-
-#~ msgid "Error in service module"
-#~ msgstr "Error en el mòdul de servei"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "Error de conversa"

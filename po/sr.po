@@ -231,38 +231,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "Непозната грешка"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "Грешка у разговору"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "иста је као и стара"
-
-#~ msgid "is a palindrome"
-#~ msgstr "палиндром је"
-
-#~ msgid "case changes only"
-#~ msgstr "само промене величине слова"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "сувише је слична претходној"
-
-#~ msgid "is too simple"
-#~ msgstr "сувише је једноставна"
-
-#~ msgid "is rotated"
-#~ msgstr "изокренута је"
-
-#~ msgid "not enough character classes"
-#~ msgstr "нема довољно класа знакова"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "садржи превише истих знакова узастопно"
-
-#~ msgid "Error in service module"
-#~ msgstr "Грешка у услужном модулу"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "Грешка у разговору"

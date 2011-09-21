@@ -229,38 +229,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "অজ্ঞাত ভুল"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "সম্বাদৰ ভুল"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "পুৰণিটোৰ সৈতে একেই"
-
-#~ msgid "is a palindrome"
-#~ msgstr "এটা অনুলোম‌-বিলোম বাক্য"
-
-#~ msgid "case changes only"
-#~ msgstr "অকল কেচ সলনি কৰা"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "পৰণিটোৰ সৈতে বহুত একেই"
-
-#~ msgid "is too simple"
-#~ msgstr "বৰ সৰল"
-
-#~ msgid "is rotated"
-#~ msgstr "পকোৱা হৈছে"
-
-#~ msgid "not enough character classes"
-#~ msgstr "পৰ্যাপ্ত character classes নাই"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "এটাৰ পিছত এটা বহুতো একেই আখৰ আছে"
-
-#~ msgid "Error in service module"
-#~ msgstr "সেৱাৰ অংশত ভুল"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "সম্বাদৰ ভুল"

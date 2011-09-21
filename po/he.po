@@ -225,23 +225,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "שגיאה לא מוכרת"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "שגיאת אימות"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "זהה לישנה"
-
-#~ msgid "is a palindrome"
-#~ msgstr "פילנדרום"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "יותר מדי דומה לישנה"
-
-#~ msgid "is too simple"
-#~ msgstr "פשוטה מדי."
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "שגיאת אימות"

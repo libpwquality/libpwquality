@@ -233,38 +233,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "ଅଜଣା ତୃଟି"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "କଥୋପକଥନ ତୃଟି"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "ପୁରୁଣା ପ୍ରବେଶ ସଙ୍କେତ ସହିତ ଏହା ସମାନ ଅଟେ"
-
-#~ msgid "is a palindrome"
-#~ msgstr "ପ୍ରବେଶ ସଙ୍କେତଟି ଗୋଟିଏ ପାଲିନଡ୍ରୋମ ଅଟେ"
-
-#~ msgid "case changes only"
-#~ msgstr "କେବଳ ଅକ୍ଷର ପ୍ରକାର ପରିବର୍ତ୍ତିତ ହୋଇଥାଏ"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "ଏହା ପୂର୍ବ ପ୍ରବେଶ ସଙ୍କେତ ସହିତ ବହୁତ ସମାନ ଅଟେ"
-
-#~ msgid "is too simple"
-#~ msgstr "ଏହା ଅତି ସହଜ ଅଟେ"
-
-#~ msgid "is rotated"
-#~ msgstr "ଏହା ଘୂର୍ଣ୍ଣୟମାନ ଅଟେ"
-
-#~ msgid "not enough character classes"
-#~ msgstr "ଯଥେଷ୍ଟ ବର୍ଣ୍ଣ ଶ୍ରେଣୀ ନାହିଁ"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "ଅତ୍ୟଧିକ ସମାନ ଅକ୍ଷରକୁ ଲଗାତାର ଧାରଣ କରିଥାଏ"
-
-#~ msgid "Error in service module"
-#~ msgstr "ସେବା ଏକକାଂଶରେ ତୃଟି"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "କଥୋପକଥନ ତୃଟି"

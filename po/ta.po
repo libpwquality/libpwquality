@@ -232,38 +232,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "தெரியாத பிழை"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "உரையாடல் பிழை"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "இது பழையதைப் போல உள்ளது"
-
-#~ msgid "is a palindrome"
-#~ msgstr "இது ஒரு palindrome"
-
-#~ msgid "case changes only"
-#~ msgstr "எழுத்து வகை மாற்றங்கள் மட்டும்"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "இது பழையதை ஒத்தே உள்ளது"
-
-#~ msgid "is too simple"
-#~ msgstr "இது மிகவும் எளிதாக உள்ளது"
-
-#~ msgid "is rotated"
-#~ msgstr "இது சுழலக்கூடியது"
-
-#~ msgid "not enough character classes"
-#~ msgstr "போதிய எழுத்து வகுப்புகள் இல்லை"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "நிறைய அதே எழுத்துக்கள் தொடர்ந்து கொண்டுள்ளது"
-
-#~ msgid "Error in service module"
-#~ msgstr "சேவை தொகுதியில் பிழை"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "உரையாடல் பிழை"

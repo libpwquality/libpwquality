@@ -228,38 +228,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "Neznáma chyba"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "Chyba konverzácie"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "je rovnaké ako predchádzajúce"
-
-#~ msgid "is a palindrome"
-#~ msgstr "je palindróm"
-
-#~ msgid "case changes only"
-#~ msgstr "len zmena veľkosti"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "je príliš podobné predchádzajúcemu"
-
-#~ msgid "is too simple"
-#~ msgstr "je príliš jednoduché"
-
-#~ msgid "is rotated"
-#~ msgstr "je otočené"
-
-#~ msgid "not enough character classes"
-#~ msgstr "nedostatok rôznych druhov znakov"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "obsahuje príliš veľa rovnakých znakov za sebou"
-
-#~ msgid "Error in service module"
-#~ msgstr "Chyba v module služby"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "Chyba konverzácie"

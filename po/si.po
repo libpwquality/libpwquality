@@ -226,32 +226,3 @@ msgstr ""
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "නොදන්නා දෝෂයක්"
-
-#, fuzzy
-#~ msgid "memory allocation error"
-#~ msgstr "පරිවර්තන දෝෂය"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "එය පැරණි රහස්පදය හා සමාන වේ"
-
-#~ msgid "is a palindrome"
-#~ msgstr "එය පැලින්ඩ්‍රොමයකි"
-
-#~ msgid "case changes only"
-#~ msgstr "කැපිටල් සිම්පල් වෙනස්කම් පමණි"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "එය පැරණි රහස්පදය බොගොදුරට  සමාන වේ"
-
-#~ msgid "is too simple"
-#~ msgstr "එය සරළ වැඩි වේ"
-
-#~ msgid "is rotated"
-#~ msgstr "භ්‍රමණය වි ඇත"
-
-#~ msgid "Error in service module"
-#~ msgstr "සේවා අංගයේ දෝෂයකි"
-
-#, fuzzy
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "පරිවර්තන දෝෂය"
