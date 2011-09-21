@@ -1,4 +1,4 @@
-# This file is distributed under the same license as the libpwquality package.
+# This file is distributed under the same license as the package.
 # Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
 # Ubuntu Vietname translators <ubuntu-l10n-vi@lists.launchpad.net>, 2009-2011.
 #

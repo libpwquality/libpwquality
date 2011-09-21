@@ -1,4 +1,4 @@
-# This file is distributed under the same license as the libpwquality package.
+# This file is distributed under the same license as the package.
 # Stanisław Małolepszy <smalolepszy@aviary.pl>, 2006.
 # Wojciech Kapusta <wojciech@aviary.pl>, 2006.
 # Piotr Drąg <piotrdrag@gmail.com>, 2008.

@@ -1,4 +1,4 @@
-# This file is distributed under the same license as the libpwquality package.
+# This file is distributed under the same license as the package.
 #
 # Eunju Kim <eukim@redhat.com>, 2007, 2009.
 msgid ""

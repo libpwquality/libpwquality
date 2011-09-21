@@ -1,4 +1,4 @@
-# This file is distributed under the same license as the libpwquality package.
+# This file is distributed under the same license as the package.
 #
 # Noriko Mizumoto <noriko@redhat.com>, 2007.
 # Kiyoto Hashida <khashida@redhat.com>, 2008, 2009.

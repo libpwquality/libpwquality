@@ -1,4 +1,4 @@
-# This file is distributed under the same license as the libpwquality package.
+# This file is distributed under the same license as the package.
 #
 # Xi HUANG <xhuang@redhat.com>, 2007.
 # Leah Liu <lliu@redhat.com>, 2008, 2009.

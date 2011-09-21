@@ -1,4 +1,4 @@
-# This file is distributed under the same license as the libpwquality package.
+# This file is distributed under the same license as the package.
 # Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>, 2008.
 #
 msgid ""

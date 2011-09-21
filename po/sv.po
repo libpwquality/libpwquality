@@ -1,4 +1,4 @@
-# This file is distributed under the same license as the libpwquality package.
+# This file is distributed under the same license as the package.
 # Copyright (C) 2007, 2009, 2010 Free Software Foundation, Inc.
 # Christer Andersson <klamm@comhem.se>, 2007.
 # Daniel Nylander <po@danielnylander.se>, 2009, 2010.

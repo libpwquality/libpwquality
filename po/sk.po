@@ -1,4 +1,4 @@
-# This file is distributed under the same license as the libpwquality package.
+# This file is distributed under the same license as the package.
 #
 # Ondrej Šulek <feonsu@gmail.com>, 2008.
 # Pavol Šimo <palo.simo@gmail.com>, 2009.

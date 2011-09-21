@@ -1,5 +1,5 @@
 # Copyright (C) 2005, 2011 Linux-PAM Project
-# This file is distributed under the same license as the libpwquality package.
+# This file is distributed under the same license as the package.
 #
 # Fabian Affolter <fab@fedoraproject.org>, 2008-2009.
 #

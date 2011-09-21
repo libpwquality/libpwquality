@@ -1,4 +1,4 @@
-# This file is distributed under the same license as the libpwquality package.
+# This file is distributed under the same license as the package.
 #
 # Amitakhya Phukan <aphukan@redhat.com>, 2007.
 # Amitakhya Phukan <aphukan@fedoraproject.org>, 2008, 2009.

@@ -1,4 +1,4 @@
-# This file is distributed under the same license as the libpwquality package.
+# This file is distributed under the same license as the package.
 #
 # Ilkka Pirskanen <ilkka.pirskanen@kolumbus.fi>, 2005.
 # Janne Ahlskog <j.ahlskog@multi.fi>, 2006.

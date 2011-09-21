@@ -1,4 +1,4 @@
-# This file is distributed under the same license as the libpwquality package.
+# This file is distributed under the same license as the package.
 # Copyright (C) 2006, SUSE Linux GmbH, Nuremberg
 # Kris Thomsen <lakristho@gmail.com>, 2009.
 #

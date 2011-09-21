@@ -1,4 +1,4 @@
-# This file is distributed under the same license as the libpwquality package.
+# This file is distributed under the same license as the package.
 #
 # Copyright (C) 2005-2009 Linux-PAM Project.
 # Klara Cihlarova <koty@seznam.cz>, 2005, 2006.

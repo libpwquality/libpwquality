@@ -1,4 +1,4 @@
-# This file is distributed under the same license as the libpwquality package.
+# This file is distributed under the same license as the package.
 #
 # Runa Bhattacharjee <runab@redhat.com>, 2007, 2008.
 # Runa Bhattacharjee <runab@fedoraproject.org>, 2009.

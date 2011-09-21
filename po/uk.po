@@ -1,4 +1,4 @@
-# This file is distributed under the same license as the libpwquality package.
+# This file is distributed under the same license as the package.
 #
 # Ivan Petrouchtchak <ivanpetrouchtchak@yahoo.com>, 2006.
 # Yuri Chornoivan <yurchor@ukr.net>, 2010.

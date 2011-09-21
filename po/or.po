@@ -1,4 +1,4 @@
-# This file is distributed under the same license as the libpwquality package.
+# This file is distributed under the same license as the package.
 #
 # Subhransu Behera <arya_subhransu@yahoo.co.in>, 2007.
 # Manoj Kumar Giri <mgiri@redhat.com>, 2008, 2009.

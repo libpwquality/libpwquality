@@ -1,4 +1,4 @@
-# This file is distributed under the same license as the libpwquality package.
+# This file is distributed under the same license as the package.
 #
 # Manuel Ospina <mospina@redhat.com>, 2007.
 # Domingo Becker <domingobecker@gmail.com>, 2008.

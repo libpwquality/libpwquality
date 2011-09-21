@@ -1,4 +1,4 @@
-# This file is distributed under the same license as the libpwquality package.
+# This file is distributed under the same license as the package.
 #
 # Sandeep Shedmake <sandeep.shedmake@gmail.com>, 2008, 2009.
 msgid ""
