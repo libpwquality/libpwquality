@@ -55,14 +55,16 @@ msgstr "Chyba: %s\n"
 
 #: src/pwscore.c:45
 msgid "Could not obtain the password to be scored"
-msgstr ""
+msgstr "Nepodařilo se získat heslo k ohodnocení"
 
 #: src/pwscore.c:65
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr "Chyba kontroly kvality hesla: %s\n"
+msgstr ""
+"Chyba kontroly kvality hesla:\n"
+" %s\n"
 
 #: src/pwmake.c:21
 #, c-format
@@ -70,9 +72,8 @@ msgid "Usage: %s <entropy-bits>\n"
 msgstr "Použití: %s <počet-bitů-entropie>\n"
 
 #: src/error.c:31
-#, fuzzy
 msgid "Memory allocation error when setting"
-msgstr "Chyba alokace paměti"
+msgstr "Chyba alokace paměti při nastavování"
 
 #: src/error.c:35
 msgid "Memory allocation error"
@@ -95,45 +96,45 @@ msgid "The password is too similar to the old one"
 msgstr "Heslo je příliš podobné předcházejícímu"
 
 #: src/error.c:46
-#, fuzzy, c-format
+#, c-format
 msgid "The password contains less than %ld digits"
-msgstr "Heslo obsahuje příliš málo číslic"
+msgstr "Heslo obsahuje méně než %d číslic"
 
 #: src/error.c:49
 msgid "The password contains too few digits"
 msgstr "Heslo obsahuje příliš málo číslic"
 
 #: src/error.c:52
-#, fuzzy, c-format
+#, c-format
 msgid "The password contains less than %ld uppercase letters"
-msgstr "Heslo obsahuje příliš málo velkých písmen"
+msgstr "Heslo obsahuje méně než %ld velkých písmen"
 
 #: src/error.c:55
 msgid "The password contains too few uppercase letters"
 msgstr "Heslo obsahuje příliš málo velkých písmen"
 
 #: src/error.c:58
-#, fuzzy, c-format
+#, c-format
 msgid "The password contains less than %ld lowercase letters"
-msgstr "Heslo obsahuje příliš málo malých písmen"
+msgstr "Heslo obsahuje méně než %ld malých písmen"
 
 #: src/error.c:61
 msgid "The password contains too few lowercase letters"
 msgstr "Heslo obsahuje příliš málo malých písmen"
 
 #: src/error.c:64
-#, fuzzy, c-format
+#, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr "Heslo obsahuje příliš málo jiných znaků než číslic a písmen"
+msgstr "Heslo obsahuje méně než %ld jiných znaků než číslic a písmen"
 
 #: src/error.c:67
 msgid "The password contains too few non-alphanumeric characters"
 msgstr "Heslo obsahuje příliš málo jiných znaků než číslic a písmen"
 
 #: src/error.c:70
-#, fuzzy, c-format
+#, c-format
 msgid "The password is shorter than %ld characters"
-msgstr "Heslo nemá dostatek různých druhů znaků"
+msgstr "Heslo je kratší než %ld znaků"
 
 #: src/error.c:73
 msgid "The password is too short"
@@ -144,18 +145,18 @@ msgid "The password is just rotated old one"
 msgstr "Heslo je pouze rotací starého hesla"
 
 #: src/error.c:78
-#, fuzzy, c-format
+#, c-format
 msgid "The password contains less than %ld character classes"
-msgstr "Heslo nemá dostatek různých druhů znaků"
+msgstr "Heslo má méně než %ld různých druhů znaků"
 
 #: src/error.c:81
 msgid "The password does not contain enough character classes"
 msgstr "Heslo nemá dostatek různých druhů znaků"
 
 #: src/error.c:84
-#, fuzzy, c-format
+#, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr "Heslo obsahuje příliš mnoho stejných znaků za sebou"
+msgstr "Heslo obsahuje více než %ld stejných znaků za sebou"
 
 #: src/error.c:87
 msgid "The password contains too many same characters consecutively"
@@ -176,86 +177,51 @@ msgstr ""
 "nastavení"
 
 #: src/error.c:96 src/error.c:99
-#, fuzzy
 msgid "The password fails the dictionary check"
-msgstr "Heslo neprošlo kontrolou slovníkem - %s"
+msgstr "Heslo nevyhovuje kontrole slovníkem"
 
 #: src/error.c:102 src/error.c:106
-#, fuzzy
 msgid "Unknown setting"
-msgstr "Neznámá chyba"
+msgstr "Neznámé nastavení"
 
 #: src/error.c:109
 msgid "Bad integer value of setting"
-msgstr ""
+msgstr "Špatná celočíselná hodnota nastavení"
 
 #: src/error.c:113
 msgid "Bad integer value"
-msgstr ""
+msgstr "Špatná celočíselná hodnota"
 
 #: src/error.c:116
 #, c-format
 msgid "Setting %s is not of integer type"
-msgstr ""
+msgstr "Nastavení %s není celočíselného typu"
 
 #: src/error.c:120
 msgid "Setting is not of integer type"
-msgstr ""
+msgstr "Nastavení není celočíselného typu"
 
 #: src/error.c:123
 #, c-format
 msgid "Setting %s is not of string type"
-msgstr ""
+msgstr "Nastavení %s není typu řetězec"
 
 #: src/error.c:127
 msgid "Setting is not of string type"
-msgstr ""
+msgstr "Nastavení není typu řetězec"
 
 #: src/error.c:129
 msgid "Opening the configuration file failed"
-msgstr ""
+msgstr "Konfigurační soubor nelze otevřít"
 
 #: src/error.c:131
 msgid "The configuration file is malformed"
-msgstr ""
+msgstr "Konfigurační soubor je poškozen"
 
 #: src/error.c:133
 msgid "Fatal failure"
-msgstr ""
+msgstr "Fatální chyba"
 
 #: src/error.c:135
 msgid "Unknown error"
 msgstr "Neznámá chyba"
-
-#~ msgid "memory allocation error"
-#~ msgstr "chyba alokace paměti"
-
-#~ msgid "is the same as the old one"
-#~ msgstr "je stejné jako předcházející"
-
-#~ msgid "is a palindrome"
-#~ msgstr "je palindrom"
-
-#~ msgid "case changes only"
-#~ msgstr "pouze mění velikost"
-
-#~ msgid "is too similar to the old one"
-#~ msgstr "je příliš podobné předcházejícímu"
-
-#~ msgid "is too simple"
-#~ msgstr "je příliš jednoduché"
-
-#~ msgid "is rotated"
-#~ msgstr "je posunuté"
-
-#~ msgid "not enough character classes"
-#~ msgstr "nemá dostatek různých druhů znaků"
-
-#~ msgid "contains too many same characters consecutively"
-#~ msgstr "obsahuje příliš mnoho stejných znaků za sebou"
-
-#~ msgid "Error in service module"
-#~ msgstr "Chyba v modulu služby"
-
-#~ msgid "Error: Memory allocation error"
-#~ msgstr "Chyba: Alokace paměti selhala"
