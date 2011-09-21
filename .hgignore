@@ -29,5 +29,8 @@ ltmain.sh
 missing
 stamp-h*
 INSTALL
+libtool
 po/stamp-*
 po/remove-*
+src/pwmake
+src/pwscore
