@@ -12,6 +12,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <errno.h>
+#include <libgen.h>
 
 #include "pwquality.h"
 
@@ -20,20 +21,6 @@ usage(const char *progname) {
         fprintf(stderr, _("Usage: %s <entropy-bits>\n"), progname);
 }
 
-static const char *
-make_error_message(int rv)
-{
-        switch(rv) {
-        case PWQ_ERROR_MEM_ALLOC:
-                return _("Memory allocation error");
-        case PWQ_ERROR_RNG:
-                return _("Cannot obtain random numbers from the RNG device");
-        case PWQ_ERROR_GENERATION_FAILED:
-                return _("Password generation failed - required entropy too low for settings");
-        default:
-                return _("Unknown error");
-        }
-}
 
 /* score a password */
 int
@@ -43,9 +30,14 @@ main(int argc, char *argv[])
         char *password;
         int rv;
         int bits;
+        void *auxerror;
+
+        setlocale(LC_ALL, "");
+        bindtextdomain("libpwquality", "/usr/share/locale");
+        textdomain("libpwquality");
 
         if (argc != 2) {
-                usage(argv[0]);
+                usage(basename(argv[0]));
                 exit(3);
         }
 
@@ -53,16 +45,19 @@ main(int argc, char *argv[])
 
         pwq = pwquality_default_settings();
         if (pwq == NULL) {
-                fprintf(stderr, "Error: %s\n", _("Error: Memory allocation error"));
+                fprintf(stderr, "Error: %s\n", pwquality_strerror(NULL, 0, PWQ_ERROR_MEM_ALLOC, NULL));
                 exit(2);
         }
 
-        pwquality_read_config(pwq, NULL);
+        if ((rv = pwquality_read_config(pwq, NULL, &auxerror)) != 0) {
+                fprintf(stderr, "Error: %s\n", pwquality_strerror(NULL, 0, rv, auxerror));
+                exit(3);
+        }
 
         rv = pwquality_generate(pwq, bits, &password);
 
         if (rv != 0) {
-                fprintf(stderr, "Error: %s\n", make_error_message(rv));
+                fprintf(stderr, "Error: %s\n", pwquality_strerror(NULL, 0, rv, NULL));
                 exit(1);
         }
 

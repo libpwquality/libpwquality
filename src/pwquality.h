@@ -24,6 +24,8 @@
 #define PWQ_MAX_ENTROPY_BITS       256
 #define PWQ_MIN_ENTROPY_BITS       56
 
+#define PWQ_MAX_ERROR_MESSAGE_LEN  256
+
 #define PWQ_ERROR_SUCCESS                        0 /* implicit, not used in the library code */
 #define PWQ_ERROR_FATAL_FAILURE                 -1
 #define PWQ_ERROR_INTEGER                       -2
@@ -52,56 +54,70 @@
 
 typedef struct pwquality_settings pwquality_settings_t;
 
-/* returns default pwquality settings to be used in other library calls */
+/* Return default pwquality settings to be used in other library calls. */
 pwquality_settings_t *
 pwquality_default_settings(void);
 
-/* frees pwquality settings data */
+/* Free pwquality settings data. */
 void
 pwquality_free_settings(pwquality_settings_t *pwq);
 
-/* parse the configuration file (if NULL then the default one) */
+/* Parse the configuration file (if cfgfile is NULL then the default one).
+ * If auxerror is not NULL it also possibly returns auxiliary error information
+ * that must be passed into pwquality_strerror() function. */
 int
-pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile);
+pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile,
+        void **auxerror);
 
-/* useful for setting the options as configured on a pam module
+/* Useful for setting the options as configured on a pam module
  * command line in form of <opt>=<val> */
 int
 pwquality_set_option(pwquality_settings_t *pwq, const char *option);
 
-/* set value of an integer setting */
+/* Set value of an integer setting. */
 int
 pwquality_set_int_value(pwquality_settings_t *pwq, int setting, int value);
 
-/* set value of a string setting */
+/* Set value of a string setting. */
 int
 pwquality_set_str_value(pwquality_settings_t *pwq, int setting,
         const char *value);
 
-/* get value of an integer setting, or -1 if setting unknown */
+/* Get value of an integer setting. */
 int
-pwquality_get_int_value(pwquality_settings_t *pwq, int setting);
+pwquality_get_int_value(pwquality_settings_t *pwq, int setting, int *value);
 
-/* get value of a string setting, or NULL if setting unknown */
+/* Get value of a string setting, or NULL if setting unknown. */
 const char *
 pwquality_get_str_value(pwquality_settings_t *pwq, int setting);
 
-/* generate a random password of entropy_bits entropy and check it according to
- * the settings */
+/* Generate a random password of entropy_bits entropy and check it according to
+ * the settings. */
 int
 pwquality_generate(pwquality_settings_t *pwq, int entropy_bits,
         char **password);
 
-/* check the password according to the settings
- * it returns either score <0-100>, negative error number,
- * and in case of PWQ_ERROR_CRACKLIB also auxiliary
- * error message returned from cracklib
+/* Check the password according to the settings.
+ * It returns either score <0-100>, negative error number,
+ * and possibly also auxiliary error information that must be
+ * passed into pwquality_strerror() function.
  * The old password is optional and can be NULL.
+ * The auxerror can be NULL - in that case the auxiliary error information
+ * is not returned.
+ * Not passing the *auxerror into pwquality_strerror() can lead to memory leaks.
  * The score depends on PWQ_SETTING_MIN_LENGTH. If it is set higher,
  * the score for the same passwords will be lower. */ 
 int
 pwquality_check(pwquality_settings_t *pwq, const char *password,
-        const char *oldpassword, const char **error);
+        const char *oldpassword, void **auxerror);
+
+/* Translate the error code and auxiliary message into a localized
+ * text message.
+ * If buf is NULL it uses an internal static buffer which
+ * makes the function non-reentrant in that case.
+ * The returned pointer is not guaranteed to point to the buf. */
+const char *
+pwquality_strerror(char *buf, size_t len, int errcode, void *auxerror);
 
 #endif /* PWQUALITY_H */
 

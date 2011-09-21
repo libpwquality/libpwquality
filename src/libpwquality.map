@@ -10,6 +10,7 @@ LIBPWQUALITY_1.0 {
     pwquality_get_str_value;
     pwquality_generate;
     pwquality_check;
+    pwquality_strerror;
   local:
     *;
 };

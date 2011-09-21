@@ -118,7 +118,7 @@ pwquality_generate(pwquality_settings_t *pwq, int entropy_bits, char **password)
 
         tmp = malloc(maxlen);
         if (tmp == NULL) {
-                return PWQ_ERROR_FATAL_FAILURE;
+                return PWQ_ERROR_MEM_ALLOC;
         }
 
         do {

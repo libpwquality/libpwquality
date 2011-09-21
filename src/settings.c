@@ -98,18 +98,24 @@ set_name_value(pwquality_settings_t *pwq, const char *name, const char *value)
 
 /* parse the configuration file (if NULL then the default one) */
 int
-pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile)
+pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile, void **auxerror)
 {
         FILE *f;
         char linebuf[PWQSETTINGS_MAX_LINELEN+1];
         int rv = 0;
 
+        if (auxerror)
+                *auxerror = NULL;
         if (cfgfile == NULL)
                 cfgfile = PWQUALITY_DEFAULT_CFGFILE;
 
         f = fopen(cfgfile, "r");
-        if (f == NULL)
+        if (f == NULL) {
+                /* ignore non-existent default config file */
+                if (errno == ENOENT && strcmp(cfgfile, PWQUALITY_DEFAULT_CFGFILE) == 0)
+                        return 0;
                 return PWQ_ERROR_CFGFILE_OPEN;
+        }
 
         while (fgets(linebuf, sizeof(linebuf), f) != NULL) {
                 size_t len;
@@ -159,6 +165,8 @@ pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile)
                 }
 
                 if ((rv=set_name_value(pwq, name, ptr)) != 0) {
+                        if (auxerror)
+                                *auxerror = strdup(name);
                         break;
                 }
         }
@@ -262,41 +270,42 @@ pwquality_set_str_value(pwquality_settings_t *pwq, int setting,
         return 0;
 }
 
-/* get value of an integer setting, or -1 if setting unknown */
+/* get value of an integer setting */
 int
-pwquality_get_int_value(pwquality_settings_t *pwq, int setting)
+pwquality_get_int_value(pwquality_settings_t *pwq, int setting, int *value)
 {
         switch(setting) {
         case PWQ_SETTING_DIFF_OK:
-                return pwq->diff_ok;
+                *value = pwq->diff_ok;
                 break;
         case PWQ_SETTING_DIFF_IGNORE:
-                return pwq->diff_ignore;
+                *value = pwq->diff_ignore;
                 break;
         case PWQ_SETTING_MIN_LENGTH:
-                return pwq->min_length;
+                *value = pwq->min_length;
                 break;
         case PWQ_SETTING_DIG_CREDIT:
-                return pwq->dig_credit;
+                *value = pwq->dig_credit;
                 break;
         case PWQ_SETTING_UP_CREDIT:
-                return pwq->up_credit;
+                *value = pwq->up_credit;
                 break;
         case PWQ_SETTING_LOW_CREDIT:
-                return pwq->low_credit;
+                *value = pwq->low_credit;
                 break;
         case PWQ_SETTING_OTH_CREDIT:
-                return pwq->oth_credit;
+                *value = pwq->oth_credit;
                 break;
         case PWQ_SETTING_MIN_CLASS:
-                return pwq->min_class;
+                *value = pwq->min_class;
                 break;
         case PWQ_SETTING_MAX_REPEAT:
-                return pwq->max_repeat;
+                *value = pwq->max_repeat;
                 break;
         default:
-                return -1;
-        }        
+                return PWQ_ERROR_NON_INT_SETTING;
+        }
+        return 0;
 }
 
 /* get value of a string setting, or NULL if setting unknown */
@@ -306,7 +315,6 @@ pwquality_get_str_value(pwquality_settings_t *pwq, int setting)
         switch(setting) {
         case PWQ_SETTING_DICT_PATH:
                 return pwq->dict_path;
-                break;
         default:
                 return NULL;
         }

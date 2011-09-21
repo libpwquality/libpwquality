@@ -191,7 +191,7 @@ numclass(pwquality_settings_t *pwq,
  * present in the password
  */
 static int
-simple(pwquality_settings_t *pwq, const char *new)
+simple(pwquality_settings_t *pwq, const char *new, void **auxerror)
 {
         int digits = 0;
         int uppers = 0;
@@ -227,26 +227,41 @@ simple(pwquality_settings_t *pwq, const char *new)
 
         if (pwq->dig_credit >= 0)
                 size -= digits;
-        else if (digits < pwq->dig_credit * -1)
+        else if (digits < -pwq->dig_credit) {
+                if (auxerror)
+                        *auxerror = (void *)(long)-pwq->dig_credit;
                 return PWQ_ERROR_MIN_DIGITS;
+        }
 
         if (pwq->up_credit >= 0)
                 size -= uppers;
-        else if (uppers < pwq->up_credit * -1)
+        else if (uppers < -pwq->up_credit) {
+                if (auxerror)
+                        *auxerror = (void *)(long)-pwq->up_credit;
                 return PWQ_ERROR_MIN_UPPERS;
+        }
 
         if (pwq->low_credit >= 0)
                 size -= lowers;
-        else if (lowers < pwq->low_credit * -1)
+        else if (lowers < -pwq->low_credit) {
+                if (auxerror)
+                        *auxerror = (void *)(long)-pwq->low_credit;
                 return PWQ_ERROR_MIN_LOWERS;
+        }
 
         if (pwq->oth_credit >= 0)
                 size -= others;
-        else if (others < pwq->oth_credit * -1)
+        else if (others < -pwq->oth_credit) {
+                if (auxerror)
+                        *auxerror = (void *)(long)-pwq->oth_credit;
                 return PWQ_ERROR_MIN_OTHERS;
+        }
 
         if (size <= i)
                 return 0;
+
+        if (auxerror)
+                *auxerror = (void *)(long)size;
 
         return PWQ_ERROR_MIN_LENGTH;
 }
@@ -256,7 +271,7 @@ simple(pwquality_settings_t *pwq, const char *new)
  */
 
 static int
-consecutive(pwquality_settings_t *pwq, const char *new)
+consecutive(pwquality_settings_t *pwq, const char *new, void **auxerror)
 {
         char c;
         int i;
@@ -268,8 +283,11 @@ consecutive(pwquality_settings_t *pwq, const char *new)
         for (i = 0; new[i]; i++) {
                 if (i > 0 && new[i] == c) {
                         ++same;
-                        if (same > pwq->max_repeat)
+                        if (same > pwq->max_repeat) {
+                                if (auxerror)
+                                        *auxerror = (void *)(long)pwq->max_repeat;
                                 return 1;
+                        }
                 } else {
                         c = new[i];
                         same = 1;
@@ -301,7 +319,7 @@ x_strdup(const char *string)
 
 static int
 password_check(pwquality_settings_t *pwq,
-               const char *new, const char *old)
+               const char *new, const char *old, void **auxerror)
 {
         int rv = 0;
         char *oldmono = NULL, *newmono, *wrapped = NULL;
@@ -332,15 +350,19 @@ password_check(pwquality_settings_t *pwq,
                 rv = similar(pwq, oldmono, newmono);
 
         if (!rv)
-                rv = simple(pwq, new);
+                rv = simple(pwq, new, auxerror);
 
         if (!rv && wrapped && strstr(wrapped, newmono))
                 rv = PWQ_ERROR_ROTATED;
 
-        if (!rv && numclass(pwq, new) < pwq->min_class)
+        if (!rv && numclass(pwq, new) < pwq->min_class) {
                 rv = PWQ_ERROR_MIN_CLASSES;
+                if (auxerror) {
+                        *auxerror = (void *)(long)pwq->min_class;
+                }
+        }
 
-        if (!rv && consecutive(pwq, new))
+        if (!rv && consecutive(pwq, new, auxerror))
                 rv = PWQ_ERROR_MAX_CONSECUTIVE;
 
         if (newmono) {
@@ -417,16 +439,17 @@ password_score(pwquality_settings_t *pwq, const char *password)
 }
 
 /* check the password according to the settings
- * it returns either score <0-100>, negative error number,
- * and in case of PWQ_ERROR_CRACKLIB also auxiliary
- * error message returned from cracklib;
+ * it returns either score <0-100> or negative error number;
  * the old password is optional */
 int
 pwquality_check(pwquality_settings_t *pwq, const char *password,
-        const char *oldpassword, const char **error)
+        const char *oldpassword, void **auxerror)
 {
         const char *msg;
         int score;
+
+        if (auxerror)
+                *auxerror = NULL;
 
         if (password == NULL || *password == '\0') {
                 return PWQ_ERROR_EMPTY_PASSWORD;
@@ -438,12 +461,12 @@ pwquality_check(pwquality_settings_t *pwq, const char *password,
 
         msg = FascistCheck(password, pwq->dict_path);
         if (msg) {
-                if (error)
-                        *error = msg;
+                if (auxerror)
+                        *auxerror = (void *)msg;
                 return PWQ_ERROR_CRACKLIB_CHECK;
         }
 
-        score = password_check(pwq, password, oldpassword);
+        score = password_check(pwq, password, oldpassword, auxerror);
         if (score == 0) {
                 score = password_score(pwq, password);
         }

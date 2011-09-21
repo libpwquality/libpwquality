@@ -52,16 +52,20 @@ _pam_parse (pam_handle_t *pamh, struct module_options *opt,
             int argc, const char **argv)
 {
         int ctrl = 0;
+        int rv;
         pwquality_settings_t *pwq;
+        void *auxerror;
+        char buf[PWQ_MAX_ERROR_MESSAGE_LEN];
 
         pwq = pwquality_default_settings();
         if (pwq == NULL)
                 return -1;
 
         /* just log error here */
-        if (pwquality_read_config(pwq, NULL))
+        if ((rv=pwquality_read_config(pwq, NULL, &auxerror)) != 0)
                 pam_syslog(pamh, LOG_ERR,
-                        "Reading pwquality configuration file failed: %m");
+                        "Reading pwquality configuration file failed: %s",
+                        pwquality_strerror(buf, sizeof(buf), rv, auxerror));
 
         /* step through arguments */
         for (ctrl = 0; argc-- > 0; ++argv) {
@@ -94,41 +98,6 @@ _pam_parse (pam_handle_t *pamh, struct module_options *opt,
          opt->pwq = pwq;
 
          return ctrl;
-}
-
-static const char *
-make_error_message(int rv, const char *crack_msg)
-{
-        switch(rv) {
-        case PWQ_ERROR_MEM_ALLOC:
-                return _("memory allocation error");
-        case PWQ_ERROR_SAME_PASSWORD:
-                return _("is the same as the old one");
-        case PWQ_ERROR_PALINDROME:
-                return _("is a palindrome");
-        case PWQ_ERROR_CASE_CHANGES_ONLY:
-                return _("case changes only");
-        case PWQ_ERROR_TOO_SIMILAR:
-                return _("is too similar to the old one");
-        case PWQ_ERROR_MIN_DIGITS:
-        case PWQ_ERROR_MIN_UPPERS:
-        case PWQ_ERROR_MIN_LOWERS:
-        case PWQ_ERROR_MIN_OTHERS:
-        case PWQ_ERROR_MIN_LENGTH:
-                return _("is too simple");
-        case PWQ_ERROR_ROTATED:
-                return _("is rotated");
-        case PWQ_ERROR_MIN_CLASSES:
-                return _("not enough character classes");
-        case PWQ_ERROR_MAX_CONSECUTIVE:
-                return _("contains too many same characters consecutively");
-        case PWQ_ERROR_EMPTY_PASSWORD:
-                return _("No password supplied");
-        case PWQ_ERROR_CRACKLIB_CHECK:
-                return crack_msg;
-        default:
-                return _("Error in service module");
-        }
 }
 
 PAM_EXTERN int
@@ -165,7 +134,7 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
 
                 tries = 0;
                 while (tries < options.retry_times) {
-                        const char *crack_msg;
+                        void *auxerror;
                         const char *newtoken = NULL;
 
                         tries++;
@@ -188,11 +157,12 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
                         }
 
                         /* now test this passwd against libpwquality */
-                        retval = pwquality_check(options.pwq, newtoken, oldtoken, &crack_msg);
+                        retval = pwquality_check(options.pwq, newtoken, oldtoken, &auxerror);
 
                         if (retval < 0) {
                                 const char *msg;
-                                msg = make_error_message(retval, crack_msg);
+                                char buf[PWQ_MAX_ERROR_MESSAGE_LEN];
+                                msg = pwquality_strerror(buf, sizeof(buf), retval, auxerror);
                                 if (ctrl & PAM_DEBUG_ARG)
                                         pam_syslog(pamh, LOG_DEBUG, "bad password: %s", msg);
                                 pam_error(pamh, _("BAD PASSWORD: %s"), msg);

@@ -12,6 +12,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <errno.h>
+#include <libgen.h>
 
 #include "pwquality.h"
 
@@ -21,66 +22,27 @@ usage(const char *progname) {
         fprintf(stderr, _("       The command reads the password to be scored from the standard input.\n"));
 }
 
-static const char *
-make_error_message(int rv, const char *crack_msg)
-{
-        static char buf[200];
-
-        switch(rv) {
-        case PWQ_ERROR_MEM_ALLOC:
-                return _("Memory allocation error");
-        case PWQ_ERROR_SAME_PASSWORD:
-                return _("The password is the same as the old one");
-        case PWQ_ERROR_PALINDROME:
-                return _("The password is a palindrome");
-        case PWQ_ERROR_CASE_CHANGES_ONLY:
-                return _("The password differs with case changes only");
-        case PWQ_ERROR_TOO_SIMILAR:
-                return _("The password is too similar to the old one");
-        case PWQ_ERROR_MIN_DIGITS:
-                return _("The password contains too few digits");
-        case PWQ_ERROR_MIN_UPPERS:
-                return _("The password contains too few uppercase letters");
-        case PWQ_ERROR_MIN_LOWERS:
-                return _("The password contains too few lowercase letters");
-        case PWQ_ERROR_MIN_OTHERS:
-                return _("The password contains too few non-alphanumeric characters");
-        case PWQ_ERROR_MIN_LENGTH:
-                return _("The password is too short");
-        case PWQ_ERROR_ROTATED:
-                return _("The password is just rotated old one");
-        case PWQ_ERROR_MIN_CLASSES:
-                return _("The password does not contain enough character classes");
-        case PWQ_ERROR_MAX_CONSECUTIVE:
-                return _("The password contains too many same characters consecutively");
-        case PWQ_ERROR_EMPTY_PASSWORD:
-                return _("No password supplied");
-        case PWQ_ERROR_CRACKLIB_CHECK:
-                snprintf(buf, sizeof(buf), _("The password fails the dictionary check - %s"), crack_msg);
-                return buf;
-        default:
-                return _("Unknown error");
-        }
-}
-
-
 /* score a password */
 int
 main(int argc, char *argv[])
 {
         pwquality_settings_t *pwq;
         int rv;
-        const char *crack_msg;
+        void *auxerror;
         char buf[1024];
         size_t len;
 
+        setlocale(LC_ALL, "");
+        bindtextdomain("libpwquality", "/usr/share/locale");
+        textdomain("libpwquality");
+
         if (argc != 1) {
-                usage(argv[0]);
+                usage(basename(argv[0]));
                 exit(3);
         }
 
         if (fgets(buf, sizeof(buf), stdin) == NULL || (len = strlen(buf)) == 0) {
-                fprintf(stderr, "Error: Could not obtain the password to be scored\n");
+                fprintf(stderr, _("Error: %s\n"), _("Could not obtain the password to be scored"));
                 exit(4);
         }
         if (buf[len - 1] == '\n')
@@ -88,17 +50,20 @@ main(int argc, char *argv[])
 
         pwq = pwquality_default_settings();
         if (pwq == NULL) {
-                fprintf(stderr, _("Error: %s\n"), make_error_message(PWQ_ERROR_MEM_ALLOC, NULL));
+                fprintf(stderr, _("Error: %s\n"), pwquality_strerror(NULL, 0, PWQ_ERROR_MEM_ALLOC, NULL));
                 exit(2);
         }
 
-        pwquality_read_config(pwq, NULL);
+        if ((rv=pwquality_read_config(pwq, NULL, &auxerror)) != 0) {
+                fprintf(stderr, _("Error: %s\n"), pwquality_strerror(NULL, 0, rv, auxerror));
+                exit(3);
+        }
 
-        rv = pwquality_check(pwq, buf, NULL, &crack_msg);
+        rv = pwquality_check(pwq, buf, NULL, &auxerror);
 
         if (rv < 0) {
-                fprintf(stderr, _("Password quality check failed: %s\n"),
-                        make_error_message(rv, crack_msg));
+                fprintf(stderr, _("Password quality check failed:\n %s\n"),
+                        pwquality_strerror(NULL, 0, rv, auxerror));
                 exit(1);
         }
 

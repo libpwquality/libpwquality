@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Linux-PAM\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2011-09-16 14:36+0200\n"
+"POT-Creation-Date: 2011-09-21 11:38+0200\n"
 "PO-Revision-Date: 2008-04-30 12:59+0200\n"
 "Last-Translator: Olav Pettershagen <olav.pet@online.no>\n"
 "Language-Team:  <nb@li.org>\n"
@@ -31,157 +31,232 @@ msgstr "Bekreft nytt %s%s-passord: "
 msgid "Sorry, passwords do not match."
 msgstr "Beklager, ikke samsvar mellom passord."
 
-#: src/pam_pwquality.c:104
-#, fuzzy
-msgid "memory allocation error"
-msgstr "Dialogfeil"
-
-#: src/pam_pwquality.c:106
-msgid "is the same as the old one"
-msgstr "er det samme som det gamle"
-
-#: src/pam_pwquality.c:108
-msgid "is a palindrome"
-msgstr "er et palindrom"
-
-#: src/pam_pwquality.c:110
-msgid "case changes only"
-msgstr "kun endring av små/store bokstaver"
-
-#: src/pam_pwquality.c:112
-msgid "is too similar to the old one"
-msgstr "er for likt det gamle"
-
-#: src/pam_pwquality.c:118
-msgid "is too simple"
-msgstr "er for enkelt"
-
-#: src/pam_pwquality.c:120
-msgid "is rotated"
-msgstr "er rotert"
-
-#: src/pam_pwquality.c:122
-msgid "not enough character classes"
-msgstr "ikke nok tegnklasser"
-
-#: src/pam_pwquality.c:124
-msgid "contains too many same characters consecutively"
-msgstr ""
-
-#: src/pam_pwquality.c:126 src/pwscore.c:57
-msgid "No password supplied"
-msgstr "Passord ikke angitt"
-
-#: src/pam_pwquality.c:130
-msgid "Error in service module"
-msgstr "Feil i tjenestemodul"
-
-#: src/pam_pwquality.c:198
+#: src/pam_pwquality.c:168
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "SVAKT PASSORD: %s"
 
-#: src/pwscore.c:20
+#: src/pwscore.c:21
 #, c-format
 msgid "Usage: %s\n"
 msgstr ""
 
-#: src/pwscore.c:21
+#: src/pwscore.c:22
 #, c-format
 msgid ""
 "       The command reads the password to be scored from the standard input.\n"
 msgstr ""
 
-#: src/pwscore.c:31 src/pwmake.c:28
-#, fuzzy
-msgid "Memory allocation error"
-msgstr "Dialogfeil"
-
-#: src/pwscore.c:33
-#, fuzzy
-msgid "The password is the same as the old one"
-msgstr "er det samme som det gamle"
-
-#: src/pwscore.c:35
-#, fuzzy
-msgid "The password is a palindrome"
-msgstr "er et palindrom"
-
-#: src/pwscore.c:37
-msgid "The password differs with case changes only"
-msgstr ""
-
-#: src/pwscore.c:39
-#, fuzzy
-msgid "The password is too similar to the old one"
-msgstr "er for likt det gamle"
-
-#: src/pwscore.c:41
-msgid "The password contains too few digits"
-msgstr ""
-
-#: src/pwscore.c:43
-msgid "The password contains too few uppercase letters"
-msgstr ""
-
-#: src/pwscore.c:45
-msgid "The password contains too few lowercase letters"
-msgstr ""
-
-#: src/pwscore.c:47
-msgid "The password contains too few non-alphanumeric characters"
-msgstr ""
-
-#: src/pwscore.c:49
-msgid "The password is too short"
-msgstr ""
-
-#: src/pwscore.c:51
-msgid "The password is just rotated old one"
-msgstr ""
-
-#: src/pwscore.c:53
-#, fuzzy
-msgid "The password does not contain enough character classes"
-msgstr "ikke nok tegnklasser"
-
-#: src/pwscore.c:55
-msgid "The password contains too many same characters consecutively"
-msgstr ""
-
-#: src/pwscore.c:59
-#, c-format
-msgid "The password fails the dictionary check - %s"
-msgstr ""
-
-#: src/pwscore.c:62 src/pwmake.c:34
-msgid "Unknown error"
-msgstr "Ukjent feil"
-
-#: src/pwscore.c:91
+#: src/pwscore.c:45 src/pwscore.c:53 src/pwscore.c:58
 #, c-format
 msgid "Error: %s\n"
 msgstr ""
 
-#: src/pwscore.c:100
-#, c-format
-msgid "Password quality check failed: %s\n"
+#: src/pwscore.c:45
+msgid "Could not obtain the password to be scored"
 msgstr ""
 
-#: src/pwmake.c:20
+#: src/pwscore.c:65
+#, c-format
+msgid ""
+"Password quality check failed:\n"
+" %s\n"
+msgstr ""
+
+#: src/pwmake.c:21
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
 msgstr ""
 
-#: src/pwmake.c:30
+#: src/error.c:31
+#, fuzzy
+msgid "Memory allocation error when setting"
+msgstr "Dialogfeil"
+
+#: src/error.c:35
+#, fuzzy
+msgid "Memory allocation error"
+msgstr "Dialogfeil"
+
+#: src/error.c:37
+#, fuzzy
+msgid "The password is the same as the old one"
+msgstr "er det samme som det gamle"
+
+#: src/error.c:39
+#, fuzzy
+msgid "The password is a palindrome"
+msgstr "er et palindrom"
+
+#: src/error.c:41
+msgid "The password differs with case changes only"
+msgstr ""
+
+#: src/error.c:43
+#, fuzzy
+msgid "The password is too similar to the old one"
+msgstr "er for likt det gamle"
+
+#: src/error.c:46
+#, fuzzy, c-format
+msgid "The password contains less than %ld digits"
+msgstr "er det samme som det gamle"
+
+#: src/error.c:49
+msgid "The password contains too few digits"
+msgstr ""
+
+#: src/error.c:52
+#, c-format
+msgid "The password contains less than %ld uppercase letters"
+msgstr ""
+
+#: src/error.c:55
+msgid "The password contains too few uppercase letters"
+msgstr ""
+
+#: src/error.c:58
+#, fuzzy, c-format
+msgid "The password contains less than %ld lowercase letters"
+msgstr "er det samme som det gamle"
+
+#: src/error.c:61
+msgid "The password contains too few lowercase letters"
+msgstr ""
+
+#: src/error.c:64
+#, fuzzy, c-format
+msgid "The password contains less than %ld non-alphanumeric characters"
+msgstr "ikke nok tegnklasser"
+
+#: src/error.c:67
+msgid "The password contains too few non-alphanumeric characters"
+msgstr ""
+
+#: src/error.c:70
+#, fuzzy, c-format
+msgid "The password is shorter than %ld characters"
+msgstr "ikke nok tegnklasser"
+
+#: src/error.c:73
+msgid "The password is too short"
+msgstr ""
+
+#: src/error.c:75
+msgid "The password is just rotated old one"
+msgstr ""
+
+#: src/error.c:78
+#, fuzzy, c-format
+msgid "The password contains less than %ld character classes"
+msgstr "ikke nok tegnklasser"
+
+#: src/error.c:81
+#, fuzzy
+msgid "The password does not contain enough character classes"
+msgstr "ikke nok tegnklasser"
+
+#: src/error.c:84
+#, fuzzy, c-format
+msgid "The password contains more than %ld same characters consecutively"
+msgstr "ikke nok tegnklasser"
+
+#: src/error.c:87
+msgid "The password contains too many same characters consecutively"
+msgstr ""
+
+#: src/error.c:89
+msgid "No password supplied"
+msgstr "Passord ikke angitt"
+
+#: src/error.c:91
 msgid "Cannot obtain random numbers from the RNG device"
 msgstr ""
 
-#: src/pwmake.c:32
+#: src/error.c:93
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
 
-#: src/pwmake.c:56
+#: src/error.c:96 src/error.c:99
 #, fuzzy
-msgid "Error: Memory allocation error"
-msgstr "Dialogfeil"
+msgid "The password fails the dictionary check"
+msgstr "er et palindrom"
+
+#: src/error.c:102 src/error.c:106
+#, fuzzy
+msgid "Unknown setting"
+msgstr "Ukjent feil"
+
+#: src/error.c:109
+msgid "Bad integer value of setting"
+msgstr ""
+
+#: src/error.c:113
+msgid "Bad integer value"
+msgstr ""
+
+#: src/error.c:116
+#, c-format
+msgid "Setting %s is not of integer type"
+msgstr ""
+
+#: src/error.c:120
+msgid "Setting is not of integer type"
+msgstr ""
+
+#: src/error.c:123
+#, c-format
+msgid "Setting %s is not of string type"
+msgstr ""
+
+#: src/error.c:127
+msgid "Setting is not of string type"
+msgstr ""
+
+#: src/error.c:129
+msgid "Opening the configuration file failed"
+msgstr ""
+
+#: src/error.c:131
+msgid "The configuration file is malformed"
+msgstr ""
+
+#: src/error.c:133
+msgid "Fatal failure"
+msgstr ""
+
+#: src/error.c:135
+msgid "Unknown error"
+msgstr "Ukjent feil"
+
+#, fuzzy
+#~ msgid "memory allocation error"
+#~ msgstr "Dialogfeil"
+
+#~ msgid "is the same as the old one"
+#~ msgstr "er det samme som det gamle"
+
+#~ msgid "is a palindrome"
+#~ msgstr "er et palindrom"
+
+#~ msgid "case changes only"
+#~ msgstr "kun endring av små/store bokstaver"
+
+#~ msgid "is too similar to the old one"
+#~ msgstr "er for likt det gamle"
+
+#~ msgid "is too simple"
+#~ msgstr "er for enkelt"
+
+#~ msgid "is rotated"
+#~ msgstr "er rotert"
+
+#~ msgid "not enough character classes"
+#~ msgstr "ikke nok tegnklasser"
+
+#~ msgid "Error in service module"
+#~ msgstr "Feil i tjenestemodul"
+
+#, fuzzy
+#~ msgid "Error: Memory allocation error"
+#~ msgstr "Dialogfeil"
