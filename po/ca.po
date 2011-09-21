@@ -1,5 +1,4 @@
-# Catalan translations for Linux-PAM package.
-# This file is distributed under the same license as the Linux-PAM package.
+# This file is distributed under the same license as the libpwquality package.
 #
 # This file is translated according to the glossary and style guide of
 #   Softcatalà. If you plan to modify this file, please read first the page
@@ -19,7 +18,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: linux-PAM\n"
+"Project-Id-Version: libpwquality 0.9\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2011-09-21 11:38+0200\n"
 "PO-Revision-Date: 2009-05-18 16:10+0200\n"

@@ -1,11 +1,10 @@
-# translation of Linux-PAM.po to Kazakh
+# This file is distributed under the same license as the libpwquality package.
 # Copyright (C) 2009 Linux-PAM Project
-# This file is distributed under the same license as the PACKAGE package.
 # Baurzhan Muftakhidinov@gmail.com
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Linux-PAM 1.0.3\n"
+"Project-Id-Version: libpwquality 0.9\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2011-09-21 11:38+0200\n"
 "PO-Revision-Date: 2009-02-26 13:07+0600\n"

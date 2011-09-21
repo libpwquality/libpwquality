@@ -1,11 +1,11 @@
-# translation of pl.po to Polish
+# This file is distributed under the same license as the libpwquality package.
 # Stanisław Małolepszy <smalolepszy@aviary.pl>, 2006.
 # Wojciech Kapusta <wojciech@aviary.pl>, 2006.
 # Piotr Drąg <piotrdrag@gmail.com>, 2008.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: pl\n"
+"Project-Id-Version: libpwquality 0.9\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2011-09-21 11:38+0200\n"
 "PO-Revision-Date: 2009-09-27 13:48+0200\n"

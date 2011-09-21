@@ -1,11 +1,10 @@
-# Slovak translation for Linux-PAM package
-# This file is distributed under the same license as the Linux-PAM package.
+# This file is distributed under the same license as the libpwquality package.
 #
 # Ondrej Šulek <feonsu@gmail.com>, 2008.
 # Pavol Šimo <palo.simo@gmail.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: Linux-PAM\n"
+"Project-Id-Version: libpwquality 0.9\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2011-09-21 11:38+0200\n"
 "PO-Revision-Date: 2009-03-24 22:24+0100\n"

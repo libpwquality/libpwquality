@@ -1,12 +1,11 @@
-# translation of Linux-PAM-pt.po to portuguese
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the libpwquality package.
 # Copyright (C) 2006 Linux-PAM Project.
 # Antonio Cardoso Martins <digiplan@netvisao.pt>, 2005, 2006.
 # Rui Gouveia <rui.gouveia@globaltek.pt>, 2009
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: pam\n"
+"Project-Id-Version: libpwquality 0.9\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2011-09-21 11:38+0200\n"
 "PO-Revision-Date: 2009-04-09 16:42+0100\n"

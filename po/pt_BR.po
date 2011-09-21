@@ -1,6 +1,4 @@
-# translation of Linux-PAM.tip.po to Brazilian Portuguese
-# Copyright (C) YEAR Linux-PAM Project
-# This file is distributed under the same license as the pam package.
+# This file is distributed under the same license as the libpwquality package.
 #
 # Glaucia Cintra <gcintra@redhat.com>, 2007.
 # Diego Búrigo Zacarão <diegobz@projetofedora.org>, 2008.
@@ -8,7 +6,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Linux-PAM.tip\n"
+"Project-Id-Version: libpwquality 0.9\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2011-09-21 11:38+0200\n"
 "PO-Revision-Date: 2009-02-20 12:41-0300\n"

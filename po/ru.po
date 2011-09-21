@@ -1,14 +1,11 @@
-# translation of ru.po to
-# @TITLE@
+# This file is distributed under the same license as the libpwquality package.
 # Copyright (C) 2006, SUSE Linux GmbH, Nuremberg
-#
-# This file is distributed under the same license as @PACKAGE@ package. FIRST
 #
 # Yulia Poyarkova <yulia.poyarkova@redhat.com>, 2007, 2009.
 # Andrew Martynov <andrewm@inventa.ru>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: ru\n"
+"Project-Id-Version: libpwquality 0.9\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2011-09-21 11:38+0200\n"
 "PO-Revision-Date: 2009-08-21 15:33+1000\n"

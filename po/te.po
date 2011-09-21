@@ -1,11 +1,9 @@
-# translation of pam.tip.te.po to Telugu
-# Copyright (C) YEAR Linux-PAM Project
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the libpwquality package.
 #
 # Krishna Babu K <kkrothap@redhat.com>, 2008, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: pam.tip.te\n"
+"Project-Id-Version: libpwquality 0.9\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2011-09-21 11:38+0200\n"
 "PO-Revision-Date: 2009-04-14 15:14+0530\n"

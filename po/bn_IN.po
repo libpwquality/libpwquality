@@ -1,12 +1,10 @@
-# translation of pam.tip.po to Bengali INDIA
-# Copyright (C) YEAR Linux-PAM Project
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the libpwquality package.
 #
 # Runa Bhattacharjee <runab@redhat.com>, 2007, 2008.
 # Runa Bhattacharjee <runab@fedoraproject.org>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: pam.tip\n"
+"Project-Id-Version: libpwquality 0.9\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2011-09-21 11:38+0200\n"
 "PO-Revision-Date: 2009-04-08 18:30+0530\n"

@@ -1,12 +1,10 @@
-# translation of pam.default.gu.po to Gujarati
-# Copyright (C) YEAR Linux-PAM Project
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the libpwquality package.
 #
 # Ankit Patel <ankit@redhat.com>, 2007, 2008.
 # Sweta Kothari <swkothar@redhat.com>, 2009, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: pam.default.gu\n"
+"Project-Id-Version: libpwquality 0.9\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2011-09-21 11:38+0200\n"
 "PO-Revision-Date: 2010-08-02 18:15+0530\n"

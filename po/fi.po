@@ -1,14 +1,11 @@
-# translation of Linux-PAM.po to
-# translation of uusi_Linux-PAM.po to
-# This file is distributed under the same license as the PACKAGE package.
-# Copyright (C) YEAR Linux-PAM Project.
+# This file is distributed under the same license as the libpwquality package.
 #
 # Ilkka Pirskanen <ilkka.pirskanen@kolumbus.fi>, 2005.
 # Janne Ahlskog <j.ahlskog@multi.fi>, 2006.
 # Jyri Palokangas <jmp@netti.fi>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: Linux-PAM\n"
+"Project-Id-Version: libpwquality 0.9\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2011-09-21 11:38+0200\n"
 "PO-Revision-Date: 2006-05-04 08:30+0200\n"

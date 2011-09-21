@@ -1,11 +1,11 @@
-# translation of Linux-PAM.po to cs_CZ
-# This file is distributed under the same license as the Linux-PAM package.
+# This file is distributed under the same license as the libpwquality package.
+#
 # Copyright (C) 2005-2009 Linux-PAM Project.
 # Klara Cihlarova <koty@seznam.cz>, 2005, 2006.
-# Tomas Mraz <t8m@centrum.cz>, 2005, 2008, 2009.
+# Tomas Mraz <tm@t8m.info>, 2005, 2008, 2009, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: Linux-PAM\n"
+"Project-Id-Version: libpwquality 0.9\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2011-09-21 11:38+0200\n"
 "PO-Revision-Date: 2009-03-24 15:22+0100\n"

@@ -1,12 +1,10 @@
-# translation of ja.po to Japanese
-# This file is distributed under the same license as the PACKAGE package.
-# Copyright (C) YEAR Linux-PAM Project.
+# This file is distributed under the same license as the libpwquality package.
 #
 # Noriko Mizumoto <noriko@redhat.com>, 2007.
 # Kiyoto Hashida <khashida@redhat.com>, 2008, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: ja\n"
+"Project-Id-Version: libpwquality 0.9\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2011-09-21 11:38+0200\n"
 "PO-Revision-Date: 2009-08-30 11:39+0900\n"

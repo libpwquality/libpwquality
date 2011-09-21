@@ -1,14 +1,12 @@
-# translation of Linux-PAM.tip.po to
-# Italian translation of Linux-PAM.
+# This file is distributed under the same license as the libpwquality package.
 # Copyright (C) 2007 Linux-PAM Project
-# This file is distributed under the same license as the PACKAGE package.
 # TODO: uniformare la traduzione di alcune stringhe con shadow.
 # Novell Language <language@novell.com>, 2007.
 # Luca Bruno <luca.br@uno.it>, 2007.
 # mario_santagiuliana <mario at marionline.it>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: Linux-PAM.tip\n"
+"Project-Id-Version: libpwquality 0.9\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2011-09-21 11:38+0200\n"
 "PO-Revision-Date: 2009-04-20 18:31+0200\n"

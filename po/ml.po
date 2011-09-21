@@ -1,14 +1,9 @@
-# translation of pam.default.ml.po to
-# translation of ml.po to
-# translation of pam.tip.ml.po to
-# translation of Linux-PAM.tip.ml.po to
-# Copyright (C) YEAR Linux-PAM Project
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the libpwquality package.
 #
 # Ani Peter <apeter@redhat.com>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: pam.default.ml\n"
+"Project-Id-Version: libpwquality 0.9\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2011-09-21 11:38+0200\n"
 "PO-Revision-Date: 2010-03-24 14:41+0530\n"
