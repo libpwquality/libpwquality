@@ -27,6 +27,22 @@ AC_PROG_INSTALL
 AC_PROG_LN_S
 AC_PROG_LIBTOOL
 
+dnl and some hacks to use /etc
+test "${prefix}" = "NONE" && prefix="/usr"
+if test ${prefix} = '/usr'
+then
+dnl If we use /usr as prefix, use /etc for config files
+        if test ${sysconfdir} = '${prefix}/etc'
+        then
+                sysconfdir="/etc"
+        fi
+dnl If we use /usr as prefix, use /usr/share/man for manual pages
+        if test ${mandir} = '${prefix}/man'
+        then
+                mandir='${prefix}/share/man'
+        fi
+fi
+
 dnl Localization support
 AM_GNU_GETTEXT_VERSION
 AM_GNU_GETTEXT([external])
@@ -61,6 +77,16 @@ AC_ARG_ENABLE([ld-version-script],
               [ : ] )
 AM_CONDITIONAL(HAVE_LD_VERSION_SCRIPT, test "$have_ld_version_script" = "yes")
 
+AC_ARG_WITH(securedir,
+        AS_HELP_STRING([--with-securedir=DIR],[path to location of PAMs @<:@default=$libdir/security@:>@]),
+        SECUREDIR=$withval, SECUREDIR=$libdir/security)
+AC_SUBST(SECUREDIR)
+
+AC_ARG_WITH(sconfigdir,
+	AS_HELP_STRING([--with-sconfigdir=DIR],[path to PAM conf files @<:@default=$sysconfdir/security@:>@]),
+	SCONFIGDIR=$enableval, SCONFIGDIR=$sysconfdir/security)
+AC_SUBST(SCONFIGDIR)
+
 dnl options and defaults
 
 dnl Check for cracklib
@@ -85,5 +111,5 @@ dnl Checks for library functions.
 AC_CHECK_FUNCS(strcspn strdup strspn strstr strtol)
 
 dnl Files to be created from when we run configure
-AC_CONFIG_FILES([Makefile src/Makefile po/Makefile.in])
+AC_CONFIG_FILES([Makefile libpwquality.spec src/Makefile po/Makefile.in])
 AC_OUTPUT

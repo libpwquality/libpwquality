@@ -6,7 +6,11 @@
 
 CLEANFILES = *~
 
-EXTRA_DIST = libpwquality.map
+securelibdir = @SECUREDIR@
+
+secureconfdir = @SCONFIGDIR@
+
+EXTRA_DIST = libpwquality.map pwquality.conf
 
 include_HEADERS = pwquality.h
 
@@ -39,6 +43,10 @@ pwmake_SOURCES = pwmake.c
 
 pwmake_LDADD = libpwquality.la
 
-lib_LTLIBRARIES = libpwquality.la pam_pwquality.la
+lib_LTLIBRARIES = libpwquality.la
+
+securelib_LTLIBRARIES = pam_pwquality.la
+
+secureconf_DATA = pwquality.conf
 
 bin_PROGRAMS = pwscore pwmake

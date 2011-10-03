@@ -1,0 +1,84 @@
+Summary: A library for password generation and password quality checking
+Name: libpwquality
+Version: @PACKAGE_VERSION@
+Release: 1%{?dist}
+# The library is BSD licensed with option to relicense as GPLv2+
+# - this option is redundant as the BSD license allows that anyway.
+License: BSD and GPLv2+
+Group: System Environment/Base
+Source0: http://fedorahosted.org/releases/l/i/libpwquality-%{version}.tar.bz2
+
+%define _moduledir /%{_lib}/security
+%define _secconfdir %{_sysconfdir}/security
+
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Requires: cracklib-dicts >= 2.8
+Requires(post): /sbin/ldconfig
+BuildRequires: cracklib-devel
+BuildRequires: gettext
+
+URL: http://libpwquality.fedorahosted.org/
+
+%description
+This is a library for password quality checks and generation
+of random passwords that pass the checks.
+This library uses the cracklib and cracklib dictionaries
+to perform some of the checks.
+
+%package devel
+Group: Development/Libraries
+Summary: Files needed for developing PAM-aware applications and modules for PAM
+Requires: libpwquality%{?_isa} = %{version}-%{release}
+
+%description devel
+Files needed for development of applications using the libpwquality
+library.
+See the pwquality.h header file for the API.
+
+%prep
+%setup -q
+
+%build
+%configure \
+	--libdir=/%{_lib} \
+	--disable-static
+
+make %{?_smp_mflags}
+
+%install
+make install DESTDIR=$RPM_BUILD_ROOT
+
+mkdir -p $RPM_BUILD_ROOT%{_libdir}
+pushd $RPM_BUILD_ROOT%{_libdir}
+ln -sf ../../%{_lib}/libpwquality.so.*.* libpwquality.so
+popd
+rm -f $RPM_BUILD_ROOT/%{_lib}/*.so
+rm -f $RPM_BUILD_ROOT/%{_lib}/*.la
+rm -f $RPM_BUILD_ROOT%{_moduledir}/*.la
+
+%find_lang libpwquality
+
+%check
+# Nothing yet
+
+%post -p /sbin/ldconfig
+
+%postun -p /sbin/ldconfig
+
+%files -f libpwquality.lang
+%defattr(-,root,root,-)
+%doc COPYING README NEWS AUTHORS
+%{_bindir}/pwmake
+%{_bindir}/pwscore
+%{_moduledir}/pam_pwquality.so
+/%{_lib}/libpwquality.so.*
+%config(noreplace) %{_secconfdir}/pwquality.conf
+
+%files devel
+%defattr(-,root,root,-)
+%{_includedir}/pwquality.h
+%{_libdir}/libpwquality.so
+
+%changelog
+* Mon Oct  3 2011 Tomas Mraz <tmraz@redhat.com> 0.9-1
+- first spec file for libpwquality
