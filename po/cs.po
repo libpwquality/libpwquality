@@ -98,7 +98,7 @@ msgstr "Heslo je příliš podobné předcházejícímu"
 #: src/error.c:46
 #, c-format
 msgid "The password contains less than %ld digits"
-msgstr "Heslo obsahuje méně než %d číslic"
+msgstr "Heslo obsahuje méně než %ld číslic"
 
 #: src/error.c:49
 msgid "The password contains too few digits"
