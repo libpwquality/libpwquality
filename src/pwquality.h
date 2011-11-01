@@ -51,6 +51,7 @@
 #define PWQ_ERROR_CRACKLIB_CHECK               -22
 #define PWQ_ERROR_RNG                          -23
 #define PWQ_ERROR_GENERATION_FAILED            -24
+#define PWQ_ERROR_USER_CHECK                   -25
 
 typedef struct pwquality_settings pwquality_settings_t;
 
@@ -102,6 +103,8 @@ pwquality_generate(pwquality_settings_t *pwq, int entropy_bits,
  * and possibly also auxiliary error information that must be
  * passed into pwquality_strerror() function.
  * The old password is optional and can be NULL.
+ * The user is used for checking the password against user name
+ * and potentially other passwd information and can be NULL.
  * The auxerror can be NULL - in that case the auxiliary error information
  * is not returned.
  * Not passing the *auxerror into pwquality_strerror() can lead to memory leaks.
@@ -109,7 +112,7 @@ pwquality_generate(pwquality_settings_t *pwq, int entropy_bits,
  * the score for the same passwords will be lower. */ 
 int
 pwquality_check(pwquality_settings_t *pwq, const char *password,
-        const char *oldpassword, void **auxerror);
+        const char *oldpassword, const char *user, void **auxerror);
 
 /* Translate the error code and auxiliary message into a localized
  * text message.

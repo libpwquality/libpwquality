@@ -41,6 +41,8 @@ pwquality_strerror(char *buf, size_t len, int rv, void *auxerror)
                 return _("The password differs with case changes only");
         case PWQ_ERROR_TOO_SIMILAR:
                 return _("The password is too similar to the old one");
+        case PWQ_ERROR_USER_CHECK:
+                return _("The password contains the user name in some form");
         case PWQ_ERROR_MIN_DIGITS:
                 if (auxerror) {
                         snprintf(buf, len, _("The password contains less than %ld digits"), (long)auxerror);

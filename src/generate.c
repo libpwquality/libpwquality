@@ -157,7 +157,7 @@ pwquality_generate(pwquality_settings_t *pwq, int entropy_bits, char **password)
                         *ptr = consonants1[idx];
                         ++ptr;
                 }
-        } while (pwquality_check(pwq, tmp, NULL, NULL) < 0 &&
+        } while (pwquality_check(pwq, tmp, NULL, NULL, NULL) < 0 &&
                  ++try < PWQ_NUM_GENERATION_TRIES);
 
         /* clean up */

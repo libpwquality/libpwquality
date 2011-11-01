@@ -123,7 +123,15 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
         } else if (flags & PAM_UPDATE_AUTHTOK) {
                 int retval;
                 const void *oldtoken;
+                const char *user;
                 int tries;
+
+                retval = pam_get_user(pamh, &user, NULL);
+                if (retval != PAM_SUCCESS || user == NULL) {
+                        if (ctrl & PAM_DEBUG_ARG)
+                                pam_syslog(pamh, LOG_ERR, "Can not get username");
+                        return PAM_AUTHTOK_ERR;
+                }
 
                 retval = pam_get_item(pamh, PAM_OLDAUTHTOK, &oldtoken);
                 if (retval != PAM_SUCCESS) {
@@ -157,7 +165,7 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
                         }
 
                         /* now test this passwd against libpwquality */
-                        retval = pwquality_check(options.pwq, newtoken, oldtoken, &auxerror);
+                        retval = pwquality_check(options.pwq, newtoken, oldtoken, user, &auxerror);
 
                         if (retval < 0) {
                                 const char *msg;

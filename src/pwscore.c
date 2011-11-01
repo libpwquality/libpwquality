@@ -18,7 +18,7 @@
 
 int
 usage(const char *progname) {
-        fprintf(stderr, _("Usage: %s\n"), progname);
+        fprintf(stderr, _("Usage: %s [user]\n"), progname);
         fprintf(stderr, _("       The command reads the password to be scored from the standard input.\n"));
 }
 
@@ -31,14 +31,19 @@ main(int argc, char *argv[])
         void *auxerror;
         char buf[1024];
         size_t len;
+        char *user = NULL;
 
         setlocale(LC_ALL, "");
         bindtextdomain("libpwquality", "/usr/share/locale");
         textdomain("libpwquality");
 
-        if (argc != 1) {
+        if (argc > 2) {
                 usage(basename(argv[0]));
                 exit(3);
+        }
+
+        if (argc == 2) {
+                user = argv[1];
         }
 
         if (fgets(buf, sizeof(buf), stdin) == NULL || (len = strlen(buf)) == 0) {
@@ -59,7 +64,7 @@ main(int argc, char *argv[])
                 exit(3);
         }
 
-        rv = pwquality_check(pwq, buf, NULL, &auxerror);
+        rv = pwquality_check(pwq, buf, NULL, user, &auxerror);
 
         if (rv < 0) {
                 fprintf(stderr, _("Password quality check failed:\n %s\n"),

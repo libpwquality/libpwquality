@@ -296,6 +296,43 @@ consecutive(pwquality_settings_t *pwq, const char *new, void **auxerror)
         return 0;
 }
 
+static int usercheck(pwquality_settings_t *pwq, const char *new,
+                     char *user)
+{
+        char *f, *b;
+        int dist;
+
+        if (strstr(new, user) != NULL)
+                return 1;
+
+        dist = distance(new, user);
+        if (dist >= 0 && dist < PWQ_DEFAULT_DIFF_OK)
+                return 1;
+
+        /* now reverse the username, we can do that in place
+                as it is strdup-ed */
+        f = user;
+        b = user + strlen(user) - 1;
+        while (f < b) {
+                char c;
+
+                c = *f;
+                *f = *b;
+                *b = c;
+                --b;
+                ++f;
+        }
+
+        if (strstr(new, user) != NULL)
+                return 1;
+
+        dist = distance(new, user);
+        if (dist >= 0 && dist < PWQ_DEFAULT_DIFF_OK)
+                return 1;
+
+        return 0;
+}
+
 static char *
 str_lower(char *string)
 {
@@ -319,14 +356,22 @@ x_strdup(const char *string)
 
 static int
 password_check(pwquality_settings_t *pwq,
-               const char *new, const char *old, void **auxerror)
+               const char *new, const char *old, const char *user,
+               void **auxerror)
 {
         int rv = 0;
         char *oldmono = NULL, *newmono, *wrapped = NULL;
+        char *usermono = NULL;
 
         newmono = str_lower(x_strdup(new));
         if (!newmono)
                 rv = PWQ_ERROR_MEM_ALLOC;
+
+        if (!rv && user) {
+                usermono = str_lower(x_strdup(user));
+                if (!usermono)
+                        rv = PWQ_ERROR_MEM_ALLOC;
+        }
 
         if (!rv && old) {
                 oldmono = str_lower(x_strdup(old));
@@ -365,10 +410,15 @@ password_check(pwquality_settings_t *pwq,
         if (!rv && consecutive(pwq, new, auxerror))
                 rv = PWQ_ERROR_MAX_CONSECUTIVE;
 
+        if (!rv && usermono && usercheck(pwq, newmono, usermono))
+                rv = PWQ_ERROR_USER_CHECK;
+
         if (newmono) {
                 memset(newmono, 0, strlen(newmono));
                 free(newmono);
         }
+
+        free(usermono);
 
         if (oldmono) {
                 memset(oldmono, 0, strlen(oldmono));
@@ -443,7 +493,7 @@ password_score(pwquality_settings_t *pwq, const char *password)
  * the old password is optional */
 int
 pwquality_check(pwquality_settings_t *pwq, const char *password,
-        const char *oldpassword, void **auxerror)
+        const char *oldpassword, const char *user, void **auxerror)
 {
         const char *msg;
         int score;
@@ -466,7 +516,7 @@ pwquality_check(pwquality_settings_t *pwq, const char *password,
                 return PWQ_ERROR_CRACKLIB_CHECK;
         }
 
-        score = password_check(pwq, password, oldpassword, auxerror);
+        score = password_check(pwq, password, oldpassword, user, auxerror);
         if (score == 0) {
                 score = password_score(pwq, password);
         }
