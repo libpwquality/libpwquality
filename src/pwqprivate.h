@@ -14,16 +14,14 @@
 
 struct pwquality_settings {
         int diff_ok;
-	int diff_ignore;
-	int min_length;
-	int dig_credit;
-	int up_credit;
-	int low_credit;
-	int oth_credit;
+        int min_length;
+        int dig_credit;
+        int up_credit;
+        int low_credit;
+        int oth_credit;
         int min_class;
-	int max_repeat;
+        int max_repeat;
         char *dict_path;
-
 };
 
 struct setting_mapping {
@@ -33,7 +31,6 @@ struct setting_mapping {
 };
 
 #define PWQ_DEFAULT_DIFF_OK      5
-#define PWQ_DEFAULT_DIFF_IGNORE  23
 #define PWQ_DEFAULT_MIN_LENGTH   9
 #define PWQ_DEFAULT_DIG_CREDIT   1
 #define PWQ_DEFAULT_UP_CREDIT    1

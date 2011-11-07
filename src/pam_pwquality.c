@@ -79,6 +79,8 @@ _pam_parse (pam_handle_t *pamh, struct module_options *opt,
                         opt->retry_times = strtol(*argv+6, &ep, 10);
                         if (!ep || (opt->retry_times < 1))
                                 opt->retry_times = CO_RETRY_TIMES;
+                } else if (!strncmp(*argv, "difignore=", 10)) {
+                        /* ignored for compatibility with pam_cracklib */
                 } else if (!strncmp(*argv, "reject_username", 15)) {
                         /* ignored for compatibility with pam_cracklib */
                 } else if (!strncmp(*argv, "authtok_type", 12)) {

@@ -27,7 +27,6 @@ pwquality_default_settings(void)
                 return NULL;
 
         pwq->diff_ok = PWQ_DEFAULT_DIFF_OK;
-        pwq->diff_ignore = PWQ_DEFAULT_DIFF_IGNORE;
         pwq->min_length = PWQ_DEFAULT_MIN_LENGTH;
         pwq->dig_credit = PWQ_DEFAULT_DIG_CREDIT;
         pwq->up_credit = PWQ_DEFAULT_UP_CREDIT;
@@ -51,7 +50,6 @@ pwquality_free_settings(pwquality_settings_t *pwq)
 
 static const struct setting_mapping s_map[] = {
  { "difok", PWQ_SETTING_DIFF_OK, PWQ_TYPE_INT},
- { "difignore", PWQ_SETTING_DIFF_IGNORE, PWQ_TYPE_INT},
  { "minlen", PWQ_SETTING_MIN_LENGTH, PWQ_TYPE_INT},
  { "dcredit", PWQ_SETTING_DIG_CREDIT, PWQ_TYPE_INT},
  { "ucredit", PWQ_SETTING_UP_CREDIT, PWQ_TYPE_INT},
@@ -209,9 +207,6 @@ pwquality_set_int_value(pwquality_settings_t *pwq, int setting, int value)
         case PWQ_SETTING_DIFF_OK:
                 pwq->diff_ok = value;
                 break;
-        case PWQ_SETTING_DIFF_IGNORE:
-                pwq->diff_ignore = value;
-                break;
         case PWQ_SETTING_MIN_LENGTH:
                 if (value < PWQ_BASE_MIN_LENGTH)
                         value = PWQ_BASE_MIN_LENGTH;
@@ -277,9 +272,6 @@ pwquality_get_int_value(pwquality_settings_t *pwq, int setting, int *value)
         switch(setting) {
         case PWQ_SETTING_DIFF_OK:
                 *value = pwq->diff_ok;
-                break;
-        case PWQ_SETTING_DIFF_IGNORE:
-                *value = pwq->diff_ignore;
                 break;
         case PWQ_SETTING_MIN_LENGTH:
                 *value = pwq->min_length;
