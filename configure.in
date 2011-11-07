@@ -88,6 +88,14 @@ AC_ARG_WITH(sconfigdir,
 AC_SUBST(SCONFIGDIR)
 
 dnl options and defaults
+AC_ARG_WITH(python-rev,
+            [  --with-pythonrev=2.7    version of python for which modules should be built],
+            PYTHONREV=$withval,[
+            AC_MSG_CHECKING([python version])
+            [PYTHONREV=`python -c 'import sys;print "%s.%s" % (sys.version_info[0], sys.version_info[1])'`]
+            AC_MSG_RESULT($PYTHONREV)
+            ])
+AC_SUBST(PYTHONREV)
 
 dnl Check for cracklib
 AC_CHECK_HEADERS([crack.h],
@@ -111,5 +119,5 @@ dnl Checks for library functions.
 AC_CHECK_FUNCS(strcspn strdup strspn strstr strtol)
 
 dnl Files to be created from when we run configure
-AC_CONFIG_FILES([Makefile libpwquality.spec src/Makefile po/Makefile.in])
+AC_CONFIG_FILES([Makefile libpwquality.spec src/Makefile po/Makefile.in python/Makefile])
 AC_OUTPUT
