@@ -301,16 +301,17 @@ pwquality_get_int_value(pwquality_settings_t *pwq, int setting, int *value)
 }
 
 /* get value of a string setting, or NULL if setting unknown */
-const char *
-pwquality_get_str_value(pwquality_settings_t *pwq, int setting)
+int
+pwquality_get_str_value(pwquality_settings_t *pwq, int setting, const char **value)
 {
         switch(setting) {
         case PWQ_SETTING_DICT_PATH:
-                return pwq->dict_path;
+                *value = pwq->dict_path;
+                break;
         default:
-                return NULL;
+                return PWQ_ERROR_NON_STR_SETTING;
         }
-
+        return 0;
 }
 
 /*

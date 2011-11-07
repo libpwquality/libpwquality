@@ -87,9 +87,9 @@ pwquality_set_str_value(pwquality_settings_t *pwq, int setting,
 int
 pwquality_get_int_value(pwquality_settings_t *pwq, int setting, int *value);
 
-/* Get value of a string setting, or NULL if setting unknown. */
-const char *
-pwquality_get_str_value(pwquality_settings_t *pwq, int setting);
+/* Get value of a string setting. */
+int
+pwquality_get_str_value(pwquality_settings_t *pwq, int setting, const char **value);
 
 /* Generate a random password of entropy_bits entropy and check it according to
  * the settings. */
