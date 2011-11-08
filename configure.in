@@ -44,7 +44,7 @@ dnl If we use /usr as prefix, use /usr/share/man for manual pages
 fi
 
 dnl Localization support
-AM_GNU_GETTEXT_VERSION
+AM_GNU_GETTEXT_VERSION([0.15])
 AM_GNU_GETTEXT([external])
 AC_CHECK_FUNCS(dngettext)
 AH_BOTTOM([#ifdef ENABLE_NLS
@@ -100,10 +100,10 @@ AC_SUBST(PYTHONREV)
 dnl Check for cracklib
 AC_CHECK_HEADERS([crack.h],
       AC_CHECK_LIB([crack], [FascistCheck], LIBCRACK="-lcrack", LIBCRACK=""))
-if test x$LIBCRACK = xno ; then
+if test x$LIBCRACK = x ; then
     AC_MSG_ERROR([No or unusable cracklib library])
 fi
-AC_SUBST(LIBCRACK)
+AC_SUBST([LIBCRACK])
 
 AC_ARG_WITH([randomdev], AS_HELP_STRING([--with-randomdev=(<path>|yes)],[use specified random device instead of /dev/urandom]), opt_randomdev=$withval)
 if test "$opt_randomdev" = yes -o -z "$opt_randomdev"; then
