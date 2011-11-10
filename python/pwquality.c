@@ -127,12 +127,12 @@ static PyTypeObject pwqsettings_type = {
         0,                         /* tp_as_buffer */
         Py_TPFLAGS_DEFAULT | Py_TPFLAGS_BASETYPE, /* tp_flags */
         "PWQSettings objects",     /* tp_doc */
-        0,		           /* tp_traverse */
-        0,		           /* tp_clear */
-        0,		           /* tp_richcompare */
-        0,		           /* tp_weaklistoffset */
-        0,		           /* tp_iter */
-        0,		           /* tp_iternext */
+        0,                         /* tp_traverse */
+        0,                         /* tp_clear */
+        0,                         /* tp_richcompare */
+        0,                         /* tp_weaklistoffset */
+        0,                         /* tp_iter */
+        0,                         /* tp_iternext */
         pwqsettings_methods,       /* tp_methods */
         0,                         /* tp_members */
         pwqsettings_getseters,     /* tp_getset */
@@ -325,7 +325,7 @@ check(PWQSettings *self, PyObject *args)
         void *auxerror;
         int rc;
 
-        if (!PyArg_ParseTuple(args, "s|ss", &password, &oldpassword, &username))
+        if (!PyArg_ParseTuple(args, "s|zz", &password, &oldpassword, &username))
                 return NULL;
         if ((rc = pwquality_check(self->pwq, password, oldpassword,
                                   username, &auxerror)) < 0) {
@@ -359,7 +359,7 @@ initpwquality(void)
         Py_INCREF(&pwqsettings_type);
         PyModule_AddObject(module, "PWQSettings", (PyObject *)&pwqsettings_type);
 
-#include "constants.c"       
+#include "constants.c"
 }
 
 /*
