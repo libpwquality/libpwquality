@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libpwquality 0.9\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2011-09-21 11:38+0200\n"
+"POT-Creation-Date: 2011-11-11 10:48+0100\n"
 "PO-Revision-Date: 2010-08-02 18:15+0530\n"
 "Last-Translator: Sweta Kothari <swkothar@redhat.com>\n"
 "Language-Team: Gujarati\n"
@@ -33,14 +33,14 @@ msgstr "નવો %s%sપાસવર્ડ ફરી લખો: "
 msgid "Sorry, passwords do not match."
 msgstr "માફ કરજો, પાસવર્ડો બંધબેસતા નથી."
 
-#: src/pam_pwquality.c:168
+#: src/pam_pwquality.c:178
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "ખરાબ પાસવર્ડ: %s"
 
 #: src/pwscore.c:21
 #, c-format
-msgid "Usage: %s\n"
+msgid "Usage: %s [user]\n"
 msgstr ""
 
 #: src/pwscore.c:22
@@ -49,16 +49,16 @@ msgid ""
 "       The command reads the password to be scored from the standard input.\n"
 msgstr ""
 
-#: src/pwscore.c:45 src/pwscore.c:53 src/pwscore.c:58
+#: src/pwscore.c:50 src/pwscore.c:58 src/pwscore.c:63
 #, c-format
 msgid "Error: %s\n"
 msgstr ""
 
-#: src/pwscore.c:45
+#: src/pwscore.c:50
 msgid "Could not obtain the password to be scored"
 msgstr ""
 
-#: src/pwscore.c:65
+#: src/pwscore.c:70
 #, c-format
 msgid ""
 "Password quality check failed:\n"
@@ -99,135 +99,140 @@ msgstr ""
 msgid "The password is too similar to the old one"
 msgstr "એ જૂના સાથે એકદમ સરખો છે"
 
-#: src/error.c:46
+#: src/error.c:45
+#, fuzzy
+msgid "The password contains the user name in some form"
+msgstr "એ જૂના જેવો જ છે"
+
+#: src/error.c:48
 #, fuzzy, c-format
 msgid "The password contains less than %ld digits"
 msgstr "એ જૂના જેવો જ છે"
 
-#: src/error.c:49
+#: src/error.c:51
 msgid "The password contains too few digits"
 msgstr ""
 
-#: src/error.c:52
+#: src/error.c:54
 #, fuzzy, c-format
 msgid "The password contains less than %ld uppercase letters"
 msgstr "એકપછી એક ઘણા બધા સરખા અક્ષરોને સમાવે છે"
 
-#: src/error.c:55
+#: src/error.c:57
 msgid "The password contains too few uppercase letters"
 msgstr ""
 
-#: src/error.c:58
+#: src/error.c:60
 #, fuzzy, c-format
 msgid "The password contains less than %ld lowercase letters"
 msgstr "એ જૂના જેવો જ છે"
 
-#: src/error.c:61
+#: src/error.c:63
 msgid "The password contains too few lowercase letters"
 msgstr ""
 
-#: src/error.c:64
+#: src/error.c:66
 #, fuzzy, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
 msgstr "એકપછી એક ઘણા બધા સરખા અક્ષરોને સમાવે છે"
 
-#: src/error.c:67
+#: src/error.c:69
 msgid "The password contains too few non-alphanumeric characters"
 msgstr ""
 
-#: src/error.c:70
+#: src/error.c:72
 #, fuzzy, c-format
 msgid "The password is shorter than %ld characters"
 msgstr "પૂરતા અક્ષર વર્ગો નથી"
 
-#: src/error.c:73
+#: src/error.c:75
 msgid "The password is too short"
 msgstr ""
 
-#: src/error.c:75
+#: src/error.c:77
 msgid "The password is just rotated old one"
 msgstr ""
 
-#: src/error.c:78
+#: src/error.c:80
 #, fuzzy, c-format
 msgid "The password contains less than %ld character classes"
 msgstr "પૂરતા અક્ષર વર્ગો નથી"
 
-#: src/error.c:81
+#: src/error.c:83
 #, fuzzy
 msgid "The password does not contain enough character classes"
 msgstr "પૂરતા અક્ષર વર્ગો નથી"
 
-#: src/error.c:84
+#: src/error.c:86
 #, fuzzy, c-format
 msgid "The password contains more than %ld same characters consecutively"
 msgstr "એકપછી એક ઘણા બધા સરખા અક્ષરોને સમાવે છે"
 
-#: src/error.c:87
+#: src/error.c:89
 #, fuzzy
 msgid "The password contains too many same characters consecutively"
 msgstr "એકપછી એક ઘણા બધા સરખા અક્ષરોને સમાવે છે"
 
-#: src/error.c:89
+#: src/error.c:91
 msgid "No password supplied"
 msgstr "કોઈ પાસવર્ડ પૂરો પડાયેલ નથી"
 
-#: src/error.c:91
+#: src/error.c:93
 msgid "Cannot obtain random numbers from the RNG device"
 msgstr ""
 
-#: src/error.c:93
+#: src/error.c:95
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
 
-#: src/error.c:96 src/error.c:99
+#: src/error.c:98 src/error.c:101
 #, fuzzy
 msgid "The password fails the dictionary check"
 msgstr "એ પેલીન્ડ્રોમ છે"
 
-#: src/error.c:102 src/error.c:106
+#: src/error.c:104 src/error.c:108
 #, fuzzy
 msgid "Unknown setting"
 msgstr "અજ્ઞાત ભૂલ"
 
-#: src/error.c:109
+#: src/error.c:111
 msgid "Bad integer value of setting"
 msgstr ""
 
-#: src/error.c:113
+#: src/error.c:115
 msgid "Bad integer value"
 msgstr ""
 
-#: src/error.c:116
+#: src/error.c:118
 #, c-format
 msgid "Setting %s is not of integer type"
 msgstr ""
 
-#: src/error.c:120
+#: src/error.c:122
 msgid "Setting is not of integer type"
 msgstr ""
 
-#: src/error.c:123
+#: src/error.c:125
 #, c-format
 msgid "Setting %s is not of string type"
 msgstr ""
 
-#: src/error.c:127
+#: src/error.c:129
 msgid "Setting is not of string type"
 msgstr ""
 
-#: src/error.c:129
+#: src/error.c:131
 msgid "Opening the configuration file failed"
 msgstr ""
 
-#: src/error.c:131
+#: src/error.c:133
 msgid "The configuration file is malformed"
 msgstr ""
 
-#: src/error.c:133
+#: src/error.c:135
 msgid "Fatal failure"
 msgstr ""
 
-#: src/error.c:135
+#: src/error.c:137
 msgid "Unknown error"
 msgstr "અજ્ઞાત ભૂલ"

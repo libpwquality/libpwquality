@@ -1,0 +1,41 @@
+.de FN
+\fI\|\\$1\|\fP
+..
+.TH PWSCORE 1 "10 Nov 2011" "Red Hat, Inc."
+.SH NAME
+pwscore \- simple configurable tool for checking quality of a password
+.SH SYNOPSIS
+\fBpwscore\fR [user]
+.SH DESCRIPTION
+\fBpwscore\fR is a simple tool for checking quality of a password. The password
+is read from stdin.
+
+The tool uses the \fBlibpwquality\fR library to perform configurable checks
+for minimum length, dictionary checking against cracklib dictionaries,
+and other checks.
+
+It either reports an error if the password fails any of the checks, or it
+prints out the password quality score as an integer value between \fB0\fR and
+\fB100\fR.
+
+.PD
+.SH OPTIONS
+The first and only optional argument is the user name that is used to check
+the similarity of the password to the username.
+
+.SH FILES
+\fB/etc/security/pwquality.conf\fR - The configuration file for the libpwquality
+library.
+
+.PD
+.SH "RETURN CODES"
+\fBpwscore\fR returns 0 on success, non zero on error.
+
+.PD
+.SH "SEE ALSO"
+pwscore(1), pwquality.conf(5), pam_pwquality(8)
+
+.SH AUTHORS
+.nf
+Tomas Mraz <tmraz@redhat.com>
+.fi

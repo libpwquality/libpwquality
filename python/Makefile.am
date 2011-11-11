@@ -4,7 +4,7 @@
 #
 
 pythonincdir = $(includedir)/python@PYTHONREV@
-pythonsitedir = $(libdir)/python@PYTHONREV@/site-packages
+pythonsitedir = @PYTHONSITEDIR@
 
 CLEANFILES = *~ constants.c pwquality.so
 

@@ -16,8 +16,15 @@ Requires: pam%{?_isa}
 BuildRequires: cracklib-devel
 BuildRequires: gettext
 BuildRequires: pam-devel
+BuildRequires: python2-devel
 
 URL: http://libpwquality.fedorahosted.org/
+
+# we don't want to provide private python extension libs
+%{?filter_setup:
+%filter_provides_in %{python_sitearch}/.*\.so$.
+%filter_setup
+}
 
 %description
 This is a library for password quality checks and generation
@@ -35,12 +42,24 @@ Files needed for development of applications using the libpwquality
 library.
 See the pwquality.h header file for the API.
 
+%package -n python-pwquality
+Group: Development/Libraries
+Summary: Python bindings for the libpwquality library
+Requires: libpwquality%{?_isa} = %{version}-%{release}
+
+%description -n python-pwquality
+This is pwquality Python module that provides Python bindings
+for the libpwquality library. These bindings can be used
+for easy password quality checking and generation of random
+pronounceable passwords from Python applications.
+
 %prep
 %setup -q
 
 %build
 %configure \
 	--libdir=/%{_lib} \
+	--with-pythonsitedir=%{python_sitearch} \
 	--disable-static
 
 make %{?_smp_mflags}
@@ -73,13 +92,23 @@ rm -f $RPM_BUILD_ROOT%{_moduledir}/*.la
 %{_moduledir}/pam_pwquality.so
 /%{_lib}/libpwquality.so.*
 %config(noreplace) %{_secconfdir}/pwquality.conf
+%{_mandir}/man1/*
+%{_mandir}/man5/*
+%{_mandir}/man8/*
 
 %files devel
 %defattr(-,root,root,-)
 %{_includedir}/pwquality.h
 %{_libdir}/libpwquality.so
 
+%files -n python-pwquality
+%defattr(-,root,root,-)
+%{python_sitearch}/pwquality.so
+
 %changelog
+* Fri Nov 11 2011 Tomas Mraz <tmraz@redhat.com> 0.9.9-1
+- added python bindings and documentation
+
 * Mon Oct 10 2011 Tomas Mraz <tmraz@redhat.com> 0.9-2
 - fixes for problems found in review (missing BR on pam-devel,
   License field, Source URL, Require pam, other cleanups)

@@ -6,3 +6,19 @@ NOTES:
 This library uses the cracklib as a dependency.
 
 See the pwquality.h header file for the API.
+
+There are simple tools that use the libpwquality:
+
+    pwscore - reads the password to be checked from the standard input
+              Optional argument is an user name for additional checks.
+
+    pwmake  - generates a random password
+              Required argument is number of bits of entropy used to
+              generate the password.
+
+The pwquality Python wrapper module can be used to call the libpwquality
+functionality from Python.
+
+And finally there is pam_pwquality Linux PAM module that can be used
+instead of pam_cracklib to disallow weak new passwords when user's login
+password is changed.

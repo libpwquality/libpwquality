@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libpwquality 0.9\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2011-09-21 11:38+0200\n"
+"POT-Creation-Date: 2011-11-11 10:48+0100\n"
 "PO-Revision-Date: 2009-03-24 15:22+0100\n"
 "Last-Translator: Tomas Mraz <t8m@centrum.cz>\n"
 "Language-Team: cs_CZ <cs@li.org>\n"
@@ -32,14 +32,14 @@ msgstr "Opakujte nové %s%sheslo: "
 msgid "Sorry, passwords do not match."
 msgstr "Hesla se neshodují."
 
-#: src/pam_pwquality.c:168
+#: src/pam_pwquality.c:178
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "ŠPATNÉ HESLO: %s"
 
 #: src/pwscore.c:21
-#, c-format
-msgid "Usage: %s\n"
+#, fuzzy, c-format
+msgid "Usage: %s [user]\n"
 msgstr "Použití: %s\n"
 
 #: src/pwscore.c:22
@@ -48,16 +48,16 @@ msgid ""
 "       The command reads the password to be scored from the standard input.\n"
 msgstr "        Příkaz čte hodnocené heslo ze standardního vstupu.\n"
 
-#: src/pwscore.c:45 src/pwscore.c:53 src/pwscore.c:58
+#: src/pwscore.c:50 src/pwscore.c:58 src/pwscore.c:63
 #, c-format
 msgid "Error: %s\n"
 msgstr "Chyba: %s\n"
 
-#: src/pwscore.c:45
+#: src/pwscore.c:50
 msgid "Could not obtain the password to be scored"
 msgstr "Nepodařilo se získat heslo k ohodnocení"
 
-#: src/pwscore.c:65
+#: src/pwscore.c:70
 #, c-format
 msgid ""
 "Password quality check failed:\n"
@@ -95,133 +95,138 @@ msgstr "Heslo se odlišuje pouze změnou velikosti písmen"
 msgid "The password is too similar to the old one"
 msgstr "Heslo je příliš podobné předcházejícímu"
 
-#: src/error.c:46
+#: src/error.c:45
+#, fuzzy
+msgid "The password contains the user name in some form"
+msgstr "Heslo obsahuje příliš málo velkých písmen"
+
+#: src/error.c:48
 #, c-format
 msgid "The password contains less than %ld digits"
 msgstr "Heslo obsahuje méně než %ld číslic"
 
-#: src/error.c:49
+#: src/error.c:51
 msgid "The password contains too few digits"
 msgstr "Heslo obsahuje příliš málo číslic"
 
-#: src/error.c:52
+#: src/error.c:54
 #, c-format
 msgid "The password contains less than %ld uppercase letters"
 msgstr "Heslo obsahuje méně než %ld velkých písmen"
 
-#: src/error.c:55
+#: src/error.c:57
 msgid "The password contains too few uppercase letters"
 msgstr "Heslo obsahuje příliš málo velkých písmen"
 
-#: src/error.c:58
+#: src/error.c:60
 #, c-format
 msgid "The password contains less than %ld lowercase letters"
 msgstr "Heslo obsahuje méně než %ld malých písmen"
 
-#: src/error.c:61
+#: src/error.c:63
 msgid "The password contains too few lowercase letters"
 msgstr "Heslo obsahuje příliš málo malých písmen"
 
-#: src/error.c:64
+#: src/error.c:66
 #, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
 msgstr "Heslo obsahuje méně než %ld jiných znaků než číslic a písmen"
 
-#: src/error.c:67
+#: src/error.c:69
 msgid "The password contains too few non-alphanumeric characters"
 msgstr "Heslo obsahuje příliš málo jiných znaků než číslic a písmen"
 
-#: src/error.c:70
+#: src/error.c:72
 #, c-format
 msgid "The password is shorter than %ld characters"
 msgstr "Heslo je kratší než %ld znaků"
 
-#: src/error.c:73
+#: src/error.c:75
 msgid "The password is too short"
 msgstr "Heslo je příliš krátké"
 
-#: src/error.c:75
+#: src/error.c:77
 msgid "The password is just rotated old one"
 msgstr "Heslo je pouze rotací starého hesla"
 
-#: src/error.c:78
+#: src/error.c:80
 #, c-format
 msgid "The password contains less than %ld character classes"
 msgstr "Heslo má méně než %ld různých druhů znaků"
 
-#: src/error.c:81
+#: src/error.c:83
 msgid "The password does not contain enough character classes"
 msgstr "Heslo nemá dostatek různých druhů znaků"
 
-#: src/error.c:84
+#: src/error.c:86
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
 msgstr "Heslo obsahuje více než %ld stejných znaků za sebou"
 
-#: src/error.c:87
+#: src/error.c:89
 msgid "The password contains too many same characters consecutively"
 msgstr "Heslo obsahuje příliš mnoho stejných znaků za sebou"
 
-#: src/error.c:89
+#: src/error.c:91
 msgid "No password supplied"
 msgstr "Nezadáno heslo"
 
-#: src/error.c:91
+#: src/error.c:93
 msgid "Cannot obtain random numbers from the RNG device"
 msgstr "Nebylo možno získat náhodná čísla z RNG zařízení"
 
-#: src/error.c:93
+#: src/error.c:95
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
 "Generování hesla selhalo - požadovaná entropie je příliš malá vzhledem k "
 "nastavení"
 
-#: src/error.c:96 src/error.c:99
+#: src/error.c:98 src/error.c:101
 msgid "The password fails the dictionary check"
 msgstr "Heslo nevyhovuje kontrole slovníkem"
 
-#: src/error.c:102 src/error.c:106
+#: src/error.c:104 src/error.c:108
 msgid "Unknown setting"
 msgstr "Neznámé nastavení"
 
-#: src/error.c:109
+#: src/error.c:111
 msgid "Bad integer value of setting"
 msgstr "Špatná celočíselná hodnota nastavení"
 
-#: src/error.c:113
+#: src/error.c:115
 msgid "Bad integer value"
 msgstr "Špatná celočíselná hodnota"
 
-#: src/error.c:116
+#: src/error.c:118
 #, c-format
 msgid "Setting %s is not of integer type"
 msgstr "Nastavení %s není celočíselného typu"
 
-#: src/error.c:120
+#: src/error.c:122
 msgid "Setting is not of integer type"
 msgstr "Nastavení není celočíselného typu"
 
-#: src/error.c:123
+#: src/error.c:125
 #, c-format
 msgid "Setting %s is not of string type"
 msgstr "Nastavení %s není typu řetězec"
 
-#: src/error.c:127
+#: src/error.c:129
 msgid "Setting is not of string type"
 msgstr "Nastavení není typu řetězec"
 
-#: src/error.c:129
+#: src/error.c:131
 msgid "Opening the configuration file failed"
 msgstr "Konfigurační soubor nelze otevřít"
 
-#: src/error.c:131
+#: src/error.c:133
 msgid "The configuration file is malformed"
 msgstr "Konfigurační soubor je poškozen"
 
-#: src/error.c:133
+#: src/error.c:135
 msgid "Fatal failure"
 msgstr "Fatální chyba"
 
-#: src/error.c:135
+#: src/error.c:137
 msgid "Unknown error"
 msgstr "Neznámá chyba"

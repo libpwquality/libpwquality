@@ -1,0 +1,45 @@
+.de FN
+\fI\|\\$1\|\fP
+..
+.TH PWMAKE 1 "10 Nov 2011" "Red Hat, Inc."
+.SH NAME
+pwmake \- simple tool for generating random relatively easily pronounceable
+passwords
+.SH SYNOPSIS
+\fBpwmake\fR <entropy-bits>
+.SH DESCRIPTION
+\fBpwmake\fR is a simple configurable tool for generating random and relatively
+easily pronounceable passwords. The tool allows you to specify the number of
+entropy bits that are used to generate the password.
+
+The entropy is pulled from \fB/dev/urandom\fR.
+
+The minimum number of bits is \fB56\fR which is usable for passwords on
+systems/services where brute force attacks are of very limited rate of tries.
+The \fB64\fR bits should be adequate for applications where the attacker
+does not have direct access to the password hash file. For situations where
+the attacker might obtain the direct access to the password hash or the
+password is used as an encryption key \fB80\fR to \fB128\fR bits should be
+used depending on your level of paranoia.
+
+.PD
+.SH OPTIONS
+The first and only argument is the number of bits of entropy used to generate
+the password.
+
+.SH FILES
+\fB/etc/security/pwquality.conf\fR - The configuration file for the libpwquality
+library.
+
+.PD
+.SH "RETURN CODES"
+\fBpwmake\fR returns 0 on success, non zero on error.
+
+.PD
+.SH "SEE ALSO"
+pwscore(1), pam_pwquality(8)
+
+.SH AUTHORS
+.nf
+Tomas Mraz <tmraz@redhat.com>
+.fi

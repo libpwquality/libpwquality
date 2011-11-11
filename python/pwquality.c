@@ -40,16 +40,23 @@ check(PWQSettings *self, PyObject *args);
 
 static PyMethodDef pwqsettings_methods[] = {
         { "read_config", (PyCFunction)read_config, METH_VARARGS,
-                "Read the settings from configuration file"
+                "Read the settings from configuration file\n\nParameters:\n"
+                "        cfgfilename - path to the configuration file (optional)"
         },
         { "set_option", (PyCFunction)set_option, METH_VARARGS,
-                "Set option from name=value pair"
+                "Set option from name=value pair\n\nParameters:\n"
+                "        option - string with the name=value pair"
         },
         { "generate", (PyCFunction)generate, METH_VARARGS,
-                "Generate password with requested entropy"
+                "Generate password with requested entropy\n\nParameters:\n"
+                "        entropy - integer entropy bits used to generate the password"
         },
         { "check", (PyCFunction)check, METH_VARARGS,
                 "Check whether the password conforms to the requirements and return password strength score"
+                "\n\nParameters:\n"
+                "        password - password string to be checked\n"
+                "        oldpassword - old password string (or None) for additional checks (optional)\n"
+                "        username - user name (or None) for additional checks (optional)"
         },
         { NULL }  /* Sentinel */
 };
@@ -126,7 +133,7 @@ static PyTypeObject pwqsettings_type = {
         0,                         /* tp_setattro */
         0,                         /* tp_as_buffer */
         Py_TPFLAGS_DEFAULT | Py_TPFLAGS_BASETYPE, /* tp_flags */
-        "PWQSettings objects",     /* tp_doc */
+        "PWQSettings objects - libpwquality functionality wrapper", /* tp_doc */
         0,                         /* tp_traverse */
         0,                         /* tp_clear */
         0,                         /* tp_richcompare */
@@ -348,7 +355,10 @@ initpwquality(void)
         if (module == NULL)
                 return;
 
-        PWQError = PyErr_NewException("pwquality.PWQError", NULL, NULL);
+        PWQError = PyErr_NewExceptionWithDoc("pwquality.PWQError",
+                "Standard exception thrown from PWQSettings method calls\n\n"
+                "The exception value is always integer error code and string description",
+                NULL, NULL);
         if (PWQError == NULL) {
                 Py_DECREF(module);
                 return;
