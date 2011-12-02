@@ -38,9 +38,8 @@ msgid "BAD PASSWORD: %s"
 msgstr "ŠPATNÉ HESLO: %s"
 
 #: src/pwscore.c:21
-#, fuzzy, c-format
 msgid "Usage: %s [user]\n"
-msgstr "Použití: %s\n"
+msgstr "Použití: %s [uživatel]\n"
 
 #: src/pwscore.c:22
 #, c-format
@@ -96,9 +95,8 @@ msgid "The password is too similar to the old one"
 msgstr "Heslo je příliš podobné předcházejícímu"
 
 #: src/error.c:45
-#, fuzzy
 msgid "The password contains the user name in some form"
-msgstr "Heslo obsahuje příliš málo velkých písmen"
+msgstr "Heslo obsahuje uživatelské jméno v nějaké formě"
 
 #: src/error.c:48
 #, c-format
