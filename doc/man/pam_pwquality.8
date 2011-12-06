@@ -217,6 +217,22 @@ Reject passwords which contain more than N same consecutive characters\&.
 The default is 0 which means that this check is disabled\&.
 .RE
 .PP
+\fBmaxclassrepeat=\fR\fB\fIN\fR\fR
+.RS 4
+Reject passwords which contain more than N consecutive characters of the
+same class\&.
+The default is 0 which means that this check is disabled\&.
+.RE
+.PP
+\fBgecoscheck=\fR\fB\fIN\fR\fR
+.RS 4
+If nonzero, check whether the individual words longer than 3 characters
+from the
+\fBpasswd GECOS\fR
+field of the user are contained in the new password\&.
+The default is 0 which means that this check is disabled\&.
+.RE
+.PP
 \fBuse_authtok\fR
 .RS 4
 This argument is used to

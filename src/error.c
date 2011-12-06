@@ -43,6 +43,8 @@ pwquality_strerror(char *buf, size_t len, int rv, void *auxerror)
                 return _("The password is too similar to the old one");
         case PWQ_ERROR_USER_CHECK:
                 return _("The password contains the user name in some form");
+        case PWQ_ERROR_GECOS_CHECK:
+                return _("The password contains words from the real name of the user in some form");
         case PWQ_ERROR_MIN_DIGITS:
                 if (auxerror) {
                         snprintf(buf, len, _("The password contains less than %ld digits"), (long)auxerror);
@@ -87,6 +89,12 @@ pwquality_strerror(char *buf, size_t len, int rv, void *auxerror)
                         return buf;
                 }
                 return _("The password contains too many same characters consecutively");
+        case PWQ_ERROR_MAX_CLASS_REPEAT:
+                if (auxerror) {
+                        snprintf(buf, len, _("The password contains more than %ld characters of the same class consecutively"), (long)auxerror);
+                        return buf;
+                }
+                return _("The password contains too many characters of the same class consecutively");
         case PWQ_ERROR_EMPTY_PASSWORD:
                 return _("No password supplied");
         case PWQ_ERROR_RNG:

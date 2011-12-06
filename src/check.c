@@ -10,6 +10,9 @@
 #include <string.h>
 #include <ctype.h>
 #include <crack.h>
+#include <sys/types.h>
+#include <pwd.h>
+#include <unistd.h>
 
 #include "pwquality.h"
 #include "pwqprivate.h"
@@ -199,16 +202,47 @@ simple(pwquality_settings_t *pwq, const char *new, void **auxerror)
         int others = 0;
         int size;
         int i;
+        enum { NONE, DIGIT, UCASE, LCASE, OTHER } prevclass = NONE;
+        int sameclass = 0;
 
         for (i = 0; new[i]; i++) {
-                if (isdigit(new[i]))
+                if (isdigit(new[i])) {
                         digits++;
-                else if (isupper(new[i]))
+                        if (prevclass != DIGIT) {
+                                prevclass = DIGIT;
+                                sameclass = 1;
+                        } else
+                                sameclass++;
+                }
+                else if (isupper(new[i])) {
                         uppers++;
-                else if (islower(new[i]))
+                        if (prevclass != UCASE) {
+                                prevclass = UCASE;
+                                sameclass = 1;
+                        } else
+                                sameclass++;
+                }
+                else if (islower(new[i])) {
                         lowers++;
-                else
+                        if (prevclass != LCASE) {
+                                prevclass = LCASE;
+                                sameclass = 1;
+                        } else
+                                sameclass++;
+                }
+                else {
                         others++;
+                        if (prevclass != OTHER) {
+                                prevclass = OTHER;
+                                sameclass = 1;
+                        } else
+                                sameclass++;
+                }
+                if (pwq->max_class_repeat > 1 && sameclass > pwq->max_class_repeat) {
+                        if (auxerror)
+                                *auxerror = (void *)(long)pwq->max_class_repeat;
+                        return PWQ_ERROR_MAX_CLASS_REPEAT;
+                }
         }
 
         if ((pwq->dig_credit >= 0) && (digits > pwq->dig_credit))
@@ -296,8 +330,9 @@ consecutive(pwquality_settings_t *pwq, const char *new, void **auxerror)
         return 0;
 }
 
-static int usercheck(pwquality_settings_t *pwq, const char *new,
-                     char *user)
+static int
+usercheck(pwquality_settings_t *pwq, const char *new,
+          char *user)
 {
         char *f, *b;
         int dist;
@@ -344,6 +379,50 @@ str_lower(char *string)
 	for (cp = string; *cp; cp++)
 		*cp = tolower(*cp);
 	return string;
+}
+
+static int
+gecoscheck(pwquality_settings_t *pwq, const char *new,
+           const char *user)
+{
+        struct passwd pwd;
+        struct passwd *result;
+        char *buf;
+        size_t bufsize;
+        char *p;
+        char *next;
+
+        bufsize = sysconf(_SC_GETPW_R_SIZE_MAX);
+        if (bufsize == -1 || bufsize > PWQ_MAX_PASSWD_BUF_LEN)
+                bufsize = PWQ_MAX_PASSWD_BUF_LEN;
+        buf = malloc(bufsize);
+        if (buf == NULL)
+                return PWQ_ERROR_MEM_ALLOC;
+
+        if (getpwnam_r(user, &pwd, buf, bufsize, &result) != 0 ||
+                result == NULL) {
+                free(buf);
+                return 0;
+        }        
+
+        for (p = result->pw_gecos;;p = next + 1) {
+                next = strchr(p, ' ');
+                if (next)
+                        *next = '\0';
+
+                if (strlen(p) >= PWQ_MIN_WORD_LENGTH) {
+                        str_lower(p);
+                        if (usercheck(pwq, new, p)) {
+                                free(buf);
+                                return PWQ_ERROR_GECOS_CHECK;
+                        }
+                }
+
+                if (!next)
+                        break;
+        }
+
+        return 0;
 }
 
 static char *
@@ -412,6 +491,9 @@ password_check(pwquality_settings_t *pwq,
 
         if (!rv && usermono && usercheck(pwq, newmono, usermono))
                 rv = PWQ_ERROR_USER_CHECK;
+
+        if (!rv && user && pwq->gecos_check)
+                rv = gecoscheck(pwq, newmono, user);
 
         if (newmono) {
                 memset(newmono, 0, strlen(newmono));

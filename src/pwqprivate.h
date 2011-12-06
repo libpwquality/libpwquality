@@ -21,6 +21,8 @@ struct pwquality_settings {
         int oth_credit;
         int min_class;
         int max_repeat;
+        int max_class_repeat;
+        int gecos_check;
         char *dict_path;
 };
 
@@ -44,6 +46,8 @@ struct setting_mapping {
 #define PWQ_BASE_MIN_LENGTH      6 /* used when lower than this value of min len is set */
 #define PWQ_NUM_CLASSES          4
 #define PWQ_NUM_GENERATION_TRIES 3 /* how many times to try to generate the random password if it fails the check */
+#define PWQ_MIN_WORD_LENGTH      4
+#define PWQ_MAX_PASSWD_BUF_LEN   16300
 
 #ifndef PWQUALITY_DEFAULT_CFGFILE
 #define PWQUALITY_DEFAULT_CFGFILE "/etc/security/pwquality.conf"

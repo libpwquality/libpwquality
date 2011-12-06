@@ -57,6 +57,8 @@ static const struct setting_mapping s_map[] = {
  { "ocredit", PWQ_SETTING_OTH_CREDIT, PWQ_TYPE_INT},
  { "minclass", PWQ_SETTING_MIN_CLASS, PWQ_TYPE_INT},
  { "maxrepeat", PWQ_SETTING_MAX_REPEAT, PWQ_TYPE_INT},
+ { "maxclassrepeat", PWQ_SETTING_MAX_CLASS_REPEAT, PWQ_TYPE_INT},
+ { "gecoscheck", PWQ_SETTING_GECOS_CHECK, PWQ_TYPE_INT},
  { "dictpath", PWQ_SETTING_DICT_PATH, PWQ_TYPE_STR}
 };
 
@@ -72,6 +74,7 @@ set_name_value(pwquality_settings_t *pwq, const char *name, const char *value)
                 if (strcasecmp(s_map[i].name, name) == 0) {
                         switch(s_map[i].type) {
                         case PWQ_TYPE_INT:
+fprintf(stderr, "Value: '%s'", value);
                                 errno = 0;
                                 val = strtol(value, &endptr, 10);
                                 if (errno != 0 || *value == '\0' ||
@@ -195,7 +198,7 @@ pwquality_set_option(pwquality_settings_t *pwq, const char *option)
 
         strncpy(name, option, len);
         name[sizeof(name) - 1] = '\0';
-        
+
         return set_name_value(pwq, name, value);
 }
 
@@ -231,6 +234,12 @@ pwquality_set_int_value(pwquality_settings_t *pwq, int setting, int value)
                 break;
         case PWQ_SETTING_MAX_REPEAT:
                 pwq->max_repeat = value;
+                break;
+        case PWQ_SETTING_MAX_CLASS_REPEAT:
+                pwq->max_class_repeat = value;
+                break;
+        case PWQ_SETTING_GECOS_CHECK:
+                pwq->gecos_check = value;
                 break;
         default:
                 return PWQ_ERROR_NON_INT_SETTING;
@@ -293,6 +302,12 @@ pwquality_get_int_value(pwquality_settings_t *pwq, int setting, int *value)
                 break;
         case PWQ_SETTING_MAX_REPEAT:
                 *value = pwq->max_repeat;
+                break;
+        case PWQ_SETTING_MAX_CLASS_REPEAT:
+                *value = pwq->max_class_repeat;
+                break;
+        case PWQ_SETTING_GECOS_CHECK:
+                *value = pwq->gecos_check;
                 break;
         default:
                 return PWQ_ERROR_NON_INT_SETTING;
