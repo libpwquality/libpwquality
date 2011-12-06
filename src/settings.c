@@ -122,6 +122,7 @@ pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile, void **aux
                 size_t len;
                 char *ptr;
                 char *name;
+                int eq;
 
                 len = strlen(linebuf);
                 if (linebuf[len - 1] != '\n' && !feof(f)) {
@@ -158,9 +159,15 @@ pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile, void **aux
                         }
                         ++ptr;
                 }
+
+                eq = 0;
                 while (*ptr != '\0') {
-                        if (!isspace(*ptr)) {
-                                break;
+                        if (*ptr != '=' || eq) {
+                                if (!isspace(*ptr)) {
+                                        break;
+                                }
+                        } else {
+                                eq = 1;
                         }
                         ++ptr;
                 }
