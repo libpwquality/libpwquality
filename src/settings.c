@@ -32,7 +32,6 @@ pwquality_default_settings(void)
         pwq->up_credit = PWQ_DEFAULT_UP_CREDIT;
         pwq->low_credit = PWQ_DEFAULT_LOW_CREDIT;
         pwq->oth_credit = PWQ_DEFAULT_OTH_CREDIT;
-        /* pwq->dict_path = NULL; unneeded */
 
         return pwq;
 }
@@ -272,6 +271,7 @@ pwquality_set_str_value(pwquality_settings_t *pwq, int setting,
 
         switch(setting) {
         case PWQ_SETTING_DICT_PATH:
+                free(pwq->dict_path);
                 pwq->dict_path = dup;
                 break;
         default:
