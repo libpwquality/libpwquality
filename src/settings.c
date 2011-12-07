@@ -275,6 +275,7 @@ pwquality_set_str_value(pwquality_settings_t *pwq, int setting,
                 pwq->dict_path = dup;
                 break;
         default:
+                free(dup);
                 return PWQ_ERROR_NON_STR_SETTING;
         }
 
