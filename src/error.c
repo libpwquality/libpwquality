@@ -45,6 +45,8 @@ pwquality_strerror(char *buf, size_t len, int rv, void *auxerror)
                 return _("The password contains the user name in some form");
         case PWQ_ERROR_GECOS_CHECK:
                 return _("The password contains words from the real name of the user in some form");
+        case PWQ_ERROR_BAD_WORDS:
+                return _("The password contains forbidden words in some form");
         case PWQ_ERROR_MIN_DIGITS:
                 if (auxerror) {
                         snprintf(buf, len, _("The password contains less than %ld digits"), (long)auxerror);

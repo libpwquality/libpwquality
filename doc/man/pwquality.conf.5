@@ -93,6 +93,14 @@ field of the user's passwd entry are contained in the new password.
 The check is disabled if the value is 0. (default 0)
 .RE
 .PP
+\fBbadwords\fR
+.RS 4
+Space separated list of words that must not be contained in the password. These
+are additional words to the cracklib dictionary check. This setting can be
+also used by applications to emulate the gecos check for user accounts that are
+not created yet.
+.RE
+.PP
 \fBdictpath\fR
 .RS 4
 Path to the cracklib dictionaries. Default is to use the cracklib default.

@@ -58,6 +58,7 @@ static const struct setting_mapping s_map[] = {
  { "maxrepeat", PWQ_SETTING_MAX_REPEAT, PWQ_TYPE_INT},
  { "maxclassrepeat", PWQ_SETTING_MAX_CLASS_REPEAT, PWQ_TYPE_INT},
  { "gecoscheck", PWQ_SETTING_GECOS_CHECK, PWQ_TYPE_INT},
+ { "badwords", PWQ_SETTING_BAD_WORDS, PWQ_TYPE_STR},
  { "dictpath", PWQ_SETTING_DICT_PATH, PWQ_TYPE_STR}
 };
 
@@ -270,6 +271,10 @@ pwquality_set_str_value(pwquality_settings_t *pwq, int setting,
         }
 
         switch(setting) {
+        case PWQ_SETTING_BAD_WORDS:
+                free(pwq->bad_words);
+                pwq->bad_words = dup;
+                break;
         case PWQ_SETTING_DICT_PATH:
                 free(pwq->dict_path);
                 pwq->dict_path = dup;
@@ -328,6 +333,9 @@ int
 pwquality_get_str_value(pwquality_settings_t *pwq, int setting, const char **value)
 {
         switch(setting) {
+        case PWQ_SETTING_BAD_WORDS:
+                *value = pwq->bad_words;
+                break;
         case PWQ_SETTING_DICT_PATH:
                 *value = pwq->dict_path;
                 break;

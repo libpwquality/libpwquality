@@ -382,6 +382,42 @@ str_lower(char *string)
 }
 
 static int
+wordlistcheck(pwquality_settings_t *pwq, const char *new,
+              const char *wordlist)
+{
+        char *list;
+        char *p;
+        char *next;
+
+        if (wordlist == NULL)
+                return 0;
+
+        if ((list = strdup(wordlist)) == NULL) {
+                return PWQ_ERROR_MEM_ALLOC;
+        }
+
+        for (p = list;;p = next + 1) {
+                next = strchr(p, ' ');
+                if (next)
+                        *next = '\0';
+
+                if (strlen(p) >= PWQ_MIN_WORD_LENGTH) {
+                        str_lower(p);
+                        if (usercheck(pwq, new, p)) {
+                                free(list);
+                                return PWQ_ERROR_BAD_WORDS;
+                        }
+                }
+
+                if (!next)
+                        break;
+        }
+
+        free(list);
+        return 0;
+}
+
+static int
 gecoscheck(pwquality_settings_t *pwq, const char *new,
            const char *user)
 {
@@ -389,8 +425,7 @@ gecoscheck(pwquality_settings_t *pwq, const char *new,
         struct passwd *result;
         char *buf;
         size_t bufsize;
-        char *p;
-        char *next;
+        int rv;
 
         bufsize = sysconf(_SC_GETPW_R_SIZE_MAX);
         if (bufsize == -1 || bufsize > PWQ_MAX_PASSWD_BUF_LEN)
@@ -403,26 +438,14 @@ gecoscheck(pwquality_settings_t *pwq, const char *new,
                 result == NULL) {
                 free(buf);
                 return 0;
-        }        
-
-        for (p = result->pw_gecos;;p = next + 1) {
-                next = strchr(p, ' ');
-                if (next)
-                        *next = '\0';
-
-                if (strlen(p) >= PWQ_MIN_WORD_LENGTH) {
-                        str_lower(p);
-                        if (usercheck(pwq, new, p)) {
-                                free(buf);
-                                return PWQ_ERROR_GECOS_CHECK;
-                        }
-                }
-
-                if (!next)
-                        break;
         }
 
-        return 0;
+        rv = wordlistcheck(pwq, new, result->pw_gecos);
+        if (rv == PWQ_ERROR_BAD_WORDS)
+                rv = PWQ_ERROR_GECOS_CHECK;
+
+        free(buf);        
+        return rv;
 }
 
 static char *
@@ -495,6 +518,9 @@ password_check(pwquality_settings_t *pwq,
         if (!rv && user && pwq->gecos_check)
                 rv = gecoscheck(pwq, newmono, user);
 
+        if (!rv)
+                rv = wordlistcheck(pwq, newmono, pwq->bad_words);
+
         if (newmono) {
                 memset(newmono, 0, strlen(newmono));
                 free(newmono);
@@ -554,19 +580,19 @@ password_score(pwquality_settings_t *pwq, const char *password)
 
         memset(buf, 0, len);
         free(buf);
-        
+
         score += numclass(pwq, password) * 2;
 
         score = (score * 100)/(3 * pwq->min_length +
                                + PWQ_NUM_CLASSES * 2);
-        
+
         score -= 50;
-        
+
         if (score > 100)
                 score = 100;
         if (score < 0)
                 score = 0;
-                
+
         return score;
 }
 

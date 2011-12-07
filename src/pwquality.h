@@ -21,6 +21,7 @@
 #define PWQ_SETTING_DICT_PATH       10
 #define PWQ_SETTING_MAX_CLASS_REPEAT 11
 #define PWQ_SETTING_GECOS_CHECK     12
+#define PWQ_SETTING_BAD_WORDS       13
 
 #define PWQ_MAX_ENTROPY_BITS       256
 #define PWQ_MIN_ENTROPY_BITS       56
@@ -55,6 +56,7 @@
 #define PWQ_ERROR_USER_CHECK                   -25
 #define PWQ_ERROR_GECOS_CHECK                  -26
 #define PWQ_ERROR_MAX_CLASS_REPEAT             -27
+#define PWQ_ERROR_BAD_WORDS                    -28
 
 typedef struct pwquality_settings pwquality_settings_t;
 
@@ -91,7 +93,10 @@ pwquality_set_str_value(pwquality_settings_t *pwq, int setting,
 int
 pwquality_get_int_value(pwquality_settings_t *pwq, int setting, int *value);
 
-/* Get value of a string setting. */
+/* Get value of a string setting.
+ * The caller must copy the string before another calls that can
+ * manipulate the pwq settings object.
+ */
 int
 pwquality_get_str_value(pwquality_settings_t *pwq, int setting, const char **value);
 
