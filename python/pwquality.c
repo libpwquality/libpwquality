@@ -102,6 +102,21 @@ static PyGetSetDef pwqsettings_getseters[] = {
                 "Maximum repeated consecutive characters",
                 (void *)PWQ_SETTING_MAX_REPEAT
         },
+        { "maxclassrepeat",
+                (getter)pwqsettings_getint, (setter)pwqsettings_setint,
+                "Maximum repeated consecutive characters",
+                (void *)PWQ_SETTING_MAX_CLASS_REPEAT
+        },
+        { "gecoscheck",
+                (getter)pwqsettings_getint, (setter)pwqsettings_setint,
+                "Maximum repeated consecutive characters",
+                (void *)PWQ_SETTING_GECOS_CHECK
+        },
+        { "badwords",
+                (getter)pwqsettings_getstr, (setter)pwqsettings_setstr,
+                "Path to the cracklib dictionary",
+                (void *)PWQ_SETTING_BAD_WORDS
+        },
         { "dictpath",
                 (getter)pwqsettings_getstr, (setter)pwqsettings_setstr,
                 "Path to the cracklib dictionary",
