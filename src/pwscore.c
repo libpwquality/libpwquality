@@ -16,7 +16,7 @@
 
 #include "pwquality.h"
 
-int
+void
 usage(const char *progname) {
         fprintf(stderr, _("Usage: %s [user]\n"), progname);
         fprintf(stderr, _("       The command reads the password to be scored from the standard input.\n"));

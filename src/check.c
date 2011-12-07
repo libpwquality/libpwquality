@@ -169,7 +169,6 @@ numclass(pwquality_settings_t *pwq,
         int others = 0;
         int total_class;
         int i;
-        int retval;
 
         for (i = 0; new[i]; i++) {
                 if (isdigit(new[i]))

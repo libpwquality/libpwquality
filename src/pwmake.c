@@ -16,7 +16,7 @@
 
 #include "pwquality.h"
 
-int
+void
 usage(const char *progname) {
         fprintf(stderr, _("Usage: %s <entropy-bits>\n"), progname);
 }
