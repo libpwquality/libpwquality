@@ -106,6 +106,10 @@ rm -f $RPM_BUILD_ROOT%{_moduledir}/*.la
 %{python_sitearch}/pwquality.so
 
 %changelog
+* Thu Dec  8 2011 Tomas Mraz <tmraz@redhat.com> 1.0.0-1
+- added a few additional password quality checks
+- bugfix in configuration file parsing
+
 * Fri Nov 11 2011 Tomas Mraz <tmraz@redhat.com> 0.9.9-1
 - added python bindings and documentation
 

@@ -15,3 +15,6 @@ M4_FILES = m4/libtool.m4
 EXTRA_DIST = config.rpath $(M4_FILES) libpwquality.spec libpwquality.spec.in
 
 ACLOCAL_AMFLAGS = -I m4
+
+tag: Makefile
+	hg tag libpwquality-@PACKAGE_VERSION@

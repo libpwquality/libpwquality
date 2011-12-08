@@ -1,5 +1,14 @@
 libpwquality NEWS -- history of user-visible changes.
 
+Release 1.0.0
+
+* Added a check for words from user's GECOS
+* Added a check for configurable words
+* Added a check for maximum consecutive characters of the same class
+* Fixed configuration file parsing (allowed '=' but not required)
+* Fixed possible leak when string setting is set
+* Project added to Transifex for localization
+
 Release 0.9.9
 
 * Release candidate for 1.0

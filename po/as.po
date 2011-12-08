@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Amitakhya Phukan <aphukan@fedoraproject.org>, 2008, 2009.
 # Amitakhya Phukan <aphukan@redhat.com>, 2007.
@@ -9,14 +9,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2011-12-08 11:23+0100\n"
+"POT-Creation-Date: 2011-12-08 11:44+0100\n"
 "PO-Revision-Date: 2011-12-08 10:25+0000\n"
 "Last-Translator: tmraz <tmraz@fedoraproject.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: as\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: as\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: src/pam_pwquality.c:22
@@ -46,8 +46,7 @@ msgstr ""
 #: src/pwscore.c:22
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
+"       The command reads the password to be scored from the standard input.\n"
 msgstr ""
 
 #: src/pwscore.c:50 src/pwscore.c:58 src/pwscore.c:63
@@ -100,8 +99,7 @@ msgid "The password contains the user name in some form"
 msgstr ""
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
+msgid "The password contains words from the real name of the user in some form"
 msgstr ""
 
 #: src/error.c:49
@@ -248,5 +246,3 @@ msgstr ""
 #: src/error.c:147
 msgid "Unknown error"
 msgstr "অজ্ঞাত ভুল"
-
-
