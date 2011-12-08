@@ -1,23 +1,24 @@
-# This file is distributed under the same license as the package.
-# Copyright (C) 2007 Linux-PAM Project
-# TODO: uniformare la traduzione di alcune stringhe con shadow.
-# Novell Language <language@novell.com>, 2007.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR libpwquality project
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
 # Luca Bruno <luca.br@uno.it>, 2007.
 # mario_santagiuliana <mario at marionline.it>, 2009.
+# Novell Language <language@novell.com>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: libpwquality 0.9\n"
+"Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2011-11-11 10:48+0100\n"
-"PO-Revision-Date: 2009-04-20 18:31+0200\n"
-"Last-Translator: mario_santagiuliana <mario at marionline.it>\n"
-"Language-Team: Italian <fedora-trans-it at redhat.com>\n"
-"Language: it\n"
+"POT-Creation-Date: 2011-12-08 11:23+0100\n"
+"PO-Revision-Date: 2011-12-08 10:25+0000\n"
+"Last-Translator: tmraz <tmraz@fedoraproject.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 0.3\n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: src/pam_pwquality.c:22
 #, c-format
@@ -46,7 +47,8 @@ msgstr ""
 #: src/pwscore.c:22
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
+"       The command reads the password to be scored from the standard "
+"input.\n"
 msgstr ""
 
 #: src/pwscore.c:50 src/pwscore.c:58 src/pwscore.c:63
@@ -71,168 +73,181 @@ msgid "Usage: %s <entropy-bits>\n"
 msgstr ""
 
 #: src/error.c:31
-#, fuzzy
 msgid "Memory allocation error when setting"
-msgstr "Errore di conversazione"
+msgstr ""
 
 #: src/error.c:35
-#, fuzzy
 msgid "Memory allocation error"
-msgstr "Errore di conversazione"
+msgstr ""
 
 #: src/error.c:37
-#, fuzzy
 msgid "The password is the same as the old one"
-msgstr "è la stessa di quella precedente"
+msgstr ""
 
 #: src/error.c:39
-#, fuzzy
 msgid "The password is a palindrome"
-msgstr "è un palindromo"
+msgstr ""
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
 msgstr ""
 
 #: src/error.c:43
-#, fuzzy
 msgid "The password is too similar to the old one"
-msgstr "è troppo simile alla precedente"
+msgstr ""
 
 #: src/error.c:45
-#, fuzzy
 msgid "The password contains the user name in some form"
-msgstr "è la stessa di quella precedente"
+msgstr ""
 
-#: src/error.c:48
-#, fuzzy, c-format
+#: src/error.c:47
+msgid ""
+"The password contains words from the real name of the user in some form"
+msgstr ""
+
+#: src/error.c:49
+msgid "The password contains forbidden words in some form"
+msgstr ""
+
+#: src/error.c:52
+#, c-format
 msgid "The password contains less than %ld digits"
-msgstr "è la stessa di quella precedente"
+msgstr ""
 
-#: src/error.c:51
+#: src/error.c:55
 msgid "The password contains too few digits"
 msgstr ""
 
-#: src/error.c:54
-#, fuzzy, c-format
+#: src/error.c:58
+#, c-format
 msgid "The password contains less than %ld uppercase letters"
-msgstr "contiene troppi caratteri simili consecutivi"
+msgstr ""
 
-#: src/error.c:57
+#: src/error.c:61
 msgid "The password contains too few uppercase letters"
 msgstr ""
 
-#: src/error.c:60
-#, fuzzy, c-format
+#: src/error.c:64
+#, c-format
 msgid "The password contains less than %ld lowercase letters"
-msgstr "è la stessa di quella precedente"
+msgstr ""
 
-#: src/error.c:63
+#: src/error.c:67
 msgid "The password contains too few lowercase letters"
 msgstr ""
 
-#: src/error.c:66
-#, fuzzy, c-format
+#: src/error.c:70
+#, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr "contiene troppi caratteri simili consecutivi"
+msgstr ""
 
-#: src/error.c:69
+#: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
 msgstr ""
 
-#: src/error.c:72
-#, fuzzy, c-format
+#: src/error.c:76
+#, c-format
 msgid "The password is shorter than %ld characters"
-msgstr "non ha abbastanza classi di caratteri"
+msgstr ""
 
-#: src/error.c:75
+#: src/error.c:79
 msgid "The password is too short"
 msgstr ""
 
-#: src/error.c:77
+#: src/error.c:81
 msgid "The password is just rotated old one"
 msgstr ""
 
-#: src/error.c:80
-#, fuzzy, c-format
+#: src/error.c:84
+#, c-format
 msgid "The password contains less than %ld character classes"
-msgstr "non ha abbastanza classi di caratteri"
+msgstr ""
 
-#: src/error.c:83
-#, fuzzy
+#: src/error.c:87
 msgid "The password does not contain enough character classes"
-msgstr "non ha abbastanza classi di caratteri"
+msgstr ""
 
-#: src/error.c:86
-#, fuzzy, c-format
+#: src/error.c:90
+#, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr "contiene troppi caratteri simili consecutivi"
+msgstr ""
 
-#: src/error.c:89
-#, fuzzy
+#: src/error.c:93
 msgid "The password contains too many same characters consecutively"
-msgstr "contiene troppi caratteri simili consecutivi"
+msgstr ""
 
-#: src/error.c:91
+#: src/error.c:96
+#, c-format
+msgid ""
+"The password contains more than %ld characters of the same class "
+"consecutively"
+msgstr ""
+
+#: src/error.c:99
+msgid ""
+"The password contains too many characters of the same class consecutively"
+msgstr ""
+
+#: src/error.c:101
 msgid "No password supplied"
 msgstr "Nessuna password fornita"
 
-#: src/error.c:93
+#: src/error.c:103
 msgid "Cannot obtain random numbers from the RNG device"
 msgstr ""
 
-#: src/error.c:95
+#: src/error.c:105
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
 
-#: src/error.c:98 src/error.c:101
-#, fuzzy
+#: src/error.c:108 src/error.c:111
 msgid "The password fails the dictionary check"
-msgstr "è un palindromo"
+msgstr ""
 
-#: src/error.c:104 src/error.c:108
-#, fuzzy
+#: src/error.c:114 src/error.c:118
 msgid "Unknown setting"
-msgstr "Errore sconosciuto"
+msgstr ""
 
-#: src/error.c:111
+#: src/error.c:121
 msgid "Bad integer value of setting"
 msgstr ""
 
-#: src/error.c:115
+#: src/error.c:125
 msgid "Bad integer value"
 msgstr ""
 
-#: src/error.c:118
+#: src/error.c:128
 #, c-format
 msgid "Setting %s is not of integer type"
 msgstr ""
 
-#: src/error.c:122
+#: src/error.c:132
 msgid "Setting is not of integer type"
 msgstr ""
 
-#: src/error.c:125
+#: src/error.c:135
 #, c-format
 msgid "Setting %s is not of string type"
 msgstr ""
 
-#: src/error.c:129
+#: src/error.c:139
 msgid "Setting is not of string type"
 msgstr ""
 
-#: src/error.c:131
+#: src/error.c:141
 msgid "Opening the configuration file failed"
 msgstr ""
 
-#: src/error.c:133
+#: src/error.c:143
 msgid "The configuration file is malformed"
 msgstr ""
 
-#: src/error.c:135
+#: src/error.c:145
 msgid "Fatal failure"
 msgstr ""
 
-#: src/error.c:137
+#: src/error.c:147
 msgid "Unknown error"
 msgstr "Errore sconosciuto"
+
+
