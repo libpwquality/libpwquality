@@ -194,6 +194,7 @@ pwqerror(int rc, void *auxerror)
         } else {
                 PyErr_SetObject(PWQError, py_errvalue);
         }
+        Py_DECREF(py_errvalue);
         return NULL;
 }
 
