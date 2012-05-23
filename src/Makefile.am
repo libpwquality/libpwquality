@@ -50,3 +50,6 @@ securelib_LTLIBRARIES = pam_pwquality.la
 secureconf_DATA = pwquality.conf
 
 bin_PROGRAMS = pwscore pwmake
+
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = pwquality.pc

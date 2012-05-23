@@ -36,6 +36,7 @@ to perform some of the checks.
 Group: Development/Libraries
 Summary: Files needed for developing PAM-aware applications and modules for PAM
 Requires: libpwquality%{?_isa} = %{version}-%{release}
+Requires: pkgconfig
 
 %description devel
 Files needed for development of applications using the libpwquality
@@ -58,7 +59,7 @@ pronounceable passwords from Python applications.
 
 %build
 %configure \
-	--libdir=/%{_lib} \
+	--with-securedir=/%{_lib}/security \
 	--with-pythonsitedir=%{python_sitearch} \
 	--disable-static
 
@@ -67,12 +68,11 @@ make %{?_smp_mflags}
 %install
 make install DESTDIR=$RPM_BUILD_ROOT INSTALL='install -p'
 
-mkdir -p $RPM_BUILD_ROOT%{_libdir}
 pushd $RPM_BUILD_ROOT%{_libdir}
+mv libpwquality.so.* $RPM_BUILD_ROOT/%{_lib}/
 ln -sf ../../%{_lib}/libpwquality.so.*.* libpwquality.so
 popd
-rm -f $RPM_BUILD_ROOT/%{_lib}/*.so
-rm -f $RPM_BUILD_ROOT/%{_lib}/*.la
+rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 rm -f $RPM_BUILD_ROOT%{_moduledir}/*.la
 
 %find_lang libpwquality
@@ -100,6 +100,7 @@ rm -f $RPM_BUILD_ROOT%{_moduledir}/*.la
 %defattr(-,root,root,-)
 %{_includedir}/pwquality.h
 %{_libdir}/libpwquality.so
+%{_libdir}/pkgconfig/*.pc
 
 %files -n python-pwquality
 %defattr(-,root,root,-)
