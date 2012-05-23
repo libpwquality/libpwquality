@@ -18,6 +18,13 @@ It either reports an error if the password fails any of the checks, or it
 prints out the password quality score as an integer value between \fB0\fR and
 \fB100\fR.
 
+The password quality score is relative to the \fBminlen\fR setting in the
+configuration file. But in general values below 50 can be treated as moderate
+quality and above it fairly strong quality. Any password that passes the quality
+checks (especially the mandatory cracklib check) should withstand dictionary
+attacks and scores above 50 with the default minlen setting even fast brute
+force attacks.
+
 .PD
 .SH OPTIONS
 The first and only optional argument is the user name that is used to check
