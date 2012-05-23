@@ -555,7 +555,7 @@ password_score(pwquality_settings_t *pwq, const char *password)
 
         if ((buf = malloc(len)) == NULL)
                 /* should get enough memory to obtain a nice score */
-                return 0;
+                return PWQ_ERROR_MEM_ALLOC;
 
         score = (len - pwq->min_length) * 2;
 
@@ -616,6 +616,11 @@ pwquality_check(pwquality_settings_t *pwq, const char *password,
                 return PWQ_ERROR_SAME_PASSWORD;
         }
 
+        score = password_check(pwq, password, oldpassword, user, auxerror);
+
+        if (score != 0)
+                return score;
+
         msg = FascistCheck(password, pwq->dict_path);
         if (msg) {
                 if (auxerror)
@@ -623,10 +628,7 @@ pwquality_check(pwquality_settings_t *pwq, const char *password,
                 return PWQ_ERROR_CRACKLIB_CHECK;
         }
 
-        score = password_check(pwq, password, oldpassword, user, auxerror);
-        if (score == 0) {
-                score = password_score(pwq, password);
-        }
+        score = password_score(pwq, password);
 
         return score;
 }
