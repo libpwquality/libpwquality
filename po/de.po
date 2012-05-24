@@ -1,20 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
+#   <hpeters@redhat.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2011-12-08 11:44+0100\n"
-"PO-Revision-Date: 2011-12-08 10:25+0000\n"
-"Last-Translator: tmraz <tmraz@fedoraproject.org>\n"
+"POT-Creation-Date: 2011-12-08 11:23+0100\n"
+"PO-Revision-Date: 2012-03-07 05:39+0000\n"
+"Last-Translator: hpeters <hpeters@redhat.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: src/pam_pwquality.c:22
@@ -34,154 +35,156 @@ msgstr "Die Passwörter stimmen nicht überein."
 #: src/pam_pwquality.c:178
 #, c-format
 msgid "BAD PASSWORD: %s"
-msgstr "Schlechtes Passwort: %s"
+msgstr "Unsicheres Passwort: %s"
 
 #: src/pwscore.c:21
 #, c-format
 msgid "Usage: %s [user]\n"
-msgstr ""
+msgstr "Verwendung: %s [user]\n"
 
 #: src/pwscore.c:22
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
-msgstr ""
+"       The command reads the password to be scored from the standard "
+"input.\n"
+msgstr "       Der Befehl liest das zu bewertende Passwort von der Standardeingabe.\n"
 
 #: src/pwscore.c:50 src/pwscore.c:58 src/pwscore.c:63
 #, c-format
 msgid "Error: %s\n"
-msgstr ""
+msgstr "Fehler: %s\n"
 
 #: src/pwscore.c:50
 msgid "Could not obtain the password to be scored"
-msgstr ""
+msgstr "Das zu bewertende Passwort konnte nicht gelesen werden"
 
 #: src/pwscore.c:70
 #, c-format
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr ""
+msgstr "Passwort-Qualitätsprüfung fehlgeschlagen:\n %s\n"
 
 #: src/pwmake.c:21
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
-msgstr ""
+msgstr "Verwendung: %s <entropy-bits>\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
-msgstr ""
+msgstr "Speicherzuweisungsfehler beim Einstellen"
 
 #: src/error.c:35
 msgid "Memory allocation error"
-msgstr ""
+msgstr "Fehler bei Speicherzuweisung"
 
 #: src/error.c:37
 msgid "The password is the same as the old one"
-msgstr ""
+msgstr "Das Passwort ist identisch mit dem alten Passwort"
 
 #: src/error.c:39
 msgid "The password is a palindrome"
-msgstr ""
+msgstr "Das Passwort ist ein Palindrom"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
-msgstr ""
+msgstr "Das Passwort unterscheidet sich nur in der Groß-/Kleinschreibung"
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
-msgstr ""
+msgstr "Das Passwort ist dem alten Passwort zu ähnlich"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr ""
+msgstr "Das Passwort enthält den Benutzernamen"
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
-msgstr ""
+msgid ""
+"The password contains words from the real name of the user in some form"
+msgstr "Das Passwort enthält Wörter aus dem echten Namen des Benutzers"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
-msgstr ""
+msgstr "Das Passwort enthält unzulässige Wörter"
 
 #: src/error.c:52
 #, c-format
 msgid "The password contains less than %ld digits"
-msgstr ""
+msgstr "Das Passwort enthält weniger als %ld Zeichen"
 
 #: src/error.c:55
 msgid "The password contains too few digits"
-msgstr ""
+msgstr "Das Passwort ist nicht lang genug"
 
 #: src/error.c:58
 #, c-format
 msgid "The password contains less than %ld uppercase letters"
-msgstr ""
+msgstr "Das Passwort enthält weniger als %ld Großbuchstaben"
 
 #: src/error.c:61
 msgid "The password contains too few uppercase letters"
-msgstr ""
+msgstr "Das Passwort enthält zu wenige Großbuchstaben"
 
 #: src/error.c:64
 #, c-format
 msgid "The password contains less than %ld lowercase letters"
-msgstr ""
+msgstr "Das Passwort enthält weniger als %ld Kleinbuchstaben"
 
 #: src/error.c:67
 msgid "The password contains too few lowercase letters"
-msgstr ""
+msgstr "Das Passwort enthält zu wenige Kleinbuchstaben"
 
 #: src/error.c:70
 #, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr ""
+msgstr "Das Passwort enthält weniger als %ld nicht-alphanumerische Zeichen"
 
 #: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
-msgstr ""
+msgstr "Das Passwort enthält zu wenige nicht-alphanumerische Zeichen"
 
 #: src/error.c:76
 #, c-format
 msgid "The password is shorter than %ld characters"
-msgstr ""
+msgstr "Das Passwort ist kürzer als %ld Zeichen"
 
 #: src/error.c:79
 msgid "The password is too short"
-msgstr ""
+msgstr "Das Passwort ist zu kurz"
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
-msgstr ""
+msgstr "Das Passwort ist nur ein altes Passwort wiederverwendet"
 
 #: src/error.c:84
 #, c-format
 msgid "The password contains less than %ld character classes"
-msgstr ""
+msgstr "Das Passwort enthält weniger als %ld Zeichenklassen"
 
 #: src/error.c:87
 msgid "The password does not contain enough character classes"
-msgstr ""
+msgstr "Das Passwort enthält zu wenige Zeichenklassen"
 
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr ""
+msgstr "Das Passwort enthält mehr als %ld derselben Zeichen nacheinander"
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
-msgstr ""
+msgstr "Das Passwort enthält zu viele derselben Zeichen nacheinander"
 
 #: src/error.c:96
 #, c-format
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr ""
+msgstr "Das Passwort enthält mehr als %ld aufeinanderfolgende Zeichen derselben Klasse"
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr ""
+msgstr "Das Passwort enthält zu viele aufeinanderfolgende Zeichen derselben Klasse"
 
 #: src/error.c:101
 msgid "No password supplied"
@@ -189,57 +192,57 @@ msgstr "Kein Passwort angegeben"
 
 #: src/error.c:103
 msgid "Cannot obtain random numbers from the RNG device"
-msgstr ""
+msgstr "Vom RNG-Gerät konnten keine zufälligen Zahlen bezogen werden"
 
 #: src/error.c:105
 msgid "Password generation failed - required entropy too low for settings"
-msgstr ""
+msgstr "Passworderstellung fehlgeschlagen - erforderliche Entropie zu niedrig für Einstellungen"
 
 #: src/error.c:108 src/error.c:111
 msgid "The password fails the dictionary check"
-msgstr ""
+msgstr "Passwort scheitert beim Wörterbuchtest"
 
 #: src/error.c:114 src/error.c:118
 msgid "Unknown setting"
-msgstr ""
+msgstr "Unbekannte Einstellung"
 
 #: src/error.c:121
 msgid "Bad integer value of setting"
-msgstr ""
+msgstr "Fehlerhafter Integer-Wert für Einstellung"
 
 #: src/error.c:125
 msgid "Bad integer value"
-msgstr ""
+msgstr "Fehlerhafter Integer-Wert"
 
 #: src/error.c:128
 #, c-format
 msgid "Setting %s is not of integer type"
-msgstr ""
+msgstr "Einstellung %s ist kein Integer-Typ"
 
 #: src/error.c:132
 msgid "Setting is not of integer type"
-msgstr ""
+msgstr "Einstellung ist kein Integer-Typ"
 
 #: src/error.c:135
 #, c-format
 msgid "Setting %s is not of string type"
-msgstr ""
+msgstr "Einstellung %s ist kein String-Typ"
 
 #: src/error.c:139
 msgid "Setting is not of string type"
-msgstr ""
+msgstr "Einstellung ist kein String-Typ"
 
 #: src/error.c:141
 msgid "Opening the configuration file failed"
-msgstr ""
+msgstr "Öffnen der Konfigurationsdatei fehlgeschlagen"
 
 #: src/error.c:143
 msgid "The configuration file is malformed"
-msgstr ""
+msgstr "Die Konfigurationsdatei ist fehlerhaft"
 
 #: src/error.c:145
 msgid "Fatal failure"
-msgstr ""
+msgstr "Schwerwiegender Fehler"
 
 #: src/error.c:147
 msgid "Unknown error"

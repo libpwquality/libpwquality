@@ -1,24 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Canniot Thomas <thomas.canniot@mrtomlinux.org>, 2008.
 # Charles-Antoine Couret <cacouret@wanadoo.fr>, 2009.
+# Constantin DRABO <panda.constantin@gmail.com>, 2012.
 # myriam malga <mmalga@redhat.com>, 2007.
 # Pablo Martin-Gomez <pablo.martin-gomez@laposte.net>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2011-12-08 11:44+0100\n"
-"PO-Revision-Date: 2011-12-08 10:25+0000\n"
-"Last-Translator: tmraz <tmraz@fedoraproject.org>\n"
+"POT-Creation-Date: 2011-12-08 11:23+0100\n"
+"PO-Revision-Date: 2012-02-11 21:13+0000\n"
+"Last-Translator: Constantin DRABO <panda.constantin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
 #: src/pam_pwquality.c:22
@@ -43,149 +44,151 @@ msgstr "MOT DE PASSE INCORRECT : %s"
 #: src/pwscore.c:21
 #, c-format
 msgid "Usage: %s [user]\n"
-msgstr ""
+msgstr "Usage: %s [user]\n"
 
 #: src/pwscore.c:22
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
-msgstr ""
+"       The command reads the password to be scored from the standard "
+"input.\n"
+msgstr "       La commande lit le mot de passe qui doit être marqué à partir de l'entrée standard.\n"
 
 #: src/pwscore.c:50 src/pwscore.c:58 src/pwscore.c:63
 #, c-format
 msgid "Error: %s\n"
-msgstr ""
+msgstr "Erreur: %s\n"
 
 #: src/pwscore.c:50
 msgid "Could not obtain the password to be scored"
-msgstr ""
+msgstr "Impossible d'obtenir le mot de passe qui doit être marqué"
 
 #: src/pwscore.c:70
 #, c-format
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr ""
+msgstr "Echec de la vérification de la qualité du mot de passe:\n %s\n"
 
 #: src/pwmake.c:21
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
-msgstr ""
+msgstr "Usage: %s <entropy-bits>\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
-msgstr ""
+msgstr "Erreur d'allocation de la mémoire pendant la configuration"
 
 #: src/error.c:35
 msgid "Memory allocation error"
-msgstr ""
+msgstr "Erreur d'allocation de mémoire"
 
 #: src/error.c:37
 msgid "The password is the same as the old one"
-msgstr ""
+msgstr "Le mot de passe est le même que l'ancien"
 
 #: src/error.c:39
 msgid "The password is a palindrome"
-msgstr ""
+msgstr "Le mot de passe est un palindrome"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
-msgstr ""
+msgstr "Le mot de passe diffère avec la casse seulement"
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
-msgstr ""
+msgstr "Le mot de passe est très similaire à l'ancien"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr ""
+msgstr "Le mot de passe contient le nom d'utilisateur sous une forme"
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
-msgstr ""
+msgid ""
+"The password contains words from the real name of the user in some form"
+msgstr "Le mot de passe contient des mots appartenant au nom réel de l'utilisateur sous une forme"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
-msgstr ""
+msgstr "Le mot de passe contient des mots interdits sous une forme"
 
 #: src/error.c:52
 #, c-format
 msgid "The password contains less than %ld digits"
-msgstr ""
+msgstr "Le mot de passe contient moins de %ld chiffres"
 
 #: src/error.c:55
 msgid "The password contains too few digits"
-msgstr ""
+msgstr "Le mot de passe contient peu de chiffres"
 
 #: src/error.c:58
 #, c-format
 msgid "The password contains less than %ld uppercase letters"
-msgstr ""
+msgstr "Le mot de passe contient moins de  %ld lettres en majuscule"
 
 #: src/error.c:61
 msgid "The password contains too few uppercase letters"
-msgstr ""
+msgstr "Le mot de passe contient peu de lettres en majuscule"
 
 #: src/error.c:64
 #, c-format
 msgid "The password contains less than %ld lowercase letters"
-msgstr ""
+msgstr "Le mot de passe contient moins de %ld lettres en minuscule"
 
 #: src/error.c:67
 msgid "The password contains too few lowercase letters"
-msgstr ""
+msgstr "Le mot de passe contient peu de lettres en minuscule"
 
 #: src/error.c:70
 #, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr ""
+msgstr "Le mot de passe contient moins de %ld caractères non-alphanumériques"
 
 #: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
-msgstr ""
+msgstr "Le mot de passe contient peu de caractères non-alphanumériques"
 
 #: src/error.c:76
 #, c-format
 msgid "The password is shorter than %ld characters"
-msgstr ""
+msgstr "Le mot de passe est court de %ld caractères"
 
 #: src/error.c:79
 msgid "The password is too short"
-msgstr ""
+msgstr "Le mot de passe est très court"
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
-msgstr ""
+msgstr "Le mot de passe est juste l'ancien roté"
 
 #: src/error.c:84
 #, c-format
 msgid "The password contains less than %ld character classes"
-msgstr ""
+msgstr "Le mot de passe contient moins de %ld classes de caractères"
 
 #: src/error.c:87
 msgid "The password does not contain enough character classes"
-msgstr ""
+msgstr "Le mot de passe ne contient pas assez de classes de caractères"
 
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr ""
+msgstr "Le mot de passe contient plus de %ld caractères similaires consécutifs "
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
-msgstr ""
+msgstr "Le mot de passe contient trop de caractères similaires consécutifs"
 
 #: src/error.c:96
 #, c-format
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr ""
+msgstr " Le mot de passe contient plus de %ld caractères de la même classe consécutivement"
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr ""
+msgstr "Le mot de passe contient beaucoup de caractères de la même classe consécutivement"
 
 #: src/error.c:101
 msgid "No password supplied"
@@ -193,57 +196,57 @@ msgstr "Aucun mot de passe fourni"
 
 #: src/error.c:103
 msgid "Cannot obtain random numbers from the RNG device"
-msgstr ""
+msgstr "Impossible d'obtenir des nombres au hasard à partir de l'appareil RNG"
 
 #: src/error.c:105
 msgid "Password generation failed - required entropy too low for settings"
-msgstr ""
+msgstr "Echec de génération de mot de passe - entropie nécessaire trop faible pour les paramètres"
 
 #: src/error.c:108 src/error.c:111
 msgid "The password fails the dictionary check"
-msgstr ""
+msgstr "Le mot de passe fait échouer la vérification du dictionnaire"
 
 #: src/error.c:114 src/error.c:118
 msgid "Unknown setting"
-msgstr ""
+msgstr "Paramètre inconnu"
 
 #: src/error.c:121
 msgid "Bad integer value of setting"
-msgstr ""
+msgstr "Valeur entière de paramètre erronée"
 
 #: src/error.c:125
 msgid "Bad integer value"
-msgstr ""
+msgstr "Valeur entière erronée"
 
 #: src/error.c:128
 #, c-format
 msgid "Setting %s is not of integer type"
-msgstr ""
+msgstr "Paramètre %s n'est pas de type entier"
 
 #: src/error.c:132
 msgid "Setting is not of integer type"
-msgstr ""
+msgstr "Paramètre n'est pas de type entier"
 
 #: src/error.c:135
 #, c-format
 msgid "Setting %s is not of string type"
-msgstr ""
+msgstr "Paramètre %s n'est pas de type chaîne de caractères"
 
 #: src/error.c:139
 msgid "Setting is not of string type"
-msgstr ""
+msgstr "Paramètre n'est pas de type chaîne de caractères"
 
 #: src/error.c:141
 msgid "Opening the configuration file failed"
-msgstr ""
+msgstr "Echec de l'ouverture du fichier de configuration"
 
 #: src/error.c:143
 msgid "The configuration file is malformed"
-msgstr ""
+msgstr "Le fichier de configuration est incorrect"
 
 #: src/error.c:145
 msgid "Fatal failure"
-msgstr ""
+msgstr "Erreur fatale"
 
 #: src/error.c:147
 msgid "Unknown error"

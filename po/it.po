@@ -1,23 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Luca Bruno <luca.br@uno.it>, 2007.
+# Mario Santagiuliana <fedora at marionline.it>, 2012.
 # mario_santagiuliana <mario at marionline.it>, 2009.
+# Mauro Gaggiotti <mauro.gaggiotti@gmail.com>, 2012.
 # Novell Language <language@novell.com>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2011-12-08 11:44+0100\n"
-"PO-Revision-Date: 2011-12-08 10:25+0000\n"
-"Last-Translator: tmraz <tmraz@fedoraproject.org>\n"
+"POT-Creation-Date: 2011-12-08 11:23+0100\n"
+"PO-Revision-Date: 2012-02-26 14:28+0000\n"
+"Last-Translator: Mauro Gaggiotti <mauro.gaggiotti@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: src/pam_pwquality.c:22
@@ -42,149 +44,151 @@ msgstr "PASSWORD ERRATA: %s"
 #: src/pwscore.c:21
 #, c-format
 msgid "Usage: %s [user]\n"
-msgstr ""
+msgstr "Utilizzo: %s [user]\n"
 
 #: src/pwscore.c:22
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
-msgstr ""
+"       The command reads the password to be scored from the standard "
+"input.\n"
+msgstr "       Il comando legge la password fornita dall'input standard.\n"
 
 #: src/pwscore.c:50 src/pwscore.c:58 src/pwscore.c:63
 #, c-format
 msgid "Error: %s\n"
-msgstr ""
+msgstr "Errore: %s\n"
 
 #: src/pwscore.c:50
 msgid "Could not obtain the password to be scored"
-msgstr ""
+msgstr "Non è possibile ottenere la password fornita"
 
 #: src/pwscore.c:70
 #, c-format
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr ""
+msgstr "Controllo di qualità della password fallito:\n %s\n"
 
 #: src/pwmake.c:21
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
-msgstr ""
+msgstr "Utilizzo: %s <entropy-bits>\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
-msgstr ""
+msgstr "Errore di allocazione della memoria in fase di configurazione"
 
 #: src/error.c:35
 msgid "Memory allocation error"
-msgstr ""
+msgstr "Errore di allocazione della memoria"
 
 #: src/error.c:37
 msgid "The password is the same as the old one"
-msgstr ""
+msgstr "La nuova password è identica alla vecchia"
 
 #: src/error.c:39
 msgid "The password is a palindrome"
-msgstr ""
+msgstr "La password è un palindromo"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
-msgstr ""
+msgstr "La password differisce solo per cambiamenti di carattere minuscolo-maiuscolo"
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
-msgstr ""
+msgstr "La nuova password è troppo simile alla vecchia"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr ""
+msgstr "La password contiene il nome utente in altre forme"
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
-msgstr ""
+msgid ""
+"The password contains words from the real name of the user in some form"
+msgstr "La password contiene parole del nome reale dell'utente in altre forme"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
-msgstr ""
+msgstr "La password contiene parole proibite in altre forme"
 
 #: src/error.c:52
 #, c-format
 msgid "The password contains less than %ld digits"
-msgstr ""
+msgstr "La password contiene meno di %ld caratteri"
 
 #: src/error.c:55
 msgid "The password contains too few digits"
-msgstr ""
+msgstr "La password contiene troppo pochi caratteri"
 
 #: src/error.c:58
 #, c-format
 msgid "The password contains less than %ld uppercase letters"
-msgstr ""
+msgstr "La password contiene meno di %ld lettere maiuscole"
 
 #: src/error.c:61
 msgid "The password contains too few uppercase letters"
-msgstr ""
+msgstr "La password contiene troppi pochi caratteri maiuscoli"
 
 #: src/error.c:64
 #, c-format
 msgid "The password contains less than %ld lowercase letters"
-msgstr ""
+msgstr "La password contiene meno di  %ld caratteri minuscoli"
 
 #: src/error.c:67
 msgid "The password contains too few lowercase letters"
-msgstr ""
+msgstr "La password contiene troppo pochi caratteri minuscoli"
 
 #: src/error.c:70
 #, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr ""
+msgstr "La password contiene meno di %ld caratteri non-alfanumerici"
 
 #: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
-msgstr ""
+msgstr "La password contiene troppi pochi caratteri non-alfanumerici"
 
 #: src/error.c:76
 #, c-format
 msgid "The password is shorter than %ld characters"
-msgstr ""
+msgstr "La password è più corta di %ld caratteri"
 
 #: src/error.c:79
 msgid "The password is too short"
-msgstr ""
+msgstr "La password è troppo corta"
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
-msgstr ""
+msgstr "La nuova password è come la vecchia, ruotata."
 
 #: src/error.c:84
 #, c-format
 msgid "The password contains less than %ld character classes"
-msgstr ""
+msgstr "La password contiene meno di %ld classi di carattere"
 
 #: src/error.c:87
 msgid "The password does not contain enough character classes"
-msgstr ""
+msgstr "La password non contiene abbastanza classi di carattere"
 
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr ""
+msgstr "La password contiene consecutivamente più di  %ld caratteri identici"
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
-msgstr ""
+msgstr "La password contiene consecutivamente troppi caratteri identici"
 
 #: src/error.c:96
 #, c-format
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr ""
+msgstr "La password contiene consecutivamente più di %ld caratteri della stessa classe"
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr ""
+msgstr "La password contiene consecutivamente troppi caratteri della stessa classe"
 
 #: src/error.c:101
 msgid "No password supplied"
@@ -192,57 +196,57 @@ msgstr "Nessuna password fornita"
 
 #: src/error.c:103
 msgid "Cannot obtain random numbers from the RNG device"
-msgstr ""
+msgstr "Non è possibile ottenere numeri casuali dalla periferica RNG"
 
 #: src/error.c:105
 msgid "Password generation failed - required entropy too low for settings"
-msgstr ""
+msgstr "Generazione della password non riuscita - entropia richiesta troppo bassa per la configurazione"
 
 #: src/error.c:108 src/error.c:111
 msgid "The password fails the dictionary check"
-msgstr ""
+msgstr "La password non supera il controllo del dizionario"
 
 #: src/error.c:114 src/error.c:118
 msgid "Unknown setting"
-msgstr ""
+msgstr "Impostazione sconosciuta"
 
 #: src/error.c:121
 msgid "Bad integer value of setting"
-msgstr ""
+msgstr "Valore intero errato dell'impostazione"
 
 #: src/error.c:125
 msgid "Bad integer value"
-msgstr ""
+msgstr "Valore intero errato"
 
 #: src/error.c:128
 #, c-format
 msgid "Setting %s is not of integer type"
-msgstr ""
+msgstr "L'impostazione %s non è di tipo intero"
 
 #: src/error.c:132
 msgid "Setting is not of integer type"
-msgstr ""
+msgstr "L'impostazione non è di tipo intero"
 
 #: src/error.c:135
 #, c-format
 msgid "Setting %s is not of string type"
-msgstr ""
+msgstr "L'impostazione %s non è di tipo stringa"
 
 #: src/error.c:139
 msgid "Setting is not of string type"
-msgstr ""
+msgstr "L'impostazione non è di tipo stringa"
 
 #: src/error.c:141
 msgid "Opening the configuration file failed"
-msgstr ""
+msgstr "Apertura fallita del file di configurazione"
 
 #: src/error.c:143
 msgid "The configuration file is malformed"
-msgstr ""
+msgstr "Il file di configurazione è corrotto"
 
 #: src/error.c:145
 msgid "Fatal failure"
-msgstr ""
+msgstr "Errore fatale"
 
 #: src/error.c:147
 msgid "Unknown error"

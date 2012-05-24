@@ -1,23 +1,24 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Kalman Kemenczy <kkemenczy@novell.com>, 2006, 2007.
 # Keresztes Ákos <xsak@c2.hu>, 2006.
 # Papp Zsolt <zpapp@novell.com>, 2006.
+# Zoltan Hoppár <hopparz@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2011-12-08 11:44+0100\n"
-"PO-Revision-Date: 2011-12-08 10:25+0000\n"
-"Last-Translator: tmraz <tmraz@fedoraproject.org>\n"
+"POT-Creation-Date: 2011-12-08 11:23+0100\n"
+"PO-Revision-Date: 2012-01-24 14:13+0000\n"
+"Last-Translator: Zoltan Hoppár <hopparz@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: src/pam_pwquality.c:22
@@ -28,7 +29,7 @@ msgstr "Új %s%sjelszó: "
 #: src/pam_pwquality.c:24
 #, c-format
 msgid "Retype new %s%spassword: "
-msgstr "Ismét az új %s%sjelszó: "
+msgstr "Ismételje meg az új %s%sjelszavát: "
 
 #: src/pam_pwquality.c:25
 msgid "Sorry, passwords do not match."
@@ -42,149 +43,151 @@ msgstr "ROSSZ JELSZÓ: %s"
 #: src/pwscore.c:21
 #, c-format
 msgid "Usage: %s [user]\n"
-msgstr ""
+msgstr "Használata: %s [user]\n"
 
 #: src/pwscore.c:22
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
-msgstr ""
+"       The command reads the password to be scored from the standard "
+"input.\n"
+msgstr "       A parancs kiolvassa a jelszavát hogy pontozhassa a szabványos bemenetről.\n"
 
 #: src/pwscore.c:50 src/pwscore.c:58 src/pwscore.c:63
 #, c-format
 msgid "Error: %s\n"
-msgstr ""
+msgstr "Hiba: %s\n"
 
 #: src/pwscore.c:50
 msgid "Could not obtain the password to be scored"
-msgstr ""
+msgstr "Nem elérhető a jelszó a pontozáshoz"
 
 #: src/pwscore.c:70
 #, c-format
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr ""
+msgstr "Jelszó minőségi ellenőrzés meghiúsult:\n%s\n"
 
 #: src/pwmake.c:21
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
-msgstr ""
+msgstr "Alkalmazása: %s <entrópia-bitek>\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
-msgstr ""
+msgstr "Memória allokációs hiba beállításkor"
 
 #: src/error.c:35
 msgid "Memory allocation error"
-msgstr ""
+msgstr "Memória allokációs hiba"
 
 #: src/error.c:37
 msgid "The password is the same as the old one"
-msgstr ""
+msgstr "A jelszó megegyezik a korábbival"
 
 #: src/error.c:39
 msgid "The password is a palindrome"
-msgstr ""
+msgstr "A jelszó egy palindrom, egy anagramma"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
-msgstr ""
+msgstr "A jelszó csak betűcserében tér el"
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
-msgstr ""
+msgstr "A jelszó túl hasonló a korábbihoz képest"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr ""
+msgstr "A jelszó tartalmazza a felhasználói nevét valamilyen formában"
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
-msgstr ""
+msgid ""
+"The password contains words from the real name of the user in some form"
+msgstr "A jelszó szavakat tartalmaz a felhasználó valódi neve alapján bizonyos formában"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
-msgstr ""
+msgstr "A jelszó tiltott szavakat tartalmaz bizonyos formában"
 
 #: src/error.c:52
 #, c-format
 msgid "The password contains less than %ld digits"
-msgstr ""
+msgstr "A jelszó kevesebb mint %ld számot tartalmaz"
 
 #: src/error.c:55
 msgid "The password contains too few digits"
-msgstr ""
+msgstr "A jelszó túl kevés számot tartalmaz"
 
 #: src/error.c:58
 #, c-format
 msgid "The password contains less than %ld uppercase letters"
-msgstr ""
+msgstr "A jelszó kevesebb mint %ld nagybetűt tartalmaz"
 
 #: src/error.c:61
 msgid "The password contains too few uppercase letters"
-msgstr ""
+msgstr "A jelszó túl kevés nagybetűt tartalmaz"
 
 #: src/error.c:64
 #, c-format
 msgid "The password contains less than %ld lowercase letters"
-msgstr ""
+msgstr "A jelszó kevesebb mint %ld kisbetűt tartalmaz"
 
 #: src/error.c:67
 msgid "The password contains too few lowercase letters"
-msgstr ""
+msgstr "A jelszó túl kevés kisbetűt tartalmaz"
 
 #: src/error.c:70
 #, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr ""
+msgstr "A jelszó kevesebb mint %ld nem alfanumerikus karaktert tartalmaz"
 
 #: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
-msgstr ""
+msgstr "A jelszó túl kevés nem alfanumerikus karaktert tartalmaz"
 
 #: src/error.c:76
 #, c-format
 msgid "The password is shorter than %ld characters"
-msgstr ""
+msgstr "A jelszó rövidebb mint %ld karakter"
 
 #: src/error.c:79
 msgid "The password is too short"
-msgstr ""
+msgstr "A jelszó túl rövid"
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
-msgstr ""
+msgstr "A jelszó újrahasznosított régi, már szerepelt korábban"
 
 #: src/error.c:84
 #, c-format
 msgid "The password contains less than %ld character classes"
-msgstr ""
+msgstr "A jelszó kevesebb mint %ld karaktertípust tartalmaz"
 
 #: src/error.c:87
 msgid "The password does not contain enough character classes"
-msgstr ""
+msgstr "A jelszó nem tartalmaz megfelelő mennyiségű karaktertípust"
 
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr ""
+msgstr "A jelszó rekurzív, többször %ld - tartalmazza ugyanazon karaktereket"
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
-msgstr ""
+msgstr "A jelszó ismétlődően tartalmazza ugyanazon a karaktereket"
 
 #: src/error.c:96
 #, c-format
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr ""
+msgstr "A jelszó több mint %ld ugyanolyan osztályú ismétlődő karaktert tartalmaz "
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr ""
+msgstr "A jelszó túl sok ismétlődő, ugyanolyan osztályú karaktert tartalmaz"
 
 #: src/error.c:101
 msgid "No password supplied"
@@ -192,57 +195,57 @@ msgstr "Nincs jelszó megadva"
 
 #: src/error.c:103
 msgid "Cannot obtain random numbers from the RNG device"
-msgstr ""
+msgstr "Véletlenszerűen generált számok nem elfogadhatóak egy RNG eszközről"
 
 #: src/error.c:105
 msgid "Password generation failed - required entropy too low for settings"
-msgstr ""
+msgstr "Jelszó generálás sikertelen - a szükséges entrópia túl kevés a beállításokhoz"
 
 #: src/error.c:108 src/error.c:111
 msgid "The password fails the dictionary check"
-msgstr ""
+msgstr "A jelszó fennakadt a szótár alapú ellenőrzésen"
 
 #: src/error.c:114 src/error.c:118
 msgid "Unknown setting"
-msgstr ""
+msgstr "Ismeretlen beállítás"
 
 #: src/error.c:121
 msgid "Bad integer value of setting"
-msgstr ""
+msgstr "Rossz egész beállítási érték"
 
 #: src/error.c:125
 msgid "Bad integer value"
-msgstr ""
+msgstr "Helytelenül beállított egész érték"
 
 #: src/error.c:128
 #, c-format
 msgid "Setting %s is not of integer type"
-msgstr ""
+msgstr "A beállított %s nem egész típus"
 
 #: src/error.c:132
 msgid "Setting is not of integer type"
-msgstr ""
+msgstr "A beállítás nem egész típus"
 
 #: src/error.c:135
 #, c-format
 msgid "Setting %s is not of string type"
-msgstr ""
+msgstr "A beállítás %s nem szöveges típus"
 
 #: src/error.c:139
 msgid "Setting is not of string type"
-msgstr ""
+msgstr "Beállítás nem szöveges típus"
 
 #: src/error.c:141
 msgid "Opening the configuration file failed"
-msgstr ""
+msgstr "A konfigurációs fájl megnyitása nem sikerült"
 
 #: src/error.c:143
 msgid "The configuration file is malformed"
-msgstr ""
+msgstr "A konfigurációs fájl eltorzult"
 
 #: src/error.c:145
 msgid "Fatal failure"
-msgstr ""
+msgstr "Végzetes hiba"
 
 #: src/error.c:147
 msgid "Unknown error"

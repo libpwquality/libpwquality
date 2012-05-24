@@ -1,22 +1,23 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
+# Dominik  <dominikla@gmail.com>, 2012.
 # Ondrej Šulek <feonsu@gmail.com>, 2008.
 # Pavol Šimo <palo.simo@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2011-12-08 11:44+0100\n"
-"PO-Revision-Date: 2011-12-08 10:25+0000\n"
-"Last-Translator: tmraz <tmraz@fedoraproject.org>\n"
+"POT-Creation-Date: 2011-12-08 11:23+0100\n"
+"PO-Revision-Date: 2012-01-29 18:34+0000\n"
+"Last-Translator: Dominik <dominikla@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: sk\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 
 #: src/pam_pwquality.c:22
@@ -41,29 +42,30 @@ msgstr "NESPRÁVNE HESLO: %s"
 #: src/pwscore.c:21
 #, c-format
 msgid "Usage: %s [user]\n"
-msgstr ""
+msgstr "Využitie: %s [user]\n"
 
 #: src/pwscore.c:22
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
-msgstr ""
+"       The command reads the password to be scored from the standard "
+"input.\n"
+msgstr "       Príkaz číta heslo, aby bolo ohodnotené zo štandardného vstupu.\n"
 
 #: src/pwscore.c:50 src/pwscore.c:58 src/pwscore.c:63
 #, c-format
 msgid "Error: %s\n"
-msgstr ""
+msgstr "Chyba: %s\n"
 
 #: src/pwscore.c:50
 msgid "Could not obtain the password to be scored"
-msgstr ""
+msgstr "Nemôžem získať heslo na hodnotenie"
 
 #: src/pwscore.c:70
 #, c-format
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr ""
+msgstr "Kontrola kvality hesla zlyhala:\n%s\n"
 
 #: src/pwmake.c:21
 #, c-format
@@ -80,40 +82,41 @@ msgstr ""
 
 #: src/error.c:37
 msgid "The password is the same as the old one"
-msgstr ""
+msgstr "Heslo je rovnaké ako to staré"
 
 #: src/error.c:39
 msgid "The password is a palindrome"
-msgstr ""
+msgstr "Heslo je palindróm"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
-msgstr ""
+msgstr "Heslo sa odlišuje iba zmenami veľkostí písmen"
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
-msgstr ""
+msgstr "Heslo je príliš podobné starému"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr ""
+msgstr "Heslo obsahuje užívateľské meno v istej forme"
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
+msgid ""
+"The password contains words from the real name of the user in some form"
 msgstr ""
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
-msgstr ""
+msgstr "Heslo obsahuje zakázané slová v istej forme"
 
 #: src/error.c:52
 #, c-format
 msgid "The password contains less than %ld digits"
-msgstr ""
+msgstr "Heslo obsahuje menej ako %ld číslic"
 
 #: src/error.c:55
 msgid "The password contains too few digits"
-msgstr ""
+msgstr "Heslo obsahuje príliš málo číslic"
 
 #: src/error.c:58
 #, c-format
@@ -145,15 +148,15 @@ msgstr ""
 #: src/error.c:76
 #, c-format
 msgid "The password is shorter than %ld characters"
-msgstr ""
+msgstr "Heslo je kratšie než %ld znakov"
 
 #: src/error.c:79
 msgid "The password is too short"
-msgstr ""
+msgstr "Heslo je prílič krátke"
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
-msgstr ""
+msgstr "Heslo je iba obrátené staré heslo"
 
 #: src/error.c:84
 #, c-format
@@ -203,7 +206,7 @@ msgstr ""
 
 #: src/error.c:114 src/error.c:118
 msgid "Unknown setting"
-msgstr ""
+msgstr "Neznáme nastavenie"
 
 #: src/error.c:121
 msgid "Bad integer value of setting"
@@ -233,7 +236,7 @@ msgstr ""
 
 #: src/error.c:141
 msgid "Opening the configuration file failed"
-msgstr ""
+msgstr "Otvorenie konfiguračného súboru zlyhalo"
 
 #: src/error.c:143
 msgid "The configuration file is malformed"
@@ -241,7 +244,7 @@ msgstr ""
 
 #: src/error.c:145
 msgid "Fatal failure"
-msgstr ""
+msgstr "Fatálne zlyhanie"
 
 #: src/error.c:147
 msgid "Unknown error"
