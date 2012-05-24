@@ -107,6 +107,13 @@ rm -f $RPM_BUILD_ROOT%{_moduledir}/*.la
 %{python_sitearch}/pwquality.so
 
 %changelog
+* Thu May 24 2012 Tomas Mraz <tmraz@redhat.com> 1.1.0-1
+- fix leak when throwing PWQError exception
+- added pkgconfig file
+- call the simplicity checks before the cracklib check
+- add enforce_for_root option to the PAM module
+- updated translations from Transifex
+
 * Thu Dec  8 2011 Tomas Mraz <tmraz@redhat.com> 1.0.0-1
 - added a few additional password quality checks
 - bugfix in configuration file parsing

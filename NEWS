@@ -1,5 +1,13 @@
 libpwquality NEWS -- history of user-visible changes.
 
+Release 1.1.0
+
+* Fixed a memory leak when throwing PWQError exception
+* Added pkgconfig file (thanks to Matthias Classen)
+* The simplicity checks are now called before the cracklib check
+* Added enforce_for_root option to the PAM module
+* Updated translations from Transifex
+
 Release 1.0.0
 
 * Added a check for words from user's GECOS
