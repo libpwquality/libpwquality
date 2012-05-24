@@ -10,7 +10,7 @@ securelibdir = @SECUREDIR@
 
 secureconfdir = @SCONFIGDIR@
 
-EXTRA_DIST = libpwquality.map pwquality.conf
+EXTRA_DIST = libpwquality.map pwquality.conf pwquality.pc
 
 include_HEADERS = pwquality.h
 
