@@ -42,6 +42,7 @@
 
 struct module_options {
         int retry_times;
+        int enforce_for_root;
         pwquality_settings_t *pwq;
 };
 
@@ -79,6 +80,8 @@ _pam_parse (pam_handle_t *pamh, struct module_options *opt,
                         opt->retry_times = strtol(*argv+6, &ep, 10);
                         if (!ep || (opt->retry_times < 1))
                                 opt->retry_times = CO_RETRY_TIMES;
+                } else if (!strncmp(*argv, "enforce_for_root", 16)) {
+                        opt->enforce_for_root = 1;
                 } else if (!strncmp(*argv, "difignore=", 10)) {
                         /* ignored for compatibility with pam_cracklib */
                 } else if (!strncmp(*argv, "reject_username", 15)) {
@@ -177,7 +180,8 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
                                         pam_syslog(pamh, LOG_DEBUG, "bad password: %s", msg);
                                 pam_error(pamh, _("BAD PASSWORD: %s"), msg);
 
-                                if (getuid() || (flags & PAM_CHANGE_EXPIRED_AUTHTOK)) {
+                                if (getuid() || options.enforce_for_root ||
+                                    (flags & PAM_CHANGE_EXPIRED_AUTHTOK)) {
                                         pam_set_item(pamh, PAM_AUTHTOK, NULL);
                                         retval = PAM_AUTHTOK_ERR;
                                         continue;

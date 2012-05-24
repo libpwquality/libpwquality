@@ -240,6 +240,14 @@ individually searched for and forbidden in the new password\&.
 By default the list is empty which means that this check is disabled\&.
 .RE
 .PP
+\fBenforce_for_root\fR
+.RS 4
+The module will return error on failed check even if the user changing the
+password is root\&. This option is off by default which means that just
+the message about the failed check is printed but root can change
+the password anyway\&.
+.RE
+.PP
 \fBuse_authtok\fR
 .RS 4
 This argument is used to
