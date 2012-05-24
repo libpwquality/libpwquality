@@ -13,6 +13,7 @@
 #include <sys/stat.h>
 #include <errno.h>
 #include <libgen.h>
+#include <locale.h>
 
 #include "pwquality.h"
 
