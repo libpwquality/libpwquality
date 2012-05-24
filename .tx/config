@@ -1,0 +1,8 @@
+[main]
+host = https://www.transifex.net
+
+[libpwquality.default]
+file_filter = po/<lang>.po
+source_file = po/libpwquality.pot
+source_lang = en
+
