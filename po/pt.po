@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Antonio Cardoso Martins <digiplan@netvisao.pt>, 2005, 2006.
 #   <manuelmarque@gmail.com>, 2012.
@@ -11,14 +11,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2011-12-08 11:23+0100\n"
+"POT-Creation-Date: 2012-05-24 14:45+0200\n"
 "PO-Revision-Date: 2012-03-19 21:42+0000\n"
 "Last-Translator: Rui Gouveia <rui.gouveia@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: src/pam_pwquality.c:22
@@ -35,40 +35,43 @@ msgstr "Digite novamente a nova %s%ssenha: "
 msgid "Sorry, passwords do not match."
 msgstr "Lamento, as senhas não coincidem."
 
-#: src/pam_pwquality.c:178
+#: src/pam_pwquality.c:181
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "MÁ SENHA: %s"
 
-#: src/pwscore.c:21
+#: src/pwscore.c:22
 #, c-format
 msgid "Usage: %s [user]\n"
 msgstr "Utilização: %s [utilizador]\n"
 
-#: src/pwscore.c:22
+#: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
-msgstr "       O comando lê a senha a ser pontuada a partir da entrada de dados por omissão.\n"
+"       The command reads the password to be scored from the standard input.\n"
+msgstr ""
+"       O comando lê a senha a ser pontuada a partir da entrada de dados por "
+"omissão.\n"
 
-#: src/pwscore.c:50 src/pwscore.c:58 src/pwscore.c:63
+#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:64
 #, c-format
 msgid "Error: %s\n"
 msgstr "Erro: %s\n"
 
-#: src/pwscore.c:50
+#: src/pwscore.c:51
 msgid "Could not obtain the password to be scored"
 msgstr "Não foi possível obter a senha para ser pontuada"
 
-#: src/pwscore.c:70
+#: src/pwscore.c:71
 #, c-format
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr "Verificação de qualidade da senha falhou:\n %s\n"
+msgstr ""
+"Verificação de qualidade da senha falhou:\n"
+" %s\n"
 
-#: src/pwmake.c:21
+#: src/pwmake.c:22
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
 msgstr "Utilização: %s <bits-entropia>\n"
@@ -102,8 +105,7 @@ msgid "The password contains the user name in some form"
 msgstr "A senha contém o nome do utilizador em alguma forma"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
+msgid "The password contains words from the real name of the user in some form"
 msgstr "A senha contém palavras do nome real do utilizador em algum ponto"
 
 #: src/error.c:49
@@ -199,7 +201,9 @@ msgstr "Não foi possível obter números aleatórios do dispositivo RNG"
 
 #: src/error.c:105
 msgid "Password generation failed - required entropy too low for settings"
-msgstr "A geração da senha falhou - a entropia necessária é demasiado baixa para as definições"
+msgstr ""
+"A geração da senha falhou - a entropia necessária é demasiado baixa para as "
+"definições"
 
 #: src/error.c:108 src/error.c:111
 msgid "The password fails the dictionary check"

@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Kalman Kemenczy <kkemenczy@novell.com>, 2006, 2007.
 # Keresztes Ákos <xsak@c2.hu>, 2006.
@@ -11,14 +11,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2011-12-08 11:23+0100\n"
+"POT-Creation-Date: 2012-05-24 14:45+0200\n"
 "PO-Revision-Date: 2012-01-24 14:13+0000\n"
 "Last-Translator: Zoltan Hoppár <hopparz@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: src/pam_pwquality.c:22
@@ -35,40 +35,43 @@ msgstr "Ismételje meg az új %s%sjelszavát: "
 msgid "Sorry, passwords do not match."
 msgstr "Sajnálom, de a jelszavak nem egyeznek."
 
-#: src/pam_pwquality.c:178
+#: src/pam_pwquality.c:181
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "ROSSZ JELSZÓ: %s"
 
-#: src/pwscore.c:21
+#: src/pwscore.c:22
 #, c-format
 msgid "Usage: %s [user]\n"
 msgstr "Használata: %s [user]\n"
 
-#: src/pwscore.c:22
+#: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
-msgstr "       A parancs kiolvassa a jelszavát hogy pontozhassa a szabványos bemenetről.\n"
+"       The command reads the password to be scored from the standard input.\n"
+msgstr ""
+"       A parancs kiolvassa a jelszavát hogy pontozhassa a szabványos "
+"bemenetről.\n"
 
-#: src/pwscore.c:50 src/pwscore.c:58 src/pwscore.c:63
+#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:64
 #, c-format
 msgid "Error: %s\n"
 msgstr "Hiba: %s\n"
 
-#: src/pwscore.c:50
+#: src/pwscore.c:51
 msgid "Could not obtain the password to be scored"
 msgstr "Nem elérhető a jelszó a pontozáshoz"
 
-#: src/pwscore.c:70
+#: src/pwscore.c:71
 #, c-format
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr "Jelszó minőségi ellenőrzés meghiúsult:\n%s\n"
+msgstr ""
+"Jelszó minőségi ellenőrzés meghiúsult:\n"
+"%s\n"
 
-#: src/pwmake.c:21
+#: src/pwmake.c:22
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
 msgstr "Alkalmazása: %s <entrópia-bitek>\n"
@@ -102,9 +105,10 @@ msgid "The password contains the user name in some form"
 msgstr "A jelszó tartalmazza a felhasználói nevét valamilyen formában"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
-msgstr "A jelszó szavakat tartalmaz a felhasználó valódi neve alapján bizonyos formában"
+msgid "The password contains words from the real name of the user in some form"
+msgstr ""
+"A jelszó szavakat tartalmaz a felhasználó valódi neve alapján bizonyos "
+"formában"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
@@ -182,7 +186,8 @@ msgstr "A jelszó ismétlődően tartalmazza ugyanazon a karaktereket"
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr "A jelszó több mint %ld ugyanolyan osztályú ismétlődő karaktert tartalmaz "
+msgstr ""
+"A jelszó több mint %ld ugyanolyan osztályú ismétlődő karaktert tartalmaz "
 
 #: src/error.c:99
 msgid ""
@@ -199,7 +204,8 @@ msgstr "Véletlenszerűen generált számok nem elfogadhatóak egy RNG eszközr�
 
 #: src/error.c:105
 msgid "Password generation failed - required entropy too low for settings"
-msgstr "Jelszó generálás sikertelen - a szükséges entrópia túl kevés a beállításokhoz"
+msgstr ""
+"Jelszó generálás sikertelen - a szükséges entrópia túl kevés a beállításokhoz"
 
 #: src/error.c:108 src/error.c:111
 msgid "The password fails the dictionary check"

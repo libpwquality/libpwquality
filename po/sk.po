@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Dominik  <dominikla@gmail.com>, 2012.
 # Ondrej Šulek <feonsu@gmail.com>, 2008.
@@ -10,14 +10,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2011-12-08 11:23+0100\n"
+"POT-Creation-Date: 2012-05-24 14:45+0200\n"
 "PO-Revision-Date: 2012-01-29 18:34+0000\n"
 "Last-Translator: Dominik <dominikla@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sk\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 
 #: src/pam_pwquality.c:22
@@ -34,40 +34,42 @@ msgstr "Opakujte nové %s%sheslo: "
 msgid "Sorry, passwords do not match."
 msgstr "Prepáčte, heslá sa nezhodujú."
 
-#: src/pam_pwquality.c:178
+#: src/pam_pwquality.c:181
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "NESPRÁVNE HESLO: %s"
 
-#: src/pwscore.c:21
+#: src/pwscore.c:22
 #, c-format
 msgid "Usage: %s [user]\n"
 msgstr "Využitie: %s [user]\n"
 
-#: src/pwscore.c:22
+#: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
-msgstr "       Príkaz číta heslo, aby bolo ohodnotené zo štandardného vstupu.\n"
+"       The command reads the password to be scored from the standard input.\n"
+msgstr ""
+"       Príkaz číta heslo, aby bolo ohodnotené zo štandardného vstupu.\n"
 
-#: src/pwscore.c:50 src/pwscore.c:58 src/pwscore.c:63
+#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:64
 #, c-format
 msgid "Error: %s\n"
 msgstr "Chyba: %s\n"
 
-#: src/pwscore.c:50
+#: src/pwscore.c:51
 msgid "Could not obtain the password to be scored"
 msgstr "Nemôžem získať heslo na hodnotenie"
 
-#: src/pwscore.c:70
+#: src/pwscore.c:71
 #, c-format
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr "Kontrola kvality hesla zlyhala:\n%s\n"
+msgstr ""
+"Kontrola kvality hesla zlyhala:\n"
+"%s\n"
 
-#: src/pwmake.c:21
+#: src/pwmake.c:22
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
 msgstr ""
@@ -101,8 +103,7 @@ msgid "The password contains the user name in some form"
 msgstr "Heslo obsahuje užívateľské meno v istej forme"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
+msgid "The password contains words from the real name of the user in some form"
 msgstr ""
 
 #: src/error.c:49

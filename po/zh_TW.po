@@ -1,21 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Terry Chuang <tchuang@redhat.com>, 2008, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2011-12-08 11:23+0100\n"
+"POT-Creation-Date: 2012-05-24 14:45+0200\n"
 "PO-Revision-Date: 2012-03-08 16:28+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
 #: src/pam_pwquality.c:22
@@ -32,40 +32,41 @@ msgstr "再次輸入新的 %s%s密碼："
 msgid "Sorry, passwords do not match."
 msgstr "抱歉，密碼不符。"
 
-#: src/pam_pwquality.c:178
+#: src/pam_pwquality.c:181
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "不良的密碼：%s"
 
-#: src/pwscore.c:21
+#: src/pwscore.c:22
 #, c-format
 msgid "Usage: %s [user]\n"
 msgstr "用法：%s [user]\n"
 
-#: src/pwscore.c:22
+#: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
+"       The command reads the password to be scored from the standard input.\n"
 msgstr "       本指令會從標準輸入讀取密碼來評分。\n"
 
-#: src/pwscore.c:50 src/pwscore.c:58 src/pwscore.c:63
+#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:64
 #, c-format
 msgid "Error: %s\n"
 msgstr "錯誤：%s\n"
 
-#: src/pwscore.c:50
+#: src/pwscore.c:51
 msgid "Could not obtain the password to be scored"
 msgstr "無法取得要評分的密碼"
 
-#: src/pwscore.c:70
+#: src/pwscore.c:71
 #, c-format
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr "密碼品質檢查失敗：\n%s\n"
+msgstr ""
+"密碼品質檢查失敗：\n"
+"%s\n"
 
-#: src/pwmake.c:21
+#: src/pwmake.c:22
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
 msgstr "用法：%s <entropy-bits>\n"
@@ -99,8 +100,7 @@ msgid "The password contains the user name in some form"
 msgstr "密碼以某種形式包含使用者名稱"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
+msgid "The password contains words from the real name of the user in some form"
 msgstr "密碼以某種形式包含使用者真名的字"
 
 #: src/error.c:49

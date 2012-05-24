@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Canniot Thomas <thomas.canniot@mrtomlinux.org>, 2008.
 # Charles-Antoine Couret <cacouret@wanadoo.fr>, 2009.
@@ -12,14 +12,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2011-12-08 11:23+0100\n"
+"POT-Creation-Date: 2012-05-24 14:45+0200\n"
 "PO-Revision-Date: 2012-02-11 21:13+0000\n"
 "Last-Translator: Constantin DRABO <panda.constantin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
 #: src/pam_pwquality.c:22
@@ -36,40 +36,43 @@ msgstr "Retapez le nouveau %s%smot de passe : "
 msgid "Sorry, passwords do not match."
 msgstr "Les mots de passe ne correspondent pas."
 
-#: src/pam_pwquality.c:178
+#: src/pam_pwquality.c:181
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "MOT DE PASSE INCORRECT : %s"
 
-#: src/pwscore.c:21
+#: src/pwscore.c:22
 #, c-format
 msgid "Usage: %s [user]\n"
 msgstr "Usage: %s [user]\n"
 
-#: src/pwscore.c:22
+#: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
-msgstr "       La commande lit le mot de passe qui doit être marqué à partir de l'entrée standard.\n"
+"       The command reads the password to be scored from the standard input.\n"
+msgstr ""
+"       La commande lit le mot de passe qui doit être marqué à partir de "
+"l'entrée standard.\n"
 
-#: src/pwscore.c:50 src/pwscore.c:58 src/pwscore.c:63
+#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:64
 #, c-format
 msgid "Error: %s\n"
 msgstr "Erreur: %s\n"
 
-#: src/pwscore.c:50
+#: src/pwscore.c:51
 msgid "Could not obtain the password to be scored"
 msgstr "Impossible d'obtenir le mot de passe qui doit être marqué"
 
-#: src/pwscore.c:70
+#: src/pwscore.c:71
 #, c-format
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr "Echec de la vérification de la qualité du mot de passe:\n %s\n"
+msgstr ""
+"Echec de la vérification de la qualité du mot de passe:\n"
+" %s\n"
 
-#: src/pwmake.c:21
+#: src/pwmake.c:22
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
 msgstr "Usage: %s <entropy-bits>\n"
@@ -103,9 +106,10 @@ msgid "The password contains the user name in some form"
 msgstr "Le mot de passe contient le nom d'utilisateur sous une forme"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
-msgstr "Le mot de passe contient des mots appartenant au nom réel de l'utilisateur sous une forme"
+msgid "The password contains words from the real name of the user in some form"
+msgstr ""
+"Le mot de passe contient des mots appartenant au nom réel de l'utilisateur "
+"sous une forme"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
@@ -172,7 +176,8 @@ msgstr "Le mot de passe ne contient pas assez de classes de caractères"
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr "Le mot de passe contient plus de %ld caractères similaires consécutifs "
+msgstr ""
+"Le mot de passe contient plus de %ld caractères similaires consécutifs "
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
@@ -183,12 +188,16 @@ msgstr "Le mot de passe contient trop de caractères similaires consécutifs"
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr " Le mot de passe contient plus de %ld caractères de la même classe consécutivement"
+msgstr ""
+" Le mot de passe contient plus de %ld caractères de la même classe "
+"consécutivement"
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr "Le mot de passe contient beaucoup de caractères de la même classe consécutivement"
+msgstr ""
+"Le mot de passe contient beaucoup de caractères de la même classe "
+"consécutivement"
 
 #: src/error.c:101
 msgid "No password supplied"
@@ -200,7 +209,9 @@ msgstr "Impossible d'obtenir des nombres au hasard à partir de l'appareil RNG"
 
 #: src/error.c:105
 msgid "Password generation failed - required entropy too low for settings"
-msgstr "Echec de génération de mot de passe - entropie nécessaire trop faible pour les paramètres"
+msgstr ""
+"Echec de génération de mot de passe - entropie nécessaire trop faible pour "
+"les paramètres"
 
 #: src/error.c:108 src/error.c:111
 msgid "The password fails the dictionary check"
