@@ -11,6 +11,7 @@ syntax: glob
 *.tar.bz2
 *.tar.gz
 *.spec
+*~
 POTFILES
 Makefile
 Makefile.in
