@@ -6,7 +6,10 @@
 
 AUTOMAKE_OPTIONS = 1.9 gnu dist-bzip2 check-news
 
-SUBDIRS = po src python doc
+SUBDIRS = po src doc
+if BUILD_PYTHON_BINDINGS
+SUBDIRS += python
+endif
 
 CLEANFILES = *~
 
