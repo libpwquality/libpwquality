@@ -21,10 +21,7 @@ BuildRequires: python2-devel
 URL: http://libpwquality.fedorahosted.org/
 
 # we don't want to provide private python extension libs
-%{?filter_setup:
-%filter_provides_in %{python_sitearch}/.*\.so$.
-%filter_setup
-}
+%define __provides_exclude_from ^%{python_sitearch}/.*\.so$.
 
 %description
 This is a library for password quality checks and generation
@@ -107,6 +104,9 @@ rm -f $RPM_BUILD_ROOT%{_moduledir}/*.la
 %{python_sitearch}/pwquality.so
 
 %changelog
+* Wed Jun 13 2012 Tomas Mraz <tmraz@redhat.com> 1.1.1-1
+- use rpm built-in filtering of provides (rhbz#830153)
+
 * Thu May 24 2012 Tomas Mraz <tmraz@redhat.com> 1.1.0-1
 - fix leak when throwing PWQError exception
 - added pkgconfig file
