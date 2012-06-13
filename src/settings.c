@@ -74,7 +74,6 @@ set_name_value(pwquality_settings_t *pwq, const char *name, const char *value)
                 if (strcasecmp(s_map[i].name, name) == 0) {
                         switch(s_map[i].type) {
                         case PWQ_TYPE_INT:
-fprintf(stderr, "Value: '%s'", value);
                                 errno = 0;
                                 val = strtol(value, &endptr, 10);
                                 if (errno != 0 || *value == '\0' ||
