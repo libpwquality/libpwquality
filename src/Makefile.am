@@ -29,11 +29,15 @@ libpwquality_la_LIBADD = @LIBCRACK@
 
 libpwquality_la_SOURCES = generate.c check.c settings.c error.c
 
-pam_pwquality_la_LDFLAGS = -no-undefined -avoid-version -module
-
-pam_pwquality_la_LIBADD = libpwquality.la -lpam
-
-pam_pwquality_la_SOURCES = pam_pwquality.c
+if HAVE_PAM
+  pam_pwquality_la_LDFLAGS = -no-undefined -avoid-version -module
+  pam_pwquality_la_LIBADD = libpwquality.la @PAM_LIBS@
+  pam_pwquality_la_SOURCES = pam_pwquality.c
+else
+  pam_pwquality_la_LDFLAGS =
+  pam_pwquality_la_LIBADD =
+  pam_pwquality_la_SOURCES =
+endif
 
 pwscore_SOURCES = pwscore.c
 
@@ -45,7 +49,11 @@ pwmake_LDADD = libpwquality.la
 
 lib_LTLIBRARIES = libpwquality.la
 
-securelib_LTLIBRARIES = pam_pwquality.la
+if HAVE_PAM
+  securelib_LTLIBRARIES = pam_pwquality.la
+else
+  securelib_LTLIBRARIES =
+endif
 
 secureconf_DATA = pwquality.conf
 

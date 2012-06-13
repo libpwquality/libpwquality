@@ -82,6 +82,29 @@ AC_ARG_ENABLE([ld-version-script],
               [ : ] )
 AM_CONDITIONAL(HAVE_LD_VERSION_SCRIPT, test "$have_ld_version_script" = "yes")
 
+dnl PAM support
+PAM_LIBS=
+AC_ARG_ENABLE([pam],
+  AS_HELP_STRING([--enable-pam],[build PAM module @<:@default=check@:>@]),
+  [],
+  [enable_pam=check])
+if test "$enable_pam" != "no"; then
+  if test "$enable_pam" = "check"; then
+      AC_CHECK_LIB([pam], [pam_start], [enable_pam=yes], [enable_pam=no])
+  else
+      fail=0
+      AC_CHECK_LIB([pam], [pam_start], [], [fail=1])
+      test $fail = 1 &&
+        AC_MSG_ERROR([You must install the PAM development package in order to compile libpwquality])
+  fi
+fi
+
+if test "$enable_pam" = "yes"; then
+  PAM_LIBS="${PAM_LIBS} -lpam"
+fi
+AC_SUBST(PAM_LIBS)
+AM_CONDITIONAL(HAVE_PAM, test "$enable_pam" = "yes")
+
 dnl options and defaults
 AC_ARG_WITH(securedir,
         AS_HELP_STRING([--with-securedir=DIR],[path to location of PAMs @<:@default=$libdir/security@:>@]),
