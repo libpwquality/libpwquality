@@ -1,5 +1,12 @@
 libpwquality NEWS -- history of user-visible changes.
 
+Release 1.1.1
+
+* Use rpm built-in filtering of provides (fix for rhbz#830153)
+* Remove strain debug fprintf() (fix for rhbz#831567)
+* Make the Python bindings build optional (thanks to Colin Walters)
+* Make the PAM module build optional (thanks to Jasper Lievisse Adriaanse)
+
 Release 1.1.0
 
 * Fixed a memory leak when throwing PWQError exception

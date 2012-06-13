@@ -106,6 +106,7 @@ rm -f $RPM_BUILD_ROOT%{_moduledir}/*.la
 %changelog
 * Wed Jun 13 2012 Tomas Mraz <tmraz@redhat.com> 1.1.1-1
 - use rpm built-in filtering of provides (rhbz#830153)
+- remove strain debug fprintf() (rhbz#831567)
 
 * Thu May 24 2012 Tomas Mraz <tmraz@redhat.com> 1.1.0-1
 - fix leak when throwing PWQError exception
