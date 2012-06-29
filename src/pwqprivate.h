@@ -22,6 +22,7 @@ struct pwquality_settings {
         int min_class;
         int max_repeat;
         int max_class_repeat;
+        int max_sequence;
         int gecos_check;
         char *bad_words;
         char *dict_path;

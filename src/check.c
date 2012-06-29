@@ -329,6 +329,45 @@ consecutive(pwquality_settings_t *pwq, const char *new, void **auxerror)
         return 0;
 }
 
+static int sequence(pwquality_settings_t *pwq, const char *new, void **auxerror)
+{
+        char c;
+        int i;
+        int sequp = 1;
+        int seqdown = 1;
+
+        if (pwq->max_sequence == 0)
+                return 0;
+
+        if (new[0] == '\0')
+                return 0;
+
+        for (i = 1; new[i]; i++) {
+                c = new[i-1];
+                if (new[i] == c+1) {
+                        ++sequp;
+                        if (sequp > pwq->max_sequence) {
+                                if (auxerror)
+                                        *auxerror = (void *)(long)pwq->max_sequence;
+                                return 1;
+                        }
+                        seqdown = 1;
+                } else if (new[i] == c-1) {
+                        ++seqdown;
+                        if (seqdown > pwq->max_sequence) {
+                                if (auxerror)
+                                        *auxerror = (void *)(long)pwq->max_sequence;
+                                return 1;
+                        }
+                        sequp = 1;
+                } else {
+                        sequp = 1;
+                        seqdown = 1;
+                }
+        }
+        return 0;
+}
+
 static int
 usercheck(pwquality_settings_t *pwq, const char *new,
           char *user)
@@ -510,6 +549,9 @@ password_check(pwquality_settings_t *pwq,
 
         if (!rv && consecutive(pwq, new, auxerror))
                 rv = PWQ_ERROR_MAX_CONSECUTIVE;
+
+        if (!rv && sequence(pwq, new, auxerror))
+                rv = PWQ_ERROR_MAX_SEQUENCE;
 
         if (!rv && usermono && usercheck(pwq, newmono, usermono))
                 rv = PWQ_ERROR_USER_CHECK;

@@ -73,6 +73,15 @@ The maximum number of allowed same consecutive characters in the new password.
 The check is disabled if the value is 0. (default 0)
 .RE
 .PP
+\fBmaxsequence\fR
+.RS 4
+The maximum length of monotonic character sequences in the new password.
+Examples of such sequence are \*(Aq12345\*(Aq or \*(Aqfedcb\*(Aq\&. Note
+that most such passwords will not pass the simplicity check unless
+the sequence is only a minor part of the password.
+The check is disabled if the value is 0. (default 0) 
+.RE
+.PP
 \fBmaxclassrepeat\fR
 .RS 4
 The maximum number of allowed consecutive characters of the same class in the

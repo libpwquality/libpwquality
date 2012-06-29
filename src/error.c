@@ -97,6 +97,12 @@ pwquality_strerror(char *buf, size_t len, int rv, void *auxerror)
                         return buf;
                 }
                 return _("The password contains too many characters of the same class consecutively");
+        case PWQ_ERROR_MAX_SEQUENCE:
+                if (auxerror) {
+                        snprintf(buf, len, _("The password contains monotonic sequence longer than %ld characters"), (long)auxerror);
+                        return buf;
+                }
+                return _("The password contains too long of a monotonic character sequence");
         case PWQ_ERROR_EMPTY_PASSWORD:
                 return _("No password supplied");
         case PWQ_ERROR_RNG:

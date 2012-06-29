@@ -22,6 +22,7 @@
 #define PWQ_SETTING_MAX_CLASS_REPEAT 11
 #define PWQ_SETTING_GECOS_CHECK     12
 #define PWQ_SETTING_BAD_WORDS       13
+#define PWQ_SETTING_MAX_SEQUENCE    14
 
 #define PWQ_MAX_ENTROPY_BITS       256
 #define PWQ_MIN_ENTROPY_BITS       56
@@ -57,6 +58,7 @@
 #define PWQ_ERROR_GECOS_CHECK                  -26
 #define PWQ_ERROR_MAX_CLASS_REPEAT             -27
 #define PWQ_ERROR_BAD_WORDS                    -28
+#define PWQ_ERROR_MAX_SEQUENCE                 -29
 
 typedef struct pwquality_settings pwquality_settings_t;
 

@@ -27,7 +27,7 @@ new authentication token\&.
 The strength checks works in the following manner: at first the
 \fBCracklib\fR
 routine is called to check if the password is part of a dictionary; if this
-is not the case an additional set of strength checks are done\&. These checks
+is not the case an additional set of strength checks is done\&. These checks
 are:
 .PP
 Palindrome
@@ -45,14 +45,16 @@ Similar
 Is the new password too much like the old one? This is primarily controlled
 by one argument,
 \fBdifok\fR
-which is a number of changes between the old and new are enough to accept
-the new password\&.
+which is a number of character changes (inserts, removals, or replacements)
+between the old and new password that are enough to accept the new
+password\&. This defaults to 5 changes\&.
 .RE
 .PP
 Simple
 .RS 4
-Is the new password too small? This is controlled by 5 arguments
+Is the new password too small? This is controlled by 6 arguments
 \fBminlen\fR,
+\fBmaxclassrepeat\fR,
 \fBdcredit\fR,
 \fBucredit\fR,
 \fBlcredit\fR, and
@@ -70,9 +72,14 @@ Same consecutive characters
 Optional check for same consecutive characters\&.
 .RE
 .PP
+Too long monotonic character sequence
+.RS 4
+Optional check for too long monotonic character sequence\&.
+.RE
+.PP
 Contains user name
 .RS 4
-Optional check whether the password contains the user name in some form\&.
+Optional check whether the password contains the user\*(Aqs name in some form\&.
 .RE
 .PP
 These checks are configurable either by use of the module arguments
@@ -215,6 +222,15 @@ out of four of the classes are required\&.
 .RS 4
 Reject passwords which contain more than N same consecutive characters\&.
 The default is 0 which means that this check is disabled\&.
+.RE
+.PP
+\fBmaxsequence=\fR\fB\fIN\fR\fR
+.RS 4
+Reject passwords which contain monotonic character sequences longer than N\&.
+The default is 0 which means that this check is disabled\&.
+Examples of such sequence are \*(Aq12345\*(Aq or \*(Aqfedcb\*(Aq\&. Note that
+most such passwords will not pass the simplicity check unless the sequence
+is only a minor part of the password\&.
 .RE
 .PP
 \fBmaxclassrepeat=\fR\fB\fIN\fR\fR

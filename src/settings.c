@@ -57,6 +57,7 @@ static const struct setting_mapping s_map[] = {
  { "minclass", PWQ_SETTING_MIN_CLASS, PWQ_TYPE_INT},
  { "maxrepeat", PWQ_SETTING_MAX_REPEAT, PWQ_TYPE_INT},
  { "maxclassrepeat", PWQ_SETTING_MAX_CLASS_REPEAT, PWQ_TYPE_INT},
+ { "maxsequence", PWQ_SETTING_MAX_SEQUENCE, PWQ_TYPE_INT},
  { "gecoscheck", PWQ_SETTING_GECOS_CHECK, PWQ_TYPE_INT},
  { "badwords", PWQ_SETTING_BAD_WORDS, PWQ_TYPE_STR},
  { "dictpath", PWQ_SETTING_DICT_PATH, PWQ_TYPE_STR}

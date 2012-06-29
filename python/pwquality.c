@@ -107,6 +107,11 @@ static PyGetSetDef pwqsettings_getseters[] = {
                 "Maximum consecutive characters of the same class",
                 (void *)PWQ_SETTING_MAX_CLASS_REPEAT
         },
+        { "maxsequence",
+                (getter)pwqsettings_getint, (setter)pwqsettings_setint,
+                "Maximum length of a monotonic character sequence",
+                (void *)PWQ_SETTING_MAX_SEQUENCE
+        },
         { "gecoscheck",
                 (getter)pwqsettings_getint, (setter)pwqsettings_setint,
                 "Match words from the passwd GECOS field if available",
