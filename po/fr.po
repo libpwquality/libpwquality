@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2012-06-13 16:52+0200\n"
+"POT-Creation-Date: 2012-06-29 11:02+0200\n"
 "PO-Revision-Date: 2012-02-11 21:13+0000\n"
 "Last-Translator: Constantin DRABO <panda.constantin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -199,66 +199,76 @@ msgstr ""
 "Le mot de passe contient beaucoup de caractères de la même classe "
 "consécutivement"
 
-#: src/error.c:101
+#: src/error.c:102
+#, fuzzy, c-format
+msgid "The password contains monotonic sequence longer than %ld characters"
+msgstr "Le mot de passe contient moins de %ld classes de caractères"
+
+#: src/error.c:105
+#, fuzzy
+msgid "The password contains too long of a monotonic character sequence"
+msgstr "Le mot de passe contient peu de caractères non-alphanumériques"
+
+#: src/error.c:107
 msgid "No password supplied"
 msgstr "Aucun mot de passe fourni"
 
-#: src/error.c:103
+#: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
 msgstr "Impossible d'obtenir des nombres au hasard à partir de l'appareil RNG"
 
-#: src/error.c:105
+#: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
 "Echec de génération de mot de passe - entropie nécessaire trop faible pour "
 "les paramètres"
 
-#: src/error.c:108 src/error.c:111
+#: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
 msgstr "Le mot de passe fait échouer la vérification du dictionnaire"
 
-#: src/error.c:114 src/error.c:118
+#: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
 msgstr "Paramètre inconnu"
 
-#: src/error.c:121
+#: src/error.c:127
 msgid "Bad integer value of setting"
 msgstr "Valeur entière de paramètre erronée"
 
-#: src/error.c:125
+#: src/error.c:131
 msgid "Bad integer value"
 msgstr "Valeur entière erronée"
 
-#: src/error.c:128
+#: src/error.c:134
 #, c-format
 msgid "Setting %s is not of integer type"
 msgstr "Paramètre %s n'est pas de type entier"
 
-#: src/error.c:132
+#: src/error.c:138
 msgid "Setting is not of integer type"
 msgstr "Paramètre n'est pas de type entier"
 
-#: src/error.c:135
+#: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
 msgstr "Paramètre %s n'est pas de type chaîne de caractères"
 
-#: src/error.c:139
+#: src/error.c:145
 msgid "Setting is not of string type"
 msgstr "Paramètre n'est pas de type chaîne de caractères"
 
-#: src/error.c:141
+#: src/error.c:147
 msgid "Opening the configuration file failed"
 msgstr "Echec de l'ouverture du fichier de configuration"
 
-#: src/error.c:143
+#: src/error.c:149
 msgid "The configuration file is malformed"
 msgstr "Le fichier de configuration est incorrect"
 
-#: src/error.c:145
+#: src/error.c:151
 msgid "Fatal failure"
 msgstr "Erreur fatale"
 
-#: src/error.c:147
+#: src/error.c:153
 msgid "Unknown error"
 msgstr "Erreur inconnue"

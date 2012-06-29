@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2012-06-13 16:52+0200\n"
+"POT-Creation-Date: 2012-06-29 11:02+0200\n"
 "PO-Revision-Date: 2011-12-08 10:25+0000\n"
 "Last-Translator: tmraz <tmraz@fedoraproject.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -184,64 +184,73 @@ msgid ""
 "The password contains too many characters of the same class consecutively"
 msgstr ""
 
-#: src/error.c:101
-msgid "No password supplied"
-msgstr "암호가 없음"
-
-#: src/error.c:103
-msgid "Cannot obtain random numbers from the RNG device"
+#: src/error.c:102
+#, c-format
+msgid "The password contains monotonic sequence longer than %ld characters"
 msgstr ""
 
 #: src/error.c:105
+msgid "The password contains too long of a monotonic character sequence"
+msgstr ""
+
+#: src/error.c:107
+msgid "No password supplied"
+msgstr "암호가 없음"
+
+#: src/error.c:109
+msgid "Cannot obtain random numbers from the RNG device"
+msgstr ""
+
+#: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
 
-#: src/error.c:108 src/error.c:111
+#: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
 msgstr ""
 
-#: src/error.c:114 src/error.c:118
+#: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
 msgstr ""
 
-#: src/error.c:121
+#: src/error.c:127
 msgid "Bad integer value of setting"
 msgstr ""
 
-#: src/error.c:125
+#: src/error.c:131
 msgid "Bad integer value"
 msgstr ""
 
-#: src/error.c:128
+#: src/error.c:134
 #, c-format
 msgid "Setting %s is not of integer type"
 msgstr ""
 
-#: src/error.c:132
+#: src/error.c:138
 msgid "Setting is not of integer type"
 msgstr ""
 
-#: src/error.c:135
+#: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
 msgstr ""
 
-#: src/error.c:139
+#: src/error.c:145
 msgid "Setting is not of string type"
 msgstr ""
 
-#: src/error.c:141
+#: src/error.c:147
 msgid "Opening the configuration file failed"
 msgstr ""
 
-#: src/error.c:143
+#: src/error.c:149
 msgid "The configuration file is malformed"
 msgstr ""
 
-#: src/error.c:145
+#: src/error.c:151
 msgid "Fatal failure"
 msgstr ""
 
-#: src/error.c:147
+#: src/error.c:153
 msgid "Unknown error"
 msgstr "알 수 없는 오류"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2012-06-13 16:52+0200\n"
+"POT-Creation-Date: 2012-06-29 11:02+0200\n"
 "PO-Revision-Date: 2012-01-15 05:02+0000\n"
 "Last-Translator: Tommy He <lovenemesis@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -192,64 +192,74 @@ msgid ""
 "The password contains too many characters of the same class consecutively"
 msgstr "密码包含了过多的同类型连续字符"
 
-#: src/error.c:101
+#: src/error.c:102
+#, fuzzy, c-format
+msgid "The password contains monotonic sequence longer than %ld characters"
+msgstr "密码包含少于 %ld 的字符类型"
+
+#: src/error.c:105
+#, fuzzy
+msgid "The password contains too long of a monotonic character sequence"
+msgstr "密码包含的非字母或数字字符太少"
+
+#: src/error.c:107
 msgid "No password supplied"
 msgstr "密码未提供"
 
-#: src/error.c:103
+#: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
 msgstr "无法从 RNG 随机数生成设备获得随机数"
 
-#: src/error.c:105
+#: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
 msgstr "密码生成失败 - 未达到设置所需的熵"
 
-#: src/error.c:108 src/error.c:111
+#: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
 msgstr "密码未通过字典检查"
 
-#: src/error.c:114 src/error.c:118
+#: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
 msgstr "未知设置"
 
-#: src/error.c:121
+#: src/error.c:127
 msgid "Bad integer value of setting"
 msgstr "错误的整数设置值"
 
-#: src/error.c:125
+#: src/error.c:131
 msgid "Bad integer value"
 msgstr "坏的整数值"
 
-#: src/error.c:128
+#: src/error.c:134
 #, c-format
 msgid "Setting %s is not of integer type"
 msgstr "设置 %s 并非整数类型"
 
-#: src/error.c:132
+#: src/error.c:138
 msgid "Setting is not of integer type"
 msgstr "设置并非整数类型"
 
-#: src/error.c:135
+#: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
 msgstr "设置 %s 并非字符串类型"
 
-#: src/error.c:139
+#: src/error.c:145
 msgid "Setting is not of string type"
 msgstr "设置并非字符串类型"
 
-#: src/error.c:141
+#: src/error.c:147
 msgid "Opening the configuration file failed"
 msgstr "打开配置文件失败"
 
-#: src/error.c:143
+#: src/error.c:149
 msgid "The configuration file is malformed"
 msgstr "配置文件格式不正确"
 
-#: src/error.c:145
+#: src/error.c:151
 msgid "Fatal failure"
 msgstr "致命的错误"
 
-#: src/error.c:147
+#: src/error.c:153
 msgid "Unknown error"
 msgstr "未知的错误"

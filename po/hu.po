@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2012-06-13 16:52+0200\n"
+"POT-Creation-Date: 2012-06-29 11:02+0200\n"
 "PO-Revision-Date: 2012-01-24 14:13+0000\n"
 "Last-Translator: Zoltan Hoppár <hopparz@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -194,65 +194,75 @@ msgid ""
 "The password contains too many characters of the same class consecutively"
 msgstr "A jelszó túl sok ismétlődő, ugyanolyan osztályú karaktert tartalmaz"
 
-#: src/error.c:101
+#: src/error.c:102
+#, fuzzy, c-format
+msgid "The password contains monotonic sequence longer than %ld characters"
+msgstr "A jelszó kevesebb mint %ld karaktertípust tartalmaz"
+
+#: src/error.c:105
+#, fuzzy
+msgid "The password contains too long of a monotonic character sequence"
+msgstr "A jelszó túl kevés nem alfanumerikus karaktert tartalmaz"
+
+#: src/error.c:107
 msgid "No password supplied"
 msgstr "Nincs jelszó megadva"
 
-#: src/error.c:103
+#: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
 msgstr "Véletlenszerűen generált számok nem elfogadhatóak egy RNG eszközről"
 
-#: src/error.c:105
+#: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
 "Jelszó generálás sikertelen - a szükséges entrópia túl kevés a beállításokhoz"
 
-#: src/error.c:108 src/error.c:111
+#: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
 msgstr "A jelszó fennakadt a szótár alapú ellenőrzésen"
 
-#: src/error.c:114 src/error.c:118
+#: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
 msgstr "Ismeretlen beállítás"
 
-#: src/error.c:121
+#: src/error.c:127
 msgid "Bad integer value of setting"
 msgstr "Rossz egész beállítási érték"
 
-#: src/error.c:125
+#: src/error.c:131
 msgid "Bad integer value"
 msgstr "Helytelenül beállított egész érték"
 
-#: src/error.c:128
+#: src/error.c:134
 #, c-format
 msgid "Setting %s is not of integer type"
 msgstr "A beállított %s nem egész típus"
 
-#: src/error.c:132
+#: src/error.c:138
 msgid "Setting is not of integer type"
 msgstr "A beállítás nem egész típus"
 
-#: src/error.c:135
+#: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
 msgstr "A beállítás %s nem szöveges típus"
 
-#: src/error.c:139
+#: src/error.c:145
 msgid "Setting is not of string type"
 msgstr "Beállítás nem szöveges típus"
 
-#: src/error.c:141
+#: src/error.c:147
 msgid "Opening the configuration file failed"
 msgstr "A konfigurációs fájl megnyitása nem sikerült"
 
-#: src/error.c:143
+#: src/error.c:149
 msgid "The configuration file is malformed"
 msgstr "A konfigurációs fájl eltorzult"
 
-#: src/error.c:145
+#: src/error.c:151
 msgid "Fatal failure"
 msgstr "Végzetes hiba"
 
-#: src/error.c:147
+#: src/error.c:153
 msgid "Unknown error"
 msgstr "Ismeretlen hiba"

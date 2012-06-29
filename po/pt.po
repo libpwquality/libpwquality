@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2012-06-13 16:52+0200\n"
+"POT-Creation-Date: 2012-06-29 11:02+0200\n"
 "PO-Revision-Date: 2012-03-19 21:42+0000\n"
 "Last-Translator: Rui Gouveia <rui.gouveia@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -191,66 +191,76 @@ msgid ""
 "The password contains too many characters of the same class consecutively"
 msgstr "A senha contém demasiados caracteres da mesma classe consecutivos"
 
-#: src/error.c:101
+#: src/error.c:102
+#, fuzzy, c-format
+msgid "The password contains monotonic sequence longer than %ld characters"
+msgstr "A senha contém menos de %ld classes de caracteres"
+
+#: src/error.c:105
+#, fuzzy
+msgid "The password contains too long of a monotonic character sequence"
+msgstr "A senha contém poucos caracteres não alfanuméricos"
+
+#: src/error.c:107
 msgid "No password supplied"
 msgstr "Não foi fornecida uma senha"
 
-#: src/error.c:103
+#: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
 msgstr "Não foi possível obter números aleatórios do dispositivo RNG"
 
-#: src/error.c:105
+#: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
 "A geração da senha falhou - a entropia necessária é demasiado baixa para as "
 "definições"
 
-#: src/error.c:108 src/error.c:111
+#: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
 msgstr "A senha falhou a verificação do dicionário"
 
-#: src/error.c:114 src/error.c:118
+#: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
 msgstr "Configuração desconhecida"
 
-#: src/error.c:121
+#: src/error.c:127
 msgid "Bad integer value of setting"
 msgstr "Configuração com valor inteiro inválido"
 
-#: src/error.c:125
+#: src/error.c:131
 msgid "Bad integer value"
 msgstr "Valor inteiro inválido"
 
-#: src/error.c:128
+#: src/error.c:134
 #, c-format
 msgid "Setting %s is not of integer type"
 msgstr "Parâmetro %s não é do tipo inteiro"
 
-#: src/error.c:132
+#: src/error.c:138
 msgid "Setting is not of integer type"
 msgstr "Parâmetro não é do tipo inteiro"
 
-#: src/error.c:135
+#: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
 msgstr "Parâmetro %s não é do tipo string"
 
-#: src/error.c:139
+#: src/error.c:145
 msgid "Setting is not of string type"
 msgstr "Parâmetro não é do tipo string"
 
-#: src/error.c:141
+#: src/error.c:147
 msgid "Opening the configuration file failed"
 msgstr "Falhou a abertura do ficheiro de configuração"
 
-#: src/error.c:143
+#: src/error.c:149
 msgid "The configuration file is malformed"
 msgstr "O ficheiro de configuração está mal formatado"
 
-#: src/error.c:145
+#: src/error.c:151
 msgid "Fatal failure"
 msgstr "Falha fatal"
 
-#: src/error.c:147
+#: src/error.c:153
 msgid "Unknown error"
 msgstr "Erro desconhecido"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2012-06-13 16:52+0200\n"
+"POT-Creation-Date: 2012-06-29 11:02+0200\n"
 "PO-Revision-Date: 2011-12-20 13:35+0000\n"
 "Last-Translator: Claudio Rodrigo Pereyra Diaz <elsupergomez@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -202,66 +202,76 @@ msgstr ""
 "La contraseña contiene en forma consecutiva demasiados caracteres de la "
 "misma clase"
 
-#: src/error.c:101
+#: src/error.c:102
+#, fuzzy, c-format
+msgid "The password contains monotonic sequence longer than %ld characters"
+msgstr "La contraseña contiene menos de %ld clases de caracteres"
+
+#: src/error.c:105
+#, fuzzy
+msgid "The password contains too long of a monotonic character sequence"
+msgstr "La contraseña contiene muy pocos caracteres alfanuméricos"
+
+#: src/error.c:107
 msgid "No password supplied"
 msgstr "No se ha proporcionado ninguna contraseña"
 
-#: src/error.c:103
+#: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
 msgstr "No es posible obtener números aleatorios desde el dispositivo RNG"
 
-#: src/error.c:105
+#: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
 "Falló la creación de la contraseña - es necesaria una entropía demasiado "
 "pequeña para las configuraciones"
 
-#: src/error.c:108 src/error.c:111
+#: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
 msgstr "La contraseña no supera la verificación de diccionario"
 
-#: src/error.c:114 src/error.c:118
+#: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
 msgstr "Configuración desconocida"
 
-#: src/error.c:121
+#: src/error.c:127
 msgid "Bad integer value of setting"
 msgstr "Valor entero erróneo de la configuración"
 
-#: src/error.c:125
+#: src/error.c:131
 msgid "Bad integer value"
 msgstr "Valor entero erróneo"
 
-#: src/error.c:128
+#: src/error.c:134
 #, c-format
 msgid "Setting %s is not of integer type"
 msgstr "La configuración %s no es de tipo entero "
 
-#: src/error.c:132
+#: src/error.c:138
 msgid "Setting is not of integer type"
 msgstr "La configuración no es de tipo entero "
 
-#: src/error.c:135
+#: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
 msgstr "La configuración %s no es de tipo cadena "
 
-#: src/error.c:139
+#: src/error.c:145
 msgid "Setting is not of string type"
 msgstr "La configuraciónno es de tipo cadena "
 
-#: src/error.c:141
+#: src/error.c:147
 msgid "Opening the configuration file failed"
 msgstr "Falló la apertura del archivo de configuración"
 
-#: src/error.c:143
+#: src/error.c:149
 msgid "The configuration file is malformed"
 msgstr "El archivo de configuración no está formado correctamente"
 
-#: src/error.c:145
+#: src/error.c:151
 msgid "Fatal failure"
 msgstr "Error fatal"
 
-#: src/error.c:147
+#: src/error.c:153
 msgid "Unknown error"
 msgstr "Error desconocido"

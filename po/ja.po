@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2012-06-13 16:52+0200\n"
+"POT-Creation-Date: 2012-06-29 11:02+0200\n"
 "PO-Revision-Date: 2012-01-09 13:17+0000\n"
 "Last-Translator: Hajime Taira <htaira@redhat.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -192,64 +192,74 @@ msgid ""
 "The password contains too many characters of the same class consecutively"
 msgstr "このパスワードには連続して同じ種類の文字が含まれています。"
 
-#: src/error.c:101
+#: src/error.c:102
+#, fuzzy, c-format
+msgid "The password contains monotonic sequence longer than %ld characters"
+msgstr "このパスワードは %ld 種類未満の文字の種類が含まれています。"
+
+#: src/error.c:105
+#, fuzzy
+msgid "The password contains too long of a monotonic character sequence"
+msgstr "このパスワードは記号の個数が足りません。"
+
+#: src/error.c:107
 msgid "No password supplied"
 msgstr "パスワードが与えられていません。"
 
-#: src/error.c:103
+#: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
 msgstr "RNG(乱数発生)デバイスから乱数を取得することができません。"
 
-#: src/error.c:105
+#: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
 msgstr "パスワードの生成に失敗 -設定に必要なエンピロピーが小すぎます。"
 
-#: src/error.c:108 src/error.c:111
+#: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
 msgstr "このパスワードは辞書チェックに失敗しました。"
 
-#: src/error.c:114 src/error.c:118
+#: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
 msgstr "未知の設定"
 
-#: src/error.c:121
+#: src/error.c:127
 msgid "Bad integer value of setting"
 msgstr "設定の良くない整数型の値です。"
 
-#: src/error.c:125
+#: src/error.c:131
 msgid "Bad integer value"
 msgstr "良くない整数型の値です。"
 
-#: src/error.c:128
+#: src/error.c:134
 #, c-format
 msgid "Setting %s is not of integer type"
 msgstr "設定 %s は整数型ではありません。"
 
-#: src/error.c:132
+#: src/error.c:138
 msgid "Setting is not of integer type"
 msgstr "設定は整数型ではありません。"
 
-#: src/error.c:135
+#: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
 msgstr "設定 %s は文字列型ではありません。"
 
-#: src/error.c:139
+#: src/error.c:145
 msgid "Setting is not of string type"
 msgstr "設定は文字列型ではありません。"
 
-#: src/error.c:141
+#: src/error.c:147
 msgid "Opening the configuration file failed"
 msgstr "設定ファイルを開けません。"
 
-#: src/error.c:143
+#: src/error.c:149
 msgid "The configuration file is malformed"
 msgstr "設定ファイルの形式が正しくありません。"
 
-#: src/error.c:145
+#: src/error.c:151
 msgid "Fatal failure"
 msgstr "致命的な障害が発生しました。"
 
-#: src/error.c:147
+#: src/error.c:153
 msgid "Unknown error"
 msgstr "不明なエラー"
