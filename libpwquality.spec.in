@@ -2,9 +2,9 @@ Summary: A library for password generation and password quality checking
 Name: libpwquality
 Version: @PACKAGE_VERSION@
 Release: 1%{?dist}
-# The package is BSD licensed with option to relicense as GPL+
+# The package is BSD licensed with option to relicense as GPLv2+
 # - this option is redundant as the BSD license allows that anyway.
-License: BSD or GPL+
+License: BSD or GPLv2+
 Group: System Environment/Base
 Source0: http://fedorahosted.org/releases/l/i/libpwquality/libpwquality-%{version}.tar.bz2
 

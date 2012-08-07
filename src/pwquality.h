@@ -149,10 +149,8 @@ pwquality_strerror(char *buf, size_t len, int errcode, void *auxerror);
  *    written permission.
  *
  * ALTERNATIVELY, this product may be distributed under the terms of
- * the GNU Public License, in which case the provisions of the GPL are
- * required INSTEAD OF the above restrictions.  (This clause is
- * necessary due to a potential bad interaction between the GPL and
- * the restrictions contained in a BSD-style copyright.)
+ * the GNU General Public License version 2 or later, in which case the
+ * provisions of the GPL are required INSTEAD OF the above restrictions.
  *
  * THIS SOFTWARE IS PROVIDED `AS IS'' AND ANY EXPRESS OR IMPLIED
  * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
