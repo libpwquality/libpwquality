@@ -3,261 +3,257 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Alick Zhao <alick9188@gmail.com>, 2012.
-#   <chongfengnx@gmail.com>, 2012.
-# Leah Liu <lliu@redhat.com>, 2008, 2009.
-#   <lovenemesis@gmail.com>, 2012.
-# Mike Ma <zhtx10@gmail.com>, 2012.
-# Xi HUANG <xhuang@redhat.com>, 2007.
+# Boris Yakimov <borisyakimov@ymail.com>, 2012.
+# Valentin Laskov <laskov@festa.bg>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2012-06-29 11:02+0200\n"
-"PO-Revision-Date: 2012-07-23 14:14+0000\n"
-"Last-Translator: Alick Zhao <alick9188@gmail.com>\n"
+"PO-Revision-Date: 2012-06-29 09:04+0000\n"
+"Last-Translator: Tomáš Mráz <tmraz@fedoraproject.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Language: bg\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: src/pam_pwquality.c:22
 #, c-format
 msgid "New %s%spassword: "
-msgstr "新的 %s%s密码："
+msgstr "Нова %s%sпарола: "
 
 #: src/pam_pwquality.c:24
 #, c-format
 msgid "Retype new %s%spassword: "
-msgstr "重新输入新的 %s%s密码："
+msgstr "Отново новата %s%sпарола: "
 
 #: src/pam_pwquality.c:25
 msgid "Sorry, passwords do not match."
-msgstr "抱歉，密码不匹配。"
+msgstr "Лошо, паролите не съвпадат."
 
 #: src/pam_pwquality.c:181
 #, c-format
 msgid "BAD PASSWORD: %s"
-msgstr "无效的密码： %s"
+msgstr "ГРЕШНА ПАРОЛА: %s"
 
 #: src/pwscore.c:22
 #, c-format
 msgid "Usage: %s [user]\n"
-msgstr "用法： %s [user]\n"
+msgstr "Употреба: %s [потребител]\n"
 
 #: src/pwscore.c:23
 #, c-format
 msgid ""
 "       The command reads the password to be scored from the standard "
 "input.\n"
-msgstr "       命令通过标准输入读取需要评分的密码。\n"
+msgstr "       Командата оценява качеството на парола, въведена от стандартния вход.\n"
 
 #: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:64
 #, c-format
 msgid "Error: %s\n"
-msgstr "错误: %s\n"
+msgstr "Грешка: %s\n"
 
 #: src/pwscore.c:51
 msgid "Could not obtain the password to be scored"
-msgstr "无法获得需要评分的密码"
+msgstr "Не мога да намеря парола за оценяване"
 
 #: src/pwscore.c:71
 #, c-format
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr "密码质量检查失败：\n%s\n"
+msgstr "Проверката на качеството на паролата се провали:\n %s\n"
 
 #: src/pwmake.c:22
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
-msgstr "用法: %s <entropy-bits>\n\n"
+msgstr "Употреба: %s <entropy-bits>\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
-msgstr "设置时发生内存分配错误"
+msgstr "Грешка при заделяне на памет при задаването"
 
 #: src/error.c:35
 msgid "Memory allocation error"
-msgstr "内存分配错误"
+msgstr "Грешка при заделяне на памет"
 
 #: src/error.c:37
 msgid "The password is the same as the old one"
-msgstr "这个密码和原来的相同"
+msgstr "Паролата е същата като старата"
 
 #: src/error.c:39
 msgid "The password is a palindrome"
-msgstr "密码是一个回文"
+msgstr "Паролата е палиндром"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
-msgstr "密码仅包含大小写变更"
+msgstr "Паролата се различава само по големината на буквите"
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
-msgstr "密码与原来的太相似"
+msgstr "Паролата прилича много на старата"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr "密码包含用户名在某些地方"
+msgstr "Паролата съдържа под някаква форма потребителското име"
 
 #: src/error.c:47
 msgid ""
 "The password contains words from the real name of the user in some form"
-msgstr "密码包含了某种形式的用户真实名称"
+msgstr "Паролата съдържа под някаква форма част от името на потребителя"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
-msgstr "密码包含了某种形式的禁用单词"
+msgstr "Паролата съдържа под някаква форма забранени думи"
 
 #: src/error.c:52
 #, c-format
 msgid "The password contains less than %ld digits"
-msgstr "密码少于 %ld 的位数"
+msgstr "Паролата съдържа по-малко от %ld цифри"
 
 #: src/error.c:55
 msgid "The password contains too few digits"
-msgstr "密码包含的位数太短"
+msgstr "Паролата съдържа твърде малко цифри"
 
 #: src/error.c:58
 #, c-format
 msgid "The password contains less than %ld uppercase letters"
-msgstr "密码包含少于 %ld 的大写字母"
+msgstr "Паролата съдържа по-малко от %ld големи букви"
 
 #: src/error.c:61
 msgid "The password contains too few uppercase letters"
-msgstr "密码包含的大写字母太少"
+msgstr "Паролата съдържа твърде малко големи букви"
 
 #: src/error.c:64
 #, c-format
 msgid "The password contains less than %ld lowercase letters"
-msgstr "密码包含少于 %ld 的小写字母"
+msgstr "Паролата съдържа по-малко от %ld малки букви"
 
 #: src/error.c:67
 msgid "The password contains too few lowercase letters"
-msgstr "密码包含的小写字母太少"
+msgstr "Паролата съдържа твърде малко малки букви"
 
 #: src/error.c:70
 #, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr "密码包含少于 %ld 的非字母或数字字符"
+msgstr "Паролата съдържа по-малко от %ld специални знаци"
 
 #: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
-msgstr "密码包含的非字母或数字字符太少"
+msgstr "Паролата съдържа твърде малко специални знаци"
 
 #: src/error.c:76
 #, c-format
 msgid "The password is shorter than %ld characters"
-msgstr "密码少于 %ld 个字符"
+msgstr "Паролата е по-къса от %ld знака"
 
 #: src/error.c:79
 msgid "The password is too short"
-msgstr "密码太短了"
+msgstr "Паролата е твърде къса"
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
-msgstr "密码仅是旧密码的反转"
+msgstr "Паролата е като старата, само че е обърната"
 
 #: src/error.c:84
 #, c-format
 msgid "The password contains less than %ld character classes"
-msgstr "密码包含少于 %ld 的字符类型"
+msgstr "Паролата съдържа по малко от %ld символни класа."
 
 #: src/error.c:87
 msgid "The password does not contain enough character classes"
-msgstr "密码未包含足够的字符类型"
+msgstr "Паролата не съдържа достатъчно символни класове."
 
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr "密码包含了超过 %ld 的相同连续字符"
+msgstr "Паролата съдържа повече от %ld еднакви последователни знака"
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
-msgstr "密码包含了太多相同连续字符"
+msgstr "Паролата съдържа твърде много еднакви последователни знаци"
 
 #: src/error.c:96
 #, c-format
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr "密码包含了超过 %ld 的同类型连续字符"
+msgstr "Паролата съдържа повече %ld поредни символи от един и същ тип"
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr "密码包含了过多的同类型连续字符"
+msgstr "Паролата съдържа твърде много поредни символи от един и същ клас."
 
 #: src/error.c:102
 #, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr "密码包含超过%ld 个字符的单调序列"
+msgstr ""
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"
-msgstr "密码包含过长的单调字符序列"
+msgstr ""
 
 #: src/error.c:107
 msgid "No password supplied"
-msgstr "密码未提供"
+msgstr "Не е зададена парола"
 
 #: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
-msgstr "无法从 RNG 随机数生成设备获得随机数"
+msgstr "Не мога да получа случайни числа от RNG устройството."
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
-msgstr "密码生成失败 - 未达到设置所需的熵"
+msgstr "Генерирането на парола се провали - ентропията е твърде малка за тези настройки."
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
-msgstr "密码未通过字典检查"
+msgstr "Паролата не трябва да съществува в речника"
 
 #: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
-msgstr "未知设置"
+msgstr "Неизвестни настройки"
 
 #: src/error.c:127
 msgid "Bad integer value of setting"
-msgstr "错误的整数设置值"
+msgstr "Грешна стойност на цяло число в настройките"
 
 #: src/error.c:131
 msgid "Bad integer value"
-msgstr "坏的整数值"
+msgstr "Грешна стойност на цяло число"
 
 #: src/error.c:134
 #, c-format
 msgid "Setting %s is not of integer type"
-msgstr "设置 %s 并非整数类型"
+msgstr "Стойността %s не е цяло число"
 
 #: src/error.c:138
 msgid "Setting is not of integer type"
-msgstr "设置并非整数类型"
+msgstr "Стойността не е от типа цяло число"
 
 #: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
-msgstr "设置 %s 并非字符串类型"
+msgstr "Стойността %s не е низ"
 
 #: src/error.c:145
 msgid "Setting is not of string type"
-msgstr "设置并非字符串类型"
+msgstr "Стойността не е от типа низ"
 
 #: src/error.c:147
 msgid "Opening the configuration file failed"
-msgstr "打开配置文件失败"
+msgstr "Отварянето на конфигурационния файл се провали"
 
 #: src/error.c:149
 msgid "The configuration file is malformed"
-msgstr "配置文件格式不正确"
+msgstr "Конфигурационният файл е деформиран"
 
 #: src/error.c:151
 msgid "Fatal failure"
-msgstr "致命的错误"
+msgstr "Фатална грешка"
 
 #: src/error.c:153
 msgid "Unknown error"
-msgstr "未知的错误"
+msgstr "Непозната грешка"

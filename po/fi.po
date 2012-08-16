@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Ilkka Pirskanen <ilkka.pirskanen@kolumbus.fi>, 2005.
 # Janne Ahlskog <j.ahlskog@multi.fi>, 2006.
@@ -12,13 +12,13 @@ msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2012-06-29 11:02+0200\n"
-"PO-Revision-Date: 2012-03-11 19:15+0000\n"
-"Last-Translator: Ville-Pekka Vainio <vpvainio@iki.fi>\n"
+"PO-Revision-Date: 2012-06-29 09:04+0000\n"
+"Last-Translator: Tomáš Mráz <tmraz@fedoraproject.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: src/pam_pwquality.c:22
@@ -48,7 +48,8 @@ msgstr "Käyttö: %s [käyttäjä]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
+"       The command reads the password to be scored from the standard "
+"input.\n"
 msgstr "       Komento lukee pisteytettävän salasanan oletussyötteestä.\n"
 
 #: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:64
@@ -65,9 +66,7 @@ msgstr "Pisteytettävää salasanaa ei saatu"
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr ""
-"Salasanan laatutarkastus epäonnistui:\n"
-" %s\n"
+msgstr "Salasanan laatutarkastus epäonnistui:\n %s\n"
 
 #: src/pwmake.c:22
 #, c-format
@@ -103,7 +102,8 @@ msgid "The password contains the user name in some form"
 msgstr "Salasana sisältää käyttäjätunnuksen jossakin muodossa"
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
+msgid ""
+"The password contains words from the real name of the user in some form"
 msgstr "Salasana sisältää sanoja käyttäjän oikeasta nimestä jossakin muodossa"
 
 #: src/error.c:49
@@ -140,14 +140,11 @@ msgstr "Salasana sisältää liian vähän pieniä kirjaimia"
 #: src/error.c:70
 #, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr ""
-"Salasana sisältää alle %ld merkkiä jotka eivät ole numeroita tai kirjaimia"
+msgstr "Salasana sisältää alle %ld merkkiä jotka eivät ole numeroita tai kirjaimia"
 
 #: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
-msgstr ""
-"Salasana sisältää liian vähän merkkejä jotka eivät ole numeroita tai "
-"kirjaimia"
+msgstr "Salasana sisältää liian vähän merkkejä jotka eivät ole numeroita tai kirjaimia"
 
 #: src/error.c:76
 #, c-format
@@ -193,16 +190,13 @@ msgid ""
 msgstr "Salasana sisältää liian monta saman merkkiluokan merkkiä peräkkäin"
 
 #: src/error.c:102
-#, fuzzy, c-format
+#, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr "Salasana sisältää alle %ld merkkiluokkaa"
+msgstr ""
 
 #: src/error.c:105
-#, fuzzy
 msgid "The password contains too long of a monotonic character sequence"
 msgstr ""
-"Salasana sisältää liian vähän merkkejä jotka eivät ole numeroita tai "
-"kirjaimia"
 
 #: src/error.c:107
 msgid "No password supplied"

@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Dominik  <dominikla@gmail.com>, 2012.
 # Ondrej Šulek <feonsu@gmail.com>, 2008.
@@ -11,13 +11,13 @@ msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2012-06-29 11:02+0200\n"
-"PO-Revision-Date: 2012-01-29 18:34+0000\n"
-"Last-Translator: Dominik <dominikla@gmail.com>\n"
+"PO-Revision-Date: 2012-06-29 09:04+0000\n"
+"Last-Translator: Tomáš Mráz <tmraz@fedoraproject.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: sk\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 
 #: src/pam_pwquality.c:22
@@ -47,9 +47,9 @@ msgstr "Využitie: %s [user]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
-msgstr ""
-"       Príkaz číta heslo, aby bolo ohodnotené zo štandardného vstupu.\n"
+"       The command reads the password to be scored from the standard "
+"input.\n"
+msgstr "       Príkaz číta heslo, aby bolo ohodnotené zo štandardného vstupu.\n"
 
 #: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:64
 #, c-format
@@ -65,9 +65,7 @@ msgstr "Nemôžem získať heslo na hodnotenie"
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr ""
-"Kontrola kvality hesla zlyhala:\n"
-"%s\n"
+msgstr "Kontrola kvality hesla zlyhala:\n%s\n"
 
 #: src/pwmake.c:22
 #, c-format
@@ -103,7 +101,8 @@ msgid "The password contains the user name in some form"
 msgstr "Heslo obsahuje užívateľské meno v istej forme"
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
+msgid ""
+"The password contains words from the real name of the user in some form"
 msgstr ""
 
 #: src/error.c:49
@@ -190,14 +189,13 @@ msgid ""
 msgstr ""
 
 #: src/error.c:102
-#, fuzzy, c-format
+#, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr "Heslo je kratšie než %ld znakov"
+msgstr ""
 
 #: src/error.c:105
-#, fuzzy
 msgid "The password contains too long of a monotonic character sequence"
-msgstr "Heslo obsahuje príliš málo číslic"
+msgstr ""
 
 #: src/error.c:107
 msgid "No password supplied"

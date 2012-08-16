@@ -1,9 +1,9 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
-# Piotr Drąg <piotrdrag@gmail.com>, 2008.
+# Piotr Drąg <piotrdrag@gmail.com>, 2008, 2012.
 # Stanisław Małolepszy <smalolepszy@aviary.pl>, 2006.
 # Wojciech Kapusta <wojciech@aviary.pl>, 2006.
 msgid ""
@@ -11,15 +11,14 @@ msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2012-06-29 11:02+0200\n"
-"PO-Revision-Date: 2011-12-13 17:27+0000\n"
+"PO-Revision-Date: 2012-06-29 15:32+0000\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2)\n"
+"Language: pl\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
 #: src/pam_pwquality.c:22
 #, c-format
@@ -48,9 +47,9 @@ msgstr "Użycie: %s [użytkownik]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
-msgstr ""
-"       Polecenie odczytujące hasło do oceny ze standardowego wejścia.\n"
+"       The command reads the password to be scored from the standard "
+"input.\n"
+msgstr "       Polecenie odczytujące hasło do oceny ze standardowego wejścia.\n"
 
 #: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:64
 #, c-format
@@ -66,9 +65,7 @@ msgstr "Nie można uzyskać hasła do oceny"
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr ""
-"Sprawdzenie jakości hasła się nie powiodło:\n"
-" %s\n"
+msgstr "Sprawdzenie jakości hasła się nie powiodło:\n %s\n"
 
 #: src/pwmake.c:22
 #, c-format
@@ -104,7 +101,8 @@ msgid "The password contains the user name in some form"
 msgstr "Hasło zawiera nazwę użytkownika"
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
+msgid ""
+"The password contains words from the real name of the user in some form"
 msgstr "Hasło zawiera wyrazy z imienia lub nazwiska użytkownika"
 
 #: src/error.c:49
@@ -172,8 +170,7 @@ msgstr "Hasło nie zawiera wystarczającej liczby klas znaków"
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr ""
-"Hasło zawiera więcej niż %ld takich samych znaków następujących po sobie"
+msgstr "Hasło zawiera więcej niż %ld takich samych znaków następujących po sobie"
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
@@ -184,8 +181,7 @@ msgstr "Hasło zawiera za dużo takich samych znaków następujących po sobie"
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr ""
-"Hasło zawiera więcej niż %ld znaków tej samej klasy następujących po sobie"
+msgstr "Hasło zawiera więcej niż %ld znaków tej samej klasy następujących po sobie"
 
 #: src/error.c:99
 msgid ""
@@ -193,14 +189,13 @@ msgid ""
 msgstr "Hasło zawiera za dużo znaków tej samej klasy następujących po sobie"
 
 #: src/error.c:102
-#, fuzzy, c-format
+#, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr "Hasło zawiera mniej niż %ld klas znaków"
+msgstr "Hasło zawiera sekwencję takich samych znaków dłuższą niż %ld znaków"
 
 #: src/error.c:105
-#, fuzzy
 msgid "The password contains too long of a monotonic character sequence"
-msgstr "Hasło zawiera za mało znaków niealfanumerycznych"
+msgstr "Hasło zawiera za długą sekwencję takich samych znaków"
 
 #: src/error.c:107
 msgid "No password supplied"
@@ -212,9 +207,7 @@ msgstr "Nie można uzyskać liczb losowych z urządzenia RNG"
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
-msgstr ""
-"Utworzenie hasła się nie powiodło - wymagana entropia jest za niska dla "
-"ustawień"
+msgstr "Utworzenie hasła się nie powiodło - wymagana entropia jest za niska dla ustawień"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"

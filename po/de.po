@@ -1,21 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 #   <hpeters@redhat.com>, 2012.
+# Roman Spirgi <bigant@fedoraproject.org>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2012-06-29 11:02+0200\n"
-"PO-Revision-Date: 2012-03-07 05:39+0000\n"
-"Last-Translator: hpeters <hpeters@redhat.com>\n"
+"PO-Revision-Date: 2012-07-20 19:43+0000\n"
+"Last-Translator: Roman Spirgi <bigant@fedoraproject.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: src/pam_pwquality.c:22
@@ -45,9 +46,9 @@ msgstr "Verwendung: %s [user]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
-msgstr ""
-"       Der Befehl liest das zu bewertende Passwort von der Standardeingabe.\n"
+"       The command reads the password to be scored from the standard "
+"input.\n"
+msgstr "       Der Befehl liest das zu bewertende Passwort von der Standardeingabe.\n"
 
 #: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:64
 #, c-format
@@ -63,9 +64,7 @@ msgstr "Das zu bewertende Passwort konnte nicht gelesen werden"
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr ""
-"Passwort-Qualitätsprüfung fehlgeschlagen:\n"
-" %s\n"
+msgstr "Passwort-Qualitätsprüfung fehlgeschlagen:\n %s\n"
 
 #: src/pwmake.c:22
 #, c-format
@@ -101,7 +100,8 @@ msgid "The password contains the user name in some form"
 msgstr "Das Passwort enthält den Benutzernamen"
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
+msgid ""
+"The password contains words from the real name of the user in some form"
 msgstr "Das Passwort enthält Wörter aus dem echten Namen des Benutzers"
 
 #: src/error.c:49
@@ -180,25 +180,21 @@ msgstr "Das Passwort enthält zu viele derselben Zeichen nacheinander"
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr ""
-"Das Passwort enthält mehr als %ld aufeinanderfolgende Zeichen derselben "
-"Klasse"
+msgstr "Das Passwort enthält mehr als %ld aufeinanderfolgende Zeichen derselben Klasse"
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr ""
-"Das Passwort enthält zu viele aufeinanderfolgende Zeichen derselben Klasse"
+msgstr "Das Passwort enthält zu viele aufeinanderfolgende Zeichen derselben Klasse"
 
 #: src/error.c:102
-#, fuzzy, c-format
+#, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr "Das Passwort enthält weniger als %ld Zeichenklassen"
+msgstr "Das Passwort beinhaltet eine gleichbleibende Abfolge länger als %ld Zeichen"
 
 #: src/error.c:105
-#, fuzzy
 msgid "The password contains too long of a monotonic character sequence"
-msgstr "Das Passwort enthält zu wenige nicht-alphanumerische Zeichen"
+msgstr "Das Passwort beinhaltet eine zu lange Abfolge gleichbleibender Zeichen"
 
 #: src/error.c:107
 msgid "No password supplied"
@@ -210,9 +206,7 @@ msgstr "Vom RNG-Gerät konnten keine zufälligen Zahlen bezogen werden"
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
-msgstr ""
-"Passworderstellung fehlgeschlagen - erforderliche Entropie zu niedrig für "
-"Einstellungen"
+msgstr "Passworderstellung fehlgeschlagen - erforderliche Entropie zu niedrig für Einstellungen"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
