@@ -1,5 +1,12 @@
 libpwquality NEWS -- history of user-visible changes.
 
+Release 1.2.0
+
+* Add maxsequence check for too long monotonic character sequence.
+* Clarified alternative licensing to GPLv2+.
+* Add local_users_only option to skip the pwquality checks for
+  non-locals. (thanks to Stef Walter)
+
 Release 1.1.1
 
 * Use rpm built-in filtering of provides (fix for rhbz#830153)

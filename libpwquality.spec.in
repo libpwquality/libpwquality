@@ -104,6 +104,12 @@ rm -f $RPM_BUILD_ROOT%{_moduledir}/*.la
 %{python_sitearch}/pwquality.so
 
 %changelog
+* Thu Aug 16 2012 Tomas Mraz <tmraz@redhat.com> 1.2.0-1
+- add maxsequence check for too long monotonic character sequence.
+- clarified alternative licensing to GPLv2+.
+- add local_users_only option to skip the pwquality checks for
+  non-locals. (thanks to Stef Walter)
+
 * Wed Jun 13 2012 Tomas Mraz <tmraz@redhat.com> 1.1.1-1
 - use rpm built-in filtering of provides (rhbz#830153)
 - remove strain debug fprintf() (rhbz#831567)
