@@ -16,6 +16,9 @@
 #include <limits.h>
 #include <syslog.h>
 #include <libintl.h>
+#include <stdio.h>
+#include <pwd.h>
+#include <errno.h>
 #include "pwquality.h"
 
 /* For Translators: "%s%s" could be replaced with "<service> " or "". */
@@ -43,10 +46,13 @@
 struct module_options {
         int retry_times;
         int enforce_for_root;
+        int local_users_only;
         pwquality_settings_t *pwq;
 };
 
 #define CO_RETRY_TIMES  1
+
+#define PATH_PASSWD "/etc/passwd"
 
 static int
 _pam_parse (pam_handle_t *pamh, struct module_options *opt,
@@ -82,6 +88,8 @@ _pam_parse (pam_handle_t *pamh, struct module_options *opt,
                                 opt->retry_times = CO_RETRY_TIMES;
                 } else if (!strncmp(*argv, "enforce_for_root", 16)) {
                         opt->enforce_for_root = 1;
+                } else if (!strncmp(*argv, "local_users_only", 16)) {
+                        opt->local_users_only = 1;
                 } else if (!strncmp(*argv, "difignore=", 10)) {
                         /* ignored for compatibility with pam_cracklib */
                 } else if (!strncmp(*argv, "reject_username", 15)) {
@@ -103,6 +111,44 @@ _pam_parse (pam_handle_t *pamh, struct module_options *opt,
          opt->pwq = pwq;
 
          return ctrl;
+}
+
+static int
+check_local_user (pam_handle_t *pamh,
+                  const char *user)
+{
+        struct passwd pw, *pwp;
+        char buf[4096];
+        int found = 0;
+        FILE *fp;
+        int errn;
+
+        fp = fopen(PATH_PASSWD, "r");
+        if (fp == NULL) {
+                pam_syslog(pamh, LOG_ERR, "pam_pwquality: unable to open %s: %s",
+                           PATH_PASSWD, pam_strerror(pamh, errno));
+                return -1;
+        }
+
+        for (;;) {
+                errn = fgetpwent_r(fp, &pw, buf, sizeof (buf), &pwp);
+                if (errn != 0)
+                        break;
+                if (strcmp (pwp->pw_name, user) == 0) {
+                        found = 1;
+                        break;
+                }
+        }
+
+        fclose (fp);
+
+        if (errn != 0 && errn != ENOENT) {
+                pam_syslog(pamh, LOG_ERR, "pam_pwquality: unable to enumerate local accounts: %s",
+                           pam_strerror(pamh, errn));
+                return -1;
+        } else {
+                return found;
+        }
 }
 
 PAM_EXTERN int
@@ -169,8 +215,13 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
                                 return PAM_AUTHTOK_ERR;
                         }
 
-                        /* now test this passwd against libpwquality */
-                        retval = pwquality_check(options.pwq, newtoken, oldtoken, user, &auxerror);
+                        if (options.local_users_only && check_local_user (pamh, user) == 0) {
+                                /* skip the check if a non-local user */
+                                retval = 0;
+                        } else {
+                                /* now test this passwd against libpwquality */
+                                retval = pwquality_check(options.pwq, newtoken, oldtoken, user, &auxerror);
+                        }
 
                         if (retval < 0) {
                                 const char *msg;
