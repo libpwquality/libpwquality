@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2012-06-29 11:02+0200\n"
+"POT-Creation-Date: 2012-08-16 21:32+0200\n"
 "PO-Revision-Date: 2011-11-30 12:15+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,21 +18,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
-#: src/pam_pwquality.c:22
+#: src/pam_pwquality.c:25
 #, c-format
 msgid "New %s%spassword: "
 msgstr ""
 
-#: src/pam_pwquality.c:24
+#: src/pam_pwquality.c:27
 #, c-format
 msgid "Retype new %s%spassword: "
 msgstr ""
 
-#: src/pam_pwquality.c:25
+#: src/pam_pwquality.c:28
 msgid "Sorry, passwords do not match."
 msgstr ""
 
-#: src/pam_pwquality.c:181
+#: src/pam_pwquality.c:238
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr ""
