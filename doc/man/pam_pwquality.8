@@ -264,6 +264,14 @@ the message about the failed check is printed but root can change
 the password anyway\&.
 .RE
 .PP
+\fBlocal_users_only\fR
+.RS 4
+The module will not test the password quality for users that are not present
+in the \fI/etc/passwd\fR file\&. The module still asks for the password so
+the following modules in the stack can use the \fBuse_authtok\fR option\&.
+This option is off by default\&.
+.RE
+.PP
 \fBuse_authtok\fR
 .RS 4
 This argument is used to
