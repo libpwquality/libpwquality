@@ -125,16 +125,22 @@ check_local_user (pam_handle_t *pamh,
 
         fp = fopen(PATH_PASSWD, "r");
         if (fp == NULL) {
-                pam_syslog(pamh, LOG_ERR, "pam_pwquality: unable to open %s: %s",
+                pam_syslog(pamh, LOG_ERR, "unable to open %s: %s",
                            PATH_PASSWD, pam_strerror(pamh, errno));
                 return -1;
         }
 
         for (;;) {
                 errn = fgetpwent_r(fp, &pw, buf, sizeof (buf), &pwp);
+                if (errn == ERANGE) {
+                        pam_syslog(pamh, LOG_WARNING, "%s contains very long lines; corrupted?",
+                                   PATH_PASSWD);
+                        /* we can continue here as next call will read further */
+                        continue;
+                }
                 if (errn != 0)
                         break;
-                if (strcmp (pwp->pw_name, user) == 0) {
+                if (strcmp(pwp->pw_name, user) == 0) {
                         found = 1;
                         break;
                 }
@@ -143,7 +149,7 @@ check_local_user (pam_handle_t *pamh,
         fclose (fp);
 
         if (errn != 0 && errn != ENOENT) {
-                pam_syslog(pamh, LOG_ERR, "pam_pwquality: unable to enumerate local accounts: %s",
+                pam_syslog(pamh, LOG_ERR, "unable to enumerate local accounts: %s",
                            pam_strerror(pamh, errn));
                 return -1;
         } else {
@@ -289,7 +295,7 @@ struct pam_module _pam_pwquality_modstruct = {
 /*
  * Copyright (c) Cristian Gafton <gafton@redhat.com>, 1996.
  *                                              All rights reserved
- * Copyright (c) Red Hat, Inc, 2011
+ * Copyright (c) Red Hat, Inc, 2011, 2012
  * Copyright (c) Tomas Mraz <tm@t8m.info>, 2011
  *
  * Redistribution and use in source and binary forms, with or without
