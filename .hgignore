@@ -36,7 +36,11 @@ INSTALL
 libtool
 po/stamp-*
 po/remove-*
+po/Makefile.in.in
+po/Rules-quot
 src/pwmake
 src/pwscore
 python/constants.c
 python/pwquality.so
+m4/*.m4
+ABOUT-NLS
