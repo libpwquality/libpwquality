@@ -163,6 +163,6 @@ dnl Checks for library functions.
 AC_CHECK_FUNCS(strcspn strdup strspn strstr strtol)
 
 dnl Files to be created from when we run configure
-AC_CONFIG_FILES([Makefile libpwquality.spec src/Makefile po/Makefile.in python/Makefile
+AC_CONFIG_FILES([Makefile libpwquality.spec src/Makefile src/pwquality.pc po/Makefile.in python/Makefile
                  doc/Makefile doc/man/Makefile])
 AC_OUTPUT

@@ -1,4 +1,4 @@
 Name: pwquality
 Description: Password quality checker
-Version: 1.0.0
+Version: @PACKAGE_VERSION@
 Libs: -lpwquality
