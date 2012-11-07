@@ -10,6 +10,10 @@
 #ifndef PWQUALITY_H
 #define PWQUALITY_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define PWQ_SETTING_DIFF_OK          1
 #define PWQ_SETTING_MIN_LENGTH       3
 #define PWQ_SETTING_DIG_CREDIT       4
@@ -131,6 +135,10 @@ pwquality_check(pwquality_settings_t *pwq, const char *password,
  * The returned pointer is not guaranteed to point to the buf. */
 const char *
 pwquality_strerror(char *buf, size_t len, int errcode, void *auxerror);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* PWQUALITY_H */
 
