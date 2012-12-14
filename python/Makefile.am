@@ -13,4 +13,4 @@ EXTRA_DIST = pwquality.c setup.py
 pythonsite_SCRIPTS = pwquality.so
 
 pwquality.so: ../src/pwquality.h pwquality.c setup.py
-	python setup.py build --build-lib=.
+	CFLAGS="${CFLAGS} -fno-strict-aliasing" python setup.py build --build-lib=.
