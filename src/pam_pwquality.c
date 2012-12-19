@@ -176,6 +176,7 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
                  * We cannot do that, since the original path is compiled
                  * into the cracklib library and we don't know it.
                  */
+                pwquality_free_settings(options.pwq);
                 return PAM_SUCCESS;
         } else if (flags & PAM_UPDATE_AUTHTOK) {
                 int retval;
@@ -187,6 +188,7 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
                 if (retval != PAM_SUCCESS || user == NULL) {
                         if (ctrl & PAM_DEBUG_ARG)
                                 pam_syslog(pamh, LOG_ERR, "Can not get username");
+                        pwquality_free_settings(options.pwq);
                         return PAM_AUTHTOK_ERR;
                 }
 
@@ -218,6 +220,7 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
                                         pam_strerror(pamh, retval));
                                 continue;
                         } else if (newtoken == NULL) { /* user aborted password change, quit */
+                                pwquality_free_settings(options.pwq);
                                 return PAM_AUTHTOK_ERR;
                         }
 
@@ -255,12 +258,15 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
                                 pam_set_item(pamh, PAM_AUTHTOK, NULL);
                                 continue;
                         } else if (newtoken == NULL) {      /* user aborted password change, quit */
+                                pwquality_free_settings(options.pwq);
                                 return PAM_AUTHTOK_ERR;
                         }
 
+                        pwquality_free_settings(options.pwq);
                         return PAM_SUCCESS;
                 }
 
+                pwquality_free_settings(options.pwq);
                 pam_set_item (pamh, PAM_AUTHTOK, NULL);
 
                 /* if we have only one try, we can use the real reason,
@@ -270,6 +276,7 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
                 else
                         return retval;
         } else {
+                pwquality_free_settings(options.pwq);
                 if (ctrl & PAM_DEBUG_ARG)
                         pam_syslog(pamh, LOG_NOTICE, "UNKNOWN flags setting %02X",flags);
         }

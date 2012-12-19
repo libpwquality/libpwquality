@@ -52,10 +52,12 @@ main(int argc, char *argv[])
 
         if ((rv = pwquality_read_config(pwq, NULL, &auxerror)) != 0) {
                 fprintf(stderr, "Error: %s\n", pwquality_strerror(NULL, 0, rv, auxerror));
+                pwquality_free_settings(pwq);
                 exit(3);
         }
 
         rv = pwquality_generate(pwq, bits, &password);
+        pwquality_free_settings(pwq);
 
         if (rv != 0) {
                 fprintf(stderr, "Error: %s\n", pwquality_strerror(NULL, 0, rv, NULL));
