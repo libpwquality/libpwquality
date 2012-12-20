@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2012-08-16 21:32+0200\n"
+"POT-Creation-Date: 2012-12-20 10:03+0100\n"
 "PO-Revision-Date: 2012-07-29 06:09+0000\n"
 "Last-Translator: Tomoyuki KATO <tomo@dream.daynight.jp>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,7 +35,7 @@ msgstr "新しい %s%s パスワードを再入力してください:"
 msgid "Sorry, passwords do not match."
 msgstr "パスワードが一致しません。"
 
-#: src/pam_pwquality.c:238
+#: src/pam_pwquality.c:241
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "よくないパスワード: %s"
@@ -51,7 +51,7 @@ msgid ""
 "       The command reads the password to be scored from the standard input.\n"
 msgstr "       このコマンドは採点するパスワードを標準入力から読み込みます。\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:64
+#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
 #, c-format
 msgid "Error: %s\n"
 msgstr "エラー: %s\n"
@@ -60,7 +60,7 @@ msgstr "エラー: %s\n"
 msgid "Could not obtain the password to be scored"
 msgstr "採点するパスワードを取得できませんでした。"
 
-#: src/pwscore.c:71
+#: src/pwscore.c:73
 #, c-format
 msgid ""
 "Password quality check failed:\n"

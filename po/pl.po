@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2012-08-16 21:32+0200\n"
+"POT-Creation-Date: 2012-12-20 10:03+0100\n"
 "PO-Revision-Date: 2012-06-29 15:32+0000\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,7 +35,7 @@ msgstr "Proszę ponownie podać nowe hasło %s%s: "
 msgid "Sorry, passwords do not match."
 msgstr "Hasła się nie zgadzają."
 
-#: src/pam_pwquality.c:238
+#: src/pam_pwquality.c:241
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "BŁĘDNE HASŁO: %s"
@@ -52,7 +52,7 @@ msgid ""
 msgstr ""
 "       Polecenie odczytujące hasło do oceny ze standardowego wejścia.\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:64
+#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
 #, c-format
 msgid "Error: %s\n"
 msgstr "Błąd: %s\n"
@@ -61,7 +61,7 @@ msgstr "Błąd: %s\n"
 msgid "Could not obtain the password to be scored"
 msgstr "Nie można uzyskać hasła do oceny"
 
-#: src/pwscore.c:71
+#: src/pwscore.c:73
 #, c-format
 msgid ""
 "Password quality check failed:\n"

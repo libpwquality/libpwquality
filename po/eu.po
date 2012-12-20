@@ -3,44 +3,44 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Sandeep Shedmake <sandeep.shedmake@gmail.com>, 2008, 2009.
+#   <mikel@olasagasti.info>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2012-12-20 10:03+0100\n"
-"PO-Revision-Date: 2012-06-29 09:04+0000\n"
-"Last-Translator: Tomáš Mráz <tmraz@fedoraproject.org>\n"
+"PO-Revision-Date: 2012-11-16 09:41+0000\n"
+"Last-Translator: Hey_neken <mikel@olasagasti.info>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: mr\n"
+"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/pam_pwquality.c:25
 #, c-format
 msgid "New %s%spassword: "
-msgstr "नवीन गुप्तशब्द %s%sp: "
+msgstr "%s%spasahitz berria:"
 
 #: src/pam_pwquality.c:27
 #, c-format
 msgid "Retype new %s%spassword: "
-msgstr "नवीन गुप्तशब्द %s%sp पुन्हा टाइप करा: "
+msgstr "Idatzi berriz %s%spasahitza:"
 
 #: src/pam_pwquality.c:28
 msgid "Sorry, passwords do not match."
-msgstr "माफ करा, गुप्तशब्द जुळत नाही."
+msgstr "Barkatu, pasahitzak ez datoz bat."
 
 #: src/pam_pwquality.c:241
 #, c-format
 msgid "BAD PASSWORD: %s"
-msgstr "अयोग्य गुप्तशब्द: %s"
+msgstr "PASAHITZ TXARRA: %s"
 
 #: src/pwscore.c:22
 #, c-format
 msgid "Usage: %s [user]\n"
-msgstr ""
+msgstr "Erabilera: %s [erabiltzailea]\n"
 
 #: src/pwscore.c:23
 #, c-format
@@ -51,11 +51,11 @@ msgstr ""
 #: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
 #, c-format
 msgid "Error: %s\n"
-msgstr ""
+msgstr "Errorea: %s\n"
 
 #: src/pwscore.c:51
 msgid "Could not obtain the password to be scored"
-msgstr ""
+msgstr "Ezin izan da pasahitza lortu puntuatzeko"
 
 #: src/pwscore.c:73
 #, c-format
@@ -63,27 +63,29 @@ msgid ""
 "Password quality check failed:\n"
 " %s\n"
 msgstr ""
+"Pasahitzaren kalitate egiaztapenak huts egin du:\n"
+"%s\n"
 
 #: src/pwmake.c:22
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
-msgstr ""
+msgstr "Erabilera: %s <entropia-bit-ak>\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
-msgstr ""
+msgstr "Memoria esleipen errorea ezartzerakoan"
 
 #: src/error.c:35
 msgid "Memory allocation error"
-msgstr ""
+msgstr "Memoria esleipen errorea"
 
 #: src/error.c:37
 msgid "The password is the same as the old one"
-msgstr ""
+msgstr "Pasahitza aurrekoaren berdina da"
 
 #: src/error.c:39
 msgid "The password is a palindrome"
-msgstr ""
+msgstr "Pasahitza palindromoa da"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
@@ -91,11 +93,11 @@ msgstr ""
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
-msgstr ""
+msgstr "Pasahitza aurrekoaren oso antzekoa da"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr ""
+msgstr "Pasahitzak erabiltzaile izena dakar nolabait"
 
 #: src/error.c:47
 msgid "The password contains words from the real name of the user in some form"
@@ -108,11 +110,11 @@ msgstr ""
 #: src/error.c:52
 #, c-format
 msgid "The password contains less than %ld digits"
-msgstr ""
+msgstr "Pasahitzak %ld digitu baino gutxiago ditu"
 
 #: src/error.c:55
 msgid "The password contains too few digits"
-msgstr ""
+msgstr "Pasahitzak digitu gutxiegi ditu"
 
 #: src/error.c:58
 #, c-format
@@ -148,11 +150,11 @@ msgstr ""
 
 #: src/error.c:79
 msgid "The password is too short"
-msgstr ""
+msgstr "Pasahitza motzegia da"
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
-msgstr ""
+msgstr "Pasahitza aurrekoa alderantziz da"
 
 #: src/error.c:84
 #, c-format
@@ -195,7 +197,7 @@ msgstr ""
 
 #: src/error.c:107
 msgid "No password supplied"
-msgstr "गुप्तशब्द दिलेला नाही"
+msgstr "Ez da pasahitzik eman"
 
 #: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
@@ -211,7 +213,7 @@ msgstr ""
 
 #: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
-msgstr ""
+msgstr "Ezarpen ezezaguna"
 
 #: src/error.c:127
 msgid "Bad integer value of setting"
@@ -249,8 +251,8 @@ msgstr ""
 
 #: src/error.c:151
 msgid "Fatal failure"
-msgstr ""
+msgstr "Hutsegite larria"
 
 #: src/error.c:153
 msgid "Unknown error"
-msgstr "अपरिचित चूक"
+msgstr "Errore ezezaguna"

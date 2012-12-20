@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2012-08-16 21:32+0200\n"
+"POT-Creation-Date: 2012-12-20 10:03+0100\n"
 "PO-Revision-Date: 2012-06-29 09:04+0000\n"
 "Last-Translator: Tomáš Mráz <tmraz@fedoraproject.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,7 +35,7 @@ msgstr "Digite novamente a nova %s%ssenha: "
 msgid "Sorry, passwords do not match."
 msgstr "Lamento, as senhas não coincidem."
 
-#: src/pam_pwquality.c:238
+#: src/pam_pwquality.c:241
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "MÁ SENHA: %s"
@@ -53,7 +53,7 @@ msgstr ""
 "       O comando lê a senha a ser pontuada a partir da entrada de dados por "
 "omissão.\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:64
+#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
 #, c-format
 msgid "Error: %s\n"
 msgstr "Erro: %s\n"
@@ -62,7 +62,7 @@ msgstr "Erro: %s\n"
 msgid "Could not obtain the password to be scored"
 msgstr "Não foi possível obter a senha para ser pontuada"
 
-#: src/pwscore.c:71
+#: src/pwscore.c:73
 #, c-format
 msgid ""
 "Password quality check failed:\n"

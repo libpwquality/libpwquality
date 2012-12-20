@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2012-08-16 21:32+0200\n"
+"POT-Creation-Date: 2012-12-20 10:03+0100\n"
 "PO-Revision-Date: 2012-07-16 15:46+0000\n"
 "Last-Translator: Daniel Cabrera <logan@fedoraproject.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,7 +36,7 @@ msgstr "Vuelva a escribir la nueva %s%scontraseña: "
 msgid "Sorry, passwords do not match."
 msgstr "Las contraseñas no coinciden."
 
-#: src/pam_pwquality.c:238
+#: src/pam_pwquality.c:241
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "CONTRASEÑA INCORRECTA: %s"
@@ -55,7 +55,7 @@ msgstr ""
 "almacenada.\n"
 "\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:64
+#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
 #, c-format
 msgid "Error: %s\n"
 msgstr "Error: %s\n"
@@ -64,7 +64,7 @@ msgstr "Error: %s\n"
 msgid "Could not obtain the password to be scored"
 msgstr "No se pudo obtener una contraseña para almacenar"
 
-#: src/pwscore.c:71
+#: src/pwscore.c:73
 #, c-format
 msgid ""
 "Password quality check failed:\n"
