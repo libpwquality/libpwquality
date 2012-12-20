@@ -104,6 +104,11 @@ rm -f $RPM_BUILD_ROOT%{_moduledir}/*.la
 %{python_sitearch}/pwquality.so
 
 %changelog
+* Thu Dec 20 2012 Tomas Mraz <tmraz@redhat.com> 1.2.1-1
+- properly free pwquality settings
+- add extern "C" to public header
+- updated translations from Transifex
+
 * Thu Aug 16 2012 Tomas Mraz <tmraz@redhat.com> 1.2.0-1
 - add maxsequence check for too long monotonic character sequence.
 - clarified alternative licensing to GPLv2+.
