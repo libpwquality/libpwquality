@@ -261,7 +261,8 @@ By default the list is empty which means that this check is disabled\&.
 The module will return error on failed check even if the user changing the
 password is root\&. This option is off by default which means that just
 the message about the failed check is printed but root can change
-the password anyway\&.
+the password anyway\&. Note that root is not asked for an old password
+so the checks that compare the old and new password are not performed\&.
 .RE
 .PP
 \fBlocal_users_only\fR
