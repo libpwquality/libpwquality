@@ -1,3 +1,6 @@
+.\" Escape single quotes in literal strings from groff's Unicode transform.
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
 .de FN
 \fI\|\\$1\|\fP
 ..
