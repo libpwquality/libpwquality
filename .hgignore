@@ -38,8 +38,12 @@ po/stamp-*
 po/remove-*
 po/Makefile.in.in
 po/Rules-quot
+po/*quot*
+po/Makevars.template
+po/insert-header.sin
 src/pwmake
 src/pwscore
+src/pwquality.pc
 python/constants.c
 python/pwquality.so
 m4/*.m4
