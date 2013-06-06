@@ -31,7 +31,7 @@ to perform some of the checks.
 
 %package devel
 Group: Development/Libraries
-Summary: Files needed for developing PAM-aware applications and modules for PAM
+Summary: Support for development of applications using the libpwquality library
 Requires: libpwquality%{?_isa} = %{version}-%{release}
 Requires: pkgconfig
 
