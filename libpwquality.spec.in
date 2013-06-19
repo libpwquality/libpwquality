@@ -104,6 +104,11 @@ rm -f $RPM_BUILD_ROOT%{_moduledir}/*.la
 %{python_sitearch}/pwquality.so
 
 %changelog
+* Wed Jun 19 2013 Tomas Mraz <tmraz@redhat.com> 1.2.2-1
+- manual page fixes
+- make it possible to set the maxsequence configuration value
+- updated translations from Transifex
+
 * Thu Dec 20 2012 Tomas Mraz <tmraz@redhat.com> 1.2.1-1
 - properly free pwquality settings
 - add extern "C" to public header

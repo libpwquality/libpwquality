@@ -1,5 +1,11 @@
 libpwquality NEWS -- history of user-visible changes.
 
+Release 1.2.2
+
+* Manual page fixes.
+* Make it possible to set the maxsequence configuration value.
+* Updated translations from Transifex.
+
 Release 1.2.1
 
 * Properly free pwquality settings.
