@@ -1,38 +1,38 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
-# Kris Thomsen <lakristho@gmail.com>, 2009.
+# Kris Thomsen <lakristho@gmail.com>, 2009,2013
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2012-12-20 10:03+0100\n"
-"PO-Revision-Date: 2012-06-29 09:04+0000\n"
-"Last-Translator: Tomáš Mráz <tmraz@fedoraproject.org>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: da\n"
+"POT-Creation-Date: 2012-06-29 11:02+0200\n"
+"PO-Revision-Date: 2013-04-02 21:24+0000\n"
+"Last-Translator: Kris Thomsen <lakristho@gmail.com>\n"
+"Language-Team: Danish (http://www.transifex.com/projects/p/libpwquality/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language: da\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/pam_pwquality.c:25
+#: src/pam_pwquality.c:22
 #, c-format
 msgid "New %s%spassword: "
 msgstr "Ny %s%sadgangskode: "
 
-#: src/pam_pwquality.c:27
+#: src/pam_pwquality.c:24
 #, c-format
 msgid "Retype new %s%spassword: "
 msgstr "Genindtast ny %s%sadgangskode: "
 
-#: src/pam_pwquality.c:28
+#: src/pam_pwquality.c:25
 msgid "Sorry, passwords do not match."
 msgstr "Adgangskoderne stemmer ikke overens."
 
-#: src/pam_pwquality.c:241
+#: src/pam_pwquality.c:181
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "DÅRLIG ADGANGSKODE: %s"
@@ -40,158 +40,160 @@ msgstr "DÅRLIG ADGANGSKODE: %s"
 #: src/pwscore.c:22
 #, c-format
 msgid "Usage: %s [user]\n"
-msgstr ""
+msgstr "Brug: %s [bruger]\n"
 
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
-msgstr ""
+"       The command reads the password to be scored from the standard "
+"input.\n"
+msgstr "Kommandoen læser adgangskoden, som hentes fra standard-inputtet.\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
+#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:64
 #, c-format
 msgid "Error: %s\n"
-msgstr ""
+msgstr "Fejl: %s\n"
 
 #: src/pwscore.c:51
 msgid "Could not obtain the password to be scored"
-msgstr ""
+msgstr "Kunne ikke opfange adgangskoden, som skulle vurderes"
 
-#: src/pwscore.c:73
+#: src/pwscore.c:71
 #, c-format
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr ""
+msgstr "Kvalitetstjek af adgangskode mislykkedes:\n%s\n"
 
 #: src/pwmake.c:22
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
-msgstr ""
+msgstr "Brug: %s <entropy-bits>\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
-msgstr ""
+msgstr "Fejl under indstilling af hukommelsesallokering"
 
 #: src/error.c:35
 msgid "Memory allocation error"
-msgstr ""
+msgstr "Hukommelsesallokeringsfejl"
 
 #: src/error.c:37
 msgid "The password is the same as the old one"
-msgstr ""
+msgstr "Adgangskoden er magen til den gamle"
 
 #: src/error.c:39
 msgid "The password is a palindrome"
-msgstr ""
+msgstr "Adgangskoden er et palindrom"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
-msgstr ""
+msgstr "Adgangskoden skiller sig kun ud med skift af store og små bogstaver"
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
-msgstr ""
+msgstr "Adgangskoden ligner den gamle for meget"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr ""
+msgstr "Adgangskoden indeholder på den ene eller den anden måde brugernavnet"
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
-msgstr ""
+msgid ""
+"The password contains words from the real name of the user in some form"
+msgstr "Adgangskoden indeholder ord fra brugerens rigtige navn i en eller anden form"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
-msgstr ""
+msgstr "Adgangskoden indeholder forbudte ord i en eller anden form"
 
 #: src/error.c:52
 #, c-format
 msgid "The password contains less than %ld digits"
-msgstr ""
+msgstr "Adgangskoden indeholder færre end %ld cifre"
 
 #: src/error.c:55
 msgid "The password contains too few digits"
-msgstr ""
+msgstr "Adgangskoden indeholder for få cifre"
 
 #: src/error.c:58
 #, c-format
 msgid "The password contains less than %ld uppercase letters"
-msgstr ""
+msgstr "Adgangskoden indeholder færre end %ld store bogstaver"
 
 #: src/error.c:61
 msgid "The password contains too few uppercase letters"
-msgstr ""
+msgstr "Adgangskoden indeholder for få store bogstaver"
 
 #: src/error.c:64
 #, c-format
 msgid "The password contains less than %ld lowercase letters"
-msgstr ""
+msgstr "Adgangskoden indeholder færre end %ld små bogstaver"
 
 #: src/error.c:67
 msgid "The password contains too few lowercase letters"
-msgstr ""
+msgstr "Adgangskoden indeholder for få små bogstaver"
 
 #: src/error.c:70
 #, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr ""
+msgstr "Adgangskoden indeholder færre end %ld ikke-alfanumeriske tegn"
 
 #: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
-msgstr ""
+msgstr "Adgangskoden indeholder for få ikke-alfanumeriske tegn"
 
 #: src/error.c:76
 #, c-format
 msgid "The password is shorter than %ld characters"
-msgstr ""
+msgstr "Adgangskoden indeholder færre end %ld tegn"
 
 #: src/error.c:79
 msgid "The password is too short"
-msgstr ""
+msgstr "Adgangskoden er for kort"
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
-msgstr ""
+msgstr "Adgangskoden er blot omvendt af den gamle"
 
 #: src/error.c:84
 #, c-format
 msgid "The password contains less than %ld character classes"
-msgstr ""
+msgstr "Adgangskoden indeholder færre end %ld tegn-klasser"
 
 #: src/error.c:87
 msgid "The password does not contain enough character classes"
-msgstr ""
+msgstr "Adgangskoden indeholder ikke nok tegn-klasser"
 
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr ""
+msgstr "Adgangskoden indeholder mere end %ld ens tegn efter hinanden"
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
-msgstr ""
+msgstr "Adgangskoden indeholder for mange ens tegn efter hinanden"
 
 #: src/error.c:96
 #, c-format
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr ""
+msgstr "Adgangskoden indeholder mere end %ld tegn af samme klasse efter hinanden"
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr ""
+msgstr "Adgangskoden indeholder for mange tegn af samme klasse efter hinanden"
 
 #: src/error.c:102
 #, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr ""
+msgstr "Adgangskoden indeholder en monoton sekvens længere end %ld tegn"
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"
-msgstr ""
+msgstr "Adgangskoden indeholder en for lang sekvens af monotone tegn"
 
 #: src/error.c:107
 msgid "No password supplied"
@@ -199,57 +201,57 @@ msgstr "Ingen adgangskode angivet"
 
 #: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
-msgstr ""
+msgstr "Kan ikke modtage tilfældige numre fra RNG-enheden"
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
-msgstr ""
+msgstr "Generering af adgangskode mislykkedes - påkrævet entropi for lav til indstillinger"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
-msgstr ""
+msgstr "Adgangskoden fejlede ordbogs-testen"
 
 #: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
-msgstr ""
+msgstr "Ukendt indstilling"
 
 #: src/error.c:127
 msgid "Bad integer value of setting"
-msgstr ""
+msgstr "Dårlig heltals-værdi til indstilling"
 
 #: src/error.c:131
 msgid "Bad integer value"
-msgstr ""
+msgstr "Dårlig heltals-værdi"
 
 #: src/error.c:134
 #, c-format
 msgid "Setting %s is not of integer type"
-msgstr ""
+msgstr "Indstilling %s er ikke af typen heltal"
 
 #: src/error.c:138
 msgid "Setting is not of integer type"
-msgstr ""
+msgstr "Indstilling er ikke af typen heltal"
 
 #: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
-msgstr ""
+msgstr "Indstilling %s er ikke af typen tekst"
 
 #: src/error.c:145
 msgid "Setting is not of string type"
-msgstr ""
+msgstr "Indstilling er ikke af typen tekst"
 
 #: src/error.c:147
 msgid "Opening the configuration file failed"
-msgstr ""
+msgstr "Åbning af konfigurationsfilen mislykkedes"
 
 #: src/error.c:149
 msgid "The configuration file is malformed"
-msgstr ""
+msgstr "Konfigurationsfilen er misdannet"
 
 #: src/error.c:151
 msgid "Fatal failure"
-msgstr ""
+msgstr "Fatal fejl"
 
 #: src/error.c:153
 msgid "Unknown error"
