@@ -654,6 +654,12 @@ pwquality_check(pwquality_settings_t *pwq, const char *password,
                 return PWQ_ERROR_EMPTY_PASSWORD;
         }
 
+        if (user && *user == '\0')
+                user = NULL;
+
+        if (oldpassword && *oldpassword == '\0')
+                oldpassword = NULL;
+
         if (oldpassword && strcmp(oldpassword, password) == 0) {
                 return PWQ_ERROR_SAME_PASSWORD;
         }
