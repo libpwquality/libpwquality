@@ -8,7 +8,8 @@ License: BSD or GPLv2+
 Group: System Environment/Base
 Source0: http://fedorahosted.org/releases/l/i/libpwquality/libpwquality-%{version}.tar.bz2
 
-%global _moduledir /%{_lib}/security
+%global _pwqlibdir %{_libdir}
+%global _moduledir %{_libdir}/security
 %global _secconfdir %{_sysconfdir}/security
 
 Requires: cracklib-dicts >= 2.8
@@ -56,7 +57,7 @@ pronounceable passwords from Python applications.
 
 %build
 %configure \
-	--with-securedir=/%{_lib}/security \
+	--with-securedir=%{_moduledir} \
 	--with-pythonsitedir=%{python_sitearch} \
 	--disable-static
 
@@ -65,10 +66,12 @@ make %{?_smp_mflags}
 %install
 make install DESTDIR=$RPM_BUILD_ROOT INSTALL='install -p'
 
+%if "%{_pwqlibdir}" != "%{_libdir}"
 pushd $RPM_BUILD_ROOT%{_libdir}
-mv libpwquality.so.* $RPM_BUILD_ROOT/%{_lib}/
-ln -sf ../../%{_lib}/libpwquality.so.*.* libpwquality.so
+mv libpwquality.so.* $RPM_BUILD_ROOT%{_pwqlibdir}
+ln -sf %{_pwqlibdir}/libpwquality.so.*.* libpwquality.so
 popd
+%endif
 rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 rm -f $RPM_BUILD_ROOT%{_moduledir}/*.la
 
@@ -87,7 +90,7 @@ rm -f $RPM_BUILD_ROOT%{_moduledir}/*.la
 %{_bindir}/pwmake
 %{_bindir}/pwscore
 %{_moduledir}/pam_pwquality.so
-/%{_lib}/libpwquality.so.*
+%{_pwqlibdir}/libpwquality.so.*
 %config(noreplace) %{_secconfdir}/pwquality.conf
 %{_mandir}/man1/*
 %{_mandir}/man5/*
