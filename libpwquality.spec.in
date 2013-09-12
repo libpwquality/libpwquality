@@ -107,6 +107,12 @@ rm -f $RPM_BUILD_ROOT%{_moduledir}/*.la
 %{python_sitearch}/pwquality.so
 
 %changelog
+* Thu Sep 12 2013 Tomáš Mráz <tmraz@redhat.com> 1.2.2-1
+- fix problem with parsing the pam_pwquality options
+  patch by Vladimir Sorokin.
+- updated translations from Transifex
+- treat empty user or password as NULL
+
 * Wed Jun 19 2013 Tomas Mraz <tmraz@redhat.com> 1.2.2-1
 - manual page fixes
 - make it possible to set the maxsequence configuration value
