@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # asaini <asaini@redhat.com>, 2013
 # Amanpreet Singh Alam[ਆਲਮ] <amanpreetalam@yahoo.com>, 2005
@@ -10,31 +10,32 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2012-06-29 11:02+0200\n"
+"POT-Creation-Date: 2012-12-20 10:03+0100\n"
 "PO-Revision-Date: 2013-09-10 13:37+0000\n"
 "Last-Translator: asaini <asaini@redhat.com>\n"
-"Language-Team: Panjabi (Punjabi) (http://www.transifex.com/projects/p/libpwquality/language/pa/)\n"
+"Language-Team: Panjabi (Punjabi) (http://www.transifex.com/projects/p/"
+"libpwquality/language/pa/)\n"
+"Language: pa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pa\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/pam_pwquality.c:22
+#: src/pam_pwquality.c:25
 #, c-format
 msgid "New %s%spassword: "
 msgstr "ਨਵਾਂ %s%sਗੁਪਤ-ਸ਼ਬਦ: "
 
-#: src/pam_pwquality.c:24
+#: src/pam_pwquality.c:27
 #, c-format
 msgid "Retype new %s%spassword: "
 msgstr "ਨਵਾਂ %s%sਗੁਪਤ-ਸ਼ਬਦ ਮੁੜ-ਲਿਖੋ: "
 
-#: src/pam_pwquality.c:25
+#: src/pam_pwquality.c:28
 msgid "Sorry, passwords do not match."
 msgstr "ਮਾਫ ਕਰਨਾ ਗੁਪਤ-ਸ਼ਬਦ ਮੇਲ ਨਹੀਂ ਖਾਂਦਾ।"
 
-#: src/pam_pwquality.c:181
+#: src/pam_pwquality.c:241
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "ਮਾੜਾ ਗੁਪਤ-ਸ਼ਬਦ: %s"
@@ -47,11 +48,10 @@ msgstr "ਵਰਤੋਂ: %s [user]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
+"       The command reads the password to be scored from the standard input.\n"
 msgstr ""
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:64
+#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
 #, c-format
 msgid "Error: %s\n"
 msgstr "ਗਲਤੀ: %s\n"
@@ -60,12 +60,14 @@ msgstr "ਗਲਤੀ: %s\n"
 msgid "Could not obtain the password to be scored"
 msgstr ""
 
-#: src/pwscore.c:71
+#: src/pwscore.c:73
 #, c-format
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr "ਗੁਪਤ-ਸ਼ਬਦ ਦੇ ਮਿਆਰ ਦੀ ਜਾਂਚ ਅਸਫਲ ਹੋਈ:\n %s\n"
+msgstr ""
+"ਗੁਪਤ-ਸ਼ਬਦ ਦੇ ਮਿਆਰ ਦੀ ਜਾਂਚ ਅਸਫਲ ਹੋਈ:\n"
+" %s\n"
 
 #: src/pwmake.c:22
 #, c-format
@@ -101,8 +103,7 @@ msgid "The password contains the user name in some form"
 msgstr ""
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
+msgid "The password contains words from the real name of the user in some form"
 msgstr ""
 
 #: src/error.c:49
