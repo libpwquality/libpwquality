@@ -3,46 +3,43 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# asaini <asaini@redhat.com>, 2013
-# Amanpreet Singh Alam[ਆਲਮ] <amanpreetalam@yahoo.com>, 2005
-# Jaswinder Singh <jsingh@redhat.com>, 2009
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2012-06-29 11:02+0200\n"
-"PO-Revision-Date: 2013-09-10 13:37+0000\n"
-"Last-Translator: asaini <asaini@redhat.com>\n"
-"Language-Team: Panjabi (Punjabi) (http://www.transifex.com/projects/p/libpwquality/language/pa/)\n"
+"PO-Revision-Date: 2013-08-23 07:35+0000\n"
+"Last-Translator: Tomáš Mráz <tmraz@fedoraproject.org>\n"
+"Language-Team: Marathi (India) (http://www.transifex.com/projects/p/libpwquality/language/mr_IN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pa\n"
+"Language: mr_IN\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/pam_pwquality.c:22
 #, c-format
 msgid "New %s%spassword: "
-msgstr "ਨਵਾਂ %s%sਗੁਪਤ-ਸ਼ਬਦ: "
+msgstr ""
 
 #: src/pam_pwquality.c:24
 #, c-format
 msgid "Retype new %s%spassword: "
-msgstr "ਨਵਾਂ %s%sਗੁਪਤ-ਸ਼ਬਦ ਮੁੜ-ਲਿਖੋ: "
+msgstr ""
 
 #: src/pam_pwquality.c:25
 msgid "Sorry, passwords do not match."
-msgstr "ਮਾਫ ਕਰਨਾ ਗੁਪਤ-ਸ਼ਬਦ ਮੇਲ ਨਹੀਂ ਖਾਂਦਾ।"
+msgstr ""
 
 #: src/pam_pwquality.c:181
 #, c-format
 msgid "BAD PASSWORD: %s"
-msgstr "ਮਾੜਾ ਗੁਪਤ-ਸ਼ਬਦ: %s"
+msgstr ""
 
 #: src/pwscore.c:22
 #, c-format
 msgid "Usage: %s [user]\n"
-msgstr "ਵਰਤੋਂ: %s [user]\n"
+msgstr ""
 
 #: src/pwscore.c:23
 #, c-format
@@ -54,7 +51,7 @@ msgstr ""
 #: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:64
 #, c-format
 msgid "Error: %s\n"
-msgstr "ਗਲਤੀ: %s\n"
+msgstr ""
 
 #: src/pwscore.c:51
 msgid "Could not obtain the password to be scored"
@@ -65,28 +62,28 @@ msgstr ""
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr "ਗੁਪਤ-ਸ਼ਬਦ ਦੇ ਮਿਆਰ ਦੀ ਜਾਂਚ ਅਸਫਲ ਹੋਈ:\n %s\n"
+msgstr ""
 
 #: src/pwmake.c:22
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
-msgstr "ਵਰਤੋਂ: %s <entropy-bits>\n"
+msgstr ""
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
-msgstr "ਸੈੱਟ ਕਰਨ ਵੇਲੇ ਮੈਮੋਰੀ ਨਿਰਧਾਰਨ ਗਲਤੀ"
+msgstr ""
 
 #: src/error.c:35
 msgid "Memory allocation error"
-msgstr "ਮੈਮੋਰੀ ਨਿਰਧਾਰਨ ਗਲਤੀ"
+msgstr ""
 
 #: src/error.c:37
 msgid "The password is the same as the old one"
-msgstr "ਗੁਪਤ-ਸ਼ਬਦ ਉਹੀ ਪੁਰਾਣਾ ਹੀ ਹੈ"
+msgstr ""
 
 #: src/error.c:39
 msgid "The password is a palindrome"
-msgstr "ਗੁਪਤ-ਸ਼ਬਦ ਇੱਕ ਪਾਲਿਨਡਰੋਮ ਹੈ"
+msgstr ""
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
@@ -199,7 +196,7 @@ msgstr ""
 
 #: src/error.c:107
 msgid "No password supplied"
-msgstr "ਕੋਈ ਪਾਸਵਰਡ ਨਹੀਂ ਦਿੱਤਾ ਗਿਆ"
+msgstr ""
 
 #: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
@@ -257,4 +254,4 @@ msgstr ""
 
 #: src/error.c:153
 msgid "Unknown error"
-msgstr "ਅਣਜਾਣੀ ਗਲਤੀ"
+msgstr ""
