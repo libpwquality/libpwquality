@@ -204,7 +204,7 @@ pwquality_set_option(pwquality_settings_t *pwq, const char *option)
                 return PWQ_ERROR_UNKNOWN_SETTING;
 
         strncpy(name, option, len);
-        name[sizeof(name) - 1] = '\0';
+        name[len] = '\0';
 
         return set_name_value(pwq, name, value);
 }
