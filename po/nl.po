@@ -1,42 +1,42 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
-# Geert Warrink <geert.warrink@onsnet.nu>, 2010, 2011.
-# Peter van Egdom <p.van.egdom@gmail.com>, 2008.
-# R.E. van der Luit <nippur@fedoraproject.org>, 2009.
-# R.F. Pels <ruurd@tiscali.nl>, 2005.
-# Rinse de Vries <rinsedevries@kde.nl>, 2005, 2006.
+# Geert Warrink <geert.warrink@onsnet.nu>, 2010, 2011
+# Peter van Egdom <p.van.egdom@gmail.com>, 2008
+# Richard E. van der Luit <nippur@fedoraproject.org>, 2009
+# R.F. Pels <ruurd@tiscali.nl>, 2005
+# Rinse de Vries <rinsedevries@kde.nl>, 2005, 2006
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2012-12-20 10:03+0100\n"
-"PO-Revision-Date: 2012-06-29 09:04+0000\n"
+"POT-Creation-Date: 2012-06-29 11:02+0200\n"
+"PO-Revision-Date: 2013-11-20 10:42+0000\n"
 "Last-Translator: Tomáš Mráz <tmraz@fedoraproject.org>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: nl\n"
+"Language-Team: Dutch (http://www.transifex.com/projects/p/libpwquality/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/pam_pwquality.c:25
+#: src/pam_pwquality.c:22
 #, c-format
 msgid "New %s%spassword: "
 msgstr "Nieuw %s%swachtwoord: "
 
-#: src/pam_pwquality.c:27
+#: src/pam_pwquality.c:24
 #, c-format
 msgid "Retype new %s%spassword: "
 msgstr "Nieuw %s%swachtwoord herhalen: "
 
-#: src/pam_pwquality.c:28
+#: src/pam_pwquality.c:25
 msgid "Sorry, passwords do not match."
 msgstr "Sorry, wachtwoorden komen niet overeen."
 
-#: src/pam_pwquality.c:241
+#: src/pam_pwquality.c:181
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "SLECHT WACHTWOORD: %s"
@@ -49,12 +49,11 @@ msgstr "Gebruik: %s [gebruiker]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
-msgstr ""
-"       Het commando leest het wachtwoord in dat van de standaard input "
-"gemaakt moet worden.\n"
+"       The command reads the password to be scored from the standard "
+"input.\n"
+msgstr "       Het commando leest het wachtwoord in dat van de standaard input gemaakt moet worden.\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
+#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:64
 #, c-format
 msgid "Error: %s\n"
 msgstr "Fout: %s\n"
@@ -63,14 +62,12 @@ msgstr "Fout: %s\n"
 msgid "Could not obtain the password to be scored"
 msgstr "Kon het te maken wachtwoord niet verkrijgen"
 
-#: src/pwscore.c:73
+#: src/pwscore.c:71
 #, c-format
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr ""
-"Wachtwoord kwaliteitscontrole mislukte:\n"
-" %s\n"
+msgstr "Wachtwoord kwaliteitscontrole mislukte:\n %s\n"
 
 #: src/pwmake.c:22
 #, c-format
@@ -106,10 +103,9 @@ msgid "The password contains the user name in some form"
 msgstr "Het wachtwoord bevat op een bepaalde manier de gebruikersnaam "
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
-msgstr ""
-"Het wachtwoord bevat op een bepaalde manier woorden van de echte naam van de "
-"gebruiker"
+msgid ""
+"The password contains words from the real name of the user in some form"
+msgstr "Het wachtwoord bevat op een bepaalde manier woorden van de echte naam van de gebruiker"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
@@ -187,15 +183,12 @@ msgstr "Het wachtwoord bevat te veel dezelfde opeenvolgende karakters"
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr ""
-"Het wachtwoord bevat meer dan %ld achtereenvolgende karakters uit dezelfde "
-"klasse"
+msgstr "Het wachtwoord bevat meer dan %ld achtereenvolgende karakters uit dezelfde klasse"
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr ""
-"Het wachtwoord bevat teveel achtereenvolgende karakters uit dezelfde klasse"
+msgstr "Het wachtwoord bevat teveel achtereenvolgende karakters uit dezelfde klasse"
 
 #: src/error.c:102
 #, c-format
@@ -216,9 +209,7 @@ msgstr "Kan geen willekeurige getallen krijgen van het RNG apparaat"
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
-msgstr ""
-"Wachtwoord generatie mislukte - vereiste entropie is te laag voor de "
-"instellingen"
+msgstr "Wachtwoord generatie mislukte - vereiste entropie is te laag voor de instellingen"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"

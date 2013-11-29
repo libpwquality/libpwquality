@@ -1,23 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # I felix <ifelix@redhat.com>, 2007.
 # I. Felix <ifelix@redhat.com>, 2009.
+# I felix <ifelix@redhat.com>, 2007
+# I. Felix <ifelix@redhat.com>, 2009
 msgid ""
 msgstr ""
-"Project-Id-Version: PWQuality library\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2012-12-20 10:03+0100\n"
-"PO-Revision-Date: 2012-06-29 09:04+0000\n"
-"Last-Translator: Tomáš Mráz <tmraz@fedoraproject.org>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"PO-Revision-Date: 2013-09-19 06:51-0400\n"
+"Last-Translator: Shantha kumar <shkumar@redhat.com>\n"
+"Language-Team: Tamil (http://www.transifex.com/projects/p/libpwquality/"
+"language/ta/)\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Zanata 3.1.2\n"
 
 #: src/pam_pwquality.c:25
 #, c-format
@@ -41,158 +45,167 @@ msgstr "தவறான கடவுச்சொல்: %s"
 #: src/pwscore.c:22
 #, c-format
 msgid "Usage: %s [user]\n"
-msgstr ""
+msgstr "பயன்பாடு: %s [user]\n"
 
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
+"       The command reads the password to be scored from the standard input."
+"\n"
 msgstr ""
+"       கட்டளையானது தரநிலையான உள்ளீட்டிலிருந்து மதிப்பீடு வழங்க வேண்டிய "
+"கடவுச்சொல்லை வாசிக்கும்.\n"
 
 #: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
 #, c-format
 msgid "Error: %s\n"
-msgstr ""
+msgstr "பிழை: %s\n"
 
 #: src/pwscore.c:51
 msgid "Could not obtain the password to be scored"
-msgstr ""
+msgstr "மதிப்பீடு செய்யப்பட வேண்டிய கடவுச்சொல்லைப் பெற முடியவில்லை"
 
 #: src/pwscore.c:73
 #, c-format
-msgid ""
-"Password quality check failed:\n"
+msgid "Password quality check failed:\n"
 " %s\n"
-msgstr ""
+msgstr "கடவுச்சொல் தர சோதனை தோல்வியடைந்தது:\n"
+" %s\n"
 
 #: src/pwmake.c:22
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
-msgstr ""
+msgstr "பயன்பாடு: %s <entropy-bits>\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
-msgstr ""
+msgstr "அமைக்கும் போது நினைவக ஒதுக்கீட்டுப் பிழை ஏற்பட்டது"
 
 #: src/error.c:35
 msgid "Memory allocation error"
-msgstr ""
+msgstr "நினைவக ஒதுக்கீட்டுப் பிழை"
 
 #: src/error.c:37
 msgid "The password is the same as the old one"
-msgstr ""
+msgstr "இந்தக் கடவுச்சொல் பழைய கடவுச்சொல்லே ஆகும்."
 
 #: src/error.c:39
 msgid "The password is a palindrome"
-msgstr ""
+msgstr "கடவுச்சொல் இரு திசை சம உச்சரிப்புச் சொல்லாக (பாலின்ட்ரோம்) உள்ளது"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
-msgstr ""
+msgstr "கடவுச்சொல் பேரெழுத்து வகையில் மட்டுமே வேறுபடுகிறது"
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
-msgstr ""
+msgstr "கடவுச்சொல் பழைய கடவுச்சொல்லுடன் மிக ஒத்ததாக உள்ளது"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr ""
+msgstr "கடவுச்சொல்லில் ஏதோ ஒரு வடிவத்தில் பயனர் பெயர் உள்ளது"
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
+msgid ""
+"The password contains words from the real name of the user in some form"
 msgstr ""
+"கடவுச்சொல்லில் ஏதோ வடிவத்தில் பயனரின் உண்மையான பெயரைச் சேர்ந்த சொற்கள் உள்ளன"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
-msgstr ""
+msgstr "கடவுச்சொல்லில் ஏதோ ஒரு வடிவத்தில் தடை செய்யப்பட்ட சொற்கள் உள்ளன"
 
 #: src/error.c:52
 #, c-format
 msgid "The password contains less than %ld digits"
-msgstr ""
+msgstr "கடவுச்சொல்லில் %ld க்குக் குறைவான இலக்கங்கள் உள்ளன"
 
 #: src/error.c:55
 msgid "The password contains too few digits"
-msgstr ""
+msgstr "கடவுச்சொல்லில் மிகக் குறைந்த இலக்கங்கள் உள்ளன"
 
 #: src/error.c:58
 #, c-format
 msgid "The password contains less than %ld uppercase letters"
-msgstr ""
+msgstr "கடவுச்சொல்லில் %ld க்கும் குறைவான பெரிய எழுத்துகள் உள்ளன"
 
 #: src/error.c:61
 msgid "The password contains too few uppercase letters"
-msgstr ""
+msgstr "கடவுச்சொல்லில் மிகக் குறைந்த பெரிய எழுத்துக்கள் உள்ளன"
 
 #: src/error.c:64
 #, c-format
 msgid "The password contains less than %ld lowercase letters"
-msgstr ""
+msgstr "கடவுச்சொல்லில் %ld க்குக் குறைவான சிறிய எழுத்துகள் உள்ளன"
 
 #: src/error.c:67
 msgid "The password contains too few lowercase letters"
-msgstr ""
+msgstr "கடவுச்சொல்லில் மிகக் குறைந்த சிறிய எழுத்துக்கள் உள்ளன"
 
 #: src/error.c:70
 #, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr ""
+msgstr "கடவுச்சொல்லில் %ld க்கும் குறைவான எண் எழுத்தல்லாத எழுத்துகள் உள்ளன"
 
 #: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
-msgstr ""
+msgstr "கடவுச்சொல்லில் எண் எழுத்தல்லாத எழுத்துக்கள் மிகக் குறைவாக உள்ளன"
 
 #: src/error.c:76
 #, c-format
 msgid "The password is shorter than %ld characters"
-msgstr ""
+msgstr "கடவுச்சொல் %ld எழுத்துகளுக்கு குறைவாக உள்ளது"
 
 #: src/error.c:79
 msgid "The password is too short"
-msgstr ""
+msgstr "கடவுச்சொல் மிகவும் சிறியதாக உள்ளது"
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
 msgstr ""
+"கடவுச்சொல் பழைய கடவுச்சொல்லையே சுழல் முறையில் பயன்படுத்திய ஒன்றாக உள்ளது"
 
 #: src/error.c:84
 #, c-format
 msgid "The password contains less than %ld character classes"
-msgstr ""
+msgstr "கடவுச்சொல்லில் %ld க்கும் குறைவான எழுத்து வகைகள் உள்ளன"
 
 #: src/error.c:87
 msgid "The password does not contain enough character classes"
-msgstr ""
+msgstr "கடவுச்சொல்லில் தேவையான எழுத்து வகைகள் இல்லை"
 
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
 msgstr ""
+"கடவுச்சொல்லில் %ld க்கும் அதிகமான முறை ஒரே எழுத்துகள் தொடர்ச்சியாக உள்ளன"
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
-msgstr ""
+msgstr "கடவுச்சொல்லில் தொடர்ச்சியாக ஒரே எழுத்துகள் அதிகம் உள்ளன"
 
 #: src/error.c:96
 #, c-format
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr ""
+msgstr "கடவுச்சொல்லில் தொடர்ச்சியாக ஒரே வகையைச் சேர்ந்த %ld எழுத்துகள் உள்ளன"
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
 msgstr ""
+"கடவுச்சொல்லில் தொடர்ச்சியாக ஒரே வகையைச் சேர்ந்த எழுத்துகள் அதிகம் உள்ளன"
 
 #: src/error.c:102
 #, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
 msgstr ""
+"கடவுச்சொல்லில் %ld க்கும் அதிக எழுத்துகள் நீளமுள்ள மோனோடோனிக் வரிசை உள்ளது"
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"
-msgstr ""
+msgstr "கடவுச்சொல்லில் மிக அதிக நீளமுள்ள மோனோடோனிக் எழுத்து வரிசை உள்ளது"
 
 #: src/error.c:107
 msgid "No password supplied"
@@ -200,57 +213,59 @@ msgstr "கடவுச்சொல் கொடுக்கப்படவி�
 
 #: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
-msgstr ""
+msgstr "RNG சாதனத்திலிருந்து எழுந்தமானமான எண்களைப் பெற முடியவில்லை"
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
+"கடவுச்சொல் உருவாக்கம் தோல்வியடைந்தது - தேவையான என்ட்ராபி இந்த அமைவுகளுக்கு "
+"மிகக் குறைவாக உள்ளது"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
-msgstr ""
+msgstr "கடவுச்சொல் அகராதி சோதனையில் தோல்வியடைந்தது"
 
 #: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
-msgstr ""
+msgstr "தெரியாத அமைவு"
 
 #: src/error.c:127
 msgid "Bad integer value of setting"
-msgstr ""
+msgstr "அமைவின் தவறான முழு எண் மதிப்பு"
 
 #: src/error.c:131
 msgid "Bad integer value"
-msgstr ""
+msgstr "தவறான முழு எண் மதிப்பு"
 
 #: src/error.c:134
 #, c-format
 msgid "Setting %s is not of integer type"
-msgstr ""
+msgstr "அமைவு %s முழு எண் வகையானதல்ல"
 
 #: src/error.c:138
 msgid "Setting is not of integer type"
-msgstr ""
+msgstr "அமைவு முழு எண் வகையானதல்ல"
 
 #: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
-msgstr ""
+msgstr "அமைவு %s சர வகையானதல்ல"
 
 #: src/error.c:145
 msgid "Setting is not of string type"
-msgstr ""
+msgstr "அமைவு சர வகையானதல்ல"
 
 #: src/error.c:147
 msgid "Opening the configuration file failed"
-msgstr ""
+msgstr "அமைவாக்கக் கோப்பினைத் திறத்தல் தோல்வியடைந்தது"
 
 #: src/error.c:149
 msgid "The configuration file is malformed"
-msgstr ""
+msgstr "அமைவாக்கக் கோப்பு தவறாக வடிவமைக்கப்பட்டுள்ளது"
 
 #: src/error.c:151
 msgid "Fatal failure"
-msgstr ""
+msgstr "பெரும் தோல்வி"
 
 #: src/error.c:153
 msgid "Unknown error"

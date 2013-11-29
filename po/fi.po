@@ -1,41 +1,41 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
-# Ilkka Pirskanen <ilkka.pirskanen@kolumbus.fi>, 2005.
-# Janne Ahlskog <j.ahlskog@multi.fi>, 2006.
-# Jyri Palokangas <jmp@netti.fi>, 2006.
-# Ville-Pekka Vainio <vpvainio@iki.fi>, 2012.
+# Ilkka Pirskanen <ilkka.pirskanen@kolumbus.fi>, 2005
+# Janne Ahlskog <j.ahlskog@multi.fi>, 2006
+# Jyri Palokangas <jmp@netti.fi>, 2006
+# Ville-Pekka Vainio <vpvainio@iki.fi>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2012-12-20 10:03+0100\n"
-"PO-Revision-Date: 2012-06-29 09:04+0000\n"
+"POT-Creation-Date: 2012-06-29 11:02+0200\n"
+"PO-Revision-Date: 2013-11-20 10:42+0000\n"
 "Last-Translator: Tomáš Mráz <tmraz@fedoraproject.org>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: fi\n"
+"Language-Team: Finnish (http://www.transifex.com/projects/p/libpwquality/language/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language: fi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/pam_pwquality.c:25
+#: src/pam_pwquality.c:22
 #, c-format
 msgid "New %s%spassword: "
 msgstr "Uusi %s%ssalasana: "
 
-#: src/pam_pwquality.c:27
+#: src/pam_pwquality.c:24
 #, c-format
 msgid "Retype new %s%spassword: "
 msgstr "Anna uudelleen uusi %s%ssalasana: "
 
-#: src/pam_pwquality.c:28
+#: src/pam_pwquality.c:25
 msgid "Sorry, passwords do not match."
 msgstr "Salasanat eivät täsmää."
 
-#: src/pam_pwquality.c:241
+#: src/pam_pwquality.c:181
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "HUONO SALASANA: %s"
@@ -48,10 +48,11 @@ msgstr "Käyttö: %s [käyttäjä]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
+"       The command reads the password to be scored from the standard "
+"input.\n"
 msgstr "       Komento lukee pisteytettävän salasanan oletussyötteestä.\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
+#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:64
 #, c-format
 msgid "Error: %s\n"
 msgstr "Virhe: %s\n"
@@ -60,14 +61,12 @@ msgstr "Virhe: %s\n"
 msgid "Could not obtain the password to be scored"
 msgstr "Pisteytettävää salasanaa ei saatu"
 
-#: src/pwscore.c:73
+#: src/pwscore.c:71
 #, c-format
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr ""
-"Salasanan laatutarkastus epäonnistui:\n"
-" %s\n"
+msgstr "Salasanan laatutarkastus epäonnistui:\n %s\n"
 
 #: src/pwmake.c:22
 #, c-format
@@ -103,7 +102,8 @@ msgid "The password contains the user name in some form"
 msgstr "Salasana sisältää käyttäjätunnuksen jossakin muodossa"
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
+msgid ""
+"The password contains words from the real name of the user in some form"
 msgstr "Salasana sisältää sanoja käyttäjän oikeasta nimestä jossakin muodossa"
 
 #: src/error.c:49
@@ -140,14 +140,11 @@ msgstr "Salasana sisältää liian vähän pieniä kirjaimia"
 #: src/error.c:70
 #, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr ""
-"Salasana sisältää alle %ld merkkiä jotka eivät ole numeroita tai kirjaimia"
+msgstr "Salasana sisältää alle %ld merkkiä jotka eivät ole numeroita tai kirjaimia"
 
 #: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
-msgstr ""
-"Salasana sisältää liian vähän merkkejä jotka eivät ole numeroita tai "
-"kirjaimia"
+msgstr "Salasana sisältää liian vähän merkkejä jotka eivät ole numeroita tai kirjaimia"
 
 #: src/error.c:76
 #, c-format

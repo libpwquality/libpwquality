@@ -1,38 +1,38 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
-# Shankar Prasad <svenkate@redhat.com>, 2007, 2008, 2009.
+# shankar <svenkate@redhat.com>, 2007-2009
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2012-12-20 10:03+0100\n"
-"PO-Revision-Date: 2012-06-29 09:04+0000\n"
+"POT-Creation-Date: 2012-06-29 11:02+0200\n"
+"PO-Revision-Date: 2013-11-29 13:46+0000\n"
 "Last-Translator: Tomáš Mráz <tmraz@fedoraproject.org>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: kn\n"
+"Language-Team: Kannada (http://www.transifex.com/projects/p/libpwquality/language/kn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Language: kn\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
-#: src/pam_pwquality.c:25
+#: src/pam_pwquality.c:22
 #, c-format
 msgid "New %s%spassword: "
 msgstr "ಹೊಸ %s%sಗುಪ್ತಪದ: "
 
-#: src/pam_pwquality.c:27
+#: src/pam_pwquality.c:24
 #, c-format
 msgid "Retype new %s%spassword: "
 msgstr "ಹೊಸ %s%sಗುಪ್ತಪದವನ್ನು ಪುನರ್ ಟೈಪಿಸಿ: "
 
-#: src/pam_pwquality.c:28
+#: src/pam_pwquality.c:25
 msgid "Sorry, passwords do not match."
 msgstr "ಕ್ಷಮಿಸಿ, ಗುಪ್ತಪದಗಳು ತಾಳೆಯಾಗುತ್ತಿಲ್ಲ."
 
-#: src/pam_pwquality.c:241
+#: src/pam_pwquality.c:181
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "ಕೆಟ್ಟ ಗುಪ್ತಪದ: %s"
@@ -40,158 +40,160 @@ msgstr "ಕೆಟ್ಟ ಗುಪ್ತಪದ: %s"
 #: src/pwscore.c:22
 #, c-format
 msgid "Usage: %s [user]\n"
-msgstr ""
+msgstr "ಬಳಕೆ: %s [ಬಳಕೆದಾರ]\n"
 
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
-msgstr ""
+"       The command reads the password to be scored from the standard "
+"input.\n"
+msgstr "       ಗುಪ್ತಪದವನ್ನು ಶಿಷ್ಟವಾದ ಇನ್‌ಪುಟ್‌ನಿಂದ ಸ್ಕೋರ್ ಮಾಡಿರುವಂತೆ ಓದುತ್ತದೆ.\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
+#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:64
 #, c-format
 msgid "Error: %s\n"
-msgstr ""
+msgstr "ದೋಷ: %s\n"
 
 #: src/pwscore.c:51
 msgid "Could not obtain the password to be scored"
-msgstr ""
+msgstr "ಸ್ಕೋರ್ ಮಾಡಬೇಕಿರುವ ಗುಪ್ತಪದವನ್ನು ಪಡೆಯಲಾಗಿಲ್ಲ"
 
-#: src/pwscore.c:73
+#: src/pwscore.c:71
 #, c-format
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr ""
+msgstr "ಗುಪ್ತಪದದ ಗುಣಮಟ್ಟದ ಪರಿಶೀಲನೆ ವಿಫಲಗೊಂಡಿದೆ:\n %s\n"
 
 #: src/pwmake.c:22
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
-msgstr ""
+msgstr "ಬಳಕೆ: %s <entropy-bits>\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
-msgstr ""
+msgstr "ಇದನ್ನು ಹೊಂದಿಸುವಾಗ ಮೆಮೊರಿ ನಿಯೋಜನಾ ದೋಷ"
 
 #: src/error.c:35
 msgid "Memory allocation error"
-msgstr ""
+msgstr "ಮೆಮೊರಿ ನಿಯೋಜನಾ ದೋಷ"
 
 #: src/error.c:37
 msgid "The password is the same as the old one"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವು ಹಳೆಯದರಂತೆಯೆ ಇದೆ"
 
 #: src/error.c:39
 msgid "The password is a palindrome"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವು ಒಂದು ಪ್ಯಾಲಿಂಡ್ರೋಮ್ ಆಗಿದೆ"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
-msgstr ""
+msgstr "ಗುಪ್ತಪದದಲ್ಲಿ ಕೇಸ್‌ ಬದಲಾವಣೆ ಮಾತ್ರ ಇದೆ"
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವು ಹಳೆಯದಕ್ಕೆ ಬಹಳವಾಗಿ ಹೋಲುತ್ತದೆ"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವು ಬಳಕೆದಾರ ಹೆಸರಿನ ಒಂದು ರೂಪವನ್ನು ಹೊಂದಿದೆ"
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
-msgstr ""
+msgid ""
+"The password contains words from the real name of the user in some form"
+msgstr "ಗುಪ್ತಪದವು ಬಳಕೆದಾರರ ನಿಜವಾದ ಹೆಸರಿನ ಒಂದು ರೂಪದ ಪದಗಳನ್ನು ಹೊಂದಿದೆ"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವು ನಿಶೇಧಿತ ಹೆಸರಿನ ಒಂದು ರೂಪವನ್ನು ಹೊಂದಿದೆ"
 
 #: src/error.c:52
 #, c-format
 msgid "The password contains less than %ld digits"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವು %ld ಕ್ಕಿಂತ ಕಡಿಮೆ ಅಂಕಿಗಳನ್ನು ಹೊಂದಿದೆ"
 
 #: src/error.c:55
 msgid "The password contains too few digits"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವು ಕೇವಲ ಕೆಲವೇ ಅಂಕಿಗಳನ್ನು ಹೊಂದಿದೆ"
 
 #: src/error.c:58
 #, c-format
 msgid "The password contains less than %ld uppercase letters"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವು %ld ಕ್ಕಿಂತ ಕಡಿಮೆ ಅಪ್ಪರ್-ಕೇಸ್ ಅಕ್ಷರಗಳನ್ನು ಹೊಂದಿದೆ"
 
 #: src/error.c:61
 msgid "The password contains too few uppercase letters"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವು ತುಂಬಾ ಕಡಿಮೆ ಲೋಯರ್-ಕೇಸ್ ಅಕ್ಷರಗಳನ್ನು ಹೊಂದಿದೆ"
 
 #: src/error.c:64
 #, c-format
 msgid "The password contains less than %ld lowercase letters"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವು %ld ಕ್ಕಿಂತ ಕಡಿಮೆ ಲೋಯರ್-ಕೇಸ್ ಅಕ್ಷರಗಳನ್ನು ಹೊಂದಿದೆ"
 
 #: src/error.c:67
 msgid "The password contains too few lowercase letters"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವು ಅತ್ಯಂತ ಕಡಿಮೆ ಲೋಯರ್-ಕೇಸ್ ಅಕ್ಷರಗಳನ್ನು ಹೊಂದಿದೆ"
 
 #: src/error.c:70
 #, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವು %ld ಕ್ಕಿಂತ ಕಡಿಮೆ ಅಕ್ಷರ-ಅಂಕೀಯವಲ್ಲದ ಅಕ್ಷರಗಳನ್ನು ಹೊಂದಿದೆ"
 
 #: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವು ಅತಿಕಡಿಮೆ ಅಕ್ಷರ-ಅಂಕೀಯವಲ್ಲದ ಅಕ್ಷರಗಳನ್ನು ಹೊಂದಿದೆ"
 
 #: src/error.c:76
 #, c-format
 msgid "The password is shorter than %ld characters"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವು %ld ಅಕ್ಷರಗಳಿಗಿಂತ ಚಿಕ್ಕದಾಗಿದೆ"
 
 #: src/error.c:79
 msgid "The password is too short"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವು ಬಹಳ ಚಿಕ್ಕದಾಗಿದೆ"
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
-msgstr ""
+msgstr "ಹಳೆಯ ಗುಪ್ತಪದವನ್ನು ಕೇವಲ ತಿರುವುಮುರುವು ಮಾಡಲಾಗಿದೆ"
 
 #: src/error.c:84
 #, c-format
 msgid "The password contains less than %ld character classes"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವು %ld ಕ್ಕಿಂತ ಕಡಿಮೆ ಅಕ್ಷರ ವರ್ಗಗಳನ್ನು ಹೊಂದಿದೆ"
 
 #: src/error.c:87
 msgid "The password does not contain enough character classes"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವು ಸಾಕಷ್ಟು ಅಕ್ಷರ ವರ್ಗಗಳನ್ನು ಹೊಂದಿಲ್ಲ"
 
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವು %ld ಗಿಂತ ಹೆಚ್ಚಿನ ಒಂದೇ ರೀತಿಯ ಅನುಕ್ರಮವಾದ ಅಕ್ಷರಗಳನ್ನು ಹೊಂದಿದೆ"
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವು ಬಹಳಷ್ಟು ಒಂದೇ ರೀತಿಯ ಅನುಕ್ರಮ ಅಕ್ಷರಗಳನ್ನು ಹೊಂದಿದೆ"
 
 #: src/error.c:96
 #, c-format
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವು %ld ಗಿಂತ ಹೆಚ್ಚಿನ ಒಂದೇ ವರ್ಗದ ಅನುಕ್ರಮವಾದ ಅಕ್ಷರಗಳನ್ನು ಹೊಂದಿದೆ"
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವು ಒಂದೇ ವರ್ಗದ ಅನುಕ್ರಮವಾದ ಬಹಳಷ್ಟು ಅಕ್ಷರಗಳನ್ನು ಹೊಂದಿದೆ"
 
 #: src/error.c:102
 #, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವು %ld ಅಕ್ಷರಗಳಿಗಿಂತ ಉದ್ದನೆಯ ಏಕಶೈಲಿಯ ಅಕ್ಷರ ಅನುಕ್ರಮವನ್ನು ಹೊಂದಿದೆ"
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವು ಬಹಳ ಉದ್ದನೆಯ ಒಂದು ಏಕಶೈಲಿಯ ಅಕ್ಷರ ಅನುಕ್ರಮವನ್ನು ಹೊಂದಿದೆ"
 
 #: src/error.c:107
 msgid "No password supplied"
@@ -199,57 +201,57 @@ msgstr "ಯಾವುದೇ ಗುಪ್ತಪದ ನೀಡಲಾಗಿಲ್ಲ"
 
 #: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
-msgstr ""
+msgstr "RNG ಸಾಧನಕ್ಕಾಗಿ ಮನಸ್ಸಿಗೆ ಬಂದ ಸಂಖ್ಯೆಯನ್ನು ತೆಗೆದುಕೊಳ್ಳಲಾಗಿಲ್ಲ"
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವನ್ನು ಉತ್ಪಾದಿಸುವಿಕೆಯು ವಿಫಲಗೊಂಡಿದೆ - ಸಿದ್ಧತೆಗಳಿಗಾಗಿ ಅಗತ್ಯವಿರುವ ಎಂಟ್ರೋಪಿಯು ಬಹಳ ಕೆಳಮಟ್ಟದಲ್ಲಿದೆ"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
-msgstr ""
+msgstr "ಗುಪ್ತಪದವು ಶಬ್ಧಕೋಶದ ಪರಿಶೀಲಯಲ್ಲಿ ವಿಫಲಗೊಂಡಿದೆ"
 
 #: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
-msgstr ""
+msgstr "ಗೊತ್ತಿರದ ಸಿದ್ಧತೆ"
 
 #: src/error.c:127
 msgid "Bad integer value of setting"
-msgstr ""
+msgstr "ಸಿದ್ಧತೆಯ ತಪ್ಪು ಪೂರ್ಣಾಂಕ ಮೌಲ್ಯ"
 
 #: src/error.c:131
 msgid "Bad integer value"
-msgstr ""
+msgstr "ತಪ್ಪು ಪೂರ್ಣಾಂಕ ಮೌಲ್ಯ"
 
 #: src/error.c:134
 #, c-format
 msgid "Setting %s is not of integer type"
-msgstr ""
+msgstr "%s ಸಿದ್ಧತೆಯು ಒಂದು ಪೂರ್ಣಾಂಕದ ಬಗೆಯಾಗಿಲ್ಲ"
 
 #: src/error.c:138
 msgid "Setting is not of integer type"
-msgstr ""
+msgstr "ಸಿದ್ಧತೆಯು ಒಂದು ಪೂರ್ಣಾಂಕದ ಬಗೆಯಾಗಿಲ್ಲ"
 
 #: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
-msgstr ""
+msgstr "%s ಸಿದ್ಧತೆಯು ಒಂದು ವಾಕ್ಯಾಂಶದ ಬಗೆಯಾಗಿಲ್ಲ"
 
 #: src/error.c:145
 msgid "Setting is not of string type"
-msgstr ""
+msgstr "ಸಿದ್ಧತೆಯು ಒಂದು ವಾಕ್ಯಾಂಶದ ಬಗೆಯಾಗಿಲ್ಲ"
 
 #: src/error.c:147
 msgid "Opening the configuration file failed"
-msgstr ""
+msgstr "ಸಂರಚನಾ ಕಡತವನ್ನು ತೆರೆಯುವಲ್ಲಿ ವಿಫಲಗೊಂಡಿದೆ"
 
 #: src/error.c:149
 msgid "The configuration file is malformed"
-msgstr ""
+msgstr "ಸಂರಚನಾ ಕಡತವು ತಪ್ಪಾಗಿದೆ"
 
 #: src/error.c:151
 msgid "Fatal failure"
-msgstr ""
+msgstr "ಮಾರಕ ವಿಫಲತೆ"
 
 #: src/error.c:153
 msgid "Unknown error"

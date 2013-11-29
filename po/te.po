@@ -1,22 +1,24 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Krishna Babu K <kkrothap@redhat.com>, 2008, 2009.
+# Krishnababu Krothapalli <kkrothap@redhat.com>, 2008, 2009, 2013.
 msgid ""
 msgstr ""
-"Project-Id-Version: PWQuality library\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2012-12-20 10:03+0100\n"
-"PO-Revision-Date: 2012-06-29 09:04+0000\n"
-"Last-Translator: Tomáš Mráz <tmraz@fedoraproject.org>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: te\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"PO-Revision-Date: 2013-09-16 08:16-0400\n"
+"Last-Translator: Krishnababu Krothapalli <kkrothap@redhat.com>\n"
+"Language-Team: American English <kde-i18n-doc@kde.org>\n"
+"Language: te\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Zanata 3.1.2\n"
 
 #: src/pam_pwquality.c:25
 #, c-format
@@ -40,137 +42,140 @@ msgstr "చెడ్డ సంకేతపదము: %s"
 #: src/pwscore.c:22
 #, c-format
 msgid "Usage: %s [user]\n"
-msgstr ""
+msgstr "వాడుక: %s [user]\n"
 
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
+"       The command reads the password to be scored from the standard input."
+"\n"
 msgstr ""
+"       ప్రామాణిక ఇన్పుట్ నుండి స్కోర్‌చేయవలసిన సంకేతపదంను ఆ ఆదేశం చదువును.\n"
 
 #: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
 #, c-format
 msgid "Error: %s\n"
-msgstr ""
+msgstr "దోషం: %s\n"
 
 #: src/pwscore.c:51
 msgid "Could not obtain the password to be scored"
-msgstr ""
+msgstr "స్కోర్‌చేయవలసిన సంకేతపదం పొందలేక పోయింది"
 
 #: src/pwscore.c:73
 #, c-format
-msgid ""
-"Password quality check failed:\n"
+msgid "Password quality check failed:\n"
 " %s\n"
-msgstr ""
+msgstr "సంకేతపదం నాణ్యత పరిశీలన విఫలమైంది:\n"
+" %s\n"
 
 #: src/pwmake.c:22
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
-msgstr ""
+msgstr "వాడుక: %s <entropy-bits>\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
-msgstr ""
+msgstr "అమర్చునప్పుడు మెమొరీ కేటాయింపు దోషం"
 
 #: src/error.c:35
 msgid "Memory allocation error"
-msgstr ""
+msgstr "మెమొరీ కేటాయింపు దోషం"
 
 #: src/error.c:37
 msgid "The password is the same as the old one"
-msgstr ""
+msgstr "ఆ సంకేతపదం పాత దాని వలెనే వుంది"
 
 #: src/error.c:39
 msgid "The password is a palindrome"
-msgstr ""
+msgstr "సంకేతపదం పాలిన్డ్రోమ్"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
-msgstr ""
+msgstr "అక్షరబడి మార్చిన మాత్రమే సంకేతపదం విభేదించును"
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
-msgstr ""
+msgstr "సంకేతపదం పాత దానితో దగ్గరి పోలిక కలిగివుంది"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr ""
+msgstr "సంకేతపదం వాడుకరి పేరును కలిగివుంది"
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
-msgstr ""
+msgid ""
+"The password contains words from the real name of the user in some form"
+msgstr "సంకేతపదం వాడుకరి యొక్క వాస్తవపేరు నందలి పదాలను కలిగివుంది"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
-msgstr ""
+msgstr "సంకేతపదం వాడదగని పదాలను కలిగివుంది"
 
 #: src/error.c:52
 #, c-format
 msgid "The password contains less than %ld digits"
-msgstr ""
+msgstr "సంకేతపదం %ld అంకెలకన్నా తక్కువ కలిగివుంది"
 
 #: src/error.c:55
 msgid "The password contains too few digits"
-msgstr ""
+msgstr "సంకేతపదం మరీ తక్కువ అంకెలను కలిగివుంది"
 
 #: src/error.c:58
 #, c-format
 msgid "The password contains less than %ld uppercase letters"
-msgstr ""
+msgstr "సంకేతపదం పెద్దబడి అక్షరాలు %ld కన్నా తక్కువ వున్నాయి"
 
 #: src/error.c:61
 msgid "The password contains too few uppercase letters"
-msgstr ""
+msgstr "సంకేతపదం మరీ తక్కువ పెద్దబడి అక్షరాలు కలిగివుంది"
 
 #: src/error.c:64
 #, c-format
 msgid "The password contains less than %ld lowercase letters"
-msgstr ""
+msgstr "సంకేతపదం చిన్నబడి అక్షరాలు %ld కన్నా తక్కువ వున్నాయి"
 
 #: src/error.c:67
 msgid "The password contains too few lowercase letters"
-msgstr ""
+msgstr "సంకేతపదం మరీ తక్కువ చిన్నబడి అక్షరాలు కలిగివుంది"
 
 #: src/error.c:70
 #, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr ""
+msgstr "సంకేతపదం సంఖ్యాఅక్షరం-కాని అక్షరాలు %ld కన్నా తక్కువ వున్నాయి"
 
 #: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
-msgstr ""
+msgstr "సంకేతపదం మరీ తక్కువ సంఖ్యాఅక్షరం-కాని అక్షరాలు కలిగివుంది"
 
 #: src/error.c:76
 #, c-format
 msgid "The password is shorter than %ld characters"
-msgstr ""
+msgstr "సంకేతపదం %ld అక్షరాల కన్నా పొట్టిగావుంది"
 
 #: src/error.c:79
 msgid "The password is too short"
-msgstr ""
+msgstr "సంకేతపదం మరీ పొట్టిది"
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
-msgstr ""
+msgstr "సంకేతపదం పాత దానినే తిప్పివుంచింది"
 
 #: src/error.c:84
 #, c-format
 msgid "The password contains less than %ld character classes"
-msgstr ""
+msgstr "సంకేతపదం అక్షర తరగతులు %ld కన్నా తక్కువ వున్నాయి"
 
 #: src/error.c:87
 msgid "The password does not contain enough character classes"
-msgstr ""
+msgstr "సంకేతపదం తగినన్ని అక్షర తరగతులను కలిగిలేదు"
 
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr ""
+msgstr "సంకేతపదం వొకే వరుస అక్షరాలను %ld కన్నా యెక్కువ కలిగివుంది"
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
-msgstr ""
+msgstr "సంకేతపదం వొకే వరుస అక్షరాలను చాలా కలిగివుంది"
 
 #: src/error.c:96
 #, c-format
@@ -178,20 +183,22 @@ msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
 msgstr ""
+"సంకేతపదం వొకే తరగతికి చేందిన అక్షరాలు వరుసగా %ld అక్షరాలకన్నా యెక్కువగా "
+"వున్నాయి"
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr ""
+msgstr "సంకేతపదం చాలా వొకే తరగతికి చెందిన అక్షరాలను వరుసగా కలిగివుంది"
 
 #: src/error.c:102
 #, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr ""
+msgstr "సంకేతపదం మోనోటోనిక్ వరుసక్రమం %ld అక్షరాలకన్నా పొడవైనది"
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"
-msgstr ""
+msgstr "సంకేతపదం మోనోటోనిక్ అక్షర వరుస మరీ పొడవైనది"
 
 #: src/error.c:107
 msgid "No password supplied"
@@ -199,57 +206,59 @@ msgstr "ఎటువంటి సంకేతపదము యివ్వలే�
 
 #: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
-msgstr ""
+msgstr "RNG పరికరం నుండి యాదృశ్చిక సంఖ్యలను పొందలేదు"
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
+"సంకేతపదం జనియింపచేయుట విఫలమైంది - అమరికలకు కావలసిన ఎంట్రోపీ మరీ "
+"తక్కువగావుంది"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
-msgstr ""
+msgstr "సంకేతపదం నిఘంటువు పరిశీలనకు విఫలమైంది"
 
 #: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
-msgstr ""
+msgstr "తెలియని అమరిక"
 
 #: src/error.c:127
 msgid "Bad integer value of setting"
-msgstr ""
+msgstr "అమరిక కు తగని పూర్ణాంకం విలువ"
 
 #: src/error.c:131
 msgid "Bad integer value"
-msgstr ""
+msgstr "తగని పూర్ణాంకం విలువ"
 
 #: src/error.c:134
 #, c-format
 msgid "Setting %s is not of integer type"
-msgstr ""
+msgstr "అమరిక %s పూర్ణాంకం రకం కాదు"
 
 #: src/error.c:138
 msgid "Setting is not of integer type"
-msgstr ""
+msgstr "అమరిక పూర్ణాంకం రకమైనది కాదు"
 
 #: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
-msgstr ""
+msgstr "అమరిక %s స్ట్రింగ్ రకం కాదు"
 
 #: src/error.c:145
 msgid "Setting is not of string type"
-msgstr ""
+msgstr "అమరిక స్ట్రింగ్ రకం కాదు"
 
 #: src/error.c:147
 msgid "Opening the configuration file failed"
-msgstr ""
+msgstr "ఆకృతీకరణ ఫైలును తెరుచుటకు విఫలమైంది"
 
 #: src/error.c:149
 msgid "The configuration file is malformed"
-msgstr ""
+msgstr "ఆకృతీకరణ ఫైలు తప్పుగా వ్యవహరిస్తోంది"
 
 #: src/error.c:151
 msgid "Fatal failure"
-msgstr ""
+msgstr "తీవ్ర వైఫల్యం"
 
 #: src/error.c:153
 msgid "Unknown error"

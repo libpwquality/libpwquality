@@ -1,255 +1,261 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Sandeep Shedmake <sandeep.shedmake@gmail.com>, 2008, 2009.
+# Sandeep Shedmake <sandeep.shedmake@gmail.com>, 2008, 2009, 2013.
 msgid ""
 msgstr ""
-"Project-Id-Version: PWQuality library\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2012-12-20 10:03+0100\n"
-"PO-Revision-Date: 2012-06-29 09:04+0000\n"
-"Last-Translator: Tomáš Mráz <tmraz@fedoraproject.org>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-09-23 12:14-0400\n"
+"Last-Translator: Sandeep Shedmake <sshedmak@redhat.com>\n"
+"Language-Team: Marathi <sshedmak@redhat.com>\n"
+"Language: mr\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: Zanata 3.1.2\n"
 
 #: src/pam_pwquality.c:25
 #, c-format
 msgid "New %s%spassword: "
-msgstr "नवीन गुप्तशब्द %s%sp: "
+msgstr "नवीन पासवर्ड %s%sp: "
 
 #: src/pam_pwquality.c:27
 #, c-format
 msgid "Retype new %s%spassword: "
-msgstr "नवीन गुप्तशब्द %s%sp पुन्हा टाइप करा: "
+msgstr "नवीन पासवर्ड %s%sp पुन्हा टाइप करा: "
 
 #: src/pam_pwquality.c:28
 msgid "Sorry, passwords do not match."
-msgstr "माफ करा, गुप्तशब्द जुळत नाही."
+msgstr "माफ करा, पासवर्ड जुळत नाही."
 
 #: src/pam_pwquality.c:241
 #, c-format
 msgid "BAD PASSWORD: %s"
-msgstr "अयोग्य गुप्तशब्द: %s"
+msgstr "अयोग्य पासवर्ड: %s"
 
 #: src/pwscore.c:22
 #, c-format
 msgid "Usage: %s [user]\n"
-msgstr ""
+msgstr "वापर: %s [वापरकर्ता]\n"
 
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
-msgstr ""
+"       The command reads the password to be scored from the standard input."
+"\n"
+msgstr "       स्टँडर्ड इंपुटपासून आदेश स्कोरजोगी पासवर्ड वाचतो.\n"
 
 #: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
 #, c-format
 msgid "Error: %s\n"
-msgstr ""
+msgstr "त्रुटी: %s\n"
 
 #: src/pwscore.c:51
 msgid "Could not obtain the password to be scored"
-msgstr ""
+msgstr "स्कोरजोगी पासवर्ड प्राप्त करणे अशक्य"
 
 #: src/pwscore.c:73
 #, c-format
-msgid ""
-"Password quality check failed:\n"
+msgid "Password quality check failed:\n"
 " %s\n"
-msgstr ""
+msgstr "पासवर्ड दर्जा तपासणी अपयशी:\n"
+" %s\n"
 
 #: src/pwmake.c:22
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
-msgstr ""
+msgstr "वापर: %s <entropy-bits>\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
-msgstr ""
+msgstr "सेट करताना मेमरि वाटप त्रुटी"
 
 #: src/error.c:35
 msgid "Memory allocation error"
-msgstr ""
+msgstr "मेमरि वाटप त्रुटी"
 
 #: src/error.c:37
 msgid "The password is the same as the old one"
-msgstr ""
+msgstr "पासवर्ड जुण्या प्रमाणेच आहे"
 
 #: src/error.c:39
 msgid "The password is a palindrome"
-msgstr ""
+msgstr "पासवर्ड पॅलिंड्रोम आहे"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
-msgstr ""
+msgstr "पासवर्ड फक्त आकार बदलसह भिन्न आहे"
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
-msgstr ""
+msgstr "पासवर्ड जुण्याप्रमाणेच आहे"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr ""
+msgstr "पासवर्डमध्ये वापरकर्ता नाव ठराविक स्वरूपात समाविष्टीत आहे"
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
+msgid ""
+"The password contains words from the real name of the user in some form"
 msgstr ""
+"पासवर्डमध्ये वापरकर्ताच्या वास्तविक नावातील ठराविक स्वरूपात काही शब्द "
+"समाविष्टीत आहे"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
-msgstr ""
+msgstr "पासवर्डमध्ये मनाई केलेले शब्द ठराविक स्वरूपात समाविष्टीत आहे"
 
 #: src/error.c:52
 #, c-format
 msgid "The password contains less than %ld digits"
-msgstr ""
+msgstr "पासवर्डमध्ये %ld पेक्षा कमी अंक आहेत"
 
 #: src/error.c:55
 msgid "The password contains too few digits"
-msgstr ""
+msgstr "पासवर्डमध्ये खूपच कमी अंक आहेत"
 
 #: src/error.c:58
 #, c-format
 msgid "The password contains less than %ld uppercase letters"
-msgstr ""
+msgstr "पासवर्डमध्ये %ld पेक्षा कमी अप्परकेस अक्षरे समाविष्टीत आहे"
 
 #: src/error.c:61
 msgid "The password contains too few uppercase letters"
-msgstr ""
+msgstr "पासवर्डमध्ये खूपच कमी अप्परकेस अक्षरे समाविष्टीत आहे"
 
 #: src/error.c:64
 #, c-format
 msgid "The password contains less than %ld lowercase letters"
-msgstr ""
+msgstr "पासवर्डमध्ये %ld पेक्षा कमी लोवरकेस अक्षरे समाविष्टीत आहे"
 
 #: src/error.c:67
 msgid "The password contains too few lowercase letters"
-msgstr ""
+msgstr "पासवर्डमध्ये खूपच कमी लोवरकेस अक्षरे समाविष्टीत आहे"
 
 #: src/error.c:70
 #, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr ""
+msgstr "पासवर्डमध्ये %ld पेक्षा कमी नॉन-अल्फन्युमेरिक अक्षरे समाविष्टीत आहे"
 
 #: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
-msgstr ""
+msgstr "पासवर्डमध्ये खूपच कमी नॉन-अल्फन्युमेरिक अक्षरे समाविष्टीत आहे"
 
 #: src/error.c:76
 #, c-format
 msgid "The password is shorter than %ld characters"
-msgstr ""
+msgstr "पासवर्ड %ld अक्षरांपेक्षा छोटे आहे"
 
 #: src/error.c:79
 msgid "The password is too short"
-msgstr ""
+msgstr "पासवर्ड खूपच छोटे आहे"
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
-msgstr ""
+msgstr "पासवर्ड जुण्या प्रमाणेच बदललेले आहे"
 
 #: src/error.c:84
 #, c-format
 msgid "The password contains less than %ld character classes"
-msgstr ""
+msgstr "पासवर्डमध्ये %ld पेक्षा कमी कॅरेक्टर क्लासेस समाविष्टीत आहे"
 
 #: src/error.c:87
 msgid "The password does not contain enough character classes"
-msgstr ""
+msgstr "पासवर्डमध्ये अतिरीक्त कॅरेक्टर क्लासेस समाविष्टीत नाही"
 
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr ""
+msgstr "पासवर्डमध्ये %ld पेक्षा जास्त अक्षरे सलग समाविष्टीत आहे"
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
-msgstr ""
+msgstr "पासवर्डमध्ये खूप जास्त समान अक्षरे सलग समाविष्टीत आहे"
 
 #: src/error.c:96
 #, c-format
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr ""
+msgstr "पासवर्डमध्ये एकाच वर्गाचे %ld पेक्षा जास्त अक्षरे सलग समाविष्टीत आहे"
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr ""
+msgstr "पासवर्डमध्ये एकाच वर्गाचे एकापेक्षा जास्त अक्षरे सलग समाविष्टीत आहे"
 
 #: src/error.c:102
 #, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr ""
+msgstr "पासवर्डमध्ये %ld पेक्षा मोठे मोनोटोनिक अनुक्रम समाविष्टीत आहे"
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"
-msgstr ""
+msgstr "पासवर्डमध्ये मोनोटोनिक अनुक्रमपेक्षा जास्त अक्षरे समाविष्टीत आहे"
 
 #: src/error.c:107
 msgid "No password supplied"
-msgstr "गुप्तशब्द दिलेला नाही"
+msgstr "पासवर्ड दिलेला नाही"
 
 #: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
-msgstr ""
+msgstr "RNG साधनापासून विनाक्रम क्रमांक प्राप्त करणे अशक्य"
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
-msgstr ""
+msgstr "पासवर्ड निर्माण अपयशी - सेटिंग्जकरिता आवश्यक एंट्रोपी खूपच कमी आहे"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
-msgstr ""
+msgstr "पासवर्ड शब्दकोश तपासणीमध्ये अपयशी ठरतो"
 
 #: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
-msgstr ""
+msgstr "अपरिचीत सेटिंग"
 
 #: src/error.c:127
 msgid "Bad integer value of setting"
-msgstr ""
+msgstr "सेटिंगचे अयोग्य इंटिजर मूल्य"
 
 #: src/error.c:131
 msgid "Bad integer value"
-msgstr ""
+msgstr "अयोग्य इंटिजर मूल्य"
 
 #: src/error.c:134
 #, c-format
 msgid "Setting %s is not of integer type"
-msgstr ""
+msgstr "सेटिंग %s इंटिजर प्रकार नाही"
 
 #: src/error.c:138
 msgid "Setting is not of integer type"
-msgstr ""
+msgstr "सेटिंग इंटिजर प्रकार नाही"
 
 #: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
-msgstr ""
+msgstr "सेटिंग %s इंटिजर प्रकार नाही"
 
 #: src/error.c:145
 msgid "Setting is not of string type"
-msgstr ""
+msgstr "सेटिंग स्ट्रिंग प्रकार नाही"
 
 #: src/error.c:147
 msgid "Opening the configuration file failed"
-msgstr ""
+msgstr "संरचना फाइल उघडणे अपयशी"
 
 #: src/error.c:149
 msgid "The configuration file is malformed"
-msgstr ""
+msgstr "संरचना फाइल सदोषीत आहे"
 
 #: src/error.c:151
 msgid "Fatal failure"
-msgstr ""
+msgstr "घातक अपयश"
 
 #: src/error.c:153
 msgid "Unknown error"
