@@ -25,13 +25,13 @@ endif
 libpwquality_la_LDFLAGS = -no-undefined $(libpwquality_version_script) \
 	-version-info @PWQUALITY_LT_CURRENT@:@PWQUALITY_LT_REVISION@:@PWQUALITY_LT_AGE@
 
-libpwquality_la_LIBADD = @LIBCRACK@
+libpwquality_la_LIBADD = $(LIBCRACK) $(LIBINTL)
 
 libpwquality_la_SOURCES = generate.c check.c settings.c error.c
 
 if HAVE_PAM
   pam_pwquality_la_LDFLAGS = -no-undefined -avoid-version -module
-  pam_pwquality_la_LIBADD = libpwquality.la @PAM_LIBS@
+  pam_pwquality_la_LIBADD = libpwquality.la $(PAM_LIBS) $(LIBINTL)
   pam_pwquality_la_SOURCES = pam_pwquality.c
 else
   pam_pwquality_la_LDFLAGS =
