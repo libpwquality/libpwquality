@@ -41,11 +41,11 @@ endif
 
 pwscore_SOURCES = pwscore.c
 
-pwscore_LDADD = libpwquality.la
+pwscore_LDADD = libpwquality.la $(LIBINTL)
 
 pwmake_SOURCES = pwmake.c
 
-pwmake_LDADD = libpwquality.la
+pwmake_LDADD = libpwquality.la $(LIBINTL)
 
 lib_LTLIBRARIES = libpwquality.la
 
