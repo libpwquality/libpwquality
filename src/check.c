@@ -503,6 +503,13 @@ password_check(pwquality_settings_t *pwq,
         char *oldmono = NULL, *newmono, *wrapped = NULL;
         char *usermono = NULL;
 
+        /* Sanitize the old and user values */
+        if (old && *old = '\0')
+                old = NULL;
+
+        if (user && *user = '\0')
+                user = NULL;
+
         newmono = str_lower(x_strdup(new));
         if (!newmono)
                 rv = PWQ_ERROR_MEM_ALLOC;
