@@ -86,7 +86,9 @@ rm -f $RPM_BUILD_ROOT%{_moduledir}/*.la
 
 %files -f libpwquality.lang
 %defattr(-,root,root,-)
-%doc COPYING README NEWS AUTHORS
+%{!?_licensedir:%global license %%doc}
+%license COPYING
+%doc README NEWS AUTHORS
 %{_bindir}/pwmake
 %{_bindir}/pwscore
 %{_moduledir}/pam_pwquality.so
@@ -107,6 +109,11 @@ rm -f $RPM_BUILD_ROOT%{_moduledir}/*.la
 %{python_sitearch}/pwquality.so
 
 %changelog
+* Wed Aug  6 2014 Tomáš Mráz <tmraz@redhat.com> 1.2.4-1
+- fix license handling (by Tom Callaway)
+- fix handling of empty user or old password in check
+- add Python3 module subpackage
+
 * Thu Sep 12 2013 Tomáš Mráz <tmraz@redhat.com> 1.2.3-1
 - fix problem with parsing the pam_pwquality options
   patch by Vladimir Sorokin.
