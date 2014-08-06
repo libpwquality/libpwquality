@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Luca Bruno <luca.br@uno.it>, 2007.
 # Mario Santagiuliana <fedora at marionline.it>, 2012.
@@ -13,14 +13,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2012-12-20 10:03+0100\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2014-08-06 16:45+0200\n"
 "PO-Revision-Date: 2013-09-23 09:59-0400\n"
 "Last-Translator: fvalen <fvalen@redhat.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "X-Generator: Zanata 3.1.2\n"
 
@@ -51,8 +51,7 @@ msgstr "Utilizzo: %s [user]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input."
-"\n"
+"       The command reads the password to be scored from the standard input.\n"
 msgstr "       Il comando legge la password fornita dall'input standard.\n"
 
 #: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
@@ -66,9 +65,11 @@ msgstr "Non è possibile ottenere la password fornita"
 
 #: src/pwscore.c:73
 #, c-format
-msgid "Password quality check failed:\n"
+msgid ""
+"Password quality check failed:\n"
 " %s\n"
-msgstr "Controllo di qualità della password fallito:\n"
+msgstr ""
+"Controllo di qualità della password fallito:\n"
 " %s\n"
 
 #: src/pwmake.c:22
@@ -106,8 +107,7 @@ msgid "The password contains the user name in some form"
 msgstr "La password contiene il nome utente in altre forme"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
+msgid "The password contains words from the real name of the user in some form"
 msgstr "La password contiene parole del nome reale dell'utente in altre forme"
 
 #: src/error.c:49

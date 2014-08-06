@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Boris Yakimov <borisyakimov@ymail.com>, 2012
 # Valentin Laskov <laskov@festa.bg>, 2012
@@ -9,31 +9,32 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2012-06-29 11:02+0200\n"
+"POT-Creation-Date: 2014-08-06 16:45+0200\n"
 "PO-Revision-Date: 2013-11-20 10:42+0000\n"
 "Last-Translator: Tomáš Mráz <tmraz@fedoraproject.org>\n"
-"Language-Team: Bulgarian (http://www.transifex.com/projects/p/libpwquality/language/bg/)\n"
+"Language-Team: Bulgarian (http://www.transifex.com/projects/p/libpwquality/"
+"language/bg/)\n"
+"Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/pam_pwquality.c:22
+#: src/pam_pwquality.c:25
 #, c-format
 msgid "New %s%spassword: "
 msgstr "Нова %s%sпарола: "
 
-#: src/pam_pwquality.c:24
+#: src/pam_pwquality.c:27
 #, c-format
 msgid "Retype new %s%spassword: "
 msgstr "Отново новата %s%sпарола: "
 
-#: src/pam_pwquality.c:25
+#: src/pam_pwquality.c:28
 msgid "Sorry, passwords do not match."
 msgstr "Лошо, паролите не съвпадат."
 
-#: src/pam_pwquality.c:181
+#: src/pam_pwquality.c:241
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "ГРЕШНА ПАРОЛА: %s"
@@ -46,11 +47,12 @@ msgstr "Употреба: %s [потребител]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
-msgstr "       Командата оценява качеството на парола, въведена от стандартния вход.\n"
+"       The command reads the password to be scored from the standard input.\n"
+msgstr ""
+"       Командата оценява качеството на парола, въведена от стандартния "
+"вход.\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:64
+#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
 #, c-format
 msgid "Error: %s\n"
 msgstr "Грешка: %s\n"
@@ -59,12 +61,14 @@ msgstr "Грешка: %s\n"
 msgid "Could not obtain the password to be scored"
 msgstr "Не мога да намеря парола за оценяване"
 
-#: src/pwscore.c:71
+#: src/pwscore.c:73
 #, c-format
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr "Проверката на качеството на паролата се провали:\n %s\n"
+msgstr ""
+"Проверката на качеството на паролата се провали:\n"
+" %s\n"
 
 #: src/pwmake.c:22
 #, c-format
@@ -100,8 +104,7 @@ msgid "The password contains the user name in some form"
 msgstr "Паролата съдържа под някаква форма потребителското име"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
+msgid "The password contains words from the real name of the user in some form"
 msgstr "Паролата съдържа под някаква форма част от името на потребителя"
 
 #: src/error.c:49
@@ -206,7 +209,9 @@ msgstr "Не мога да получа случайни числа от RNG у�
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
-msgstr "Генерирането на парола се провали - ентропията е твърде малка за тези настройки."
+msgstr ""
+"Генерирането на парола се провали - ентропията е твърде малка за тези "
+"настройки."
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"

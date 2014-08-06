@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Amitakhya Phukan <aphukan@fedoraproject.org>, 2008-2009
 # Amitakhya Phukan <aphukan@redhat.com>, 2007
@@ -10,15 +10,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2012-12-20 10:03+0100\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2014-08-06 16:45+0200\n"
 "PO-Revision-Date: 2013-09-04 09:29-0400\n"
 "Last-Translator: ngoswami <ngoswami@redhat.com>\n"
 "Language-Team: Assamese (http://www.transifex.com/projects/p/libpwquality/"
 "language/as/)\n"
 "Language: as\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Zanata 3.1.2\n"
 
@@ -49,8 +49,7 @@ msgstr "ব্যৱহাৰ: %s [ব্যৱহাৰকাৰী]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input."
-"\n"
+"       The command reads the password to be scored from the standard input.\n"
 msgstr "       কমান্ডে প্ৰামাণিক ইনপুটৰ পৰা স্কৌৰ কৰিব লগিয়া পাছৱাৰ্ড পঢ়ে।\n"
 
 #: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
@@ -64,9 +63,11 @@ msgstr "স্কৌৰ কৰিবলৈ পাছৱাৰ্ড পোৱা
 
 #: src/pwscore.c:73
 #, c-format
-msgid "Password quality check failed:\n"
+msgid ""
+"Password quality check failed:\n"
 " %s\n"
-msgstr "পাছৱাৰ্ড বৈশিষ্ট্য নিৰীক্ষণ ব্যৰ্থ হল:\n"
+msgstr ""
+"পাছৱাৰ্ড বৈশিষ্ট্য নিৰীক্ষণ ব্যৰ্থ হল:\n"
 " %s\n"
 
 #: src/pwmake.c:22
@@ -103,8 +104,7 @@ msgid "The password contains the user name in some form"
 msgstr "পাছৱাৰ্ডে ব্যৱহাৰকাৰী নাম কিবা বিন্যাসত অন্তৰ্ভুক্ত কৰে"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
+msgid "The password contains words from the real name of the user in some form"
 msgstr "পাছৱাৰ্ডে ব্যৱহাৰকাৰীৰ নামৰ পৰা এটা বিন্যাসত শব্দ অন্তৰ্ভুক্ত কৰে"
 
 #: src/error.c:49

@@ -21,3 +21,6 @@ ACLOCAL_AMFLAGS = -I m4
 
 tag: Makefile
 	hg tag libpwquality-@PACKAGE_VERSION@
+
+force-tag: Makefile
+	hg tag -f libpwquality-@PACKAGE_VERSION@

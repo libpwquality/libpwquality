@@ -1,38 +1,39 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Kris Thomsen <lakristho@gmail.com>, 2009,2013
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2012-06-29 11:02+0200\n"
+"POT-Creation-Date: 2014-08-06 16:45+0200\n"
 "PO-Revision-Date: 2013-11-20 10:42+0000\n"
 "Last-Translator: Kris Thomsen <lakristho@gmail.com>\n"
-"Language-Team: Danish (http://www.transifex.com/projects/p/libpwquality/language/da/)\n"
+"Language-Team: Danish (http://www.transifex.com/projects/p/libpwquality/"
+"language/da/)\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/pam_pwquality.c:22
+#: src/pam_pwquality.c:25
 #, c-format
 msgid "New %s%spassword: "
 msgstr "Ny %s%sadgangskode: "
 
-#: src/pam_pwquality.c:24
+#: src/pam_pwquality.c:27
 #, c-format
 msgid "Retype new %s%spassword: "
 msgstr "Genindtast ny %s%sadgangskode: "
 
-#: src/pam_pwquality.c:25
+#: src/pam_pwquality.c:28
 msgid "Sorry, passwords do not match."
 msgstr "Adgangskoderne stemmer ikke overens."
 
-#: src/pam_pwquality.c:181
+#: src/pam_pwquality.c:241
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "DÅRLIG ADGANGSKODE: %s"
@@ -45,11 +46,10 @@ msgstr "Brug: %s [bruger]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
+"       The command reads the password to be scored from the standard input.\n"
 msgstr "Kommandoen læser adgangskoden, som hentes fra standard-inputtet.\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:64
+#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
 #, c-format
 msgid "Error: %s\n"
 msgstr "Fejl: %s\n"
@@ -58,12 +58,14 @@ msgstr "Fejl: %s\n"
 msgid "Could not obtain the password to be scored"
 msgstr "Kunne ikke opfange adgangskoden, som skulle vurderes"
 
-#: src/pwscore.c:71
+#: src/pwscore.c:73
 #, c-format
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr "Kvalitetstjek af adgangskode mislykkedes:\n%s\n"
+msgstr ""
+"Kvalitetstjek af adgangskode mislykkedes:\n"
+"%s\n"
 
 #: src/pwmake.c:22
 #, c-format
@@ -99,9 +101,9 @@ msgid "The password contains the user name in some form"
 msgstr "Adgangskoden indeholder på den ene eller den anden måde brugernavnet"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
-msgstr "Adgangskoden indeholder ord fra brugerens rigtige navn i en eller anden form"
+msgid "The password contains words from the real name of the user in some form"
+msgstr ""
+"Adgangskoden indeholder ord fra brugerens rigtige navn i en eller anden form"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
@@ -179,7 +181,8 @@ msgstr "Adgangskoden indeholder for mange ens tegn efter hinanden"
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr "Adgangskoden indeholder mere end %ld tegn af samme klasse efter hinanden"
+msgstr ""
+"Adgangskoden indeholder mere end %ld tegn af samme klasse efter hinanden"
 
 #: src/error.c:99
 msgid ""
@@ -205,7 +208,9 @@ msgstr "Kan ikke modtage tilfældige numre fra RNG-enheden"
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
-msgstr "Generering af adgangskode mislykkedes - påkrævet entropi for lav til indstillinger"
+msgstr ""
+"Generering af adgangskode mislykkedes - påkrævet entropi for lav til "
+"indstillinger"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"

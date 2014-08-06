@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Diego Búrigo Zacarão <diegobz@projetofedora.org>, 2008
 # Glaucia Freitas <gcintra@redhat.com>, 2007
@@ -10,31 +10,32 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2012-06-29 11:02+0200\n"
+"POT-Creation-Date: 2014-08-06 16:45+0200\n"
 "PO-Revision-Date: 2013-11-29 13:46+0000\n"
 "Last-Translator: Tomáš Mráz <tmraz@fedoraproject.org>\n"
-"Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/libpwquality/language/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/"
+"libpwquality/language/pt_BR/)\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: src/pam_pwquality.c:22
+#: src/pam_pwquality.c:25
 #, c-format
 msgid "New %s%spassword: "
 msgstr "Nova %s%ssenha:"
 
-#: src/pam_pwquality.c:24
+#: src/pam_pwquality.c:27
 #, c-format
 msgid "Retype new %s%spassword: "
 msgstr "Redigite a nova %s%ssenha:"
 
-#: src/pam_pwquality.c:25
+#: src/pam_pwquality.c:28
 msgid "Sorry, passwords do not match."
 msgstr "As senhas não são iguais."
 
-#: src/pam_pwquality.c:181
+#: src/pam_pwquality.c:241
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "SENHA INCORRETA: %s"
@@ -47,11 +48,11 @@ msgstr "Uso: %s [usuário]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
-msgstr "       O comando lê a senha a ser marcada a partir da entrada padrão.\n"
+"       The command reads the password to be scored from the standard input.\n"
+msgstr ""
+"       O comando lê a senha a ser marcada a partir da entrada padrão.\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:64
+#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
 #, c-format
 msgid "Error: %s\n"
 msgstr "Erro: %s\n"
@@ -60,12 +61,14 @@ msgstr "Erro: %s\n"
 msgid "Could not obtain the password to be scored"
 msgstr "Não foi possível obter a senha a ser marcada"
 
-#: src/pwscore.c:71
+#: src/pwscore.c:73
 #, c-format
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr "Teste de qualidade da senha falhou:\n %s\n"
+msgstr ""
+"Teste de qualidade da senha falhou:\n"
+" %s\n"
 
 #: src/pwmake.c:22
 #, c-format
@@ -101,8 +104,7 @@ msgid "The password contains the user name in some form"
 msgstr "A senha contém o nome de usuário em algum formulário"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
+msgid "The password contains words from the real name of the user in some form"
 msgstr "A senha contém palavras de um nome real de usuário no mesmo formato"
 
 #: src/error.c:49
@@ -181,7 +183,8 @@ msgstr "A senha contém muitos caracteres igual consecutivamente"
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr "A senha contém mais do que %ld caracteres da mesma classe consecutivamente"
+msgstr ""
+"A senha contém mais do que %ld caracteres da mesma classe consecutivamente"
 
 #: src/error.c:99
 msgid ""
@@ -191,7 +194,8 @@ msgstr "A senha contém muitos caracteres da mesma classe consecutivamente"
 #: src/error.c:102
 #, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr "A senha contém uma sequência monotônica mais longa do que %ld caracteres"
+msgstr ""
+"A senha contém uma sequência monotônica mais longa do que %ld caracteres"
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"
@@ -207,7 +211,9 @@ msgstr "Não foi possível obter números aleatórios a partir do dispositivo RN
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
-msgstr "A geração de senha falhou - foi requerida um aentropia muito baixa para a configuração"
+msgstr ""
+"A geração de senha falhou - foi requerida um aentropia muito baixa para a "
+"configuração"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
