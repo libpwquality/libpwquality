@@ -1,8 +1,8 @@
 /*
  * libpwquality Python bindings
  *
- * Copyright (c) Red Hat, Inc, 2011
- * Copyright (c) Tomas Mraz <tm@t8m.info>, 2011
+ * Copyright (c) Red Hat, Inc, 2011,2014
+ * Copyright (c) Tomas Mraz <tm@t8m.info>, 2011,2014
  *
  * See the end of the file for the License Information
  */

@@ -1,5 +1,5 @@
 dnl Process this file with autoconf to produce a configure script.
-AC_INIT([libpwquality], [1.2.3])
+AC_INIT([libpwquality], [1.2.4])
 AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([dist-bzip2 no-dist-gzip -Wall])
 AC_PREREQ(2.61)
@@ -26,6 +26,7 @@ AC_SUBST(PWQUALITY_LT_REVISION)
 
 dnl Checks for programs.
 AC_USE_SYSTEM_EXTENSIONS
+AM_PROG_AR
 AC_PROG_CC
 AC_PROG_INSTALL
 AC_PROG_LN_S
@@ -48,7 +49,7 @@ dnl If we use /usr as prefix, use /usr/share/man for manual pages
 fi
 
 dnl Localization support
-AM_GNU_GETTEXT_VERSION([0.15])
+AM_GNU_GETTEXT_VERSION([0.18.2])
 AM_GNU_GETTEXT([external])
 AH_BOTTOM([#ifdef ENABLE_NLS
 #include <libintl.h>
@@ -159,5 +160,5 @@ AC_C_BIGENDIAN
 
 dnl Files to be created from when we run configure
 AC_CONFIG_FILES([Makefile libpwquality.spec src/Makefile src/pwquality.pc po/Makefile.in python/Makefile
-                 doc/Makefile doc/man/Makefile])
+                 doc/Makefile doc/man/Makefile python/setup.py])
 AC_OUTPUT
