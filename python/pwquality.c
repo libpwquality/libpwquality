@@ -10,6 +10,15 @@
 #include <Python.h>
 #include "pwquality.h"
 
+#if PY_MAJOR_VERSION >= 3
+#define IS_PY3K
+#define PWQLong_FromLong PyLong_FromLong
+#define PWQLong_AsLong PyLong_AsLong
+#else
+#define PWQLong_FromLong PyInt_FromLong
+#define PWQLong_AsLong PyInt_AsLong
+#endif
+
 static PyObject *PWQError;
 
 typedef struct {
@@ -132,8 +141,7 @@ static PyGetSetDef pwqsettings_getseters[] = {
 
 
 static PyTypeObject pwqsettings_type = {
-        PyObject_HEAD_INIT(NULL)
-        0,                         /* ob_size */
+        PyVarObject_HEAD_INIT(NULL, 0)
         "pwquality.PWQSettings",   /* tp_name */
         sizeof(PWQSettings),       /* tp_basicsize */
         0,                         /* tp_itemsize */
@@ -223,7 +231,7 @@ static void
 pwqsettings_dealloc(PWQSettings *self)
 {
         pwquality_free_settings(self->pwq);
-        self->ob_type->tp_free((PyObject *)self);
+        Py_TYPE(self)->tp_free((PyObject *)self);
 }
 
 static PyObject *
@@ -235,7 +243,7 @@ pwqsettings_getint(PWQSettings *self, void *setting)
         if ((rc = pwquality_get_int_value(self->pwq, (int)(ssize_t)setting, &value)) < 0) {
                 return pwqerror(rc, NULL);
         }
-        return PyInt_FromLong((long)value);
+        return PWQLong_FromLong((long)value);
 }
 
 static int
@@ -244,7 +252,7 @@ pwqsettings_setint(PWQSettings *self, PyObject *value, void *setting)
         long l;
         int rc;
 
-        l = PyInt_AsLong(value);
+        l = PWQLong_AsLong(value);
         if (PyErr_Occurred() == NULL) {
                 if ((rc = pwquality_set_int_value(self->pwq,
                         (int)(ssize_t)setting, (int)l)) < 0) {
@@ -269,19 +277,36 @@ pwqsettings_getstr(PWQSettings *self, void *setting)
                 Py_INCREF(Py_None);
                 return Py_None;
         }
+#ifdef IS_PY3K
+        return PyUnicode_FromString(value);
+#else
         return PyString_FromString(value);
+#endif
 }
 
 static int
 pwqsettings_setstr(PWQSettings *self, PyObject *value, void *setting)
 {
-        const char *s;
+        const char *s = NULL;
         int rc;
 
-        if (value == (PyObject *)Py_None)
-                s = NULL;
-        else
+        if (value != (PyObject *)Py_None) {
+#ifdef IS_PY3K
+                if (PyUnicode_Check(value)) {
+                        PyObject *value_as_bytes = PyUnicode_AsUTF8String(value);
+                        if (!value_as_bytes)
+                                return -1;
+                        s = PyBytes_AsString(value_as_bytes);
+                        Py_DECREF(value_as_bytes);
+                        if (!s)
+                                return -1;
+                } else {
+                        PyErr_SetString(PyExc_TypeError, "expected unicode string");
+                }
+#else
                 s = PyString_AsString(value);
+#endif
+        }
 
         if (PyErr_Occurred() == NULL) {
                 if ((rc = pwquality_set_str_value(self->pwq,
@@ -339,7 +364,11 @@ generate(PWQSettings *self, PyObject *args)
                 return pwqerror(rc, NULL);
         }
 
+#ifdef IS_PY3K
+        passobj = PyUnicode_FromString(password);
+#else
         passobj = PyString_FromString(password);
+#endif
         free(password);
         return passobj;
 }
@@ -360,21 +389,46 @@ check(PWQSettings *self, PyObject *args)
                 return pwqerror(rc, auxerror);
         }
 
-        return PyInt_FromLong((long)rc);
+        return PWQLong_FromLong((long)rc);
 }
+
+#ifdef IS_PY3K
+static struct PyModuleDef pwqualitydef = {
+        PyModuleDef_HEAD_INIT,
+        "pwquality",
+        "Libpwquality wrapper module",
+        -1,
+        pwquality_methods,
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+};
+
+#define INITERROR return NULL
+
+PyObject *
+PyInit_pwquality(void)
+#else
+#define INITERROR return
 
 PyMODINIT_FUNC
 initpwquality(void)
+#endif
 {
         PyObject *module;
 
         if (PyType_Ready(&pwqsettings_type) < 0)
-                return;
+                INITERROR;
 
+#ifdef IS_PY3K
+        module = PyModule_Create(&pwqualitydef);
+#else
         module = Py_InitModule3("pwquality", pwquality_methods,
                 "Libpwquality wrapper module");
+#endif
         if (module == NULL)
-                return;
+                INITERROR;
 
         PWQError = PyErr_NewExceptionWithDoc("pwquality.PWQError",
                 "Standard exception thrown from PWQSettings method calls\n\n"
@@ -382,7 +436,7 @@ initpwquality(void)
                 NULL, NULL);
         if (PWQError == NULL) {
                 Py_DECREF(module);
-                return;
+                INITERROR;
         }
         Py_INCREF(PWQError);
         PyModule_AddObject(module, "PWQError", PWQError);
@@ -391,6 +445,9 @@ initpwquality(void)
         PyModule_AddObject(module, "PWQSettings", (PyObject *)&pwqsettings_type);
 
 #include "constants.c"
+#ifdef IS_PY3K
+        return module;
+#endif
 }
 
 /*
