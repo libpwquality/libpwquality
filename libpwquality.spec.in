@@ -18,11 +18,12 @@ BuildRequires: cracklib-devel
 BuildRequires: gettext
 BuildRequires: pam-devel
 BuildRequires: python2-devel
+BuildRequires: python3-devel
 
 URL: http://libpwquality.fedorahosted.org/
 
 # we don't want to provide private python extension libs
-%define __provides_exclude_from ^%{python_sitearch}/.*\.so$.
+%define __provides_exclude_from ^(%{python_sitearch}|%{python3_sitearch})/.*\.so$.
 
 %description
 This is a library for password quality checks and generation
@@ -52,19 +53,48 @@ for the libpwquality library. These bindings can be used
 for easy password quality checking and generation of random
 pronounceable passwords from Python applications.
 
+%package -n python3-pwquality
+Group: Development/Libraries
+Summary: Python bindings for the libpwquality library
+Requires: libpwquality%{?_isa} = %{version}-%{release}
+
+%description -n python3-pwquality
+This is pwquality Python module that provides Python bindings
+for the libpwquality library. These bindings can be used
+for easy password quality checking and generation of random
+pronounceable passwords from Python applications.
+
 %prep
 %setup -q
+
+rm -rf %{py3dir}
+cp -a . %{py3dir}
 
 %build
 %configure \
 	--with-securedir=%{_moduledir} \
 	--with-pythonsitedir=%{python_sitearch} \
+	--with-python-binary=%{__python2} \
 	--disable-static
 
 make %{?_smp_mflags}
 
+pushd %{py3dir}
+%configure \
+	--with-securedir=%{_moduledir} \
+	--with-pythonsitedir=%{python3_sitearch} \
+	--with-python-binary=%{__python3} \
+	--disable-static
+
+make %{?_smp_mflags}
+popd
+
 %install
 make install DESTDIR=$RPM_BUILD_ROOT INSTALL='install -p'
+
+pushd %{py3dir}
+make -C python install DESTDIR=$RPM_BUILD_ROOT INSTALL='install -p'
+popd
 
 %if "%{_pwqlibdir}" != "%{_libdir}"
 pushd $RPM_BUILD_ROOT%{_libdir}
@@ -107,11 +137,16 @@ rm -f $RPM_BUILD_ROOT%{_moduledir}/*.la
 %files -n python-pwquality
 %defattr(-,root,root,-)
 %{python_sitearch}/pwquality.so
+%{python_sitearch}/*.egg-info
+
+%files -n python3-pwquality
+%defattr(-,root,root,-)
+%{python3_sitearch}/*.so
+%{python3_sitearch}/*.egg-info
 
 %changelog
 * Wed Aug  6 2014 Tomáš Mráz <tmraz@redhat.com> 1.2.4-1
 - fix license handling (by Tom Callaway)
-- fix handling of empty user or old password in check
 - add Python3 module subpackage
 
 * Thu Sep 12 2013 Tomáš Mráz <tmraz@redhat.com> 1.2.3-1

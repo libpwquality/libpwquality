@@ -123,11 +123,16 @@ AC_ARG_ENABLE([python-bindings],
               enable_python_bindings=yes)
 AM_CONDITIONAL(BUILD_PYTHON_BINDINGS, test x"$enable_python_bindings" = xyes)
 
+AC_ARG_WITH(python-binary,
+            [  --with-python-binary=python3    python binary name with which modules should be built],
+            PYTHONBINARY=$withval, [PYTHONBINARY=python])
+AC_SUBST(PYTHONBINARY)
+
 AC_ARG_WITH(python-rev,
-            [  --with-pythonrev=2.7    version of python for which modules should be built],
+            [  --with-python-rev=2.7    version of python for which modules should be built],
             PYTHONREV=$withval,[
             AC_MSG_CHECKING([python version])
-            [PYTHONREV=`python -c 'import sys;print "%s.%s" % (sys.version_info[0], sys.version_info[1])'`]
+            [PYTHONREV=`$PYTHONBINARY -c "import sys;sys.stdout.write('%s.%s' % (sys.version_info[0], sys.version_info[1]))"`]
             AC_MSG_RESULT($PYTHONREV)
             ])
 AC_SUBST(PYTHONREV)
@@ -135,7 +140,7 @@ AC_SUBST(PYTHONREV)
 AC_ARG_WITH(pythonsitedir,
             [  --with-pythonsitedir=DIR    directory of the python site packages @<:@default=$libdir/python$PYTHONREV/site-packages@:>@],
             PYTHONSITEDIR=$withval,[
-            AC_MSG_CHECKING([python version])
+            AC_MSG_CHECKING([python site directory])
             [PYTHONSITEDIR=$libdir/python$PYTHONREV/site-packages]
             AC_MSG_RESULT($PYTHONSITEDIR)
             ])

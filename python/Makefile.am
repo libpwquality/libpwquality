@@ -6,11 +6,12 @@
 pythonincdir = $(includedir)/python@PYTHONREV@
 pythonsitedir = @PYTHONSITEDIR@
 
-CLEANFILES = *~ constants.c pwquality.so
+CLEANFILES = *~ constants.c *.so
 
 EXTRA_DIST = pwquality.c setup.py
 
-pythonsite_SCRIPTS = pwquality.so
+all-local:
+	CFLAGS="${CFLAGS} -fno-strict-aliasing" @PYTHONBINARY@ setup.py build --build-lib=.
 
-pwquality.so: ../src/pwquality.h pwquality.c setup.py
-	CFLAGS="${CFLAGS} -fno-strict-aliasing" python setup.py build --build-lib=.
+install-exec-local:
+	CFLAGS="${CFLAGS} -fno-strict-aliasing" @PYTHONBINARY@ setup.py install --prefix=${DESTDIR}${prefix}
