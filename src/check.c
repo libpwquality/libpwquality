@@ -504,10 +504,10 @@ password_check(pwquality_settings_t *pwq,
         char *usermono = NULL;
 
         /* Sanitize the old and user values */
-        if (old && *old = '\0')
+        if (old && *old == '\0')
                 old = NULL;
 
-        if (user && *user = '\0')
+        if (user && *user == '\0')
                 user = NULL;
 
         newmono = str_lower(x_strdup(new));
