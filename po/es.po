@@ -1,37 +1,37 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
-# Claudio Rodrigo Pereyra Diaz <elsupergomez@gmail.com>, 2011.
-# Daniel Cabrera <logan@fedoraproject.org>, 2009, 2011.
-# Domingo Becker <domingobecker@gmail.com>, 2008.
-# Héctor Daniel Cabrera <h.daniel.cabrera@gmail.com>, 2009.
-# Manuel Ospina <mospina@redhat.com>, 2007.
+# Adolfo Jayme Barrientos, 2015
+# Claudio Rodrigo Pereyra Diaz <elsupergomez@gmail.com>, 2011
+# Daniel Cabrera <logan@fedoraproject.org>, 2009,2011
+# beckerde <domingobecker@gmail.com>, 2008
+# Héctor Daniel Cabrera <h.daniel.cabrera@gmail.com>, 2009
+# Manuel Ospina <mospina@redhat.com>, 2007
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2014-08-06 16:45+0200\n"
-"PO-Revision-Date: 2012-07-16 11:46-0400\n"
-"Last-Translator: Daniel Cabrera <logan@fedoraproject.org>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: es\n"
+"PO-Revision-Date: 2015-02-01 00:56+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos\n"
+"Language-Team: Spanish (http://www.transifex.com/projects/p/libpwquality/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Zanata 3.1.2\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/pam_pwquality.c:25
 #, c-format
 msgid "New %s%spassword: "
-msgstr "Nueva %s%scontraseña: "
+msgstr "Contraseña%s%snueva: "
 
 #: src/pam_pwquality.c:27
 #, c-format
 msgid "Retype new %s%spassword: "
-msgstr "Vuelva a escribir la nueva %s%scontraseña: "
+msgstr "Escriba la contraseña %s%sde nuevo: "
 
 #: src/pam_pwquality.c:28
 msgid "Sorry, passwords do not match."
@@ -45,16 +45,14 @@ msgstr "CONTRASEÑA INCORRECTA: %s"
 #: src/pwscore.c:22
 #, c-format
 msgid "Usage: %s [user]\n"
-msgstr "Utilización: %s [usuario]\n"
+msgstr "Uso: %s [usuario]\n"
 
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
-msgstr ""
-"       El comando lee una contraseña desde la entrada estándar para ser "
-"almacenada.\n"
-"\n"
+"       The command reads the password to be scored from the standard "
+"input.\n"
+msgstr "       La orden lee la contraseña que se valorará a partir de la entrada estándar.\n"
 
 #: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
 #, c-format
@@ -63,29 +61,27 @@ msgstr "Error: %s\n"
 
 #: src/pwscore.c:51
 msgid "Could not obtain the password to be scored"
-msgstr "No se pudo obtener una contraseña para almacenar"
+msgstr "No se pudo obtener la contraseña que se valorará"
 
 #: src/pwscore.c:73
 #, c-format
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr ""
-"Falló la verificación de la calidad de la contraseña:\n"
-" %s\n"
+msgstr "Falló la comprobación de calidad de la contraseña:\n %s\n"
 
 #: src/pwmake.c:22
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
-msgstr "Utilización: %s <entropy-bits>\n"
+msgstr "Uso: %s <bits-entropía>\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
-msgstr "Error de alojamiento de memoria cuando se definía"
+msgstr "Ocurrió un error de asignación de memoria al establecer"
 
 #: src/error.c:35
 msgid "Memory allocation error"
-msgstr "Error de alojamiento de memoria"
+msgstr "Error al asignar memoria"
 
 #: src/error.c:37
 msgid "The password is the same as the old one"
@@ -97,7 +93,7 @@ msgstr "La contraseña es un palíndromo"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
-msgstr "La contraseña es diferente sólo respecto a mayúsculas y minúsculas"
+msgstr "La contraseña difiere únicamente en el uso de mayúsculas y minúsculas"
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
@@ -108,10 +104,9 @@ msgid "The password contains the user name in some form"
 msgstr "De alguna manera, en la contraseña se lee el nombre del usuario "
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
-msgstr ""
-"De alguna manera, en la contraseña existen palabras del nombre real del "
-"usuario"
+msgid ""
+"The password contains words from the real name of the user in some form"
+msgstr "De alguna manera, en la contraseña existen palabras del nombre real del usuario"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
@@ -160,11 +155,11 @@ msgstr "La contraseña tiene menos de %ld caracteres"
 
 #: src/error.c:79
 msgid "The password is too short"
-msgstr "La contraseña es demasiado pequeña"
+msgstr "La contraseña es demasiado breve"
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
-msgstr "La contraseña es solo para cambiar la anterior"
+msgstr "La contraseña es la anterior, pero al revés"
 
 #: src/error.c:84
 #, c-format
@@ -173,47 +168,37 @@ msgstr "La contraseña contiene menos de %ld clases de caracteres"
 
 #: src/error.c:87
 msgid "The password does not contain enough character classes"
-msgstr ""
-"La contraseña no contiene la suficiente cantidad de clases de caracteres"
+msgstr "La contraseña no contiene la suficiente cantidad de clases de caracteres"
 
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr ""
-"La contraseña contiene más de %ld caracteres iguales en forma consecutiva"
+msgstr "La contraseña contiene más de %ld caracteres iguales en forma consecutiva"
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
-msgstr ""
-"La contraseña contiene en forma consecutiva demasiados caracteres iguales"
+msgstr "La contraseña contiene en forma consecutiva demasiados caracteres iguales"
 
 #: src/error.c:96
 #, c-format
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr ""
-"La contraseña contiene m ás de %ld caracteres de la misma clase en forma "
-"consecutiva"
+msgstr "La contraseña contiene m ás de %ld caracteres de la misma clase en forma consecutiva"
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr ""
-"La contraseña contiene en forma consecutiva demasiados caracteres de la "
-"misma clase"
+msgstr "La contraseña contiene en forma consecutiva demasiados caracteres de la misma clase"
 
 #: src/error.c:102
 #, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr ""
-"La contraseña contiene una secuencia monotónica mayor de %ld caracteres"
+msgstr "La contraseña contiene una secuencia monotónica mayor de %ld caracteres"
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"
-msgstr ""
-"La contraseña contiene una secuencia de caracteres monotónica demasiado "
-"extensa"
+msgstr "La contraseña contiene una secuencia de caracteres monotónica demasiado extensa"
 
 #: src/error.c:107
 msgid "No password supplied"
@@ -225,9 +210,7 @@ msgstr "No es posible obtener números aleatorios desde el dispositivo RNG"
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
-msgstr ""
-"Falló la creación de la contraseña - es necesaria una entropía demasiado "
-"pequeña para las configuraciones"
+msgstr "Falló la creación de la contraseña - es necesaria una entropía demasiado pequeña para las configuraciones"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
@@ -273,7 +256,7 @@ msgstr "El archivo de configuración no está formado correctamente"
 
 #: src/error.c:151
 msgid "Fatal failure"
-msgstr "Error fatal"
+msgstr "Fallo crítico"
 
 #: src/error.c:153
 msgid "Unknown error"
