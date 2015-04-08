@@ -150,9 +150,11 @@ pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile, void **aux
                 if (*ptr == '\0')
                         continue;
 
+                eq = 0;
                 name = ptr;
                 while (*ptr != '\0') {
-                        if (isspace(*ptr)) {
+                        if (isspace(*ptr) || *ptr == '=') {
+                                eq = *ptr == '=';
                                 *ptr = '\0';
                                 ++ptr;
                                 break;
@@ -160,7 +162,6 @@ pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile, void **aux
                         ++ptr;
                 }
 
-                eq = 0;
                 while (*ptr != '\0') {
                         if (*ptr != '=' || eq) {
                                 if (!isspace(*ptr)) {
