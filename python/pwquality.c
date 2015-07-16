@@ -126,6 +126,11 @@ static PyGetSetDef pwqsettings_getseters[] = {
                 "Match words from the passwd GECOS field if available",
                 (void *)PWQ_SETTING_GECOS_CHECK
         },
+        { "dictcheck",
+                (getter)pwqsettings_getint, (setter)pwqsettings_setint,
+                "Perform the dictionary check",
+                (void *)PWQ_SETTING_DICT_CHECK
+        },
         { "badwords",
                 (getter)pwqsettings_getstr, (setter)pwqsettings_setstr,
                 "List of words more than 3 characters long that are forbidden",

@@ -32,6 +32,7 @@ pwquality_default_settings(void)
         pwq->up_credit = PWQ_DEFAULT_UP_CREDIT;
         pwq->low_credit = PWQ_DEFAULT_LOW_CREDIT;
         pwq->oth_credit = PWQ_DEFAULT_OTH_CREDIT;
+        pwq->dict_check = PWQ_DEFAULT_DICT_CHECK;
 
         return pwq;
 }
@@ -59,6 +60,7 @@ static const struct setting_mapping s_map[] = {
  { "maxclassrepeat", PWQ_SETTING_MAX_CLASS_REPEAT, PWQ_TYPE_INT},
  { "maxsequence", PWQ_SETTING_MAX_SEQUENCE, PWQ_TYPE_INT},
  { "gecoscheck", PWQ_SETTING_GECOS_CHECK, PWQ_TYPE_INT},
+ { "dictcheck", PWQ_SETTING_DICT_CHECK, PWQ_TYPE_INT},
  { "badwords", PWQ_SETTING_BAD_WORDS, PWQ_TYPE_STR},
  { "dictpath", PWQ_SETTING_DICT_PATH, PWQ_TYPE_STR}
 };
@@ -252,6 +254,9 @@ pwquality_set_int_value(pwquality_settings_t *pwq, int setting, int value)
         case PWQ_SETTING_GECOS_CHECK:
                 pwq->gecos_check = value;
                 break;
+        case PWQ_SETTING_DICT_CHECK:
+                pwq->dict_check = value;
+                break;
         default:
                 return PWQ_ERROR_NON_INT_SETTING;
         }
@@ -326,6 +331,9 @@ pwquality_get_int_value(pwquality_settings_t *pwq, int setting, int *value)
         case PWQ_SETTING_GECOS_CHECK:
                 *value = pwq->gecos_check;
                 break;
+        case PWQ_SETTING_DICT_CHECK:
+                *value = pwq->dict_check;
+                break;
         default:
                 return PWQ_ERROR_NON_INT_SETTING;
         }
@@ -350,8 +358,8 @@ pwquality_get_str_value(pwquality_settings_t *pwq, int setting, const char **val
 }
 
 /*
- * Copyright (c) Red Hat, Inc, 2011
- * Copyright (c) Tomas Mraz <tm@t8m.info>, 2011
+ * Copyright (c) Red Hat, Inc, 2011, 2015
+ * Copyright (c) Tomas Mraz <tm@t8m.info>, 2011, 2015
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions

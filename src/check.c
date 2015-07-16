@@ -669,11 +669,13 @@ pwquality_check(pwquality_settings_t *pwq, const char *password,
         if (score != 0)
                 return score;
 
-        msg = FascistCheck(password, pwq->dict_path);
-        if (msg) {
-                if (auxerror)
-                        *auxerror = (void *)msg;
-                return PWQ_ERROR_CRACKLIB_CHECK;
+        if (pwq->dict_check) {
+                msg = FascistCheck(password, pwq->dict_path);
+                if (msg) {
+                        if (auxerror)
+                                *auxerror = (void *)msg;
+                        return PWQ_ERROR_CRACKLIB_CHECK;
+                }
         }
 
         score = password_score(pwq, password);
@@ -684,8 +686,8 @@ pwquality_check(pwquality_settings_t *pwq, const char *password,
 /*
  * Copyright (c) Cristian Gafton <gafton@redhat.com>, 1996.
  *                                              All rights reserved
- * Copyright (c) Red Hat, Inc, 2011
- * Copyright (c) Tomas Mraz <tm@t8m.info>, 2011
+ * Copyright (c) Red Hat, Inc, 2011, 2015
+ * Copyright (c) Tomas Mraz <tm@t8m.info>, 2011, 2015
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions

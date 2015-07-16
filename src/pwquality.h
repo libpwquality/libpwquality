@@ -27,6 +27,7 @@ extern "C" {
 #define PWQ_SETTING_GECOS_CHECK     12
 #define PWQ_SETTING_BAD_WORDS       13
 #define PWQ_SETTING_MAX_SEQUENCE    14
+#define PWQ_SETTING_DICT_CHECK      15
 
 #define PWQ_MAX_ENTROPY_BITS       256
 #define PWQ_MIN_ENTROPY_BITS       56

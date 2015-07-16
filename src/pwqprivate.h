@@ -24,6 +24,7 @@ struct pwquality_settings {
         int max_class_repeat;
         int max_sequence;
         int gecos_check;
+        int dict_check;
         char *bad_words;
         char *dict_path;
 };
@@ -40,6 +41,7 @@ struct setting_mapping {
 #define PWQ_DEFAULT_UP_CREDIT    0
 #define PWQ_DEFAULT_LOW_CREDIT   0
 #define PWQ_DEFAULT_OTH_CREDIT   0
+#define PWQ_DEFAULT_DICT_CHECK   1
 
 #define PWQ_TYPE_INT             1
 #define PWQ_TYPE_STR             2
