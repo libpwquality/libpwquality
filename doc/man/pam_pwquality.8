@@ -4,7 +4,7 @@
 .de FN
 \fI\|\\$1\|\fP
 ..
-.TH PAM_PWQUALITY 8 "10 Nov 2011" "Red Hat, Inc."
+.TH PAM_PWQUALITY 8 "16 Jul 2015" "Red Hat, Inc."
 .SH NAME
 pam_pwquality \- PAM module to perform password quality checking
 .SH SYNOPSIS
@@ -50,7 +50,7 @@ by one argument,
 \fBdifok\fR
 which is a number of character changes (inserts, removals, or replacements)
 between the old and new password that are enough to accept the new
-password\&. This defaults to 5 changes\&.
+password\&.
 .RE
 .PP
 Simple
@@ -119,7 +119,7 @@ times before returning with error\&. The default is
 \fBdifok=\fR\fB\fIN\fR\fR
 .RS 4
 This argument will change the default of
-\fI5\fR
+\fI1\fR
 for the number of changes in the new password from the old password\&.
 .RE
 .PP
@@ -133,7 +133,7 @@ of character (\fIother\fR,
 \fIlower\fR
 and
 \fIdigit\fR)\&. The default for this parameter is
-\fI9\fR
+\fI8\fR
 \&. Note that there is a pair of length limits also in
 \fICracklib\fR,
 which is used for dictionary checking, a "way too short" limit of 4 which
@@ -150,9 +150,9 @@ digits, each digit will count +1 towards meeting the current
 \fBminlen\fR
 value\&. The default for
 \fBdcredit\fR
-is 1 which is the recommended value for
-\fBminlen\fR
-less than 10\&.
+is
+\fI0\fR
+which means there is no bonus for digits in password\&.
 .sp
 (N < 0) This is the minimum number of digits that must be met for a new
 password\&.
@@ -168,10 +168,8 @@ upper case letters each letter will count +1 towards meeting the current
 value\&. The default for
 \fBucredit\fR
 is
-\fI1\fR
-which is the recommended value for
-\fBminlen\fR
-less than 10\&.
+\fI0\fR
+which means there is no bonus for upper case letters in password\&.
 .sp
 (N < 0) This is the minimum number of upper case letters that must be met
 for a new password\&.
@@ -185,10 +183,9 @@ new password\&. If you have less than or
 lower case letters, each letter will count +1 towards meeting the current
 \fBminlen\fR
 value\&. The default for
-\fBlcredit\fR
-is 1 which is the recommended value for
-\fBminlen\fR
-less than 10\&.
+is
+\fI0\fR
+which means there is no bonus for lower case letters in password\&.
 .sp
 (N < 0) This is the minimum number of lower case letters that must be met
 for a new password\&.
@@ -203,9 +200,9 @@ other characters, each character will count +1 towards meeting the current
 \fBminlen\fR
 value\&. The default for
 \fBocredit\fR
-is 1 which is the recommended value for
-\fBminlen\fR
-less than 10\&.
+is
+\fI0\fR
+which means there is no bonus for other characters in password\&.
 .sp
 (N < 0) This is the minimum number of other characters that must be met for
 a new password\&.

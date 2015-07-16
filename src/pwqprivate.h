@@ -1,8 +1,8 @@
 /*
  * libpwquality internal header
  *
- * Copyright (c) Red Hat, Inc, 2011
- * Copyright (c) Tomas Mraz <tm@t8m.info>, 2011
+ * Copyright (c) Red Hat, Inc, 2011,2015
+ * Copyright (c) Tomas Mraz <tm@t8m.info>, 2011, 2015
  *
  * See the end of the file for the License Information
  */
@@ -34,12 +34,12 @@ struct setting_mapping {
         int type;
 };
 
-#define PWQ_DEFAULT_DIFF_OK      5
-#define PWQ_DEFAULT_MIN_LENGTH   9
-#define PWQ_DEFAULT_DIG_CREDIT   1
-#define PWQ_DEFAULT_UP_CREDIT    1
-#define PWQ_DEFAULT_LOW_CREDIT   1
-#define PWQ_DEFAULT_OTH_CREDIT   1
+#define PWQ_DEFAULT_DIFF_OK      1
+#define PWQ_DEFAULT_MIN_LENGTH   8
+#define PWQ_DEFAULT_DIG_CREDIT   0
+#define PWQ_DEFAULT_UP_CREDIT    0
+#define PWQ_DEFAULT_LOW_CREDIT   0
+#define PWQ_DEFAULT_OTH_CREDIT   0
 
 #define PWQ_TYPE_INT             1
 #define PWQ_TYPE_STR             2

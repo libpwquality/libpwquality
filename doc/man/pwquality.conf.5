@@ -4,7 +4,7 @@
 .de FN
 \fI\|\\$1\|\fP
 ..
-.TH PWQUALITY.CONF 5 "10 Nov 2011" "Red Hat, Inc."
+.TH PWQUALITY.CONF 5 "16 Jul 2015" "Red Hat, Inc."
 .SH NAME
 pwquality.conf \- configuration for the libpwquality library
 .SH SYNOPSIS
@@ -27,41 +27,41 @@ The possible options in the file are:
 \fBdifok\fR
 .RS 4
 Number of characters in the new password that must not be present in the
-old password. (default 5)
+old password. (default 1)
 .RE
 .PP
 \fBminlen\fR
 .RS 4
 Minimum acceptable size for the new password (plus one if credits are not
 disabled which is the default). (See \fIpam_pwquality(8)\fR.)
-Cannot be set to lower value than 6. (default 9)
+Cannot be set to lower value than 6. (default 8)
 .RE
 .PP
 \fBdcredit\fR
 .RS 4
 The maximum credit for having digits in the new password. If less than 0
-it is the minimum number of digits in the new password. (default 1)
+it is the minimum number of digits in the new password. (default 0)
 .RE
 .PP
 \fBucredit\fR
 .RS 4
 The maximum credit for having uppercase characters in the new password.
 If less than 0 it is the minimum number of uppercase characters in the new
-password. (default 1)
+password. (default 0)
 .RE
 .PP
 \fBlcredit\fR
 .RS 4
 The maximum credit for having lowercase characters in the new password.
 If less than 0 it is the minimum number of lowercase characters in the new
-password. (default 1)
+password. (default 0)
 .RE
 .PP
 \fBocredit\fR
 .RS 4
 The maximum credit for having other characters in the new password.
 If less than 0 it is the minimum number of other characters in the new
-password. (default 1)
+password. (default 0)
 .RE
 .PP
 \fBminclass\fR
