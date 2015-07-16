@@ -328,6 +328,9 @@ pwquality_get_int_value(pwquality_settings_t *pwq, int setting, int *value)
         case PWQ_SETTING_MAX_CLASS_REPEAT:
                 *value = pwq->max_class_repeat;
                 break;
+        case PWQ_SETTING_MAX_SEQUENCE:
+                *value = pwq->max_sequence;
+                break;
         case PWQ_SETTING_GECOS_CHECK:
                 *value = pwq->gecos_check;
                 break;
