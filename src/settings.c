@@ -99,18 +99,13 @@ set_name_value(pwquality_settings_t *pwq, const char *name, const char *value)
 
 #define PWQSETTINGS_MAX_LINELEN 1023
 
-/* parse the configuration file (if NULL then the default one) */
+/* parse a single configuration file*/
 int
-pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile, void **auxerror)
+read_config_file(pwquality_settings_t *pwq, const char *cfgfile, void **auxerror)
 {
         FILE *f;
         char linebuf[PWQSETTINGS_MAX_LINELEN+1];
         int rv = 0;
-
-        if (auxerror)
-                *auxerror = NULL;
-        if (cfgfile == NULL)
-                cfgfile = PWQUALITY_DEFAULT_CFGFILE;
 
         f = fopen(cfgfile, "r");
         if (f == NULL) {
@@ -184,6 +179,18 @@ pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile, void **aux
 
         (void)fclose(f);
         return rv;
+}
+
+/* parse the configuration file (if NULL then the default one) */
+int
+pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile, void **auxerror)
+{
+        if (auxerror)
+                *auxerror = NULL;
+        if (cfgfile == NULL)
+                cfgfile = PWQUALITY_DEFAULT_CFGFILE;
+
+        return read_config_file(pwq, cfgfile, auxerror);
 }
 
 /* useful for setting the options as configured on a pam module
