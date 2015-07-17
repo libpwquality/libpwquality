@@ -9,6 +9,7 @@
 pwquality.conf \- configuration for the libpwquality library
 .SH SYNOPSIS
 \fB/etc/security/pwquality.conf\fR
+\fB/etc/security/pwquality.conf.d/*.conf\fR
 .SH DESCRIPTION
 \fBpwquality.conf\fR provides a way to configure the default password
 quality requirements for the system passwords. This file is read by the
@@ -19,6 +20,9 @@ The file has a very simple \fIname = value\fR format with possible comments
 starting with \fB#\fR character. The whitespace at the beginning of line, end
 of line, and around the \fB=\fR sign is ignored.
 
+The libpwquality library also first reads all \fB*.conf\fR files from the
+\fB/etc/security/pwquality.conf.d\fR directory in ASCII sorted order. The
+values of the same settings are overriden in the order the files are parsed.
 .PD
 .SH OPTIONS
 The possible options in the file are:

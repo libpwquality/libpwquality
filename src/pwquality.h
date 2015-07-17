@@ -77,7 +77,10 @@ pwquality_free_settings(pwquality_settings_t *pwq);
 
 /* Parse the configuration file (if cfgfile is NULL then the default one).
  * If auxerror is not NULL it also possibly returns auxiliary error information
- * that must be passed into pwquality_strerror() function. */
+ * that must be passed into pwquality_strerror() function.
+ * New in 1.3.0: First tries to parse all *.conf configuration files from
+ *   <cfgfile>.d directory if it exists. Order of parsing determines what
+     values will be in effect - the latest wins. */
 int
 pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile,
         void **auxerror);

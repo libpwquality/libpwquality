@@ -12,6 +12,7 @@
 #include <limits.h>
 #include <ctype.h>
 #include <errno.h>
+#include <dirent.h>
 
 #include "pwquality.h"
 #include "pwqprivate.h"
@@ -181,14 +182,82 @@ read_config_file(pwquality_settings_t *pwq, const char *cfgfile, void **auxerror
         return rv;
 }
 
+static int
+filter_conf(const struct dirent *d)
+{
+        const char *p;
+
+        if ((p = strstr(d->d_name, ".conf")) == NULL)
+                return 0;
+
+        if (p[5] != '\0')
+                return 0;
+
+        return 1;
+}
+
+static int
+comp_func(const struct dirent **a, const struct dirent **b)
+{
+        return strcmp ((*a)->d_name, (*b)->d_name);
+}
+
 /* parse the configuration file (if NULL then the default one) */
 int
 pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile, void **auxerror)
 {
+        char *dirname;
+        struct dirent **namelist;
+        int n;
+        int i;
+        int rv = 0;
+
         if (auxerror)
                 *auxerror = NULL;
         if (cfgfile == NULL)
                 cfgfile = PWQUALITY_DEFAULT_CFGFILE;
+
+        /* read "*.conf" files from "<cfgfile>.d" directory first */
+
+        if (asprintf(&dirname, "%s.d", cfgfile) < 0)
+                return PWQ_ERROR_MEM_ALLOC;
+
+        /* we do not care about scandir races here so we use scandir */
+        n = scandir(dirname, &namelist, filter_conf, comp_func);
+
+        if (n < 0) {
+                namelist = NULL;
+
+                if (errno == ENOMEM) {
+                        free(dirname);
+                        return PWQ_ERROR_MEM_ALLOC;
+                } /* other errors are ignored */
+        }
+
+        for (i = 0; i < n; i++) {
+                char *subcfg;
+
+                if (rv) {
+                        free(namelist[i]);
+                        continue;
+                }
+
+                if (asprintf(&subcfg, "%s/%s", dirname, namelist[i]->d_name) < 0)
+                        rv = PWQ_ERROR_MEM_ALLOC;
+                else {
+                        rv = read_config_file(pwq, subcfg, auxerror);
+                        if (rv == PWQ_ERROR_CFGFILE_OPEN)
+                                rv = 0; /* ignore, this one does not modify auxerror */
+                        free(subcfg);
+                }
+
+                free(namelist[i]);
+        }
+        free(dirname);
+        free(namelist);
+
+        if (rv)
+                return rv;
 
         return read_config_file(pwq, cfgfile, auxerror);
 }
