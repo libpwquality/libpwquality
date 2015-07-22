@@ -1,0 +1,309 @@
+=pod
+
+=head1 NAME
+
+pam_pwquality - PAM module to perform password quality checking
+
+=head1 SYNOPSIS
+
+B<pam_pwquality.so> [I<...>]
+
+=head1 DESCRIPTION
+
+This module can be plugged into the B<password> stack of a given service
+to provide some plug-in strength-checking for passwords.
+The code was originally based on pam_cracklib module and the module is
+backwards compatible with its options.
+
+The action of this module is to prompt the user for a password and check
+its strength against a system dictionary and a set of rules for identifying
+poor choices.
+
+The first action is to prompt for a single password, check its strength
+and then, if it is considered strong, prompt for the password a second time
+(to verify that it was typed correctly on the first occasion). All being
+well, the password is passed on to subsequent modules to be installed as the
+new authentication token.
+
+The checks for strength are:
+
+=over 4
+
+=item Palindrome
+
+Is the new password a palindrome?
+
+=item Case Change Only
+
+Is the new password the the old one with only a change of case?
+
+=item Similar
+
+Is the new password too much like the old one? This is primarily controlled
+by one argument, B<difok> which is a number of character changes (inserts,
+removals, or replacements) between the old and new password that are enough
+to accept the new password.
+
+=item Simple
+
+Is the new password too small? This is controlled by 6 arguments
+B<minlen>, B<maxclassrepeat>, B<dcredit>, B<ucredit>, B<lcredit>,
+and B<ocredit>. See the section on the arguments for the details of how
+these work and there defaults.
+
+=item Rotated
+
+Is the new password a rotated version of the old password?
+
+=item Same consecutive characters
+
+Optional check for same consecutive characters.
+
+=item Too long monotonic character sequence
+
+Optional check for too long monotonic character sequence.
+
+=item Contains user name
+
+Optional check whether the password contains the user's name in some form.
+
+=item Dictionary check
+
+The I<Cracklib> routine is called to check if the password is part of
+a dictionary.
+
+=back
+
+These checks are configurable either by use of the module arguments
+or by modifying the F</etc/security/pwquality.conf> configuration file. The
+module arguments override the settings in the configuration file.
+
+=head1 OPTIONS
+
+=over 4
+
+=item B<debug>
+
+This option makes the module write information to L<syslog(3)>
+indicating the behavior of the module (this option does not write password
+information to the log file).
+
+=item B<authtok_type=>I<XXX>
+
+The default action is for the module to use the following prompts when
+requesting passwords: C<"New UNIX password: "> and
+C<"Retype UNIX password: ">. The example word
+I<UNIX> can be replaced with this option, by default it is empty.
+
+=item B<retry=>I<N>
+
+Prompt user at most I<N> times before returning with error. The default is
+I<1>.
+
+=item B<difok=>I<N>
+
+This argument will change the default of I<1> for the number of changes in
+the new password from the old password.
+
+=item B<minlen=>I<N>
+
+The minimum acceptable size for the new password (plus one if credits are not
+disabled which is the default). In addition to the number of characters in
+the new password, credit (of +1 in length) is given for each different kind
+of character (I<other>, I<upper>, I<lower> and I<digit>). The default for this
+parameter is I<8>. Note that there is a pair of length limits also in
+I<Cracklib>, which is used for dictionary checking, a "way too short" limit
+of I<4> which is hard coded in and a build time defined limit (I<6>) that will
+be checked without reference to B<minlen>.
+
+=item B<dcredit=>I<N>
+
+(N >= 0) This is the maximum credit for having digits in the new password.
+If you have less than or I<N> digits, each digit will count +1 towards meeting
+the current B<minlen> value. The default for B<dcredit> is I<0>
+which means there is no bonus for digits in password.
+
+(N < 0) This is the minimum number of digits that must be met for a new
+password.
+
+=item B<ucredit=>I<N>
+
+(N >= 0) This is the maximum credit for having upper case letters in the new password.
+If you have less than or I<N> upper case letters, each upper case letter will count +1 towards meeting
+the current B<minlen> value. The default for B<ucredit> is I<0>
+which means there is no bonus for upper case letters in password.
+
+(N < 0) This is the minimum number of upper case letters that must be met for a new
+password.
+
+=item B<lcredit=>I<N>
+
+(N >= 0) This is the maximum credit for having lower case letters in the new password.
+If you have less than or I<N> lower case letters, each lower case letter will count +1 towards meeting
+the current B<minlen> value. The default for B<lcredit> is I<0>
+which means there is no bonus for lower case letters in password.
+
+(N < 0) This is the minimum number of lower case letters that must be met for a new
+password.
+
+=item B<ocredit=>I<N>
+
+(N >= 0) This is the maximum credit for having other characters in the new password.
+If you have less than or I<N> other characters, each other character will count +1 towards meeting
+the current B<minlen> value. The default for B<ocredit> is I<0>
+which means there is no bonus for other characters in password.
+
+(N < 0) This is the minimum number of other characters that must be met for a new
+password.
+
+=item B<minclass=>I<N>
+
+The minimum number of required classes of characters for the new password.
+The four classes are digits, upper and lower letters and other characters.
+The difference to the B<credit> check is that a specific class if of
+characters is not required. Instead I<N> out of four of the classes are
+required. By default the check is disabled.
+
+=item B<maxrepeat=>I<N>
+
+Reject passwords which contain more than I<N> same consecutive characters.
+The default is 0 which means that this check is disabled.
+
+=item B<maxsequence=>I<N>
+
+Reject passwords which contain monotonic character sequences longer than I<N>.
+The default is 0 which means that this check is disabled.
+Examples of such sequence are '12345' or 'fedcb'. Note that
+most such passwords will not pass the simplicity check unless the sequence
+is only a minor part of the password.
+
+=item B<maxclassrepeat=>I<N>
+
+Reject passwords which contain more than I<N> consecutive characters of the
+same class. The default is 0 which means that this check is disabled.
+
+=item B<gecoscheck=>I<N>
+
+If nonzero, check whether the individual words longer than 3 characters
+from the L<passwd(5)> GECOS field of the user are contained in the new
+password. The default is 0 which means that this check is disabled.
+
+=item B<dictcheck=>I<N>
+
+If nonzero, check whether the password (with possible modifications)
+matches a word in a dictionary. Currently the dictionary check is performed
+using the I<cracklib> library. The default is 1 which means that this check
+is enabled.
+
+=item B<badwords=>I<< <list of words> >>
+
+The words more than 3 characters long from this space separated list are
+individually searched for and forbidden in the new password.
+By default the list is empty which means that this check is disabled.
+
+=item B<dictpath=>I</path/to/dict>
+
+This options allows for specification of non-default path to the cracklib
+dictionaries.
+
+=item B<enforce_for_root>
+
+The module will return error on failed check even if the user changing the
+password is root. This option is off by default which means that just
+the message about the failed check is printed but root can change
+the password anyway. Note that root is not asked for an old password
+so the checks that compare the old and new password are not performed.
+
+=item B<local_users_only>
+
+The module will not test the password quality for users that are not present
+in the F</etc/passwd> file. The module still asks for the password so
+the following modules in the stack can use the B<use_authtok> option.
+This option is off by default.
+
+=item B<use_authtok>
+
+This argument is used to I<force> the module to not prompt the user for
+a new password but use the one provided by the previously stacked
+B<password> module.
+
+=back
+
+=head1 MODULE TYPES PROVIDED
+
+Only the B<password> module type is provided.
+
+=head1 RETURN VALUES
+
+=over 4
+
+=item PAM_SUCCESS
+
+The new password passes all checks.
+
+=item PAM_AUTHTOK_ERR
+
+No new password was entered, the username could not be determined or the
+new password fails the strength checks.
+
+=item PAM_AUTHTOK_RECOVERY_ERR
+
+The old password was not supplied by a previous stacked module or got not
+requested from the user. The first error can happen if B<use_authtok>
+is specified.
+
+=item PAM_SERVICE_ERR
+
+A internal error occurred.
+
+=back
+
+=head1 EXAMPLES
+
+For an example of the use of this module, we show how it may be stacked
+with the password component of L<pam_unix(8)>.
+
+ #
+ # These lines stack two password type modules. In this example the
+ # user is given 3 opportunities to enter a strong password. The
+ # "use_authtok" argument ensures that the pam_unix module does not
+ # prompt for a password, but instead uses the one provided by
+ # pam_pwquality.
+ #
+ password required pam_pwquality.so retry=3
+ password required pam_unix.so use_authtok
+
+Another example is for the case that you want to use sha256 password
+encryption:
+
+ #
+ # These lines allow modern systems to support passwords of at least 14
+ # bytes with extra credit of 2 for digits and 2 for others the new
+ # password must have at least three bytes that are not present in the
+ # old password
+ #
+ password required pam_pwquality.so \
+               difok=3 minlen=15 dcredit=2 ocredit=2
+ password required pam_unix.so use_authtok nullok sha256
+
+And here is another example in case you don't want to use credits:
+
+ #
+ # These lines require the user to select a password with a minimum
+ # length of 8 and with at least 1 digit number, 1 upper case letter,
+ # and 1 other character
+ #
+ password required pam_pwquality.so \
+               dcredit=-1 ucredit=-1 ocredit=-1 lcredit=0 minlen=8
+ password required pam_unix.so use_authtok nullok sha256
+
+=head1 SEE ALSO
+
+L<pwscore(1)>, L<pwquality.conf(5)>, L<pam_pwquality(8)>,
+L<pam.conf(5)>, L<PAM(8)>
+
+=head1 AUTHORS
+
+Tomas Mraz <tmraz@redhat.com>
+
+Original author of B<pam_cracklib> module Cristian Gafton <gafton@redhat.com>

@@ -1,0 +1,48 @@
+=pod
+
+=head1 NAME
+
+B<pwmake> - simple tool for generating random relatively easily pronounceable
+passwords
+
+=head1 SYNOPSIS
+
+B<pwmake> I<< <entropy-bits> >>
+
+=head1 DESCRIPTION
+
+B<pwmake> is a simple configurable tool for generating random and relatively
+easily pronounceable passwords. The tool allows you to specify the number of
+entropy bits that are used to generate the password.
+
+The entropy is pulled from F</dev/urandom>.
+
+The minimum number of bits is I<56> which is usable for passwords on
+systems/services where brute force attacks are of very limited rate of tries.
+The I<64> bits should be adequate for applications where the attacker
+does not have direct access to the password hash file. For situations where
+the attacker might obtain the direct access to the password hash or the
+password is used as an encryption key I<80> to I<128> bits should be
+used depending on your level of paranoia.
+
+=head1 OPTIONS
+
+The first and only argument is the number of bits of entropy used to generate
+the password.
+
+=head1 FILES
+
+F</etc/security/pwquality.conf> - The configuration file for the libpwquality
+library.
+
+=head1 RETURN CODES
+
+B<pwmake> returns 0 on success, non zero on error.
+
+=head1 SEE ALSO
+
+L<pwscore(1)>, L<pam_pwquality(8)>
+
+=head1 AUTHORS
+
+Tomas Mraz <tmraz@redhat.com>

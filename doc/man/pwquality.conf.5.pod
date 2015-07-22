@@ -1,133 +1,123 @@
-.\" Escape single quotes in literal strings from groff's Unicode transform.
-.ie \n(.g .ds Aq \(aq
-.el       .ds Aq '
-.de FN
-\fI\|\\$1\|\fP
-..
-.TH PWQUALITY.CONF 5 "16 Jul 2015" "Red Hat, Inc."
-.SH NAME
-pwquality.conf \- configuration for the libpwquality library
-.SH SYNOPSIS
-\fB/etc/security/pwquality.conf\fR
-\fB/etc/security/pwquality.conf.d/*.conf\fR
-.SH DESCRIPTION
-\fBpwquality.conf\fR provides a way to configure the default password
+=pod
+
+=head1 NAME
+
+pwquality.conf - configuration for the libpwquality library
+
+=head1 SYNOPSIS
+
+F</etc/security/pwquality.conf>
+
+F</etc/security/pwquality.conf.d/*.conf>
+
+=head1 DESCRIPTION
+
+B<pwquality.conf> provides a way to configure the default password
 quality requirements for the system passwords. This file is read by the
 libpwquality library and utilities that use this library for checking
 and generating passwords.
 
-The file has a very simple \fIname = value\fR format with possible comments
-starting with \fB#\fR character. The whitespace at the beginning of line, end
-of line, and around the \fB=\fR sign is ignored.
+The file has a very simple I<name = value> format with possible comments
+starting with C<#> character. The whitespace at the beginning of line, end
+of line, and around the C<=> sign is ignored.
 
-The libpwquality library also first reads all \fB*.conf\fR files from the
-\fB/etc/security/pwquality.conf.d\fR directory in ASCII sorted order. The
+The libpwquality library also first reads all F<*.conf> files from the
+F</etc/security/pwquality.conf.d> directory in ASCII sorted order. The
 values of the same settings are overriden in the order the files are parsed.
-.PD
-.SH OPTIONS
+
+=head1 OPTIONS
+
 The possible options in the file are:
-.RS 4
-.PP
-\fBdifok\fR
-.RS 4
+
+=over 4
+
+=item B<difok>
+
 Number of characters in the new password that must not be present in the
 old password. (default 1)
-.RE
-.PP
-\fBminlen\fR
-.RS 4
+
+=item B<minlen>
+
 Minimum acceptable size for the new password (plus one if credits are not
-disabled which is the default). (See \fIpam_pwquality(8)\fR.)
+disabled which is the default). (See L<pam_pwquality(8)>.)
 Cannot be set to lower value than 6. (default 8)
-.RE
-.PP
-\fBdcredit\fR
-.RS 4
+
+=item B<dcredit>
+
 The maximum credit for having digits in the new password. If less than 0
 it is the minimum number of digits in the new password. (default 0)
-.RE
-.PP
-\fBucredit\fR
-.RS 4
+
+=item B<ucredit>
+
 The maximum credit for having uppercase characters in the new password.
 If less than 0 it is the minimum number of uppercase characters in the new
 password. (default 0)
-.RE
-.PP
-\fBlcredit\fR
-.RS 4
+
+=item B<lcredit>
+
 The maximum credit for having lowercase characters in the new password.
 If less than 0 it is the minimum number of lowercase characters in the new
 password. (default 0)
-.RE
-.PP
-\fBocredit\fR
-.RS 4
+
+=item B<ocredit>
+
 The maximum credit for having other characters in the new password.
 If less than 0 it is the minimum number of other characters in the new
 password. (default 0)
-.RE
-.PP
-\fBminclass\fR
-.RS 4
+
+=item B<minclass>
+
 The minimum number of required classes of characters for the new
 password (digits, uppercase, lowercase, others). (default 0)
-.RE
-.PP
-\fBmaxrepeat\fR
-.RS 4
+
+=item B<maxrepeat>
+
 The maximum number of allowed same consecutive characters in the new password.
 The check is disabled if the value is 0. (default 0)
-.RE
-.PP
-\fBmaxsequence\fR
-.RS 4
+
+=item B<maxsequence>
+
 The maximum length of monotonic character sequences in the new password.
-Examples of such sequence are \*(Aq12345\*(Aq or \*(Aqfedcb\*(Aq\&. Note
+Examples of such sequence are '12345' or 'fedcb'. Note
 that most such passwords will not pass the simplicity check unless
 the sequence is only a minor part of the password.
 The check is disabled if the value is 0. (default 0) 
-.RE
-.PP
-\fBmaxclassrepeat\fR
-.RS 4
+
+=item B<maxclassrepeat>
+
 The maximum number of allowed consecutive characters of the same class in the
 new password.
 The check is disabled if the value is 0. (default 0)
-.RE
-.PP
-\fBgecoscheck\fR
-.RS 4
-If nonzero, check whether the words longer than 3 characters from the GECOS
-field of the user's passwd entry are contained in the new password.
+
+=item B<gecoscheck>
+
+If nonzero, check whether the words longer than 3 characters from the I<GECOS>
+field of the user's L<passwd(5)> entry are contained in the new password.
 The check is disabled if the value is 0. (default 0)
-.RE
-.PP
-\fBdictcheck\fR
-.RS 4
+
+=item B<dictcheck>
+
 If nonzero, check whether the password (with possible modifications)
 matches a word in a dictionary. Currently the dictionary check is performed
 using the cracklib library. (default 1)
-.RE
-.PP
-\fBbadwords\fR
-.RS 4
+
+=item B<badwords>
+
 Space separated list of words that must not be contained in the password. These
 are additional words to the cracklib dictionary check. This setting can be
 also used by applications to emulate the gecos check for user accounts that are
 not created yet.
-.RE
-.PP
-\fBdictpath\fR
-.RS 4
+
+=item B<dictpath>
+
 Path to the cracklib dictionaries. Default is to use the cracklib default.
-.RE
 
-.PD
-.SH "SEE ALSO"
-pwscore(1), pwmake(1), pam_pwquality(8)
+=back
 
-.SH AUTHORS
-.nf
+=head1 SEE ALSO
+
+L<pwscore(1)>, L<pwmake(1)>, L<pam_pwquality(8)>
+
+=head1 AUTHORS
+
 Tomas Mraz <tmraz@redhat.com>
-.fi

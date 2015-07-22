@@ -1,0 +1,51 @@
+=pod
+
+=head1 NAME
+
+pwscore - simple configurable tool for checking quality of a password
+
+=head1 SYNOPSIS
+
+B<pwscore> [I<user>]
+
+=head1 DESCRIPTION
+
+B<pwscore> is a simple tool for checking quality of a password. The password
+is read from stdin.
+
+The tool uses the B<libpwquality> library to perform configurable checks
+for minimum length, dictionary checking against cracklib dictionaries,
+and other checks.
+
+It either reports an error if the password fails any of the checks, or it
+prints out the password quality score as an integer value between I<0> and
+I<100>.
+
+The password quality score is relative to the B<minlen> setting in the
+configuration file. But in general values below 50 can be treated as moderate
+quality and above it fairly strong quality. Any password that passes the quality
+checks (especially the mandatory cracklib check) should withstand dictionary
+attacks and scores above 50 with the default minlen setting even fast brute
+force attacks.
+
+=head1 OPTIONS
+
+The first and only optional argument is the user name that is used to check
+the similarity of the password to the username.
+
+=head1 FILES
+
+F</etc/security/pwquality.conf> - The configuration file for the libpwquality
+library.
+
+=head1 RETURN CODES
+
+B<pwscore> returns 0 on success, non zero on error.
+
+=head1 SEE ALSO
+
+L<pwscore(1)>, L<pwquality.conf(5)>, L<pam_pwquality(8)>
+
+=head1 AUTHORS
+
+Tomas Mraz <tmraz@redhat.com>
