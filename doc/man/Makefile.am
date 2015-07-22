@@ -1,10 +1,10 @@
-dist_man_MANS = pwmake.1 pwscore.1 pwquality.conf.5
+dist_man_MANS = pwmake.1 pwscore.1 pwquality.conf.5 pwquality.3
 
 if HAVE_PAM
 dist_man_MANS += pam_pwquality.8
 endif
 
-EXTRA_DIST=pam_pwquality.8.pod pwmake.1.pod pwscore.1.pod pwquality.conf.5.pod
+EXTRA_DIST=pam_pwquality.8.pod pwmake.1.pod pwscore.1.pod pwquality.conf.5.pod pwquality.3.pod
 
 %.8: %.8.pod
 	bash -c 'declare -u ucname=$*; pod2man --utf8 --name="$$ucname" --section=8 --center="Linux-PAM Manual" --release="Red Hat, Inc." $< $@'
@@ -15,5 +15,8 @@ EXTRA_DIST=pam_pwquality.8.pod pwmake.1.pod pwscore.1.pod pwquality.conf.5.pod
 %.5: %.5.pod
 	bash -c 'declare -u ucname=$*; pod2man --utf8 --name="$$ucname" --section=5 --center="File Formats Manual" --release="Red Hat, Inc." $< $@'
 
+%.3: %.3.pod
+	bash -c 'declare -u ucname=$*; pod2man --utf8 --name="$$ucname" --section=5 --center="Libpwquality API Manual" --release="Red Hat, Inc." $< $@'
+
 manclean:
-	rm *.8 *.1 *.5
+	rm *.8 *.1 *.5 *.3

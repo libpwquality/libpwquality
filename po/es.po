@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Adolfo Jayme Barrientos, 2015
 # Claudio Rodrigo Pereyra Diaz <elsupergomez@gmail.com>, 2011
@@ -16,11 +16,12 @@ msgstr ""
 "POT-Creation-Date: 2014-08-06 16:45+0200\n"
 "PO-Revision-Date: 2015-02-01 00:56+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos\n"
-"Language-Team: Spanish (http://www.transifex.com/projects/p/libpwquality/language/es/)\n"
+"Language-Team: Spanish (http://www.transifex.com/projects/p/libpwquality/"
+"language/es/)\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/pam_pwquality.c:25
@@ -50,9 +51,10 @@ msgstr "Uso: %s [usuario]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
-msgstr "       La orden lee la contraseña que se valorará a partir de la entrada estándar.\n"
+"       The command reads the password to be scored from the standard input.\n"
+msgstr ""
+"       La orden lee la contraseña que se valorará a partir de la entrada "
+"estándar.\n"
 
 #: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
 #, c-format
@@ -68,7 +70,9 @@ msgstr "No se pudo obtener la contraseña que se valorará"
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
-msgstr "Falló la comprobación de calidad de la contraseña:\n %s\n"
+msgstr ""
+"Falló la comprobación de calidad de la contraseña:\n"
+" %s\n"
 
 #: src/pwmake.c:22
 #, c-format
@@ -104,9 +108,10 @@ msgid "The password contains the user name in some form"
 msgstr "De alguna manera, en la contraseña se lee el nombre del usuario "
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
-msgstr "De alguna manera, en la contraseña existen palabras del nombre real del usuario"
+msgid "The password contains words from the real name of the user in some form"
+msgstr ""
+"De alguna manera, en la contraseña existen palabras del nombre real del "
+"usuario"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
@@ -168,37 +173,47 @@ msgstr "La contraseña contiene menos de %ld clases de caracteres"
 
 #: src/error.c:87
 msgid "The password does not contain enough character classes"
-msgstr "La contraseña no contiene la suficiente cantidad de clases de caracteres"
+msgstr ""
+"La contraseña no contiene la suficiente cantidad de clases de caracteres"
 
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr "La contraseña contiene más de %ld caracteres iguales en forma consecutiva"
+msgstr ""
+"La contraseña contiene más de %ld caracteres iguales en forma consecutiva"
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
-msgstr "La contraseña contiene en forma consecutiva demasiados caracteres iguales"
+msgstr ""
+"La contraseña contiene en forma consecutiva demasiados caracteres iguales"
 
 #: src/error.c:96
 #, c-format
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr "La contraseña contiene m ás de %ld caracteres de la misma clase en forma consecutiva"
+msgstr ""
+"La contraseña contiene m ás de %ld caracteres de la misma clase en forma "
+"consecutiva"
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr "La contraseña contiene en forma consecutiva demasiados caracteres de la misma clase"
+msgstr ""
+"La contraseña contiene en forma consecutiva demasiados caracteres de la "
+"misma clase"
 
 #: src/error.c:102
 #, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr "La contraseña contiene una secuencia monotónica mayor de %ld caracteres"
+msgstr ""
+"La contraseña contiene una secuencia monotónica mayor de %ld caracteres"
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"
-msgstr "La contraseña contiene una secuencia de caracteres monotónica demasiado extensa"
+msgstr ""
+"La contraseña contiene una secuencia de caracteres monotónica demasiado "
+"extensa"
 
 #: src/error.c:107
 msgid "No password supplied"
@@ -210,7 +225,9 @@ msgstr "No es posible obtener números aleatorios desde el dispositivo RNG"
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
-msgstr "Falló la creación de la contraseña - es necesaria una entropía demasiado pequeña para las configuraciones"
+msgstr ""
+"Falló la creación de la contraseña - es necesaria una entropía demasiado "
+"pequeña para las configuraciones"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"

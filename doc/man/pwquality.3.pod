@@ -1,0 +1,133 @@
+=pod
+
+=head1 NAME
+
+pwquality - Documentation of the libpwquality API
+
+=head1 SYNOPSIS
+
+ #include <pwquality.h>
+
+ pwquality_settings_t *pwquality_default_settings(void);
+ void pwquality_free_settings(pwquality_settings_t *pwq);
+
+ int pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile,
+        void **auxerror);
+
+ int pwquality_set_option(pwquality_settings_t *pwq, const char *option);
+ int pwquality_set_int_value(pwquality_settings_t *pwq, int setting, int value);
+ int pwquality_set_str_value(pwquality_settings_t *pwq, int setting,
+        const char *value);
+ int pwquality_get_int_value(pwquality_settings_t *pwq, int setting, int *value);
+ int pwquality_get_str_value(pwquality_settings_t *pwq, int setting, const char **value);
+
+ int pwquality_generate(pwquality_settings_t *pwq, int entropy_bits,
+        char **password);
+
+ int pwquality_check(pwquality_settings_t *pwq, const char *password,
+        const char *oldpassword, const char *user, void **auxerror);
+
+ const char *pwquality_strerror(char *buf, size_t len, int errcode, void *auxerror);
+
+=head1 DESCRIPTION
+
+Function I<pwquality_default_settings()> allocates and returns default pwquality settings
+to be used in other library calls. The allocated opaque structure has to be freed
+with the I<pwquality_free_settings()> call.
+
+The I<pwquality_read_config()> parses the configuration file (if B<cfgfile> is NULL
+then the default one). If B<auxerror> is not NULL it also possibly returns auxiliary
+error information that must be passed into I<pwquality_strerror()> function.
+
+=over 4
+
+=item B<New in 1.3.0:>
+
+The library first tries to parse all F<*.conf> configuration files from
+F<< <cfgfile>.d >> directory if it exists. Order of parsing determines what values will
+be in effect - the latest wins.
+
+=back
+
+Function I<pwquality_set_option()> is useful for setting the options as configured
+on a pam module command line in form of <opt>=<val>.
+
+Getter and setter functions for the individual integer and string setting values are:
+I<pwquality_set_int_value()>, I<pwquality_set_str_value()>,
+I<pwquality_get_int_value()>, and I<pwquality_get_str_value()>. In case of the
+string getter the caller must copy the string before another calls that can
+manipulate the B<pwq> settings object.
+
+The I<pwquality_generate()> function generates a random password of B<entropy_bits> entropy
+and check it according to the settings. The B<*password> is allocated on heap by the
+library.
+
+The I<pwquality_check()> function checks the B<password> according to the settings. It
+returns either score <0-100>, negative error number, and possibly also auxiliary error
+information that must be passed into I<pwquality_strerror()> function.
+The B<oldpassword> is optional and can be NULL.
+The B<user> is used for checking the B<password> against the user name
+and potentially other L<passwd(5)> information and can be NULL.
+The B<auxerror> can be NULL - in that case the auxiliary error information
+is not returned.
+However if it is non-NULL not passing the returned B<*auxerror> into
+I<pwquality_strerror()> can lead to memory leaks.
+The score depends on value of the setting B<PWQ_SETTING_MIN_LENGTH>. If it is
+set higher, the score for the same passwords will be lower.
+
+Function I<pwquality_strerror()> translates the B<errcode> and B<auxerror> auxiliary
+data into localized text message. If B<buf> is NULL the function uses an internal static
+buffer which makes the function non-reentrant in that case. The returned pointer is not
+guaranteed to point to the B<buf>.
+
+=head1 RETURN VALUES
+
+In general the functions which return B<int> return 0 as success value and negative values
+as concrete B<PWQ_ERROR> error code. I<pwquality_strerror()> does not allocate data
+and so it cannot fail.
+
+The returned positive or zero score from I<pwquality_check()> should not be used for
+rejection of passwords, it should be used only as approximate indicator of entropy present
+in the password with values such as 0-30 being low, 30-60 medium, and 60-100 high.
+
+=head1 EXAMPLE
+
+Typical use of the libpwquality API:
+
+ #include <pwquality.h>
+ 
+ ...
+
+        pwquality_settings_t *pwq;
+        int rv;
+        void *auxerror;
+        char buf[1024];
+
+        pwq = pwquality_default_settings();
+        if (pwq == NULL) {
+                fprintf(stderr, "Error: %s\n", pwquality_strerror(buf, sizeof(buf), PWQ_ERROR_MEM_ALLOC, NULL));
+                return -1;
+        }
+ 
+        if ((rv=pwquality_read_config(pwq, NULL, &auxerror)) != 0) {
+                pwquality_free_settings(pwq);
+                fprintf(stderr, "Error: %s\n", pwquality_strerror(buf, sizeof(buf), rv, auxerror));
+                return -1;
+        }
+ 
+        rv = pwquality_check(pwq, buf, NULL, user, &auxerror);
+        pwquality_free_settings(pwq);
+
+        if (rv >= 0) {
+                fprintf(stderr, "Password entropy score is: %d\n", rv);
+        } else {
+                fprintf(stderr, "Password is rejected with error: %s\n", pwquality_strerror(buf, sizeof(buf), rv, auxerror));
+        }
+
+=head1 SEE ALSO
+
+L<pwquality.conf(5)>
+
+=head1 AUTHORS
+
+Tomas Mraz <tmraz@redhat.com>
