@@ -100,7 +100,7 @@ consume_entropy(char *buf, int bits, int *remaining, int *offset)
 int
 pwquality_generate(pwquality_settings_t *pwq, int entropy_bits, char **password)
 {
-        char entropy[PWQ_MAX_ENTROPY_BITS/8 + 1];
+        char entropy[(PWQ_MAX_ENTROPY_BITS+PWQ_MAX_ENTROPY_BITS/9)/8 + 2];
         char *tmp;
         int maxlen;
         int try = 0;
