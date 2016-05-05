@@ -65,7 +65,7 @@ Optional check for too long monotonic character sequence.
 
 =item Contains user name
 
-Optional check whether the password contains the user's name in some form.
+Check whether the password contains the user's name in some form.
 
 =item Dictionary check
 
