@@ -101,6 +101,12 @@ If nonzero, check whether the password (with possible modifications)
 matches a word in a dictionary. Currently the dictionary check is performed
 using the cracklib library. (default 1)
 
+=item B<usercheck=>I<N>
+
+If nonzero, check whether the password (with possible modifications)
+contains the user name in some form. It is not performed for user names shorter
+than 3 characters. (default 1)
+
 =item B<badwords>
 
 Space separated list of words that must not be contained in the password. These

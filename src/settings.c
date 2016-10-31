@@ -34,6 +34,7 @@ pwquality_default_settings(void)
         pwq->low_credit = PWQ_DEFAULT_LOW_CREDIT;
         pwq->oth_credit = PWQ_DEFAULT_OTH_CREDIT;
         pwq->dict_check = PWQ_DEFAULT_DICT_CHECK;
+        pwq->user_check = PWQ_DEFAULT_USER_CHECK;
 
         return pwq;
 }
@@ -62,6 +63,7 @@ static const struct setting_mapping s_map[] = {
  { "maxsequence", PWQ_SETTING_MAX_SEQUENCE, PWQ_TYPE_INT},
  { "gecoscheck", PWQ_SETTING_GECOS_CHECK, PWQ_TYPE_INT},
  { "dictcheck", PWQ_SETTING_DICT_CHECK, PWQ_TYPE_INT},
+ { "usercheck", PWQ_SETTING_USER_CHECK, PWQ_TYPE_INT},
  { "badwords", PWQ_SETTING_BAD_WORDS, PWQ_TYPE_STR},
  { "dictpath", PWQ_SETTING_DICT_PATH, PWQ_TYPE_STR}
 };
@@ -333,6 +335,9 @@ pwquality_set_int_value(pwquality_settings_t *pwq, int setting, int value)
         case PWQ_SETTING_DICT_CHECK:
                 pwq->dict_check = value;
                 break;
+        case PWQ_SETTING_USER_CHECK:
+                pwq->user_check = value;
+                break;
         default:
                 return PWQ_ERROR_NON_INT_SETTING;
         }
@@ -412,6 +417,9 @@ pwquality_get_int_value(pwquality_settings_t *pwq, int setting, int *value)
                 break;
         case PWQ_SETTING_DICT_CHECK:
                 *value = pwq->dict_check;
+                break;
+        case PWQ_SETTING_USER_CHECK:
+                *value = pwq->user_check;
                 break;
         default:
                 return PWQ_ERROR_NON_INT_SETTING;

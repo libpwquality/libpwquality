@@ -195,6 +195,13 @@ matches a word in a dictionary. Currently the dictionary check is performed
 using the I<cracklib> library. The default is 1 which means that this check
 is enabled.
 
+=item B<usercheck=>I<N>
+
+If nonzero, check whether the password (with possible modifications)
+contains the user name in some form. The default is 1 which means that
+this check is enabled. It is not performed for user names shorter
+than 3 characters.
+
 =item B<badwords=>I<< <list of words> >>
 
 The words more than 3 characters long from this space separated list are

@@ -560,7 +560,8 @@ password_check(pwquality_settings_t *pwq,
         if (!rv && sequence(pwq, new, auxerror))
                 rv = PWQ_ERROR_MAX_SEQUENCE;
 
-        if (!rv && usermono && usercheck(pwq, newmono, usermono))
+        if (!rv && usermono && pwq->user_check &&
+                usercheck(pwq, newmono, usermono))
                 rv = PWQ_ERROR_USER_CHECK;
 
         if (!rv && user && pwq->gecos_check)
