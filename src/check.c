@@ -22,6 +22,8 @@
 #endif
 #define MIN(_a, _b) (((_a) < (_b)) ? (_a) : (_b))
 
+#define PW_MIN_USERNAME_LEN_TO_CHECK 3
+
 /* Helper functions */
 
 /*
@@ -373,7 +375,12 @@ usercheck(pwquality_settings_t *pwq, const char *new,
           char *user)
 {
         char *f, *b;
-        int dist;
+        int dist, userlen = strlen(user);
+
+        /* No point to check for username in password in 1 or 2-char
+         * usernames; it will be contained one way or another anyway. */
+        if (userlen < PW_MIN_USERNAME_LEN_TO_CHECK)
+        	return 0;
 
         if (strstr(new, user) != NULL)
                 return 1;
@@ -385,7 +392,7 @@ usercheck(pwquality_settings_t *pwq, const char *new,
         /* now reverse the username, we can do that in place
                 as it is strdup-ed */
         f = user;
-        b = user + strlen(user) - 1;
+        b = user + userlen - 1;
         while (f < b) {
                 char c;
 
