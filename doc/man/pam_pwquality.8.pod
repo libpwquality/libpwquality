@@ -202,6 +202,12 @@ contains the user name in some form. The default is 1 which means that
 this check is enabled. It is not performed for user names shorter
 than 3 characters.
 
+=item B<enforcing=>I<N>
+
+If nonzero, reject the password if it fails the checks, otherwise
+only print the warning. The default is 1 which means that the weak password
+is rejected (for non-root users).
+
 =item B<badwords=>I<< <list of words> >>
 
 The words more than 3 characters long from this space separated list are

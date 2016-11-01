@@ -107,6 +107,13 @@ If nonzero, check whether the password (with possible modifications)
 contains the user name in some form. It is not performed for user names shorter
 than 3 characters. (default 1)
 
+=item B<enforcing=>I<N>
+
+If nonzero, reject the password if it fails the checks, otherwise
+only print the warning. This setting applies only to the pam_pwquality module
+and possibly other applications that explicitly change their behavior
+based on it. It does not affect L<pwmake(1)> and L<pwscore(1)>. (default 1)
+
 =item B<badwords>
 
 Space separated list of words that must not be contained in the password. These

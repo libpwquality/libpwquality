@@ -235,13 +235,15 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
                         if (retval < 0) {
                                 const char *msg;
                                 char buf[PWQ_MAX_ERROR_MESSAGE_LEN];
+                                int enforcing = 1;
                                 msg = pwquality_strerror(buf, sizeof(buf), retval, auxerror);
                                 if (ctrl & PAM_DEBUG_ARG)
                                         pam_syslog(pamh, LOG_DEBUG, "bad password: %s", msg);
                                 pam_error(pamh, _("BAD PASSWORD: %s"), msg);
+                                pwquality_get_int_value(options.pwq, PWQ_SETTING_ENFORCING, &enforcing);
 
-                                if (getuid() || options.enforce_for_root ||
-                                    (flags & PAM_CHANGE_EXPIRED_AUTHTOK)) {
+                                if (enforcing && (getuid() || options.enforce_for_root ||
+                                    (flags & PAM_CHANGE_EXPIRED_AUTHTOK))) {
                                         pam_set_item(pamh, PAM_AUTHTOK, NULL);
                                         retval = PAM_AUTHTOK_ERR;
                                         continue;

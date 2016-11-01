@@ -26,6 +26,7 @@ struct pwquality_settings {
         int gecos_check;
         int dict_check;
         int user_check;
+        int enforcing;
         char *bad_words;
         char *dict_path;
 };
@@ -44,6 +45,7 @@ struct setting_mapping {
 #define PWQ_DEFAULT_OTH_CREDIT   0
 #define PWQ_DEFAULT_DICT_CHECK   1
 #define PWQ_DEFAULT_USER_CHECK   1
+#define PWQ_DEFAULT_ENFORCING    1
 
 #define PWQ_TYPE_INT             1
 #define PWQ_TYPE_STR             2
