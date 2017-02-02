@@ -46,6 +46,7 @@ pwquality_free_settings(pwquality_settings_t *pwq)
 {
         if (pwq) {
                 free(pwq->dict_path);
+                free(pwq->bad_words);
                 free(pwq);
         }
 }
