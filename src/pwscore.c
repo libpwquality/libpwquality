@@ -34,9 +34,11 @@ main(int argc, char *argv[])
         size_t len;
         char *user = NULL;
 
+#ifdef ENABLE_NLS
         setlocale(LC_ALL, "");
         bindtextdomain("libpwquality", "/usr/share/locale");
         textdomain("libpwquality");
+#endif
 
         if (argc > 2) {
                 usage(basename(argv[0]));
