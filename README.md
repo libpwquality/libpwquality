@@ -10,6 +10,6 @@ The module supports all the options of pam_cracklib.
 
 # Project mailing lists
 
- * [Mailing list for developer discussions](https://fedorahosted.org/mailman/listinfo/libpwquality-devel libpwquality-devel)
- * [Mailing list for repository commit notifications](https://fedorahosted.org/mailman/listinfo/libpwquality-commits libpwquality-commits)
+ * [Mailing list for developer discussions](https://fedorahosted.org/mailman/listinfo/libpwquality-devel)
+ * [Mailing list for repository commit notifications](https://fedorahosted.org/mailman/listinfo/libpwquality-commits)
 
