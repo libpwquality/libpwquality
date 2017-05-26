@@ -672,6 +672,9 @@ pwquality_check(pwquality_settings_t *pwq, const char *password,
                 return PWQ_ERROR_SAME_PASSWORD;
         }
 
+        if (pwq->diff_ok == 0)
+                oldpassword = NULL;
+
         score = password_check(pwq, password, oldpassword, user, auxerror);
 
         if (score != 0)

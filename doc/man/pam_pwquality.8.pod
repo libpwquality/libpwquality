@@ -105,6 +105,10 @@ I<1>.
 This argument will change the default of I<1> for the number of changes in
 the new password from the old password.
 
+The special value of I<0> disables all checks of similarity of the new password
+with the old password except the new password being exactly the same as
+the old one.
+
 =item B<minlen=>I<N>
 
 The minimum acceptable size for the new password (plus one if credits are not
