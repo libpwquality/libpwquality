@@ -1,5 +1,17 @@
 libpwquality NEWS -- history of user-visible changes.
 
+Release 1.4.0
+* Fix possible buffer overflow with data from /dev/urandom
+  in pwquality_generate().
+* Do not try to check presence of too short username in password.
+  (thanks to Nikos Mavrogiannopoulos)
+* Make the user name check optional (via usercheck option).
+* Add an 'enforcing' option to make the checks to be warning-only
+  in PAM.
+* The difok = 0 setting will disable all old password similarity
+  checks except new and old passwords being identical.
+* Updated translations from Zanata.
+
 Release 1.3.0
 * Change the defaults for credits, difok, and minlen
 * Make the cracklib check optional but on by default
