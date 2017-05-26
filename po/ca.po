@@ -5,20 +5,22 @@
 # Translators:
 # Albert Carabasa Giribet <albertc@asic.udl.cat>, 2009
 # xqueralt <xqueralt@gmail.com>, 2008
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2015. #zanata
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: PWQuality library\n"
+"Project-Id-Version: libpwquality 1.2.4\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2015-07-23 13:45+0200\n"
-"PO-Revision-Date: 2013-11-20 10:42+0000\n"
-"Last-Translator: Tomáš Mráz <tmraz@fedoraproject.org>\n"
-"Language-Team: Catalan (http://www.transifex.com/projects/p/libpwquality/"
-"language/ca/)\n"
-"Language: ca\n"
+"POT-Creation-Date: 2014-08-06 16:45+0200\n"
+"PO-Revision-Date: 2016-10-23 04:43-0400\n"
+"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
+"Language-Team: Catalan (http://www.transifex.com/projects/p/libpwquality/language/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ca\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Zanata 3.9.6\n"
 
 #: src/pam_pwquality.c:25
 #, c-format
@@ -37,27 +39,30 @@ msgstr "Les contrasenyes no coincideixen."
 #: src/pam_pwquality.c:241
 #, c-format
 msgid "BAD PASSWORD: %s"
-msgstr "CONTRASENYA INCORRECTA: %s"
+msgstr "CONTRASENYA DOLENTA: %s"
 
 #: src/pwscore.c:22
 #, c-format
 msgid "Usage: %s [user]\n"
-msgstr ""
+msgstr "Ús: %s [usuari]\n"
 
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
+"       The command reads the password to be scored from the standard "
+"input.\n"
 msgstr ""
+"       L'ordre llegeix la contrasenya a ser qualificada des de l'entrada "
+"estàndard.\n"
 
 #: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
 #, c-format
 msgid "Error: %s\n"
-msgstr ""
+msgstr "Error: %s\n"
 
 #: src/pwscore.c:51
 msgid "Could not obtain the password to be scored"
-msgstr ""
+msgstr "No es pot obtenir la contrasenya a ser qualificada"
 
 #: src/pwscore.c:73
 #, c-format
@@ -65,114 +70,119 @@ msgid ""
 "Password quality check failed:\n"
 " %s\n"
 msgstr ""
+"La comprovació de la qualitat de la contrasenya ha fallat:\n"
+" %s\n"
 
 #: src/pwmake.c:22
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
-msgstr ""
+msgstr "Ús: %s <bits-entropia>\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
-msgstr ""
+msgstr "Error d'assignació de memòria en l'ajustament"
 
 #: src/error.c:35
 msgid "Memory allocation error"
-msgstr ""
+msgstr "Error d'assignació de memòria"
 
 #: src/error.c:37
 msgid "The password is the same as the old one"
-msgstr ""
+msgstr "La contrasenya és la mateixa que l'antiga"
 
 #: src/error.c:39
 msgid "The password is a palindrome"
-msgstr ""
+msgstr "La contrasenya és un palíndrom"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
 msgstr ""
+"La contrasenya es diferencia tan sols amb canvis de majúscules a minúscules"
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
-msgstr ""
+msgstr "La contrasenya és molt semblant a l'antiga"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr ""
+msgstr "La contrasenya d'alguna manera conté el nom d'usuari"
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
+msgid ""
+"The password contains words from the real name of the user in some form"
 msgstr ""
+"La contrasenya d'alguna manera conté paraules del nom real de l'usuari"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
-msgstr ""
+msgstr "La contrasenya d'alguna manera conté paraules prohibides"
 
 #: src/error.c:52
 #, c-format
 msgid "The password contains less than %ld digits"
-msgstr ""
+msgstr "La contrasenya conté menys de %ld dígits"
 
 #: src/error.c:55
 msgid "The password contains too few digits"
-msgstr ""
+msgstr "La contrasenya no conté prou dígits"
 
 #: src/error.c:58
 #, c-format
 msgid "The password contains less than %ld uppercase letters"
-msgstr ""
+msgstr "La contrasenya conté menys de %ld lletres en majúscula"
 
 #: src/error.c:61
 msgid "The password contains too few uppercase letters"
-msgstr ""
+msgstr "La contrasenya no conté prou lletres en majúscula"
 
 #: src/error.c:64
 #, c-format
 msgid "The password contains less than %ld lowercase letters"
-msgstr ""
+msgstr "La contrasenya conté menys de %ld lletres en minúscula"
 
 #: src/error.c:67
 msgid "The password contains too few lowercase letters"
-msgstr ""
+msgstr "La contrasenya no conté prou lletres en minúscula"
 
 #: src/error.c:70
 #, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr ""
+msgstr "La contrasenya conté menys de %ld caràcters no alfanumèrics"
 
 #: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
-msgstr ""
+msgstr "La contrasenya no conté prou caràcters no alfanumèrics"
 
 #: src/error.c:76
 #, c-format
 msgid "The password is shorter than %ld characters"
-msgstr ""
+msgstr "La contrasenya és inferior als %ld caràcters"
 
 #: src/error.c:79
 msgid "The password is too short"
-msgstr ""
+msgstr "La contrasenya és massa curta"
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
-msgstr ""
+msgstr "La contrasenya solament és una rotació de l'antiga"
 
 #: src/error.c:84
 #, c-format
 msgid "The password contains less than %ld character classes"
-msgstr ""
+msgstr "La contrasenya conté menys de %ld classes de caràcters"
 
 #: src/error.c:87
 msgid "The password does not contain enough character classes"
-msgstr ""
+msgstr "La contrasenya no conté prou classes de caràcters"
 
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr ""
+msgstr "La contrasenya conté consecutivament més de %ld caràcters idèntics "
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
-msgstr ""
+msgstr "La contrasenya conté consecutivament massa caràcters idèntics "
 
 #: src/error.c:96
 #, c-format
@@ -180,20 +190,23 @@ msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
 msgstr ""
+"La contrasenya conté consecutivament més de %ld caràcters de la mateixa "
+"classe "
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
 msgstr ""
+"La contrasenya conté consecutivament massa caràcters de la mateixa classe "
 
 #: src/error.c:102
 #, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr ""
+msgstr "La contrasenya conté una seqüència monòtona amb més de %ld caràcters"
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"
-msgstr ""
+msgstr "La contrasenya conté una seqüència monòtona de caràcters massa gran"
 
 #: src/error.c:107
 msgid "No password supplied"
@@ -201,57 +214,59 @@ msgstr "No s'ha proporcionat cap contrasenya"
 
 #: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
-msgstr ""
+msgstr "No es poden obtenir números aleatoris del dispositiu RNG"
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
+"La generació de la contrasenya ha fallat - es va exigir una entropia molt "
+"baixa per als ajustos"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
-msgstr ""
+msgstr "La contrasenya no passa la comprovació del diccionari"
 
 #: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
-msgstr ""
+msgstr "Ajust desconegut"
 
 #: src/error.c:127
 msgid "Bad integer value of setting"
-msgstr ""
+msgstr "El valor de l'ajust de l'enter és dolent"
 
 #: src/error.c:131
 msgid "Bad integer value"
-msgstr ""
+msgstr "El valor de l'enter és dolent"
 
 #: src/error.c:134
 #, c-format
 msgid "Setting %s is not of integer type"
-msgstr ""
+msgstr "L'ajust %s no és de tipus enter"
 
 #: src/error.c:138
 msgid "Setting is not of integer type"
-msgstr ""
+msgstr "L'ajust no és de tipus enter"
 
 #: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
-msgstr ""
+msgstr "L'ajust %s no és del tipus cadena de text"
 
 #: src/error.c:145
 msgid "Setting is not of string type"
-msgstr ""
+msgstr "L'ajust no és del tipus cadena de text"
 
 #: src/error.c:147
 msgid "Opening the configuration file failed"
-msgstr ""
+msgstr "L'obertura del fitxer de configuració ha fallat"
 
 #: src/error.c:149
 msgid "The configuration file is malformed"
-msgstr ""
+msgstr "El fitxer de configuració té un format incorrecte"
 
 #: src/error.c:151
 msgid "Fatal failure"
-msgstr ""
+msgstr "Error fatal"
 
 #: src/error.c:153
 msgid "Unknown error"

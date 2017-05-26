@@ -8,19 +8,18 @@
 # ngoswami <ngoswami@redhat.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: libpwquality 1.2.4\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2015-07-23 13:45+0200\n"
-"PO-Revision-Date: 2013-09-04 09:29-0400\n"
-"Last-Translator: ngoswami <ngoswami@redhat.com>\n"
-"Language-Team: Assamese (http://www.transifex.com/projects/p/libpwquality/"
-"language/as/)\n"
-"Language: as\n"
+"POT-Creation-Date: 2014-08-06 16:45+0200\n"
+"PO-Revision-Date: 2015-03-14 08:37-0400\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: Assamese (http://www.transifex.com/projects/p/libpwquality/language/as/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: as\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 3.1.2\n"
+"X-Generator: Zanata 3.9.6\n"
 
 #: src/pam_pwquality.c:25
 #, c-format
@@ -49,7 +48,8 @@ msgstr "ব্যৱহাৰ: %s [ব্যৱহাৰকাৰী]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
+"       The command reads the password to be scored from the standard "
+"input.\n"
 msgstr "       কমান্ডে প্ৰামাণিক ইনপুটৰ পৰা স্কৌৰ কৰিব লগিয়া পাছৱাৰ্ড পঢ়ে।\n"
 
 #: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
@@ -104,7 +104,8 @@ msgid "The password contains the user name in some form"
 msgstr "পাছৱাৰ্ডে ব্যৱহাৰকাৰী নাম কিবা বিন্যাসত অন্তৰ্ভুক্ত কৰে"
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
+msgid ""
+"The password contains words from the real name of the user in some form"
 msgstr "পাছৱাৰ্ডে ব্যৱহাৰকাৰীৰ নামৰ পৰা এটা বিন্যাসত শব্দ অন্তৰ্ভুক্ত কৰে"
 
 #: src/error.c:49

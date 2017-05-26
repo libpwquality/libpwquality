@@ -6,18 +6,18 @@
 # shankar <svenkate@redhat.com>, 2007-2009
 msgid ""
 msgstr ""
-"Project-Id-Version: PWQuality library\n"
+"Project-Id-Version: libpwquality 1.2.4\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2015-07-23 13:45+0200\n"
-"PO-Revision-Date: 2013-11-29 13:46+0000\n"
-"Last-Translator: Tomáš Mráz <tmraz@fedoraproject.org>\n"
-"Language-Team: Kannada (http://www.transifex.com/projects/p/libpwquality/"
-"language/kn/)\n"
-"Language: kn\n"
+"POT-Creation-Date: 2014-08-06 16:45+0200\n"
+"PO-Revision-Date: 2015-03-14 08:38-0400\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: Kannada (http://www.transifex.com/projects/p/libpwquality/language/kn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: kn\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Zanata 3.9.6\n"
 
 #: src/pam_pwquality.c:25
 #, c-format
@@ -46,8 +46,10 @@ msgstr "ಬಳಕೆ: %s [ಬಳಕೆದಾರ]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
-msgstr "       ಗುಪ್ತಪದವನ್ನು ಶಿಷ್ಟವಾದ ಇನ್‌ಪುಟ್‌ನಿಂದ ಸ್ಕೋರ್ ಮಾಡಿರುವಂತೆ ಓದುತ್ತದೆ.\n"
+"       The command reads the password to be scored from the standard "
+"input.\n"
+msgstr ""
+"       ಗುಪ್ತಪದವನ್ನು ಶಿಷ್ಟವಾದ ಇನ್‌ಪುಟ್‌ನಿಂದ ಸ್ಕೋರ್ ಮಾಡಿರುವಂತೆ ಓದುತ್ತದೆ.\n"
 
 #: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
 #, c-format
@@ -101,7 +103,8 @@ msgid "The password contains the user name in some form"
 msgstr "ಗುಪ್ತಪದವು ಬಳಕೆದಾರ ಹೆಸರಿನ ಒಂದು ರೂಪವನ್ನು ಹೊಂದಿದೆ"
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
+msgid ""
+"The password contains words from the real name of the user in some form"
 msgstr "ಗುಪ್ತಪದವು ಬಳಕೆದಾರರ ನಿಜವಾದ ಹೆಸರಿನ ಒಂದು ರೂಪದ ಪದಗಳನ್ನು ಹೊಂದಿದೆ"
 
 #: src/error.c:49
@@ -207,8 +210,8 @@ msgstr "RNG ಸಾಧನಕ್ಕಾಗಿ ಮನಸ್ಸಿಗೆ ಬಂದ �
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
-"ಗುಪ್ತಪದವನ್ನು ಉತ್ಪಾದಿಸುವಿಕೆಯು ವಿಫಲಗೊಂಡಿದೆ - ಸಿದ್ಧತೆಗಳಿಗಾಗಿ ಅಗತ್ಯವಿರುವ ಎಂಟ್ರೋಪಿಯು "
-"ಬಹಳ ಕೆಳಮಟ್ಟದಲ್ಲಿದೆ"
+"ಗುಪ್ತಪದವನ್ನು ಉತ್ಪಾದಿಸುವಿಕೆಯು ವಿಫಲಗೊಂಡಿದೆ - ಸಿದ್ಧತೆಗಳಿಗಾಗಿ ಅಗತ್ಯವಿರುವ "
+"ಎಂಟ್ರೋಪಿಯು ಬಹಳ ಕೆಳಮಟ್ಟದಲ್ಲಿದೆ"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
