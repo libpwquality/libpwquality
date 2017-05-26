@@ -22,8 +22,6 @@
 #endif
 #define MIN(_a, _b) (((_a) < (_b)) ? (_a) : (_b))
 
-#define PW_MIN_USERNAME_LEN_TO_CHECK 3
-
 /* Helper functions */
 
 /*
@@ -377,10 +375,10 @@ usercheck(pwquality_settings_t *pwq, const char *new,
         char *f, *b;
         int dist, userlen = strlen(user);
 
-        /* No point to check for username in password in 1 or 2-char
+        /* No point to check for username in password in 1-3 char
          * usernames; it will be contained one way or another anyway. */
-        if (userlen < PW_MIN_USERNAME_LEN_TO_CHECK)
-        	return 0;
+        if (userlen < PWQ_MIN_WORD_LENGTH)
+                return 0;
 
         if (strstr(new, user) != NULL)
                 return 1;
