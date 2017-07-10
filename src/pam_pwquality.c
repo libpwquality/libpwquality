@@ -21,12 +21,6 @@
 #include <errno.h>
 #include "pwquality.h"
 
-/* For Translators: "%s%s" could be replaced with "<service> " or "". */
-#define PROMPT1 _("New %s%spassword: ")
-/* For Translators: "%s%s" could be replaced with "<service> " or "". */
-#define PROMPT2 _("Retype new %s%spassword: ")
-#define MISTYPED_PASS _("Sorry, passwords do not match.")
-
 /*
  * here, we make a definition for the externally accessible function
  * in this file (this definition is required for static a module
