@@ -23,7 +23,7 @@ of line, and around the C<=> sign is ignored.
 
 The libpwquality library also first reads all F<*.conf> files from the
 F</etc/security/pwquality.conf.d> directory in ASCII sorted order. The
-values of the same settings are overriden in the order the files are parsed.
+values of the same settings are overridden in the order the files are parsed.
 
 =head1 OPTIONS
 

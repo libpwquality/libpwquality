@@ -16,7 +16,7 @@ EXTRA_DIST=pam_pwquality.8.pod pwmake.1.pod pwscore.1.pod pwquality.conf.5.pod p
 	bash -c 'declare -u ucname=$*; pod2man --utf8 --name="$$ucname" --section=5 --center="File Formats Manual" --release="Red Hat, Inc." $< $@'
 
 %.3: %.3.pod
-	bash -c 'declare -u ucname=$*; pod2man --utf8 --name="$$ucname" --section=5 --center="Libpwquality API Manual" --release="Red Hat, Inc." $< $@'
+	bash -c 'declare -u ucname=$*; pod2man --utf8 --name="$$ucname" --section=3 --center="Libpwquality API Manual" --release="Red Hat, Inc." $< $@'
 
 manclean:
 	rm *.8 *.1 *.5 *.3
