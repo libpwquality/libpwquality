@@ -210,6 +210,13 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
 
                         retval = pam_get_authtok_noverify(pamh, &newtoken, NULL);
                         if (retval != PAM_SUCCESS) {
+                                if (retval == PAM_AUTHTOK_ERR) {
+                                    /* handle case when conversation is canceled by application, pam_conv()
+                                     * returns PAM_CONV_ERR according to man page but we get PAM_AUTHTOK_ERR */
+                                    pam_syslog(pamh, LOG_NOTICE, "user aborted password change, quit");
+                                    pwquality_free_settings(options.pwq);
+                                    return retval;
+                                }
                                 pam_syslog(pamh, LOG_ERR, "pam_get_authtok_noverify returned error: %s",
                                         pam_strerror(pamh, retval));
                                 continue;
@@ -249,6 +256,12 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
 
                         retval = pam_get_authtok_verify(pamh, &newtoken, NULL);
                         if (retval != PAM_SUCCESS) {
+                                if (retval == PAM_AUTHTOK_ERR) {
+                                    /* conversation canceled, like pam_get_authtok_noverify above */
+                                    pam_syslog(pamh, LOG_NOTICE, "user aborted password change, quit");
+                                    pwquality_free_settings(options.pwq);
+                                    return retval;
+                                }
                                 pam_syslog(pamh, LOG_ERR, "pam_get_authtok_verify returned error: %s",
                                 pam_strerror(pamh, retval));
                                 pam_set_item(pamh, PAM_AUTHTOK, NULL);
