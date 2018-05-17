@@ -209,11 +209,12 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
                          */
 
                         retval = pam_get_authtok_noverify(pamh, &newtoken, NULL);
-                        if (retval != PAM_SUCCESS) {
-                                pam_syslog(pamh, LOG_ERR, "pam_get_authtok_noverify returned error: %s",
-                                        pam_strerror(pamh, retval));
-                                continue;
-                        } else if (newtoken == NULL) { /* user aborted password change, quit */
+                        if (retval != PAM_SUCCESS || newtoken == NULL) {
+                                if (retval == PAM_AUTHTOK_ERR || newtoken == NULL)
+                                        pam_syslog(pamh, LOG_INFO, "user aborted password change");
+                                else 
+                                        pam_syslog(pamh, LOG_ERR, "pam_get_authtok_noverify returned error: %s",
+                                               pam_strerror(pamh, retval));
                                 pwquality_free_settings(options.pwq);
                                 return PAM_AUTHTOK_ERR;
                         }
@@ -248,12 +249,15 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
                         }
 
                         retval = pam_get_authtok_verify(pamh, &newtoken, NULL);
-                        if (retval != PAM_SUCCESS) {
-                                pam_syslog(pamh, LOG_ERR, "pam_get_authtok_verify returned error: %s",
-                                pam_strerror(pamh, retval));
+                        if (retval != PAM_SUCCESS || newtoken == NULL) {
                                 pam_set_item(pamh, PAM_AUTHTOK, NULL);
-                                continue;
-                        } else if (newtoken == NULL) {      /* user aborted password change, quit */
+                                if (retval == PAM_TRY_AGAIN)
+                                        continue;
+                                if (retval == PAM_AUTHTOK_ERR || newtoken == NULL)
+                                        pam_syslog(pamh, LOG_INFO, "user aborted password change");
+                                else 
+                                        pam_syslog(pamh, LOG_ERR, "pam_get_authtok_verify returned error: %s",
+                                               pam_strerror(pamh, retval));
                                 pwquality_free_settings(options.pwq);
                                 return PAM_AUTHTOK_ERR;
                         }
@@ -270,7 +274,7 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
                 if (options.retry_times > 1)
                         return PAM_MAXTRIES;
                 else
-                        return retval;
+                        return PAM_AUTHTOK_ERR;
         } else {
                 pwquality_free_settings(options.pwq);
                 if (ctrl & PAM_DEBUG_ARG)
