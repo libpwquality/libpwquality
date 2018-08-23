@@ -36,6 +36,9 @@ pwquality_default_settings(void)
         pwq->dict_check = PWQ_DEFAULT_DICT_CHECK;
         pwq->user_check = PWQ_DEFAULT_USER_CHECK;
         pwq->enforcing = PWQ_DEFAULT_ENFORCING;
+        pwq->retry_times = PWQ_DEFAULT_RETRY_TIMES;
+        pwq->enforce_for_root = PWQ_DEFAULT_ENFORCE_ROOT;
+        pwq->local_users_only = PWQ_DEFAULT_LOCAL_USERS;
 
         return pwq;
 }
@@ -68,7 +71,10 @@ static const struct setting_mapping s_map[] = {
  { "usercheck", PWQ_SETTING_USER_CHECK, PWQ_TYPE_INT},
  { "enforcing", PWQ_SETTING_ENFORCING, PWQ_TYPE_INT},
  { "badwords", PWQ_SETTING_BAD_WORDS, PWQ_TYPE_STR},
- { "dictpath", PWQ_SETTING_DICT_PATH, PWQ_TYPE_STR}
+ { "dictpath", PWQ_SETTING_DICT_PATH, PWQ_TYPE_STR},
+ { "retry", PWQ_SETTING_RETRY_TIMES, PWQ_TYPE_INT},
+ { "enforce_for_root", PWQ_SETTING_ENFORCE_ROOT, PWQ_TYPE_SET},
+ { "local_users_only", PWQ_SETTING_LOCAL_USERS, PWQ_TYPE_SET}
 };
 
 /* set setting name with value */
@@ -344,6 +350,12 @@ pwquality_set_int_value(pwquality_settings_t *pwq, int setting, int value)
         case PWQ_SETTING_ENFORCING:
                 pwq->enforcing = value;
                 break;
+        case PWQ_SETTING_RETRY_TIMES:
+                pwq->retry_times = value;
+        case PWQ_SETTING_ENFORCE_ROOT:
+                pwq->enforce_for_root = value;
+        case PWQ_SETTING_LOCAL_USERS:
+                pwq->local_users_only = value;
         default:
                 return PWQ_ERROR_NON_INT_SETTING;
         }
@@ -429,6 +441,15 @@ pwquality_get_int_value(pwquality_settings_t *pwq, int setting, int *value)
                 break;
         case PWQ_SETTING_ENFORCING:
                 *value = pwq->enforcing;
+                break;
+        case PWQ_SETTING_RETRY_TIMES:
+                *value = pwq->retry_times;
+                break;
+        case PWQ_SETTING_ENFORCE_ROOT:
+                *value = pwq->enforce_for_root;
+                break;
+        case PWQ_SETTING_LOCAL_USERS:
+                *value = pwq->local_users_only;
                 break;
         default:
                 return PWQ_ERROR_NON_INT_SETTING;
