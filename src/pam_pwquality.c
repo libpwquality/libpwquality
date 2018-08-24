@@ -67,8 +67,6 @@ _pam_parse (pam_handle_t *pamh, struct module_options *opt,
 
         /* step through arguments */
         for (ctrl = 0; argc-- > 0; ++argv) {
-                char *ep = NULL;
-
                 if (!strcmp(*argv, "debug"))
                         ctrl |= PAM_DEBUG_ARG;
                 else if (!strncmp(*argv, "type=", 5))
