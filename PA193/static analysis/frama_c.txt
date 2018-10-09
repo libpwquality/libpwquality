@@ -1,0 +1,103 @@
+mamic@mamic-Inspiron-5748:~/Documents/FI/podzim 2018/PA193/project/libpwquality/src$ frama-c -slevel 10 error.c
+[kernel] Parsing FRAMAC_SHARE/libc/__fc_builtin_for_normalization.i (no preprocessing)
+[kernel] Parsing error.c (with preprocessing)
+error.c:31:[kernel] warning: Calling undeclared function _. Old style K&R code?
+error.c:31:[variadic] warning: Incorrect type for argument 4. The argument will be cast from int to char *.
+error.c:52:[variadic] warning: Call to function function snprintf with non-static format argument:
+                    no specification will be generated.
+error.c:58:[variadic] warning: Call to function function snprintf with non-static format argument:
+                    no specification will be generated.
+error.c:64:[variadic] warning: Call to function function snprintf with non-static format argument:
+                    no specification will be generated.
+error.c:70:[variadic] warning: Call to function function snprintf with non-static format argument:
+                    no specification will be generated.
+error.c:76:[variadic] warning: Call to function function snprintf with non-static format argument:
+                    no specification will be generated.
+error.c:84:[variadic] warning: Call to function function snprintf with non-static format argument:
+                    no specification will be generated.
+error.c:90:[variadic] warning: Call to function function snprintf with non-static format argument:
+                    no specification will be generated.
+error.c:96:[variadic] warning: Call to function function snprintf with non-static format argument:
+                    no specification will be generated.
+error.c:102:[variadic] warning: Call to function function snprintf with non-static format argument:
+                    no specification will be generated.
+error.c:114:[variadic] warning: Incorrect type for argument 4. The argument will be cast from int to char *.
+error.c:120:[variadic] warning: Incorrect type for argument 4. The argument will be cast from int to char *.
+error.c:127:[variadic] warning: Incorrect type for argument 4. The argument will be cast from int to char *.
+error.c:134:[variadic] warning: Call to function function snprintf with non-static format argument:
+                    no specification will be generated.
+error.c:141:[variadic] warning: Call to function function snprintf with non-static format argument:
+                    no specification will be generated.
+
+mamic@mamic-Inspiron-5748:~/Documents/FI/podzim 2018/PA193/project/libpwquality/src$ frama-c -slevel 10 pwmake.c 
+[kernel] Parsing FRAMAC_SHARE/libc/__fc_builtin_for_normalization.i (no preprocessing)
+[kernel] Parsing pwmake.c (with preprocessing)
+pwmake.c:22:[kernel] warning: Calling undeclared function _. Old style K&R code?
+pwmake.c:43:[kernel] warning: Calling undeclared function basename. Old style K&R code?
+pwmake.c:22:[variadic] warning: Call to function function fprintf with non-static format argument:
+                    no specification will be generated.
+
+mamic@mamic-Inspiron-5748:~/Documents/FI/podzim 2018/PA193/project/libpwquality/src$ frama-c -slevel 10 pwqprivate.h 
+[kernel] Parsing FRAMAC_SHARE/libc/__fc_builtin_for_normalization.i (no preprocessing)
+[kernel] Parsing pwqprivate.h (with preprocessing)
+[kernel] syntax error at pwquality.h:146:
+         144    * The returned pointer is not guaranteed to point to the buf. */
+         145   const char *
+         146   pwquality_strerror(char *buf, size_t len, int errcode, void *auxerror);
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         147   
+         148   #ifdef __cplusplus
+[kernel] Frama-C aborted: invalid user input.
+
+mamic@mamic-Inspiron-5748:~/Documents/FI/podzim 2018/PA193/project/libpwquality/src$ frama-c -slevel 10 check.c
+[kernel] Parsing FRAMAC_SHARE/libc/__fc_builtin_for_normalization.i (no preprocessing)
+[kernel] Parsing check.c (with preprocessing)
+check.c:486:[kernel] user error: Cannot find field pw_gecos in type struct passwd
+                     484           }
+                     485   
+                     486           rv = wordlistcheck(pwq, new, result->pw_gecos);
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     487           if (rv == PWQ_ERROR_BAD_WORDS)
+                     488                   rv = PWQ_ERROR_GECOS_CHECK;
+[kernel] user error: stopping on file "check.c" that has errors. Add '-kernel-msg-key pp'
+                     for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.
+
+mamic@mamic-Inspiron-5748:~/Documents/FI/podzim 2018/PA193/project/libpwquality/src$ frama-c -slevel 10 pwquality.h 
+[kernel] Parsing FRAMAC_SHARE/libc/__fc_builtin_for_normalization.i (no preprocessing)
+[kernel] Parsing pwquality.h (with preprocessing)
+[kernel] syntax error at pwquality.h:146:
+         144    * The returned pointer is not guaranteed to point to the buf. */
+         145   const char *
+         146   pwquality_strerror(char *buf, size_t len, int errcode, void *auxerror);
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         147   
+         148   #ifdef __cplusplus
+[kernel] Frama-C aborted: invalid user input.
+
+mamic@mamic-Inspiron-5748:~/Documents/FI/podzim 2018/PA193/project/libpwquality/src$ frama-c -slevel 10 pwscore.c 
+[kernel] Parsing FRAMAC_SHARE/libc/__fc_builtin_for_normalization.i (no preprocessing)
+[kernel] Parsing pwscore.c (with preprocessing)
+pwscore.c:22:[kernel] warning: Calling undeclared function _. Old style K&R code?
+pwscore.c:44:[kernel] warning: Calling undeclared function basename. Old style K&R code?
+pwscore.c:22:[variadic] warning: Call to function function fprintf with non-static format argument:
+                    no specification will be generated.
+pwscore.c:23:[variadic] warning: Call to function function fprintf with non-static format argument:
+                    no specification will be generated.
+pwscore.c:53:[variadic] warning: Call to function function fprintf with non-static format argument:
+                    no specification will be generated.
+pwscore.c:61:[variadic] warning: Call to function function fprintf with non-static format argument:
+                    no specification will be generated.
+pwscore.c:67:[variadic] warning: Call to function function fprintf with non-static format argument:
+                    no specification will be generated.
+pwscore.c:75:[variadic] warning: Call to function function fprintf with non-static format argument:
+                    no specification will be generated.
+
+mamic@mamic-Inspiron-5748:~/Documents/FI/podzim 2018/PA193/project/libpwquality/src$ frama-c -slevel 10 settings.c 
+[kernel] Parsing FRAMAC_SHARE/libc/__fc_builtin_for_normalization.i (no preprocessing)
+[kernel] Parsing settings.c (with preprocessing)
+settings.c:233:[kernel] warning: Calling undeclared function asprintf. Old style K&R code?
+settings.c:256:[kernel] user error: Too many arguments in call to asprintf
+[kernel] user error: stopping on file "settings.c" that has errors. Add '-kernel-msg-key pp'
+                     for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

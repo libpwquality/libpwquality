@@ -1,0 +1,52 @@
+mamic@mamic-Inspiron-5748:~/Documents/FI/podzim 2018/PA193/project/libpwquality$ ./rats src/
+Entries in perl database: 33
+Entries in ruby database: 46
+Entries in python database: 62
+Entries in c database: 334
+Entries in php database: 55
+Analyzing src//pwscore.c
+Analyzing src//generate.c
+Analyzing src//error.c
+Analyzing src//check.c
+Analyzing src//settings.c
+Analyzing src//pam_pwquality.c
+Analyzing src//pwmake.c
+src//pwscore.c:22: High: fprintf
+src//pwscore.c:23: High: fprintf
+src//pwscore.c:53: High: fprintf
+src//pwscore.c:61: High: fprintf
+src//pwscore.c:67: High: fprintf
+src//pwscore.c:75: High: fprintf
+src//pwmake.c:22: High: fprintf
+Check to be sure that the non-constant format string passed as argument 2 to
+this function call does not come from an untrusted source that could have added
+formatting characters that the code is not prepared to handle.
+
+src//pwscore.c:33: High: fixed size local buffer
+src//generate.c:103: High: fixed size local buffer
+src//error.c:21: High: fixed size local buffer
+src//check.c:599: High: fixed size local buffer
+src//settings.c:119: High: fixed size local buffer
+src//settings.c:281: High: fixed size local buffer
+src//pam_pwquality.c:56: High: fixed size local buffer
+src//pam_pwquality.c:102: High: fixed size local buffer
+src//pam_pwquality.c:226: High: fixed size local buffer
+Extra care should be taken to ensure that character arrays that are allocated
+on the stack are used safely.  They are prime targets for buffer overflow
+attacks.
+
+src//check.c:526: High: strcpy
+Check to be sure that argument 2 passed to this function call will not copy
+more data than can be handled, resulting in a buffer overflow.
+
+src//check.c:527: High: strcat
+Check to be sure that argument 2 passed to this function call will not copy
+more data than can be handled, resulting in a buffer overflow.
+
+src//generate.c:56: Medium: read
+Check buffer boundaries if calling this function in a loop
+and make sure you are not in danger of writing past the allocated space.
+
+Total lines analyzed: 2238
+Total time 0.003659 seconds
+611642 lines per second
