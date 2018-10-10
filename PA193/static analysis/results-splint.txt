@@ -1,0 +1,747 @@
+jasmina@jasmina-Inspiron-5570:~/NetBeansProjects/libpwquality/src$ splint check.c
+Splint 3.1.1 --- 28 Apr 2003
+
+check.c:12: Include file <sys/types.h> matches the name of a POSIX library, but
+    the POSIX library is not being used.  Consider using +posixlib or
+    +posixstrictlib to select the POSIX library, or -warnposix to suppress this
+    message.
+  Header name matches a POSIX header, but the POSIX library is not selected.
+  (Use -warnposixheaders to inhibit warning)
+check.c:13: Include file <pwd.h> matches the name of a POSIX library, but the
+    POSIX library is not being used.  Consider using +posixlib or
+    +posixstrictlib to select the POSIX library, or -warnposix to suppress this
+    message.
+check.c:14: Include file <unistd.h> matches the name of a POSIX library, but
+    the POSIX library is not being used.  Consider using +posixlib or
+    +posixstrictlib to select the POSIX library, or -warnposix to suppress this
+    message.
+check.c: (in function palindrome)
+check.c:35:9: Assignment of size_t to int: i = strlen(new)
+  To allow arbitrary integral types to match any integral type, use
+  +matchanyintegral.
+check.c: (in function distdifferent)
+check.c:57:17: Assignment of int to char: c = 0
+  Types are incompatible. (Use -type to inhibit warning)
+check.c:63:17: Assignment of int to char: d = 0
+check.c:67:16: Return value type boolean does not match declared type int:
+                  (c != d)
+  To make bool and int types equivalent, use +boolint.
+check.c: (in function distance)
+check.c:114:17: Value distances[] used before definition
+  An rvalue is used that may not be initialized to a value on some execution
+  path. (Use -usedef to inhibit warning)
+check.c:114:17: Assignment of size_t to int: distances[i][0] = i
+check.c:118:17: Assignment of size_t to int: distances[0][j] = j
+check.c: (in function numclass)
+check.c:173:21: Test expression for for not boolean, type char: new[i]
+  Test expression type is not boolean. (Use -predboolothers to inhibit warning)
+check.c:163:32: Parameter pwq not used
+  A function parameter is not used in the body of the function. If the argument
+  is needed for type compatibility or future plans, use /*@unused@*/ in the
+  argument declaration. (Use -paramuse to inhibit warning)
+check.c: (in function simple)
+check.c:207:21: Test expression for for not boolean, type char: new[i]
+check.c: (in function consecutive)
+check.c:316:21: Test expression for for not boolean, type char: new[i]
+check.c:317:40: Variable c used before definition
+check.c:318:27: Variable same used before definition
+check.c: (in function sequence)
+check.c:345:21: Test expression for for not boolean, type char: new[i]
+check.c:347:31: Incompatible types for + (char, int): c + 1
+  To make char and int types equivalent, use +charint.
+check.c:355:38: Incompatible types for - (char, int): c - 1
+check.c: (in function usercheck)
+check.c:376:29: Variable userlen initialized to type size_t, expects int:
+                   strlen(user)
+check.c:386:25: Null storage new passed as non-null param: distance (new, ...)
+  A possibly null pointer is passed as a parameter corresponding to a formal
+  parameter with no /*@null@*/ annotation.  If NULL may be used for this
+  parameter, add a /*@null@*/ annotation to the function parameter declaration.
+  (Use -nullpass to inhibit warning)
+check.c:407:25: Null storage new passed as non-null param: distance (new, ...)
+check.c:372:33: Parameter pwq not used
+check.c: (in function str_lower)
+check.c:420:10: Null storage returned as non-null: NULL
+  Function returns a possibly null pointer, but is not declared using
+  /*@null@*/ annotation of result.  If function may return NULL, add /*@null@*/
+  annotation to the return value declaration. (Use -nullret to inhibit warning)
+check.c:422:20: Test expression for for not boolean, type char: *cp
+check.c:424:9: Implicitly temp storage string returned as implicitly only:
+                  string
+  Temp storage (associated with a formal parameter) is transferred to a
+  non-temporary reference. The storage may be released or new aliases created.
+  (Use -temptrans to inhibit warning)
+check.c: (in function wordlistcheck)
+check.c:438:21: Unrecognized identifier: strdup
+  Identifier used in code has not been declared. (Use -unrecog to inhibit
+  warning)
+check.c:448:25: Return value (type char *) ignored: str_lower(p)
+  Result returned by function call is not used. If this is intended, can cast
+  result to (void) to eliminate message. (Use -retvalother to inhibit warning)
+check.c:449:29: Test expression for if not boolean, type int:
+                   usercheck(pwq, new, p)
+  Test expression type is not boolean or int. (Use -predboolint to inhibit
+  warning)
+check.c:459:14: Unallocated storage list passed as out parameter: list
+check.c: (in function gecoscheck)
+check.c:473:9: Assignment of long int to size_t:
+                  bufsize = sysconf(_SC_GETPW_R_SIZE_MAX)
+  To allow arbitrary integral types to match long unsigned, use +longintegral.
+check.c:474:13: Operands of == have incompatible types (size_t, int):
+                   bufsize == -1
+check.c:480:30: Passed storage pwd contains 7 undefined fields:
+                   pw_name, pw_passwd, pw_uid, pw_gid, ...
+  Storage derivable from a parameter, return value or global is not defined.
+  Use /*@out@*/ to denote passed or returned storage which need not be defined.
+  (Use -compdef to inhibit warning)
+check.c:480:36: Passed storage buf not completely defined (*buf is undefined):
+                   getpwnam_r (..., buf, ...)
+   check.c:476:9: Storage *buf allocated
+check.c:480:50: Passed storage &result not completely defined:
+                   getpwnam_r (..., &result)
+check.c:483:26: Only storage pwd.pw_name (type char *) derived from variable
+                   declared in this scope is not released (memory leak)
+  A storage leak due to incomplete deallocation of a structure or deep pointer
+  is suspected. Unshared storage that is reachable from a reference that is
+  being deallocated has not yet been deallocated. Splint assumes when an object
+  is passed as an out only void pointer that the outer object will be
+  deallocated, but the inner objects will not. (Use -compdestroy to inhibit
+  warning)
+check.c:483:26: Only storage pwd.pw_passwd (type char *) derived from variable
+                   declared in this scope is not released (memory leak)
+check.c:483:26: Only storage pwd.pw_gecos (type char *) derived from variable
+                   declared in this scope is not released (memory leak)
+check.c:483:26: Only storage pwd.pw_dir (type char *) derived from variable
+                   declared in this scope is not released (memory leak)
+check.c:483:26: Only storage pwd.pw_shell (type char *) derived from variable
+                   declared in this scope is not released (memory leak)
+check.c:491:19: Only storage pwd.pw_name (type char *) derived from variable
+                   declared in this scope is not released (memory leak)
+check.c:491:19: Only storage pwd.pw_passwd (type char *) derived from variable
+                   declared in this scope is not released (memory leak)
+check.c:491:19: Only storage pwd.pw_gecos (type char *) derived from variable
+                   declared in this scope is not released (memory leak)
+check.c:491:19: Only storage pwd.pw_dir (type char *) derived from variable
+                   declared in this scope is not released (memory leak)
+check.c:491:19: Only storage pwd.pw_shell (type char *) derived from variable
+                   declared in this scope is not released (memory leak)
+check.c: (in function x_strdup)
+check.c:498:24: Null storage returned as non-null: NULL
+check.c: (in function password_check)
+check.c:511:29: New fresh storage (type char *) passed as implicitly temp (not
+                   released): x_strdup(new)
+  A memory leak has been detected. Storage allocated locally is not released
+  before the last reference to it is lost. (Use -mustfreefresh to inhibit
+  warning)
+check.c:515:14: Operand of ! is non-boolean (int): !rv
+  The operand of a boolean operator is not a boolean. Use +ptrnegate to allow !
+  to be used on pointers. (Use -boolops to inhibit warning)
+check.c:515:20: Right operand of && is non-boolean (char *): !rv && user
+check.c:516:38: New fresh storage (type char *) passed as implicitly temp (not
+                   released): x_strdup(user)
+check.c:521:14: Operand of ! is non-boolean (int): !rv
+check.c:521:20: Right operand of && is non-boolean (char *): !rv && old
+check.c:522:37: New fresh storage (type char *) passed as implicitly temp (not
+                   released): x_strdup(old)
+check.c:526:42: Possibly null storage oldmono passed as non-null param:
+                   strcpy (..., oldmono)
+   check.c:522:27: Storage oldmono may become null
+check.c:533:14: Operand of ! is non-boolean (int): !rv
+check.c:533:31: Possibly null storage newmono passed as non-null param:
+                   palindrome (newmono)
+   check.c:511:19: Storage newmono may become null
+check.c:533:20: Right operand of && is non-boolean (int):
+                   !rv && palindrome(newmono)
+check.c:536:14: Operand of ! is non-boolean (int): !rv
+check.c:536:20: Right operand of && is non-boolean (char *): !rv && oldmono
+check.c:536:38: Possibly null storage oldmono passed as non-null param:
+                   strcmp (oldmono, ...)
+   check.c:508:25: Storage oldmono may become null
+check.c:536:47: Possibly null storage newmono passed as non-null param:
+                   strcmp (..., newmono)
+   check.c:511:19: Storage newmono may become null
+check.c:539:14: Operand of ! is non-boolean (int): !rv
+check.c:539:20: Right operand of && is non-boolean (char *): !rv && oldmono
+check.c:540:35: Possibly null storage oldmono passed as non-null param:
+                   similar (..., oldmono, ...)
+   check.c:508:25: Storage oldmono may become null
+check.c:540:44: Possibly null storage newmono passed as non-null param:
+                   similar (..., newmono)
+   check.c:511:19: Storage newmono may become null
+check.c:542:14: Operand of ! is non-boolean (int): !rv
+check.c:545:14: Operand of ! is non-boolean (int): !rv
+check.c:545:20: Right operand of && is non-boolean (char *): !rv && wrapped
+check.c:545:38: Possibly null storage wrapped passed as non-null param:
+                   strstr (wrapped, ...)
+   check.c:508:52: Storage wrapped may become null
+check.c:545:47: Possibly null storage newmono passed as non-null param:
+                   strstr (..., newmono)
+   check.c:511:19: Storage newmono may become null
+check.c:545:31: Right operand of && is non-boolean (char *):
+                   !rv && wrapped && strstr(wrapped, newmono)
+check.c:548:14: Operand of ! is non-boolean (int): !rv
+check.c:555:14: Operand of ! is non-boolean (int): !rv
+check.c:555:42: Null storage auxerror passed as non-null param:
+                   consecutive (..., auxerror)
+check.c:555:20: Right operand of && is non-boolean (int):
+                   !rv && consecutive(pwq, new, auxerror)
+check.c:558:14: Operand of ! is non-boolean (int): !rv
+check.c:558:39: Null storage auxerror passed as non-null param:
+                   sequence (..., auxerror)
+check.c:558:20: Right operand of && is non-boolean (int):
+                   !rv && sequence(pwq, new, auxerror)
+check.c:561:14: Operand of ! is non-boolean (int): !rv
+check.c:561:20: Right operand of && is non-boolean (char *): !rv && usermono
+check.c:561:32: Right operand of && is non-boolean (int):
+                   !rv && usermono && pwq->user_check
+check.c:562:32: Possibly null storage newmono passed as non-null param:
+                   usercheck (..., newmono, ...)
+   check.c:511:19: Storage newmono may become null
+check.c:562:41: Possibly null storage usermono passed as non-null param:
+                   usercheck (..., usermono)
+   check.c:509:26: Storage usermono may become null
+check.c:562:17: Right operand of && is non-boolean (int):
+    !rv && usermono && pwq->user_check && usercheck(pwq, newmono, usermono)
+check.c:565:14: Operand of ! is non-boolean (int): !rv
+check.c:565:20: Right operand of && is non-boolean (char *): !rv && user
+check.c:565:28: Right operand of && is non-boolean (int):
+                   !rv && user && pwq->gecos_check
+check.c:566:38: Possibly null storage newmono passed as non-null param:
+                   gecoscheck (..., newmono, ...)
+   check.c:511:19: Storage newmono may become null
+check.c:568:14: Operand of ! is non-boolean (int): !rv
+check.c:569:41: Possibly null storage newmono passed as non-null param:
+                   wordlistcheck (..., newmono, ...)
+   check.c:511:19: Storage newmono may become null
+check.c: (in function password_score)
+check.c:602:9: Assignment of size_t to int: len = strlen(password)
+check.c:604:27: Function malloc expects arg 1 to be size_t gets int: len
+check.c:610:31: Function memcpy expects arg 3 to be size_t gets int: len
+check.c:617:27: Array fetch using non-integer, unsigned char: freq[buf[i]]
+  To allow char types to index arrays, use +charindex. (Use +charindex to
+  inhibit warning)
+check.c:619:46: Function abs expects arg 1 to be int gets unsigned char:
+                   buf[i] - buf[i + 1]
+check.c:619:33: Assignment of int to unsigned char:
+                   buf[i] = abs(buf[i] - buf[i + 1])
+check.c:622:29: Operands of < have incompatible types (int, size_t):
+                   i < sizeof((freq))
+check.c:623:29: Test expression for if not boolean, type unsigned char: freq[i]
+check.c:628:24: Function memset expects arg 3 to be size_t gets int: len
+check.c: (in function pwquality_check)
+check.c:660:29: Function returns with null storage derivable from parameter
+                   *auxerror
+  A possibly null pointer is reachable from a parameter or global variable that
+  is not declared using a /*@null@*/ annotation. (Use -nullstate to inhibit
+  warning)
+   check.c:657:29: Storage *auxerror becomes null
+check.c:663:13: Left operand of && is non-boolean (char *):
+                   user && *user == '\0'
+check.c:666:13: Left operand of && is non-boolean (char *):
+                   oldpassword && *oldpassword == '\0'
+check.c:669:13: Left operand of && is non-boolean (char *):
+                   oldpassword && strcmp(oldpassword, password) == 0
+check.c:676:47: Null storage oldpassword passed as non-null param:
+                   password_check (..., oldpassword, ...)
+check.c:676:60: Null storage user passed as non-null param:
+                   password_check (..., user, ...)
+check.c:676:66: Null storage auxerror passed as non-null param:
+                   password_check (..., auxerror)
+check.c:676:66: Null storage *auxerror derivable from parameter password_check
+                   (..., auxerror)
+   check.c:657:29: Storage *auxerror becomes null
+check.c:681:13: Test expression for if not boolean, type int: pwq->dict_check
+check.c:682:23: Unrecognized identifier: FascistCheck
+
+Finished checking --- 109 code warnings
+
+jasmina@jasmina-Inspiron-5570:~/NetBeansProjects/libpwquality/src$ splint error.c
+Splint 3.1.1 --- 28 Apr 2003
+
+cstring.c:57: at source point
+error.c:31:56: *** Internal Bug at cstring.c:57: llassert failed:
+               n >= 1 && n <= length [errno: 25]
+     *** Please report bug to splint-bug@splint.org ***
+       (attempting to continue, results may be incorrect)
+error.c: (in function pwquality_strerror)
+error.c:31:55: Unrecognized identifier: _
+  Identifier used in code has not been declared. (Use -unrecog to inhibit
+  warning)
+error.c:31:25: Return value (type int) ignored: snprintf(buf, le...
+  Result returned by function call is not used. If this is intended, can cast
+  result to (void) to eliminate message. (Use -retvalint to inhibit warning)
+error.c:32:30: Implicitly temp storage auxerror passed as only param:
+                  free (auxerror)
+  Temp storage (associated with a formal parameter) is transferred to a
+  non-temporary reference. The storage may be released or new aliases created.
+  (Use -temptrans to inhibit warning)
+error.c:33:32: Implicitly temp storage buf returned as implicitly only: buf
+error.c:52:25: Format string parameter to snprintf is not a compile-time
+                  constant: _("The password contains less than %ld digits")
+  Format parameter is not known at compile-time.  This can lead to security
+  vulnerabilities because the arguments cannot be type checked. (Use
+  -formatconst to inhibit warning)
+error.c:52:25: Return value (type int) ignored: snprintf(buf, le...
+error.c:53:32: Implicitly temp storage buf returned as implicitly only: buf
+error.c:58:25: Format string parameter to snprintf is not a compile-time
+    constant: _("The password contains less than %ld uppercase letters")
+error.c:58:25: Return value (type int) ignored: snprintf(buf, le...
+error.c:59:32: Implicitly temp storage buf returned as implicitly only: buf
+error.c:64:25: Format string parameter to snprintf is not a compile-time
+    constant: _("The password contains less than %ld lowercase letters")
+error.c:64:25: Return value (type int) ignored: snprintf(buf, le...
+error.c:65:32: Implicitly temp storage buf returned as implicitly only: buf
+error.c:70:25: Format string parameter to snprintf is not a compile-time
+    constant: _("The password contains less than %ld non-alphanumeric
+    characters")
+error.c:70:25: Return value (type int) ignored: snprintf(buf, le...
+error.c:71:32: Implicitly temp storage buf returned as implicitly only: buf
+error.c:76:25: Format string parameter to snprintf is not a compile-time
+                  constant: _("The password is shorter than %ld characters")
+error.c:76:25: Return value (type int) ignored: snprintf(buf, le...
+error.c:77:32: Implicitly temp storage buf returned as implicitly only: buf
+error.c:84:25: Format string parameter to snprintf is not a compile-time
+    constant: _("The password contains less than %ld character classes")
+error.c:84:25: Return value (type int) ignored: snprintf(buf, le...
+error.c:85:32: Implicitly temp storage buf returned as implicitly only: buf
+error.c:90:25: Format string parameter to snprintf is not a compile-time
+    constant: _("The password contains more than %ld same characters
+    consecutively")
+error.c:90:25: Return value (type int) ignored: snprintf(buf, le...
+error.c:91:32: Implicitly temp storage buf returned as implicitly only: buf
+error.c:96:25: Format string parameter to snprintf is not a compile-time
+    constant: _("The password contains more than %ld characters of the same
+    class consecutively")
+error.c:96:25: Return value (type int) ignored: snprintf(buf, le...
+error.c:97:32: Implicitly temp storage buf returned as implicitly only: buf
+error.c:102:25: Format string parameter to snprintf is not a compile-time
+    constant: _("The password contains monotonic sequence longer than %ld
+    characters")
+error.c:102:25: Return value (type int) ignored: snprintf(buf, le...
+error.c:103:32: Implicitly temp storage buf returned as implicitly only: buf
+error.c:114:25: Return value (type int) ignored: snprintf(buf, le...
+error.c:115:32: Implicitly temp storage buf returned as implicitly only: buf
+error.c:120:25: Return value (type int) ignored: snprintf(buf, le...
+error.c:121:30: Implicitly temp storage auxerror passed as only param:
+                   free (auxerror)
+error.c:122:32: Implicitly temp storage buf returned as implicitly only: buf
+error.c:127:25: Return value (type int) ignored: snprintf(buf, le...
+error.c:128:30: Implicitly temp storage auxerror passed as only param:
+                   free (auxerror)
+error.c:129:32: Implicitly temp storage buf returned as implicitly only: buf
+error.c:134:25: Format string parameter to snprintf is not a compile-time
+                   constant: _("Setting %s is not of integer type")
+error.c:134:25: Return value (type int) ignored: snprintf(buf, le...
+error.c:135:30: Implicitly temp storage auxerror passed as only param:
+                   free (auxerror)
+error.c:136:32: Implicitly temp storage buf returned as implicitly only: buf
+error.c:141:25: Format string parameter to snprintf is not a compile-time
+                   constant: _("Setting %s is not of string type")
+error.c:141:25: Return value (type int) ignored: snprintf(buf, le...
+error.c:142:30: Implicitly temp storage auxerror passed as only param:
+                   free (auxerror)
+error.c:143:32: Implicitly temp storage buf returned as implicitly only: buf
+
+Finished checking --- 47 code warnings
+
+jasmina@jasmina-Inspiron-5570:~/NetBeansProjects/libpwquality/src$ splint generate.c
+Splint 3.1.1 --- 28 Apr 2003
+
+generate.c:12: Include file <unistd.h> matches the name of a POSIX library, but
+    the POSIX library is not being used.  Consider using +posixlib or
+    +posixstrictlib to select the POSIX library, or -warnposix to suppress this
+    message.
+  Header name matches a POSIX header, but the POSIX library is not selected.
+  (Use -warnposixheaders to inhibit warning)
+generate.c:13: Include file <sys/types.h> matches the name of a POSIX library,
+    but the POSIX library is not being used.  Consider using +posixlib or
+    +posixstrictlib to select the POSIX library, or -warnposix to suppress this
+    message.
+generate.c:14: Include file <sys/stat.h> matches the name of a POSIX library,
+    but the POSIX library is not being used.  Consider using +posixlib or
+    +posixstrictlib to select the POSIX library, or -warnposix to suppress this
+    message.
+generate.c:15: Include file <fcntl.h> matches the name of a POSIX library, but
+    the POSIX library is not being used.  Consider using +posixlib or
+    +posixstrictlib to select the POSIX library, or -warnposix to suppress this
+    message.
+generate.c: (in function get_entropy_bits)
+generate.c:56:45: Function read expects arg 3 to be size_t gets int: bytes
+  To allow arbitrary integral types to match any integral type, use
+  +matchanyintegral.
+generate.c:56:17: Assignment of ssize_t to int:
+                     rv = read(fd, buf + offset, bytes)
+generate.c:59:38: Unrecognized identifier: EINTR
+  Identifier used in code has not been declared. (Use -unrecog to inhibit
+  warning)
+generate.c: (in function consume_entropy)
+generate.c:79:28: Variable low initialized to type unsigned char, expects
+                     unsigned int: (unsigned char)buf[*offset / 8]
+  To make char and int types equivalent, use +charint.
+generate.c:85:17: Right operand of >>= may be negative (int):
+                     low >>= *offset % 8
+  The right operand to a shift operator may be negative (behavior undefined).
+  (Use -shiftnegative to inhibit warning)
+generate.c:86:22: Right operand of << may be negative (int): 1 << bits
+generate.c:89:16: Assignment of unsigned char to unsigned int:
+                     high = (unsigned char)buf[*offset / 8 + 1]
+generate.c:90:30: Right operand of << may be negative (int):
+                     1 << (bits - (8 - *offset % 8))
+generate.c:91:25: Right operand of <<= may be negative (int):
+                     high <<= 8 - *offset % 8
+generate.c: (in function pwquality_generate)
+generate.c:119:22: Function malloc expects arg 1 to be size_t gets int: maxlen
+generate.c:121:28: Function returns with null storage derivable from parameter
+                      *password
+  A possibly null pointer is reachable from a parameter or global variable that
+  is not declared using a /*@null@*/ annotation. (Use -nullstate to inhibit
+  warning)
+   generate.c:108:21: Storage *password becomes null
+generate.c:129:29: Function memset expects arg 2 to be int gets char: '\0'
+  A character constant is used as an int. Use +charintliteral to allow
+  character constants to be used as ints.  (This is safe since the actual type
+  of a char constant is int.)
+generate.c:129:35: Function memset expects arg 3 to be size_t gets int: maxlen
+generate.c:132:38: Passed storage entropy not completely defined (*entropy is
+                      undefined): get_entropy_bits (entropy, ...)
+  Storage derivable from a parameter, return value or global is not defined.
+  Use /*@out@*/ to denote passed or returned storage which need not be defined.
+  (Use -compdef to inhibit warning)
+generate.c:142:57: Null storage passed as non-null param:
+                      consume_entropy (..., NULL, ...)
+  A possibly null pointer is passed as a parameter corresponding to a formal
+  parameter with no /*@null@*/ annotation.  If NULL may be used for this
+  parameter, add a /*@null@*/ annotation to the function parameter declaration.
+  (Use -nullpass to inhibit warning)
+generate.c:142:29: Test expression for if not boolean, type unsigned int:
+                      consume_entropy(entropy, 1, NULL, &offset)
+  Test expression type is not boolean or int. (Use -predboolint to inhibit
+  warning)
+generate.c:160:44: Null storage passed as non-null param:
+                      pwquality_check (..., NULL, ...)
+generate.c:160:50: Null storage passed as non-null param:
+                      pwquality_check (..., NULL, ...)
+generate.c:160:56: Null storage passed as non-null param:
+                      pwquality_check (..., NULL)
+generate.c:164:25: Function memset expects arg 2 to be int gets char: '\0'
+
+Finished checking --- 24 code warnings
+
+jasmina@jasmina-Inspiron-5570:~/NetBeansProjects/libpwquality/src$ splint pwmake.c
+Splint 3.1.1 --- 28 Apr 2003
+
+pwmake.c:11: Include file <sys/types.h> matches the name of a POSIX library,
+    but the POSIX library is not being used.  Consider using +posixlib or
+    +posixstrictlib to select the POSIX library, or -warnposix to suppress this
+    message.
+  Header name matches a POSIX header, but the POSIX library is not selected.
+  (Use -warnposixheaders to inhibit warning)
+pwmake.c:12: Include file <sys/stat.h> matches the name of a POSIX library, but
+    the POSIX library is not being used.  Consider using +posixlib or
+    +posixstrictlib to select the POSIX library, or -warnposix to suppress this
+    message.
+cstring.c:57: at source point
+pwmake.c:22:26: *** Internal Bug at cstring.c:57: llassert failed:
+                n >= 1 && n <= length [errno: 25]
+     *** Please report bug to splint-bug@splint.org ***
+       (attempting to continue, results may be incorrect)
+pwmake.c: (in function usage)
+pwmake.c:22:25: Unrecognized identifier: _
+  Identifier used in code has not been declared. (Use -unrecog to inhibit
+  warning)
+pwmake.c:22:9: Format string parameter to fprintf is not a compile-time
+                  constant: _("Usage: %s <entropy-bits>\n")
+  Format parameter is not known at compile-time.  This can lead to security
+  vulnerabilities because the arguments cannot be type checked. (Use
+  -formatconst to inhibit warning)
+pwmake.c: (in function main)
+pwmake.c:43:23: New fresh storage (type char *) passed as implicitly temp (not
+                   released): __xpg_basename(argv[0])
+  A memory leak has been detected. Storage allocated locally is not released
+  before the last reference to it is lost. (Use -mustfreefresh to inhibit
+  warning)
+pwmake.c:44:22: Argument to exit has implementation defined behavior: 3
+  The argument to exit should be 0, EXIT_SUCCESS or EXIT_FAILURE (Use -exitarg
+  to inhibit warning)
+pwmake.c:51:67: Null storage passed as non-null param:
+                   pwquality_strerror (NULL, ...)
+  A possibly null pointer is passed as a parameter corresponding to a formal
+  parameter with no /*@null@*/ annotation.  If NULL may be used for this
+  parameter, add a /*@null@*/ annotation to the function parameter declaration.
+  (Use -nullpass to inhibit warning)
+pwmake.c:51:81: Null storage passed as non-null param:
+                   pwquality_strerror (..., NULL)
+pwmake.c:51:48: New fresh storage (type char *) passed as implicitly temp (not
+                   released): pwquality_strerror(NULL, 0, -8, NULL)
+pwmake.c:52:22: Argument to exit has implementation defined behavior: 2
+pwmake.c:55:46: Null storage passed as non-null param:
+                   pwquality_read_config (..., NULL, ...)
+pwmake.c:55:52: Passed storage &auxerror not completely defined:
+                   pwquality_read_config (..., &auxerror)
+  Storage derivable from a parameter, return value or global is not defined.
+  Use /*@out@*/ to denote passed or returned storage which need not be defined.
+  (Use -compdef to inhibit warning)
+pwmake.c:56:67: Null storage passed as non-null param:
+                   pwquality_strerror (NULL, ...)
+pwmake.c:56:48: New fresh storage (type char *) passed as implicitly temp (not
+                   released): pwquality_strerror(NULL, 0, rv, auxerror)
+pwmake.c:58:22: Argument to exit has implementation defined behavior: 3
+pwmake.c:61:44: Passed storage &password not completely defined:
+                   pwquality_generate (..., &password)
+pwmake.c:65:67: Null storage passed as non-null param:
+                   pwquality_strerror (NULL, ...)
+pwmake.c:65:80: Null storage passed as non-null param:
+                   pwquality_strerror (..., NULL)
+pwmake.c:65:48: New fresh storage (type char *) passed as implicitly temp (not
+                   released): pwquality_strerror(NULL, 0, rv, NULL)
+pwmake.c:66:22: Argument to exit has implementation defined behavior: 1
+pwmake.c:71:18: Fresh storage pwq not released before return
+   pwmake.c:49:9: Fresh storage pwq created
+pwmake.c:21:1: Function exported but not used outside pwmake: usage
+  A declaration is exported, but not used outside this module. Declaration can
+  use static qualifier. (Use -exportlocal to inhibit warning)
+   pwmake.c:23:1: Definition of usage
+
+Finished checking --- 22 code warnings
+
+jasmina@jasmina-Inspiron-5570:~/NetBeansProjects/libpwquality/src$ splint pam_pwquality.c
+Splint 3.1.1 --- 28 Apr 2003
+
+pam_pwquality.c:11: Include file <unistd.h> matches the name of a POSIX
+    library, but the POSIX library is not being used.  Consider using +posixlib
+    or +posixstrictlib to select the POSIX library, or -warnposix to suppress
+    this message.
+  Header name matches a POSIX header, but the POSIX library is not selected.
+  (Use -warnposixheaders to inhibit warning)
+pam_pwquality.c:12: Include file <sys/types.h> matches the name of a POSIX
+    library, but the POSIX library is not being used.  Consider using +posixlib
+    or +posixstrictlib to select the POSIX library, or -warnposix to suppress
+    this message.
+pam_pwquality.c:13: Include file <sys/stat.h> matches the name of a POSIX
+    library, but the POSIX library is not being used.  Consider using +posixlib
+    or +posixstrictlib to select the POSIX library, or -warnposix to suppress
+    this message.
+pam_pwquality.c:19: Include file <pwd.h> matches the name of a POSIX library,
+    but the POSIX library is not being used.  Consider using +posixlib or
+    +posixstrictlib to select the POSIX library, or -warnposix to suppress this
+    message.
+/usr/include/sys/syslog.h:200:66: Parse Error:
+    Inconsistent function parameter syntax: __gnuc_va_list :
+    <any>. (For help on parse errors, see splint -help parseerrors.)
+*** Cannot continue.
+
+jasmina@jasmina-Inspiron-5570:~/NetBeansProjects/libpwquality/src$ splint pwscore.c
+Splint 3.1.1 --- 28 Apr 2003
+
+pwscore.c:11: Include file <sys/types.h> matches the name of a POSIX library,
+    but the POSIX library is not being used.  Consider using +posixlib or
+    +posixstrictlib to select the POSIX library, or -warnposix to suppress this
+    message.
+  Header name matches a POSIX header, but the POSIX library is not selected.
+  (Use -warnposixheaders to inhibit warning)
+pwscore.c:12: Include file <sys/stat.h> matches the name of a POSIX library,
+    but the POSIX library is not being used.  Consider using +posixlib or
+    +posixstrictlib to select the POSIX library, or -warnposix to suppress this
+    message.
+cstring.c:57: at source point
+pwscore.c:22:26: *** Internal Bug at cstring.c:57: llassert failed:
+                 n >= 1 && n <= length [errno: 25]
+     *** Please report bug to splint-bug@splint.org ***
+       (attempting to continue, results may be incorrect)
+pwscore.c: (in function usage)
+pwscore.c:22:25: Unrecognized identifier: _
+  Identifier used in code has not been declared. (Use -unrecog to inhibit
+  warning)
+pwscore.c:22:9: Format string parameter to fprintf is not a compile-time
+                   constant: _("Usage: %s [user]\n")
+  Format parameter is not known at compile-time.  This can lead to security
+  vulnerabilities because the arguments cannot be type checked. (Use
+  -formatconst to inhibit warning)
+pwscore.c:23:9: Format string parameter to fprintf is not a compile-time
+    constant: _("       The command reads the password to be scored from the
+    standard input.\n")
+pwscore.c: (in function main)
+pwscore.c:44:23: New fresh storage (type char *) passed as implicitly temp (not
+                    released): __xpg_basename(argv[0])
+  A memory leak has been detected. Storage allocated locally is not released
+  before the last reference to it is lost. (Use -mustfreefresh to inhibit
+  warning)
+pwscore.c:45:22: Argument to exit has implementation defined behavior: 3
+  The argument to exit should be 0, EXIT_SUCCESS or EXIT_FAILURE (Use -exitarg
+  to inhibit warning)
+pwscore.c:52:30: Function fgets expects arg 2 to be int gets size_t:
+                    sizeof((buf))
+  To allow arbitrary integral types to match any integral type, use
+  +matchanyintegral.
+pwscore.c:53:17: Format string parameter to fprintf is not a compile-time
+                    constant: _("Error: %s\n")
+pwscore.c:54:22: Argument to exit has implementation defined behavior: 4
+pwscore.c:56:17: Variable len used before definition
+  An rvalue is used that may not be initialized to a value on some execution
+  path. (Use -usedef to inhibit warning)
+pwscore.c:61:70: Null storage passed as non-null param:
+                    pwquality_strerror (NULL, ...)
+  A possibly null pointer is passed as a parameter corresponding to a formal
+  parameter with no /*@null@*/ annotation.  If NULL may be used for this
+  parameter, add a /*@null@*/ annotation to the function parameter declaration.
+  (Use -nullpass to inhibit warning)
+pwscore.c:61:84: Null storage passed as non-null param:
+                    pwquality_strerror (..., NULL)
+pwscore.c:61:17: Format string parameter to fprintf is not a compile-time
+                    constant: _("Error: %s\n")
+pwscore.c:62:22: Argument to exit has implementation defined behavior: 2
+pwscore.c:65:44: Null storage passed as non-null param:
+                    pwquality_read_config (..., NULL, ...)
+pwscore.c:65:50: Passed storage &auxerror not completely defined:
+                    pwquality_read_config (..., &auxerror)
+  Storage derivable from a parameter, return value or global is not defined.
+  Use /*@out@*/ to denote passed or returned storage which need not be defined.
+  (Use -compdef to inhibit warning)
+pwscore.c:67:70: Null storage passed as non-null param:
+                    pwquality_strerror (NULL, ...)
+pwscore.c:67:17: Format string parameter to fprintf is not a compile-time
+                    constant: _("Error: %s\n")
+pwscore.c:68:22: Argument to exit has implementation defined behavior: 3
+pwscore.c:71:40: Null storage passed as non-null param:
+                    pwquality_check (..., NULL, ...)
+pwscore.c:71:46: Null storage user passed as non-null param:
+                    pwquality_check (..., user, ...)
+   pwscore.c:35:22: Storage user becomes null
+pwscore.c:76:44: Null storage passed as non-null param:
+                    pwquality_strerror (NULL, ...)
+pwscore.c:75:17: Format string parameter to fprintf is not a compile-time
+                    constant: _("Password quality check failed:\n %s\n")
+pwscore.c:77:22: Argument to exit has implementation defined behavior: 1
+pwscore.c:81:18: Fresh storage pwq not released before return
+   pwscore.c:59:9: Fresh storage pwq created
+pwscore.c:21:1: Function exported but not used outside pwscore: usage
+  A declaration is exported, but not used outside this module. Declaration can
+  use static qualifier. (Use -exportlocal to inhibit warning)
+   pwscore.c:24:1: Definition of usage
+
+Finished checking --- 27 code warnings
+
+jasmina@jasmina-Inspiron-5570:~/NetBeansProjects/libpwquality/src$ splint settings.c
+Splint 3.1.1 --- 28 Apr 2003
+
+settings.c:14: Include file <dirent.h> matches the name of a POSIX library, but
+    the POSIX library is not being used.  Consider using +posixlib or
+    +posixstrictlib to select the POSIX library, or -warnposix to suppress this
+    message.
+  Header name matches a POSIX header, but the POSIX library is not selected.
+  (Use -warnposixheaders to inhibit warning)
+settings.c: (in function pwquality_default_settings)
+settings.c:28:24: Null storage returned as non-null: NULL
+  Function returns a possibly null pointer, but is not declared using
+  /*@null@*/ annotation of result.  If function may return NULL, add /*@null@*/
+  annotation to the return value declaration. (Use -nullret to inhibit warning)
+settings.c: (in function pwquality_free_settings)
+settings.c:53:22: Implicitly temp storage pwq passed as only param: free (pwq)
+  Temp storage (associated with a formal parameter) is transferred to a
+  non-temporary reference. The storage may be released or new aliases created.
+  (Use -temptrans to inhibit warning)
+settings.c: (in function set_name_value)
+settings.c:88:21: Operands of < have incompatible types (int, arbitrary
+    unsigned integral type): i < sizeof((s_map)) / sizeof((s_map[0]))
+  To allow arbitrary integral types to match any integral type, use
+  +matchanyintegral.
+settings.c:89:21: Unrecognized identifier: strcasecmp
+  Identifier used in code has not been declared. (Use -unrecog to inhibit
+  warning)
+settings.c: (in function read_config_file)
+settings.c:125:30: Unrecognized identifier: ENOENT
+settings.c:130:37: Function fgets expects arg 2 to be int gets size_t:
+                      sizeof((linebuf))
+settings.c:137:50: Operand of ! is non-boolean (int): !feof(f)
+  The operand of a boolean operator is not a boolean. Use +ptrnegate to allow !
+  to be used on pointers. (Use -boolops to inhibit warning)
+settings.c:166:33: Assignment of boolean to int: eq = *ptr == '='
+  To make bool and int types equivalent, use +boolint.
+settings.c:175:44: Right operand of || is non-boolean (int): *ptr != '=' || eq
+settings.c:187:45: Unrecognized identifier: strdup
+settings.c: (in function pwquality_read_config)
+settings.c:229:17: Clauses exit with cfgfile referencing unqualified static
+    storage in true branch, implicitly temp storage in continuation
+  The state of a variable is different depending on which branch is taken. This
+  means no annotation can sensibly be applied to the storage. (Use -branchstate
+  to inhibit warning)
+   settings.c:229:17: Storage cfgfile becomes static
+settings.c:233:13: Unrecognized identifier: asprintf
+settings.c:234:28: Function returns with null storage derivable from parameter
+                      *auxerror
+  A possibly null pointer is reachable from a parameter or global variable that
+  is not declared using a /*@null@*/ annotation. (Use -nullstate to inhibit
+  warning)
+   settings.c:227:29: Storage *auxerror becomes null
+settings.c:237:21: Variable dirname used before definition
+  An rvalue is used that may not be initialized to a value on some execution
+  path. (Use -usedef to inhibit warning)
+settings.c:237:30: Passed storage &namelist not completely defined:
+                      scandir (..., &namelist, ...)
+  Storage derivable from a parameter, return value or global is not defined.
+  Use /*@out@*/ to denote passed or returned storage which need not be defined.
+  (Use -compdef to inhibit warning)
+settings.c:242:30: Unrecognized identifier: ENOMEM
+settings.c:251:21: Test expression for if not boolean, type int: rv
+  Test expression type is not boolean or int. (Use -predboolint to inhibit
+  warning)
+settings.c:252:30: Index of null pointer namelist: namelist
+  A possibly null pointer is dereferenced.  Value is either the result of a
+  function which may return null (in which case, code should check it is not
+  null), or a global, parameter or structure field declared with the null
+  qualifier. (Use -nullderef to inhibit warning)
+   settings.c:240:28: Storage namelist becomes null
+settings.c:256:57: Index of null pointer namelist: namelist
+   settings.c:240:28: Storage namelist becomes null
+settings.c:259:52: Variable subcfg used before definition
+settings.c:259:60: Null storage auxerror passed as non-null param:
+                      read_config_file (..., auxerror)
+  A possibly null pointer is passed as a parameter corresponding to a formal
+  parameter with no /*@null@*/ annotation.  If NULL may be used for this
+  parameter, add a /*@null@*/ annotation to the function parameter declaration.
+  (Use -nullpass to inhibit warning)
+settings.c:259:60: Null storage *auxerror derivable from parameter
+                      read_config_file (..., auxerror)
+   settings.c:227:29: Storage *auxerror becomes null
+settings.c:270:13: Test expression for if not boolean, type int: rv
+settings.c:273:47: Null storage auxerror passed as non-null param:
+                      read_config_file (..., auxerror)
+settings.c:273:47: Null storage *auxerror derivable from parameter
+                      read_config_file (..., auxerror)
+   settings.c:227:29: Storage *auxerror becomes null
+settings.c: (in function pwquality_set_option)
+settings.c:290:17: Assignment of int to size_t: len = value - option
+settings.c:299:42: Possibly null storage value passed as non-null param:
+                      set_name_value (..., value)
+   settings.c:285:17: Storage value may become null
+settings.c: (in function pwquality_set_int_value)
+settings.c:355:14: Fall through case (no preceding break)
+  Execution falls through from the previous case. (Use -casebreak to inhibit
+  warning)
+settings.c:357:14: Fall through case (no preceding break)
+settings.c:359:17: Fall through case (no preceding break)
+settings.c: (in function pwquality_set_str_value)
+settings.c:392:28: Function returns with possibly null storage derivable from
+                      parameter pwq->dict_path
+   settings.c:388:34: Storage pwq->dict_path may become null
+settings.c:395:18: Function returns with possibly null storage derivable from
+                      parameter pwq->bad_words
+   settings.c:384:34: Storage pwq->bad_words may become null
+settings.c: (in function pwquality_get_str_value)
+settings.c:466:17: Only storage pwq->bad_words assigned to unqualified:
+                      *value = pwq->bad_words
+  The only reference to this storage is transferred to another reference (e.g.,
+  by returning it) that does not have the only annotation. This may lead to a
+  memory leak, since the new reference is not necessarily released. (Use
+  -onlytrans to inhibit warning)
+settings.c:469:17: Only storage pwq->dict_path assigned to unqualified:
+                      *value = pwq->dict_path
+settings.c:116:1: Function exported but not used outside settings:
+                     read_config_file
+  A declaration is exported, but not used outside this module. Declaration can
+  use static qualifier. (Use -exportlocal to inhibit warning)
+   settings.c:194:1: Definition of read_config_file
+
+Finished checking --- 36 code warnings
+
+
