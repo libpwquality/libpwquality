@@ -96,12 +96,12 @@ distance(const char *old, const char *new)
 
         m = strlen(old);
         n = strlen(new);
-        distances = malloc(sizeof(int*) * (m + 1));
+        distances = calloc(m + 1, sizeof(int*));
         if (distances == NULL)
                 return -1;
 
         for (i = 0; i <= m; i++) {
-                distances[i] = malloc(sizeof(int) * (n + 1));
+                distances[i] = calloc(n + 1, sizeof(int));
                 if (distances[i] == NULL)
                         goto allocfail;
 
