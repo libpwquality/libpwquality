@@ -522,8 +522,9 @@ password_check(pwquality_settings_t *pwq,
                 if (oldmono)
                         wrapped = malloc(strlen(oldmono) * 2 + 1);
                 if (wrapped) {
-                        snprintf (wrapped, sizeof wrapped, oldmono);
-                        strlcat (wrapped, oldmono, sizeof wrapped);
+                        int wrapped_len = strlen(oldmono) * 2 + 1;
+                        snprintf (wrapped, wrapped_len, oldmono);
+                        strlcat (wrapped, oldmono, wrapped_len);
                 } else {
                         rv = PWQ_ERROR_MEM_ALLOC;
                 }
