@@ -41,6 +41,45 @@ palindrome(const char *new)
         return 1;
 }
 
+/**
+ * check whether password contains som repeatable sunbstrin
+ * returns number of affected characters
+ */
+static int
+repetition(const char* new)
+{
+    int num_of_characters = 0;
+    for (int i = 0; i < strlen(new); i++) {       
+        int rep_size = 0;
+        int rep_count = 0;
+        int current_count = 0;
+        for (int j = i+1; j < strlen(new); j++) {
+            if (new[i + current_count] == new[j]) {
+                current_count++;
+            } else {
+                if (current_count > 1) {		    
+                    if (rep_size == current_count)
+                        rep_count++;
+                    else if (rep_size < current_count) {
+                        rep_count = 1;          // we found longer sequence
+                        rep_size = current_count;                        
+                    }
+                }
+                current_count = 0;
+            }
+        } 
+	// check whether we got longer sequence after the last character       
+	if (current_count == rep_size)
+		rep_count++;
+	if (current_count > rep_size) {
+		rep_count = 1;
+		rep_size = current_count;
+	}
+        num_of_characters = MAX(num_of_characters, (rep_size * rep_count));
+    }
+    return num_of_characters;
+}
+
 /*
  * Calculate how different two strings are in terms of the number of
  * character removals, additions, and changes needed to go from one to
@@ -596,7 +635,7 @@ password_score(pwquality_settings_t *pwq, const char *password)
         int i;
         int j;
         unsigned char freq[256];
-        unsigned char *buf;
+        unsigned char *buf, *passwd_low;
 
         len = strlen(password);
 
@@ -627,7 +666,17 @@ password_score(pwquality_settings_t *pwq, const char *password)
         memset(buf, 0, len);
         free(buf);
 
-        score += numclass(password) * 2;
+	    if ((passwd_low = str_lower(x_strdup(password))) == NULL)
+		        return PWQ_ERROR_MEM_ALLOC;
+
+        int rep = repetition(passwd_low);
+	    score *= ((len - rep) / (len * 1.0));
+        score += (rep * 2);
+	
+	    memset(passwd_low, 0, len);
+	    free(passwd_low);	
+
+        score += numclass(pwq, password) * 2;
 
         score = (score * 100)/(3 * pwq->min_length +
                                + PWQ_NUM_CLASSES * 2);
