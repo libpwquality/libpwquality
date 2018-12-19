@@ -237,7 +237,6 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
                                 if (enforcing && (getuid() || enforce_for_root ||
                                     (flags & PAM_CHANGE_EXPIRED_AUTHTOK))) {
                                         pam_set_item(pamh, PAM_AUTHTOK, NULL);
-                                        retval = PAM_AUTHTOK_ERR;
                                         continue;
                                 }
                         } else {
