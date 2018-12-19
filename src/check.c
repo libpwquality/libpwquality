@@ -160,8 +160,7 @@ similar(pwquality_settings_t *pwq,
  */
 
 static int
-numclass(pwquality_settings_t *pwq,
-         const char *new)
+numclass(const char *new)
 {
         int digits = 0;
         int uppers = 0;
@@ -545,7 +544,7 @@ password_check(pwquality_settings_t *pwq,
         if (!rv && wrapped && strstr(wrapped, newmono))
                 rv = PWQ_ERROR_ROTATED;
 
-        if (!rv && numclass(pwq, new) < pwq->min_class) {
+        if (!rv && numclass(new) < pwq->min_class) {
                 rv = PWQ_ERROR_MIN_CLASSES;
                 if (auxerror) {
                         *auxerror = (void *)(long)pwq->min_class;
@@ -628,7 +627,7 @@ password_score(pwquality_settings_t *pwq, const char *password)
         memset(buf, 0, len);
         free(buf);
 
-        score += numclass(pwq, password) * 2;
+        score += numclass(password) * 2;
 
         score = (score * 100)/(3 * pwq->min_length +
                                + PWQ_NUM_CLASSES * 2);
