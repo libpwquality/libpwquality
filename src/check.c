@@ -46,7 +46,7 @@ palindrome(const char *new)
  * returns number of affected characters
  */
 static int
-repetition(const char* new)
+repetition(const char* new, int* count)
 {
     int num_of_characters = 0;
     for (int i = 0; i < strlen(new); i++) {       
@@ -76,6 +76,7 @@ repetition(const char* new)
 		rep_size = current_count;
 	}
         num_of_characters = MAX(num_of_characters, (rep_size * rep_count));
+	*count = rep_count;
     }
     return num_of_characters;
 }
@@ -669,9 +670,10 @@ password_score(pwquality_settings_t *pwq, const char *password)
 	    if ((passwd_low = str_lower(x_strdup(password))) == NULL)
 		        return PWQ_ERROR_MEM_ALLOC;
 
-        int rep = repetition(passwd_low);
+	int rep_count = 0;
+        int rep = repetition(passwd_low, &rep_count);
 	    score *= ((len - rep) / (len * 1.0));
-        score += (rep * 2);
+        score += (len - ((rep / rep_count) + rep) ;
 	
 	    memset(passwd_low, 0, len);
 	    free(passwd_low);	
