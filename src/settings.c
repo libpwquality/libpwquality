@@ -134,7 +134,8 @@ read_config_file(pwquality_settings_t *pwq, const char *cfgfile, void **auxerror
                 int eq;
 
                 len = strlen(linebuf);
-                if (linebuf[len - 1] != '\n' && !feof(f)) {
+                /* len cannot be 0 unless there is a bug in fgets */
+                if (len && linebuf[len - 1] != '\n' && !feof(f)) {
                         (void) fclose(f);
                         return PWQ_ERROR_CFGFILE_MALFORMED;
                 }
@@ -146,13 +147,13 @@ read_config_file(pwquality_settings_t *pwq, const char *cfgfile, void **auxerror
                 }
 
                 /* drop terminating whitespace including the \n */
-                do {
+                while (ptr > linebuf) {
                         if (!isspace(*(ptr-1))) {
                                 *ptr = '\0';
                                 break;
                         }
                         --ptr;
-                } while (ptr > linebuf);
+                }
 
                 /* skip initial whitespace */
                 for (ptr = linebuf; isspace(*ptr); ptr++);
