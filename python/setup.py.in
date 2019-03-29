@@ -4,22 +4,32 @@
 # See the end of the file for Copyright and License Information
 #
 
+import os
+
 from distutils.core import setup, Extension
 from distutils.command.build_ext import build_ext as _build_ext
+from distutils.command.sdist import sdist as _sdist
+
+def genconstants(headerfile, outputfile):
+    hf = open(headerfile, 'r')
+    of = open(outputfile, 'w')
+    of.write('/* This file is generated during build time from pwquality.h */\n\n')
+    for line in hf:
+            if line.startswith('#define PWQ_'):
+                    s = line.split()
+                    of.write('PyModule_AddIntConstant(module, "%s", %s);\n' % (s[1], s[2]))
 
 class build_ext(_build_ext):
-    def genconstants(self, headerfile, outputfile):
-        hf = open(headerfile, 'r')
-        of = open(outputfile, 'w')
-        of.write('/* This file is generated during build time from pwquality.h */\n\n')
-        for line in hf:
-                if line.startswith('#define PWQ_'):
-                        s = line.split()
-                        of.write('PyModule_AddIntConstant(module, "%s", %s);\n' % (s[1], s[2]))
-
     def run(self):
-        self.genconstants('../src/pwquality.h', 'constants.c')
+        if not os.path.exists('constants.c'):
+            genconstants('../src/pwquality.h', 'constants.c')
         _build_ext.run(self)
+
+class sdist(_sdist):
+    def run(self):
+        if not os.path.exists('constants.c'):
+            genconstants('../src/pwquality.h', 'constants.c')
+        _sdist.run(self)
 
 pwqmodule = Extension('pwquality',
             sources = ['pwquality.c'],
@@ -36,7 +46,7 @@ setup(
     url = 'http://fedorahosted.org/libpwquality',
     license = 'BSD or GPLv2+',
     ext_modules = [pwqmodule],
-    cmdclass = {'build_ext': build_ext}
+    cmdclass = {'build_ext': build_ext, 'sdist': sdist}
 )
 
 # Copyright (c) Red Hat, Inc, 2011
