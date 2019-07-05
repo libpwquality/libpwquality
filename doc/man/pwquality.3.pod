@@ -101,7 +101,7 @@ Typical use of the libpwquality API:
         pwquality_settings_t *pwq;
         int rv;
         void *auxerror;
-        char buf[1024];
+        char buf[PWQ_MAX_ERROR_MESSAGE_LEN];
 
         pwq = pwquality_default_settings();
         if (pwq == NULL) {
