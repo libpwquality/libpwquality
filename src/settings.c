@@ -13,6 +13,7 @@
 #include <ctype.h>
 #include <errno.h>
 #include <dirent.h>
+#include <crack.h>
 
 #include "pwquality.h"
 #include "pwqprivate.h"
@@ -467,7 +468,10 @@ pwquality_get_str_value(pwquality_settings_t *pwq, int setting, const char **val
                 *value = pwq->bad_words;
                 break;
         case PWQ_SETTING_DICT_PATH:
-                *value = pwq->dict_path;
+                if (pwq->dict_path)
+                        *value = pwq->dict_path;
+                else
+                        *value = GetDefaultCracklibDict();
                 break;
         default:
                 return PWQ_ERROR_NON_STR_SETTING;
