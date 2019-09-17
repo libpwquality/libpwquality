@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # I felix <ifelix@redhat.com>, 2007.
 # I. Felix <ifelix@redhat.com>, 2009.
@@ -12,33 +12,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2017-05-26 14:17+0200\n"
+"POT-Creation-Date: 2019-09-17 14:01+0200\n"
 "PO-Revision-Date: 2017-05-26 08:59+0000\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Tamil (http://www.transifex.com/projects/p/libpwquality/"
 "language/ta/)\n"
+"Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ta\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:25
-#, c-format
-msgid "New %s%spassword: "
-msgstr "புதிய %s%spassword: "
-
-#: src/pam_pwquality.c:27
-#, c-format
-msgid "Retype new %s%spassword: "
-msgstr "புதிய %s%spassword மீண்டும் உள்ளிடவும்: "
-
-#: src/pam_pwquality.c:28
-msgid "Sorry, passwords do not match."
-msgstr "கடவுச்சொல் பொருந்தவில்லை."
-
-#: src/pam_pwquality.c:242
+#: src/pam_pwquality.c:233
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "தவறான கடவுச்சொல்: %s"
@@ -51,15 +37,12 @@ msgstr "பயன்பாடு: %s [user]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input."
-"\n"
+"       The command reads the password to be scored from the standard input.\n"
 msgstr ""
-"       கட்டளையானது தரநிலையான உள்ளீட்டிலிருந்து மதிப்பீடு வழங்க வேண்டிய "
-"கடவுச்சொல்லை வாசிக்கும்.\n"
+"       கட்டளையானது தரநிலையான உள்ளீட்டிலிருந்து மதிப்பீடு வழங்க வேண்டிய கடவுச்சொல்லை "
+"வாசிக்கும்.\n"
 
-#: src/pwscore.c:53
-#: src/pwscore.c:61
-#: src/pwscore.c:67
+#: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "பிழை: %s\n"
@@ -70,9 +53,11 @@ msgstr "மதிப்பீடு செய்யப்பட வேண்ட�
 
 #: src/pwscore.c:75
 #, c-format
-msgid "Password quality check failed:\n"
+msgid ""
+"Password quality check failed:\n"
 " %s\n"
-msgstr "கடவுச்சொல் தர சோதனை தோல்வியடைந்தது:\n"
+msgstr ""
+"கடவுச்சொல் தர சோதனை தோல்வியடைந்தது:\n"
 " %s\n"
 
 #: src/pwmake.c:22
@@ -109,10 +94,8 @@ msgid "The password contains the user name in some form"
 msgstr "கடவுச்சொல்லில் ஏதோ ஒரு வடிவத்தில் பயனர் பெயர் உள்ளது"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
-msgstr ""
-"கடவுச்சொல்லில் ஏதோ வடிவத்தில் பயனரின் உண்மையான பெயரைச் சேர்ந்த சொற்கள் உள்ளன"
+msgid "The password contains words from the real name of the user in some form"
+msgstr "கடவுச்சொல்லில் ஏதோ வடிவத்தில் பயனரின் உண்மையான பெயரைச் சேர்ந்த சொற்கள் உள்ளன"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
@@ -165,8 +148,7 @@ msgstr "கடவுச்சொல் மிகவும் சிறியத�
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
-msgstr ""
-"கடவுச்சொல் பழைய கடவுச்சொல்லையே சுழல் முறையில் பயன்படுத்திய ஒன்றாக உள்ளது"
+msgstr "கடவுச்சொல் பழைய கடவுச்சொல்லையே சுழல் முறையில் பயன்படுத்திய ஒன்றாக உள்ளது"
 
 #: src/error.c:84
 #, c-format
@@ -180,8 +162,7 @@ msgstr "கடவுச்சொல்லில் தேவையான எழ�
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr ""
-"கடவுச்சொல்லில் %ld க்கும் அதிகமான முறை ஒரே எழுத்துகள் தொடர்ச்சியாக உள்ளன"
+msgstr "கடவுச்சொல்லில் %ld க்கும் அதிகமான முறை ஒரே எழுத்துகள் தொடர்ச்சியாக உள்ளன"
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
@@ -197,14 +178,12 @@ msgstr "கடவுச்சொல்லில் தொடர்ச்சி�
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr ""
-"கடவுச்சொல்லில் தொடர்ச்சியாக ஒரே வகையைச் சேர்ந்த எழுத்துகள் அதிகம் உள்ளன"
+msgstr "கடவுச்சொல்லில் தொடர்ச்சியாக ஒரே வகையைச் சேர்ந்த எழுத்துகள் அதிகம் உள்ளன"
 
 #: src/error.c:102
 #, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr ""
-"கடவுச்சொல்லில் %ld க்கும் அதிக எழுத்துகள் நீளமுள்ள மோனோடோனிக் வரிசை உள்ளது"
+msgstr "கடவுச்சொல்லில் %ld க்கும் அதிக எழுத்துகள் நீளமுள்ள மோனோடோனிக் வரிசை உள்ளது"
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"
@@ -221,16 +200,14 @@ msgstr "RNG சாதனத்திலிருந்து எழுந்த�
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
-"கடவுச்சொல் உருவாக்கம் தோல்வியடைந்தது - தேவையான என்ட்ராபி இந்த அமைவுகளுக்கு "
-"மிகக் குறைவாக உள்ளது"
+"கடவுச்சொல் உருவாக்கம் தோல்வியடைந்தது - தேவையான என்ட்ராபி இந்த அமைவுகளுக்கு மிகக் "
+"குறைவாக உள்ளது"
 
-#: src/error.c:114
-#: src/error.c:117
+#: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
 msgstr "கடவுச்சொல் அகராதி சோதனையில் தோல்வியடைந்தது"
 
-#: src/error.c:120
-#: src/error.c:124
+#: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
 msgstr "தெரியாத அமைவு"
 
@@ -275,3 +252,12 @@ msgstr "பெரும் தோல்வி"
 #: src/error.c:153
 msgid "Unknown error"
 msgstr "தெரியாத பிழை"
+
+#~ msgid "New %s%spassword: "
+#~ msgstr "புதிய %s%spassword: "
+
+#~ msgid "Retype new %s%spassword: "
+#~ msgstr "புதிய %s%spassword மீண்டும் உள்ளிடவும்: "
+
+#~ msgid "Sorry, passwords do not match."
+#~ msgstr "கடவுச்சொல் பொருந்தவில்லை."

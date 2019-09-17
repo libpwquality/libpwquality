@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Runa Bhattacharjee <runab@fedoraproject.org>, 2009
 # runab <runab@redhat.com>, 2007-2008
@@ -10,33 +10,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2017-05-26 14:17+0200\n"
+"POT-Creation-Date: 2019-09-17 14:01+0200\n"
 "PO-Revision-Date: 2017-05-26 08:59+0000\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Bengali (India) (http://www.transifex.com/projects/p/"
 "libpwquality/language/bn_IN/)\n"
+"Language: bn_IN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: bn_IN\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:25
-#, c-format
-msgid "New %s%spassword: "
-msgstr "নতুন %s%s পাসওয়ার্ড: "
-
-#: src/pam_pwquality.c:27
-#, c-format
-msgid "Retype new %s%spassword: "
-msgstr "নতুন %s%s পাসওয়ার্ড পুনরায় লিখুন: "
-
-#: src/pam_pwquality.c:28
-msgid "Sorry, passwords do not match."
-msgstr "দুঃখিত, পাসওয়ার্ড দুটি এক নয়।"
-
-#: src/pam_pwquality.c:242
+#: src/pam_pwquality.c:233
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "পাসওয়ার্ড ভাল নয়: %s"
@@ -49,14 +35,10 @@ msgstr "ব্যবহার: %s [user]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input."
-"\n"
-msgstr ""
-"       কম্যান্ড স্ট্যান্ডার্ড থেকে স্কোর করতে হবে এমন পাসওয়ার্ডটি পড়ে।\n"
+"       The command reads the password to be scored from the standard input.\n"
+msgstr "       কম্যান্ড স্ট্যান্ডার্ড থেকে স্কোর করতে হবে এমন পাসওয়ার্ডটি পড়ে।\n"
 
-#: src/pwscore.c:53
-#: src/pwscore.c:61
-#: src/pwscore.c:67
+#: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "ত্রুটি: %s\n"
@@ -67,9 +49,11 @@ msgstr "যে পাসওয়ার্ডটি স্কোর করতে �
 
 #: src/pwscore.c:75
 #, c-format
-msgid "Password quality check failed:\n"
+msgid ""
+"Password quality check failed:\n"
 " %s\n"
-msgstr "পাসওয়ার্ড গুণমান যাচাই সম্ভব হয়নি:\n"
+msgstr ""
+"পাসওয়ার্ড গুণমান যাচাই সম্ভব হয়নি:\n"
 " %s\n"
 
 #: src/pwmake.c:22
@@ -103,14 +87,11 @@ msgstr "পাসওয়ার্ডটি পুরনোটির প্রা�
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr ""
-"পাসওয়ার্ডটির মধ্যে কোনো না কোনো রূপে ব্যবহারকারী নাম অন্তর্ভুক্ত রয়েছে"
+msgstr "পাসওয়ার্ডটির মধ্যে কোনো না কোনো রূপে ব্যবহারকারী নাম অন্তর্ভুক্ত রয়েছে"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
-msgstr ""
-"পাসওয়ার্ডের মধ্যে ব্যবহারকারীর প্রকৃত নামের শব্দ কোনো না কোনো ভাবে রয়েছে"
+msgid "The password contains words from the real name of the user in some form"
+msgstr "পাসওয়ার্ডের মধ্যে ব্যবহারকারীর প্রকৃত নামের শব্দ কোনো না কোনো ভাবে রয়েছে"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
@@ -193,8 +174,7 @@ msgstr "পাসওয়ার্ডটিতে ক্রমান্বয়ে %
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr ""
-"পাসওয়ার্ডটিতে একই শ্রেণীর অক্ষর অত্যাধিক বার ক্রমাগত ব্যবহার করা হয়েছে"
+msgstr "পাসওয়ার্ডটিতে একই শ্রেণীর অক্ষর অত্যাধিক বার ক্রমাগত ব্যবহার করা হয়েছে"
 
 #: src/error.c:102
 #, c-format
@@ -216,16 +196,13 @@ msgstr "RNG ডিভাইস থেকে অনির্দিষ্ট ন�
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
-"পাসওয়ার্ড প্রস্তুত করা যায়নি - সেটিং করার ক্ষেত্রে প্রয়োজনীয় এনট্রপি "
-"অতিমাত্রায় কম"
+"পাসওয়ার্ড প্রস্তুত করা যায়নি - সেটিং করার ক্ষেত্রে প্রয়োজনীয় এনট্রপি অতিমাত্রায় কম"
 
-#: src/error.c:114
-#: src/error.c:117
+#: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
 msgstr "পাসওয়ার্ডের অভিধান যাচাই করা যায়নি"
 
-#: src/error.c:120
-#: src/error.c:124
+#: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
 msgstr "অজানা সেটিং"
 
@@ -270,3 +247,12 @@ msgstr "গুরুতর সমস্যা"
 #: src/error.c:153
 msgid "Unknown error"
 msgstr "অজানা সমস্যা"
+
+#~ msgid "New %s%spassword: "
+#~ msgstr "নতুন %s%s পাসওয়ার্ড: "
+
+#~ msgid "Retype new %s%spassword: "
+#~ msgstr "নতুন %s%s পাসওয়ার্ড পুনরায় লিখুন: "
+
+#~ msgid "Sorry, passwords do not match."
+#~ msgstr "দুঃখিত, পাসওয়ার্ড দুটি এক নয়।"

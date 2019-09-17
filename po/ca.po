@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Albert Carabasa Giribet <albertc@asic.udl.cat>, 2009
 # xqueralt <xqueralt@gmail.com>, 2008
@@ -12,33 +12,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2017-05-26 14:17+0200\n"
+"POT-Creation-Date: 2019-09-17 14:01+0200\n"
 "PO-Revision-Date: 2019-01-30 01:06+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/projects/p/libpwquality/"
 "language/ca/)\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ca\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:25
-#, c-format
-msgid "New %s%spassword: "
-msgstr "Nova contrasenya%s%s: "
-
-#: src/pam_pwquality.c:27
-#, c-format
-msgid "Retype new %s%spassword: "
-msgstr "Torneu a escriure la nova contrasenya%s%s: "
-
-#: src/pam_pwquality.c:28
-msgid "Sorry, passwords do not match."
-msgstr "Les contrasenyes no coincideixen."
-
-#: src/pam_pwquality.c:242
+#: src/pam_pwquality.c:233
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "CONTRASENYA DOLENTA: %s"
@@ -51,15 +37,12 @@ msgstr "Ús: %s [usuari]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input."
-"\n"
+"       The command reads the password to be scored from the standard input.\n"
 msgstr ""
 "       L'ordre llegeix la contrasenya a ser qualificada des de l'entrada "
 "estàndard.\n"
 
-#: src/pwscore.c:53
-#: src/pwscore.c:61
-#: src/pwscore.c:67
+#: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "Error: %s\n"
@@ -70,9 +53,11 @@ msgstr "No es pot obtenir la contrasenya a ser qualificada"
 
 #: src/pwscore.c:75
 #, c-format
-msgid "Password quality check failed:\n"
+msgid ""
+"Password quality check failed:\n"
 " %s\n"
-msgstr "La comprovació de la qualitat de la contrasenya ha fallat:\n"
+msgstr ""
+"La comprovació de la qualitat de la contrasenya ha fallat:\n"
 " %s\n"
 
 #: src/pwmake.c:22
@@ -110,10 +95,8 @@ msgid "The password contains the user name in some form"
 msgstr "La contrasenya d'alguna manera conté el nom d'usuari"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
-msgstr ""
-"La contrasenya d'alguna manera conté paraules del nom real de l'usuari"
+msgid "The password contains words from the real name of the user in some form"
+msgstr "La contrasenya d'alguna manera conté paraules del nom real de l'usuari"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
@@ -224,13 +207,11 @@ msgstr ""
 "La generació de la contrasenya ha fallat - es va exigir una entropia molt "
 "baixa per als ajustos"
 
-#: src/error.c:114
-#: src/error.c:117
+#: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
 msgstr "La contrasenya no passa la comprovació del diccionari"
 
-#: src/error.c:120
-#: src/error.c:124
+#: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
 msgstr "Ajust desconegut"
 
@@ -275,3 +256,12 @@ msgstr "Error fatal"
 #: src/error.c:153
 msgid "Unknown error"
 msgstr "Error desconegut"
+
+#~ msgid "New %s%spassword: "
+#~ msgstr "Nova contrasenya%s%s: "
+
+#~ msgid "Retype new %s%spassword: "
+#~ msgstr "Torneu a escriure la nova contrasenya%s%s: "
+
+#~ msgid "Sorry, passwords do not match."
+#~ msgstr "Les contrasenyes no coincideixen."

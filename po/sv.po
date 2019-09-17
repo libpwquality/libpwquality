@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Christer Andersson <klamm@comhem.se>, 2007
 # Daniel Nylander <po@danielnylander.se>, 2009, 2010
@@ -10,33 +10,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2017-05-26 14:17+0200\n"
+"POT-Creation-Date: 2019-09-17 14:01+0200\n"
 "PO-Revision-Date: 2017-05-26 09:21+0000\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Swedish (http://www.transifex.com/projects/p/libpwquality/"
 "language/sv/)\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:25
-#, c-format
-msgid "New %s%spassword: "
-msgstr "Nytt %s%slösenord: "
-
-#: src/pam_pwquality.c:27
-#, c-format
-msgid "Retype new %s%spassword: "
-msgstr "Ange nytt %s%slösenord igen: "
-
-#: src/pam_pwquality.c:28
-msgid "Sorry, passwords do not match."
-msgstr "Tyvärr, lösenorden stämmer inte överens."
-
-#: src/pam_pwquality.c:242
+#: src/pam_pwquality.c:233
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "DÅLIGT LÖSENORD: %s"
@@ -49,14 +35,11 @@ msgstr "Användning: %s [användare]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input."
-"\n"
+"       The command reads the password to be scored from the standard input.\n"
 msgstr ""
 "       Kommandot läser från standard in lösenordet som skall ges poäng.\n"
 
-#: src/pwscore.c:53
-#: src/pwscore.c:61
-#: src/pwscore.c:67
+#: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "Fel: %s\n"
@@ -67,9 +50,11 @@ msgstr "Kunde inte få tag i lösenordet att poängsätta"
 
 #: src/pwscore.c:75
 #, c-format
-msgid "Password quality check failed:\n"
+msgid ""
+"Password quality check failed:\n"
 " %s\n"
-msgstr "Kvalitetskontrollen av lösenordet misslyckades:\n"
+msgstr ""
+"Kvalitetskontrollen av lösenordet misslyckades:\n"
 " %s\n"
 
 #: src/pwmake.c:22
@@ -106,11 +91,9 @@ msgid "The password contains the user name in some form"
 msgstr "Lösenordet innehåller användarnamnet i någon form"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
+msgid "The password contains words from the real name of the user in some form"
 msgstr ""
-"Lösenordet innehåller ord från det verkliga namnet på användaren i någon "
-"form"
+"Lösenordet innehåller ord från det verkliga namnet på användaren i någon form"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
@@ -218,13 +201,11 @@ msgstr ""
 "Lösenordsgenereringen misslyckades — den nödvändiga entropin är för låg för "
 "inställningarna"
 
-#: src/error.c:114
-#: src/error.c:117
+#: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
 msgstr "Lösenordet misslyckades i ordbokskontrollen"
 
-#: src/error.c:120
-#: src/error.c:124
+#: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
 msgstr "Okänd inställning"
 
@@ -269,3 +250,12 @@ msgstr "Ödesdigert fel"
 #: src/error.c:153
 msgid "Unknown error"
 msgstr "Okänt fel"
+
+#~ msgid "New %s%spassword: "
+#~ msgstr "Nytt %s%slösenord: "
+
+#~ msgid "Retype new %s%spassword: "
+#~ msgstr "Ange nytt %s%slösenord igen: "
+
+#~ msgid "Sorry, passwords do not match."
+#~ msgstr "Tyvärr, lösenorden stämmer inte överens."

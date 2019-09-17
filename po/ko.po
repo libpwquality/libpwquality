@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # eukim <eukim@redhat.com>, 2007,2009
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
@@ -9,33 +9,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2017-05-26 14:17+0200\n"
+"POT-Creation-Date: 2019-09-17 14:01+0200\n"
 "PO-Revision-Date: 2017-05-26 09:01+0000\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Korean (http://www.transifex.com/projects/p/libpwquality/"
 "language/ko/)\n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:25
-#, c-format
-msgid "New %s%spassword: "
-msgstr "새 %s%s 암호:"
-
-#: src/pam_pwquality.c:27
-#, c-format
-msgid "Retype new %s%spassword: "
-msgstr "새 %s%s 암호 재입력:"
-
-#: src/pam_pwquality.c:28
-msgid "Sorry, passwords do not match."
-msgstr "죄송합니다. 암호가 일치하지 않습니다."
-
-#: src/pam_pwquality.c:242
+#: src/pam_pwquality.c:233
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "잘못된 암호: %s"
@@ -48,13 +34,10 @@ msgstr "사용법: %s [user]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input."
-"\n"
+"       The command reads the password to be scored from the standard input.\n"
 msgstr "       이 명령은 표준 입력에서 득점할 암호를 읽습니다.\n"
 
-#: src/pwscore.c:53
-#: src/pwscore.c:61
-#: src/pwscore.c:67
+#: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "오류: %s\n"
@@ -65,9 +48,11 @@ msgstr "득점할 암호를 얻을 수 없습니다"
 
 #: src/pwscore.c:75
 #, c-format
-msgid "Password quality check failed:\n"
+msgid ""
+"Password quality check failed:\n"
 " %s\n"
-msgstr "암호 수준 검사에 실패했습니다:\n"
+msgstr ""
+"암호 수준 검사에 실패했습니다:\n"
 " %s\n"
 
 #: src/pwmake.c:22
@@ -104,9 +89,9 @@ msgid "The password contains the user name in some form"
 msgstr "암호에 어떤 형식으로 사용자 이름이 포함되어 있습니다 "
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
-msgstr "암호에는 어떤 형식으로 사용자의 실제 이름에서의 단어가 포함되어 있습니다"
+msgid "The password contains words from the real name of the user in some form"
+msgstr ""
+"암호에는 어떤 형식으로 사용자의 실제 이름에서의 단어가 포함되어 있습니다"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
@@ -184,7 +169,8 @@ msgstr "암호에는 너무 많은 동일한 문자가 연속적으로 포함되
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr "암호에는 %ld개 이상의 동일한 클래스 문자가 연속적으로 포함되어 있습니다"
+msgstr ""
+"암호에는 %ld개 이상의 동일한 클래스 문자가 연속적으로 포함되어 있습니다"
 
 #: src/error.c:99
 msgid ""
@@ -212,13 +198,11 @@ msgstr "RNG 장치에서 임의의 숫자를 가져올 수 없습니다"
 msgid "Password generation failed - required entropy too low for settings"
 msgstr "암호 생성에 실패했습니다 - 설정에 필요한 엔트로피가 너무 작습니다 "
 
-#: src/error.c:114
-#: src/error.c:117
+#: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
 msgstr "암호는 사전 검사에 실패했습니다 "
 
-#: src/error.c:120
-#: src/error.c:124
+#: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
 msgstr "알 수 없는 설정 "
 
@@ -263,3 +247,12 @@ msgstr "치명적인 오류가 발생했습니다"
 #: src/error.c:153
 msgid "Unknown error"
 msgstr "알 수 없는 오류"
+
+#~ msgid "New %s%spassword: "
+#~ msgstr "새 %s%s 암호:"
+
+#~ msgid "Retype new %s%spassword: "
+#~ msgstr "새 %s%s 암호 재입력:"
+
+#~ msgid "Sorry, passwords do not match."
+#~ msgstr "죄송합니다. 암호가 일치하지 않습니다."

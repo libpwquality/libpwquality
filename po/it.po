@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Luca Bruno <luca.br@uno.it>, 2007.
 # Mario Santagiuliana <fedora at marionline.it>, 2012.
@@ -14,32 +14,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2017-05-26 14:17+0200\n"
+"POT-Creation-Date: 2019-09-17 14:01+0200\n"
 "PO-Revision-Date: 2019-03-05 01:10+0000\n"
 "Last-Translator: Milo Casagrande <milo@milo.name>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:25
-#, c-format
-msgid "New %s%spassword: "
-msgstr "Nuova password%s%s: "
-
-#: src/pam_pwquality.c:27
-#, c-format
-msgid "Retype new %s%spassword: "
-msgstr "Ripetere la nuova password%s%s: "
-
-#: src/pam_pwquality.c:28
-msgid "Sorry, passwords do not match."
-msgstr "Le password non corrispondono."
-
-#: src/pam_pwquality.c:242
+#: src/pam_pwquality.c:233
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "Password errata: %s"
@@ -52,13 +38,10 @@ msgstr "Uso: %s [user]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input."
-"\n"
+"       The command reads the password to be scored from the standard input.\n"
 msgstr "       Il comando legge la password fornita sullo standard input.\n"
 
-#: src/pwscore.c:53
-#: src/pwscore.c:61
-#: src/pwscore.c:67
+#: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "Errore: %s\n"
@@ -69,9 +52,11 @@ msgstr "Impossibile ottenere la password da valutare"
 
 #: src/pwscore.c:75
 #, c-format
-msgid "Password quality check failed:\n"
+msgid ""
+"Password quality check failed:\n"
 " %s\n"
-msgstr "Controllo di qualità della password non riuscito:\n"
+msgstr ""
+"Controllo di qualità della password non riuscito:\n"
 " %s\n"
 
 #: src/pwmake.c:22
@@ -109,8 +94,7 @@ msgid "The password contains the user name in some form"
 msgstr "La password contiene il nome utente in altre forme"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
+msgid "The password contains words from the real name of the user in some form"
 msgstr "La password contiene parole del nome reale dell'utente in altre forme"
 
 #: src/error.c:49
@@ -220,13 +204,11 @@ msgstr ""
 "Generazione della password non riuscita, entropia richiesta troppo bassa per "
 "la configurazione"
 
-#: src/error.c:114
-#: src/error.c:117
+#: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
 msgstr "La password non supera il controllo del dizionario"
 
-#: src/error.c:120
-#: src/error.c:124
+#: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
 msgstr "Impostazione sconosciuta"
 
@@ -271,3 +253,12 @@ msgstr "Errore fatale"
 #: src/error.c:153
 msgid "Unknown error"
 msgstr "Errore sconosciuto"
+
+#~ msgid "New %s%spassword: "
+#~ msgstr "Nuova password%s%s: "
+
+#~ msgid "Retype new %s%spassword: "
+#~ msgstr "Ripetere la nuova password%s%s: "
+
+#~ msgid "Sorry, passwords do not match."
+#~ msgstr "Le password non corrispondono."

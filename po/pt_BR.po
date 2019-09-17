@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Diego Búrigo Zacarão <diegobz@projetofedora.org>, 2008
 # Glaucia Freitas <gcintra@redhat.com>, 2007
@@ -11,33 +11,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2017-05-26 14:17+0200\n"
+"POT-Creation-Date: 2019-09-17 14:01+0200\n"
 "PO-Revision-Date: 2017-05-26 09:00+0000\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/"
 "libpwquality/language/pt_BR/)\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:25
-#, c-format
-msgid "New %s%spassword: "
-msgstr "Nova %s%ssenha:"
-
-#: src/pam_pwquality.c:27
-#, c-format
-msgid "Retype new %s%spassword: "
-msgstr "Redigite a nova %s%ssenha:"
-
-#: src/pam_pwquality.c:28
-msgid "Sorry, passwords do not match."
-msgstr "As senhas não são iguais."
-
-#: src/pam_pwquality.c:242
+#: src/pam_pwquality.c:233
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "SENHA INCORRETA: %s"
@@ -50,14 +36,11 @@ msgstr "Uso: %s [usuário]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input."
-"\n"
+"       The command reads the password to be scored from the standard input.\n"
 msgstr ""
 "       O comando lê a senha a ser marcada a partir da entrada padrão.\n"
 
-#: src/pwscore.c:53
-#: src/pwscore.c:61
-#: src/pwscore.c:67
+#: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "Erro: %s\n"
@@ -68,9 +51,11 @@ msgstr "Não foi possível obter a senha a ser marcada"
 
 #: src/pwscore.c:75
 #, c-format
-msgid "Password quality check failed:\n"
+msgid ""
+"Password quality check failed:\n"
 " %s\n"
-msgstr "Teste de qualidade da senha falhou:\n"
+msgstr ""
+"Teste de qualidade da senha falhou:\n"
 " %s\n"
 
 #: src/pwmake.c:22
@@ -107,8 +92,7 @@ msgid "The password contains the user name in some form"
 msgstr "A senha contém o nome de usuário em algum formulário"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
+msgid "The password contains words from the real name of the user in some form"
 msgstr "A senha contém palavras de um nome real de usuário no mesmo formato"
 
 #: src/error.c:49
@@ -219,13 +203,11 @@ msgstr ""
 "A geração de senha falhou - foi requerida um aentropia muito baixa para a "
 "configuração"
 
-#: src/error.c:114
-#: src/error.c:117
+#: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
 msgstr "A senha não passa pela verificação do dicionário"
 
-#: src/error.c:120
-#: src/error.c:124
+#: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
 msgstr "Configuração desconhecida"
 
@@ -270,3 +252,12 @@ msgstr "Falha Fatal"
 #: src/error.c:153
 msgid "Unknown error"
 msgstr "Erro desconhecido"
+
+#~ msgid "New %s%spassword: "
+#~ msgstr "Nova %s%ssenha:"
+
+#~ msgid "Retype new %s%spassword: "
+#~ msgstr "Redigite a nova %s%ssenha:"
+
+#~ msgid "Sorry, passwords do not match."
+#~ msgstr "As senhas não são iguais."

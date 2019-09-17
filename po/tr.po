@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Bahadır Kandemir <bahadir@pardus.org.tr>, 2010
 # Koray Löker <loker@pardus.org.tr>, 2006
@@ -11,33 +11,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2017-05-26 14:17+0200\n"
+"POT-Creation-Date: 2019-09-17 14:01+0200\n"
 "PO-Revision-Date: 2018-09-02 08:33+0000\n"
 "Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/libpwquality/"
 "language/tr/)\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:25
-#, c-format
-msgid "New %s%spassword: "
-msgstr "Yeni %s%sparolası: "
-
-#: src/pam_pwquality.c:27
-#, c-format
-msgid "Retype new %s%spassword: "
-msgstr "Yeni %s%sparolasını yeniden girin: "
-
-#: src/pam_pwquality.c:28
-msgid "Sorry, passwords do not match."
-msgstr "Üzgünüm, parolalar birbirine uymuyor."
-
-#: src/pam_pwquality.c:242
+#: src/pam_pwquality.c:233
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "KÖTÜ PAROLA: %s"
@@ -50,13 +36,10 @@ msgstr "Kullanım: %s [kullanıcı]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input."
-"\n"
+"       The command reads the password to be scored from the standard input.\n"
 msgstr "       Komut, parolayı standart girdiden ölçmek için okur.\n"
 
-#: src/pwscore.c:53
-#: src/pwscore.c:61
-#: src/pwscore.c:67
+#: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "Hata: %s\n"
@@ -67,9 +50,11 @@ msgstr "Parola, ölçüm için elde edilemiyor"
 
 #: src/pwscore.c:75
 #, c-format
-msgid "Password quality check failed:\n"
+msgid ""
+"Password quality check failed:\n"
 " %s\n"
-msgstr "Parola niteliği denetimi başarısız:\n"
+msgstr ""
+"Parola niteliği denetimi başarısız:\n"
 " %s\n"
 
 #: src/pwmake.c:22
@@ -106,8 +91,7 @@ msgid "The password contains the user name in some form"
 msgstr "Parola kullanıcı adını bir biçimde içeriyor"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
+msgid "The password contains words from the real name of the user in some form"
 msgstr "Parola kullanıcının gerçek adını bir biçimde içeriyor"
 
 #: src/error.c:49
@@ -214,13 +198,11 @@ msgstr "RNG aygıtından rastgele numara alınamıyor"
 msgid "Password generation failed - required entropy too low for settings"
 msgstr "Parola oluşturma başarısız - gereken entropi ayarlar için düşük"
 
-#: src/error.c:114
-#: src/error.c:117
+#: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
 msgstr "Parola sözlük denetiminden geçemedi"
 
-#: src/error.c:120
-#: src/error.c:124
+#: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
 msgstr "Bilinmeyen ayar"
 
@@ -265,3 +247,12 @@ msgstr "Ölümcül arıza"
 #: src/error.c:153
 msgid "Unknown error"
 msgstr "Bilinmeyen hata"
+
+#~ msgid "New %s%spassword: "
+#~ msgstr "Yeni %s%sparolası: "
+
+#~ msgid "Retype new %s%spassword: "
+#~ msgstr "Yeni %s%sparolasını yeniden girin: "
+
+#~ msgid "Sorry, passwords do not match."
+#~ msgstr "Üzgünüm, parolalar birbirine uymuyor."

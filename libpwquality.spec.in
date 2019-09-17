@@ -181,6 +181,9 @@ mkdir $RPM_BUILD_ROOT%{_secconfdir}/pwquality.conf.d
 * Tue Sep 17 2019 Tomáš Mráz <tmraz@redhat.com> 1.4.1-1
 - Disable python2 bindings in Fedora 31 and above
 - Add conditionals for Python2 and Python3
+- pam_pwquality: Abort the retry loop if user requests it
+- Allow setting retry, enforce_for_root, and local_users_only options
+  in the pwquality.conf config file
 
 * Sat Feb 03 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 1.4.0-5
 - Switch to %%ldconfig_scriptlets

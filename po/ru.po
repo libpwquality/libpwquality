@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Andrew Martynov <andrewm@inventa.ru>, 2008.
 #   <iya777@yandex.ru>, 2012.
@@ -12,33 +12,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2017-05-26 14:17+0200\n"
+"POT-Creation-Date: 2019-09-17 14:01+0200\n"
 "PO-Revision-Date: 2017-05-26 09:20+0000\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ru\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:25
-#, c-format
-msgid "New %s%spassword: "
-msgstr "Новый пароль %s%s: "
-
-#: src/pam_pwquality.c:27
-#, c-format
-msgid "Retype new %s%spassword: "
-msgstr "Повторите ввод нового пароля %s%s: "
-
-#: src/pam_pwquality.c:28
-msgid "Sorry, passwords do not match."
-msgstr "Извините, но пароли не совпадают."
-
-#: src/pam_pwquality.c:242
+#: src/pam_pwquality.c:233
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "НЕУДАЧНЫЙ ПАРОЛЬ: %s"
@@ -51,13 +37,10 @@ msgstr "Использование: %s [пользователь]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input."
-"\n"
+"       The command reads the password to be scored from the standard input.\n"
 msgstr "       Команда проверяет качество введенного пароля.\n"
 
-#: src/pwscore.c:53
-#: src/pwscore.c:61
-#: src/pwscore.c:67
+#: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "Ошибка: %s\n"
@@ -68,9 +51,11 @@ msgstr "Не удалось получить пароль для проверк�
 
 #: src/pwscore.c:75
 #, c-format
-msgid "Password quality check failed:\n"
+msgid ""
+"Password quality check failed:\n"
 " %s\n"
-msgstr "Проверка сложности пароля завершилась неудачей:\n"
+msgstr ""
+"Проверка сложности пароля завершилась неудачей:\n"
 " %s\n"
 
 #: src/pwmake.c:22
@@ -107,8 +92,7 @@ msgid "The password contains the user name in some form"
 msgstr "Пароль содержит имя пользователя в той или иной форме"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
+msgid "The password contains words from the real name of the user in some form"
 msgstr "Пароль содержит реальное имя пользователя в той или иной форме"
 
 #: src/error.c:49
@@ -215,13 +199,11 @@ msgstr "Не удаётся сгенерировать случайных чис
 msgid "Password generation failed - required entropy too low for settings"
 msgstr "Не удалось с генерировать пароль - не достаточно случайных данных"
 
-#: src/error.c:114
-#: src/error.c:117
+#: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
 msgstr "Пароль не прошел проверку орфографии"
 
-#: src/error.c:120
-#: src/error.c:124
+#: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
 msgstr "Неизвестные настройки"
 
@@ -266,3 +248,12 @@ msgstr "Фатальная ошибка"
 #: src/error.c:153
 msgid "Unknown error"
 msgstr "Неизвестная ошибка"
+
+#~ msgid "New %s%spassword: "
+#~ msgstr "Новый пароль %s%s: "
+
+#~ msgid "Retype new %s%spassword: "
+#~ msgstr "Повторите ввод нового пароля %s%s: "
+
+#~ msgid "Sorry, passwords do not match."
+#~ msgstr "Извините, но пароли не совпадают."

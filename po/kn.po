@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # shankar <svenkate@redhat.com>, 2007-2009
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
@@ -9,33 +9,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2017-05-26 14:17+0200\n"
+"POT-Creation-Date: 2019-09-17 14:01+0200\n"
 "PO-Revision-Date: 2017-05-26 09:00+0000\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Kannada (http://www.transifex.com/projects/p/libpwquality/"
 "language/kn/)\n"
+"Language: kn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: kn\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:25
-#, c-format
-msgid "New %s%spassword: "
-msgstr "ಹೊಸ %s%sಗುಪ್ತಪದ: "
-
-#: src/pam_pwquality.c:27
-#, c-format
-msgid "Retype new %s%spassword: "
-msgstr "ಹೊಸ %s%sಗುಪ್ತಪದವನ್ನು ಪುನರ್ ಟೈಪಿಸಿ: "
-
-#: src/pam_pwquality.c:28
-msgid "Sorry, passwords do not match."
-msgstr "ಕ್ಷಮಿಸಿ, ಗುಪ್ತಪದಗಳು ತಾಳೆಯಾಗುತ್ತಿಲ್ಲ."
-
-#: src/pam_pwquality.c:242
+#: src/pam_pwquality.c:233
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "ಕೆಟ್ಟ ಗುಪ್ತಪದ: %s"
@@ -48,14 +34,10 @@ msgstr "ಬಳಕೆ: %s [ಬಳಕೆದಾರ]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input."
-"\n"
-msgstr ""
-"       ಗುಪ್ತಪದವನ್ನು ಶಿಷ್ಟವಾದ ಇನ್‌ಪುಟ್‌ನಿಂದ ಸ್ಕೋರ್ ಮಾಡಿರುವಂತೆ ಓದುತ್ತದೆ.\n"
+"       The command reads the password to be scored from the standard input.\n"
+msgstr "       ಗುಪ್ತಪದವನ್ನು ಶಿಷ್ಟವಾದ ಇನ್‌ಪುಟ್‌ನಿಂದ ಸ್ಕೋರ್ ಮಾಡಿರುವಂತೆ ಓದುತ್ತದೆ.\n"
 
-#: src/pwscore.c:53
-#: src/pwscore.c:61
-#: src/pwscore.c:67
+#: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "ದೋಷ: %s\n"
@@ -66,9 +48,11 @@ msgstr "ಸ್ಕೋರ್ ಮಾಡಬೇಕಿರುವ ಗುಪ್ತಪದ�
 
 #: src/pwscore.c:75
 #, c-format
-msgid "Password quality check failed:\n"
+msgid ""
+"Password quality check failed:\n"
 " %s\n"
-msgstr "ಗುಪ್ತಪದದ ಗುಣಮಟ್ಟದ ಪರಿಶೀಲನೆ ವಿಫಲಗೊಂಡಿದೆ:\n"
+msgstr ""
+"ಗುಪ್ತಪದದ ಗುಣಮಟ್ಟದ ಪರಿಶೀಲನೆ ವಿಫಲಗೊಂಡಿದೆ:\n"
 " %s\n"
 
 #: src/pwmake.c:22
@@ -105,8 +89,7 @@ msgid "The password contains the user name in some form"
 msgstr "ಗುಪ್ತಪದವು ಬಳಕೆದಾರ ಹೆಸರಿನ ಒಂದು ರೂಪವನ್ನು ಹೊಂದಿದೆ"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
+msgid "The password contains words from the real name of the user in some form"
 msgstr "ಗುಪ್ತಪದವು ಬಳಕೆದಾರರ ನಿಜವಾದ ಹೆಸರಿನ ಒಂದು ರೂಪದ ಪದಗಳನ್ನು ಹೊಂದಿದೆ"
 
 #: src/error.c:49
@@ -212,16 +195,14 @@ msgstr "RNG ಸಾಧನಕ್ಕಾಗಿ ಮನಸ್ಸಿಗೆ ಬಂದ �
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
-"ಗುಪ್ತಪದವನ್ನು ಉತ್ಪಾದಿಸುವಿಕೆಯು ವಿಫಲಗೊಂಡಿದೆ - ಸಿದ್ಧತೆಗಳಿಗಾಗಿ ಅಗತ್ಯವಿರುವ "
-"ಎಂಟ್ರೋಪಿಯು ಬಹಳ ಕೆಳಮಟ್ಟದಲ್ಲಿದೆ"
+"ಗುಪ್ತಪದವನ್ನು ಉತ್ಪಾದಿಸುವಿಕೆಯು ವಿಫಲಗೊಂಡಿದೆ - ಸಿದ್ಧತೆಗಳಿಗಾಗಿ ಅಗತ್ಯವಿರುವ ಎಂಟ್ರೋಪಿಯು "
+"ಬಹಳ ಕೆಳಮಟ್ಟದಲ್ಲಿದೆ"
 
-#: src/error.c:114
-#: src/error.c:117
+#: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
 msgstr "ಗುಪ್ತಪದವು ಶಬ್ಧಕೋಶದ ಪರಿಶೀಲಯಲ್ಲಿ ವಿಫಲಗೊಂಡಿದೆ"
 
-#: src/error.c:120
-#: src/error.c:124
+#: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
 msgstr "ಗೊತ್ತಿರದ ಸಿದ್ಧತೆ"
 
@@ -266,3 +247,12 @@ msgstr "ಮಾರಕ ವಿಫಲತೆ"
 #: src/error.c:153
 msgid "Unknown error"
 msgstr "ಗೊತ್ತಿರದ ದೋಷ"
+
+#~ msgid "New %s%spassword: "
+#~ msgstr "ಹೊಸ %s%sಗುಪ್ತಪದ: "
+
+#~ msgid "Retype new %s%spassword: "
+#~ msgstr "ಹೊಸ %s%sಗುಪ್ತಪದವನ್ನು ಪುನರ್ ಟೈಪಿಸಿ: "
+
+#~ msgid "Sorry, passwords do not match."
+#~ msgstr "ಕ್ಷಮಿಸಿ, ಗುಪ್ತಪದಗಳು ತಾಳೆಯಾಗುತ್ತಿಲ್ಲ."
