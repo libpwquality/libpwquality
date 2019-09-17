@@ -1,0 +1,263 @@
+# Fabio Tomat <f.t.public@gmail.com>, 2019. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: libpwquality 1.3.1\n"
+"Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
+"POT-Creation-Date: 2017-05-26 14:17+0200\n"
+"PO-Revision-Date: 2019-08-12 07:44+0000\n"
+"Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
+"Language-Team: Friulian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fur\n"
+"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: src/pam_pwquality.c:25
+#, c-format
+msgid "New %s%spassword: "
+msgstr "Gnove password%s%s: "
+
+#: src/pam_pwquality.c:27
+#, c-format
+msgid "Retype new %s%spassword: "
+msgstr "Torne scrîf la gnove password%s%s: "
+
+#: src/pam_pwquality.c:28
+msgid "Sorry, passwords do not match."
+msgstr "Lis password no corispuindin."
+
+#: src/pam_pwquality.c:242
+#, c-format
+msgid "BAD PASSWORD: %s"
+msgstr "PASSWORD SBALIADE: %s"
+
+#: src/pwscore.c:22
+#, c-format
+msgid "Usage: %s [user]\n"
+msgstr "Ûs: %s [utent]\n"
+
+#: src/pwscore.c:23
+#, c-format
+msgid ""
+"       The command reads the password to be scored from the standard input."
+"\n"
+msgstr "       Il comant al lei la password di valutâ, dal standard input.\n"
+
+#: src/pwscore.c:53
+#: src/pwscore.c:61
+#: src/pwscore.c:67
+#, c-format
+msgid "Error: %s\n"
+msgstr "Erôr: %s\n"
+
+#: src/pwscore.c:53
+msgid "Could not obtain the password to be scored"
+msgstr "Impussibil otignî la password di valutâ"
+
+#: src/pwscore.c:75
+#, c-format
+msgid "Password quality check failed:\n"
+" %s\n"
+msgstr "Control di cualitât de password falît:\n"
+" %s\n"
+
+#: src/pwmake.c:22
+#, c-format
+msgid "Usage: %s <entropy-bits>\n"
+msgstr "Ûs: %s <bit-di-entropie>\n"
+
+#: src/error.c:31
+msgid "Memory allocation error when setting"
+msgstr "Erôr di assegnazion de memorie in fase di configurazion"
+
+#: src/error.c:35
+msgid "Memory allocation error"
+msgstr "Erôr di assegnazion de memorie"
+
+#: src/error.c:37
+msgid "The password is the same as the old one"
+msgstr "La password e je compagne di chê vecje"
+
+#: src/error.c:39
+msgid "The password is a palindrome"
+msgstr "La password e je un palindrom"
+
+#: src/error.c:41
+msgid "The password differs with case changes only"
+msgstr "La password e cambie dome di letaris maiusculis/minusculis"
+
+#: src/error.c:43
+msgid "The password is too similar to the old one"
+msgstr "La password e semee masse a chê vecje"
+
+#: src/error.c:45
+msgid "The password contains the user name in some form"
+msgstr "La password e conten il non utent o sù par jù"
+
+#: src/error.c:47
+msgid ""
+"The password contains words from the real name of the user in some form"
+msgstr ""
+"La password e conten peraulis che sù par jù a derivin dal non reâl dal utent"
+
+#: src/error.c:49
+msgid "The password contains forbidden words in some form"
+msgstr "La password e conten peraulis in cualchi forme proibidis "
+
+#: src/error.c:52
+#, c-format
+msgid "The password contains less than %ld digits"
+msgstr "La password e conten mancul di %ld caratars"
+
+#: src/error.c:55
+msgid "The password contains too few digits"
+msgstr "La password e conten masse pôcs caratars"
+
+#: src/error.c:58
+#, c-format
+msgid "The password contains less than %ld uppercase letters"
+msgstr "La password e conten mancul di %ld letaris maiusculis"
+
+#: src/error.c:61
+msgid "The password contains too few uppercase letters"
+msgstr "La password e conten masse pocjis letaris maiusculis"
+
+#: src/error.c:64
+#, c-format
+msgid "The password contains less than %ld lowercase letters"
+msgstr "La password e conten mancul di %ld letaris minusculis"
+
+#: src/error.c:67
+msgid "The password contains too few lowercase letters"
+msgstr "La password e conten masse pocjis letaris minusculis"
+
+#: src/error.c:70
+#, c-format
+msgid "The password contains less than %ld non-alphanumeric characters"
+msgstr "La password e conten mancul di %ld caratars no-alfanumerics"
+
+#: src/error.c:73
+msgid "The password contains too few non-alphanumeric characters"
+msgstr "La password e conten masse pôcs caratars no-alfanumerics"
+
+#: src/error.c:76
+#, c-format
+msgid "The password is shorter than %ld characters"
+msgstr "La password e je plui curte di %ld caratars"
+
+#: src/error.c:79
+msgid "The password is too short"
+msgstr "La password e je masse curte"
+
+#: src/error.c:81
+msgid "The password is just rotated old one"
+msgstr "La password e je come chê vecje, voltade"
+
+#: src/error.c:84
+#, c-format
+msgid "The password contains less than %ld character classes"
+msgstr "La password e conten mancul di %ld classis di caratars"
+
+#: src/error.c:87
+msgid "The password does not contain enough character classes"
+msgstr "La password no conten vonde classis di caratars"
+
+#: src/error.c:90
+#, c-format
+msgid "The password contains more than %ld same characters consecutively"
+msgstr "La password e conten plui di %ld caratars compagns consecutîfs"
+
+#: src/error.c:93
+msgid "The password contains too many same characters consecutively"
+msgstr "La password e conten masse caratars compagns consecutîfs"
+
+#: src/error.c:96
+#, c-format
+msgid ""
+"The password contains more than %ld characters of the same class "
+"consecutively"
+msgstr ""
+"La password e conten plui di %ld caratars de stesse classe consecutîfs"
+
+#: src/error.c:99
+msgid ""
+"The password contains too many characters of the same class consecutively"
+msgstr "La password e conten masse caratars de stesse classe consecutîfs"
+
+#: src/error.c:102
+#, c-format
+msgid "The password contains monotonic sequence longer than %ld characters"
+msgstr ""
+"La password e conten une secuence monotone plui lungje di %ld caratars"
+
+#: src/error.c:105
+msgid "The password contains too long of a monotonic character sequence"
+msgstr "La password e conten une secuence monotone di caratars masse lungje"
+
+#: src/error.c:107
+msgid "No password supplied"
+msgstr "Nissune password furnide"
+
+#: src/error.c:109
+msgid "Cannot obtain random numbers from the RNG device"
+msgstr "Impussibil otignî numars casuâi dal dispositîf RNG"
+
+#: src/error.c:111
+msgid "Password generation failed - required entropy too low for settings"
+msgstr ""
+"Gjenerazion de password falide - entropie domandade masse basse pe "
+"configurazion"
+
+#: src/error.c:114
+#: src/error.c:117
+msgid "The password fails the dictionary check"
+msgstr "La password no passe il control dal dizionari"
+
+#: src/error.c:120
+#: src/error.c:124
+msgid "Unknown setting"
+msgstr "Impostazion no cognossude"
+
+#: src/error.c:127
+msgid "Bad integer value of setting"
+msgstr "Valôr intîr de impostazion sbaliât"
+
+#: src/error.c:131
+msgid "Bad integer value"
+msgstr "Valôr intîr sbaliât"
+
+#: src/error.c:134
+#, c-format
+msgid "Setting %s is not of integer type"
+msgstr "La impostazion %s no je di gjenar intîr"
+
+#: src/error.c:138
+msgid "Setting is not of integer type"
+msgstr "La impostazion no je di gjenar intîr"
+
+#: src/error.c:141
+#, c-format
+msgid "Setting %s is not of string type"
+msgstr "La impostazion %s no je di gjenar stringhe"
+
+#: src/error.c:145
+msgid "Setting is not of string type"
+msgstr "La impostazion no je di gjenar stringhe"
+
+#: src/error.c:147
+msgid "Opening the configuration file failed"
+msgstr "No si è rivâts a vierzi il file di configurazion"
+
+#: src/error.c:149
+msgid "The configuration file is malformed"
+msgstr "Il file di configurazion al è malformât"
+
+#: src/error.c:151
+msgid "Fatal failure"
+msgstr "Faliment fatâl"
+
+#: src/error.c:153
+msgid "Unknown error"
+msgstr "Erôr no cognossût"
