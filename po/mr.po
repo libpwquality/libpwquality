@@ -1,16 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Sandeep Shedmake <sandeep.shedmake@gmail.com>, 2008, 2009.
 # Sandeep Shedmake <sandeep.shedmake@gmail.com>, 2008, 2009, 2013.
+# Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: libpwquality 1.2.4\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2014-08-06 16:45+0200\n"
-"PO-Revision-Date: 2015-03-14 08:38-0400\n"
+"POT-Creation-Date: 2017-05-26 14:17+0200\n"
+"PO-Revision-Date: 2017-05-26 09:00+0000\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Marathi <sshedmak@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: mr\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.6.2\n"
 
 #: src/pam_pwquality.c:25
 #, c-format
@@ -34,7 +35,7 @@ msgstr "नवीन पासवर्ड %s%sp पुन्हा टाइप
 msgid "Sorry, passwords do not match."
 msgstr "माफ करा, पासवर्ड जुळत नाही."
 
-#: src/pam_pwquality.c:241
+#: src/pam_pwquality.c:242
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "अयोग्य पासवर्ड: %s"
@@ -47,26 +48,26 @@ msgstr "वापर: %s [वापरकर्ता]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
+"       The command reads the password to be scored from the standard input."
+"\n"
 msgstr "       स्टँडर्ड इंपुटपासून आदेश स्कोरजोगी पासवर्ड वाचतो.\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
+#: src/pwscore.c:53
+#: src/pwscore.c:61
+#: src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "त्रुटी: %s\n"
 
-#: src/pwscore.c:51
+#: src/pwscore.c:53
 msgid "Could not obtain the password to be scored"
 msgstr "स्कोरजोगी पासवर्ड प्राप्त करणे अशक्य"
 
-#: src/pwscore.c:73
+#: src/pwscore.c:75
 #, c-format
-msgid ""
-"Password quality check failed:\n"
+msgid "Password quality check failed:\n"
 " %s\n"
-msgstr ""
-"पासवर्ड दर्जा तपासणी अपयशी:\n"
+msgstr "पासवर्ड दर्जा तपासणी अपयशी:\n"
 " %s\n"
 
 #: src/pwmake.c:22
@@ -213,11 +214,13 @@ msgstr "RNG साधनापासून विनाक्रम क्रम
 msgid "Password generation failed - required entropy too low for settings"
 msgstr "पासवर्ड निर्माण अपयशी - सेटिंग्जकरिता आवश्यक एंट्रोपी खूपच कमी आहे"
 
-#: src/error.c:114 src/error.c:117
+#: src/error.c:114
+#: src/error.c:117
 msgid "The password fails the dictionary check"
 msgstr "पासवर्ड शब्दकोश तपासणीमध्ये अपयशी ठरतो"
 
-#: src/error.c:120 src/error.c:124
+#: src/error.c:120
+#: src/error.c:124
 msgid "Unknown setting"
 msgstr "अपरिचीत सेटिंग"
 

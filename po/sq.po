@@ -1,18 +1,18 @@
-# Sidorela Uku <uku.sidorela@gmail.com>, 2017. #zanata
+# Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: libpwquality 1.2.4\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2014-08-06 16:45+0200\n"
-"PO-Revision-Date: 2017-04-20 11:29-0400\n"
-"Last-Translator: Sidorela Uku <uku.sidorela@gmail.com>\n"
+"PO-Revision-Date: 2017-05-26 09:20+0000\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Albanian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sq\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.6.2\n"
 
 #: src/pam_pwquality.c:25
 #, c-format
@@ -28,7 +28,7 @@ msgstr ""
 msgid "Sorry, passwords do not match."
 msgstr "Fjalëkalimet nuk përputhen."
 
-#: src/pam_pwquality.c:241
+#: src/pam_pwquality.c:242
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr ""
@@ -41,23 +41,24 @@ msgstr ""
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
+"       The command reads the password to be scored from the standard input."
+"\n"
 msgstr ""
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
+#: src/pwscore.c:53
+#: src/pwscore.c:61
+#: src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr ""
 
-#: src/pwscore.c:51
+#: src/pwscore.c:53
 msgid "Could not obtain the password to be scored"
 msgstr ""
 
-#: src/pwscore.c:73
+#: src/pwscore.c:75
 #, c-format
-msgid ""
-"Password quality check failed:\n"
+msgid "Password quality check failed:\n"
 " %s\n"
 msgstr ""
 
@@ -203,11 +204,13 @@ msgstr ""
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
 
-#: src/error.c:114 src/error.c:117
+#: src/error.c:114
+#: src/error.c:117
 msgid "The password fails the dictionary check"
 msgstr ""
 
-#: src/error.c:120 src/error.c:124
+#: src/error.c:120
+#: src/error.c:124
 msgid "Unknown setting"
 msgstr ""
 

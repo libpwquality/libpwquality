@@ -1,24 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Manoj Kumar Giri <mgiri@redhat.com>, 2008-2009,2013
 # Subhransu Behera <arya_subhransu@yahoo.co.in>, 2007
+# Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: libpwquality 1.2.4\n"
+"Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2014-08-06 16:45+0200\n"
-"PO-Revision-Date: 2015-03-14 08:39-0400\n"
+"POT-Creation-Date: 2017-05-26 14:17+0200\n"
+"PO-Revision-Date: 2017-05-26 09:01+0000\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Oriya (http://www.transifex.com/projects/p/libpwquality/language/or/)\n"
+"Language-Team: Oriya (http://www.transifex.com/projects/p/libpwquality/"
+"language/or/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: or\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.6.2\n"
 
 #: src/pam_pwquality.c:25
 #, c-format
@@ -34,7 +36,7 @@ msgstr "ନୂତନ %s%s ପ୍ରବେଶ ସଙ୍କେତକୁ ପୁନ�
 msgid "Sorry, passwords do not match."
 msgstr "କ୍ଷମା କରିବେ, ପ୍ରବେଶ ସଙ୍କେତ ମିଶୁ ନାହିଁ।"
 
-#: src/pam_pwquality.c:241
+#: src/pam_pwquality.c:242
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "ଖରାପ ପ୍ରବେଶ ସଙ୍କେତ: %s"
@@ -47,27 +49,27 @@ msgstr "ବ୍ଯବହାର: %s [user]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
+"       The command reads the password to be scored from the standard input."
+"\n"
 msgstr ""
 "       ଏହି ନିର୍ଦ୍ଦେଶଟି ପାଇବାକୁ ଥିବା ପ୍ରବେଶ ସଂକେତକୁ ମାନକ ନିବେଶରୁ ପଢ଼ିଥାଏ।\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
+#: src/pwscore.c:53
+#: src/pwscore.c:61
+#: src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "ତୃଟି: %s\n"
 
-#: src/pwscore.c:51
+#: src/pwscore.c:53
 msgid "Could not obtain the password to be scored"
 msgstr "ପାଇବା ପାଇଁ ପ୍ରବେଶ ସଂକେତ ପାଇଲା ନାହିଁ"
 
-#: src/pwscore.c:73
+#: src/pwscore.c:75
 #, c-format
-msgid ""
-"Password quality check failed:\n"
+msgid "Password quality check failed:\n"
 " %s\n"
-msgstr ""
-"ପ୍ରବେଶ ସଂକେତ ଗୁଣବତ୍ତା ଯାଞ୍ଚ ବିଫଳ ହୋଇଛି:\n"
+msgstr "ପ୍ରବେଶ ସଂକେତ ଗୁଣବତ୍ତା ଯାଞ୍ଚ ବିଫଳ ହୋଇଛି:\n"
 " %s\n"
 
 #: src/pwmake.c:22
@@ -214,11 +216,13 @@ msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
 "ପ୍ରବେଶ ସଂକେତ ସୃଷ୍ଟି ବିଫଳ ହୋଇଛି - ବିନ୍ୟାସ ପାଇଁ ଅତି କମ ଏଣ୍ଟ୍ରପି ଆବଶ୍ୟକ ହୋଇଥାଏ"
 
-#: src/error.c:114 src/error.c:117
+#: src/error.c:114
+#: src/error.c:117
 msgid "The password fails the dictionary check"
 msgstr "ପ୍ରବେଶ ସଂକେତ ଅଭିଧାନ ଯାଞ୍ଚକୁ ବିଫଳ କରିଥାଏ"
 
-#: src/error.c:120 src/error.c:124
+#: src/error.c:120
+#: src/error.c:124
 msgid "Unknown setting"
 msgstr "ଅଜଣା ସଂରଚନା"
 

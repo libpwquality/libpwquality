@@ -1,27 +1,29 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Luca Bruno <luca.br@uno.it>, 2007.
 # Mario Santagiuliana <fedora at marionline.it>, 2012.
 # mario_santagiuliana <mario at marionline.it>, 2009.
 # Mauro Gaggiotti <mauro.gaggiotti@gmail.com>, 2012.
 # Novell Language <language@novell.com>, 2007.
+# Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
+# Milo Casagrande <milo@milo.name>, 2019. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: libpwquality 1.2.4\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2014-08-06 16:45+0200\n"
-"PO-Revision-Date: 2015-03-14 08:38-0400\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"POT-Creation-Date: 2017-05-26 14:17+0200\n"
+"PO-Revision-Date: 2019-03-05 01:10+0000\n"
+"Last-Translator: Milo Casagrande <milo@milo.name>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.6.2\n"
 
 #: src/pam_pwquality.c:25
 #, c-format
@@ -31,51 +33,51 @@ msgstr "Nuova password%s%s: "
 #: src/pam_pwquality.c:27
 #, c-format
 msgid "Retype new %s%spassword: "
-msgstr "Reimmettere la nuova password%s%s: "
+msgstr "Ripetere la nuova password%s%s: "
 
 #: src/pam_pwquality.c:28
 msgid "Sorry, passwords do not match."
 msgstr "Le password non corrispondono."
 
-#: src/pam_pwquality.c:241
+#: src/pam_pwquality.c:242
 #, c-format
 msgid "BAD PASSWORD: %s"
-msgstr "PASSWORD ERRATA: %s"
+msgstr "Password errata: %s"
 
 #: src/pwscore.c:22
 #, c-format
 msgid "Usage: %s [user]\n"
-msgstr "Utilizzo: %s [user]\n"
+msgstr "Uso: %s [user]\n"
 
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
-msgstr "       Il comando legge la password fornita dall'input standard.\n"
+"       The command reads the password to be scored from the standard input."
+"\n"
+msgstr "       Il comando legge la password fornita sullo standard input.\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
+#: src/pwscore.c:53
+#: src/pwscore.c:61
+#: src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "Errore: %s\n"
 
-#: src/pwscore.c:51
+#: src/pwscore.c:53
 msgid "Could not obtain the password to be scored"
-msgstr "Non è possibile ottenere la password fornita"
+msgstr "Impossibile ottenere la password da valutare"
 
-#: src/pwscore.c:73
+#: src/pwscore.c:75
 #, c-format
-msgid ""
-"Password quality check failed:\n"
+msgid "Password quality check failed:\n"
 " %s\n"
-msgstr ""
-"Controllo di qualità della password fallito:\n"
+msgstr "Controllo di qualità della password non riuscito:\n"
 " %s\n"
 
 #: src/pwmake.c:22
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
-msgstr "Utilizzo: %s <entropy-bits>\n"
+msgstr "Uso: %s <bit-entropia>\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
@@ -100,7 +102,7 @@ msgstr ""
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
-msgstr "La nuova password è troppo simile alla vecchia"
+msgstr "La password è troppo simile alla vecchia"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
@@ -131,12 +133,12 @@ msgstr "La password contiene meno di %ld lettere maiuscole"
 
 #: src/error.c:61
 msgid "The password contains too few uppercase letters"
-msgstr "La password contiene troppi pochi caratteri maiuscoli"
+msgstr "La password contiene troppo pochi caratteri maiuscoli"
 
 #: src/error.c:64
 #, c-format
 msgid "The password contains less than %ld lowercase letters"
-msgstr "La password contiene meno di  %ld caratteri minuscoli"
+msgstr "La password contiene meno di %ld caratteri minuscoli"
 
 #: src/error.c:67
 msgid "The password contains too few lowercase letters"
@@ -149,7 +151,7 @@ msgstr "La password contiene meno di %ld caratteri non-alfanumerici"
 
 #: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
-msgstr "La password contiene troppi pochi caratteri non-alfanumerici"
+msgstr "La password contiene troppo pochi caratteri non-alfanumerici"
 
 #: src/error.c:76
 #, c-format
@@ -162,7 +164,7 @@ msgstr "La password è troppo corta"
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
-msgstr "La nuova password è come la vecchia, ruotata."
+msgstr "La nuova password è come la vecchia, ruotata"
 
 #: src/error.c:84
 #, c-format
@@ -176,11 +178,11 @@ msgstr "La password non contiene abbastanza classi di carattere"
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr "La password contiene consecutivamente più di  %ld caratteri identici"
+msgstr "La password contiene più di %ld caratteri consecutivi identici"
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
-msgstr "La password contiene consecutivamente troppi caratteri identici"
+msgstr "La password contiene troppi caratteri consecutivi identici"
 
 #: src/error.c:96
 #, c-format
@@ -188,14 +190,12 @@ msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
 msgstr ""
-"La password contiene consecutivamente più di %ld caratteri della stessa "
-"classe"
+"La password contiene più di %ld caratteri consecutivi della stessa classe"
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr ""
-"La password contiene consecutivamente troppi caratteri della stessa classe"
+msgstr "La password contiene troppi caratteri consecutivi della stessa classe"
 
 #: src/error.c:102
 #, c-format
@@ -217,20 +217,22 @@ msgstr "Non è possibile ottenere numeri casuali dalla periferica RNG"
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
-"Generazione della password non riuscita - entropia richiesta troppo bassa "
-"per la configurazione"
+"Generazione della password non riuscita, entropia richiesta troppo bassa per "
+"la configurazione"
 
-#: src/error.c:114 src/error.c:117
+#: src/error.c:114
+#: src/error.c:117
 msgid "The password fails the dictionary check"
 msgstr "La password non supera il controllo del dizionario"
 
-#: src/error.c:120 src/error.c:124
+#: src/error.c:120
+#: src/error.c:124
 msgid "Unknown setting"
 msgstr "Impostazione sconosciuta"
 
 #: src/error.c:127
 msgid "Bad integer value of setting"
-msgstr "Valore intero errato dell'impostazione"
+msgstr "Valore intero dell'impostazione errato"
 
 #: src/error.c:131
 msgid "Bad integer value"
@@ -256,11 +258,11 @@ msgstr "L'impostazione non è di tipo stringa"
 
 #: src/error.c:147
 msgid "Opening the configuration file failed"
-msgstr "Apertura fallita del file di configurazione"
+msgstr "Apertura del file di configurazione non riuscita"
 
 #: src/error.c:149
 msgid "The configuration file is malformed"
-msgstr "Il file di configurazione è corrotto"
+msgstr "Il file di configurazione non è corretto"
 
 #: src/error.c:151
 msgid "Fatal failure"

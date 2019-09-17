@@ -1,25 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Amitakhya Phukan <aphukan@fedoraproject.org>, 2008-2009
 # Amitakhya Phukan <aphukan@redhat.com>, 2007
 # ngoswami <ngoswami@redhat.com>, 2013
+# Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: libpwquality 1.2.4\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2014-08-06 16:45+0200\n"
-"PO-Revision-Date: 2015-03-14 08:37-0400\n"
+"POT-Creation-Date: 2017-05-26 14:17+0200\n"
+"PO-Revision-Date: 2017-05-26 09:00+0000\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Assamese (http://www.transifex.com/projects/p/libpwquality/language/as/)\n"
+"Language-Team: Assamese (http://www.transifex.com/projects/p/libpwquality/"
+"language/as/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: as\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.6.2\n"
 
 #: src/pam_pwquality.c:25
 #, c-format
@@ -35,7 +37,7 @@ msgstr "নতুন %s%s পাছৱাৰ্ড পুনঃ লিখক: "
 msgid "Sorry, passwords do not match."
 msgstr "ক্ষমা কৰিব, পাছৱাৰ্ড মিল নাখায়।"
 
-#: src/pam_pwquality.c:241
+#: src/pam_pwquality.c:242
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "বেয়া পাছৱাৰ্ড: %s"
@@ -48,26 +50,26 @@ msgstr "ব্যৱহাৰ: %s [ব্যৱহাৰকাৰী]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
+"       The command reads the password to be scored from the standard input."
+"\n"
 msgstr "       কমান্ডে প্ৰামাণিক ইনপুটৰ পৰা স্কৌৰ কৰিব লগিয়া পাছৱাৰ্ড পঢ়ে।\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
+#: src/pwscore.c:53
+#: src/pwscore.c:61
+#: src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "ত্ৰুটি: %s\n"
 
-#: src/pwscore.c:51
+#: src/pwscore.c:53
 msgid "Could not obtain the password to be scored"
 msgstr "স্কৌৰ কৰিবলৈ পাছৱাৰ্ড পোৱা নগল"
 
-#: src/pwscore.c:73
+#: src/pwscore.c:75
 #, c-format
-msgid ""
-"Password quality check failed:\n"
+msgid "Password quality check failed:\n"
 " %s\n"
-msgstr ""
-"পাছৱাৰ্ড বৈশিষ্ট্য নিৰীক্ষণ ব্যৰ্থ হল:\n"
+msgstr "পাছৱাৰ্ড বৈশিষ্ট্য নিৰীক্ষণ ব্যৰ্থ হল:\n"
 " %s\n"
 
 #: src/pwmake.c:22
@@ -212,11 +214,13 @@ msgstr "RNG ডিভাইচৰ পৰা যাদৃচ্ছিক সং�
 msgid "Password generation failed - required entropy too low for settings"
 msgstr "পাছৱাৰ্ড সৃজন ব্যৰ্থ হল - প্ৰয়োজনীয় এনট্ৰপি সংহতিসমূহৰ বাবে অতি কম"
 
-#: src/error.c:114 src/error.c:117
+#: src/error.c:114
+#: src/error.c:117
 msgid "The password fails the dictionary check"
 msgstr "পাছৱাৰ্ড অভিধান নিৰীক্ষণত ব্যৰ্থ হৈছে"
 
-#: src/error.c:120 src/error.c:124
+#: src/error.c:120
+#: src/error.c:124
 msgid "Unknown setting"
 msgstr "অজ্ঞাত সংহতি"
 
