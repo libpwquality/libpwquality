@@ -19,8 +19,8 @@
 #include <crack.h>
 #include <errno.h>
 
-#include "pwquality.h"
 #include "pwqprivate.h"
+#include "pwquality.h"
 
 #ifndef PATH_DEV_URANDOM
 #define PATH_DEV_URANDOM "/dev/urandom"

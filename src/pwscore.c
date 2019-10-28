@@ -60,7 +60,7 @@ main(int argc, char *argv[])
                 exit(2);
         }
 
-        if ((rv=pwquality_read_config(pwq, NULL, &auxerror)) != 0) {
+        if ((rv=pwquality_read_config(pwq, /*NULL*/"/home/oc/eclipse-workspace/pam/test_config_linked_list/src/pwquality_profiles.conf", &auxerror)) != 0) {
                 pwquality_free_settings(pwq);
                 fprintf(stderr, _("Error: %s\n"), pwquality_strerror(NULL, 0, rv, auxerror));
                 exit(3);

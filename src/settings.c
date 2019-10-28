@@ -13,41 +13,91 @@
 #include <ctype.h>
 #include <errno.h>
 #include <dirent.h>
+#include <malloc.h>
 
 #include "pwquality.h"
 #include "pwqprivate.h"
+
+static inline pcre* regex_compile(const char* value) {
+	int errorOffset = 0;
+	const char* errorMsg = NULL;
+	pcre *regex = pcre_compile(value, 0, &errorMsg, &errorOffset, NULL);
+	if (!regex) {
+		printf("PCRE compilation of %s failed at offset %d: %s\n", value,errorOffset, errorMsg);
+	}
+	return regex;
+}
+
+static inline pwquality_settings_profile_node* new_pwquality_settings_profile_node(const char *name,pwquality_settings_profiles *profiles) {
+	pwquality_settings_profile_node *new_profile = NULL;
+	if (list_empty(profiles) || ((strcasecmp(name,"default") != 0) && (name[0]))) {
+		new_profile = (pwquality_settings_profile_node *)malloc(sizeof(pwquality_settings_profile_node));
+		if (new_profile) {
+			memset(new_profile,0,sizeof(pwquality_settings_profile_node));
+			new_profile->name = strdup(name);
+			if (new_profile->name) {
+				new_profile->pwq.diff_ok = PWQ_DEFAULT_DIFF_OK;
+				new_profile->pwq.min_length = PWQ_DEFAULT_MIN_LENGTH;
+				new_profile->pwq.dig_credit = PWQ_DEFAULT_DIG_CREDIT;
+				new_profile->pwq.up_credit = PWQ_DEFAULT_UP_CREDIT;
+				new_profile->pwq.low_credit = PWQ_DEFAULT_LOW_CREDIT;
+				new_profile->pwq.oth_credit = PWQ_DEFAULT_OTH_CREDIT;
+				new_profile->pwq.dict_check = PWQ_DEFAULT_DICT_CHECK;
+				list_add_tail(&new_profile->list,profiles);
+			} else {
+				printf("Failed to allocate %zu bytes of memory for a new profile name\n",strlen(name));
+			}
+		} else {
+			printf("Failed to allocate %zu bytes of memory for a new profile\n",sizeof(pwquality_settings_profile_node));
+		}
+	} else {
+		new_profile = list_entry(profiles->next,pwquality_settings_profile_node,list);
+	}
+
+	return new_profile;
+}
 
 /* returns default pwquality settings to be used in other library calls */
 pwquality_settings_t *
 pwquality_default_settings(void)
 {
-        pwquality_settings_t *pwq;
-
-        pwq = calloc(1, sizeof(*pwq));
-        if (!pwq)
-                return NULL;
-
-        pwq->diff_ok = PWQ_DEFAULT_DIFF_OK;
-        pwq->min_length = PWQ_DEFAULT_MIN_LENGTH;
-        pwq->dig_credit = PWQ_DEFAULT_DIG_CREDIT;
-        pwq->up_credit = PWQ_DEFAULT_UP_CREDIT;
-        pwq->low_credit = PWQ_DEFAULT_LOW_CREDIT;
-        pwq->oth_credit = PWQ_DEFAULT_OTH_CREDIT;
-        pwq->dict_check = PWQ_DEFAULT_DICT_CHECK;
-
-        return pwq;
+	pwquality_settings_profiles *new_profiles = (pwquality_settings_profiles *)malloc(sizeof(pwquality_settings_profiles));
+	if (new_profiles) {
+		INIT_LIST_HEAD(new_profiles);
+		pwquality_settings_profile_node *profile = new_pwquality_settings_profile_node("",new_profiles);
+		if (!profile) {
+			free(new_profiles);
+			new_profiles = NULL;
+		}
+	}
+	return new_profiles;
 }
 
 /* frees pwquality settings data */
 void
-pwquality_free_settings(pwquality_settings_t *pwq)
+pwquality_free_settings(pwquality_settings_profiles *profiles)
 {
-        if (pwq) {
-                free(pwq->dict_path);
-                free(pwq);
-        }
-}
+	struct list_head *i = NULL;
+	struct list_head *t = NULL;
 
+	list_for_each_safe(i,t,profiles) {
+	#define FREE(x) if (node->x) { free(node->x); node->x = NULL; }
+	#define FREE2(x) FREE(pwq.x)
+		pwquality_settings_profile_node *node = list_entry(i,pwquality_settings_profile_node,list);
+		FREE(name);
+		if (node->regex) {
+			pcre_free(node->regex);
+			node->regex = NULL;
+		}
+		FREE2(bad_words);
+		FREE2(dict_path);
+		list_del(i);
+		free(node);
+		node = NULL;
+	#undef FREE
+	#undef FREE2
+	}
+}
 
 static const struct setting_mapping s_map[] = {
  { "difok", PWQ_SETTING_DIFF_OK, PWQ_TYPE_INT},
@@ -67,8 +117,11 @@ static const struct setting_mapping s_map[] = {
 };
 
 /* set setting name with value */
+static int pwquality_set_int_value_internal(pwquality_settings *pwq, int setting, int value);
+static int pwquality_set_str_value_internal(pwquality_settings *pwq, int setting,const char *value);
+
 static int
-set_name_value(pwquality_settings_t *pwq, const char *name, const char *value)
+set_name_value(pwquality_settings *pwq, const char *name, const char *value)
 {
         int i;
         long val;
@@ -84,13 +137,12 @@ set_name_value(pwquality_settings_t *pwq, const char *name, const char *value)
                                     *endptr != '\0' || val >= INT_MAX || val <= INT_MIN) {
                                         return PWQ_ERROR_INTEGER;
                                 }
-                                return pwquality_set_int_value(pwq, s_map[i].id,
+                                return pwquality_set_int_value_internal(pwq, s_map[i].id,
                                         (int)val);
                         case PWQ_TYPE_STR:
-                                return pwquality_set_str_value(pwq, s_map[i].id,
-                                        value);
+                                return pwquality_set_str_value_internal(pwq, s_map[i].id,value);
                         case PWQ_TYPE_SET:
-                                return pwquality_set_int_value(pwq, s_map[i].id,
+                                return pwquality_set_int_value_internal(pwq, s_map[i].id,
                                         1);
                         }
                 }
@@ -100,13 +152,30 @@ set_name_value(pwquality_settings_t *pwq, const char *name, const char *value)
 
 #define PWQSETTINGS_MAX_LINELEN 1023
 
+void display_configuration(pwquality_settings_profiles *profiles) {
+	struct list_head *i = NULL;
+	list_for_each(i,profiles) {
+		pwquality_settings_profile_node *node = list_entry(i,pwquality_settings_profile_node,list);
+		if (node) {
+			printf("%s->",node->name);
+		}
+	}
+	printf("\n");
+}
+
 /* parse a single configuration file*/
 int
-read_config_file(pwquality_settings_t *pwq, const char *cfgfile, void **auxerror)
+read_config_file(pwquality_settings_t *profiles, const char *cfgfile, void **auxerror)
 {
-        FILE *f;
+        FILE *f = NULL;
         char linebuf[PWQSETTINGS_MAX_LINELEN+1];
         int rv = 0;
+        pwquality_settings_profile_node *profile = NULL;
+
+        /* move to the last profile */
+        struct list_head *pos = profiles->next;
+        for(;pos->next != profiles; pos = pos->next);
+        profile = list_entry(pos,pwquality_settings_profile_node,list);
 
         f = fopen(cfgfile, "r");
         if (f == NULL) {
@@ -117,10 +186,10 @@ read_config_file(pwquality_settings_t *pwq, const char *cfgfile, void **auxerror
         }
 
         while (fgets(linebuf, sizeof(linebuf), f) != NULL) {
-                size_t len;
-                char *ptr;
-                char *name;
-                int eq;
+                size_t len = 0;
+                char *ptr = NULL;
+                char *name = NULL;
+                int eq = 0;
 
                 len = strlen(linebuf);
                 if (linebuf[len - 1] != '\n' && !feof(f)) {
@@ -148,6 +217,20 @@ read_config_file(pwquality_settings_t *pwq, const char *cfgfile, void **auxerror
                 if (*ptr == '\0')
                         continue;
 
+                /* check if this line define a new section */
+				if (*ptr == '[') {
+					for (++ptr; isspace(*ptr); ptr++);
+					name = ptr;
+					if ((ptr=strchr(name, ']')) != NULL) {
+						*ptr = '\0';
+						profile = new_pwquality_settings_profile_node(name,profiles);
+						continue;
+					} else {
+						rv = PWQ_ERROR_CFGFILE_MALFORMED;
+						break;
+					}
+				}
+
                 eq = 0;
                 name = ptr;
                 while (*ptr != '\0') {
@@ -171,10 +254,31 @@ read_config_file(pwquality_settings_t *pwq, const char *cfgfile, void **auxerror
                         ++ptr;
                 }
 
-                if ((rv=set_name_value(pwq, name, ptr)) != 0) {
-                        if (auxerror)
-                                *auxerror = strdup(name);
-                        break;
+                if (strcmp("loginname",name) == 0) {
+					profile->mode = LoginName;
+					profile->regex = regex_compile(ptr);
+					if (!profile->regex) {
+						rv = PWQ_ERROR_REGEX;
+						if (auxerror) {
+						   *auxerror = strdup(name);
+					    }
+						break;
+					}
+				} else if (strcmp("groupname",name) == 0) {
+					profile->mode = PrimaryGroupName;
+					profile->regex =  regex_compile(ptr);
+					if (!profile->regex) {
+						rv = PWQ_ERROR_REGEX;
+						if (auxerror) {
+						   *auxerror = strdup(name);
+						}
+						break;
+					}
+				} else if ((rv=set_name_value(&(profile->pwq), name, ptr)) != 0) {
+                   if (auxerror) {
+                       *auxerror = strdup(name);
+                   }
+                   break;
                 }
         }
 
@@ -204,7 +308,7 @@ comp_func(const struct dirent **a, const struct dirent **b)
 
 /* parse the configuration file (if NULL then the default one) */
 int
-pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile, void **auxerror)
+pwquality_read_config(pwquality_settings_t *profiles, const char *cfgfile, void **auxerror)
 {
         char *dirname;
         struct dirent **namelist;
@@ -245,7 +349,7 @@ pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile, void **aux
                 if (asprintf(&subcfg, "%s/%s", dirname, namelist[i]->d_name) < 0)
                         rv = PWQ_ERROR_MEM_ALLOC;
                 else {
-                        rv = read_config_file(pwq, subcfg, auxerror);
+                        rv = read_config_file(profiles, subcfg, auxerror);
                         if (rv == PWQ_ERROR_CFGFILE_OPEN)
                                 rv = 0; /* ignore, this one does not modify auxerror */
                         free(subcfg);
@@ -259,14 +363,17 @@ pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile, void **aux
         if (rv)
                 return rv;
 
-        return read_config_file(pwq, cfgfile, auxerror);
+        return read_config_file(profiles, cfgfile, auxerror);
 }
 
 /* useful for setting the options as configured on a pam module
  * command line in form of <opt>=<val> */
 int
-pwquality_set_option(pwquality_settings_t *pwq, const char *option)
+pwquality_set_option(pwquality_settings_t *profiles, const char *option)
 {
+	pwquality_settings_profile_node *node = list_entry(profiles->next,pwquality_settings_profile_node,list);
+	pwquality_settings *pwq = &(node->pwq);
+
         char name[80]; /* no options with name longer than that */
         const char *value;
         size_t len;
@@ -289,63 +396,70 @@ pwquality_set_option(pwquality_settings_t *pwq, const char *option)
 }
 
 /* set value of an integer setting */
-int
-pwquality_set_int_value(pwquality_settings_t *pwq, int setting, int value)
+static int pwquality_set_int_value_internal(pwquality_settings *pwq, int setting, int value)
 {
-        switch(setting) {
-        case PWQ_SETTING_DIFF_OK:
-                pwq->diff_ok = value;
-                break;
-        case PWQ_SETTING_MIN_LENGTH:
-                if (value < PWQ_BASE_MIN_LENGTH)
-                        value = PWQ_BASE_MIN_LENGTH;
-                pwq->min_length = value;
-                break;
-        case PWQ_SETTING_DIG_CREDIT:
-                pwq->dig_credit = value;
-                break;
-        case PWQ_SETTING_UP_CREDIT:
-                pwq->up_credit = value;
-                break;
-        case PWQ_SETTING_LOW_CREDIT:
-                pwq->low_credit = value;
-                break;
-        case PWQ_SETTING_OTH_CREDIT:
-                pwq->oth_credit = value;
-                break;
-        case PWQ_SETTING_MIN_CLASS:
-                if (value > PWQ_NUM_CLASSES)
-                        value = PWQ_NUM_CLASSES;
-                pwq->min_class = value;
-                break;
-        case PWQ_SETTING_MAX_REPEAT:
-                pwq->max_repeat = value;
-                break;
-        case PWQ_SETTING_MAX_CLASS_REPEAT:
-                pwq->max_class_repeat = value;
-                break;
-        case PWQ_SETTING_MAX_SEQUENCE:
-                pwq->max_sequence = value;
-                break;
-        case PWQ_SETTING_GECOS_CHECK:
-                pwq->gecos_check = value;
-                break;
-        case PWQ_SETTING_DICT_CHECK:
-                pwq->dict_check = value;
-                break;
-        default:
-                return PWQ_ERROR_NON_INT_SETTING;
-        }
+	switch(setting) {
+	case PWQ_SETTING_DIFF_OK:
+		pwq->diff_ok = value;
+		break;
+	case PWQ_SETTING_MIN_LENGTH:
+		if (value < PWQ_BASE_MIN_LENGTH)
+			value = PWQ_BASE_MIN_LENGTH;
+		pwq->min_length = value;
+		break;
+	case PWQ_SETTING_DIG_CREDIT:
+		pwq->dig_credit = value;
+		break;
+	case PWQ_SETTING_UP_CREDIT:
+		pwq->up_credit = value;
+		break;
+	case PWQ_SETTING_LOW_CREDIT:
+		pwq->low_credit = value;
+		break;
+	case PWQ_SETTING_OTH_CREDIT:
+		pwq->oth_credit = value;
+		break;
+	case PWQ_SETTING_MIN_CLASS:
+		if (value > PWQ_NUM_CLASSES)
+			value = PWQ_NUM_CLASSES;
+		pwq->min_class = value;
+		break;
+	case PWQ_SETTING_MAX_REPEAT:
+		pwq->max_repeat = value;
+		break;
+	case PWQ_SETTING_MAX_CLASS_REPEAT:
+		pwq->max_class_repeat = value;
+		break;
+	case PWQ_SETTING_MAX_SEQUENCE:
+		pwq->max_sequence = value;
+		break;
+	case PWQ_SETTING_GECOS_CHECK:
+		pwq->gecos_check = value;
+		break;
+	case PWQ_SETTING_DICT_CHECK:
+		pwq->dict_check = value;
+		break;
+	default:
+		return PWQ_ERROR_NON_INT_SETTING;
+	}
 
-        return 0;
+	return 0;
+}
+
+int
+pwquality_set_int_value(pwquality_settings_t *profiles, int setting, int value)
+{
+	pwquality_settings_profile_node *node = list_entry(profiles->next,pwquality_settings_profile_node,list);
+	pwquality_settings *pwq = &(node->pwq);
+	return pwquality_set_int_value_internal(pwq,setting,value);
 }
 
 /* set value of a string setting */
-int
-pwquality_set_str_value(pwquality_settings_t *pwq, int setting,
+static int
+pwquality_set_str_value_internal(pwquality_settings *pwq, int setting,
         const char *value)
 {
-        char *dup;
+        char *dup = NULL;
 
         if (value == NULL || *value == '\0') {
                 dup = NULL;
@@ -372,10 +486,21 @@ pwquality_set_str_value(pwquality_settings_t *pwq, int setting,
         return 0;
 }
 
+int
+pwquality_set_str_value(pwquality_settings_t *profiles, int setting, const char *value) {
+	pwquality_settings_profile_node *node = list_entry(profiles->next,pwquality_settings_profile_node,list);
+	pwquality_settings *pwq = &(node->pwq);
+	return pwquality_set_str_value_internal(pwq,setting,value);
+}
+
+
 /* get value of an integer setting */
 int
-pwquality_get_int_value(pwquality_settings_t *pwq, int setting, int *value)
+pwquality_get_int_value(pwquality_settings_t *profiles, int setting, int *value)
 {
+	pwquality_settings_profile_node *node = list_entry(profiles->next,pwquality_settings_profile_node,list);
+	pwquality_settings *pwq = &(node->pwq);
+
         switch(setting) {
         case PWQ_SETTING_DIFF_OK:
                 *value = pwq->diff_ok;
@@ -421,8 +546,11 @@ pwquality_get_int_value(pwquality_settings_t *pwq, int setting, int *value)
 
 /* get value of a string setting, or NULL if setting unknown */
 int
-pwquality_get_str_value(pwquality_settings_t *pwq, int setting, const char **value)
+pwquality_get_str_value(pwquality_settings_t *profiles, int setting, const char **value)
 {
+	pwquality_settings_profile_node *node = list_entry(profiles->next,pwquality_settings_profile_node,list);
+	pwquality_settings *pwq = &(node->pwq);
+
         switch(setting) {
         case PWQ_SETTING_BAD_WORDS:
                 *value = pwq->bad_words;

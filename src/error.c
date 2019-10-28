@@ -149,6 +149,13 @@ pwquality_strerror(char *buf, size_t len, int rv, void *auxerror)
                 return _("The configuration file is malformed");
         case PWQ_ERROR_FATAL_FAILURE:
                 return _("Fatal failure");
+        case PWQ_ERROR_REGEX:
+        		if (auxerror) {
+						snprintf(buf, len, _("%s is not a valid PERL regular expression"), (const char *)auxerror);
+						free(auxerror);
+						return buf;
+				}
+        		return _("Invalid PERL regular expression");
         default:
                 return _("Unknown error");
         }

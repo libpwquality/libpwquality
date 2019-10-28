@@ -10,9 +10,12 @@
 #ifndef PWQPRIVATE_H
 #define PWQPRIVATE_H
 
+#include <pcre.h>
+#include "klist.h"
+
 #include "pwquality.h"
 
-struct pwquality_settings {
+typedef struct pwquality_settings_ {
         int diff_ok;
         int min_length;
         int dig_credit;
@@ -27,7 +30,43 @@ struct pwquality_settings {
         int dict_check;
         char *bad_words;
         char *dict_path;
-};
+} pwquality_settings;
+
+#ifndef TO_STRING
+#define STRING(x) #x
+#define TO_STRING(x) STRING(x)
+#endif /* STRING */
+
+#define MOD(m)	X(m)
+#define USER_MODE_TABLE \
+		MOD(Default) \
+		MOD(LoginName) \
+		MOD(PrimaryGroupName)
+
+#define X(m)	m,
+typedef enum Mode_ {
+	USER_MODE_TABLE
+} Mode;
+#undef X
+
+inline const char* to_string(const Mode m) {
+#define X(m)	case m: return TO_STRING(m);
+	switch(m) {
+	USER_MODE_TABLE
+	}
+#undef X
+	return "";
+}
+
+typedef struct pwquality_settings_profile_node_ {
+	struct list_head list;
+	const char *name;
+	Mode mode;
+	pcre *regex;
+	pwquality_settings pwq;
+} pwquality_settings_profile_node;
+
+typedef struct list_head pwquality_settings_profiles;
 
 struct setting_mapping {
         const char *name;
