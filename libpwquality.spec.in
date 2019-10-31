@@ -178,6 +178,10 @@ mkdir $RPM_BUILD_ROOT%{_secconfdir}/pwquality.conf.d
 %endif
 
 %changelog
+* Thu Oct 31 2019 Tomáš Mráz <tmraz@redhat.com> 1.4.2-1
+- Fix previous release regression in handling retry, enforce_for_root,
+  and local_users_only options
+
 * Tue Sep 17 2019 Tomáš Mráz <tmraz@redhat.com> 1.4.1-1
 - Disable python2 bindings in Fedora 31 and above
 - Add conditionals for Python2 and Python3

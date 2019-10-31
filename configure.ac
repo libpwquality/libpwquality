@@ -1,5 +1,5 @@
 dnl Process this file with autoconf to produce a configure script.
-AC_INIT([libpwquality], [1.4.1])
+AC_INIT([libpwquality], [1.4.2])
 AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([dist-bzip2 no-dist-gzip -Wall])
 AC_PREREQ(2.61)
