@@ -354,10 +354,13 @@ pwquality_set_int_value(pwquality_settings_t *pwq, int setting, int value)
                 break;
         case PWQ_SETTING_RETRY_TIMES:
                 pwq->retry_times = value;
+                break;
         case PWQ_SETTING_ENFORCE_ROOT:
                 pwq->enforce_for_root = value;
+                break;
         case PWQ_SETTING_LOCAL_USERS:
                 pwq->local_users_only = value;
+                break;
         default:
                 return PWQ_ERROR_NON_INT_SETTING;
         }
