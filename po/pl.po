@@ -6,38 +6,25 @@
 # Piotr Drąg <piotrdrag@gmail.com>, 2008, 2012
 # Stanisław Małolepszy <smalolepszy@aviary.pl>, 2006
 # Wojciech Kapusta <wojciech@aviary.pl>, 2006
-# Piotr Drąg <piotrdrag@gmail.com>, 2015. #zanata
-# Piotr Drąg <piotrdrag@gmail.com>, 2016. #zanata
+# Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: libpwquality 1.2.4\n"
+"Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2014-08-06 16:45+0200\n"
-"PO-Revision-Date: 2016-09-01 08:37-0400\n"
-"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
-"Language-Team: Polish (http://www.transifex.com/projects/p/libpwquality/language/pl/)\n"
+"POT-Creation-Date: 2019-09-17 14:01+0200\n"
+"PO-Revision-Date: 2017-05-26 09:19+0000\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: Polish (http://www.transifex.com/projects/p/libpwquality/"
+"language/pl/)\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pl\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:25
-#, c-format
-msgid "New %s%spassword: "
-msgstr "Nowe hasło %s%s: "
-
-#: src/pam_pwquality.c:27
-#, c-format
-msgid "Retype new %s%spassword: "
-msgstr "Proszę ponownie podać nowe hasło %s%s: "
-
-#: src/pam_pwquality.c:28
-msgid "Sorry, passwords do not match."
-msgstr "Hasła się nie zgadzają."
-
-#: src/pam_pwquality.c:241
+#: src/pam_pwquality.c:233
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "BŁĘDNE HASŁO: %s"
@@ -50,20 +37,20 @@ msgstr "Użycie: %s [użytkownik]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
-msgstr "       Polecenie odczytujące hasło do oceny ze standardowego wejścia.\n"
+"       The command reads the password to be scored from the standard input.\n"
+msgstr ""
+"       Polecenie odczytujące hasło do oceny ze standardowego wejścia.\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
+#: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "Błąd: %s\n"
 
-#: src/pwscore.c:51
+#: src/pwscore.c:53
 msgid "Could not obtain the password to be scored"
 msgstr "Nie można uzyskać hasła do oceny"
 
-#: src/pwscore.c:73
+#: src/pwscore.c:75
 #, c-format
 msgid ""
 "Password quality check failed:\n"
@@ -106,8 +93,7 @@ msgid "The password contains the user name in some form"
 msgstr "Hasło zawiera nazwę użytkownika"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
+msgid "The password contains words from the real name of the user in some form"
 msgstr "Hasło zawiera wyrazy z imienia lub nazwiska użytkownika"
 
 #: src/error.c:49
@@ -267,3 +253,12 @@ msgstr "Krytyczne niepowodzenie"
 #: src/error.c:153
 msgid "Unknown error"
 msgstr "Nieznany błąd"
+
+#~ msgid "New %s%spassword: "
+#~ msgstr "Nowe hasło %s%s: "
+
+#~ msgid "Retype new %s%spassword: "
+#~ msgstr "Proszę ponownie podać nowe hasło %s%s: "
+
+#~ msgid "Sorry, passwords do not match."
+#~ msgstr "Hasła się nie zgadzają."

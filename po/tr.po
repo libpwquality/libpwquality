@@ -5,36 +5,25 @@
 # Translators:
 # Bahadır Kandemir <bahadir@pardus.org.tr>, 2010
 # Koray Löker <loker@pardus.org.tr>, 2006
+# Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
+# Emin Tufan Çetin <etcetin@gmail.com>, 2018. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: libpwquality 1.2.4\n"
+"Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2014-08-06 16:45+0200\n"
-"PO-Revision-Date: 2015-03-14 08:39-0400\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Turkish (http://www.transifex.com/projects/p/libpwquality/language/tr/)\n"
+"POT-Creation-Date: 2019-09-17 14:01+0200\n"
+"PO-Revision-Date: 2018-09-02 08:33+0000\n"
+"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
+"Language-Team: Turkish (http://www.transifex.com/projects/p/libpwquality/"
+"language/tr/)\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:25
-#, c-format
-msgid "New %s%spassword: "
-msgstr "Yeni %s%sparolası: "
-
-#: src/pam_pwquality.c:27
-#, c-format
-msgid "Retype new %s%spassword: "
-msgstr "Yeni %s%sparolasını tekrar girin: "
-
-#: src/pam_pwquality.c:28
-msgid "Sorry, passwords do not match."
-msgstr "Üzgünüm, parolalar birbirine uymuyor."
-
-#: src/pam_pwquality.c:241
+#: src/pam_pwquality.c:233
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "KÖTÜ PAROLA: %s"
@@ -42,160 +31,160 @@ msgstr "KÖTÜ PAROLA: %s"
 #: src/pwscore.c:22
 #, c-format
 msgid "Usage: %s [user]\n"
-msgstr ""
+msgstr "Kullanım: %s [kullanıcı]\n"
 
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
-msgstr ""
+"       The command reads the password to be scored from the standard input.\n"
+msgstr "       Komut, parolayı standart girdiden ölçmek için okur.\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
+#: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
-msgstr ""
+msgstr "Hata: %s\n"
 
-#: src/pwscore.c:51
+#: src/pwscore.c:53
 msgid "Could not obtain the password to be scored"
-msgstr ""
+msgstr "Parola, ölçüm için elde edilemiyor"
 
-#: src/pwscore.c:73
+#: src/pwscore.c:75
 #, c-format
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
 msgstr ""
+"Parola niteliği denetimi başarısız:\n"
+" %s\n"
 
 #: src/pwmake.c:22
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
-msgstr ""
+msgstr "Kullanım: %s <entropi-bitleri>\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
-msgstr ""
+msgstr "Ayarlanırken bellek ayırma hatası"
 
 #: src/error.c:35
 msgid "Memory allocation error"
-msgstr ""
+msgstr "Bellek ayırma hatası"
 
 #: src/error.c:37
 msgid "The password is the same as the old one"
-msgstr ""
+msgstr "Parola eskisiyle aynı"
 
 #: src/error.c:39
 msgid "The password is a palindrome"
-msgstr ""
+msgstr "Parola bir palindromdur"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
-msgstr ""
+msgstr "Parola yalnızca büyük küçük harf değişimiyle başkalaşıyor"
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
-msgstr ""
+msgstr "Parola eskisine çok benziyor"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr ""
+msgstr "Parola kullanıcı adını bir biçimde içeriyor"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
-msgstr ""
+msgid "The password contains words from the real name of the user in some form"
+msgstr "Parola kullanıcının gerçek adını bir biçimde içeriyor"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
-msgstr ""
+msgstr "Parola yasaklı sözcükleri bir biçimde içeriyor"
 
 #: src/error.c:52
 #, c-format
 msgid "The password contains less than %ld digits"
-msgstr ""
+msgstr "Parola %ld basamaktan az"
 
 #: src/error.c:55
 msgid "The password contains too few digits"
-msgstr ""
+msgstr "Parola çok az basamak içeriyor"
 
 #: src/error.c:58
 #, c-format
 msgid "The password contains less than %ld uppercase letters"
-msgstr ""
+msgstr "Parola %ld büyük harften azını içeriyor"
 
 #: src/error.c:61
 msgid "The password contains too few uppercase letters"
-msgstr ""
+msgstr "Parola çok az büyük harf içeriyor"
 
 #: src/error.c:64
 #, c-format
 msgid "The password contains less than %ld lowercase letters"
-msgstr ""
+msgstr "Parola %ld küçük harften azını içeriyor"
 
 #: src/error.c:67
 msgid "The password contains too few lowercase letters"
-msgstr ""
+msgstr "Parola çok az küçük harf içeriyor"
 
 #: src/error.c:70
 #, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr ""
+msgstr "Parola alfanümerik olmayan %ld karakterden azını içeriyor"
 
 #: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
-msgstr ""
+msgstr "Parola alfanümerik olmayan çok az karakter içeriyor"
 
 #: src/error.c:76
 #, c-format
 msgid "The password is shorter than %ld characters"
-msgstr ""
+msgstr "Parola %ld karakterden kısa"
 
 #: src/error.c:79
 msgid "The password is too short"
-msgstr ""
+msgstr "Parola çok kısa"
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
-msgstr ""
+msgstr "Parola yalnızca eskisinin döndürülmüşü"
 
 #: src/error.c:84
 #, c-format
 msgid "The password contains less than %ld character classes"
-msgstr ""
+msgstr "Parola %ld karakter sınıfından azını içeriyor"
 
 #: src/error.c:87
 msgid "The password does not contain enough character classes"
-msgstr ""
+msgstr "Parola yeterli karakter sınıfı içermiyor"
 
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr ""
+msgstr "Parola aynı karakterleri %ld'den çok arka arkaya içeriyor"
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
-msgstr ""
+msgstr "Parola aynı karakteri fazlasıyla arka arkaya içeriyor"
 
 #: src/error.c:96
 #, c-format
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr ""
+msgstr "Parola aynı sınıftaki %ld karakteri arka arkaya içeriyor"
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr ""
+msgstr "Parola aynı sınıftaki karakteri fazlasıyla arka arkaya içeriyor"
 
 #: src/error.c:102
 #, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr ""
+msgstr "Parola %ld karakterden uzun tekdüze dizi içeriyor"
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"
-msgstr ""
+msgstr "Parola çok uzun tekdüze karakter dizisi içeriyor"
 
 #: src/error.c:107
 msgid "No password supplied"
@@ -203,58 +192,67 @@ msgstr "Parola girilmedi"
 
 #: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
-msgstr ""
+msgstr "RNG aygıtından rastgele numara alınamıyor"
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
-msgstr ""
+msgstr "Parola oluşturma başarısız - gereken entropi ayarlar için düşük"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
-msgstr ""
+msgstr "Parola sözlük denetiminden geçemedi"
 
 #: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
-msgstr ""
+msgstr "Bilinmeyen ayar"
 
 #: src/error.c:127
 msgid "Bad integer value of setting"
-msgstr ""
+msgstr "Ayarda kötü tam sayı değeri"
 
 #: src/error.c:131
 msgid "Bad integer value"
-msgstr ""
+msgstr "Kötü tam sayı değeri"
 
 #: src/error.c:134
 #, c-format
 msgid "Setting %s is not of integer type"
-msgstr ""
+msgstr "%s ayarı tam sayı türünde değil"
 
 #: src/error.c:138
 msgid "Setting is not of integer type"
-msgstr ""
+msgstr "Ayar tam sayı türünde değil"
 
 #: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
-msgstr ""
+msgstr "%s ayarı dizge türünde değil"
 
 #: src/error.c:145
 msgid "Setting is not of string type"
-msgstr ""
+msgstr "Ayar dizge türünde değil"
 
 #: src/error.c:147
 msgid "Opening the configuration file failed"
-msgstr ""
+msgstr "Yapılandırma dosyasını açma başarısız"
 
 #: src/error.c:149
 msgid "The configuration file is malformed"
-msgstr ""
+msgstr "Yapılandırma dosyası bozuk"
 
 #: src/error.c:151
 msgid "Fatal failure"
-msgstr ""
+msgstr "Ölümcül arıza"
 
 #: src/error.c:153
 msgid "Unknown error"
 msgstr "Bilinmeyen hata"
+
+#~ msgid "New %s%spassword: "
+#~ msgstr "Yeni %s%sparolası: "
+
+#~ msgid "Retype new %s%spassword: "
+#~ msgstr "Yeni %s%sparolasını yeniden girin: "
+
+#~ msgid "Sorry, passwords do not match."
+#~ msgstr "Üzgünüm, parolalar birbirine uymuyor."

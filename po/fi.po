@@ -7,37 +7,24 @@
 # Janne Ahlskog <j.ahlskog@multi.fi>, 2006
 # Jyri Palokangas <jmp@netti.fi>, 2006
 # Ville-Pekka Vainio <vpvainio@iki.fi>, 2012
-# Juhani Numminen <juhaninumminen0@gmail.com>, 2016. #zanata
+# Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: libpwquality 1.2.4\n"
+"Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2014-08-06 16:45+0200\n"
-"PO-Revision-Date: 2016-07-05 06:13-0400\n"
-"Last-Translator: Juhani Numminen <juhaninumminen0@gmail.com>\n"
-"Language-Team: Finnish (http://www.transifex.com/projects/p/libpwquality/language/fi/)\n"
+"POT-Creation-Date: 2019-09-17 14:01+0200\n"
+"PO-Revision-Date: 2017-05-26 09:20+0000\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: Finnish (http://www.transifex.com/projects/p/libpwquality/"
+"language/fi/)\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:25
-#, c-format
-msgid "New %s%spassword: "
-msgstr "Uusi %s%ssalasana: "
-
-#: src/pam_pwquality.c:27
-#, c-format
-msgid "Retype new %s%spassword: "
-msgstr "Anna uudelleen uusi %s%ssalasana: "
-
-#: src/pam_pwquality.c:28
-msgid "Sorry, passwords do not match."
-msgstr "Salasanat eivät täsmää."
-
-#: src/pam_pwquality.c:241
+#: src/pam_pwquality.c:233
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "HUONO SALASANA: %s"
@@ -50,20 +37,19 @@ msgstr "Käyttö: %s [käyttäjä]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
+"       The command reads the password to be scored from the standard input.\n"
 msgstr "       Komento lukee pisteytettävän salasanan oletussyötteestä.\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
+#: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "Virhe: %s\n"
 
-#: src/pwscore.c:51
+#: src/pwscore.c:53
 msgid "Could not obtain the password to be scored"
 msgstr "Pisteytettävää salasanaa ei saatu"
 
-#: src/pwscore.c:73
+#: src/pwscore.c:75
 #, c-format
 msgid ""
 "Password quality check failed:\n"
@@ -106,8 +92,7 @@ msgid "The password contains the user name in some form"
 msgstr "Salasana sisältää käyttäjätunnuksen jossakin muodossa"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
+msgid "The password contains words from the real name of the user in some form"
 msgstr "Salasana sisältää sanoja käyttäjän oikeasta nimestä jossakin muodossa"
 
 #: src/error.c:49
@@ -269,3 +254,12 @@ msgstr "Vakava virhe"
 #: src/error.c:153
 msgid "Unknown error"
 msgstr "Tuntematon virhe"
+
+#~ msgid "New %s%spassword: "
+#~ msgstr "Uusi %s%ssalasana: "
+
+#~ msgid "Retype new %s%spassword: "
+#~ msgstr "Anna uudelleen uusi %s%ssalasana: "
+
+#~ msgid "Sorry, passwords do not match."
+#~ msgstr "Salasanat eivät täsmää."

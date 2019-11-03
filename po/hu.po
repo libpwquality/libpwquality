@@ -7,36 +7,24 @@
 # Keresztes Ákos <xsak@c2.hu>, 2006
 # Papp Zsolt <zpapp@novell.com>, 2006
 # Zoltan Hoppár <hopparz@gmail.com>, 2012-2013
+# Meskó Balázs <meskobalazs@gmail.com>, 2018. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: libpwquality 1.2.4\n"
+"Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2014-08-06 16:45+0200\n"
-"PO-Revision-Date: 2015-03-14 08:38-0400\n"
+"POT-Creation-Date: 2019-09-17 14:01+0200\n"
+"PO-Revision-Date: 2018-04-05 11:08+0000\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Hungarian (http://www.transifex.com/projects/p/libpwquality/language/hu/)\n"
+"Language-Team: Hungarian (http://www.transifex.com/projects/p/libpwquality/"
+"language/hu/)\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:25
-#, c-format
-msgid "New %s%spassword: "
-msgstr "Új %s%sjelszó: "
-
-#: src/pam_pwquality.c:27
-#, c-format
-msgid "Retype new %s%spassword: "
-msgstr "Ismételje meg az új %s%sjelszavát: "
-
-#: src/pam_pwquality.c:28
-msgid "Sorry, passwords do not match."
-msgstr "Sajnálom, de a jelszavak nem egyeznek."
-
-#: src/pam_pwquality.c:241
+#: src/pam_pwquality.c:233
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "ROSSZ JELSZÓ: %s"
@@ -44,39 +32,38 @@ msgstr "ROSSZ JELSZÓ: %s"
 #: src/pwscore.c:22
 #, c-format
 msgid "Usage: %s [user]\n"
-msgstr "Használat: %s [user]\n"
+msgstr "Használat: %s [felhasználó]\n"
 
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
+"       The command reads the password to be scored from the standard input.\n"
 msgstr ""
-"       A parancs kiolvassa a jelszavát hogy pontozhassa a szabványos "
-"bemenetről.\n"
+"       A parancs beolvassa a jelszavát a szabványos bemenetről, hogy "
+"pontozhassa azt.\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
+#: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "Hiba: %s\n"
 
-#: src/pwscore.c:51
+#: src/pwscore.c:53
 msgid "Could not obtain the password to be scored"
-msgstr "Nem elérhető a jelszó a minősítéshez"
+msgstr "Nem érhető el a minősítendő jelszó"
 
-#: src/pwscore.c:73
+#: src/pwscore.c:75
 #, c-format
 msgid ""
 "Password quality check failed:\n"
 " %s\n"
 msgstr ""
-"Jelszó minőségi ellenőrzés meghiúsult:\n"
+"A jelszó minőség-ellenőrzése meghiúsult:\n"
 "%s\n"
 
 #: src/pwmake.c:22
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
-msgstr "Alkalmazása: %s <entrópia-bitek>\n"
+msgstr "Használat: %s <entrópia-bitek>\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
@@ -92,7 +79,7 @@ msgstr "A jelszó megegyezik a korábbival"
 
 #: src/error.c:39
 msgid "The password is a palindrome"
-msgstr "A jelszó egy palindrom, egy anagramma"
+msgstr "A jelszó egy palindrom"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
@@ -100,31 +87,28 @@ msgstr "A jelszó csak betűcserében tér el"
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
-msgstr "A jelszó túl hasonló a korábbihoz képest"
+msgstr "A jelszó túlságosan hasonlít a korábbira"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr "A jelszó tartalmazza a felhasználói nevét valamilyen formában"
+msgstr "A jelszó tartalmazza a felhasználónevét valamilyen formában"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
-msgstr ""
-"A jelszó szavakat tartalmaz a felhasználó valódi neve alapján bizonyos "
-"formában"
+msgid "The password contains words from the real name of the user in some form"
+msgstr "A jelszó szavakat tartalmaz a felhasználó valódi nevéből"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
-msgstr "A jelszó tiltott szavakat tartalmaz bizonyos formában"
+msgstr "A jelszó tiltott szavakat tartalmaz valamilyen formában"
 
 #: src/error.c:52
 #, c-format
 msgid "The password contains less than %ld digits"
-msgstr "A jelszó kevesebb mint %ld számot tartalmaz"
+msgstr "A jelszó kevesebb mint %ld számjegyet tartalmaz"
 
 #: src/error.c:55
 msgid "The password contains too few digits"
-msgstr "A jelszó túl kevés számot tartalmaz"
+msgstr "A jelszó túl kevés számjegyet tartalmaz"
 
 #: src/error.c:58
 #, c-format
@@ -164,7 +148,7 @@ msgstr "A jelszó túl rövid"
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
-msgstr "A jelszó újrahasznosított régi, már szerepelt korábban"
+msgstr "A jelszó egy újrahasznosított régi jelszó"
 
 #: src/error.c:84
 #, c-format
@@ -173,12 +157,12 @@ msgstr "A jelszó kevesebb mint %ld karaktertípust tartalmaz"
 
 #: src/error.c:87
 msgid "The password does not contain enough character classes"
-msgstr "A jelszó nem tartalmaz megfelelő mennyiségű karaktertípust"
+msgstr "A jelszó nem tartalmaz elég karaktertípust"
 
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr "A jelszó rekurzív, többször %ld - tartalmazza ugyanazon karaktereket"
+msgstr "A jelszó több mint %ld egyforma, egymást követő karaktert tartalmaz"
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
@@ -190,17 +174,17 @@ msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
 msgstr ""
-"A jelszó több mint %ld ugyanolyan osztályú ismétlődő karaktert tartalmaz "
+"A jelszó több mint %ld ugyanolyan típusú ismétlődő karaktert tartalmaz "
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr "A jelszó túl sok ismétlődő, ugyanolyan osztályú karaktert tartalmaz"
+msgstr "A jelszó túl sok ismétlődő, ugyanolyan típusú karaktert tartalmaz"
 
 #: src/error.c:102
 #, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr "A jelszó %ld karakternél hosszabb monoton sorozatot tartalmaz "
+msgstr "A jelszó %ld karakternél hosszabb monoton sorozatot tartalmaz"
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"
@@ -212,12 +196,12 @@ msgstr "Nincs jelszó megadva"
 
 #: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
-msgstr "Véletlenszerűen generált számok nem elfogadhatóak egy RNG eszközről"
+msgstr "Az RNG eszköztől nem kaphatóak meg a véletlen számok"
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
-"Jelszó generálás sikertelen - a szükséges entrópia túl kevés a "
+"Jelszó előállítás sikertelen – a szükséges entrópia túl kevés a "
 "beállításokhoz"
 
 #: src/error.c:114 src/error.c:117
@@ -230,37 +214,37 @@ msgstr "Ismeretlen beállítás"
 
 #: src/error.c:127
 msgid "Bad integer value of setting"
-msgstr "Rossz egész beállítási érték"
+msgstr "Hibás egész beállítási érték"
 
 #: src/error.c:131
 msgid "Bad integer value"
-msgstr "Helytelenül beállított egész érték"
+msgstr "Hibás egész érték"
 
 #: src/error.c:134
 #, c-format
 msgid "Setting %s is not of integer type"
-msgstr "A beállított %s nem egész típus"
+msgstr "A beállított %s érték nem egész típusú"
 
 #: src/error.c:138
 msgid "Setting is not of integer type"
-msgstr "A beállítás nem egész típus"
+msgstr "A beállítás nem egész típusú"
 
 #: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
-msgstr "A beállítás %s nem szöveges típus"
+msgstr "A beállítás %s nem szöveges típusú"
 
 #: src/error.c:145
 msgid "Setting is not of string type"
-msgstr "Beállítás nem szöveges típus"
+msgstr "A beállítás nem szöveges típusú"
 
 #: src/error.c:147
 msgid "Opening the configuration file failed"
-msgstr "A konfigurációs fájl megnyitása nem sikerült"
+msgstr "A konfigurációs fájl megnyitása meghiúsult"
 
 #: src/error.c:149
 msgid "The configuration file is malformed"
-msgstr "A konfigurációs fájl eltorzult"
+msgstr "A konfigurációs fájl rosszul formázott"
 
 #: src/error.c:151
 msgid "Fatal failure"
@@ -269,3 +253,12 @@ msgstr "Végzetes hiba"
 #: src/error.c:153
 msgid "Unknown error"
 msgstr "Ismeretlen hiba"
+
+#~ msgid "New %s%spassword: "
+#~ msgstr "Új %s%sjelszó: "
+
+#~ msgid "Retype new %s%spassword: "
+#~ msgstr "Ismételje meg az új %s%sjelszavát: "
+
+#~ msgid "Sorry, passwords do not match."
+#~ msgstr "A jelszavak nem egyeznek."

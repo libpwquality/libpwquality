@@ -6,37 +6,24 @@
 # Dominik <dominikla@gmail.com>, 2012
 # feonsu <feonsu@gmail.com>, 2008
 # Pavol Šimo <palo.simo@gmail.com>, 2009
-# feonsu <feonsu@gmail.com>, 2016. #zanata
+# Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: libpwquality 1.2.4\n"
+"Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2014-08-06 16:45+0200\n"
-"PO-Revision-Date: 2016-09-12 10:34-0400\n"
-"Last-Translator: feonsu <feonsu@gmail.com>\n"
-"Language-Team: Slovak (http://www.transifex.com/projects/p/libpwquality/language/sk/)\n"
+"POT-Creation-Date: 2019-09-17 14:01+0200\n"
+"PO-Revision-Date: 2017-05-26 09:21+0000\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: Slovak (http://www.transifex.com/projects/p/libpwquality/"
+"language/sk/)\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sk\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:25
-#, c-format
-msgid "New %s%spassword: "
-msgstr "Nové %s%sheslo: "
-
-#: src/pam_pwquality.c:27
-#, c-format
-msgid "Retype new %s%spassword: "
-msgstr "Opakujte nové %s%sheslo: "
-
-#: src/pam_pwquality.c:28
-msgid "Sorry, passwords do not match."
-msgstr "Prepáčte, heslá sa nezhodujú."
-
-#: src/pam_pwquality.c:241
+#: src/pam_pwquality.c:233
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "NESPRÁVNE HESLO: %s"
@@ -49,20 +36,20 @@ msgstr "Použitie: %s [užívateľ]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
-msgstr "       Príkaz číta heslo, aby bolo ohodnotené zo štandardného vstupu.\n"
+"       The command reads the password to be scored from the standard input.\n"
+msgstr ""
+"       Príkaz číta heslo, aby bolo ohodnotené zo štandardného vstupu.\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
+#: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "Chyba: %s\n"
 
-#: src/pwscore.c:51
+#: src/pwscore.c:53
 msgid "Could not obtain the password to be scored"
 msgstr "Nemôžem získať heslo na hodnotenie"
 
-#: src/pwscore.c:73
+#: src/pwscore.c:75
 #, c-format
 msgid ""
 "Password quality check failed:\n"
@@ -105,8 +92,7 @@ msgid "The password contains the user name in some form"
 msgstr "Heslo obsahuje užívateľské meno v istej forme"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
+msgid "The password contains words from the real name of the user in some form"
 msgstr "Heslo obsahuje slová z reálneho mena užívateľa v istej forme"
 
 #: src/error.c:49
@@ -264,3 +250,12 @@ msgstr "Fatálne zlyhanie"
 #: src/error.c:153
 msgid "Unknown error"
 msgstr "Neznáma chyba"
+
+#~ msgid "New %s%spassword: "
+#~ msgstr "Nové %s%sheslo: "
+
+#~ msgid "Retype new %s%spassword: "
+#~ msgstr "Opakujte nové %s%sheslo: "
+
+#~ msgid "Sorry, passwords do not match."
+#~ msgstr "Prepáčte, heslá sa nezhodujú."

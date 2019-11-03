@@ -1,3 +1,17 @@
+%if 0%{?fedora} || 0%{?rhel} > 7
+# Enable python3 build by default
+%bcond_without python3
+%else
+%bcond_with python3
+%endif
+
+%if 0%{?rhel} > 7 || 0%{?fedora} > 30
+# Disable python2 build by default
+%bcond_with python2
+%else
+%bcond_without python2
+%endif
+
 Summary: A library for password generation and password quality checking
 Name: libpwquality
 Version: @PACKAGE_VERSION@
@@ -5,8 +19,7 @@ Release: 1%{?dist}
 # The package is BSD licensed with option to relicense as GPLv2+
 # - this option is redundant as the BSD license allows that anyway.
 License: BSD or GPLv2+
-Group: System Environment/Base
-Source0: http://fedorahosted.org/releases/l/i/libpwquality/libpwquality-%{version}.tar.bz2
+Source0: https://github.com/libpwquality/libpwquality/releases/download/libpwquality-%{version}/libpwquality-%{version}.tar.bz2
 
 %global _pwqlibdir %{_libdir}
 %global _moduledir %{_libdir}/security
@@ -14,13 +27,18 @@ Source0: http://fedorahosted.org/releases/l/i/libpwquality/libpwquality-%{versio
 
 Recommends: cracklib-dicts >= 2.8
 Requires: pam%{?_isa}
+BuildRequires: gcc
 BuildRequires: cracklib-devel
 BuildRequires: gettext
 BuildRequires: pam-devel
+%if %{with python2}
 BuildRequires: python2-devel
+%endif
+%if %{with python3}
 BuildRequires: python3-devel
+%endif
 
-URL: http://libpwquality.fedorahosted.org/
+URL: https://github.com/libpwquality/libpwquality/
 
 # we don't want to provide private python extension libs
 %define __provides_exclude_from ^(%{python_sitearch}|%{python3_sitearch})/.*\.so$.
@@ -32,7 +50,6 @@ This library uses the cracklib and cracklib dictionaries
 to perform some of the checks.
 
 %package devel
-Group: Development/Libraries
 Summary: Support for development of applications using the libpwquality library
 Requires: libpwquality%{?_isa} = %{version}-%{release}
 Requires: pkgconfig
@@ -42,19 +59,21 @@ Files needed for development of applications using the libpwquality
 library.
 See the pwquality.h header file for the API.
 
-%package -n python-pwquality
-Group: Development/Libraries
+%if %{with python2}
+%package -n python2-pwquality
+%{?python_provide:%python_provide python2-pwquality}
 Summary: Python bindings for the libpwquality library
 Requires: libpwquality%{?_isa} = %{version}-%{release}
 
-%description -n python-pwquality
+%description -n python2-pwquality
 This is pwquality Python module that provides Python bindings
 for the libpwquality library. These bindings can be used
 for easy password quality checking and generation of random
 pronounceable passwords from Python applications.
+%endif
 
+%if %{with python3}
 %package -n python3-pwquality
-Group: Development/Libraries
 Summary: Python bindings for the libpwquality library
 Requires: libpwquality%{?_isa} = %{version}-%{release}
 
@@ -63,23 +82,30 @@ This is pwquality Python module that provides Python bindings
 for the libpwquality library. These bindings can be used
 for easy password quality checking and generation of random
 pronounceable passwords from Python applications.
+%endif
 
 %prep
 %setup -q
 
+%if %{with python3} && %{with python2}
 rm -rf %{py3dir}
 cp -a . %{py3dir}
+%endif
 
 %build
+%if %{with python2}
 %configure \
 	--with-securedir=%{_moduledir} \
-	--with-pythonsitedir=%{python_sitearch} \
+	--with-pythonsitedir=%{python2_sitearch} \
 	--with-python-binary=%{__python2} \
 	--disable-static
 
 make %{?_smp_mflags}
-
+%endif
+%if %{with python3} && %{with python2}
 pushd %{py3dir}
+%endif
+%if %{with python3}
 %configure \
 	--with-securedir=%{_moduledir} \
 	--with-pythonsitedir=%{python3_sitearch} \
@@ -87,14 +113,19 @@ pushd %{py3dir}
 	--disable-static
 
 make %{?_smp_mflags}
+%endif
+%if %{with python3} && %{with python2}
 popd
+%endif
 
 %install
 make install DESTDIR=$RPM_BUILD_ROOT INSTALL='install -p'
 
+%if %{with python3} && %{with python2}
 pushd %{py3dir}
 make -C python install DESTDIR=$RPM_BUILD_ROOT INSTALL='install -p'
 popd
+%endif
 
 %if "%{_pwqlibdir}" != "%{_libdir}"
 pushd $RPM_BUILD_ROOT%{_libdir}
@@ -112,12 +143,9 @@ mkdir $RPM_BUILD_ROOT%{_secconfdir}/pwquality.conf.d
 %check
 # Nothing yet
 
-%post -p /sbin/ldconfig
-
-%postun -p /sbin/ldconfig
+%ldconfig_scriptlets
 
 %files -f libpwquality.lang
-%defattr(-,root,root,-)
 %{!?_licensedir:%global license %%doc}
 %license COPYING
 %doc README NEWS AUTHORS
@@ -132,23 +160,38 @@ mkdir $RPM_BUILD_ROOT%{_secconfdir}/pwquality.conf.d
 %{_mandir}/man8/*
 
 %files devel
-%defattr(-,root,root,-)
 %{_includedir}/pwquality.h
 %{_libdir}/libpwquality.so
 %{_libdir}/pkgconfig/*.pc
 %{_mandir}/man3/*
 
-%files -n python-pwquality
-%defattr(-,root,root,-)
-%{python_sitearch}/pwquality.so
-%{python_sitearch}/*.egg-info
+%if %{with python2}
+%files -n python2-pwquality
+%{python2_sitearch}/pwquality.so
+%{python2_sitearch}/*.egg-info
+%endif
 
+%if %{with python3}
 %files -n python3-pwquality
-%defattr(-,root,root,-)
 %{python3_sitearch}/*.so
 %{python3_sitearch}/*.egg-info
+%endif
 
 %changelog
+* Tue Sep 17 2019 Tomáš Mráz <tmraz@redhat.com> 1.4.1-1
+- Disable python2 bindings in Fedora 31 and above
+- Add conditionals for Python2 and Python3
+- pam_pwquality: Abort the retry loop if user requests it
+- Allow setting retry, enforce_for_root, and local_users_only options
+  in the pwquality.conf config file
+
+* Sat Feb 03 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 1.4.0-5
+- Switch to %%ldconfig_scriptlets
+
+* Sun Dec 17 2017 Zbigniew Jędrzejewski-Szmek <zbyszek@in.waw.pl> - 1.4.0-4
+- Python 2 binary package renamed to python2-pwquality
+  See https://fedoraproject.org/wiki/FinalizingFedoraSwitchtoPython3
+
 * Fri May 26 2017 Tomáš Mráz <tmraz@redhat.com> 1.4.0-1
 - Do not try to check presence of too short username in password
 - Make the user name check optional (via usercheck option)

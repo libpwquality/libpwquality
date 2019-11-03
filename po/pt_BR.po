@@ -6,37 +6,24 @@
 # Diego Búrigo Zacarão <diegobz@projetofedora.org>, 2008
 # Glaucia Freitas <gcintra@redhat.com>, 2007
 # Taylon Silmer <taylonsilva@gmail.com>, 2008-2009
-# Daniel Lara <danniel@fedoraproject.org>, 2016. #zanata
+# Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: libpwquality 1.2.4\n"
+"Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2014-08-06 16:45+0200\n"
-"PO-Revision-Date: 2016-09-06 01:37-0400\n"
+"POT-Creation-Date: 2019-09-17 14:01+0200\n"
+"PO-Revision-Date: 2017-05-26 09:00+0000\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/libpwquality/language/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/"
+"libpwquality/language/pt_BR/)\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt-BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:25
-#, c-format
-msgid "New %s%spassword: "
-msgstr "Nova %s%ssenha:"
-
-#: src/pam_pwquality.c:27
-#, c-format
-msgid "Retype new %s%spassword: "
-msgstr "Redigite a nova %s%ssenha:"
-
-#: src/pam_pwquality.c:28
-msgid "Sorry, passwords do not match."
-msgstr "As senhas não são iguais."
-
-#: src/pam_pwquality.c:241
+#: src/pam_pwquality.c:233
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "SENHA INCORRETA: %s"
@@ -49,20 +36,20 @@ msgstr "Uso: %s [usuário]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
-msgstr "       O comando lê a senha a ser marcada a partir da entrada padrão.\n"
+"       The command reads the password to be scored from the standard input.\n"
+msgstr ""
+"       O comando lê a senha a ser marcada a partir da entrada padrão.\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
+#: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "Erro: %s\n"
 
-#: src/pwscore.c:51
+#: src/pwscore.c:53
 msgid "Could not obtain the password to be scored"
 msgstr "Não foi possível obter a senha a ser marcada"
 
-#: src/pwscore.c:73
+#: src/pwscore.c:75
 #, c-format
 msgid ""
 "Password quality check failed:\n"
@@ -105,8 +92,7 @@ msgid "The password contains the user name in some form"
 msgstr "A senha contém o nome de usuário em algum formulário"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
+msgid "The password contains words from the real name of the user in some form"
 msgstr "A senha contém palavras de um nome real de usuário no mesmo formato"
 
 #: src/error.c:49
@@ -266,3 +252,12 @@ msgstr "Falha Fatal"
 #: src/error.c:153
 msgid "Unknown error"
 msgstr "Erro desconhecido"
+
+#~ msgid "New %s%spassword: "
+#~ msgstr "Nova %s%ssenha:"
+
+#~ msgid "Retype new %s%spassword: "
+#~ msgstr "Redigite a nova %s%ssenha:"
+
+#~ msgid "Sorry, passwords do not match."
+#~ msgstr "As senhas não são iguais."

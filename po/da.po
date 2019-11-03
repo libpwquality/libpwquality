@@ -4,37 +4,26 @@
 #
 # Translators:
 # Kris Thomsen <lakristho@gmail.com>, 2009,2013
+# Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
 # scootergrisen <scootergrisen@gmail.com>, 2017. #zanata
+# scootergrisen <scootergrisen@gmail.com>, 2018. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: libpwquality 1.2.4\n"
+"Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2014-08-06 16:45+0200\n"
-"PO-Revision-Date: 2017-04-24 09:40-0400\n"
+"POT-Creation-Date: 2019-09-17 14:01+0200\n"
+"PO-Revision-Date: 2018-09-20 09:53+0000\n"
 "Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
-"Language-Team: Danish (http://www.transifex.com/projects/p/libpwquality/language/da/)\n"
+"Language-Team: Danish (http://www.transifex.com/projects/p/libpwquality/"
+"language/da/)\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:25
-#, c-format
-msgid "New %s%spassword: "
-msgstr "Ny %s%sadgangskode: "
-
-#: src/pam_pwquality.c:27
-#, c-format
-msgid "Retype new %s%spassword: "
-msgstr "Indtast ny %s%sadgangskode igen: "
-
-#: src/pam_pwquality.c:28
-msgid "Sorry, passwords do not match."
-msgstr "Adgangskoderne er ikke ens."
-
-#: src/pam_pwquality.c:241
+#: src/pam_pwquality.c:233
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "DÅRLIG ADGANGSKODE: %s"
@@ -42,25 +31,25 @@ msgstr "DÅRLIG ADGANGSKODE: %s"
 #: src/pwscore.c:22
 #, c-format
 msgid "Usage: %s [user]\n"
-msgstr "Brug: %s [bruger]\n"
+msgstr "Anvendelse: %s [bruger]\n"
 
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
-msgstr "Kommandoen læser adgangskoden, som hentes fra standard-inputtet.\n"
+"       The command reads the password to be scored from the standard input.\n"
+msgstr ""
+"       Kommandoen læser adgangskoden, som hentes fra standard-inputtet.\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
+#: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "Fejl: %s\n"
 
-#: src/pwscore.c:51
+#: src/pwscore.c:53
 msgid "Could not obtain the password to be scored"
 msgstr "Kunne ikke opfange adgangskoden, som skulle vurderes"
 
-#: src/pwscore.c:73
+#: src/pwscore.c:75
 #, c-format
 msgid ""
 "Password quality check failed:\n"
@@ -72,7 +61,7 @@ msgstr ""
 #: src/pwmake.c:22
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
-msgstr "Brug: %s <entropy-bits>\n"
+msgstr "Anvendelse: %s <entropy-bits>\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
@@ -80,7 +69,7 @@ msgstr "Fejl under indstilling af hukommelsesallokering"
 
 #: src/error.c:35
 msgid "Memory allocation error"
-msgstr "Hukommelsesallokeringsfejl"
+msgstr "Fejl under hukommelsesallokering"
 
 #: src/error.c:37
 msgid "The password is the same as the old one"
@@ -103,8 +92,7 @@ msgid "The password contains the user name in some form"
 msgstr "Adgangskoden indeholder brugernavnet i en eller anden form"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
+msgid "The password contains words from the real name of the user in some form"
 msgstr ""
 "Adgangskoden indeholder ord fra brugerens rigtige navn i en eller anden form"
 
@@ -255,7 +243,7 @@ msgstr "Åbning af konfigurationsfilen mislykkedes"
 
 #: src/error.c:149
 msgid "The configuration file is malformed"
-msgstr "Konfigurationsfilen er misdannet"
+msgstr "Konfigurationsfilen er forkert udformet"
 
 #: src/error.c:151
 msgid "Fatal failure"
@@ -264,3 +252,12 @@ msgstr "Fatal fejl"
 #: src/error.c:153
 msgid "Unknown error"
 msgstr "Ukendt fejl"
+
+#~ msgid "New %s%spassword: "
+#~ msgstr "Ny %s%sadgangskode: "
+
+#~ msgid "Retype new %s%spassword: "
+#~ msgstr "Indtast ny %s%sadgangskode igen: "
+
+#~ msgid "Sorry, passwords do not match."
+#~ msgstr "Adgangskoderne er ikke ens."

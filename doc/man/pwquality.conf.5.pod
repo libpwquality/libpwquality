@@ -31,7 +31,7 @@ more than one password policy, then the last matched one will be used.
 
 The libpwquality library also first reads all F<*.conf> files from the
 F</etc/security/pwquality.conf.d> directory in ASCII sorted order. The
-values of the same settings are overriden in the order the files are parsed.
+values of the same settings are overridden in the order the files are parsed.
 
 =head1 OPTIONS
 
@@ -148,6 +148,26 @@ not created yet.
 =item B<dictpath>
 
 Path to the cracklib dictionaries. Default is to use the cracklib default.
+
+=item B<retry=>I<N>
+
+Prompt user at most I<N> times before returning with error. The default is
+I<1>.
+
+=item B<enforce_for_root>
+
+The module will return error on failed check even if the user changing the
+password is root. This option is off by default which means that just
+the message about the failed check is printed but root can change
+the password anyway. Note that root is not asked for an old password
+so the checks that compare the old and new password are not performed.
+
+=item B<local_users_only>
+
+The module will not test the password quality for users that are not present
+in the F</etc/passwd> file. The module still asks for the password so
+the following modules in the stack can use the B<use_authtok> option.
+This option is off by default.
 
 =item B<trivialsubst>
 

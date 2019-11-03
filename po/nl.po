@@ -8,37 +8,24 @@
 # Richard E. van der Luit <nippur@fedoraproject.org>, 2009
 # R.F. Pels <ruurd@tiscali.nl>, 2005
 # Rinse de Vries <rinsedevries@kde.nl>, 2005, 2006
-# Geert Warrink <geert.warrink@onsnet.nu>, 2015. #zanata
+# Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: libpwquality 1.2.4\n"
+"Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2014-08-06 16:45+0200\n"
-"PO-Revision-Date: 2015-05-20 06:46-0400\n"
-"Last-Translator: Geert Warrink <geert.warrink@onsnet.nu>\n"
-"Language-Team: Dutch (http://www.transifex.com/projects/p/libpwquality/language/nl/)\n"
+"POT-Creation-Date: 2019-09-17 14:01+0200\n"
+"PO-Revision-Date: 2017-05-26 09:20+0000\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: Dutch (http://www.transifex.com/projects/p/libpwquality/"
+"language/nl/)\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:25
-#, c-format
-msgid "New %s%spassword: "
-msgstr "Nieuw %s%swachtwoord: "
-
-#: src/pam_pwquality.c:27
-#, c-format
-msgid "Retype new %s%spassword: "
-msgstr "Nieuw %s%swachtwoord herhalen: "
-
-#: src/pam_pwquality.c:28
-msgid "Sorry, passwords do not match."
-msgstr "Sorry, wachtwoorden komen niet overeen."
-
-#: src/pam_pwquality.c:241
+#: src/pam_pwquality.c:233
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "SLECHT WACHTWOORD: %s"
@@ -51,22 +38,21 @@ msgstr "Gebruik: %s [gebruiker]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
+"       The command reads the password to be scored from the standard input.\n"
 msgstr ""
 "       Het commando leest het wachtwoord in dat van de standaard input "
 "gemaakt moet worden.\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
+#: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "Fout: %s\n"
 
-#: src/pwscore.c:51
+#: src/pwscore.c:53
 msgid "Could not obtain the password to be scored"
 msgstr "Kon het te maken wachtwoord niet verkrijgen"
 
-#: src/pwscore.c:73
+#: src/pwscore.c:75
 #, c-format
 msgid ""
 "Password quality check failed:\n"
@@ -109,11 +95,10 @@ msgid "The password contains the user name in some form"
 msgstr "Het wachtwoord bevat op een bepaalde manier de gebruikersnaam "
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
+msgid "The password contains words from the real name of the user in some form"
 msgstr ""
-"Het wachtwoord bevat op een bepaalde manier woorden van de echte naam van de"
-" gebruiker"
+"Het wachtwoord bevat op een bepaalde manier woorden van de echte naam van de "
+"gebruiker"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
@@ -273,3 +258,12 @@ msgstr "Fatale fout"
 #: src/error.c:153
 msgid "Unknown error"
 msgstr "Onbekende fout"
+
+#~ msgid "New %s%spassword: "
+#~ msgstr "Nieuw %s%swachtwoord: "
+
+#~ msgid "Retype new %s%spassword: "
+#~ msgstr "Nieuw %s%swachtwoord herhalen: "
+
+#~ msgid "Sorry, passwords do not match."
+#~ msgstr "Sorry, wachtwoorden komen niet overeen."

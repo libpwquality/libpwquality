@@ -21,12 +21,6 @@
 #include <errno.h>
 #include "pwquality.h"
 
-/* For Translators: "%s%s" could be replaced with "<service> " or "". */
-#define PROMPT1 _("New %s%spassword: ")
-/* For Translators: "%s%s" could be replaced with "<service> " or "". */
-#define PROMPT2 _("Retype new %s%spassword: ")
-#define MISTYPED_PASS _("Sorry, passwords do not match.")
-
 /*
  * here, we make a definition for the externally accessible function
  * in this file (this definition is required for static a module
@@ -44,9 +38,6 @@
 #define PAM_DEBUG_ARG       0x0001
 
 struct module_options {
-    int retry_times;
-    int enforce_for_root;
-    int local_users_only;
     pwquality_settings_t *pwq;
 };
 
@@ -76,21 +67,11 @@ _pam_parse (pam_handle_t *pamh, struct module_options *opt,
 
     /* step through arguments */
     for (ctrl = 0; argc-- > 0; ++argv) {
-        char *ep = NULL;
-
         if (!strcmp(*argv, "debug"))
             ctrl |= PAM_DEBUG_ARG;
         else if (!strncmp(*argv, "type=", 5))
             pam_set_item (pamh, PAM_AUTHTOK_TYPE, *argv+5);
-        else if (!strncmp(*argv, "retry=", 6)) {
-            opt->retry_times = strtol(*argv+6, &ep, 10);
-            if (!ep || (opt->retry_times < 1))
-                opt->retry_times = CO_RETRY_TIMES;
-        } else if (!strncmp(*argv, "enforce_for_root", 16)) {
-            opt->enforce_for_root = 1;
-        } else if (!strncmp(*argv, "local_users_only", 16)) {
-            opt->local_users_only = 1;
-        } else if (!strncmp(*argv, "difignore=", 10)) {
+        else if (!strncmp(*argv, "difignore=", 10)) {
             /* ignored for compatibility with pam_cracklib */
         } else if (!strncmp(*argv, "reject_username", 15)) {
             /* ignored for compatibility with pam_cracklib */
@@ -163,13 +144,18 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
 {
     int ctrl;
     struct module_options options;
+    int retry_times = CO_RETRY_TIMES;
 
     memset(&options, 0, sizeof(options));
-    options.retry_times = CO_RETRY_TIMES;
 
     ctrl = _pam_parse(pamh, &options, argc, argv);
     if (ctrl < 0)
         return PAM_BUF_ERR;
+
+    pwquality_get_int_value(options.pwq, PWQ_SETTING_RETRY_TIMES, &retry_times);
+    if (retry_times < 1)
+        retry_times = CO_RETRY_TIMES;
+
 
     if (flags & PAM_PRELIM_CHECK) {
         /* Check for passwd dictionary
@@ -200,9 +186,10 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
         }
 
         tries = 0;
-        while (tries < options.retry_times) {
+        while (tries < retry_times) {
             void *auxerror;
             const char *newtoken = NULL;
+            int local_users_only = 0;
 
             tries++;
 
@@ -215,16 +202,18 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
              */
 
             retval = pam_get_authtok_noverify(pamh, &newtoken, NULL);
-            if (retval != PAM_SUCCESS) {
-                pam_syslog(pamh, LOG_ERR, "pam_get_authtok_noverify returned error: %s",
-                           pam_strerror(pamh, retval));
-                continue;
-            } else if (newtoken == NULL) { /* user aborted password change, quit */
+            if (retval != PAM_SUCCESS || newtoken == NULL) {
+                if (retval == PAM_AUTHTOK_ERR || newtoken == NULL)
+                    pam_syslog(pamh, LOG_INFO, "user aborted password change");
+                else
+                    pam_syslog(pamh, LOG_ERR, "pam_get_authtok_noverify returned error: %s",
+                               pam_strerror(pamh, retval));
                 pwquality_free_settings(options.pwq);
                 return PAM_AUTHTOK_ERR;
             }
+            pwquality_get_int_value(options.pwq, PWQ_SETTING_LOCAL_USERS, &local_users_only);
 
-            if (options.local_users_only && check_local_user (pamh, user) == 0) {
+            if (local_users_only && check_local_user (pamh, user) == 0) {
                 /* skip the check if a non-local user */
                 retval = 0;
             } else {
@@ -236,16 +225,18 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
                 const char *msg;
                 char buf[PWQ_MAX_ERROR_MESSAGE_LEN];
                 int enforcing = 1;
+                int enforce_for_root = 0;
+
                 msg = pwquality_strerror(buf, sizeof(buf), retval, auxerror);
                 if (ctrl & PAM_DEBUG_ARG)
                     pam_syslog(pamh, LOG_DEBUG, "bad password: %s", msg);
                 pam_error(pamh, _("BAD PASSWORD: %s"), msg);
                 pwquality_get_int_value(options.pwq, PWQ_SETTING_ENFORCING, &enforcing);
+                pwquality_get_int_value(options.pwq, PWQ_SETTING_ENFORCE_ROOT, &enforce_for_root);
 
-                if (enforcing && (getuid() || options.enforce_for_root ||
+                if (enforcing && (getuid() || enforce_for_root ||
                                   (flags & PAM_CHANGE_EXPIRED_AUTHTOK))) {
                     pam_set_item(pamh, PAM_AUTHTOK, NULL);
-                    retval = PAM_AUTHTOK_ERR;
                     continue;
                 }
             } else {
@@ -254,12 +245,15 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
             }
 
             retval = pam_get_authtok_verify(pamh, &newtoken, NULL);
-            if (retval != PAM_SUCCESS) {
-                pam_syslog(pamh, LOG_ERR, "pam_get_authtok_verify returned error: %s",
-                           pam_strerror(pamh, retval));
+            if (retval != PAM_SUCCESS || newtoken == NULL) {
                 pam_set_item(pamh, PAM_AUTHTOK, NULL);
-                continue;
-            } else if (newtoken == NULL) {      /* user aborted password change, quit */
+                if (retval == PAM_TRY_AGAIN)
+                    continue;
+                if (retval == PAM_AUTHTOK_ERR || newtoken == NULL)
+                    pam_syslog(pamh, LOG_INFO, "user aborted password change");
+                else
+                    pam_syslog(pamh, LOG_ERR, "pam_get_authtok_verify returned error: %s",
+                               pam_strerror(pamh, retval));
                 pwquality_free_settings(options.pwq);
                 return PAM_AUTHTOK_ERR;
             }
@@ -273,10 +267,10 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
 
         /* if we have only one try, we can use the real reason,
          * else say that there were too many tries. */
-        if (options.retry_times > 1)
+        if (retry_times > 1)
             return PAM_MAXTRIES;
         else
-            return retval;
+            return PAM_AUTHTOK_ERR;
     } else {
         pwquality_free_settings(options.pwq);
         if (ctrl & PAM_DEBUG_ARG)

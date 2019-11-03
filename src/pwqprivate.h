@@ -30,6 +30,9 @@ typedef struct pwquality_settings_ {
     int dict_check;
     int user_check;
     int enforcing;
+    int retry_times;
+    int enforce_for_root;
+    int local_users_only;
     char *bad_words;
     char *dict_path;
     char *trivial_subst;
@@ -88,8 +91,11 @@ struct setting_mapping {
 #define PWQ_DEFAULT_OTH_CREDIT             0
 #define PWQ_DEFAULT_DICT_CHECK             1
 #define PWQ_DEFAULT_LEETSPEAK_DICT_CHECK   0
-#define PWQ_DEFAULT_USER_CHECK   1
-#define PWQ_DEFAULT_ENFORCING    1
+#define PWQ_DEFAULT_USER_CHECK             1
+#define PWQ_DEFAULT_ENFORCING              1
+#define PWQ_DEFAULT_RETRY_TIMES            1
+#define PWQ_DEFAULT_ENFORCE_ROOT           0
+#define PWQ_DEFAULT_LOCAL_USERS            0
 
 #define PWQ_TYPE_INT             1
 #define PWQ_TYPE_STR             2

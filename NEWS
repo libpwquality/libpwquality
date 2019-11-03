@@ -1,5 +1,14 @@
 libpwquality NEWS -- history of user-visible changes.
 
+Release 1.4.1
+* pam_pwquality: Abort the retry loop if user requests it.
+* Allow setting retry, enforce_for_root, and local_users_only options
+  in the pwquality.conf config file.
+* Fix uninitialized memory in word distance calculations.
+* Fix possible one byte buffer underflow when parsing the config file.
+* Return default cracklib dictionary path if not overriden.
+* Update translations from Zanata.
+
 Release 1.4.0
 * Fix possible buffer overflow with data from /dev/urandom
   in pwquality_generate().

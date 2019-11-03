@@ -14,6 +14,7 @@
 #include <errno.h>
 #include <dirent.h>
 #include <malloc.h>
+#include <crack.h>
 
 #include "pwquality.h"
 #include "pwqprivate.h"
@@ -47,6 +48,9 @@ static inline pwquality_settings_profile_node* new_pwquality_settings_profile_no
                 new_profile->pwq.dict_check = PWQ_DEFAULT_DICT_CHECK;
                 new_profile->pwq.user_check = PWQ_DEFAULT_USER_CHECK;
                 new_profile->pwq.enforcing = PWQ_DEFAULT_ENFORCING;
+                new_profile->pwq.retry_times = PWQ_DEFAULT_RETRY_TIMES;
+                new_profile->pwq.enforce_for_root = PWQ_DEFAULT_ENFORCE_ROOT;
+                new_profile->pwq.local_users_only = PWQ_DEFAULT_LOCAL_USERS;
                 new_profile->pwq.leet_speak_dict_check = PWQ_DEFAULT_LEETSPEAK_DICT_CHECK;
                 list_add_tail(&new_profile->list,profiles);
             } else {
@@ -124,7 +128,10 @@ static const struct setting_mapping s_map[] = {
     { "badwords", PWQ_SETTING_BAD_WORDS, PWQ_TYPE_STR},
     { "dictpath", PWQ_SETTING_DICT_PATH, PWQ_TYPE_STR},
     { "trivialsubst", PWQ_SETTING_TRIVIAL_SUBST, PWQ_TYPE_STR},
-    {"leetspeakcheck",PWQ_SETTING_LEET_SPEAK_DICT_CHECK, PWQ_TYPE_INT}
+    { "leetspeakcheck",PWQ_SETTING_LEET_SPEAK_DICT_CHECK, PWQ_TYPE_INT},
+    { "retry", PWQ_SETTING_RETRY_TIMES, PWQ_TYPE_INT},
+    { "enforce_for_root", PWQ_SETTING_ENFORCE_ROOT, PWQ_TYPE_SET},
+    { "local_users_only", PWQ_SETTING_LOCAL_USERS, PWQ_TYPE_SET}
 };
 
 /* set setting name with value */
@@ -163,18 +170,6 @@ set_name_value(pwquality_settings *pwq, const char *name, const char *value)
 
 #define PWQSETTINGS_MAX_LINELEN 1023
 
-void display_configuration(pwquality_settings_profiles *profiles)
-{
-    struct list_head *i = NULL;
-    list_for_each(i,profiles) {
-        pwquality_settings_profile_node *node = list_entry(i,pwquality_settings_profile_node,list);
-        if (node) {
-            printf("%s->",node->name);
-        }
-    }
-    printf("\n");
-}
-
 /* parse a single configuration file*/
 int
 read_config_file(pwquality_settings_t *profiles, const char *cfgfile, void **auxerror)
@@ -204,7 +199,8 @@ read_config_file(pwquality_settings_t *profiles, const char *cfgfile, void **aux
         int eq = 0;
 
         len = strlen(linebuf);
-        if (linebuf[len - 1] != '\n' && !feof(f)) {
+        /* len cannot be 0 unless there is a bug in fgets */
+        if (len && linebuf[len - 1] != '\n' && !feof(f)) {
             (void) fclose(f);
             return PWQ_ERROR_CFGFILE_MALFORMED;
         }
@@ -216,13 +212,13 @@ read_config_file(pwquality_settings_t *profiles, const char *cfgfile, void **aux
         }
 
         /* drop terminating whitespace including the \n */
-        do {
+        while (ptr > linebuf) {
             if (!isspace(*(ptr-1))) {
                 *ptr = '\0';
                 break;
             }
             --ptr;
-        } while (ptr > linebuf);
+        }
 
         /* skip initial whitespace */
         for (ptr = linebuf; isspace(*ptr); ptr++);
@@ -484,6 +480,12 @@ pwquality_set_int_value_internal(pwquality_settings *pwq, int setting, int value
     case PWQ_SETTING_ENFORCING:
         pwq->enforcing = value;
         break;
+    case PWQ_SETTING_RETRY_TIMES:
+        pwq->retry_times = value;
+    case PWQ_SETTING_ENFORCE_ROOT:
+        pwq->enforce_for_root = value;
+    case PWQ_SETTING_LOCAL_USERS:
+        pwq->local_users_only = value;
     case PWQ_SETTING_LEET_SPEAK_DICT_CHECK:
         pwq->leet_speak_dict_check = value;
         break;
@@ -600,6 +602,15 @@ pwquality_get_int_value(pwquality_settings_t *profiles, int setting, int *value)
     case PWQ_SETTING_LEET_SPEAK_DICT_CHECK:
         *value = pwq->leet_speak_dict_check;
         break;
+    case PWQ_SETTING_RETRY_TIMES:
+        *value = pwq->retry_times;
+        break;
+    case PWQ_SETTING_ENFORCE_ROOT:
+        *value = pwq->enforce_for_root;
+        break;
+    case PWQ_SETTING_LOCAL_USERS:
+        *value = pwq->local_users_only;
+        break;
     default:
         return PWQ_ERROR_NON_INT_SETTING;
     }
@@ -618,7 +629,10 @@ pwquality_get_str_value(pwquality_settings_t *profiles, int setting, const char 
         *value = pwq->bad_words;
         break;
     case PWQ_SETTING_DICT_PATH:
-        *value = pwq->dict_path;
+        if (pwq->dict_path)
+            *value = pwq->dict_path;
+        else
+            *value = GetDefaultCracklibDict();
         break;
     case PWQ_SETTING_TRIVIAL_SUBST:
         *value = pwq->trivial_subst;

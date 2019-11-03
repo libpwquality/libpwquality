@@ -6,36 +6,24 @@
 # asaini <asaini@redhat.com>, 2013
 # Amanpreet Singh Alam[ਆਲਮ] <amanpreetalam@yahoo.com>, 2005
 # Jaswinder Singh <jsingh@redhat.com>, 2009
+# Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: libpwquality 1.2.4\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2014-08-06 16:45+0200\n"
-"PO-Revision-Date: 2015-03-14 08:39-0400\n"
+"POT-Creation-Date: 2019-09-17 14:01+0200\n"
+"PO-Revision-Date: 2017-05-26 08:59+0000\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Panjabi (Punjabi) (http://www.transifex.com/projects/p/libpwquality/language/pa/)\n"
+"Language-Team: Panjabi (Punjabi) (http://www.transifex.com/projects/p/"
+"libpwquality/language/pa/)\n"
+"Language: pa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pa\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:25
-#, c-format
-msgid "New %s%spassword: "
-msgstr "ਨਵਾਂ %s%sਗੁਪਤ-ਸ਼ਬਦ: "
-
-#: src/pam_pwquality.c:27
-#, c-format
-msgid "Retype new %s%spassword: "
-msgstr "ਨਵਾਂ %s%s ਗੁਪਤ-ਸ਼ਬਦ ਮੁੜ-ਲਿਖੋ: "
-
-#: src/pam_pwquality.c:28
-msgid "Sorry, passwords do not match."
-msgstr "ਮਾਫ ਕਰਨਾ ਗੁਪਤ-ਸ਼ਬਦ ਮੇਲ ਨਹੀਂ ਖਾਂਦੇ।"
-
-#: src/pam_pwquality.c:241
+#: src/pam_pwquality.c:233
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "ਮਾੜਾ ਗੁਪਤ-ਸ਼ਬਦ: %s"
@@ -48,20 +36,19 @@ msgstr "ਵਰਤੋਂ: %s [user]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
+"       The command reads the password to be scored from the standard input.\n"
 msgstr "ਕਮਾਂਡ ਪ੍ਰਮਾਣਿਤ ਇਨਪੁਟ ਤੋਂ ਭਰਿਆ ਜਾਣ ਵਾਲਾ ਗੁਪਤ-ਸ਼ਬਦ ਪੜ੍ਹਦੀ ਹੈ।\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
+#: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "ਗਲਤੀ: %s\n"
 
-#: src/pwscore.c:51
+#: src/pwscore.c:53
 msgid "Could not obtain the password to be scored"
 msgstr "ਭਰਿਆ ਜਾਣ ਵਾਲਾ ਗੁਪਤ-ਸ਼ਬਦ ਪ੍ਰਾਪਤ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ"
 
-#: src/pwscore.c:73
+#: src/pwscore.c:75
 #, c-format
 msgid ""
 "Password quality check failed:\n"
@@ -104,8 +91,7 @@ msgid "The password contains the user name in some form"
 msgstr "ਗੁਪਤ-ਸ਼ਬਦ ਵਿੱਚ ਕਿਸੇ ਰੂਪ ਵਿੱਚ ਯੂਜ਼ਰ ਨਾਂ ਵੀ ਸਮਾਇਆ ਹੋਇਆ ਹੈ"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
+msgid "The password contains words from the real name of the user in some form"
 msgstr "ਗੁਪਤ-ਸ਼ਬਦ ਵਿੱਚ ਯੂਜ਼ਰ ਦੇ ਅਸਲ ਨਾਮ ਦੇ ਸ਼ਬਦ ਕਿਸੇ ਰੂਪ ਵਿੱਚ ਸਮਾਏ ਹਨ"
 
 #: src/error.c:49
@@ -210,8 +196,7 @@ msgstr " RNG ਯੰਤਰ ਲਈ ਬੇਤਰਤੀਬ ਅੰਕ ਪ੍ਰਾਪ
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
-msgstr ""
-"ਗੁਪਤ-ਸ਼ਬਦ ਪੈਦਾ ਕਰਨਾ ਅਸਫਲ ਹੋਇਆ - ਲੋੜੀਂਦੀ ਐਨਟਰੌਪੀ ਸੈਟਿੰਗਾਂ ਲਈ ਬਹੁਤ ਥੋੜੀ ਹੈ"
+msgstr "ਗੁਪਤ-ਸ਼ਬਦ ਪੈਦਾ ਕਰਨਾ ਅਸਫਲ ਹੋਇਆ - ਲੋੜੀਂਦੀ ਐਨਟਰੌਪੀ ਸੈਟਿੰਗਾਂ ਲਈ ਬਹੁਤ ਥੋੜੀ ਹੈ"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
@@ -262,3 +247,12 @@ msgstr "ਘਾਤਕ ਅਸਫਲਤਾ"
 #: src/error.c:153
 msgid "Unknown error"
 msgstr "ਅਣਜਾਣੀ ਗਲਤੀ"
+
+#~ msgid "New %s%spassword: "
+#~ msgstr "ਨਵਾਂ %s%sਗੁਪਤ-ਸ਼ਬਦ: "
+
+#~ msgid "Retype new %s%spassword: "
+#~ msgstr "ਨਵਾਂ %s%s ਗੁਪਤ-ਸ਼ਬਦ ਮੁੜ-ਲਿਖੋ: "
+
+#~ msgid "Sorry, passwords do not match."
+#~ msgstr "ਮਾਫ ਕਰਨਾ ਗੁਪਤ-ਸ਼ਬਦ ਮੇਲ ਨਹੀਂ ਖਾਂਦੇ।"

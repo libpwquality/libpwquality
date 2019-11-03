@@ -5,36 +5,24 @@
 # Translators:
 # Rajesh Ranjan <rajesh672@gmail.com>, 2009
 # Rajesh Ranjan <rranjan@redhat.com>, 2007
+# Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: libpwquality 1.2.4\n"
+"Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2014-08-06 16:45+0200\n"
-"PO-Revision-Date: 2015-03-14 08:38-0400\n"
+"POT-Creation-Date: 2019-09-17 14:01+0200\n"
+"PO-Revision-Date: 2017-05-26 09:00+0000\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Hindi (http://www.transifex.com/projects/p/libpwquality/language/hi/)\n"
+"Language-Team: Hindi (http://www.transifex.com/projects/p/libpwquality/"
+"language/hi/)\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:25
-#, c-format
-msgid "New %s%spassword: "
-msgstr "नया %s%spassword: "
-
-#: src/pam_pwquality.c:27
-#, c-format
-msgid "Retype new %s%spassword: "
-msgstr "नया %s%spassword फिर टाइप करें: "
-
-#: src/pam_pwquality.c:28
-msgid "Sorry, passwords do not match."
-msgstr "क्षमा करें, शब्दकूट नहीं मिलते हैं."
-
-#: src/pam_pwquality.c:241
+#: src/pam_pwquality.c:233
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "खराब शब्दकूट: %s"
@@ -47,20 +35,19 @@ msgstr "प्रयोग: %s [user]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
+"       The command reads the password to be scored from the standard input.\n"
 msgstr "       मानक इनपुट से स्कोर किए जाने के लिए कूटशब्द को कमांड पढ़ता है.\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
+#: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "त्रुटि: %s\n"
 
-#: src/pwscore.c:51
+#: src/pwscore.c:53
 msgid "Could not obtain the password to be scored"
 msgstr "स्कोर किए जाने के लिए कूटशब्द पा नहीं सका"
 
-#: src/pwscore.c:73
+#: src/pwscore.c:75
 #, c-format
 msgid ""
 "Password quality check failed:\n"
@@ -103,8 +90,7 @@ msgid "The password contains the user name in some form"
 msgstr "कूटशब्द किसी तरह से उपयोक्ता नाम को ही समाहित करता है"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
+msgid "The password contains words from the real name of the user in some form"
 msgstr "कूटशब्द में उपयोक्ता के वास्तविक नाम को ही किसी रूप में रखा गया है"
 
 #: src/error.c:49
@@ -260,3 +246,12 @@ msgstr "गंभीर विफलता"
 #: src/error.c:153
 msgid "Unknown error"
 msgstr "अनजान त्रुटि"
+
+#~ msgid "New %s%spassword: "
+#~ msgstr "नया %s%spassword: "
+
+#~ msgid "Retype new %s%spassword: "
+#~ msgstr "नया %s%spassword फिर टाइप करें: "
+
+#~ msgid "Sorry, passwords do not match."
+#~ msgstr "क्षमा करें, शब्दकूट नहीं मिलते हैं."

@@ -78,7 +78,9 @@ set higher, the score for the same passwords will be lower.
 Function I<pwquality_strerror()> translates the B<errcode> and B<auxerror> auxiliary
 data into localized text message. If B<buf> is NULL the function uses an internal static
 buffer which makes the function non-reentrant in that case. The returned pointer is not
-guaranteed to point to the B<buf>.
+guaranteed to point to the B<buf>. The function handles deallocation of eventual
+B<auxerror> data passed into it, thus it must not be called twice with the same
+B<auxerror> data.
 
 =head1 RETURN VALUES
 
@@ -101,7 +103,7 @@ Typical use of the libpwquality API:
         pwquality_settings_t *pwq;
         int rv;
         void *auxerror;
-        char buf[1024];
+        char buf[PWQ_MAX_ERROR_MESSAGE_LEN];
 
         pwq = pwquality_default_settings();
         if (pwq == NULL) {

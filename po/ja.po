@@ -7,37 +7,23 @@
 # Kiyoto Hashida <khashida@redhat.com>, 2008, 2009.
 # Noriko Mizumoto <noriko@redhat.com>, 2007.
 # Tomoyuki KATO <tomo@dream.daynight.jp>, 2012.
-# Noriko Mizumoto <noriko@redhat.com>, 2016. #zanata
+# Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: libpwquality 1.2.4\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2014-08-06 16:45+0200\n"
-"PO-Revision-Date: 2016-03-31 03:51-0400\n"
-"Last-Translator: Noriko Mizumoto <noriko@redhat.com>\n"
+"POT-Creation-Date: 2019-09-17 14:01+0200\n"
+"PO-Revision-Date: 2017-05-26 09:19+0000\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:25
-#, c-format
-msgid "New %s%spassword: "
-msgstr "新しい %s%s パスワード:"
-
-#: src/pam_pwquality.c:27
-#, c-format
-msgid "Retype new %s%spassword: "
-msgstr "新しい %s%s パスワードをもう一度力してください:"
-
-#: src/pam_pwquality.c:28
-msgid "Sorry, passwords do not match."
-msgstr "パスワードが一致しません。"
-
-#: src/pam_pwquality.c:241
+#: src/pam_pwquality.c:233
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "よくないパスワード: %s"
@@ -50,20 +36,19 @@ msgstr "使い方: %s [user]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
+"       The command reads the password to be scored from the standard input.\n"
 msgstr "       このコマンドは採点するパスワードを標準入力から読み込みます。\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
+#: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "エラー: %s\n"
 
-#: src/pwscore.c:51
+#: src/pwscore.c:53
 msgid "Could not obtain the password to be scored"
 msgstr "採点するパスワードを取得できませんでした。"
 
-#: src/pwscore.c:73
+#: src/pwscore.c:75
 #, c-format
 msgid ""
 "Password quality check failed:\n"
@@ -106,9 +91,9 @@ msgid "The password contains the user name in some form"
 msgstr "このパスワードには一部に何らかの形でユーザー名が含まれています。"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
-msgstr "このパスワードには何らかの形でユーザーの本名から基づく単語が含まれています。"
+msgid "The password contains words from the real name of the user in some form"
+msgstr ""
+"このパスワードには何らかの形でユーザーの本名から基づく単語が含まれています。"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
@@ -126,7 +111,8 @@ msgstr "このパスワードは数字の個数が足りません。"
 #: src/error.c:58
 #, c-format
 msgid "The password contains less than %ld uppercase letters"
-msgstr "このパスワードには %ld 個未満の大文字のアルファベットが含まれています。"
+msgstr ""
+"このパスワードには %ld 個未満の大文字のアルファベットが含まれています。"
 
 #: src/error.c:61
 msgid "The password contains too few uppercase letters"
@@ -135,7 +121,8 @@ msgstr "このパスワードは大文字のアルファベットの個数が足
 #: src/error.c:64
 #, c-format
 msgid "The password contains less than %ld lowercase letters"
-msgstr "このパスワードには %ld 個未満の小文字のアルファベットが含まれています。"
+msgstr ""
+"このパスワードには %ld 個未満の小文字のアルファベットが含まれています。"
 
 #: src/error.c:67
 msgid "The password contains too few lowercase letters"
@@ -186,7 +173,8 @@ msgstr "このパスワードには連続して同じ文字が含まれていま
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr "このパスワードは %ld 個を越える連続する同じ種類の文字が含まれています。"
+msgstr ""
+"このパスワードは %ld 個を越える連続する同じ種類の文字が含まれています。"
 
 #: src/error.c:99
 msgid ""
@@ -263,3 +251,12 @@ msgstr "致命的な障害が発生しました。"
 #: src/error.c:153
 msgid "Unknown error"
 msgstr "不明なエラー"
+
+#~ msgid "New %s%spassword: "
+#~ msgstr "新しい %s%s パスワード:"
+
+#~ msgid "Retype new %s%spassword: "
+#~ msgstr "新しい %s%s パスワードをもう一度力してください:"
+
+#~ msgid "Sorry, passwords do not match."
+#~ msgstr "パスワードが一致しません。"

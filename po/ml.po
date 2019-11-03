@@ -4,36 +4,24 @@
 #
 # Translators:
 # Ani Peter <apeter@redhat.com>, 2007
+# Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: libpwquality 1.2.4\n"
+"Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2014-08-06 16:45+0200\n"
-"PO-Revision-Date: 2015-03-14 08:38-0400\n"
+"POT-Creation-Date: 2019-09-17 14:01+0200\n"
+"PO-Revision-Date: 2017-05-26 09:00+0000\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Malayalam (http://www.transifex.com/projects/p/libpwquality/language/ml/)\n"
+"Language-Team: Malayalam (http://www.transifex.com/projects/p/libpwquality/"
+"language/ml/)\n"
+"Language: ml\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ml\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:25
-#, c-format
-msgid "New %s%spassword: "
-msgstr "പുതിയ %s%s അടയാളവാക്ക്: "
-
-#: src/pam_pwquality.c:27
-#, c-format
-msgid "Retype new %s%spassword: "
-msgstr "വീണ്ടും %s%s അടയാളവാക്ക് ടൈപ്പ് ചെയ്യുക: "
-
-#: src/pam_pwquality.c:28
-msgid "Sorry, passwords do not match."
-msgstr "ക്ഷമിക്കണം, അടയാളവാക്കുകള്‍ തമ്മില്‍ ചേരുന്നില്ല."
-
-#: src/pam_pwquality.c:241
+#: src/pam_pwquality.c:233
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "തെറ്റായ അടയാളവാക്ക്: %s"
@@ -46,22 +34,19 @@ msgstr "ഉപയോഗിയ്ക്കേണ്ട വിധം: %s [user]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard "
-"input.\n"
-msgstr ""
-"       സാധാരണ ഇന്‍പുട്ടില്‍ നിന്നും ലഭ്യമാക്കുവാനുള്ള രഹസ്യവാക്ക് കമാന്‍ഡ് "
-"ലഭ്യമാക്കുന്നു.\n"
+"       The command reads the password to be scored from the standard input.\n"
+msgstr "       സാധാരണ ഇന്‍പുട്ടില്‍ നിന്നും ലഭ്യമാക്കുവാനുള്ള രഹസ്യവാക്ക് കമാന്‍ഡ് ലഭ്യമാക്കുന്നു.\n"
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
+#: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr "പിശക്: %s\n"
 
-#: src/pwscore.c:51
+#: src/pwscore.c:53
 msgid "Could not obtain the password to be scored"
 msgstr "രഹസ്യവാക്ക് ലഭ്യമാക്കുവാനായില്ല"
 
-#: src/pwscore.c:73
+#: src/pwscore.c:75
 #, c-format
 msgid ""
 "Password quality check failed:\n"
@@ -104,8 +89,7 @@ msgid "The password contains the user name in some form"
 msgstr "രഹസ്യവാക്കില്‍ ഉപയോക്തൃനാമമുണ്ടു്"
 
 #: src/error.c:47
-msgid ""
-"The password contains words from the real name of the user in some form"
+msgid "The password contains words from the real name of the user in some form"
 msgstr "ഉപയോക്താവിന്റെ യഥാര്‍ത്ഥ പേരു് രഹസ്യവാക്കിലുണ്ടു്"
 
 #: src/error.c:49
@@ -142,8 +126,7 @@ msgstr "രഹസ്യവാക്കില്‍ വളരെ കുറവു�
 #: src/error.c:70
 #, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr ""
-"രഹസ്യവാക്കില്‍ %ld-നേക്കാള്‍ കുറഞ്ഞ ആല്‍ഫാന്യൂമറിക്കു് അക്ഷരങ്ങളുണ്ടു്"
+msgstr "രഹസ്യവാക്കില്‍ %ld-നേക്കാള്‍ കുറഞ്ഞ ആല്‍ഫാന്യൂമറിക്കു് അക്ഷരങ്ങളുണ്ടു്"
 
 #: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
@@ -185,9 +168,7 @@ msgstr "രഹസ്യവാക്കില്‍ അടുത്തടുത�
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr ""
-"%ld-ത്തേക്കാള്‍ ഒരേ തരത്തിലുള്ള അനവധി അക്ഷരങ്ങള്‍ അടുത്തടുത്തു് "
-"രഹസ്യവാക്കിലുണ്ടു്"
+msgstr "%ld-ത്തേക്കാള്‍ ഒരേ തരത്തിലുള്ള അനവധി അക്ഷരങ്ങള്‍ അടുത്തടുത്തു് രഹസ്യവാക്കിലുണ്ടു്"
 
 #: src/error.c:99
 msgid ""
@@ -197,8 +178,7 @@ msgstr "ഒരേ തരത്തിലുള്ള അനവധി അക്ഷ
 #: src/error.c:102
 #, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr ""
-"%ld-നേക്കാള്‍‍ നീളമുള്ള ഒരേ തലത്തിലുള്ള അക്ഷരങ്ങള്‍ രഹസ്യവാക്കിലുണ്ടു്"
+msgstr "%ld-നേക്കാള്‍‍ നീളമുള്ള ഒരേ തലത്തിലുള്ള അക്ഷരങ്ങള്‍ രഹസ്യവാക്കിലുണ്ടു്"
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"
@@ -214,9 +194,7 @@ msgstr "ആര്‍എന്‍ജി ഡിവൈസില്‍ നിന്�
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
-msgstr ""
-"രഹസ്യവാക്ക് തയ്യാറാക്കുന്നതില്‍ പരാജയം - സജ്ജീകരണങ്ങള്‍ക്കു് ആവശ്യമായ "
-"എന്‍ട്രോപ്പി വളരെ കുറവു്"
+msgstr "രഹസ്യവാക്ക് തയ്യാറാക്കുന്നതില്‍ പരാജയം - സജ്ജീകരണങ്ങള്‍ക്കു് ആവശ്യമായ എന്‍ട്രോപ്പി വളരെ കുറവു്"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
@@ -267,3 +245,12 @@ msgstr "സാരമായ പരാജയം"
 #: src/error.c:153
 msgid "Unknown error"
 msgstr "അപരിചിതമായ പിശക്"
+
+#~ msgid "New %s%spassword: "
+#~ msgstr "പുതിയ %s%s അടയാളവാക്ക്: "
+
+#~ msgid "Retype new %s%spassword: "
+#~ msgstr "വീണ്ടും %s%s അടയാളവാക്ക് ടൈപ്പ് ചെയ്യുക: "
+
+#~ msgid "Sorry, passwords do not match."
+#~ msgstr "ക്ഷമിക്കണം, അടയാളവാക്കുകള്‍ തമ്മില്‍ ചേരുന്നില്ല."
