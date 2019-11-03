@@ -7,20 +7,21 @@
 # Janne Ahlskog <j.ahlskog@multi.fi>, 2006
 # Jyri Palokangas <jmp@netti.fi>, 2006
 # Ville-Pekka Vainio <vpvainio@iki.fi>, 2012
+# Juhani Numminen <juhaninumminen0@gmail.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: PWQuality library\n"
+"Project-Id-Version: libpwquality 1.2.4\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2015-07-23 13:45+0200\n"
-"PO-Revision-Date: 2013-11-20 10:42+0000\n"
-"Last-Translator: Tomáš Mráz <tmraz@fedoraproject.org>\n"
-"Language-Team: Finnish (http://www.transifex.com/projects/p/libpwquality/"
-"language/fi/)\n"
-"Language: fi\n"
+"POT-Creation-Date: 2014-08-06 16:45+0200\n"
+"PO-Revision-Date: 2016-07-05 06:13-0400\n"
+"Last-Translator: Juhani Numminen <juhaninumminen0@gmail.com>\n"
+"Language-Team: Finnish (http://www.transifex.com/projects/p/libpwquality/language/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Zanata 3.9.6\n"
 
 #: src/pam_pwquality.c:25
 #, c-format
@@ -49,7 +50,8 @@ msgstr "Käyttö: %s [käyttäjä]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
+"       The command reads the password to be scored from the standard "
+"input.\n"
 msgstr "       Komento lukee pisteytettävän salasanan oletussyötteestä.\n"
 
 #: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
@@ -77,7 +79,7 @@ msgstr "Käyttö: %s <entropiabitit>\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
-msgstr ""
+msgstr "Muistinvarausvirhe asetettaessa"
 
 #: src/error.c:35
 msgid "Memory allocation error"
@@ -104,7 +106,8 @@ msgid "The password contains the user name in some form"
 msgstr "Salasana sisältää käyttäjätunnuksen jossakin muodossa"
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
+msgid ""
+"The password contains words from the real name of the user in some form"
 msgstr "Salasana sisältää sanoja käyttäjän oikeasta nimestä jossakin muodossa"
 
 #: src/error.c:49
@@ -197,10 +200,11 @@ msgstr "Salasana sisältää liian monta saman merkkiluokan merkkiä peräkkäin
 #, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
 msgstr ""
+"Salasana sisältää monotonisen merkkisarjan, joka on pitempi kuin %ld merkkiä"
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"
-msgstr ""
+msgstr "Salasana sisältää liian pitkän monotonisen merkkisarjan"
 
 #: src/error.c:107
 msgid "No password supplied"
@@ -213,6 +217,8 @@ msgstr "Satunnaislukugeneraattorilta ei saada satunnaislukuja"
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
+"Salasanan generoiminen epäonnistui – vaadittu entropia on liian vähäinen "
+"asetuksille"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"

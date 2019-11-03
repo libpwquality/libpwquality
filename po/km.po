@@ -5,20 +5,21 @@
 # Translators:
 # Khoem Sokhem <khoemsokhem@khmeros.info>, 2006
 # Leang Chumsoben <soben@khmeros.info>, 2006
+# Kuylim Tith <kuylim.tith@gmail.com>, 2015. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: PWQuality library\n"
+"Project-Id-Version: libpwquality 1.2.4\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2015-07-23 13:45+0200\n"
-"PO-Revision-Date: 2013-11-20 10:42+0000\n"
-"Last-Translator: Tomáš Mráz <tmraz@fedoraproject.org>\n"
-"Language-Team: Khmer (http://www.transifex.com/projects/p/libpwquality/"
-"language/km/)\n"
-"Language: km\n"
+"POT-Creation-Date: 2014-08-06 16:45+0200\n"
+"PO-Revision-Date: 2015-10-31 10:35-0400\n"
+"Last-Translator: Kuylim Tith <kuylim.tith@gmail.com>\n"
+"Language-Team: Khmer (http://www.transifex.com/projects/p/libpwquality/language/km/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: km\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Zanata 3.9.6\n"
 
 #: src/pam_pwquality.c:25
 #, c-format
@@ -42,22 +43,23 @@ msgstr "ពាក្យ​សម្ងាត់​មិន​ល្អ ៖ %s"
 #: src/pwscore.c:22
 #, c-format
 msgid "Usage: %s [user]\n"
-msgstr ""
+msgstr "ការប្រើប្រាស់ : %s [អ្នកប្រើប្រាស់]\n"
 
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
-msgstr ""
+"       The command reads the password to be scored from the standard "
+"input.\n"
+msgstr "ការបញ្ជាអានលេខសម្ងាត់ដើម្បី រក្សាទុកពីការបញ្ចូលស្ដង់ដា ។\n"
 
 #: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
 #, c-format
 msgid "Error: %s\n"
-msgstr ""
+msgstr "មានកំហុស: %s\n"
 
 #: src/pwscore.c:51
 msgid "Could not obtain the password to be scored"
-msgstr ""
+msgstr "មិនអាចទទួលបានលេខសម្ងាត់ដើម្បីរក្សាទុក ។"
 
 #: src/pwscore.c:73
 #, c-format
@@ -65,135 +67,140 @@ msgid ""
 "Password quality check failed:\n"
 " %s\n"
 msgstr ""
+"ការពិនិត្យគុណភាពលេខសម្ងាត់បរាជ័យ: \n"
+"%s\n"
 
 #: src/pwmake.c:22
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
-msgstr ""
+msgstr "ការប្រើប្រាស់ៈ %s <ធាតុ-bits>\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
-msgstr ""
+msgstr "មានកំហុសការបែងអង្គចង់ចាំនៅពេលកំណត់"
 
 #: src/error.c:35
 msgid "Memory allocation error"
-msgstr ""
+msgstr "មានកំហុសការបែងចែកអង្គចង់ចាំ"
 
 #: src/error.c:37
 msgid "The password is the same as the old one"
-msgstr ""
+msgstr "លេខសម្ងាត់ដូចលេខសម្ងាត់ចាស់"
 
 #: src/error.c:39
 msgid "The password is a palindrome"
-msgstr ""
+msgstr "លេខសម្ងាត់គឺជា palindrome"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
-msgstr ""
+msgstr "លេខសម្ងាត់គឺខុសប្លែកជាមួយករណីរផ្លាស់ប្តូរតែប៉ុនោះ  "
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
-msgstr ""
+msgstr "លេខសម្ងាត់ស្រដៀងទៅនឹងលេខសម្ងាត់ចាស់"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr ""
+msgstr "ពាក្យសម្ងាត់មានផ្ទុកនូវឈ្មោះអ្នកប្រើប្រាស់ក្នុងទម្រង់ផ្សេងៗ"
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
+msgid ""
+"The password contains words from the real name of the user in some form"
 msgstr ""
+"ពាក្យសម្ងាត់ផ្ទុកនូវពាក្យមកពីឈ្មោះពិតរបស់អ្នកប្រើប្រាស់ក្នុងទម្រង់ផ្សេង"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
-msgstr ""
+msgstr "ពាក្យសម្ងាត់ផ្ទុកនូវពាក្យហាមឃាត់ក្នុងទម្រង់ខ្លះ"
 
 #: src/error.c:52
 #, c-format
 msgid "The password contains less than %ld digits"
-msgstr ""
+msgstr "ពាក្យសម្ងាត់ផ្ទុកនូវលេខតិចជាង %ld"
 
 #: src/error.c:55
 msgid "The password contains too few digits"
-msgstr ""
+msgstr "ពាក្យសម្ងាត់ផ្ទុកនូវលេខពីរ ឬ បី"
 
 #: src/error.c:58
 #, c-format
 msgid "The password contains less than %ld uppercase letters"
-msgstr ""
+msgstr "ពាក្យសម្ងាត់ផ្ទុកនូវតួអក្សរធំតិចជាង %ld"
 
 #: src/error.c:61
 msgid "The password contains too few uppercase letters"
-msgstr ""
+msgstr "ពាក្យសម្ងាត់ផ្ទុកនូវតួអក្សរធំពីរ ឬបី"
 
 #: src/error.c:64
 #, c-format
 msgid "The password contains less than %ld lowercase letters"
-msgstr ""
+msgstr "ពាក្យសម្ងាត់ផ្ទុកនូវតួអក្សរតូចតិចជាង %ld"
 
 #: src/error.c:67
 msgid "The password contains too few lowercase letters"
-msgstr ""
+msgstr "ពាក្យសម្ងាត់ផ្ទុកនូវតួអក្សរតូចពីរ ឬ បី"
 
 #: src/error.c:70
 #, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr ""
+msgstr "ពាក្យសម្ងាត់មានផ្ទុកតួអក្សរដែលមិនមែនជាអក្សរក្រមលេខតិចជាង %ld"
 
 #: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
 msgstr ""
+"ពាក្យសម្ងាត់មានផ្ទុកនូវតួអក្សរដែលមិនមែនជាអក្សរក្រមលេខតិចចំនួន ពីរ ឬ បី"
 
 #: src/error.c:76
 #, c-format
 msgid "The password is shorter than %ld characters"
-msgstr ""
+msgstr "ពាក្យសម្ងាត់ខ្លីជាង %ld តួអក្សរ"
 
 #: src/error.c:79
 msgid "The password is too short"
-msgstr ""
+msgstr "ពាក្យសម្ងាត់ខ្លីពេក"
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
-msgstr ""
+msgstr "ពាក្យសម្ងាត់ទើបតែត្រឡប់ពាក្យសម្ងាត់ចាស់មួយ"
 
 #: src/error.c:84
 #, c-format
 msgid "The password contains less than %ld character classes"
-msgstr ""
+msgstr "ពាក្យសម្ងាត់ផ្ទុកតិចជាង %ld ថ្នាក់តួអក្សរ"
 
 #: src/error.c:87
 msgid "The password does not contain enough character classes"
-msgstr ""
+msgstr "ពាក្យសម្ងាត់មិនមានផ្ទុកថ្នាក់តួអក្សរគ្រប់គ្រាន់"
 
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr ""
+msgstr "ពាក្យសម្ងាត់ផ្ទុក %ld តួអក្សរដូចគ្នានិងជាប់គ្នា"
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
-msgstr ""
+msgstr "ពាក្យសម្ងាត់ផ្ទុកតួអក្សរដូចគ្នានិងជាប់គ្នាច្រើន"
 
 #: src/error.c:96
 #, c-format
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr ""
+msgstr "ពាក្យសម្ងាត់មានផ្ទុកច្រើនជាង %ld តួអក្សរនៃថ្នាក់ដូចគ្នានិងជាប់គ្នា"
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr ""
+msgstr "ពាក្យសម្ងាត់មានផ្ទុកតួអក្សរនៃថ្នាក់ដូចគ្នានិងជាប់គ្នាច្រើនពេក"
 
 #: src/error.c:102
 #, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr ""
+msgstr "ពាក្យសម្ងាត់មានផ្ទុកឯកតាលំដាប់វែងជាង %ld តួអក្សរ"
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"
-msgstr ""
+msgstr "ពាក្យសម្ងាត់ផ្ទុកឯកតាលំដាប់តួអក្សរវែងពេក"
 
 #: src/error.c:107
 msgid "No password supplied"
@@ -201,57 +208,57 @@ msgstr "មិន​បាន​ផ្ដល់​ពាក្យសម្ងា
 
 #: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
-msgstr ""
+msgstr "មិនបានទទួលលេខចៃដន្យពីឧបករណ៍ RNG"
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
-msgstr ""
+msgstr "ការបង្ដើតពាក្យសម្ងាត់បរាជ័យ - ត្រូវការធាតុក្នុងការកំណត់ទៅកាន់ទាប"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
-msgstr ""
+msgstr "ពាក្យសម្ងាត់បានបរាជ័យក្នុងការពិនិត្យវចនានុក្រម"
 
 #: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
-msgstr ""
+msgstr "មិនស្គាល់ការកំណត់"
 
 #: src/error.c:127
 msgid "Bad integer value of setting"
-msgstr ""
+msgstr "ការកំណត់តម្លៃចំនួនគត់មិនត្រឹមត្រូវ"
 
 #: src/error.c:131
 msgid "Bad integer value"
-msgstr ""
+msgstr "តម្លៃចំនួនគត់មិនត្រឹមត្រូវ"
 
 #: src/error.c:134
 #, c-format
 msgid "Setting %s is not of integer type"
-msgstr ""
+msgstr "ការកំណត់ %s មិនមែនជាប្រភេទចំនួនគត់"
 
 #: src/error.c:138
 msgid "Setting is not of integer type"
-msgstr ""
+msgstr "ការកំណត់តម្លៃចំនួនគត់មិនត្រឹមត្រូវ"
 
 #: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
-msgstr ""
+msgstr "ការកំណត់ %s  មិនមែនជាប្រភេទខ្សែរអក្សរ"
 
 #: src/error.c:145
 msgid "Setting is not of string type"
-msgstr ""
+msgstr "ការកំណត់មិនមែនជាប្រភេទខ្សែរអក្សរ"
 
 #: src/error.c:147
 msgid "Opening the configuration file failed"
-msgstr ""
+msgstr "កំពុងបើកការកំណត់ថតបរាជ័យ"
 
 #: src/error.c:149
 msgid "The configuration file is malformed"
-msgstr ""
+msgstr "ការកំណត់ថតគឺមិនត្រឹមត្រូវ"
 
 #: src/error.c:151
 msgid "Fatal failure"
-msgstr ""
+msgstr "បរាជាជ័យធ្ងន់ធ្ងរ"
 
 #: src/error.c:153
 msgid "Unknown error"

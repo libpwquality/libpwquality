@@ -28,8 +28,10 @@ extern "C" {
 #define PWQ_SETTING_BAD_WORDS       13
 #define PWQ_SETTING_MAX_SEQUENCE    14
 #define PWQ_SETTING_DICT_CHECK      15
-#define PWQ_SETTING_TRIVIAL_SUBST	16
-#define PWQ_SETTING_LEET_SPEAK_DICT_CHECK      17
+#define PWQ_SETTING_USER_CHECK      16
+#define PWQ_SETTING_ENFORCING       17
+#define PWQ_SETTING_TRIVIAL_SUBST	18
+#define PWQ_SETTING_LEET_SPEAK_DICT_CHECK      19
 
 #define PWQ_MAX_ENTROPY_BITS       256
 #define PWQ_MIN_ENTROPY_BITS       56
@@ -88,7 +90,7 @@ pwquality_free_settings(pwquality_settings_t *pwq);
      values will be in effect - the latest wins. */
 int
 pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile,
-        void **auxerror);
+                      void **auxerror);
 
 /* Useful for setting the options as configured on a pam module
  * command line in form of <opt>=<val> */
@@ -102,7 +104,7 @@ pwquality_set_int_value(pwquality_settings_t *pwq, int setting, int value);
 /* Set value of a string setting. */
 int
 pwquality_set_str_value(pwquality_settings_t *pwq, int setting,
-        const char *value);
+                        const char *value);
 
 /* Get value of an integer setting. */
 int
@@ -119,7 +121,7 @@ pwquality_get_str_value(pwquality_settings_t *pwq, int setting, const char **val
  * the settings. */
 int
 pwquality_generate(pwquality_settings_t *pwq, int entropy_bits,
-        char **password);
+                   char **password);
 
 /* Check the password according to the settings.
  * It returns either score <0-100>, negative error number,
@@ -132,10 +134,10 @@ pwquality_generate(pwquality_settings_t *pwq, int entropy_bits,
  * is not returned.
  * Not passing the *auxerror into pwquality_strerror() can lead to memory leaks.
  * The score depends on PWQ_SETTING_MIN_LENGTH. If it is set higher,
- * the score for the same passwords will be lower. */ 
+ * the score for the same passwords will be lower. */
 int
 pwquality_check(pwquality_settings_t *pwq, const char *password,
-        const char *oldpassword, const char *user, void **auxerror);
+                const char *oldpassword, const char *user, void **auxerror);
 
 /* Translate the error code and auxiliary message into a localized
  * text message.

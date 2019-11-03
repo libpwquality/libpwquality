@@ -8,19 +8,18 @@
 # Jaswinder Singh <jsingh@redhat.com>, 2009
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: libpwquality 1.2.4\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2015-07-23 13:45+0200\n"
-"PO-Revision-Date: 2013-09-16 02:37-0400\n"
-"Last-Translator: asaini <asaini@redhat.com>\n"
-"Language-Team: Panjabi (Punjabi) (http://www.transifex.com/projects/p/"
-"libpwquality/language/pa/)\n"
-"Language: pa\n"
+"POT-Creation-Date: 2014-08-06 16:45+0200\n"
+"PO-Revision-Date: 2015-03-14 08:39-0400\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: Panjabi (Punjabi) (http://www.transifex.com/projects/p/libpwquality/language/pa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: pa\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 3.1.2\n"
+"X-Generator: Zanata 3.9.6\n"
 
 #: src/pam_pwquality.c:25
 #, c-format
@@ -49,7 +48,8 @@ msgstr "ਵਰਤੋਂ: %s [user]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
+"       The command reads the password to be scored from the standard "
+"input.\n"
 msgstr "ਕਮਾਂਡ ਪ੍ਰਮਾਣਿਤ ਇਨਪੁਟ ਤੋਂ ਭਰਿਆ ਜਾਣ ਵਾਲਾ ਗੁਪਤ-ਸ਼ਬਦ ਪੜ੍ਹਦੀ ਹੈ।\n"
 
 #: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
@@ -104,7 +104,8 @@ msgid "The password contains the user name in some form"
 msgstr "ਗੁਪਤ-ਸ਼ਬਦ ਵਿੱਚ ਕਿਸੇ ਰੂਪ ਵਿੱਚ ਯੂਜ਼ਰ ਨਾਂ ਵੀ ਸਮਾਇਆ ਹੋਇਆ ਹੈ"
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
+msgid ""
+"The password contains words from the real name of the user in some form"
 msgstr "ਗੁਪਤ-ਸ਼ਬਦ ਵਿੱਚ ਯੂਜ਼ਰ ਦੇ ਅਸਲ ਨਾਮ ਦੇ ਸ਼ਬਦ ਕਿਸੇ ਰੂਪ ਵਿੱਚ ਸਮਾਏ ਹਨ"
 
 #: src/error.c:49
@@ -209,7 +210,8 @@ msgstr " RNG ਯੰਤਰ ਲਈ ਬੇਤਰਤੀਬ ਅੰਕ ਪ੍ਰਾਪ
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
-msgstr "ਗੁਪਤ-ਸ਼ਬਦ ਪੈਦਾ ਕਰਨਾ ਅਸਫਲ ਹੋਇਆ - ਲੋੜੀਂਦੀ ਐਨਟਰੌਪੀ ਸੈਟਿੰਗਾਂ ਲਈ ਬਹੁਤ ਥੋੜੀ ਹੈ"
+msgstr ""
+"ਗੁਪਤ-ਸ਼ਬਦ ਪੈਦਾ ਕਰਨਾ ਅਸਫਲ ਹੋਇਆ - ਲੋੜੀਂਦੀ ਐਨਟਰੌਪੀ ਸੈਟਿੰਗਾਂ ਲਈ ਬਹੁਤ ਥੋੜੀ ਹੈ"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"

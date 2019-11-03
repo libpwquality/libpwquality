@@ -10,6 +10,9 @@
 #endif
 
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
 
 #include "ModuleVersionInfo.h"
 MODULE_NAME_AUTOTOOLS;
@@ -42,15 +45,15 @@ void displayVersionInfo(void)  __attribute__ ((noreturn));
 
 void displayVersionInfo(void)
 {
-	DISPLAY("Library :",__module_name);
-	DISPLAY("Author:",__module_author);
-	DISPLAY("File version:",__module_file_modinfo);
-	DISPLAY("CSC Version:",__module_modinfo);
-	DISPLAY("Description:",__module_description);
-	DISPLAY("Comment:",__module_comment);
-	DISPLAY("(C) Copyright:",__module_copyright);
+    DISPLAY("Library :",__module_name);
+    DISPLAY("Author:",__module_author);
+    DISPLAY("File version:",__module_file_modinfo);
+    DISPLAY("CSC Version:",__module_modinfo);
+    DISPLAY("Description:",__module_description);
+    DISPLAY("Comment:",__module_comment);
+    DISPLAY("(C) Copyright:",__module_copyright);
 
-	_exit(EXIT_SUCCESS);
+    _exit(EXIT_SUCCESS);
 }
 /* _LDFLAGS = -Wl,-e,displayVersionInfo */
 

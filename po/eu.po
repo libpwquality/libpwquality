@@ -6,18 +6,18 @@
 # Hey_neken <mikel@olasagasti.info>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: PWQuality library\n"
+"Project-Id-Version: libpwquality 1.2.4\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2015-07-23 13:45+0200\n"
-"PO-Revision-Date: 2013-11-20 10:42+0000\n"
-"Last-Translator: Hey_neken <mikel@olasagasti.info>\n"
-"Language-Team: Basque (http://www.transifex.com/projects/p/libpwquality/"
-"language/eu/)\n"
-"Language: eu\n"
+"POT-Creation-Date: 2014-08-06 16:45+0200\n"
+"PO-Revision-Date: 2015-03-14 08:37-0400\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: Basque (http://www.transifex.com/projects/p/libpwquality/language/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: eu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Zanata 3.9.6\n"
 
 #: src/pam_pwquality.c:25
 #, c-format
@@ -46,7 +46,8 @@ msgstr "Erabilera: %s [erabiltzailea]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
+"       The command reads the password to be scored from the standard "
+"input.\n"
 msgstr ""
 
 #: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
@@ -101,7 +102,8 @@ msgid "The password contains the user name in some form"
 msgstr "Pasahitzak erabiltzaile izena dakar nolabait"
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
+msgid ""
+"The password contains words from the real name of the user in some form"
 msgstr ""
 
 #: src/error.c:49

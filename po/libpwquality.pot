@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the libpwquality package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: libpwquality 1.3.0\n"
+"Project-Id-Version: libpwquality 1.3.1\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2015-07-23 13:45+0200\n"
+"POT-Creation-Date: 2017-05-26 14:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +31,7 @@ msgstr ""
 msgid "Sorry, passwords do not match."
 msgstr ""
 
-#: src/pam_pwquality.c:241
+#: src/pam_pwquality.c:242
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr ""
@@ -47,16 +47,16 @@ msgid ""
 "       The command reads the password to be scored from the standard input.\n"
 msgstr ""
 
-#: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
+#: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
 msgstr ""
 
-#: src/pwscore.c:51
+#: src/pwscore.c:53
 msgid "Could not obtain the password to be scored"
 msgstr ""
 
-#: src/pwscore.c:73
+#: src/pwscore.c:75
 #, c-format
 msgid ""
 "Password quality check failed:\n"

@@ -7,20 +7,21 @@
 # manuelmarque <manuelmarque@gmail.com>, 2012
 # Rui Gouveia <rui.gouveia@globaltek.pt>, 2009
 # Rui Gouveia <rui.gouveia@gmail.com>, 2012
+# Ricardo Pinto <ricardo.bigote@gmail.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: PWQuality library\n"
+"Project-Id-Version: libpwquality 1.2.4\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2015-07-23 13:45+0200\n"
-"PO-Revision-Date: 2013-11-20 10:42+0000\n"
-"Last-Translator: Tomáš Mráz <tmraz@fedoraproject.org>\n"
-"Language-Team: Portuguese (http://www.transifex.com/projects/p/libpwquality/"
-"language/pt/)\n"
-"Language: pt\n"
+"POT-Creation-Date: 2014-08-06 16:45+0200\n"
+"PO-Revision-Date: 2016-09-05 10:44-0400\n"
+"Last-Translator: Ricardo Pinto <ricardo.bigote@gmail.com>\n"
+"Language-Team: Portuguese (http://www.transifex.com/projects/p/libpwquality/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: pt\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Zanata 3.9.6\n"
 
 #: src/pam_pwquality.c:25
 #, c-format
@@ -49,7 +50,8 @@ msgstr "Utilização: %s [utilizador]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
+"       The command reads the password to be scored from the standard "
+"input.\n"
 msgstr ""
 "       O comando lê a senha a ser pontuada a partir da entrada de dados por "
 "omissão.\n"
@@ -106,7 +108,8 @@ msgid "The password contains the user name in some form"
 msgstr "A senha contém o nome do utilizador em alguma forma"
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
+msgid ""
+"The password contains words from the real name of the user in some form"
 msgstr "A senha contém palavras do nome real do utilizador em algum ponto"
 
 #: src/error.c:49
@@ -185,7 +188,8 @@ msgstr "A senha contém demasiados caracteres iguais consecutivos"
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr "A senha contém mais do que %ld caracteres da mesma classe consecutivos"
+msgstr ""
+"A senha contém mais do que %ld caracteres da mesma classe consecutivos"
 
 #: src/error.c:99
 msgid ""
@@ -196,10 +200,12 @@ msgstr "A senha contém demasiados caracteres da mesma classe consecutivos"
 #, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
 msgstr ""
+"A senha contém uma sequência monotonica mais longa do que %ld caracteres"
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"
 msgstr ""
+"A senha contém uma sequência monotonica de caracteres demasiadamente longa"
 
 #: src/error.c:107
 msgid "No password supplied"

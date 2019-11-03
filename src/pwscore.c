@@ -18,70 +18,73 @@
 #include "pwquality.h"
 
 void
-usage(const char *progname) {
-        fprintf(stderr, _("Usage: %s [user]\n"), progname);
-        fprintf(stderr, _("       The command reads the password to be scored from the standard input.\n"));
+usage(const char *progname)
+{
+    fprintf(stderr, _("Usage: %s [user]\n"), progname);
+    fprintf(stderr, _("       The command reads the password to be scored from the standard input.\n"));
 }
 
 /* score a password */
 int
 main(int argc, char *argv[])
 {
-        pwquality_settings_t *pwq;
-        int rv;
-        void *auxerror = NULL;
-        char buf[1024];
-        size_t len;
-        char *user = NULL;
+    pwquality_settings_t *pwq;
+    int rv;
+    void *auxerror = NULL;
+    char buf[1024];
+    size_t len;
+    char *user = NULL;
 
-        setlocale(LC_ALL, "");
-        bindtextdomain("libpwquality", "/usr/share/locale");
-        textdomain("libpwquality");
+#ifdef ENABLE_NLS
+    setlocale(LC_ALL, "");
+    bindtextdomain("libpwquality", "/usr/share/locale");
+    textdomain("libpwquality");
+#endif
 
-        if (argc > 2) {
-                usage(basename(argv[0]));
-                exit(3);
-        }
+    if (argc > 2) {
+        usage(basename(argv[0]));
+        exit(3);
+    }
 
-        if (argc == 2) {
-                user = argv[1];
-        }
+    if (argc == 2) {
+        user = argv[1];
+    }
 
-        if (fgets(buf, sizeof(buf), stdin) == NULL || (len = strlen(buf)) == 0) {
-                fprintf(stderr, _("Error: %s\n"), _("Could not obtain the password to be scored"));
-                exit(4);
-        }
-        if (buf[len - 1] == '\n')
-                buf[len - 1] = '\0';
+    if (fgets(buf, sizeof(buf), stdin) == NULL || (len = strlen(buf)) == 0) {
+        fprintf(stderr, _("Error: %s\n"), _("Could not obtain the password to be scored"));
+        exit(4);
+    }
+    if (buf[len - 1] == '\n')
+        buf[len - 1] = '\0';
 
-        pwq = pwquality_default_settings();
-        if (pwq == NULL) {
-                fprintf(stderr, _("Error: %s\n"), pwquality_strerror(NULL, 0, PWQ_ERROR_MEM_ALLOC, NULL));
-                exit(2);
-        }
+    pwq = pwquality_default_settings();
+    if (pwq == NULL) {
+        fprintf(stderr, _("Error: %s\n"), pwquality_strerror(NULL, 0, PWQ_ERROR_MEM_ALLOC, NULL));
+        exit(2);
+    }
 
-        if ((rv=pwquality_read_config(pwq,NULL, &auxerror)) != 0) {
-                pwquality_free_settings(pwq);
-                fprintf(stderr, _("Error: %s\n"), pwquality_strerror(NULL, 0, rv, auxerror));
-                exit(3);
-        }
-
-        rv = pwquality_check(pwq, buf, NULL,user, &auxerror);
+    if ((rv=pwquality_read_config(pwq,NULL, &auxerror)) != 0) {
         pwquality_free_settings(pwq);
+        fprintf(stderr, _("Error: %s\n"), pwquality_strerror(NULL, 0, rv, auxerror));
+        exit(3);
+    }
 
-        if (rv < 0) {
-                fprintf(stderr, _("Password quality check failed:\n %s\n"),
-                        pwquality_strerror(NULL, 0, rv, auxerror));
-                exit(1);
-        }
+    rv = pwquality_check(pwq, buf, NULL,user, &auxerror);
+    pwquality_free_settings(pwq);
 
-        printf("%d\n", rv);
+    if (rv < 0) {
+        fprintf(stderr, _("Password quality check failed:\n %s\n"),
+                pwquality_strerror(NULL, 0, rv, auxerror));
+        exit(1);
+    }
 
-        if (auxerror) {
-        	free(auxerror);
-        	auxerror = NULL;
-        }
-        return 0;
+    printf("%d\n", rv);
+
+    if (auxerror) {
+        free(auxerror);
+        auxerror = NULL;
+    }
+    return 0;
 }
 
 /*

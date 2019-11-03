@@ -7,21 +7,21 @@
 #   <iya777@yandex.ru>, 2012.
 # Yulia Poyarkova <yulia.poyarkova@redhat.com>, 2007, 2009.
 # Сергей Батурин <f1nn@bk.ru>, 2012.
+# yuliya <ypoyarko@redhat.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: libpwquality 1.2.4\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2015-07-23 13:45+0200\n"
-"PO-Revision-Date: 2012-08-29 08:13-0400\n"
-"Last-Translator: triplepointfive <iya777@yandex.ru>\n"
+"POT-Creation-Date: 2014-08-06 16:45+0200\n"
+"PO-Revision-Date: 2016-03-30 07:36-0400\n"
+"Last-Translator: yuliya <ypoyarko@redhat.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Zanata 3.1.2\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Zanata 3.9.6\n"
 
 #: src/pam_pwquality.c:25
 #, c-format
@@ -50,8 +50,9 @@ msgstr "Использование: %s [пользователь]\n"
 #: src/pwscore.c:23
 #, c-format
 msgid ""
-"       The command reads the password to be scored from the standard input.\n"
-msgstr "       Команда считает введённый пароль.\n"
+"       The command reads the password to be scored from the standard "
+"input.\n"
+msgstr "       Команда проверяет качество введенного пароля.\n"
 
 #: src/pwscore.c:51 src/pwscore.c:59 src/pwscore.c:65
 #, c-format
@@ -60,7 +61,7 @@ msgstr "Ошибка: %s\n"
 
 #: src/pwscore.c:51
 msgid "Could not obtain the password to be scored"
-msgstr "Пароль для записи не получен"
+msgstr "Не удалось получить пароль для проверки"
 
 #: src/pwscore.c:73
 #, c-format
@@ -68,13 +69,13 @@ msgid ""
 "Password quality check failed:\n"
 " %s\n"
 msgstr ""
-"Проверка сложности пароля не удалась::\n"
+"Проверка сложности пароля завершилась неудачей:\n"
 " %s\n"
 
 #: src/pwmake.c:22
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
-msgstr "Использование: %s <биты случайных данных>\n"
+msgstr "Использование: %s <биты_случайных_данных>\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
@@ -94,7 +95,7 @@ msgstr "Пароль является палиндромом"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
-msgstr "В пароле различен только регистр"
+msgstr "Пароль отличается лишь регистром символов"
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
@@ -102,15 +103,16 @@ msgstr "Пароль слишком схож с предыдущим"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr "Пароль содержит имя пользователя в какой либо форме"
+msgstr "Пароль содержит имя пользователя в той или иной форме"
 
 #: src/error.c:47
-msgid "The password contains words from the real name of the user in some form"
-msgstr "Пароль содержит реальное имя пользователя в какой либо форме"
+msgid ""
+"The password contains words from the real name of the user in some form"
+msgstr "Пароль содержит реальное имя пользователя в той или иной форме"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
-msgstr "Пароль содержит запрещенные слова в какой либо форме"
+msgstr "Пароль содержит запрещенные слова в той или иной форме"
 
 #: src/error.c:52
 #, c-format
@@ -124,34 +126,34 @@ msgstr "Пароль содержит слишком мало знаков"
 #: src/error.c:58
 #, c-format
 msgid "The password contains less than %ld uppercase letters"
-msgstr "Пароль содержит меньше чем %ld заглавных букв"
+msgstr "Пароль содержит меньше %ld заглавных букв"
 
 #: src/error.c:61
 msgid "The password contains too few uppercase letters"
-msgstr "Пароль содержит слишком мало символов верхнего регистра"
+msgstr "Пароль содержит недостаточное число символов верхнего регистра"
 
 #: src/error.c:64
 #, c-format
 msgid "The password contains less than %ld lowercase letters"
-msgstr "Пароль содержит меньше чем %ld строчных букв"
+msgstr "Пароль содержит меньше %ld строчных букв"
 
 #: src/error.c:67
 msgid "The password contains too few lowercase letters"
-msgstr "Пароль содержит слишком мало символов нижнего регистра"
+msgstr "Пароль содержит недостаточное число символов нижнего регистра"
 
 #: src/error.c:70
 #, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr "Пароль содержит меньше чем %ld не алфавитных символов"
+msgstr "Пароль содержит меньше чем %ld неалфавитных символов"
 
 #: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
-msgstr "Пароль содержит слишком мало не алфавитно-цифровых символов"
+msgstr "Пароль содержит слишком мало неалфавитно-цифровых символов"
 
 #: src/error.c:76
 #, c-format
 msgid "The password is shorter than %ld characters"
-msgstr "В пароле должно быть не меньше %ld символов"
+msgstr "Пароль должен содержать не менее %ld символов"
 
 #: src/error.c:79
 msgid "The password is too short"

@@ -18,8 +18,9 @@
 #include "pwquality.h"
 
 void
-usage(const char *progname) {
-        fprintf(stderr, _("Usage: %s <entropy-bits>\n"), progname);
+usage(const char *progname)
+{
+    fprintf(stderr, _("Usage: %s <entropy-bits>\n"), progname);
 }
 
 
@@ -27,46 +28,48 @@ usage(const char *progname) {
 int
 main(int argc, char *argv[])
 {
-        pwquality_settings_t *pwq;
-        char *password;
-        int rv;
-        int bits;
-        void *auxerror;
+    pwquality_settings_t *pwq;
+    char *password;
+    int rv;
+    int bits;
+    void *auxerror;
 
-        setlocale(LC_ALL, "");
-        bindtextdomain("libpwquality", "/usr/share/locale");
-        textdomain("libpwquality");
+#ifdef ENABLE_NLS
+    setlocale(LC_ALL, "");
+    bindtextdomain("libpwquality", "/usr/share/locale");
+    textdomain("libpwquality");
+#endif
 
-        if (argc != 2) {
-                usage(basename(argv[0]));
-                exit(3);
-        }
+    if (argc != 2) {
+        usage(basename(argv[0]));
+        exit(3);
+    }
 
-        bits = atoi(argv[1]);
+    bits = atoi(argv[1]);
 
-        pwq = pwquality_default_settings();
-        if (pwq == NULL) {
-                fprintf(stderr, "Error: %s\n", pwquality_strerror(NULL, 0, PWQ_ERROR_MEM_ALLOC, NULL));
-                exit(2);
-        }
+    pwq = pwquality_default_settings();
+    if (pwq == NULL) {
+        fprintf(stderr, "Error: %s\n", pwquality_strerror(NULL, 0, PWQ_ERROR_MEM_ALLOC, NULL));
+        exit(2);
+    }
 
-        if ((rv = pwquality_read_config(pwq, NULL, &auxerror)) != 0) {
-                fprintf(stderr, "Error: %s\n", pwquality_strerror(NULL, 0, rv, auxerror));
-                pwquality_free_settings(pwq);
-                exit(3);
-        }
-
-        rv = pwquality_generate(pwq, bits, &password);
+    if ((rv = pwquality_read_config(pwq, NULL, &auxerror)) != 0) {
+        fprintf(stderr, "Error: %s\n", pwquality_strerror(NULL, 0, rv, auxerror));
         pwquality_free_settings(pwq);
+        exit(3);
+    }
 
-        if (rv != 0) {
-                fprintf(stderr, "Error: %s\n", pwquality_strerror(NULL, 0, rv, NULL));
-                exit(1);
-        }
+    rv = pwquality_generate(pwq, bits, &password);
+    pwquality_free_settings(pwq);
 
-        printf("%s\n", password);
-        free(password);
-        return 0;
+    if (rv != 0) {
+        fprintf(stderr, "Error: %s\n", pwquality_strerror(NULL, 0, rv, NULL));
+        exit(1);
+    }
+
+    printf("%s\n", password);
+    free(password);
+    return 0;
 }
 
 /*

@@ -16,22 +16,24 @@
 #include "pwquality.h"
 
 typedef struct pwquality_settings_ {
-        int diff_ok;
-        int min_length;
-        int dig_credit;
-        int up_credit;
-        int low_credit;
-        int oth_credit;
-        int min_class;
-        int max_repeat;
-        int max_class_repeat;
-        int max_sequence;
-        int gecos_check;
-        int dict_check;
-        char *bad_words;
-        char *dict_path;
-        char *trivial_subst;
-        int leet_speak_dict_check;
+    int diff_ok;
+    int min_length;
+    int dig_credit;
+    int up_credit;
+    int low_credit;
+    int oth_credit;
+    int min_class;
+    int max_repeat;
+    int max_class_repeat;
+    int max_sequence;
+    int gecos_check;
+    int dict_check;
+    int user_check;
+    int enforcing;
+    char *bad_words;
+    char *dict_path;
+    char *trivial_subst;
+    int leet_speak_dict_check;
 } pwquality_settings;
 
 #ifndef TO_STRING
@@ -48,33 +50,34 @@ typedef struct pwquality_settings_ {
 
 #define X(m)	m,
 typedef enum Mode_ {
-	USER_MODE_TABLE
+    USER_MODE_TABLE
 } Mode;
 #undef X
 
-inline const char* to_string(const Mode m) {
+inline const char* to_string(const Mode m)
+{
 #define X(m)	case m: return TO_STRING(m);
-	switch(m) {
-	USER_MODE_TABLE
-	}
+    switch(m) {
+        USER_MODE_TABLE
+    }
 #undef X
-	return "";
+    return "";
 }
 
 typedef struct pwquality_settings_profile_node_ {
-	struct list_head list;
-	const char *name;
-	Mode mode;
-	pcre *regex;
-	pwquality_settings pwq;
+    struct list_head list;
+    const char *name;
+    Mode mode;
+    pcre *regex;
+    pwquality_settings pwq;
 } pwquality_settings_profile_node;
 
 typedef struct list_head pwquality_settings_profiles;
 
 struct setting_mapping {
-        const char *name;
-        int id;
-        int type;
+    const char *name;
+    int id;
+    int type;
 };
 
 #define PWQ_DEFAULT_DIFF_OK                1
@@ -85,6 +88,8 @@ struct setting_mapping {
 #define PWQ_DEFAULT_OTH_CREDIT             0
 #define PWQ_DEFAULT_DICT_CHECK             1
 #define PWQ_DEFAULT_LEETSPEAK_DICT_CHECK   0
+#define PWQ_DEFAULT_USER_CHECK   1
+#define PWQ_DEFAULT_ENFORCING    1
 
 #define PWQ_TYPE_INT             1
 #define PWQ_TYPE_STR             2
