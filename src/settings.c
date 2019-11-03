@@ -482,10 +482,13 @@ pwquality_set_int_value_internal(pwquality_settings *pwq, int setting, int value
         break;
     case PWQ_SETTING_RETRY_TIMES:
         pwq->retry_times = value;
+        break;
     case PWQ_SETTING_ENFORCE_ROOT:
         pwq->enforce_for_root = value;
+        break;
     case PWQ_SETTING_LOCAL_USERS:
         pwq->local_users_only = value;
+        break;
     case PWQ_SETTING_LEET_SPEAK_DICT_CHECK:
         pwq->leet_speak_dict_check = value;
         break;

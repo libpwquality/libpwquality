@@ -1,5 +1,10 @@
 libpwquality NEWS -- history of user-visible changes.
 
+Release 1.4.2
+* Fix regression in handling retry, enforce_for_root, and
+  local_users_only options introduced with the previous
+  release.
+
 Release 1.4.1
 * pam_pwquality: Abort the retry loop if user requests it.
 * Allow setting retry, enforce_for_root, and local_users_only options
