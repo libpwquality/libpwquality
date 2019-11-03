@@ -43,6 +43,7 @@ static inline pwquality_settings_profile_node* new_pwquality_settings_profile_no
 				new_profile->pwq.low_credit = PWQ_DEFAULT_LOW_CREDIT;
 				new_profile->pwq.oth_credit = PWQ_DEFAULT_OTH_CREDIT;
 				new_profile->pwq.dict_check = PWQ_DEFAULT_DICT_CHECK;
+				new_profile->pwq.leet_speak_dict_check = PWQ_DEFAULT_LEETSPEAK_DICT_CHECK;
 				list_add_tail(&new_profile->list,profiles);
 			} else {
 				printf("Failed to allocate %zu bytes of memory for a new profile name\n",strlen(name));
@@ -81,7 +82,7 @@ pwquality_free_settings(pwquality_settings_profiles *profiles)
 	struct list_head *t = NULL;
 
 	list_for_each_safe(i,t,profiles) {
-	#define FREE(x) if (node->x) { free(node->x); node->x = NULL; }
+	#define FREE(x) if (node->x) { free((void*)node->x); node->x = NULL; }
 	#define FREE2(x) FREE(pwq.x)
 		pwquality_settings_profile_node *node = list_entry(i,pwquality_settings_profile_node,list);
 		FREE(name);
@@ -91,6 +92,7 @@ pwquality_free_settings(pwquality_settings_profiles *profiles)
 		}
 		FREE2(bad_words);
 		FREE2(dict_path);
+		FREE2(trivial_subst);
 		list_del(i);
 		free(node);
 		node = NULL;
@@ -113,7 +115,9 @@ static const struct setting_mapping s_map[] = {
  { "gecoscheck", PWQ_SETTING_GECOS_CHECK, PWQ_TYPE_INT},
  { "dictcheck", PWQ_SETTING_DICT_CHECK, PWQ_TYPE_INT},
  { "badwords", PWQ_SETTING_BAD_WORDS, PWQ_TYPE_STR},
- { "dictpath", PWQ_SETTING_DICT_PATH, PWQ_TYPE_STR}
+ { "dictpath", PWQ_SETTING_DICT_PATH, PWQ_TYPE_STR},
+ { "trivialsubst", PWQ_SETTING_TRIVIAL_SUBST, PWQ_TYPE_STR},
+ {"leetspeakcheck",PWQ_SETTING_LEET_SPEAK_DICT_CHECK, PWQ_TYPE_INT}
 };
 
 /* set setting name with value */
@@ -255,25 +259,51 @@ read_config_file(pwquality_settings_t *profiles, const char *cfgfile, void **aux
                 }
 
                 if (strcmp("loginname",name) == 0) {
-					profile->mode = LoginName;
-					profile->regex = regex_compile(ptr);
-					if (!profile->regex) {
-						rv = PWQ_ERROR_REGEX;
-						if (auxerror) {
-						   *auxerror = strdup(name);
-					    }
+                	if (NULL == profile->regex) {
+                		profile->mode = LoginName;
+						profile->regex = regex_compile(ptr);
+						if (!profile->regex) {
+							rv = PWQ_ERROR_REGEX;
+							if (auxerror) {
+							   *auxerror = strdup(name);
+							}
+							break;
+						}
+					} else {
+						rv = PWQ_ERROR_CFGFILE_MALFORMED;
 						break;
 					}
 				} else if (strcmp("groupname",name) == 0) {
-					profile->mode = PrimaryGroupName;
-					profile->regex =  regex_compile(ptr);
-					if (!profile->regex) {
-						rv = PWQ_ERROR_REGEX;
-						if (auxerror) {
-						   *auxerror = strdup(name);
+					if (NULL == profile->regex) {
+						profile->mode = PrimaryGroupName;
+						profile->regex =  regex_compile(ptr);
+						if (!profile->regex) {
+							rv = PWQ_ERROR_REGEX;
+							if (auxerror) {
+							   *auxerror = strdup(name);
+							}
+							break;
 						}
+					} else {
+						rv = PWQ_ERROR_CFGFILE_MALFORMED;
 						break;
 					}
+				} else if (strcmp("memberof",name) == 0) {
+					if (NULL == profile->regex) {
+						profile->mode = MemberOfGroup;
+						profile->regex =  regex_compile(ptr);
+						if (!profile->regex) {
+							rv = PWQ_ERROR_REGEX;
+							if (auxerror) {
+							   *auxerror = strdup(name);
+							}
+							break;
+						}
+					} else {
+						rv = PWQ_ERROR_CFGFILE_MALFORMED;
+						break;
+					}
+					break;
 				} else if ((rv=set_name_value(&(profile->pwq), name, ptr)) != 0) {
                    if (auxerror) {
                        *auxerror = strdup(name);
@@ -396,7 +426,8 @@ pwquality_set_option(pwquality_settings_t *profiles, const char *option)
 }
 
 /* set value of an integer setting */
-static int pwquality_set_int_value_internal(pwquality_settings *pwq, int setting, int value)
+static int
+pwquality_set_int_value_internal(pwquality_settings *pwq, int setting, int value)
 {
 	switch(setting) {
 	case PWQ_SETTING_DIFF_OK:
@@ -439,6 +470,9 @@ static int pwquality_set_int_value_internal(pwquality_settings *pwq, int setting
 	case PWQ_SETTING_DICT_CHECK:
 		pwq->dict_check = value;
 		break;
+	case PWQ_SETTING_LEET_SPEAK_DICT_CHECK:
+		pwq->leet_speak_dict_check = value;
+		break;
 	default:
 		return PWQ_ERROR_NON_INT_SETTING;
 	}
@@ -478,6 +512,10 @@ pwquality_set_str_value_internal(pwquality_settings *pwq, int setting,
                 free(pwq->dict_path);
                 pwq->dict_path = dup;
                 break;
+        case PWQ_SETTING_TRIVIAL_SUBST:
+        		free(pwq->trivial_subst);
+        	    pwq->trivial_subst = dup;
+        	    break;
         default:
                 free(dup);
                 return PWQ_ERROR_NON_STR_SETTING;
@@ -538,6 +576,9 @@ pwquality_get_int_value(pwquality_settings_t *profiles, int setting, int *value)
         case PWQ_SETTING_DICT_CHECK:
                 *value = pwq->dict_check;
                 break;
+        case PWQ_SETTING_LEET_SPEAK_DICT_CHECK:
+        		*value = pwq->leet_speak_dict_check;
+        	    break;
         default:
                 return PWQ_ERROR_NON_INT_SETTING;
         }
@@ -558,6 +599,9 @@ pwquality_get_str_value(pwquality_settings_t *profiles, int setting, const char 
         case PWQ_SETTING_DICT_PATH:
                 *value = pwq->dict_path;
                 break;
+        case PWQ_SETTING_TRIVIAL_SUBST:
+        		*value = pwq->trivial_subst;
+        		break;
         default:
                 return PWQ_ERROR_NON_STR_SETTING;
         }

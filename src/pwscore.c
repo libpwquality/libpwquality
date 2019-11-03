@@ -29,7 +29,7 @@ main(int argc, char *argv[])
 {
         pwquality_settings_t *pwq;
         int rv;
-        void *auxerror;
+        void *auxerror = NULL;
         char buf[1024];
         size_t len;
         char *user = NULL;
@@ -60,13 +60,13 @@ main(int argc, char *argv[])
                 exit(2);
         }
 
-        if ((rv=pwquality_read_config(pwq, /*NULL*/"/home/oc/eclipse-workspace/pam/test_config_linked_list/src/pwquality_profiles.conf", &auxerror)) != 0) {
+        if ((rv=pwquality_read_config(pwq,NULL, &auxerror)) != 0) {
                 pwquality_free_settings(pwq);
                 fprintf(stderr, _("Error: %s\n"), pwquality_strerror(NULL, 0, rv, auxerror));
                 exit(3);
         }
 
-        rv = pwquality_check(pwq, buf, NULL, user, &auxerror);
+        rv = pwquality_check(pwq, buf, NULL,user, &auxerror);
         pwquality_free_settings(pwq);
 
         if (rv < 0) {
@@ -76,6 +76,11 @@ main(int argc, char *argv[])
         }
 
         printf("%d\n", rv);
+
+        if (auxerror) {
+        	free(auxerror);
+        	auxerror = NULL;
+        }
         return 0;
 }
 

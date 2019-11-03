@@ -156,6 +156,18 @@ pwquality_strerror(char *buf, size_t len, int rv, void *auxerror)
 						return buf;
 				}
         		return _("Invalid PERL regular expression");
+        case PWQ_ERROR_TRIVIAL_SUBSTITUTION:
+        		if (auxerror) {
+        				snprintf(buf, len, "%s - %s", _("The password fails the trivial substitutions check"), (const char *)auxerror);
+        				return buf;
+        		}
+        	    return _("The password fails the trivial substitutions check");
+        case PWQ_ERROR_LEET_SPEAK_DICT:
+        		if (auxerror) {
+        				snprintf(buf, len, "%s - %s", _("The password fails the dictionary check after 1337/leet speak conversions"), (const char *)auxerror);
+        				return buf;
+        		}
+        		return _("The password fails the dictionary check after 1337/leet speak conversions");
         default:
                 return _("Unknown error");
         }

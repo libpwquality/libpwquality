@@ -13,13 +13,21 @@ F</etc/security/pwquality.conf.d/*.conf>
 =head1 DESCRIPTION
 
 B<pwquality.conf> provides a way to configure the default password
-quality requirements for the system passwords. This file is read by the
-libpwquality library and utilities that use this library for checking
-and generating passwords.
+quality requirements for the system passwords. Additionally it allows 
+to define different password strength policies based on user's login 
+name, primary group name or groups of which user belong, using PERL 
+regular expressions.This file is read by the libpwquality library 
+and utilities that use this library for checking and generating passwords.
 
-The file has a very simple I<name = value> format with possible comments
-starting with C<#> character. The whitespace at the beginning of line, end
-of line, and around the C<=> sign is ignored.
+The file has a very simple Windows like init format: A section starts 
+with its name encapsulated between two brackets: [name] then a set of 
+I<name = value>  with possible comments starting with C<#> character. 
+The whitespace at the beginning of line, end of line, and around the 
+C<=> sign is ignored.
+
+Each section defines a user's password policy, the policy named I<Default> 
+is used for user not managed by any other policy. If a user matches the criteria of 
+more than one password policy, then the last matched one will be used.
 
 The libpwquality library also first reads all F<*.conf> files from the
 F</etc/security/pwquality.conf.d> directory in ASCII sorted order. The
@@ -30,6 +38,18 @@ values of the same settings are overriden in the order the files are parsed.
 The possible options in the file are:
 
 =over 4
+
+=item B<loginname>
+
+PERL regular expression used against the user's login name to known if this profile must be use.
+
+=item B<groupname>
+
+PERL regular expression used against the user's primary group name to known if this profile must be use.
+
+=item B<memberof>
+
+PERL regular expression used against the groups name of which user belong, to known if this profile must be use 
 
 =item B<difok>
 
@@ -111,6 +131,17 @@ not created yet.
 =item B<dictpath>
 
 Path to the cracklib dictionaries. Default is to use the cracklib default.
+
+=item B<trivialsubst>
+
+If nonzero, perform the trivial character substitutions, defined in parameters, 
+like for example: l1|! means 'l' substituted by '1', '|' or '!'.
+
+=item B<leetspeakcheck>
+
+If nonzero, check whether the password contains some 1337/leet speaks pattern.
+If yes, performs substitutions in the password string before checking it against 
+the cracklib dictionaries and password quality.
 
 =back
 

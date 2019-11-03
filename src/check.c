@@ -489,6 +489,35 @@ gecoscheck(pwquality_settings *pwq, const char *new,
         return rv;
 }
 
+static inline void
+create_subst_table(const char *trivial_subst_parameters,char *table)
+{
+	char b = 0x0;
+	register char *t = table;
+	for(register int i = 0; i < 0x100; *t = i, ++t, ++i);
+	for(register const char *p = trivial_subst_parameters; *p ;++p) {
+		const char c = *p;
+		if (!b) {
+			b = c;
+		}
+
+		if (c != ' ') {
+			table[c] = b;
+		} else {
+			 b = 0x0;
+		}
+	}
+}
+
+static inline void
+str_convert(const char *table,const char *word, char *converted)
+{
+	register const char *s = word;
+	register char *d = converted;
+	for(;*s;*d=table[*s],++d,++s);
+	*d = '\0';
+}
+
 static char *
 x_strdup(const char *string)
 {
@@ -640,11 +669,91 @@ password_score(pwquality_settings *pwq, const char *password)
         return score;
 }
 
+/* Try to convert the password using a leet speak table then ask to the cracklib dictionary to check if the resulting string is found*/
+static int leet_speak_dictionary_check(pwquality_settings *pwq,const char *password,const char *oldpassword, const char *user, void **auxerror) {
+	/*
+	 * First version: use the first matching pattern in alphabetical order
+	 * Table to be completed, some patterns are probably missing
+	 */
+	static const char *table[] = {
+			/*A*/"4\0" "/\\\0" "@\0" "∂\0" "/-\\\0" "|-\\\0" "^" "ci" "\0",
+			/*B*/"8\0" "13\0" "|3\0" "ß\0" "\0",
+			/*C*/"(\0" "¢\0" "<\0" "[\0" "©\0" "\0",
+			/*D*/"[)\0"	"|>\0"  "|)\0" "|]" "\0",
+			/*E*/"3\0" "€\0" "є" "[-" "\0",
+			/*F*/"|=\0"	"/=" "\0",
+			/*G*/"6\0" "(_+\0" "\0",
+			/*H*/"#\0" "/-/\0" "[-]\0" "]-[\0" ")-(\0" "(-)\0" ":-:\0" "|~|\0" "|-|\0" "]~[\0" "}{\0" "\0",
+			/*I*/"1\0" "!\0" "|\0"	"][\0" "]\0" ":\0" "\0",
+			/*J*/"_|\0" "_/\0" "¿\0" "\0",
+			/*K*/"|X\0" "|<\0"	"|{\0" "ɮ\0" "\0",
+			/*L*/"1\0" "£\0" "1_\0" "ℓ\0" "|_\0" "[_\0" "\0",
+			/*M*/"|V|\0" "|\\/|\0" "/\\/\\\0"	"/V\\\0" "\0",
+			/*N*/"|V\0" "|\\|\0" "/\\/\0" "[\\]\0" "/V\0" "\0",
+			/*O*/"[]\0" "0\0" "()\0" "°\0" "\0",
+			/*P*/"|*\0"	"|o\0" "|º\0"  "|°\0" "/*\0" "\0",
+			/*Q*/"¶\0"	"(_,)\0"  "()_\0" "0_\0" "°|\0" "<|\0" "0.\0" "\0",
+			/*R*/"2\0" "|?\0" "/2\0" "®\0" "Я\0" "|2\0" "\0",
+			/*S*/"5\0" "$\0" "§\0" "_/¯\0" "\0",
+			/*T*/"7\0" "†\0" "¯|¯\0" "\0",
+			/*U*/"(_)\0" "|_|\0" "L|\0" "µ\0" "\0",
+			/*V*/"\\/\0" "|/\0" "\0",
+			/*W*/"\\/\\/\0"	"vv\0" "'//\0" "\\^/\0" "\\V/\0" "\\|/\0" "\\_|_/\0" "\\_:_/\0" "\0",
+			/*X*/"><\0"	"}{\0"  "×\0" ")(\0" "\0",
+			/*Y*/"`/\0"	"φ\0" "¥\0" "'/\0" "\0",
+			/*Z*/"≥\0" "7_\0" ">_\0" "\0"
+	};
+	int score = 0;
+	const size_t n = strlen(password);
+	char converted[n+1];
+	register const char *r = password;
+	register char *w = converted;
+	const char * const end = password + n;
+	memset(converted,0,sizeof(converted));
+	const char ** const table_end = table + sizeof(table)/sizeof(table[0]);
+	for(;r < end;w++,r++) {
+		//printf("New character (%c)\n",*r);
+		*w = tolower(*r);
+		for(const char **pos = table;pos < table_end;pos++) {
+			//printf("\tNew table entry %c \n",'a' + (pos - table));
+			for(const char *pattern = *pos;*pattern != '\0'; pattern+= (strlen(pattern)+1)) {
+				//printf("\t\tNew pattern entry\n");
+				const size_t pattern_size = strlen(pattern);
+				if (strncmp(pattern,r,pattern_size) == 0) {
+					*w = 'a' + (pos - table);
+					r += (pattern_size - 1);
+					break;
+				}
+			} // for(const char *pattern = *pos;*pattern != '\0'; pattern+= (strlen(pattern)+1))
+			if ((*w) != (*r)) {
+				break;
+			}
+		} // for(const char **pos = table;pos < table_end;pos++)
+	} // for(;r < end;w++,r++)
+	//printf("converted = %s\n",converted);
+
+	const char *msg = FascistCheck(converted, pwq->dict_path);
+	if (msg) {
+		if (auxerror) {
+			*auxerror = (void *)msg;
+		}
+		score = PWQ_ERROR_LEET_SPEAK_DICT;
+	} else {
+		if (password_check(pwq, converted, oldpassword, user, auxerror) != 0) {
+			score = PWQ_ERROR_LEET_SPEAK_DICT;
+		}
+
+	}
+
+	return score;
+}
+
 /*
  * Look for the right profile for this user
  */
 #define OVECCOUNT 30    /* should be a multiple of 3 */
-static int match(const char *string,pcre *regex) {
+static int
+match(const char *string,pcre *regex) {
 	int match_regex = 0;
 	int ovector[OVECCOUNT];
 	const size_t subject_length = strlen(string);
@@ -670,7 +779,8 @@ static int match(const char *string,pcre *regex) {
 	return match_regex;
 }
 
-static int get_user_primary_groupname(const char *user, char *groupname) {
+static int
+get_user_primary_groupname(const char *user, char *groupname) {
 	int error = EXIT_SUCCESS;
 	size_t buffer_size = sysconf(_SC_GETPW_R_SIZE_MAX);
 	char pwd_buffer[buffer_size];
@@ -694,11 +804,94 @@ static int get_user_primary_groupname(const char *user, char *groupname) {
 	return error;
 }
 
-static pwquality_settings *get_user_settings(pwquality_settings_profiles *profiles, const char *user) {
+typedef struct string_array_ {
+	size_t allocated_size;
+	size_t used_size;
+	char *buffer;
+} string_array;
+
+static inline int
+append(const char *string,string_array *array) {
+	int error = EXIT_SUCCESS;
+	const size_t alloc_size = sysconf(_SC_GETGR_R_SIZE_MAX);
+	const size_t n = strlen(string);
+	char *current_position = array->buffer + array->used_size;
+	if ((n + current_position + 1) > (array->buffer + array->allocated_size)) {
+		char * const saved_buffer = array->buffer;
+		array->buffer = (char*)realloc(array->buffer,array->allocated_size + alloc_size);
+		if (array->buffer) {
+			current_position = array->buffer + array->used_size;
+			memset(current_position,0,alloc_size);
+			array->allocated_size += alloc_size;
+		} else {
+			error = ENOMEM;
+			free(saved_buffer);
+		}
+	}
+
+	if (array->buffer) {
+		strcpy(current_position,string);
+		array->used_size += (n + 1);
+	}
+	return error;
+}
+
+static int
+get_user_all_groupname(const char *user, char **groupsname) {
+	int error = EXIT_SUCCESS;
+	size_t buffer_size = sysconf(_SC_GETPW_R_SIZE_MAX);
+	char pwd_buffer[buffer_size];
+	struct passwd pwd;
+	struct passwd *result = NULL;
+	error = getpwnam_r(user, &pwd, pwd_buffer, buffer_size, &result);
+	if (result) {
+		int nbgroups = 0;
+		error = getgrouplist(user,pwd.pw_gid,NULL,&nbgroups);
+		if (-1 == error) {
+			gid_t groups[nbgroups];
+			const int rc = getgrouplist(user,pwd.pw_gid,groups,&nbgroups);
+			if (rc > 0) {
+				buffer_size = sysconf(_SC_GETGR_R_SIZE_MAX);
+				const gid_t*  const groups_end = groups + nbgroups;
+				char grp_buffer[buffer_size];
+				string_array array;
+				memset(&array,0,sizeof(array));
+				error = EXIT_SUCCESS;
+				for(const gid_t* g = groups; ((g < groups_end) && (EXIT_SUCCESS == error));++g) {
+					struct group grp;
+					struct group *grp_result = NULL;
+					error = getgrgid_r(*g,&grp,grp_buffer, buffer_size,&grp_result);
+					if (grp_result) {
+						error = append(grp.gr_name,&array);
+					} else if (0 == error) {
+						error = ENOENT;
+					}
+				}
+				if (EXIT_SUCCESS == error) {
+					*groupsname = array.buffer;
+				} else {
+					free(array.buffer);
+					array.buffer = NULL;
+				}
+			} else {
+				error = EIO;
+			}
+		} else {
+			error = EIO;
+		}
+	} else if (0 == error) {
+		error = ENOENT;
+	}
+	return error;
+}
+
+static pwquality_settings *
+get_user_settings(pwquality_settings_profiles *profiles, const char *user) {
 	pwquality_settings *pwq = NULL;
 	struct list_head *i = NULL;
-	char groupname[128];
-	groupname[0] = '\0';
+	char primary_groupname[128];
+	primary_groupname[0] = '\0';
+	char *groupsnames = NULL;
 	const char *username = (user)?user:"";
 	list_for_each_prev(i,profiles) {
 		/* look for in reverse order because the first profile is the default one */
@@ -714,17 +907,39 @@ static pwquality_settings *get_user_settings(pwquality_settings_profiles *profil
 			break;
 		case PrimaryGroupName: {
 				int error = EXIT_SUCCESS;
-				if (!groupname[0]) {
-					error = get_user_primary_groupname(username,groupname);
+				if (!primary_groupname[0]) {
+					error = get_user_primary_groupname(username,primary_groupname);
 				}
 				if (EXIT_SUCCESS == error) {
-					if (match(groupname,profile->regex)) {
+					if (match(primary_groupname,profile->regex)) {
 						return &(profile->pwq);
 					}
 				}
 			}
 			break;
+		case MemberOfGroup: {
+				int error = EXIT_SUCCESS;
+				if (!groupsnames) {
+					error = get_user_all_groupname(username,&groupsnames);
+				}
+				if (EXIT_SUCCESS == error) {
+					for(const char *group = groupsnames; *group ; group += (strlen(group) + 1)) {
+						if (match(group,profile->regex)) {
+							free(groupsnames);
+							groupsnames = NULL;
+							return &(profile->pwq);
+						}
+					}
+				}
+			}
+			break;
+		/* switch on enum => no default */
 		}
+	}
+
+	if (groupsnames) {
+		free(groupsnames);
+		groupsnames = NULL;
 	}
 	return pwq;
 }
@@ -773,6 +988,31 @@ pwquality_check(pwquality_settings_t *profiles, const char *password,
 									*auxerror = (void *)msg;
 							return PWQ_ERROR_CRACKLIB_CHECK;
 					}
+			}
+
+			if (pwq->trivial_subst) {
+				char table[0xFF];
+				create_subst_table(pwq->trivial_subst,table);
+				const size_t n = strlen(password);
+				char converted[n];
+				if (pwq->dict_check){
+					str_convert(table,password,converted);
+					if (strcmp(converted,password) != 0) {
+						msg = FascistCheck(password, pwq->dict_path);
+						if (msg) {
+								if (auxerror)
+										*auxerror = (void *)msg;
+								return PWQ_ERROR_TRIVIAL_SUBSTITUTION;
+						}
+					}
+				}
+			}
+
+			if (pwq->leet_speak_dict_check) {
+				score = leet_speak_dictionary_check(pwq,password, oldpassword, user,auxerror);
+				if (score != 0) {
+					return score;
+				}
 			}
 
 			score = password_score(pwq, password);

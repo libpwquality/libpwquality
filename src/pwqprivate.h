@@ -30,6 +30,8 @@ typedef struct pwquality_settings_ {
         int dict_check;
         char *bad_words;
         char *dict_path;
+        char *trivial_subst;
+        int leet_speak_dict_check;
 } pwquality_settings;
 
 #ifndef TO_STRING
@@ -41,7 +43,8 @@ typedef struct pwquality_settings_ {
 #define USER_MODE_TABLE \
 		MOD(Default) \
 		MOD(LoginName) \
-		MOD(PrimaryGroupName)
+		MOD(PrimaryGroupName) \
+		MOD(MemberOfGroup)
 
 #define X(m)	m,
 typedef enum Mode_ {
@@ -74,13 +77,14 @@ struct setting_mapping {
         int type;
 };
 
-#define PWQ_DEFAULT_DIFF_OK      1
-#define PWQ_DEFAULT_MIN_LENGTH   8
-#define PWQ_DEFAULT_DIG_CREDIT   0
-#define PWQ_DEFAULT_UP_CREDIT    0
-#define PWQ_DEFAULT_LOW_CREDIT   0
-#define PWQ_DEFAULT_OTH_CREDIT   0
-#define PWQ_DEFAULT_DICT_CHECK   1
+#define PWQ_DEFAULT_DIFF_OK                1
+#define PWQ_DEFAULT_MIN_LENGTH             8
+#define PWQ_DEFAULT_DIG_CREDIT             0
+#define PWQ_DEFAULT_UP_CREDIT              0
+#define PWQ_DEFAULT_LOW_CREDIT             0
+#define PWQ_DEFAULT_OTH_CREDIT             0
+#define PWQ_DEFAULT_DICT_CHECK             1
+#define PWQ_DEFAULT_LEETSPEAK_DICT_CHECK   0
 
 #define PWQ_TYPE_INT             1
 #define PWQ_TYPE_STR             2

@@ -11,7 +11,10 @@ B<pam_pwquality.so> [I<...>]
 =head1 DESCRIPTION
 
 This module can be plugged into the B<password> stack of a given service
-to provide some plug-in strength-checking for passwords.
+to provide some plug-in strength-checking for passwords. Additionally it 
+allows to use different password strength policies based on user's login 
+name, primary group name or groups of which user belong, using PERL regular 
+expressions.
 The code was originally based on pam_cracklib module and the module is
 backwards compatible with its options.
 
@@ -23,7 +26,7 @@ The first action is to prompt for a single password, check its strength
 and then, if it is considered strong, prompt for the password a second time
 (to verify that it was typed correctly on the first occasion). All being
 well, the password is passed on to subsequent modules to be installed as the
-new authentication token.
+new authentication token.  
 
 The checks for strength are:
 
@@ -71,6 +74,14 @@ Optional check whether the password contains the user's name in some form.
 
 The I<Cracklib> routine is called to check if the password is part of
 a dictionary.
+
+=item Trivial characters substitutions check
+
+Optional check if the password contains some trivial characters substitutions.
+
+=item Use of Leetspeak patterns check
+
+Optional check if the password contains some I<Leet speak patterns>. 
 
 =back
 
@@ -226,6 +237,21 @@ This option is off by default.
 This argument is used to I<force> the module to not prompt the user for
 a new password but use the one provided by the previously stacked
 B<password> module.
+
+=item B<trivialsubst>
+
+The set of characters defined from this space separated list are 
+individually used to perform B<trivial characters substitutions> before
+submitting the result to the cracklib dictionaries.
+The first character of each set is the result of the substitution by the following.
+For example: l!|1 means characters '!','|' and '1' will be replaced by the character 'l'.
+By default the list is empty which means that this check is disabled.
+
+=item B<leetspeakcheck>
+
+If nonzero, try to look for 1337 / leet speak patterns in the password, then replace them 
+by the corresponding character before submitting the result to the cracklib dictionaries
+and the password quality check runtime.   
 
 =back
 

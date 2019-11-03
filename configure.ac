@@ -15,8 +15,8 @@ dnl   (Interfaces removed:    CURRENT++, AGE=0, REVISION=0)
 dnl   (Interfaces added:      CURRENT++, AGE++, REVISION=0)
 dnl   (No interfaces changed:                   REVISION++)
 PWQUALITY_LT_CURRENT=1
-PWQUALITY_LT_AGE=0
-PWQUALITY_LT_REVISION=2
+PWQUALITY_LT_AGE=1
+PWQUALITY_LT_REVISION=3
 
 AC_SUBST(PACKAGE)
 AC_SUBST(VERSION)

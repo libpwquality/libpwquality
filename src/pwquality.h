@@ -28,6 +28,8 @@ extern "C" {
 #define PWQ_SETTING_BAD_WORDS       13
 #define PWQ_SETTING_MAX_SEQUENCE    14
 #define PWQ_SETTING_DICT_CHECK      15
+#define PWQ_SETTING_TRIVIAL_SUBST	16
+#define PWQ_SETTING_LEET_SPEAK_DICT_CHECK      17
 
 #define PWQ_MAX_ENTROPY_BITS       256
 #define PWQ_MIN_ENTROPY_BITS       56
@@ -65,6 +67,8 @@ extern "C" {
 #define PWQ_ERROR_BAD_WORDS                    -28
 #define PWQ_ERROR_MAX_SEQUENCE                 -29
 #define PWQ_ERROR_REGEX                        -30
+#define PWQ_ERROR_TRIVIAL_SUBSTITUTION         -31
+#define PWQ_ERROR_LEET_SPEAK_DICT	           -32
 
 typedef struct list_head pwquality_settings_t;
 
