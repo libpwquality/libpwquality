@@ -24,7 +24,7 @@ MODULE_COMMENT(Beta version);
 MODULE_COPYRIGHT(GPL);
 MODULE_SCM_LABEL_AUTOTOOLS;
 
-// (readelf -l <DSO> to check)
+/* (readelf -l <DSO> to check) */
 #if defined(__amd64__)
 const char elf_interpreter[] __attribute__((section(".interp"))) = "/lib64/ld-linux-x86-64.so.2";
 #elif defined(__i386__)

@@ -715,25 +715,21 @@ static int leet_speak_dictionary_check(pwquality_settings *pwq,const char *passw
     memset(converted,0,sizeof(converted));
     const char ** const table_end = table + sizeof(table)/sizeof(table[0]);
     for(; r < end; w++,r++) {
-        //printf("New character (%c)\n",*r);
         *w = tolower(*r);
         for(const char **pos = table; pos < table_end; pos++) {
-            //printf("\tNew table entry %c \n",'a' + (pos - table));
             for(const char *pattern = *pos; *pattern != '\0'; pattern+= (strlen(pattern)+1)) {
-                //printf("\t\tNew pattern entry\n");
                 const size_t pattern_size = strlen(pattern);
                 if (strncmp(pattern,r,pattern_size) == 0) {
                     *w = 'a' + (pos - table);
                     r += (pattern_size - 1);
                     break;
                 }
-            } // for(const char *pattern = *pos;*pattern != '\0'; pattern+= (strlen(pattern)+1))
+            } /* for(const char *pattern = *pos;*pattern != '\0'; pattern+= (strlen(pattern)+1)) */
             if ((*w) != (*r)) {
                 break;
             }
-        } // for(const char **pos = table;pos < table_end;pos++)
-    } // for(;r < end;w++,r++)
-    //printf("converted = %s\n",converted);
+        } /* for(const char **pos = table;pos < table_end;pos++) */
+    } /* for(;r < end;w++,r++) */
 
     const char *msg = FascistCheck(converted, pwq->dict_path);
     if (msg) {
@@ -775,11 +771,7 @@ match(const char *string,pcre *regex)
         if (subject_length == ovector[nb_match]) {
             match_regex = 1;
         }
-    } /*else if (PCRE_ERROR_NOMATCH == nb_match) {
-		printf("Don't match !\n");
-	} else {
-		 printf("Matching error %d\n", nb_match);
-	}*/
+    }
     return match_regex;
 }
 
