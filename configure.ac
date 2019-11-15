@@ -1,5 +1,5 @@
 dnl Process this file with autoconf to produce a configure script.
-AC_INIT([libpwquality], [1.4.2])
+AC_INIT([libpwquality], [1.4.2.1])
 AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([dist-bzip2 no-dist-gzip -Wall])
 AC_PREREQ(2.61)
@@ -162,6 +162,13 @@ AC_SUBST([LIBCRACK])
 
 dnl Checks for typedefs, structures, and compiler characteristics.
 AC_C_BIGENDIAN
+
+dnl Checks for pkg-config tool availabibilty and the PCRE library
+PKG_PROG_PKG_CONFIG
+PKG_CHECK_MODULES(libpcre, [libpcre],,
+    AC_MSG_ERROR([You need the PCRE library]
+    [])
+)
 
 dnl Files to be created from when we run configure
 AC_CONFIG_FILES([Makefile libpwquality.spec src/Makefile src/pwquality.pc po/Makefile.in python/Makefile

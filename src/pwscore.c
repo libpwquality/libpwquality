@@ -29,7 +29,7 @@ main(int argc, char *argv[])
 {
         pwquality_settings_t *pwq;
         int rv;
-        void *auxerror;
+        void *auxerror = NULL;
         char buf[1024];
         size_t len;
         char *user = NULL;
@@ -78,6 +78,11 @@ main(int argc, char *argv[])
         }
 
         printf("%d\n", rv);
+
+        if (auxerror) {
+                free(auxerror);
+                auxerror = NULL;
+        }
         return 0;
 }
 

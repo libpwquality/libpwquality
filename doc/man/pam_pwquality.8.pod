@@ -11,7 +11,10 @@ B<pam_pwquality.so> [I<...>]
 =head1 DESCRIPTION
 
 This module can be plugged into the B<password> stack of a given service
-to provide some plug-in strength-checking for passwords.
+to provide some plug-in strength-checking for passwords. Additionally it 
+allows to use different password strength policies based on user's login 
+name, primary group name or groups of which user belong, using PERL regular 
+expressions.
 The code was originally based on pam_cracklib module and the module is
 backwards compatible with its options.
 

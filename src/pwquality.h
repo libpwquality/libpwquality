@@ -71,8 +71,9 @@ extern "C" {
 #define PWQ_ERROR_MAX_CLASS_REPEAT             -27
 #define PWQ_ERROR_BAD_WORDS                    -28
 #define PWQ_ERROR_MAX_SEQUENCE                 -29
+#define PWQ_ERROR_REGEX                        -30
 
-typedef struct pwquality_settings pwquality_settings_t;
+typedef struct list_head pwquality_settings_t;
 
 /* Return default pwquality settings to be used in other library calls. */
 pwquality_settings_t *

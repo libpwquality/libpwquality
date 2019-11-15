@@ -12,7 +12,10 @@
 #include <crack.h>
 #include <sys/types.h>
 #include <pwd.h>
+#include <grp.h>
 #include <unistd.h>
+#include <alloca.h>
+#include <errno.h>
 
 #include "pwquality.h"
 #include "pwqprivate.h"
@@ -133,7 +136,7 @@ allocfail:
 }
 
 static int
-similar(pwquality_settings_t *pwq,
+similar(pwquality_settings *pwq,
         const char *old, const char *new)
 {
         int dist;
@@ -192,7 +195,7 @@ numclass(const char *new)
  * present in the password
  */
 static int
-simple(pwquality_settings_t *pwq, const char *new, void **auxerror)
+simple(pwquality_settings *pwq, const char *new, void **auxerror)
 {
         int digits = 0;
         int uppers = 0;
@@ -303,7 +306,7 @@ simple(pwquality_settings_t *pwq, const char *new, void **auxerror)
  */
 
 static int
-consecutive(pwquality_settings_t *pwq, const char *new, void **auxerror)
+consecutive(pwquality_settings *pwq, const char *new, void **auxerror)
 {
         char c;
         int i;
@@ -328,7 +331,7 @@ consecutive(pwquality_settings_t *pwq, const char *new, void **auxerror)
         return 0;
 }
 
-static int sequence(pwquality_settings_t *pwq, const char *new, void **auxerror)
+static int sequence(pwquality_settings *pwq, const char *new, void **auxerror)
 {
         char c;
         int i;
@@ -368,7 +371,7 @@ static int sequence(pwquality_settings_t *pwq, const char *new, void **auxerror)
 }
 
 static int
-usercheck(pwquality_settings_t *pwq, const char *new,
+usercheck(pwquality_settings *pwq, const char *new,
           char *user)
 {
         char *f, *b;
@@ -424,7 +427,7 @@ str_lower(char *string)
 }
 
 static int
-wordlistcheck(pwquality_settings_t *pwq, const char *new,
+wordlistcheck(pwquality_settings *pwq, const char *new,
               const char *wordlist)
 {
         char *list;
@@ -460,7 +463,7 @@ wordlistcheck(pwquality_settings_t *pwq, const char *new,
 }
 
 static int
-gecoscheck(pwquality_settings_t *pwq, const char *new,
+gecoscheck(pwquality_settings *pwq, const char *new,
            const char *user)
 {
         struct passwd pwd;
@@ -499,7 +502,7 @@ x_strdup(const char *string)
 }
 
 static int
-password_check(pwquality_settings_t *pwq,
+password_check(pwquality_settings *pwq,
                const char *new, const char *old, const char *user,
                void **auxerror)
 {
@@ -589,7 +592,7 @@ password_check(pwquality_settings_t *pwq,
 
 /* this algorithm is an arbitrary one, fine-tuned by testing */
 static int
-password_score(pwquality_settings_t *pwq, const char *password)
+password_score(pwquality_settings *pwq, const char *password)
 {
         int len;
         int score;
@@ -642,15 +645,212 @@ password_score(pwquality_settings_t *pwq, const char *password)
         return score;
 }
 
+/*
+ * Look for the right profile for this user
+ */
+#define OVECCOUNT 30    /* should be a multiple of 3 */
+static int
+match(const char *string,pcre *regex)
+{
+        int match_regex = 0;
+        int ovector[OVECCOUNT];
+        const size_t subject_length = strlen(string);
+        const int nb_match = pcre_exec(
+                regex,               /* the compiled pattern */
+                NULL,                /* no extra data - we didn't study the pattern */
+                string,              /* the subject string */
+                subject_length,      /* the length of the subject */
+                0,                   /* start at offset 0 in the subject */
+                PCRE_ANCHORED,       /* default options */
+                ovector,             /* output vector for substring information */
+                OVECCOUNT);          /* number of elements in the output vector */
+        if (nb_match == 1) {
+                if (subject_length == ovector[nb_match]) {
+                        match_regex = 1;
+                }
+        }
+        return match_regex;
+}
+
+static int
+get_user_primary_groupname(const char *user, char *groupname)
+{
+        int error = EXIT_SUCCESS;
+        size_t buffer_size = sysconf(_SC_GETPW_R_SIZE_MAX);
+        char pwd_buffer[buffer_size];
+        struct passwd pwd;
+        struct passwd *result = NULL;
+        error = getpwnam_r(user, &pwd, pwd_buffer, buffer_size, &result);
+        if (result) {
+                struct group grp;
+                struct group *grp_result = NULL;
+                buffer_size = sysconf(_SC_GETGR_R_SIZE_MAX);
+                char grp_buffer[buffer_size];
+                error = getgrgid_r(pwd.pw_gid,&grp,grp_buffer, buffer_size,&grp_result);
+                if (grp_result) {
+                        strcpy(groupname,grp.gr_name);
+                } else if (0 == error) {
+                        error = ENOENT;
+                }
+        } else if (0 == error) {
+                error = ENOENT;
+        }
+        return error;
+}
+
+typedef struct string_array_ {
+        size_t allocated_size;
+        size_t used_size;
+        char *buffer;
+} string_array;
+
+static inline int
+append(const char *string,string_array *array)
+{
+        int error = EXIT_SUCCESS;
+        const size_t alloc_size = sysconf(_SC_GETGR_R_SIZE_MAX);
+        const size_t n = strlen(string);
+        char *current_position = array->buffer + array->used_size;
+        if ((n + current_position + 1) > (array->buffer + array->allocated_size)) {
+                char * const saved_buffer = array->buffer;
+                array->buffer = (char*)realloc(array->buffer,array->allocated_size + alloc_size);
+                if (array->buffer) {
+                        current_position = array->buffer + array->used_size;
+                        memset(current_position,0,alloc_size);
+                        array->allocated_size += alloc_size;
+                } else {
+                        error = ENOMEM;
+                        free(saved_buffer);
+                }
+        }
+
+        if (array->buffer) {
+                strcpy(current_position,string);
+                array->used_size += (n + 1);
+        }
+        return error;
+}
+
+static int
+get_user_all_groupname(const char *user, char **groupsname)
+{
+        int error = EXIT_SUCCESS;
+        size_t buffer_size = sysconf(_SC_GETPW_R_SIZE_MAX);
+        char pwd_buffer[buffer_size];
+        struct passwd pwd;
+        struct passwd *result = NULL;
+        error = getpwnam_r(user, &pwd, pwd_buffer, buffer_size, &result);
+        if (result) {
+                int nbgroups = 0;
+                error = getgrouplist(user,pwd.pw_gid,NULL,&nbgroups);
+                if (-1 == error) {
+                        gid_t groups[nbgroups];
+                        const int rc = getgrouplist(user,pwd.pw_gid,groups,&nbgroups);
+                        if (rc > 0) {
+                                buffer_size = sysconf(_SC_GETGR_R_SIZE_MAX);
+                                const gid_t*  const groups_end = groups + nbgroups;
+                                char grp_buffer[buffer_size];
+                                string_array array;
+                                memset(&array,0,sizeof(array));
+                                error = EXIT_SUCCESS;
+                                for(const gid_t* g = groups; ((g < groups_end) && (EXIT_SUCCESS == error)); ++g) {
+                                        struct group grp;
+                                        struct group *grp_result = NULL;
+                                        error = getgrgid_r(*g,&grp,grp_buffer, buffer_size,&grp_result);
+                                        if (grp_result) {
+                                                error = append(grp.gr_name,&array);
+                                        } else if (0 == error) {
+                                                error = ENOENT;
+                                        }
+                                }
+                                if (EXIT_SUCCESS == error) {
+                                        *groupsname = array.buffer;
+                                } else {
+                                        free(array.buffer);
+                                        array.buffer = NULL;
+                                }
+                        } else {
+                                error = EIO;
+                        }
+                } else {
+                        error = EIO;
+                }
+        } else if (0 == error) {
+                error = ENOENT;
+        }
+        return error;
+}
+
+static pwquality_settings *
+get_user_settings(pwquality_settings_profiles *profiles, const char *user)
+{
+        pwquality_settings *pwq = NULL;
+        struct list_head *i = NULL;
+        char primary_groupname[128];
+        primary_groupname[0] = '\0';
+        char *groupsnames = NULL;
+        const char *username = (user)?user:"";
+        list_for_each_prev(i,profiles) {
+                /* look for in reverse order because the first profile is the default one */
+                pwquality_settings_profile_node *profile = list_entry(i,pwquality_settings_profile_node,list);
+                switch(profile->mode) {
+                        case Default:
+                                return &(profile->pwq);
+                                break;
+                        case LoginName:
+                                if (match(username,profile->regex)) {
+                                        return &(profile->pwq);
+                                }
+                                break;
+                        case PrimaryGroupName: {
+                                int error = EXIT_SUCCESS;
+                                if (!primary_groupname[0]) {
+                                        error = get_user_primary_groupname(username,primary_groupname);
+                                }
+                                if (EXIT_SUCCESS == error) {
+                                        if (match(primary_groupname,profile->regex)) {
+                                                return &(profile->pwq);
+                                        }
+                                }
+                        }
+                        break;
+                        case MemberOfGroup: {
+                                int error = EXIT_SUCCESS;
+                                if (!groupsnames) {
+                                        error = get_user_all_groupname(username,&groupsnames);
+                                }
+                                if (EXIT_SUCCESS == error) {
+                                        for(const char *group = groupsnames; *group ; group += (strlen(group) + 1)) {
+                                                if (match(group,profile->regex)) {
+                                                        free(groupsnames);
+                                                        groupsnames = NULL;
+                                                        return &(profile->pwq);
+                                                }
+                                        }
+                                }
+                        }
+                        break;
+                        /* switch on enum => no default */
+                }
+        }
+
+        if (groupsnames) {
+                free(groupsnames);
+                groupsnames = NULL;
+        }
+        return pwq;
+}
+
 /* check the password according to the settings
  * it returns either score <0-100> or negative error number;
  * the old password is optional */
 int
-pwquality_check(pwquality_settings_t *pwq, const char *password,
+pwquality_check(pwquality_settings_t *profiles, const char *password,
         const char *oldpassword, const char *user, void **auxerror)
 {
-        const char *msg;
-        int score;
+        const char *msg = NULL;
+        int score = 0;
+        pwquality_settings *pwq = NULL;
 
         if (auxerror)
                 *auxerror = NULL;
@@ -669,25 +869,31 @@ pwquality_check(pwquality_settings_t *pwq, const char *password,
                 return PWQ_ERROR_SAME_PASSWORD;
         }
 
-        if (pwq->diff_ok == 0)
-                oldpassword = NULL;
+        /* look for the right password profile for this user */
+        pwq = get_user_settings(profiles,user);
+        if (pwq) {
 
-        score = password_check(pwq, password, oldpassword, user, auxerror);
+                if (pwq->diff_ok == 0)
+                        oldpassword = NULL;
 
-        if (score != 0)
-                return score;
+                score = password_check(pwq, password, oldpassword, user, auxerror);
 
-        if (pwq->dict_check) {
-                msg = FascistCheck(password, pwq->dict_path);
-                if (msg) {
-                        if (auxerror)
-                                *auxerror = (void *)msg;
-                        return PWQ_ERROR_CRACKLIB_CHECK;
+                if (score != 0)
+                        return score;
+
+                if (pwq->dict_check) {
+                        msg = FascistCheck(password, pwq->dict_path);
+                        if (msg) {
+                                if (auxerror)
+                                        *auxerror = (void *)msg;
+                                return PWQ_ERROR_CRACKLIB_CHECK;
+                        }
                 }
+
+                score = password_score(pwq, password);
+        } else {
+                return PWQ_ERROR_FATAL_FAILURE;
         }
-
-        score = password_score(pwq, password);
-
         return score;
 }
 

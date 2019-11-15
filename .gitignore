@@ -51,3 +51,4 @@ python/setup.py
 m4/*.m4
 ABOUT-NLS
 doc/man/*.[1358]
+*.orig

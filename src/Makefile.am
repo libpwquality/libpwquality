@@ -14,7 +14,7 @@ EXTRA_DIST = libpwquality.map pwquality.conf pwquality.pc
 
 include_HEADERS = pwquality.h
 
-noinst_HEADERS = pwqprivate.h
+noinst_HEADERS = pwqprivate.h klist.h ModuleVersionInfo.h
 
 if HAVE_LD_VERSION_SCRIPT
   libpwquality_version_script = -Wl,--version-script=$(srcdir)/libpwquality.map
@@ -22,12 +22,16 @@ else
   libpwquality_version_script =
 endif
 
-libpwquality_la_LDFLAGS = -no-undefined $(libpwquality_version_script) \
+libpwquality_la_CPPFLAGS = `pkg-config --cflags libpcre`
+
+libpwquality_la_LDFLAGS = `pkg-config --libs libpcre`
+libpwquality_la_LDFLAGS += -no-undefined $(libpwquality_version_script) \
 	-version-info @PWQUALITY_LT_CURRENT@:@PWQUALITY_LT_REVISION@:@PWQUALITY_LT_AGE@
+libpwquality_la_LDFLAGS += -Wl,-e,displayVersionInfo
 
 libpwquality_la_LIBADD = $(LIBCRACK) $(LIBINTL)
 
-libpwquality_la_SOURCES = generate.c check.c settings.c error.c
+libpwquality_la_SOURCES = generate.c check.c settings.c error.c version.c
 
 if HAVE_PAM
   pam_pwquality_la_LDFLAGS = -no-undefined -avoid-version -module
