@@ -11,3 +11,7 @@ The module supports all the options of pam_cracklib.
 # Project mailing lists
 
  * [Mailing list for developer discussions](https://lists.fedorahosted.org/archives/list/libpwquality-devel%40lists.fedorahosted.org/)
+ 
+# Project Translation
+
+[![Translation status](https://translate.stg.fedoraproject.org/widgets/libpwquality/-/287x66-white.png)](https://translate.stg.fedoraproject.org/engage/libpwquality/?utm_source=widget)
