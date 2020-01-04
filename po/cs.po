@@ -1,27 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
 # Translators:
 # Klara Cihlarova <koty@seznam.cz>, 2005, 2006
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2011
 # Tomas Mraz <tm@t8m.info>, 2005, 2008, 2009, 2011
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
+# Tomáš Mráz <tmraz@redhat.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2019-10-31 13:06+0100\n"
-"PO-Revision-Date: 2017-05-26 08:59+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Czech (http://www.transifex.com/projects/p/libpwquality/"
-"language/cs/)\n"
+"PO-Revision-Date: 2020-01-04 18:49+0000\n"
+"Last-Translator: Tomáš Mráz <tmraz@redhat.com>\n"
+"Language-Team: Czech <https://translate.stg.fedoraproject.org/projects/"
+"libpwquality/app/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Zanata 4.6.2\n"
+"X-Generator: Weblate 3.9.1\n"
 
 #: src/pam_pwquality.c:233
 #, c-format
@@ -37,7 +37,7 @@ msgstr "Použití: %s [uživatel]\n"
 #, c-format
 msgid ""
 "       The command reads the password to be scored from the standard input.\n"
-msgstr "        Příkaz čte hodnocené heslo ze standardního vstupu.\n"
+msgstr "       Příkaz čte hodnocené heslo ze standardního vstupu.\n"
 
 #: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
