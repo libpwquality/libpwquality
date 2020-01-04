@@ -1,27 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
 # Translators:
 # Bahadır Kandemir <bahadir@pardus.org.tr>, 2010
 # Koray Löker <loker@pardus.org.tr>, 2006
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
 # Emin Tufan Çetin <etcetin@gmail.com>, 2018. #zanata
+# Oğuz Ersen <oguzersen@protonmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2019-10-31 13:06+0100\n"
-"PO-Revision-Date: 2018-09-02 08:33+0000\n"
-"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
-"Language-Team: Turkish (http://www.transifex.com/projects/p/libpwquality/"
-"language/tr/)\n"
+"PO-Revision-Date: 2020-01-04 18:49+0000\n"
+"Last-Translator: Oğuz Ersen <oguzersen@protonmail.com>\n"
+"Language-Team: Turkish <https://translate.stg.fedoraproject.org/projects/"
+"libpwquality/app/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=2; plural=(n>1);\n"
+"X-Generator: Weblate 3.9.1\n"
 
 #: src/pam_pwquality.c:233
 #, c-format
@@ -37,7 +37,7 @@ msgstr "Kullanım: %s [kullanıcı]\n"
 #, c-format
 msgid ""
 "       The command reads the password to be scored from the standard input.\n"
-msgstr "       Komut, parolayı standart girdiden ölçmek için okur.\n"
+msgstr "       Komut, puanlanacak parolayı standart girişten okur.\n"
 
 #: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
@@ -46,7 +46,7 @@ msgstr "Hata: %s\n"
 
 #: src/pwscore.c:53
 msgid "Could not obtain the password to be scored"
-msgstr "Parola, ölçüm için elde edilemiyor"
+msgstr "Puanlanacak parola alınamadı"
 
 #: src/pwscore.c:75
 #, c-format
@@ -54,7 +54,7 @@ msgid ""
 "Password quality check failed:\n"
 " %s\n"
 msgstr ""
-"Parola niteliği denetimi başarısız:\n"
+"Parola kalite kontrolü başarısız:\n"
 " %s\n"
 
 #: src/pwmake.c:22
@@ -80,7 +80,7 @@ msgstr "Parola bir palindromdur"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
-msgstr "Parola yalnızca büyük küçük harf değişimiyle başkalaşıyor"
+msgstr "Parola yalnızca büyük/küçük harf değişimiyle farklılık gösteriyor"
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
@@ -101,7 +101,7 @@ msgstr "Parola yasaklı sözcükleri bir biçimde içeriyor"
 #: src/error.c:52
 #, c-format
 msgid "The password contains less than %ld digits"
-msgstr "Parola %ld basamaktan az"
+msgstr "Parola %ld'den az basamak içeriyor"
 
 #: src/error.c:55
 msgid "The password contains too few digits"
@@ -110,7 +110,7 @@ msgstr "Parola çok az basamak içeriyor"
 #: src/error.c:58
 #, c-format
 msgid "The password contains less than %ld uppercase letters"
-msgstr "Parola %ld büyük harften azını içeriyor"
+msgstr "Parola %ld'den az büyük harf içeriyor"
 
 #: src/error.c:61
 msgid "The password contains too few uppercase letters"
@@ -119,7 +119,7 @@ msgstr "Parola çok az büyük harf içeriyor"
 #: src/error.c:64
 #, c-format
 msgid "The password contains less than %ld lowercase letters"
-msgstr "Parola %ld küçük harften azını içeriyor"
+msgstr "Parola %ld'den az küçük harf içeriyor"
 
 #: src/error.c:67
 msgid "The password contains too few lowercase letters"
@@ -128,11 +128,11 @@ msgstr "Parola çok az küçük harf içeriyor"
 #: src/error.c:70
 #, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr "Parola alfanümerik olmayan %ld karakterden azını içeriyor"
+msgstr "Parola %ld'den az alfanumerik olmayan karakter içeriyor"
 
 #: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
-msgstr "Parola alfanümerik olmayan çok az karakter içeriyor"
+msgstr "Parola alfanumerik olmayan çok az karakter içeriyor"
 
 #: src/error.c:76
 #, c-format
@@ -145,12 +145,12 @@ msgstr "Parola çok kısa"
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
-msgstr "Parola yalnızca eskisinin döndürülmüşü"
+msgstr "Parola eskisinin sadece döndürülmüş hali"
 
 #: src/error.c:84
 #, c-format
 msgid "The password contains less than %ld character classes"
-msgstr "Parola %ld karakter sınıfından azını içeriyor"
+msgstr "Parola %ld'den az karakter sınıfı içeriyor"
 
 #: src/error.c:87
 msgid "The password does not contain enough character classes"
@@ -163,19 +163,19 @@ msgstr "Parola aynı karakterleri %ld'den çok arka arkaya içeriyor"
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
-msgstr "Parola aynı karakteri fazlasıyla arka arkaya içeriyor"
+msgstr "Parola aynı karakteri çok fazla arka arkaya içeriyor"
 
 #: src/error.c:96
 #, c-format
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr "Parola aynı sınıftaki %ld karakteri arka arkaya içeriyor"
+msgstr "Parola aynı sınıftan %ld'den fazla karakteri arka arkaya içeriyor"
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr "Parola aynı sınıftaki karakteri fazlasıyla arka arkaya içeriyor"
+msgstr "Parola aynı sınıftan karakterleri çok fazla arka arkaya içeriyor"
 
 #: src/error.c:102
 #, c-format
