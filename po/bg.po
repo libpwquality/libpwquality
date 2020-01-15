@@ -1,26 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
 # Translators:
 # Boris Yakimov <borisyakimov@ymail.com>, 2012
 # Valentin Laskov <laskov@festa.bg>, 2012
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
+# Valentin Laskov <v_laskov@mail.bg>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2019-10-31 13:06+0100\n"
-"PO-Revision-Date: 2017-05-26 09:00+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Bulgarian (http://www.transifex.com/projects/p/libpwquality/"
-"language/bg/)\n"
+"PO-Revision-Date: 2020-01-15 10:15+0000\n"
+"Last-Translator: Valentin Laskov <v_laskov@mail.bg>\n"
+"Language-Team: Bulgarian <https://translate.stg.fedoraproject.org/projects/"
+"libpwquality/app/bg/>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10.1\n"
 
 #: src/pam_pwquality.c:233
 #, c-format
@@ -151,11 +151,11 @@ msgstr "Паролата е като старата, само че е обърн
 #: src/error.c:84
 #, c-format
 msgid "The password contains less than %ld character classes"
-msgstr "Паролата съдържа по малко от %ld символни класа."
+msgstr "Паролата съдържа по малко от %ld символни класа"
 
 #: src/error.c:87
 msgid "The password does not contain enough character classes"
-msgstr "Паролата не съдържа достатъчно символни класове."
+msgstr "Паролата не съдържа достатъчно символни класове"
 
 #: src/error.c:90
 #, c-format
@@ -176,16 +176,16 @@ msgstr "Паролата съдържа повече %ld поредни симв
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr "Паролата съдържа твърде много поредни символи от един и същ клас."
+msgstr "Паролата съдържа твърде много поредни символи от един и същ клас"
 
 #: src/error.c:102
 #, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr ""
+msgstr "Паролата съдържа монотонна последователност по-дълга от %ld знака"
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"
-msgstr ""
+msgstr "Паролата съдържа твърде дълга монотонна последователност от знаци"
 
 #: src/error.c:107
 msgid "No password supplied"
@@ -193,13 +193,12 @@ msgstr "Не е зададена парола"
 
 #: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
-msgstr "Не мога да получа случайни числа от RNG устройството."
+msgstr "Не мога да получа случайни числа от RNG устройството"
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
-"Генерирането на парола се провали - ентропията е твърде малка за тези "
-"настройки."
+"Генерирането на парола се провали - твърде ниска ентропия за тези настройки"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
