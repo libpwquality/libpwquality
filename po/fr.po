@@ -10,13 +10,14 @@
 # Martin-Gomez Pablo <pablomg+transifex@eskapa.be>, 2008
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
 # Jean-Baptiste Holcroft <jean-baptiste@holcroft.fr>, 2020.
+# Julien Humbert <julroy67@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2019-10-31 13:06+0100\n"
-"PO-Revision-Date: 2020-01-03 11:33+0000\n"
-"Last-Translator: Jean-Baptiste Holcroft <jean-baptiste@holcroft.fr>\n"
+"PO-Revision-Date: 2020-02-08 07:16+0000\n"
+"Last-Translator: Julien Humbert <julroy67@gmail.com>\n"
 "Language-Team: French <https://translate.stg.fedoraproject.org/projects/"
 "libpwquality/app/fr/>\n"
 "Language: fr\n"
@@ -24,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 3.10.3\n"
 
 #: src/pam_pwquality.c:233
 #, c-format
@@ -41,8 +42,8 @@ msgstr "Usage : %s [user]\n"
 msgid ""
 "       The command reads the password to be scored from the standard input.\n"
 msgstr ""
-"       La commande lit le mot de passe à noter à partir de l'entrée "
-"standard.\n"
+"       La commande lit le mot de passe à noter à partir de l’entrée standard."
+"\n"
 
 #: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
@@ -51,7 +52,7 @@ msgstr "Erreur : %s\n"
 
 #: src/pwscore.c:53
 msgid "Could not obtain the password to be scored"
-msgstr "Impossible d'obtenir le mot de passe à noter"
+msgstr "Impossible d’obtenir le mot de passe à noter"
 
 #: src/pwscore.c:75
 #, c-format
@@ -69,15 +70,15 @@ msgstr "Usage : %s <entropy-bits>\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
-msgstr "Erreur d'allocation mémoire pendant la configuration"
+msgstr "Erreur d’allocation mémoire pendant la configuration"
 
 #: src/error.c:35
 msgid "Memory allocation error"
-msgstr "Erreur d'allocation mémoire"
+msgstr "Erreur d’allocation mémoire"
 
 #: src/error.c:37
 msgid "The password is the same as the old one"
-msgstr "Le mot de passe est le même que l'ancien"
+msgstr "Le mot de passe est le même que l’ancien"
 
 #: src/error.c:39
 msgid "The password is a palindrome"
@@ -93,12 +94,12 @@ msgstr "Le mot de passe est trop similaire au précédent"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr "Le mot de passe contient le nom d'utilisateur sous une forme"
+msgstr "Le mot de passe contient le nom d’utilisateur sous une forme"
 
 #: src/error.c:47
 msgid "The password contains words from the real name of the user in some form"
 msgstr ""
-"Le mot de passe contient des mots appartenant au nom réel de l'utilisateur "
+"Le mot de passe contient des mots appartenant au nom réel de l’utilisateur "
 "sous une forme ou une autre"
 
 #: src/error.c:49
@@ -153,7 +154,7 @@ msgstr "Le mot de passe est trop court"
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
-msgstr "Le mot de passe n'est que le précédent avec une rotation"
+msgstr "Le mot de passe n’est que le précédent avec une rotation"
 
 #: src/error.c:84
 #, c-format
@@ -204,13 +205,12 @@ msgstr "Aucun mot de passe fourni"
 
 #: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
-msgstr ""
-"Impossible d'obtenir des nombres au hasard à partir du périphérique RNG"
+msgstr "Impossible d’obtenir des nombres au hasard à partir du périphérique RNG"
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
-"Échec de génération de mot de passe - l'entropie nécessaire est trop faible "
+"Échec de génération de mot de passe — l’entropie nécessaire est trop faible "
 "pour les paramètres"
 
 #: src/error.c:114 src/error.c:117
@@ -232,24 +232,24 @@ msgstr "Valeur entière erronée"
 #: src/error.c:134
 #, c-format
 msgid "Setting %s is not of integer type"
-msgstr "Le paramètre %s n'est pas de type entier"
+msgstr "Le paramètre %s n’est pas de type entier"
 
 #: src/error.c:138
 msgid "Setting is not of integer type"
-msgstr "Le paramètre n'est pas de type entier"
+msgstr "Le paramètre n’est pas de type entier"
 
 #: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
-msgstr "Le paramètre %s n'est pas de type chaîne de caractères"
+msgstr "Le paramètre %s n’est pas de type chaine de caractères"
 
 #: src/error.c:145
 msgid "Setting is not of string type"
-msgstr "Le paramètre n'est pas de type chaîne de caractères"
+msgstr "Le paramètre n’est pas de type chaine de caractères"
 
 #: src/error.c:147
 msgid "Opening the configuration file failed"
-msgstr "Échec de l'ouverture du fichier de configuration"
+msgstr "Échec de l’ouverture du fichier de configuration"
 
 #: src/error.c:149
 msgid "The configuration file is malformed"
