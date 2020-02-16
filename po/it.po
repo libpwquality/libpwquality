@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Luca Bruno <luca.br@uno.it>, 2007.
 # Mario Santagiuliana <fedora at marionline.it>, 2012.
@@ -9,21 +9,22 @@
 # Mauro Gaggiotti <mauro.gaggiotti@gmail.com>, 2012.
 # Novell Language <language@novell.com>, 2007.
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
-# Milo Casagrande <milo@milo.name>, 2019. #zanata
+# Milo Casagrande <milo@milo.name>, 2019. #zanata, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2019-10-31 13:06+0100\n"
-"PO-Revision-Date: 2019-03-05 01:10+0000\n"
+"PO-Revision-Date: 2020-02-16 08:39+0000\n"
 "Last-Translator: Milo Casagrande <milo@milo.name>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: Italian <https://translate.fedoraproject.org/projects/"
+"libpwquality/app/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10.3\n"
 
 #: src/pam_pwquality.c:233
 #, c-format
@@ -188,7 +189,7 @@ msgstr "La password contiene una sequenza uniforme più lunga di %ld caratteri"
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"
-msgstr "La password contiene una sequenza di caratteri uniformi troppo lunga "
+msgstr "La password contiene una sequenza di caratteri uniformi troppo lunga"
 
 #: src/error.c:107
 msgid "No password supplied"
