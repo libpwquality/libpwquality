@@ -12,16 +12,16 @@ msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2019-10-31 13:06+0100\n"
-"PO-Revision-Date: 2020-01-04 18:49+0000\n"
+"PO-Revision-Date: 2020-03-22 09:38+0000\n"
 "Last-Translator: Oğuz Ersen <oguzersen@protonmail.com>\n"
-"Language-Team: Turkish <https://translate.stg.fedoraproject.org/projects/"
+"Language-Team: Turkish <https://translate.fedoraproject.org/projects/"
 "libpwquality/app/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>1);\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 3.11.3\n"
 
 #: src/pam_pwquality.c:233
 #, c-format
@@ -80,7 +80,7 @@ msgstr "Parola bir palindromdur"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
-msgstr "Parola yalnızca büyük/küçük harf değişimiyle farklılık gösteriyor"
+msgstr "Parola sadece büyük/küçük harf değişimiyle farklılık gösteriyor"
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
