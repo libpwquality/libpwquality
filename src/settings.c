@@ -86,7 +86,7 @@ set_name_value(pwquality_settings_t *pwq, const char *name, const char *value)
         long val;
         char *endptr;
 
-        for (i = 0; i < sizeof(s_map)/sizeof(s_map[0]); i++) {
+        for (i = 0; i < (int)(sizeof(s_map)/sizeof(s_map[0])); i++) {
                 if (strcasecmp(s_map[i].name, name) == 0) {
                         switch(s_map[i].type) {
                         case PWQ_TYPE_INT:

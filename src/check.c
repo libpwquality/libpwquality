@@ -466,7 +466,7 @@ gecoscheck(pwquality_settings_t *pwq, const char *new,
         struct passwd pwd;
         struct passwd *result;
         char *buf;
-        size_t bufsize;
+        long bufsize;
         int rv;
 
         bufsize = sysconf(_SC_GETPW_R_SIZE_MAX);
@@ -486,7 +486,7 @@ gecoscheck(pwquality_settings_t *pwq, const char *new,
         if (rv == PWQ_ERROR_BAD_WORDS)
                 rv = PWQ_ERROR_GECOS_CHECK;
 
-        free(buf);        
+        free(buf);
         return rv;
 }
 
@@ -618,7 +618,7 @@ password_score(pwquality_settings_t *pwq, const char *password)
                                 buf[i] = abs(buf[i] - buf[i+1]);
                 }
 
-                for (i = 0; i < sizeof(freq); i++) {
+                for (i = 0; i < (int)sizeof(freq); i++) {
                         if (freq[i])
                                 ++score;
                 }
