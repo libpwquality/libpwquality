@@ -14,6 +14,7 @@
 #include <errno.h>
 #include <libgen.h>
 #include <locale.h>
+#include <limits.h>
 
 #include "pwquality.h"
 
@@ -29,8 +30,9 @@ main(int argc, char *argv[])
 {
         pwquality_settings_t *pwq;
         char *password;
+        char *endptr;
         int rv;
-        int bits;
+        long bits;
         void *auxerror;
 
 #ifdef ENABLE_NLS
@@ -44,7 +46,18 @@ main(int argc, char *argv[])
                 exit(3);
         }
 
-        bits = atoi(argv[1]);
+        errno = 0;
+        bits = strtol(argv[1], &endptr, 10);
+        if (errno != 0 || *argv[1] == '\0' ||
+            *endptr != '\0' || bits >= INT_MAX || bits <= INT_MIN) {
+                usage(basename(argv[0]));
+                exit(4);
+        }
+
+        if (bits > PWQ_MAX_ENTROPY_BITS || bits < PWQ_MIN_ENTROPY_BITS) {
+                fprintf(stderr, _("Warning: Value %ld is outside of the allowed entropy range, adjusting it.\n"),
+                        bits);
+        }
 
         pwq = pwquality_default_settings();
         if (pwq == NULL) {
@@ -58,7 +71,7 @@ main(int argc, char *argv[])
                 exit(3);
         }
 
-        rv = pwquality_generate(pwq, bits, &password);
+        rv = pwquality_generate(pwq, (int)bits, &password);
         pwquality_free_settings(pwq);
 
         if (rv != 0) {
