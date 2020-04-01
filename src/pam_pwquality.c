@@ -212,6 +212,9 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
                                 return PAM_AUTHTOK_ERR;
                         }
                         pwquality_get_int_value(options.pwq, PWQ_SETTING_LOCAL_USERS, &local_users_only);
+                        if ((ctrl & PAM_DEBUG_ARG) && local_users_only) {
+                                pam_syslog(pamh, LOG_INFO, "Applying password quality checks to local users only");
+                        }
 
                         if (local_users_only && check_local_user (pamh, user) == 0) {
                                 /* skip the check if a non-local user */
