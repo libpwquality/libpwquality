@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2019-10-31 13:06+0100\n"
-"PO-Revision-Date: 2020-03-22 09:38+0000\n"
+"PO-Revision-Date: 2020-04-09 13:40+0000\n"
 "Last-Translator: Oğuz Ersen <oguzersen@protonmail.com>\n"
 "Language-Team: Turkish <https://translate.fedoraproject.org/projects/"
 "libpwquality/app/tr/>\n"
@@ -226,11 +226,11 @@ msgstr "Ayar tam sayı türünde değil"
 #: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
-msgstr "%s ayarı dizge türünde değil"
+msgstr "%s ayarı dizgi türünde değil"
 
 #: src/error.c:145
 msgid "Setting is not of string type"
-msgstr "Ayar dizge türünde değil"
+msgstr "Ayar dizgi türünde değil"
 
 #: src/error.c:147
 msgid "Opening the configuration file failed"
