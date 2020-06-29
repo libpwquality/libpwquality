@@ -26,6 +26,7 @@ struct pwquality_settings {
         int gecos_check;
         int dict_check;
         int user_check;
+        int user_substr;
         int enforcing;
         int retry_times;
         int enforce_for_root;
@@ -48,6 +49,7 @@ struct setting_mapping {
 #define PWQ_DEFAULT_OTH_CREDIT   0
 #define PWQ_DEFAULT_DICT_CHECK   1
 #define PWQ_DEFAULT_USER_CHECK   1
+#define PWQ_DEFAULT_USER_SUBSTR  0
 #define PWQ_DEFAULT_ENFORCING    1
 #define PWQ_DEFAULT_RETRY_TIMES  1
 #define PWQ_DEFAULT_ENFORCE_ROOT 0

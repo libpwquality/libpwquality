@@ -35,6 +35,7 @@ extern "C" {
 #define PWQ_SETTING_RETRY_TIMES     18
 #define PWQ_SETTING_ENFORCE_ROOT    19
 #define PWQ_SETTING_LOCAL_USERS     20
+#define PWQ_SETTING_USER_SUBSTR     21
 
 #define PWQ_MAX_ENTROPY_BITS       256
 #define PWQ_MIN_ENTROPY_BITS       56

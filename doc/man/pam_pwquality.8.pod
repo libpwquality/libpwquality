@@ -206,6 +206,12 @@ contains the user name in some form. The default is 1 which means that
 this check is enabled. It is not performed for user names shorter
 than 3 characters.
 
+=item B<usersubstr=>I<N>
+
+If greater than 3 (due to the minimum length in usercheck), check whether the
+password contains a substring of at least this many characters in some form.
+The default is 0, which means this check is disabled
+
 =item B<enforcing=>I<N>
 
 If nonzero, reject the password if it fails the checks, otherwise

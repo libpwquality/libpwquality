@@ -36,6 +36,7 @@ pwquality_default_settings(void)
         pwq->oth_credit = PWQ_DEFAULT_OTH_CREDIT;
         pwq->dict_check = PWQ_DEFAULT_DICT_CHECK;
         pwq->user_check = PWQ_DEFAULT_USER_CHECK;
+        pwq->user_substr = PWQ_DEFAULT_USER_SUBSTR;
         pwq->enforcing = PWQ_DEFAULT_ENFORCING;
         pwq->retry_times = PWQ_DEFAULT_RETRY_TIMES;
         pwq->enforce_for_root = PWQ_DEFAULT_ENFORCE_ROOT;
@@ -70,6 +71,7 @@ static const struct setting_mapping s_map[] = {
  { "gecoscheck", PWQ_SETTING_GECOS_CHECK, PWQ_TYPE_INT},
  { "dictcheck", PWQ_SETTING_DICT_CHECK, PWQ_TYPE_INT},
  { "usercheck", PWQ_SETTING_USER_CHECK, PWQ_TYPE_INT},
+ { "usersubstr", PWQ_SETTING_USER_SUBSTR, PWQ_TYPE_INT},
  { "enforcing", PWQ_SETTING_ENFORCING, PWQ_TYPE_INT},
  { "badwords", PWQ_SETTING_BAD_WORDS, PWQ_TYPE_STR},
  { "dictpath", PWQ_SETTING_DICT_PATH, PWQ_TYPE_STR},
@@ -348,6 +350,9 @@ pwquality_set_int_value(pwquality_settings_t *pwq, int setting, int value)
                 break;
         case PWQ_SETTING_USER_CHECK:
                 pwq->user_check = value;
+                break;
+        case PWQ_SETTING_USER_SUBSTR:
+                pwq->user_substr = value;
                 break;
         case PWQ_SETTING_ENFORCING:
                 pwq->enforcing = value;
