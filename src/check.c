@@ -410,7 +410,6 @@ wordcheck(pwquality_settings_t *pwq, const char *new,
         return 0;
 }
 
-#include <stdio.h>
 static int
 usercheck(pwquality_settings_t *pwq, const char *new,
           char *user)
