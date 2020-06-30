@@ -144,7 +144,7 @@ msgstr "このパスワードは %ld 文字未満の文字列です。"
 
 #: src/error.c:79
 msgid "The password is too short"
-msgstr "このパスワードは短すぎます。"
+msgstr "このパスワードは短かすぎます。"
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
@@ -200,7 +200,7 @@ msgstr "RNG(乱数発生)デバイスから乱数を取得することができ�
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
-msgstr "パスワードの生成に失敗 -設定に必要なエンピロピーが小すぎます。"
+msgstr "パスワードの生成に失敗 - 設定に必要なエントロピーが小さすぎます。"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
