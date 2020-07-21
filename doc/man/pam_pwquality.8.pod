@@ -209,8 +209,8 @@ than 3 characters.
 =item B<usersubstr=>I<N>
 
 If greater than 3 (due to the minimum length in usercheck), check whether the
-password contains a substring of at least this many characters in some form.
-The default is 0, which means this check is disabled
+password contains a substring of at least I<N> length in some form.
+The default is 0, which means this check is disabled.
 
 =item B<enforcing=>I<N>
 
