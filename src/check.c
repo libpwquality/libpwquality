@@ -380,11 +380,11 @@ wordcheck(pwquality_settings_t *pwq, const char *new,
                 return 0;
 
         if (strstr(new, word) != NULL)
-                return 1;
+                return PWQ_ERROR_BAD_WORDS;
 
         dist = distance(new, word);
         if (dist >= 0 && dist < PWQ_DEFAULT_DIFF_OK)
-                return 1;
+                return PWQ_ERROR_BAD_WORDS;
 
         /* now reverse the wordname, we can do that in place
                 as it is strdup-ed */
@@ -401,11 +401,11 @@ wordcheck(pwquality_settings_t *pwq, const char *new,
         }
 
         if (strstr(new, word) != NULL)
-                return 1;
+                return PWQ_ERROR_BAD_WORDS;
 
         dist = distance(new, word);
         if (dist >= 0 && dist < PWQ_DEFAULT_DIFF_OK)
-                return 1;
+                return PWQ_ERROR_BAD_WORDS;
 
         return 0;
 }
@@ -416,23 +416,31 @@ usercheck(pwquality_settings_t *pwq, const char *new,
 {
         int i, userlen;
         int rv = 0;
-        char* subuser = calloc(pwq->user_substr+1, sizeof(char));
+        char *subuser = calloc(pwq->user_substr+1, sizeof(char));
+
+        if (subuser == NULL) {
+                return PWQ_ERROR_MEM_ALLOC;
+        }
 
         userlen = strlen(user);
         if (pwq->user_substr >= PWQ_MIN_WORD_LENGTH &&
-            userlen > pwq->user_substr)
-        {
+            userlen > pwq->user_substr) {
                 for(i = 0; !rv && (i <= userlen - pwq->user_substr); i++) {
                         strncpy(subuser, user+i, pwq->user_substr+1);
                         subuser[pwq->user_substr] = '\0';
-                        rv = rv || wordcheck(pwq, new, subuser);
+                        rv = wordcheck(pwq, new, subuser);
                 }
         }
         else {
                 // if we already tested substrings, there's no need to test
                 // the whole username; all substrings would've been found :)
-                rv = rv || wordcheck(pwq, new, user);
+                if (!rv)
+                        rv = wordcheck(pwq, new, user);
         }
+        // translate wordcheck return
+        if (rv == PWQ_ERROR_BAD_WORDS)
+                rv = PWQ_ERROR_USER_CHECK;
+        free(subuser);
         return rv;
 }
 
@@ -530,6 +538,7 @@ password_check(pwquality_settings_t *pwq,
                void **auxerror)
 {
         int rv = 0;
+        int sub_rv = 0;
         char *oldmono = NULL, *newmono, *wrapped = NULL;
         char *usermono = NULL;
 
@@ -583,9 +592,8 @@ password_check(pwquality_settings_t *pwq,
         if (!rv && sequence(pwq, new, auxerror))
                 rv = PWQ_ERROR_MAX_SEQUENCE;
 
-        if (!rv && usermono && pwq->user_check &&
-                usercheck(pwq, newmono, usermono))
-                rv = PWQ_ERROR_USER_CHECK;
+        if (!rv && usermono && pwq->user_check)
+                rv = usercheck(pwq, newmono, usermono);
 
         if (!rv && user && pwq->gecos_check)
                 rv = gecoscheck(pwq, newmono, user);
