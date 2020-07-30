@@ -114,7 +114,7 @@ than 3 characters. (default 1)
 =item B<usersubstr=>I<N>
 
 If greater than 3 (due to the minimum length in usercheck), check whether the
-password contains a substring of at least usersubstr length in some form.
+password contains a substring of at least I<N> length in some form.
 (default 0)
 
 =item B<enforcing=>I<N>
