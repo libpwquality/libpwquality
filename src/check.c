@@ -538,7 +538,6 @@ password_check(pwquality_settings_t *pwq,
                void **auxerror)
 {
         int rv = 0;
-        int sub_rv = 0;
         char *oldmono = NULL, *newmono, *wrapped = NULL;
         char *usermono = NULL;
 
