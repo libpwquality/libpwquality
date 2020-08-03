@@ -131,6 +131,36 @@ static PyGetSetDef pwqsettings_getseters[] = {
                 "Perform the dictionary check",
                 (void *)PWQ_SETTING_DICT_CHECK
         },
+        { "usercheck",
+                (getter)pwqsettings_getint, (setter)pwqsettings_setint,
+                "Perform the user name check",
+                (void *)PWQ_SETTING_USER_CHECK
+        },
+        { "enforcing",
+                (getter)pwqsettings_getint, (setter)pwqsettings_setint,
+                "Whether the check is supposed to be just warning or enforced (informational setting)",
+                (void *)PWQ_SETTING_ENFORCING
+        },
+        { "retry",
+                (getter)pwqsettings_getint, (setter)pwqsettings_setint,
+                "How many retries for the password change should be allowed (informational setting)",
+                (void *)PWQ_SETTING_RETRY_TIMES
+        },
+        { "enforce_for_root",
+                (getter)pwqsettings_getint, (setter)pwqsettings_setint,
+                "Whether the check is supposed to be just warning or enforced (informational setting)",
+                (void *)PWQ_SETTING_ENFORCE_ROOT
+        },
+        { "local_users_only",
+                (getter)pwqsettings_getint, (setter)pwqsettings_setint,
+                "Whether the check is supposed to be applied just to local users (informational setting)",
+                (void *)PWQ_SETTING_LOCAL_USERS
+        },
+        { "usersubstr",
+                (getter)pwqsettings_getint, (setter)pwqsettings_setint,
+                "Check for substrings of the username of a given length",
+                (void *)PWQ_SETTING_USER_SUBSTR
+        },
         { "badwords",
                 (getter)pwqsettings_getstr, (setter)pwqsettings_setstr,
                 "List of words more than 3 characters long that are forbidden",
