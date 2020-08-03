@@ -368,28 +368,28 @@ static int sequence(pwquality_settings_t *pwq, const char *new, void **auxerror)
 }
 
 static int
-usercheck(pwquality_settings_t *pwq, const char *new,
-          char *user)
+wordcheck(pwquality_settings_t *pwq, const char *new,
+          char *word)
 {
         char *f, *b;
-        int dist, userlen = strlen(user);
+        int dist, wordlen = strlen(word);
 
-        /* No point to check for username in password in 1-3 char
-         * usernames; it will be contained one way or another anyway. */
-        if (userlen < PWQ_MIN_WORD_LENGTH)
+        /* No point to check for word in password for 1-3 char
+         * words; it will be contained one way or another anyway. */
+        if (wordlen < PWQ_MIN_WORD_LENGTH)
                 return 0;
 
-        if (strstr(new, user) != NULL)
-                return 1;
+        if (strstr(new, word) != NULL)
+                return PWQ_ERROR_BAD_WORDS;
 
-        dist = distance(new, user);
+        dist = distance(new, word);
         if (dist >= 0 && dist < PWQ_DEFAULT_DIFF_OK)
-                return 1;
+                return PWQ_ERROR_BAD_WORDS;
 
-        /* now reverse the username, we can do that in place
+        /* now reverse the wordname, we can do that in place
                 as it is strdup-ed */
-        f = user;
-        b = user + userlen - 1;
+        f = word;
+        b = word + wordlen - 1;
         while (f < b) {
                 char c;
 
@@ -400,14 +400,48 @@ usercheck(pwquality_settings_t *pwq, const char *new,
                 ++f;
         }
 
-        if (strstr(new, user) != NULL)
-                return 1;
+        if (strstr(new, word) != NULL)
+                return PWQ_ERROR_BAD_WORDS;
 
-        dist = distance(new, user);
+        dist = distance(new, word);
         if (dist >= 0 && dist < PWQ_DEFAULT_DIFF_OK)
-                return 1;
+                return PWQ_ERROR_BAD_WORDS;
 
         return 0;
+}
+
+static int
+usercheck(pwquality_settings_t *pwq, const char *new,
+          char *user)
+{
+        int i, userlen;
+        int rv = 0;
+        char *subuser = calloc(pwq->user_substr+1, sizeof(char));
+
+        if (subuser == NULL) {
+                return PWQ_ERROR_MEM_ALLOC;
+        }
+
+        userlen = strlen(user);
+        if (pwq->user_substr >= PWQ_MIN_WORD_LENGTH &&
+            userlen > pwq->user_substr) {
+                for(i = 0; !rv && (i <= userlen - pwq->user_substr); i++) {
+                        strncpy(subuser, user+i, pwq->user_substr+1);
+                        subuser[pwq->user_substr] = '\0';
+                        rv = wordcheck(pwq, new, subuser);
+                }
+        }
+        else {
+                // if we already tested substrings, there's no need to test
+                // the whole username; all substrings would've been found :)
+                if (!rv)
+                        rv = wordcheck(pwq, new, user);
+        }
+        // translate wordcheck return
+        if (rv == PWQ_ERROR_BAD_WORDS)
+                rv = PWQ_ERROR_USER_CHECK;
+        free(subuser);
+        return rv;
 }
 
 static char *
@@ -445,7 +479,7 @@ wordlistcheck(pwquality_settings_t *pwq, const char *new,
 
                 if (strlen(p) >= PWQ_MIN_WORD_LENGTH) {
                         str_lower(p);
-                        if (usercheck(pwq, new, p)) {
+                        if (wordcheck(pwq, new, p)) {
                                 free(list);
                                 return PWQ_ERROR_BAD_WORDS;
                         }
@@ -557,9 +591,8 @@ password_check(pwquality_settings_t *pwq,
         if (!rv && sequence(pwq, new, auxerror))
                 rv = PWQ_ERROR_MAX_SEQUENCE;
 
-        if (!rv && usermono && pwq->user_check &&
-                usercheck(pwq, newmono, usermono))
-                rv = PWQ_ERROR_USER_CHECK;
+        if (!rv && usermono && pwq->user_check)
+                rv = usercheck(pwq, newmono, usermono);
 
         if (!rv && user && pwq->gecos_check)
                 rv = gecoscheck(pwq, newmono, user);
