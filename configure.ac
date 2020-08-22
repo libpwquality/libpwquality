@@ -154,8 +154,8 @@ AC_DEFINE_UNQUOTED(CONF_PATH_RANDOMDEV, "$opt_randomdev", [Random device path.])
 
 dnl Check for cracklib
 AC_CHECK_HEADERS([crack.h],
-      AC_CHECK_LIB([crack], [FascistCheck], LIBCRACK="-lcrack", LIBCRACK=""))
-if test x$LIBCRACK = x ; then
+      AC_SEARCH_LIBS([FascistCheck], [crack], LIBCRACK="-lz -lcrack" LIBS="$LIBS -lz", LIBCRACK="", [-lz]))
+if test "x$LIBCRACK" = "x" ; then
     AC_MSG_ERROR([No or unusable cracklib library])
 fi
 AC_SUBST([LIBCRACK])
