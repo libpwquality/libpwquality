@@ -10,21 +10,22 @@
 # Héctor Daniel Cabrera <h.daniel.cabrera@gmail.com>, 2009
 # Manuel Ospina <mospina@redhat.com>, 2007
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
+# Emilio Herrera <ehespinosa57@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2019-10-31 13:06+0100\n"
-"PO-Revision-Date: 2017-05-26 09:00+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Spanish (http://www.transifex.com/projects/p/libpwquality/"
-"language/es/)\n"
+"PO-Revision-Date: 2020-08-14 14:29+0000\n"
+"Last-Translator: Emilio Herrera <ehespinosa57@gmail.com>\n"
+"Language-Team: Spanish <https://translate.fedoraproject.org/projects/"
+"libpwquality/app/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.1.1\n"
 
 #: src/pam_pwquality.c:233
 #, c-format
@@ -93,7 +94,7 @@ msgstr "La contraseña es demasiado parecida a la anterior"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr "De alguna manera, en la contraseña se lee el nombre del usuario "
+msgstr "De alguna manera, en la contraseña se lee el nombre del usuario"
 
 #: src/error.c:47
 msgid "The password contains words from the real name of the user in some form"
@@ -236,7 +237,7 @@ msgstr "Valor entero erróneo"
 #: src/error.c:134
 #, c-format
 msgid "Setting %s is not of integer type"
-msgstr "La configuración %s no es de tipo entero "
+msgstr "La configuración %s no es de tipo entero"
 
 #: src/error.c:138
 msgid "Setting is not of integer type"
