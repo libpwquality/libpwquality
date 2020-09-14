@@ -6,21 +6,22 @@
 # Kjartan Maraas <kmaraas@gnome.org>, 2008
 # Olav Pettershagen <olav.pet@online.no>, 2005, 2006
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
+# Allan Nordhøy <epost@anotheragency.no>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2019-10-31 13:06+0100\n"
-"PO-Revision-Date: 2017-05-26 09:00+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Norwegian Bokmål (http://www.transifex.com/projects/p/"
-"libpwquality/language/nb/)\n"
+"PO-Revision-Date: 2020-05-21 01:40+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Norwegian Bokmål <https://translate.fedoraproject.org/"
+"projects/libpwquality/app/nb_NO/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.0.4\n"
 
 #: src/pam_pwquality.c:233
 #, c-format
@@ -30,22 +31,24 @@ msgstr "SVAKT PASSORD: %s"
 #: src/pwscore.c:22
 #, c-format
 msgid "Usage: %s [user]\n"
-msgstr ""
+msgstr "Bruk: %s [user]\n"
 
 #: src/pwscore.c:23
 #, c-format
 msgid ""
 "       The command reads the password to be scored from the standard input.\n"
 msgstr ""
+"       Kommandoen leser passordet det skal gis poengsum for fra standard "
+"inndata.\n"
 
 #: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
-msgstr ""
+msgstr "Feil: %s\n"
 
 #: src/pwscore.c:53
 msgid "Could not obtain the password to be scored"
-msgstr ""
+msgstr "Kunne ikke hente passord å gi poengsum til"
 
 #: src/pwscore.c:75
 #, c-format
@@ -53,135 +56,138 @@ msgid ""
 "Password quality check failed:\n"
 " %s\n"
 msgstr ""
+"Passordkvalitetssjekk mislyktes:\n"
+" %s\n"
 
 #: src/pwmake.c:22
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
-msgstr ""
+msgstr "Bruk: %s <entropibiter>\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
-msgstr ""
+msgstr "Minnetildelingsfeil ved innstillingssetting"
 
 #: src/error.c:35
 msgid "Memory allocation error"
-msgstr ""
+msgstr "Minnetildelingsfeil"
 
 #: src/error.c:37
 msgid "The password is the same as the old one"
-msgstr ""
+msgstr "Passordet er det samme som det gamle"
 
 #: src/error.c:39
 msgid "The password is a palindrome"
-msgstr ""
+msgstr "Passordet er et palindrom"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
-msgstr ""
+msgstr "Passordet skiller seg kun i endringer av liten og stor bokstav"
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
-msgstr ""
+msgstr "Passordet er for likt det gamle"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr ""
+msgstr "Passordet inneholder brukernavnet på noe vis"
 
 #: src/error.c:47
 msgid "The password contains words from the real name of the user in some form"
 msgstr ""
+"Passordet inneholder ord fra det egentlige navnet på brukeren i noen form"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
-msgstr ""
+msgstr "Passordet inneholder forbudte ord på noe vis"
 
 #: src/error.c:52
 #, c-format
 msgid "The password contains less than %ld digits"
-msgstr ""
+msgstr "Passordet inneholder mindre enn %ld siffer"
 
 #: src/error.c:55
 msgid "The password contains too few digits"
-msgstr ""
+msgstr "Passordet inneholder for få sifre"
 
 #: src/error.c:58
 #, c-format
 msgid "The password contains less than %ld uppercase letters"
-msgstr ""
+msgstr "Passordet inneholder mindre enn %ld store bokstaver"
 
 #: src/error.c:61
 msgid "The password contains too few uppercase letters"
-msgstr ""
+msgstr "Passordet inneholder for få store bokstaver"
 
 #: src/error.c:64
 #, c-format
 msgid "The password contains less than %ld lowercase letters"
-msgstr ""
+msgstr "Passordet inneholder mindre enn %ld små bokstaver"
 
 #: src/error.c:67
 msgid "The password contains too few lowercase letters"
-msgstr ""
+msgstr "Passordet inneholder for få små bokstaver"
 
 #: src/error.c:70
 #, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr ""
+msgstr "Passordet inneholder mindre enn %ld ikke-alfanumeriske tegn"
 
 #: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
-msgstr ""
+msgstr "Passordet inneholder for få ikke-alfanumeriske tegn"
 
 #: src/error.c:76
 #, c-format
 msgid "The password is shorter than %ld characters"
-msgstr ""
+msgstr "Passordet er kortere enn %ld tegn"
 
 #: src/error.c:79
 msgid "The password is too short"
-msgstr ""
+msgstr "Passordet er for kort"
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
-msgstr ""
+msgstr "Passordet er en rotering av det gamle"
 
 #: src/error.c:84
 #, c-format
 msgid "The password contains less than %ld character classes"
-msgstr ""
+msgstr "Passordet inneholder mindre enn %ld tegnklasser"
 
 #: src/error.c:87
 msgid "The password does not contain enough character classes"
-msgstr ""
+msgstr "Passordet inneholder ikke nok tegnklasser"
 
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr ""
+msgstr "Passordet inneholder mer enn %ld av samme tegn i rekkefølge"
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
-msgstr ""
+msgstr "Passordet inneholder for mange like tegn i rekkefølge"
 
 #: src/error.c:96
 #, c-format
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr ""
+msgstr "Passordet inneholder mer enn %ld tegn av samme klasse i rekkefølge"
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr ""
+msgstr "Passordet inneholder for mange tegn av samme klasse i rekkefølge"
 
 #: src/error.c:102
 #, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr ""
+msgstr "Passordet inneholder monotone rekkefølger lengre enn %ld tegn"
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"
-msgstr ""
+msgstr "Passordet inneholder for lange monotone tegnsekvenser"
 
 #: src/error.c:107
 msgid "No password supplied"
@@ -189,57 +195,58 @@ msgstr "Passord ikke angitt"
 
 #: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
-msgstr ""
+msgstr "Kan ikke hente tilfeldige tall fra entropigrunnlag"
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
+"Passordgenerering mislyktes - påkrevd entropi for lav for innstillingene"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
-msgstr ""
+msgstr "Passordet er å finne i ordboken"
 
 #: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
-msgstr ""
+msgstr "Ukjent innstilling"
 
 #: src/error.c:127
 msgid "Bad integer value of setting"
-msgstr ""
+msgstr "Feil heltallsverdi for innstilling"
 
 #: src/error.c:131
 msgid "Bad integer value"
-msgstr ""
+msgstr "Feil heltallsverdi"
 
 #: src/error.c:134
 #, c-format
 msgid "Setting %s is not of integer type"
-msgstr ""
+msgstr "Innstillingen %s er ikke et heltall"
 
 #: src/error.c:138
 msgid "Setting is not of integer type"
-msgstr ""
+msgstr "Innstillingen er ikke en heltallstype"
 
 #: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
-msgstr ""
+msgstr "Innstillingen %s er ikke en streng"
 
 #: src/error.c:145
 msgid "Setting is not of string type"
-msgstr ""
+msgstr "Innstillingen er ikke en strengtype"
 
 #: src/error.c:147
 msgid "Opening the configuration file failed"
-msgstr ""
+msgstr "Klarte ikke å åpne oppsettsfil"
 
 #: src/error.c:149
 msgid "The configuration file is malformed"
-msgstr ""
+msgstr "Oppsettsfilen har feil utformning"
 
 #: src/error.c:151
 msgid "Fatal failure"
-msgstr ""
+msgstr "Fatal feil"
 
 #: src/error.c:153
 msgid "Unknown error"
