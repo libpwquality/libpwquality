@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2019-10-31 13:06+0100\n"
-"PO-Revision-Date: 2020-02-16 08:39+0000\n"
+"PO-Revision-Date: 2020-09-11 14:29+0000\n"
 "Last-Translator: Milo Casagrande <milo@milo.name>\n"
 "Language-Team: Italian <https://translate.fedoraproject.org/projects/"
 "libpwquality/app/it/>\n"
@@ -24,12 +24,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10.3\n"
+"X-Generator: Weblate 4.2.2\n"
 
 #: src/pam_pwquality.c:233
 #, c-format
 msgid "BAD PASSWORD: %s"
-msgstr "Password errata: %s"
+msgstr "Password scadente: %s"
 
 #: src/pwscore.c:22
 #, c-format
