@@ -16,7 +16,9 @@
 #include <fcntl.h>
 #include <ctype.h>
 #include <limits.h>
+#ifdef HAVE_CRACK_H
 #include <crack.h>
+#endif
 #include <errno.h>
 
 #include "pwquality.h"

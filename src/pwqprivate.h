@@ -47,7 +47,13 @@ struct setting_mapping {
 #define PWQ_DEFAULT_UP_CREDIT    0
 #define PWQ_DEFAULT_LOW_CREDIT   0
 #define PWQ_DEFAULT_OTH_CREDIT   0
+
+#ifdef HAVE_CRACK_H
 #define PWQ_DEFAULT_DICT_CHECK   1
+#else
+#define PWQ_DEFAULT_DICT_CHECK   0
+#endif
+
 #define PWQ_DEFAULT_USER_CHECK   1
 #define PWQ_DEFAULT_USER_SUBSTR  0
 #define PWQ_DEFAULT_ENFORCING    1
