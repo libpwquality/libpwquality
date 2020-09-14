@@ -4,21 +4,22 @@
 #
 # Translators:
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2019-10-31 13:06+0100\n"
-"PO-Revision-Date: 2017-05-26 09:00+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Kazakh (http://www.transifex.com/projects/p/libpwquality/"
-"language/kk/)\n"
+"PO-Revision-Date: 2020-07-05 10:53+0000\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
+"Language-Team: Kazakh <https://translate.fedoraproject.org/projects/"
+"libpwquality/app/kk/>\n"
 "Language: kk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Zanata 4.6.2\n"
+"X-Generator: Weblate 4.1.1\n"
 
 #: src/pam_pwquality.c:233
 #, c-format
@@ -28,22 +29,22 @@ msgstr "ҚАТЕ ПАРОЛЬ: %s"
 #: src/pwscore.c:22
 #, c-format
 msgid "Usage: %s [user]\n"
-msgstr ""
+msgstr "Қолданылуы: %s [пайдаланушы]\n"
 
 #: src/pwscore.c:23
 #, c-format
 msgid ""
 "       The command reads the password to be scored from the standard input.\n"
-msgstr ""
+msgstr "       Команда енгізілген парольдің сапасын тексереді.\n"
 
 #: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
 msgid "Error: %s\n"
-msgstr ""
+msgstr "Қате: %s\n"
 
 #: src/pwscore.c:53
 msgid "Could not obtain the password to be scored"
-msgstr ""
+msgstr "Тексеру үшін парольді алу сәтсіз аяқталды"
 
 #: src/pwscore.c:75
 #, c-format
@@ -51,74 +52,76 @@ msgid ""
 "Password quality check failed:\n"
 " %s\n"
 msgstr ""
+"Пароль сапасын тексеру сәтсіз аяқталды:\n"
+" %s\n"
 
 #: src/pwmake.c:22
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
-msgstr ""
+msgstr "Қолданылуы: %s <энтропия-биттері>\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
-msgstr ""
+msgstr "Баптау кезінде жадыны бөлу қатесі"
 
 #: src/error.c:35
 msgid "Memory allocation error"
-msgstr ""
+msgstr "Жадыны бөлу қатесі"
 
 #: src/error.c:37
 msgid "The password is the same as the old one"
-msgstr ""
+msgstr "Пароль алдындағысымен бірдей"
 
 #: src/error.c:39
 msgid "The password is a palindrome"
-msgstr ""
+msgstr "Пароль палиндром болып табылады"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
-msgstr ""
+msgstr "Пароль тек таңбалардың регистрмен ғана ерекшеленеді"
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
-msgstr ""
+msgstr "Пароль алдындағысына тым ұқсайды"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr ""
+msgstr "Пароль ішінде қандай да бір түрде пайдаланушы аты бар"
 
 #: src/error.c:47
 msgid "The password contains words from the real name of the user in some form"
-msgstr ""
+msgstr "Пароль ішінде қандай да бір түрде пайдаланушы атынан сөздер бар"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
-msgstr ""
+msgstr "Пароль ішінде қандай да бір түрде рұқсат етілмеген сөздер бар"
 
 #: src/error.c:52
 #, c-format
 msgid "The password contains less than %ld digits"
-msgstr ""
+msgstr "Парольде %ld шамасынан аз цифр бар"
 
 #: src/error.c:55
 msgid "The password contains too few digits"
-msgstr ""
+msgstr "Парольде тым аз цифр бар"
 
 #: src/error.c:58
 #, c-format
 msgid "The password contains less than %ld uppercase letters"
-msgstr ""
+msgstr "Пароль ішінде %ld бас әріптен аз болып тұр"
 
 #: src/error.c:61
 msgid "The password contains too few uppercase letters"
-msgstr ""
+msgstr "Пароль ішінде бас әріптер саны жекткіліксіз"
 
 #: src/error.c:64
 #, c-format
 msgid "The password contains less than %ld lowercase letters"
-msgstr ""
+msgstr "Пароль ішінде %ld кіші әріптен аз болып тұр"
 
 #: src/error.c:67
 msgid "The password contains too few lowercase letters"
-msgstr ""
+msgstr "Пароль ішінде кіші әріптер саны жекткіліксіз"
 
 #: src/error.c:70
 #, c-format
@@ -136,11 +139,11 @@ msgstr ""
 
 #: src/error.c:79
 msgid "The password is too short"
-msgstr ""
+msgstr "Пароль тым қысқа"
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
-msgstr ""
+msgstr "Пароль ескі парольдің аударылған пішімінде болып тұр"
 
 #: src/error.c:84
 #, c-format
