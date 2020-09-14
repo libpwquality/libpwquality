@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR libpwquality project
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Luca Bruno <luca.br@uno.it>, 2007.
 # Mario Santagiuliana <fedora at marionline.it>, 2012.

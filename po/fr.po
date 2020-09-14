@@ -42,8 +42,8 @@ msgstr "Usage : %s [user]\n"
 msgid ""
 "       The command reads the password to be scored from the standard input.\n"
 msgstr ""
-"       La commande lit le mot de passe à noter à partir de l’entrée standard."
-"\n"
+"       La commande lit le mot de passe à noter à partir de l’entrée "
+"standard.\n"
 
 #: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
@@ -205,7 +205,8 @@ msgstr "Aucun mot de passe fourni"
 
 #: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
-msgstr "Impossible d’obtenir des nombres au hasard à partir du périphérique RNG"
+msgstr ""
+"Impossible d’obtenir des nombres au hasard à partir du périphérique RNG"
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
