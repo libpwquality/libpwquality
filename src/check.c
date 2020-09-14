@@ -9,7 +9,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#ifdef HAVE_CRACK_H
 #include <crack.h>
+#endif
 #include <sys/types.h>
 #include <pwd.h>
 #include <unistd.h>
@@ -710,6 +712,7 @@ pwquality_check(pwquality_settings_t *pwq, const char *password,
         if (score != 0)
                 return score;
 
+        #ifdef HAVE_CRACK_H
         if (pwq->dict_check) {
                 msg = FascistCheck(password, pwq->dict_path);
                 if (msg) {
@@ -718,6 +721,7 @@ pwquality_check(pwquality_settings_t *pwq, const char *password,
                         return PWQ_ERROR_CRACKLIB_CHECK;
                 }
         }
+        #endif
 
         score = password_score(pwq, password);
 
