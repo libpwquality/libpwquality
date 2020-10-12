@@ -154,9 +154,10 @@ AC_DEFINE_UNQUOTED(CONF_PATH_RANDOMDEV, "$opt_randomdev", [Random device path.])
 
 dnl Check for cracklib
 AC_ARG_ENABLE([cracklib-check],
-        AS_HELP_STRING([--disable-cracklib-check], [disable cracklib dictionary check]))
+        AS_HELP_STRING([--disable-cracklib-check], [disable cracklib dictionary check]),
+        [enable_cracklib_check=$enableval])
 
-AS_IF([test "x$enableval" != "xno"], [
+AS_IF([test "x$enable_cracklib_check" != "xno"], [
 AC_CHECK_HEADERS([crack.h],
       AC_SEARCH_LIBS([FascistCheck], [crack], LIBCRACK="-lz -lcrack" LIBS="$LIBS -lz", LIBCRACK="", [-lz]))
 if test "x$LIBCRACK" = "x" ; then
