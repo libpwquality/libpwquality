@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2020-10-12 16:46+0200\n"
-"PO-Revision-Date: 2020-06-13 20:40+0000\n"
+"PO-Revision-Date: 2020-10-12 16:49+0000\n"
 "Last-Translator: Oğuz Ersen <oguzersen@protonmail.com>\n"
 "Language-Team: Turkish <https://translate.fedoraproject.org/projects/"
 "libpwquality/app/tr/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>1);\n"
-"X-Generator: Weblate 4.0.4\n"
+"X-Generator: Weblate 4.2.2\n"
 
 #: src/pam_pwquality.c:236
 #, c-format
@@ -67,6 +67,7 @@ msgstr "Kullanım: %s <entropi-bitleri>\n"
 msgid ""
 "Warning: Value %ld is outside of the allowed entropy range, adjusting it.\n"
 msgstr ""
+"Uyarı: %ld değeri izin verilen entropi aralığının dışında, ayarlanıyor.\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
