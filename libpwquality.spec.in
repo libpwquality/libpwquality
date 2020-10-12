@@ -36,6 +36,7 @@ BuildRequires: python2-devel
 %endif
 %if %{with python3}
 BuildRequires: python3-devel
+BuildRequires: python3-setuptools
 %endif
 
 URL: https://github.com/libpwquality/libpwquality/
@@ -100,7 +101,7 @@ cp -a . %{py3dir}
 	--with-python-binary=%{__python2} \
 	--disable-static
 
-make %{?_smp_mflags}
+%make_build
 %endif
 %if %{with python3} && %{with python2}
 pushd %{py3dir}
@@ -112,18 +113,18 @@ pushd %{py3dir}
 	--with-python-binary=%{__python3} \
 	--disable-static
 
-make %{?_smp_mflags}
+%make_build
 %endif
 %if %{with python3} && %{with python2}
 popd
 %endif
 
 %install
-make install DESTDIR=$RPM_BUILD_ROOT INSTALL='install -p'
+%make_install
 
 %if %{with python3} && %{with python2}
 pushd %{py3dir}
-make -C python install DESTDIR=$RPM_BUILD_ROOT INSTALL='install -p'
+%make_install -C python
 popd
 %endif
 
@@ -182,6 +183,10 @@ mkdir $RPM_BUILD_ROOT%{_secconfdir}/pwquality.conf.d
 - Multiple translation updates
 - Add usersubstr check for substrings of N characters from the username
   patch by Danny Sauer
+
+* Mon Jul 13 2020 Tom Stellard <tstellar@redhat.com> - 1.4.2-4
+- Use make macros
+- https://fedoraproject.org/wiki/Changes/UseMakeBuildInstallMacro
 
 * Thu Oct 31 2019 Tomáš Mráz <tmraz@redhat.com> 1.4.2-1
 - Fix previous release regression in handling retry, enforce_for_root,
