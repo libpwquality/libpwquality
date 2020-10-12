@@ -4,24 +4,24 @@
 #
 # Translators:
 # Ivan Petrouchtchak <ivanpetrouchtchak@yahoo.com>, 2006
-# Yuri Chornoivan <yurchor@ukr.net>, 2010, 2011, 2012
+# Yuri Chornoivan <yurchor@ukr.net>, 2010, 2011, 2012, 2020.
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2020-10-12 16:46+0200\n"
-"PO-Revision-Date: 2017-05-26 09:00+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Ukrainian (http://www.transifex.com/projects/p/libpwquality/"
-"language/uk/)\n"
+"PO-Revision-Date: 2020-10-12 15:26+0000\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <https://translate.fedoraproject.org/projects/"
+"libpwquality/app/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.2.2\n"
 
 #: src/pam_pwquality.c:236
 #, c-format
@@ -69,6 +69,8 @@ msgstr "Використання: %s <випадкові біти>\n"
 msgid ""
 "Warning: Value %ld is outside of the allowed entropy range, adjusting it.\n"
 msgstr ""
+"Увага: значення %ld перебуває поза межами дозволеного діапазону ентропії — "
+"коригуємо його.\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
