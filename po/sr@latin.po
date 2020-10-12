@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2019-10-31 13:06+0100\n"
+"POT-Creation-Date: 2020-10-12 16:46+0200\n"
 "PO-Revision-Date: 2017-05-26 09:00+0000\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Serbian (Latin) (http://www.transifex.com/projects/p/"
@@ -25,7 +25,7 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:233
+#: src/pam_pwquality.c:236
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "LOŠA LOZINKA: %s"
@@ -57,9 +57,15 @@ msgid ""
 " %s\n"
 msgstr ""
 
-#: src/pwmake.c:22
+#: src/pwmake.c:23
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
+msgstr ""
+
+#: src/pwmake.c:58
+#, c-format
+msgid ""
+"Warning: Value %ld is outside of the allowed entropy range, adjusting it.\n"
 msgstr ""
 
 #: src/error.c:31

@@ -178,6 +178,11 @@ mkdir $RPM_BUILD_ROOT%{_secconfdir}/pwquality.conf.d
 %endif
 
 %changelog
+* Mon Oct 12 2020 Tomáš Mráz <tmraz@redhat.com> 1.4.3-1
+- Multiple translation updates
+- Add usersubstr check for substrings of N characters from the username
+  patch by Danny Sauer
+
 * Thu Oct 31 2019 Tomáš Mráz <tmraz@redhat.com> 1.4.2-1
 - Fix previous release regression in handling retry, enforce_for_root,
   and local_users_only options

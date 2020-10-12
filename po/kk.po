@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2019-10-31 13:06+0100\n"
+"POT-Creation-Date: 2020-10-12 16:46+0200\n"
 "PO-Revision-Date: 2020-07-05 10:53+0000\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <https://translate.fedoraproject.org/projects/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.1.1\n"
 
-#: src/pam_pwquality.c:233
+#: src/pam_pwquality.c:236
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "ҚАТЕ ПАРОЛЬ: %s"
@@ -55,10 +55,16 @@ msgstr ""
 "Пароль сапасын тексеру сәтсіз аяқталды:\n"
 " %s\n"
 
-#: src/pwmake.c:22
+#: src/pwmake.c:23
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
 msgstr "Қолданылуы: %s <энтропия-биттері>\n"
+
+#: src/pwmake.c:58
+#, c-format
+msgid ""
+"Warning: Value %ld is outside of the allowed entropy range, adjusting it.\n"
+msgstr ""
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"

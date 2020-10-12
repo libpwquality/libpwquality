@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2019-10-31 13:06+0100\n"
+"POT-Creation-Date: 2020-10-12 16:46+0200\n"
 "PO-Revision-Date: 2018-09-20 09:53+0000\n"
 "Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
 "Language-Team: Danish (http://www.transifex.com/projects/p/libpwquality/"
@@ -23,7 +23,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:233
+#: src/pam_pwquality.c:236
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "DÅRLIG ADGANGSKODE: %s"
@@ -58,10 +58,16 @@ msgstr ""
 "Kvalitetstjek af adgangskode mislykkedes:\n"
 "%s\n"
 
-#: src/pwmake.c:22
+#: src/pwmake.c:23
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
 msgstr "Anvendelse: %s <entropy-bits>\n"
+
+#: src/pwmake.c:58
+#, c-format
+msgid ""
+"Warning: Value %ld is outside of the allowed entropy range, adjusting it.\n"
+msgstr ""
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
