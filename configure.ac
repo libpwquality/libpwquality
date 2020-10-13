@@ -1,5 +1,5 @@
 dnl Process this file with autoconf to produce a configure script.
-AC_INIT([libpwquality], [1.4.3])
+AC_INIT([libpwquality], [1.4.4])
 AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([dist-bzip2 no-dist-gzip -Wall])
 AC_PREREQ(2.61)
@@ -158,8 +158,14 @@ AC_ARG_ENABLE([cracklib-check],
         [enable_cracklib_check=$enableval])
 
 AS_IF([test "x$enable_cracklib_check" != "xno"], [
-AC_CHECK_HEADERS([crack.h],
-      AC_SEARCH_LIBS([FascistCheck], [crack], LIBCRACK="-lz -lcrack" LIBS="$LIBS -lz", LIBCRACK="", [-lz]))
+AC_CHECK_HEADERS([crack.h],[
+    dnl If cracklib is shared -lz is not needed
+    AC_CHECK_LIB([crack], [FascistCheck], LIBCRACK="-lcrack" LIBS="$LIBS", LIBCRACK="")
+if test "x$ac_cv_lib_crack_FascistCheck" = "xno" ; then
+    unset ac_cv_lib_crack_FascistCheck
+    AC_CHECK_LIB([crack], [FascistCheck], LIBCRACK="-lz -lcrack" LIBS="$LIBS -lz", LIBCRACK="", [-lz])
+fi
+    ])
 if test "x$LIBCRACK" = "x" ; then
     AC_MSG_ERROR([No or unusable cracklib library])
 fi

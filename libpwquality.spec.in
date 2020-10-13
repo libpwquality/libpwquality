@@ -179,6 +179,10 @@ mkdir $RPM_BUILD_ROOT%{_secconfdir}/pwquality.conf.d
 %endif
 
 %changelog
+* Tue Oct 13 2020 Tomáš Mráz <tmraz@redhat.com> 1.4.4-1
+- Translation updates
+- Fix regression with enabling the cracklib check during build
+
 * Mon Oct 12 2020 Tomáš Mráz <tmraz@redhat.com> 1.4.3-1
 - Multiple translation updates
 - Add usersubstr check for substrings of N characters from the username
