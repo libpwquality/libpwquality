@@ -6,21 +6,22 @@
 # Christer Andersson <klamm@comhem.se>, 2007
 # Daniel Nylander <po@danielnylander.se>, 2009, 2010
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
+# Göran Uddeborg <goeran@uddeborg.se>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2020-10-13 08:32+0200\n"
-"PO-Revision-Date: 2017-05-26 09:21+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Swedish (http://www.transifex.com/projects/p/libpwquality/"
-"language/sv/)\n"
+"POT-Creation-Date: 2020-10-12 16:46+0200\n"
+"PO-Revision-Date: 2020-10-14 09:30+0000\n"
+"Last-Translator: Göran Uddeborg <goeran@uddeborg.se>\n"
+"Language-Team: Swedish <https://translate.fedoraproject.org/projects/"
+"libpwquality/app/sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.2.2\n"
 
 #: src/pam_pwquality.c:236
 #, c-format
@@ -67,6 +68,8 @@ msgstr "Användning: %s <entropibitar>\n"
 msgid ""
 "Warning: Value %ld is outside of the allowed entropy range, adjusting it.\n"
 msgstr ""
+"Varning: värdet %ld ligger utanför det tillåtna entropiintervallet, justerar "
+"det.\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
