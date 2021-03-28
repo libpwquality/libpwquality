@@ -5,21 +5,22 @@
 # Translators:
 # eukim <eukim@redhat.com>, 2007,2009
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
+# simmon <simmon@nplob.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2020-10-13 08:32+0200\n"
-"PO-Revision-Date: 2017-05-26 09:01+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Korean (http://www.transifex.com/projects/p/libpwquality/"
-"language/ko/)\n"
+"PO-Revision-Date: 2021-03-09 12:01+0000\n"
+"Last-Translator: simmon <simmon@nplob.com>\n"
+"Language-Team: Korean <https://translate.fedoraproject.org/projects/"
+"libpwquality/app/ko/>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Zanata 4.6.2\n"
+"X-Generator: Weblate 4.5.1\n"
 
 #: src/pam_pwquality.c:236
 #, c-format
@@ -64,7 +65,7 @@ msgstr "사용법: %s <entropy-bits>\n"
 #, c-format
 msgid ""
 "Warning: Value %ld is outside of the allowed entropy range, adjusting it.\n"
-msgstr ""
+msgstr "경고: 값 %ld는 엔트로피 허용 범위를 초과하였습니다, 다시 조정해 주세요.\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
@@ -92,7 +93,7 @@ msgstr "암호가 이전 암호와 너무 유사합니다"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr "암호에 어떤 형식으로 사용자 이름이 포함되어 있습니다 "
+msgstr "비밀번호에 어떤 형식으로 사용자 이름이 포함되어 있습니다"
 
 #: src/error.c:47
 msgid "The password contains words from the real name of the user in some form"
@@ -186,11 +187,11 @@ msgstr "암호에는 너무 많은 동일한 클래스 문자가 연속적으로
 #: src/error.c:102
 #, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr "암호에 %ld자를 초과하는 단조로운 문자열이 포함되어 있습니다."
+msgstr "암호에 %ld자를 초과하는 단조로운 문자열이 포함되어 있습니다"
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"
-msgstr "암호에 너무 단조로운 문자열이 포함되어 있습니다."
+msgstr "비밀번호에는 너무 단조로운 문자열이 포함되어 있습니다"
 
 #: src/error.c:107
 msgid "No password supplied"
@@ -202,49 +203,49 @@ msgstr "RNG 장치에서 임의의 숫자를 가져올 수 없습니다"
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
-msgstr "암호 생성에 실패했습니다 - 설정에 필요한 엔트로피가 너무 작습니다 "
+msgstr "비밀번호 생성에 실패했습니다 - 설정에 필요한 엔트로피가 너무 작습니다"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
-msgstr "암호는 사전 검사에 실패했습니다 "
+msgstr "비밀번호는 사전 검사에 실패했습니다"
 
 #: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
-msgstr "알 수 없는 설정 "
+msgstr "알 수 없는 설정"
 
 #: src/error.c:127
 msgid "Bad integer value of setting"
-msgstr "설정에 대해 잘못된 정수 값 "
+msgstr "설정에 대해 잘못된 정수 값"
 
 #: src/error.c:131
 msgid "Bad integer value"
-msgstr "잘못된 정수값 "
+msgstr "잘못된 정수값"
 
 #: src/error.c:134
 #, c-format
 msgid "Setting %s is not of integer type"
-msgstr "설정 %s은 정수 유형이 아닙니다 "
+msgstr "설정 %s은 정수 유형이 아닙니다"
 
 #: src/error.c:138
 msgid "Setting is not of integer type"
-msgstr "설정이 정수 유형이 아닙니다 "
+msgstr "설정이 정수 유형이 아닙니다"
 
 #: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
-msgstr "설정 %s은 문자열 유형이 아닙니다 "
+msgstr "설정 %s은 문자열 유형이 아닙니다"
 
 #: src/error.c:145
 msgid "Setting is not of string type"
-msgstr "설정은 문자열 유형이 아닙니다 "
+msgstr "설정은 문자열 유형이 아닙니다"
 
 #: src/error.c:147
 msgid "Opening the configuration file failed"
-msgstr "설정 파일 열기에 실패했습니다 "
+msgstr "설정 파일 열기에 실패했습니다"
 
 #: src/error.c:149
 msgid "The configuration file is malformed"
-msgstr "설정 파일이 잘못되었습니다 "
+msgstr "설정 파일이 잘못되었습니다"
 
 #: src/error.c:151
 msgid "Fatal failure"
