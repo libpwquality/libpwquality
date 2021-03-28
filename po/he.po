@@ -4,21 +4,22 @@
 #
 # Translators:
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2020-10-13 08:32+0200\n"
-"PO-Revision-Date: 2017-05-26 09:20+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Hebrew (http://www.transifex.com/projects/p/libpwquality/"
-"language/he/)\n"
+"PO-Revision-Date: 2021-03-28 14:01+0000\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: Hebrew <https://translate.fedoraproject.org/projects/"
+"libpwquality/app/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Zanata 4.6.2\n"
+"X-Generator: Weblate 4.5.2\n"
 
 #: src/pam_pwquality.c:236
 #, c-format
@@ -64,7 +65,7 @@ msgstr "Usage: %s <entropy-bits>\n"
 #, c-format
 msgid ""
 "Warning: Value %ld is outside of the allowed entropy range, adjusting it.\n"
-msgstr ""
+msgstr "אזהרה: הערך %ld הוא מחוץ לטווח האנטרופיה המותר, נערכים שינויים.\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
