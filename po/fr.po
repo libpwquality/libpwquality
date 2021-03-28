@@ -16,16 +16,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2020-10-13 08:32+0200\n"
-"PO-Revision-Date: 2020-02-08 07:16+0000\n"
+"PO-Revision-Date: 2020-10-17 07:15+0000\n"
 "Last-Translator: Julien Humbert <julroy67@gmail.com>\n"
-"Language-Team: French <https://translate.stg.fedoraproject.org/projects/"
+"Language-Team: French <https://translate.fedoraproject.org/projects/"
 "libpwquality/app/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.10.3\n"
+"X-Generator: Weblate 4.3\n"
 
 #: src/pam_pwquality.c:236
 #, c-format
@@ -73,6 +73,8 @@ msgstr "Usage : %s <entropy-bits>\n"
 msgid ""
 "Warning: Value %ld is outside of the allowed entropy range, adjusting it.\n"
 msgstr ""
+"Avertissement : La valeur %ld est en dehors de la plage d’entropie "
+"autorisée, il faut l’ajuster.\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
