@@ -25,6 +25,9 @@ the attacker might obtain the direct access to the password hash or the
 password is used as an encryption key I<80> to I<128> bits should be
 used depending on your level of paranoia.
 
+Any I<entropy-bits> value outside of the I<56> to I<256> bits range will be
+adjusted to fit within the allowed range.
+
 =head1 OPTIONS
 
 The first and only argument is the number of bits of entropy used to generate

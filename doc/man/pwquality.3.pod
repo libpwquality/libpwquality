@@ -61,7 +61,9 @@ manipulate the I<pwq> settings object.
 
 The pwquality_generate() function generates a random password of
 I<entropy_bits> entropy and checks it according to the settings. The
-I<*password> is allocated on the heap by the library.
+I<*password> is allocated on the heap by the library. The I<entropy_bits>
+value is adjusted to fit within the B<PWQ_MIN_ENTROPY_BITS> and
+B<PWQ_MAX_ENTROPY_BITS> range before generating a password.
 
 The pwquality_check() function checks the I<password> according to the
 settings. It returns either score (value between 0 and 100), negative
