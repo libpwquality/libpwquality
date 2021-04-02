@@ -8,13 +8,13 @@
 # Jyri Palokangas <jmp@netti.fi>, 2006
 # Ville-Pekka Vainio <vpvainio@iki.fi>, 2012
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
-# Ricky Tigg <ricky.tigg@gmail.com>, 2020.
+# Ricky Tigg <ricky.tigg@gmail.com>, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2020-10-13 08:32+0200\n"
-"PO-Revision-Date: 2020-12-02 14:35+0000\n"
+"PO-Revision-Date: 2021-04-02 10:01+0000\n"
 "Last-Translator: Ricky Tigg <ricky.tigg@gmail.com>\n"
 "Language-Team: Finnish <https://translate.fedoraproject.org/projects/"
 "libpwquality/app/fi/>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.3.2\n"
+"X-Generator: Weblate 4.5.3\n"
 
 #: src/pam_pwquality.c:236
 #, c-format
@@ -90,7 +90,7 @@ msgstr "Salasana on palindromi"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
-msgstr "Salasanat eroavat vain kirjainkoolta"
+msgstr "Salasana eroaa vain kirjainkoolta"
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
@@ -98,7 +98,7 @@ msgstr "Salasana on liian samanlainen kuin aiempi"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr "Salasana sisältää käyttäjätunnuksen jossakin muodossa"
+msgstr "Salasana sisältää käyttäjänimen jossakin muodossa"
 
 #: src/error.c:47
 msgid "The password contains words from the real name of the user in some form"
@@ -202,7 +202,7 @@ msgstr "Salasana sisältää liian pitkän monotonisen merkkisarjan"
 
 #: src/error.c:107
 msgid "No password supplied"
-msgstr "Et antanut salasanaa"
+msgstr "Ei salasanaa syötettynä"
 
 #: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
@@ -211,7 +211,7 @@ msgstr "Satunnaislukugeneraattorilta ei saada satunnaislukuja"
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
-"Salasanan generoiminen epäonnistui – vaadittu entropia on liian vähäinen "
+"Salasanan luominen epäonnistui – vaadittu entropia on liian vähäinen "
 "asetuksille"
 
 #: src/error.c:114 src/error.c:117
@@ -254,11 +254,11 @@ msgstr "Asetustiedoston avaaminen epäonnistui"
 
 #: src/error.c:149
 msgid "The configuration file is malformed"
-msgstr "Asetustiedosto on virheellinen"
+msgstr "Asetustiedosto on väärin muotoiltu"
 
 #: src/error.c:151
 msgid "Fatal failure"
-msgstr "Vakava virhe"
+msgstr "Kohtalokas epäonnistuminen"
 
 #: src/error.c:153
 msgid "Unknown error"
