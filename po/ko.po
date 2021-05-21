@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2020-10-13 08:32+0200\n"
-"PO-Revision-Date: 2021-03-09 12:01+0000\n"
+"PO-Revision-Date: 2021-04-09 07:01+0000\n"
 "Last-Translator: simmon <simmon@nplob.com>\n"
 "Language-Team: Korean <https://translate.fedoraproject.org/projects/"
 "libpwquality/app/ko/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.5.1\n"
+"X-Generator: Weblate 4.5.3\n"
 
 #: src/pam_pwquality.c:236
 #, c-format
@@ -156,11 +156,11 @@ msgstr "암호가 이전 암호를 회전 적용하였습니다"
 #: src/error.c:84
 #, c-format
 msgid "The password contains less than %ld character classes"
-msgstr "암호에는 %ld 미만의 문자 클래스가 포함되어 있습니다"
+msgstr "비밀번호에는 %ld 미만의 문자 등급이 포함되어 있습니다"
 
 #: src/error.c:87
 msgid "The password does not contain enough character classes"
-msgstr "암호에는 충분한 문자 클래스가 포함되어 있지 않습니다"
+msgstr "비밀번호에는 충분한 문자 등급이 포함되어 있지 않습니다"
 
 #: src/error.c:90
 #, c-format
@@ -176,13 +176,12 @@ msgstr "암호에는 너무 많은 동일한 문자가 연속적으로 포함되
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr ""
-"암호에는 %ld개 이상의 동일한 클래스 문자가 연속적으로 포함되어 있습니다"
+msgstr "비밀번호에는 %ld개 이상의 동일한 등급 문자가 연속적으로 포함되어 있습니다"
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr "암호에는 너무 많은 동일한 클래스 문자가 연속적으로 포함되어 있습니다"
+msgstr "비밀본호는 너무 많은 동일한 등급 문자가 연속적으로 포함되어 있습니다"
 
 #: src/error.c:102
 #, c-format
