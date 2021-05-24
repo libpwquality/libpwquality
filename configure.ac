@@ -97,6 +97,11 @@ if test "$enable_pam" != "no"; then
       test $fail = 1 &&
         AC_MSG_ERROR([You must install the PAM development package in order to compile libpwquality])
   fi
+  AC_CHECK_FUNC(
+    [pam_modutil_check_user_in_passwd],
+    [AC_DEFINE([HAVE_PAM_CHECK_USER_IN_PASSWD], [], [have pam_modutil_check_user_in_passwd])],
+    []
+  )  
 fi
 
 if test "$enable_pam" = "yes"; then
