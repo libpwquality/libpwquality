@@ -35,7 +35,7 @@ Is the new password a palindrome?
 
 =item Case Change Only
 
-Is the new password the the old one with only a change of case?
+Is the new password the same as the old one with only a change of case?
 
 =item Similar
 
