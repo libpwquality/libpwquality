@@ -34,6 +34,10 @@
 #include <security/_pam_macros.h>
 #include <security/pam_ext.h>
 
+#ifdef HAVE_PAM_CHECK_USER_IN_PASSWD
+#include <security/pam_modutil.h>
+#endif
+
 /* argument parsing */
 #define PAM_DEBUG_ARG       0x0001
 
