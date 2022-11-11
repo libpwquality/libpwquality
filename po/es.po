@@ -10,13 +10,13 @@
 # Héctor Daniel Cabrera <h.daniel.cabrera@gmail.com>, 2009
 # Manuel Ospina <mospina@redhat.com>, 2007
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
-# Emilio Herrera <ehespinosa57@gmail.com>, 2020.
+# Emilio Herrera <ehespinosa57@gmail.com>, 2020, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2020-10-13 08:32+0200\n"
-"PO-Revision-Date: 2020-08-14 14:29+0000\n"
+"PO-Revision-Date: 2022-01-29 18:16+0000\n"
 "Last-Translator: Emilio Herrera <ehespinosa57@gmail.com>\n"
 "Language-Team: Spanish <https://translate.fedoraproject.org/projects/"
 "libpwquality/app/es/>\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.1.1\n"
+"X-Generator: Weblate 4.10.1\n"
 
 #: src/pam_pwquality.c:236
 #, c-format
@@ -73,6 +73,8 @@ msgstr "Uso: %s <bits-entropía>\n"
 msgid ""
 "Warning: Value %ld is outside of the allowed entropy range, adjusting it.\n"
 msgstr ""
+"Advertencia: El valor %ld está fuera del rango de entropía permitido, "
+"ajustelo.\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
@@ -247,16 +249,16 @@ msgstr "La configuración %s no es de tipo entero"
 
 #: src/error.c:138
 msgid "Setting is not of integer type"
-msgstr "La configuración no es de tipo entero "
+msgstr "La configuración no es de tipo entero"
 
 #: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
-msgstr "La configuración %s no es de tipo cadena "
+msgstr "La configuración %s no es de tipo cadena"
 
 #: src/error.c:145
 msgid "Setting is not of string type"
-msgstr "La configuraciónno es de tipo cadena "
+msgstr "La configuración no es de tipo cadena"
 
 #: src/error.c:147
 msgid "Opening the configuration file failed"
