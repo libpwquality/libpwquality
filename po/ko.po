@@ -7,13 +7,14 @@
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
 # simmon <simmon@nplob.com>, 2021.
 # Seong-ho Cho <darkcircle.0426@gmail.com>, 2021.
+# 김인수 <simmon@nplob.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2020-10-13 08:32+0200\n"
-"PO-Revision-Date: 2021-07-22 07:04+0000\n"
-"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
+"PO-Revision-Date: 2022-04-13 13:16+0000\n"
+"Last-Translator: 김인수 <simmon@nplob.com>\n"
 "Language-Team: Korean <https://translate.fedoraproject.org/projects/"
 "libpwquality/app/ko/>\n"
 "Language: ko\n"
@@ -21,12 +22,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.7.2\n"
+"X-Generator: Weblate 4.11.2\n"
 
 #: src/pam_pwquality.c:236
 #, c-format
 msgid "BAD PASSWORD: %s"
-msgstr "잘못된 암호: %s"
+msgstr "잘못된 비밀번호: %s"
 
 #: src/pwscore.c:22
 #, c-format
@@ -66,8 +67,7 @@ msgstr "사용법: %s <엔트로피_비트>\n"
 #, c-format
 msgid ""
 "Warning: Value %ld is outside of the allowed entropy range, adjusting it.\n"
-msgstr ""
-"경고:  %ld 값은 엔트로피 허용 범위를 초과하였습니다. 다시 조정하십시오.\n"
+msgstr "경고: 값 %ld는 허용된 엔트로피 범위를 초과하였으며, 이를 조정하세요.\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
