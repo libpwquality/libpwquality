@@ -6,13 +6,13 @@
 # Koray Löker <loker@pardus.org.tr>, 2006
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
 # Emin Tufan Çetin <etcetin@gmail.com>, 2018. #zanata
-# Oğuz Ersen <oguzersen@protonmail.com>, 2020.
+# Oğuz Ersen <oguzersen@protonmail.com>, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2020-10-13 08:32+0200\n"
-"PO-Revision-Date: 2020-10-12 16:49+0000\n"
+"PO-Revision-Date: 2021-09-19 16:04+0000\n"
 "Last-Translator: Oğuz Ersen <oguzersen@protonmail.com>\n"
 "Language-Team: Turkish <https://translate.fedoraproject.org/projects/"
 "libpwquality/app/tr/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>1);\n"
-"X-Generator: Weblate 4.2.2\n"
+"X-Generator: Weblate 4.8\n"
 
 #: src/pam_pwquality.c:236
 #, c-format
@@ -135,11 +135,11 @@ msgstr "Parola çok az küçük harf içeriyor"
 #: src/error.c:70
 #, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr "Parola %ld'den az alfanumerik olmayan karakter içeriyor"
+msgstr "Parola %ld'den az alfasayısal olmayan karakter içeriyor"
 
 #: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
-msgstr "Parola alfanumerik olmayan çok az karakter içeriyor"
+msgstr "Parola alfasayısal olmayan çok az karakter içeriyor"
 
 #: src/error.c:76
 #, c-format
