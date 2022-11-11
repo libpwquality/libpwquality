@@ -9,13 +9,14 @@
 # Tomoyuki KATO <tomo@dream.daynight.jp>, 2012.
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
 # yoshifumi kinoshita <yoshifumi1975@gmail.com>, 2020.
+# Ludek Janda <ljanda@redhat.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2020-10-13 08:32+0200\n"
-"PO-Revision-Date: 2020-07-05 10:53+0000\n"
-"Last-Translator: yoshifumi kinoshita <yoshifumi1975@gmail.com>\n"
+"PO-Revision-Date: 2021-05-26 14:02+0000\n"
+"Last-Translator: Ludek Janda <ljanda@redhat.com>\n"
 "Language-Team: Japanese <https://translate.fedoraproject.org/projects/"
 "libpwquality/app/ja/>\n"
 "Language: ja\n"
@@ -23,23 +24,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.1.1\n"
+"X-Generator: Weblate 4.6.2\n"
 
 #: src/pam_pwquality.c:236
 #, c-format
 msgid "BAD PASSWORD: %s"
-msgstr "よくないパスワード: %s"
+msgstr "正しくないパスワード: %s"
 
 #: src/pwscore.c:22
 #, c-format
 msgid "Usage: %s [user]\n"
-msgstr "使い方: %s [user]\n"
+msgstr "例: %s [user]\n"
 
 #: src/pwscore.c:23
 #, c-format
 msgid ""
 "       The command reads the password to be scored from the standard input.\n"
-msgstr "       このコマンドは採点するパスワードを標準入力から読み込みます。\n"
+msgstr "       このコマンドは、評価するパスワードを標準入力から読み込みます。\n"
 
 #: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
@@ -48,7 +49,7 @@ msgstr "エラー: %s\n"
 
 #: src/pwscore.c:53
 msgid "Could not obtain the password to be scored"
-msgstr "採点するパスワードを取得できませんでした。"
+msgstr "評価するパスワードを取得できませんでした"
 
 #: src/pwscore.c:75
 #, c-format
@@ -56,23 +57,23 @@ msgid ""
 "Password quality check failed:\n"
 " %s\n"
 msgstr ""
-"パスワードの品質チェックに失敗しました。\n"
+"パスワードの評価チェックに失敗しました:\n"
 " %s\n"
 
 #: src/pwmake.c:23
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
-msgstr "使い方: %s <エントロピーのビット数>\n"
+msgstr "例: %s <entropy-bits>\n"
 
 #: src/pwmake.c:58
 #, c-format
 msgid ""
 "Warning: Value %ld is outside of the allowed entropy range, adjusting it.\n"
-msgstr ""
+msgstr "警告: 値 %ld は許可されるエントロピー範囲を超えていまで調整します。\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
-msgstr "設定中にメモリー割り当てエラーが発生しました。"
+msgstr "設定中にメモリー割り当てエラーが発生しました"
 
 #: src/error.c:35
 msgid "Memory allocation error"
@@ -80,139 +81,135 @@ msgstr "メモリー割り当てエラー"
 
 #: src/error.c:37
 msgid "The password is the same as the old one"
-msgstr "このパスワードは過去に設定されたものと同じです。"
+msgstr "このパスワードは過去に設定されたものと同じです"
 
 #: src/error.c:39
 msgid "The password is a palindrome"
-msgstr "このパスワードは回文です。"
+msgstr "このパスワードは回文です"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
-msgstr "このパスワードは大文字と小文字を変更しただけです。"
+msgstr "このパスワードは大文字と小文字を変更しただけです"
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
-msgstr "このパスワードは古いパスワードと似すぎています。"
+msgstr "このパスワードは古いパスワードと類似しています"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr "このパスワードには一部に何らかの形でユーザー名が含まれています。"
+msgstr "このパスワードには、一部に何らかの形でユーザー名が含まれています"
 
 #: src/error.c:47
 msgid "The password contains words from the real name of the user in some form"
-msgstr ""
-"このパスワードには何らかの形でユーザーの本名から基づく単語が含まれています。"
+msgstr "このパスワードには、何らかの形でユーザーの本名に基づく単語が含まれています"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
-msgstr "このパスワードには何らかの形で禁止された単語が含まれています。"
+msgstr "このパスワードには、何らかの形で禁止されている単語が含まれています"
 
 #: src/error.c:52
 #, c-format
 msgid "The password contains less than %ld digits"
-msgstr "このパスワードには %ld 個未満の数字が含まれています。"
+msgstr "このパスワードには %ld 個未満の数字が含まれています"
 
 #: src/error.c:55
 msgid "The password contains too few digits"
-msgstr "このパスワードは数字の個数が足りません。"
+msgstr "このパスワードには、数字の個数が足りません"
 
 #: src/error.c:58
 #, c-format
 msgid "The password contains less than %ld uppercase letters"
-msgstr ""
-"このパスワードには %ld 個未満の大文字のアルファベットが含まれています。"
+msgstr "このパスワードには %ld 個未満の大文字のアルファベットが含まれています"
 
 #: src/error.c:61
 msgid "The password contains too few uppercase letters"
-msgstr "このパスワードは大文字のアルファベットの個数が足りません。"
+msgstr "このパスワードは、大文字のアルファベットの個数が足りません"
 
 #: src/error.c:64
 #, c-format
 msgid "The password contains less than %ld lowercase letters"
-msgstr ""
-"このパスワードには %ld 個未満の小文字のアルファベットが含まれています。"
+msgstr "このパスワードに含まれる小文字のアルファベットは、%ld 個未満です"
 
 #: src/error.c:67
 msgid "The password contains too few lowercase letters"
-msgstr "このパスワードは小文字のアルファベットの個数が足りません。"
+msgstr "このパスワードの小文字のアルファベット数が足りません"
 
 #: src/error.c:70
 #, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr "このパスワードには %ld 個未満の記号が含まれています。"
+msgstr "このパスワードのに含まれるアルファベット以外の文字数は %ld 個未満です"
 
 #: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
-msgstr "このパスワードは記号の個数が足りません。"
+msgstr "このパスワードは、アルファベット以外の文字数が足りません"
 
 #: src/error.c:76
 #, c-format
 msgid "The password is shorter than %ld characters"
-msgstr "このパスワードは %ld 文字未満の文字列です。"
+msgstr "このパスワードは %ld 文字未満の文字列です"
 
 #: src/error.c:79
 msgid "The password is too short"
-msgstr "このパスワードは短かすぎます。"
+msgstr "このパスワードは短かすぎます"
 
 #: src/error.c:81
 msgid "The password is just rotated old one"
-msgstr "このパスワードは単に古いものを回転させただけです。"
+msgstr "このパスワードは、単に古いものを再利用しています"
 
 #: src/error.c:84
 #, c-format
 msgid "The password contains less than %ld character classes"
-msgstr "このパスワードは %ld 種類未満の文字の種類が含まれています。"
+msgstr "このパスワードの文字クラスは、%ld 種類未満です"
 
 #: src/error.c:87
 msgid "The password does not contain enough character classes"
-msgstr "このパスワードに含まれる文字の種類数が足りません。"
+msgstr "このパスワードに含まれる文字クラス数が足りません"
 
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr "このパスワードは %ld 個を越える連続する同じ文字が含まれています。"
+msgstr "このパスワードはには、%ld 個を越える連続する同じ文字が含まれています"
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
-msgstr "このパスワードには連続して同じ文字が含まれています。"
+msgstr "このパスワードの連続した同じ文字の数が多すぎます"
 
 #: src/error.c:96
 #, c-format
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr ""
-"このパスワードは %ld 個を越える連続する同じ種類の文字が含まれています。"
+msgstr "このパスワードには %ld 個を越える連続する同じ文字クラスの文字が含まれています"
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr "このパスワードには連続して同じ種類の文字が含まれています。"
+msgstr "このパスワードは、同じ文字クラス文字の連続が多すぎます"
 
 #: src/error.c:102
 #, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr "このパスワードには %ld 文字より長い単調な文字列が含まれています。"
+msgstr "このパスワードには %ld 文字より長い単調な文字列が含まれています"
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"
-msgstr "このパスワードには長すぎる単調な文字列が含まれています。"
+msgstr "このパスワードには、長すぎる単調な文字列が含まれています"
 
 #: src/error.c:107
 msgid "No password supplied"
-msgstr "パスワードが与えられていません。"
+msgstr "パスワードが与えられていません"
 
 #: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
-msgstr "RNG(乱数発生)デバイスから乱数を取得することができません。"
+msgstr "RNG (乱数発生) デバイスから乱数を取得することができません"
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
-msgstr "パスワードの生成に失敗 - 設定に必要なエントロピーが小さすぎます。"
+msgstr "パスワードの生成に失敗: 設定に必要なエントロピーが小さすぎます"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
-msgstr "このパスワードは辞書チェックに失敗しました。"
+msgstr "このパスワードは辞書チェックに失敗しました"
 
 #: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
@@ -220,41 +217,41 @@ msgstr "未知の設定"
 
 #: src/error.c:127
 msgid "Bad integer value of setting"
-msgstr "設定の良くない整数型の値です。"
+msgstr "設定の正しくない整数型の値です"
 
 #: src/error.c:131
 msgid "Bad integer value"
-msgstr "良くない整数型の値です。"
+msgstr "正しくない整数型の値です"
 
 #: src/error.c:134
 #, c-format
 msgid "Setting %s is not of integer type"
-msgstr "設定 %s は整数型ではありません。"
+msgstr "設定 %s は整数型ではありません"
 
 #: src/error.c:138
 msgid "Setting is not of integer type"
-msgstr "設定は整数型ではありません。"
+msgstr "設定は整数型ではありません"
 
 #: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
-msgstr "設定 %s は文字列型ではありません。"
+msgstr "設定 %s は文字列型ではありません"
 
 #: src/error.c:145
 msgid "Setting is not of string type"
-msgstr "設定は文字列型ではありません。"
+msgstr "設定は文字列型ではありません"
 
 #: src/error.c:147
 msgid "Opening the configuration file failed"
-msgstr "設定ファイルを開けません。"
+msgstr "設定ファイルを開けませんでした"
 
 #: src/error.c:149
 msgid "The configuration file is malformed"
-msgstr "設定ファイルの形式が正しくありません。"
+msgstr "設定ファイルの形式が正しくありません"
 
 #: src/error.c:151
 msgid "Fatal failure"
-msgstr "致命的な障害が発生しました。"
+msgstr "致命的な障害が発生しました"
 
 #: src/error.c:153
 msgid "Unknown error"
