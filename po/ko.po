@@ -6,13 +6,14 @@
 # eukim <eukim@redhat.com>, 2007,2009
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
 # simmon <simmon@nplob.com>, 2021.
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2020-10-13 08:32+0200\n"
-"PO-Revision-Date: 2021-04-09 07:01+0000\n"
-"Last-Translator: simmon <simmon@nplob.com>\n"
+"PO-Revision-Date: 2021-07-22 07:04+0000\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Korean <https://translate.fedoraproject.org/projects/"
 "libpwquality/app/ko/>\n"
 "Language: ko\n"
@@ -20,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.5.3\n"
+"X-Generator: Weblate 4.7.2\n"
 
 #: src/pam_pwquality.c:236
 #, c-format
@@ -30,13 +31,13 @@ msgstr "잘못된 암호: %s"
 #: src/pwscore.c:22
 #, c-format
 msgid "Usage: %s [user]\n"
-msgstr "사용법: %s [user]\n"
+msgstr "사용법: %s [<사용자>]\n"
 
 #: src/pwscore.c:23
 #, c-format
 msgid ""
 "       The command reads the password to be scored from the standard input.\n"
-msgstr "       이 명령은 표준 입력에서 득점할 암호를 읽습니다.\n"
+msgstr "       이 명령은 표준 입력에서 수준을 검사할 암호를 읽습니다.\n"
 
 #: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
@@ -45,7 +46,7 @@ msgstr "오류: %s\n"
 
 #: src/pwscore.c:53
 msgid "Could not obtain the password to be scored"
-msgstr "득점할 암호를 얻을 수 없습니다"
+msgstr "수준을 검사할 암호를 가져올 수 없습니다"
 
 #: src/pwscore.c:75
 #, c-format
@@ -59,13 +60,14 @@ msgstr ""
 #: src/pwmake.c:23
 #, c-format
 msgid "Usage: %s <entropy-bits>\n"
-msgstr "사용법: %s <entropy-bits>\n"
+msgstr "사용법: %s <엔트로피_비트>\n"
 
 #: src/pwmake.c:58
 #, c-format
 msgid ""
 "Warning: Value %ld is outside of the allowed entropy range, adjusting it.\n"
-msgstr "경고: 값 %ld는 엔트로피 허용 범위를 초과하였습니다, 다시 조정해 주세요.\n"
+msgstr ""
+"경고:  %ld 값은 엔트로피 허용 범위를 초과하였습니다. 다시 조정하십시오.\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
@@ -81,33 +83,32 @@ msgstr "암호가 이전 암호와 동일함"
 
 #: src/error.c:39
 msgid "The password is a palindrome"
-msgstr "암호가 앞뒤 어느쪽에서 읽어도 같은 문맥임"
+msgstr "암호가 앞뒤 어느쪽에서 읽어도 같은 문맥입니다"
 
 #: src/error.c:41
 msgid "The password differs with case changes only"
-msgstr "암호는 대소 문자 변경만으로 다릅니다"
+msgstr "암호는 대소문자로만 바뀌었습니다"
 
 #: src/error.c:43
 msgid "The password is too similar to the old one"
-msgstr "암호가 이전 암호와 너무 유사합니다"
+msgstr "암호가 이전 암호와 너무 비슷합니다"
 
 #: src/error.c:45
 msgid "The password contains the user name in some form"
-msgstr "비밀번호에 어떤 형식으로 사용자 이름이 포함되어 있습니다"
+msgstr "암호에 사용자 이름이 있습니다"
 
 #: src/error.c:47
 msgid "The password contains words from the real name of the user in some form"
-msgstr ""
-"암호에는 어떤 형식으로 사용자의 실제 이름에서의 단어가 포함되어 있습니다"
+msgstr "암호에는 임의의 형태로 사용자의 실제 이름 단어가 있습니다"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
-msgstr "암호에는 어떤 형식으로 금지된 단어가 포함되어 있습니다"
+msgstr "암호에는 어떤 형태로 금지된 단어가 있습니다"
 
 #: src/error.c:52
 #, c-format
 msgid "The password contains less than %ld digits"
-msgstr "암호에는 %ld개 미만의 숫자가 포함되어 있습니다"
+msgstr "암호에는 %ld개 미만의 숫자가 있습니다"
 
 #: src/error.c:55
 msgid "The password contains too few digits"
@@ -116,7 +117,7 @@ msgstr "암호에 숫자의 개수가 부족합니다"
 #: src/error.c:58
 #, c-format
 msgid "The password contains less than %ld uppercase letters"
-msgstr "암호에는 %ld개 미만의 대문자가 포함되어 있습니다"
+msgstr "암호에는 %ld개 미만의 대문자가 있습니다"
 
 #: src/error.c:61
 msgid "The password contains too few uppercase letters"
@@ -125,7 +126,7 @@ msgstr "암호에 대문자의 개수가 부족합니다"
 #: src/error.c:64
 #, c-format
 msgid "The password contains less than %ld lowercase letters"
-msgstr "암호에는 %ld개 미만의 소문자가 포함되어 있습니다"
+msgstr "암호에는 %ld개 미만의 소문자가 있습니다"
 
 #: src/error.c:67
 msgid "The password contains too few lowercase letters"
@@ -134,11 +135,11 @@ msgstr "암호에 소문자 개수가 부족합니다"
 #: src/error.c:70
 #, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr "암호에는 영숫자가 아닌 %ld개 미만의 문자가 포함되어 있습니다"
+msgstr "암호에는 영숫자가 아닌 %ld개 미만의 문자가 있습니다"
 
 #: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
-msgstr "암호에는 너무 적은 영숫자가 아닌 문자가 포함되어 있습니다"
+msgstr "암호에는 너무 적은 영숫자가 아닌 문자가 있습니다"
 
 #: src/error.c:76
 #, c-format
@@ -156,45 +157,45 @@ msgstr "암호가 이전 암호를 회전 적용하였습니다"
 #: src/error.c:84
 #, c-format
 msgid "The password contains less than %ld character classes"
-msgstr "비밀번호에는 %ld 미만의 문자 등급이 포함되어 있습니다"
+msgstr "암호에 %ld 미만의 문자 계열이 들어있습니다"
 
 #: src/error.c:87
 msgid "The password does not contain enough character classes"
-msgstr "비밀번호에는 충분한 문자 등급이 포함되어 있지 않습니다"
+msgstr "암호에 다양한 문자 계열을 반영하지 않았습니다"
 
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr "암호에는 %ld개 이상의 동일한 문자가 연속적으로 포함되어 있습니다"
+msgstr "암호에는 %ld개 이상의 동일한 연속 문자가 있습니다"
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
-msgstr "암호에는 너무 많은 동일한 문자가 연속적으로 포함되어 있습니다"
+msgstr "암호에는 너무 많은 동일한 연속 문자가 있습니다"
 
 #: src/error.c:96
 #, c-format
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr "비밀번호에는 %ld개 이상의 동일한 등급 문자가 연속적으로 포함되어 있습니다"
+msgstr "암호에 %ld개 이상의 동일한 계열 연속 문자가 있습니다"
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr "비밀본호는 너무 많은 동일한 등급 문자가 연속적으로 포함되어 있습니다"
+msgstr "암호에 동일한 계열 문자가 너무 많이 있습니다"
 
 #: src/error.c:102
 #, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr "암호에 %ld자를 초과하는 단조로운 문자열이 포함되어 있습니다"
+msgstr "암호에 %ld자를 초과하는 단조로운 문자열이 있습니다"
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"
-msgstr "비밀번호에는 너무 단조로운 문자열이 포함되어 있습니다"
+msgstr "암호에 너무 단조로운 문자열이 있습니다"
 
 #: src/error.c:107
 msgid "No password supplied"
-msgstr "암호가 없음"
+msgstr "암호가 없습니다"
 
 #: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
@@ -202,11 +203,11 @@ msgstr "RNG 장치에서 임의의 숫자를 가져올 수 없습니다"
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
-msgstr "비밀번호 생성에 실패했습니다 - 설정에 필요한 엔트로피가 너무 작습니다"
+msgstr "암호 생성 실패 - 필요한 엔트로피 값이 너무 작습니다"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
-msgstr "비밀번호는 사전 검사에 실패했습니다"
+msgstr "암호 사전 검사에 실패했습니다"
 
 #: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
@@ -214,29 +215,29 @@ msgstr "알 수 없는 설정"
 
 #: src/error.c:127
 msgid "Bad integer value of setting"
-msgstr "설정에 대해 잘못된 정수 값"
+msgstr "잘못된 정수 설정 값"
 
 #: src/error.c:131
 msgid "Bad integer value"
-msgstr "잘못된 정수값"
+msgstr "잘못된 정수 값"
 
 #: src/error.c:134
 #, c-format
 msgid "Setting %s is not of integer type"
-msgstr "설정 %s은 정수 유형이 아닙니다"
+msgstr "%s 설정은 정수 형식이 아닙니다"
 
 #: src/error.c:138
 msgid "Setting is not of integer type"
-msgstr "설정이 정수 유형이 아닙니다"
+msgstr "정수 형식의 설정이 아닙니다"
 
 #: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
-msgstr "설정 %s은 문자열 유형이 아닙니다"
+msgstr "%s 설정은 문자열 형식이 아닙니다"
 
 #: src/error.c:145
 msgid "Setting is not of string type"
-msgstr "설정은 문자열 유형이 아닙니다"
+msgstr "문자열 형식의 설정이 아닙니다"
 
 #: src/error.c:147
 msgid "Opening the configuration file failed"
