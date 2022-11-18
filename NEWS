@@ -1,5 +1,9 @@
 libpwquality NEWS -- history of user-visible changes.
 
+Release 1.4.5
+* Translation updates
+* Minor bug fixes and documentation enhancements
+
 Release 1.4.4
 * Fix regression with enabling the cracklib check during build
 

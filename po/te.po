@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2020-10-13 08:32+0200\n"
+"POT-Creation-Date: 2022-11-18 11:22+0100\n"
 "PO-Revision-Date: 2017-05-26 08:59+0000\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Zanata 4.6.2\n"
 
-#: src/pam_pwquality.c:236
+#: src/pam_pwquality.c:244
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "చెడ్డ సంకేతపదము: %s"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2020-10-13 08:32+0200\n"
+"POT-Creation-Date: 2022-11-18 11:22+0100\n"
 "PO-Revision-Date: 2021-09-27 16:05+0000\n"
 "Last-Translator: René Genz <liebundartig@freenet.de>\n"
 "Language-Team: German <https://translate.fedoraproject.org/projects/"
@@ -24,7 +24,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.8\n"
 
-#: src/pam_pwquality.c:236
+#: src/pam_pwquality.c:244
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "Unsicheres Passwort: %s"

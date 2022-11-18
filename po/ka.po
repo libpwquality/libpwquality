@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libpwquality 1.4.4\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2020-10-13 08:32+0200\n"
+"POT-Creation-Date: 2022-11-18 11:22+0100\n"
 "PO-Revision-Date: 2022-03-21 04:16+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://translate.fedoraproject.org/projects/"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.11.2\n"
 
-#: src/pam_pwquality.c:236
+#: src/pam_pwquality.c:244
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "ცუდი პაროლი: %s"
@@ -183,7 +183,8 @@ msgstr "პაროლი შეიცავს იმავე კლასი
 #: src/error.c:102
 #, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr "პაროლი შეიცავს მონოტონურ თანამიმდევრობას, რომელიც %ld სიმბოლოზე გრძელია"
+msgstr ""
+"პაროლი შეიცავს მონოტონურ თანამიმდევრობას, რომელიც %ld სიმბოლოზე გრძელია"
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"

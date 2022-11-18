@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2020-10-13 08:32+0200\n"
+"POT-Creation-Date: 2022-11-18 11:22+0100\n"
 "PO-Revision-Date: 2020-07-05 10:53+0000\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <https://translate.fedoraproject.org/projects/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.1.1\n"
 
-#: src/pam_pwquality.c:236
+#: src/pam_pwquality.c:244
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "ҚАТЕ ПАРОЛЬ: %s"

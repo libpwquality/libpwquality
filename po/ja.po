@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2020-10-13 08:32+0200\n"
+"POT-Creation-Date: 2022-11-18 11:22+0100\n"
 "PO-Revision-Date: 2021-05-26 14:02+0000\n"
 "Last-Translator: Ludek Janda <ljanda@redhat.com>\n"
 "Language-Team: Japanese <https://translate.fedoraproject.org/projects/"
@@ -26,7 +26,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.6.2\n"
 
-#: src/pam_pwquality.c:236
+#: src/pam_pwquality.c:244
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "正しくないパスワード: %s"
@@ -40,7 +40,8 @@ msgstr "例: %s [user]\n"
 #, c-format
 msgid ""
 "       The command reads the password to be scored from the standard input.\n"
-msgstr "       このコマンドは、評価するパスワードを標準入力から読み込みます。\n"
+msgstr ""
+"       このコマンドは、評価するパスワードを標準入力から読み込みます。\n"
 
 #: src/pwscore.c:53 src/pwscore.c:61 src/pwscore.c:67
 #, c-format
@@ -101,7 +102,8 @@ msgstr "このパスワードには、一部に何らかの形でユーザー名
 
 #: src/error.c:47
 msgid "The password contains words from the real name of the user in some form"
-msgstr "このパスワードには、何らかの形でユーザーの本名に基づく単語が含まれています"
+msgstr ""
+"このパスワードには、何らかの形でユーザーの本名に基づく単語が含まれています"
 
 #: src/error.c:49
 msgid "The password contains forbidden words in some form"
@@ -179,7 +181,8 @@ msgstr "このパスワードの連続した同じ文字の数が多すぎます
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr "このパスワードには %ld 個を越える連続する同じ文字クラスの文字が含まれています"
+msgstr ""
+"このパスワードには %ld 個を越える連続する同じ文字クラスの文字が含まれています"
 
 #: src/error.c:99
 msgid ""

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
-"POT-Creation-Date: 2020-10-13 08:32+0200\n"
+"POT-Creation-Date: 2022-11-18 11:22+0100\n"
 "PO-Revision-Date: 2022-11-11 11:19+0000\n"
 "Last-Translator: Ricky Tigg <ricky.tigg@gmail.com>\n"
 "Language-Team: Finnish <https://translate.fedoraproject.org/projects/"
@@ -25,7 +25,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.14.2\n"
 
-#: src/pam_pwquality.c:236
+#: src/pam_pwquality.c:244
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "HUONO SALASANA: %s"
@@ -69,8 +69,8 @@ msgstr "Käyttö: %s <entropiabitit>\n"
 msgid ""
 "Warning: Value %ld is outside of the allowed entropy range, adjusting it.\n"
 msgstr ""
-"Varoitus: Arvo %ld on sallitun entropia-alueen ulkopuolella, säätämällä sitä."
-"\n"
+"Varoitus: Arvo %ld on sallitun entropia-alueen ulkopuolella, säätämällä "
+"sitä.\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"

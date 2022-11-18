@@ -25,9 +25,9 @@ Source0: https://github.com/libpwquality/libpwquality/releases/download/libpwqua
 %global _moduledir %{_libdir}/security
 %global _secconfdir %{_sysconfdir}/security
 
-Recommends: cracklib-dicts >= 2.8
-Requires: pam%{?_isa}
-BuildRequires: gcc
+Requires: (cracklib-dicts >= 2.8 if passwd)
+Requires: (cracklib-dicts >= 2.8 if cryptsetup)
+BuildRequires: gcc make
 BuildRequires: cracklib-devel
 BuildRequires: gettext
 BuildRequires: pam-devel
@@ -36,13 +36,9 @@ BuildRequires: python2-devel
 %endif
 %if %{with python3}
 BuildRequires: python3-devel
-BuildRequires: python3-setuptools
 %endif
 
 URL: https://github.com/libpwquality/libpwquality/
-
-# we don't want to provide private python extension libs
-%define __provides_exclude_from ^(%{python_sitearch}|%{python3_sitearch})/.*\.so$.
 
 %description
 This is a library for password quality checks and generation
@@ -107,6 +103,15 @@ cp -a . %{py3dir}
 pushd %{py3dir}
 %endif
 %if %{with python3}
+# setuptools >= 60 changes the environment to use its bundled copy of distutils
+# by default, not the Python-bundled one. To run the Python's standard library
+# distutils, the environment variable must be set.
+# Although technically setuptools is not needed for this package, if it's
+# pulled by another package, it changes the environment and consequently,
+# the build fails. This was reported in:
+# https://github.com/pypa/setuptools/issues/3143
+export SETUPTOOLS_USE_DISTUTILS=stdlib
+
 %configure \
 	--with-securedir=%{_moduledir} \
 	--with-pythonsitedir=%{python3_sitearch} \
@@ -147,15 +152,16 @@ mkdir $RPM_BUILD_ROOT%{_secconfdir}/pwquality.conf.d
 %ldconfig_scriptlets
 
 %files -f libpwquality.lang
-%{!?_licensedir:%global license %%doc}
 %license COPYING
 %doc README NEWS AUTHORS
 %{_bindir}/pwmake
 %{_bindir}/pwscore
+%dir %{_moduledir}
 %{_moduledir}/pam_pwquality.so
 %{_pwqlibdir}/libpwquality.so.*
+%dir %{_secconfdir}
 %config(noreplace) %{_secconfdir}/pwquality.conf
-%{_secconfdir}/pwquality.conf.d
+%dir %{_secconfdir}/pwquality.conf.d
 %{_mandir}/man1/*
 %{_mandir}/man5/*
 %{_mandir}/man8/*
@@ -179,6 +185,11 @@ mkdir $RPM_BUILD_ROOT%{_secconfdir}/pwquality.conf.d
 %endif
 
 %changelog
+* Fri Nov 18 2022 Tomáš Mráz <tmraz@fedoraproject.org> 1.4.5-1
+- Translation updates
+- Minor bug fixes and documentation enhancements
+- Spec file sync with Fedora
+
 * Tue Oct 13 2020 Tomáš Mráz <tmraz@redhat.com> 1.4.4-1
 - Translation updates
 - Fix regression with enabling the cracklib check during build
