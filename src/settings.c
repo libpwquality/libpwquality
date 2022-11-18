@@ -451,6 +451,9 @@ pwquality_get_int_value(pwquality_settings_t *pwq, int setting, int *value)
         case PWQ_SETTING_USER_CHECK:
                 *value = pwq->user_check;
                 break;
+        case PWQ_SETTING_USER_SUBSTR:
+                *value = pwq->user_substr;
+                break;
         case PWQ_SETTING_ENFORCING:
                 *value = pwq->enforcing;
                 break;
