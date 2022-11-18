@@ -565,9 +565,6 @@ password_check(pwquality_settings_t *pwq,
                 }
         }
 
-        if (!rv && palindrome(newmono))
-                rv = PWQ_ERROR_PALINDROME;
-
         if (!rv && oldmono && strcmp(oldmono, newmono) == 0)
                 rv = PWQ_ERROR_CASE_CHANGES_ONLY;
 
@@ -586,6 +583,9 @@ password_check(pwquality_settings_t *pwq,
                         *auxerror = (void *)(long)pwq->min_class;
                 }
         }
+
+        if (!rv && palindrome(newmono))
+                rv = PWQ_ERROR_PALINDROME;
 
         if (!rv && consecutive(pwq, new, auxerror))
                 rv = PWQ_ERROR_MAX_CONSECUTIVE;
