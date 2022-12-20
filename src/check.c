@@ -307,15 +307,15 @@ simple(pwquality_settings_t *pwq, const char *new, void **auxerror)
 static int
 consecutive(pwquality_settings_t *pwq, const char *new, void **auxerror)
 {
-        char c;
+        char c = new[0];
         int i;
-        int same;
+        int same = 1;
 
-        if (pwq->max_repeat == 0)
+        if (pwq->max_repeat == 0 || c == '\0')
                 return 0;
 
-        for (i = 0; new[i]; i++) {
-                if (i > 0 && new[i] == c) {
+        for (i = 1; new[i]; i++) {
+                if (new[i] == c) {
                         ++same;
                         if (same > pwq->max_repeat) {
                                 if (auxerror)
