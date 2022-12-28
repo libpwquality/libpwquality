@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.1.1\n"
 
-#: src/pam_pwquality.c:244
+#: src/pam_pwquality.c:244 src/pam_pwquality.c:236
 #, c-format
 msgid "BAD PASSWORD: %s"
 msgstr "ҚАТЕ ПАРОЛЬ: %s"
@@ -65,6 +65,7 @@ msgstr "Қолданылуы: %s <энтропия-биттері>\n"
 msgid ""
 "Warning: Value %ld is outside of the allowed entropy range, adjusting it.\n"
 msgstr ""
+"Ескерту: %ld мәні рұқсат етілген энтропия ауқымынан тыс, оны реттейміз.\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
@@ -132,16 +133,16 @@ msgstr "Пароль ішінде кіші әріптер саны жекткі�
 #: src/error.c:70
 #, c-format
 msgid "The password contains less than %ld non-alphanumeric characters"
-msgstr ""
+msgstr "Парольде әріптік-сандық емес таңбалар саны %ld шамасынан аз"
 
 #: src/error.c:73
 msgid "The password contains too few non-alphanumeric characters"
-msgstr ""
+msgstr "Парольде әріптік-сандық емес таңбалар саны тым аз"
 
 #: src/error.c:76
 #, c-format
 msgid "The password is shorter than %ld characters"
-msgstr ""
+msgstr "Парольде кем дегенде %ld таңба болуы тиіс"
 
 #: src/error.c:79
 msgid "The password is too short"
@@ -154,41 +155,41 @@ msgstr "Пароль ескі парольдің аударылған пішім
 #: src/error.c:84
 #, c-format
 msgid "The password contains less than %ld character classes"
-msgstr ""
+msgstr "Парольде %ld шамасынан аз әр түрлі таңбалар кластары бар"
 
 #: src/error.c:87
 msgid "The password does not contain enough character classes"
-msgstr ""
+msgstr "Парольде жеткілікті таңбалар кластар саны жоқ"
 
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr ""
+msgstr "Парольде қатарынан %ld астам бірдей таңбалар бар"
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
-msgstr ""
+msgstr "Парольде қатарынан тым көп бірдей таңбалар бар"
 
 #: src/error.c:96
 #, c-format
 msgid ""
 "The password contains more than %ld characters of the same class "
 "consecutively"
-msgstr ""
+msgstr "Парольде бір класқа жататын қатарынан %ld таңба бар"
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
-msgstr ""
+msgstr "Парольде бір класқа жататын қатарынан тым көп таңба бар"
 
 #: src/error.c:102
 #, c-format
 msgid "The password contains monotonic sequence longer than %ld characters"
-msgstr ""
+msgstr "Парольде ұқсас таңбалардың %ld таңбадан ұзын тізбегі бар"
 
 #: src/error.c:105
 msgid "The password contains too long of a monotonic character sequence"
-msgstr ""
+msgstr "Парольде ұқсас таңбалардың тым ұзын тізбегі бар"
 
 #: src/error.c:107
 msgid "No password supplied"
@@ -196,57 +197,58 @@ msgstr "Пароль көрсетілмеді"
 
 #: src/error.c:109
 msgid "Cannot obtain random numbers from the RNG device"
-msgstr ""
+msgstr "RNG құрылғысынан кездейсоқ сандарды алу мүмкін емес"
 
 #: src/error.c:111
 msgid "Password generation failed - required entropy too low for settings"
 msgstr ""
+"Парольді жасау сәтсіз аяқталды - параметрлер үшін қажетті энтропия тым аз"
 
 #: src/error.c:114 src/error.c:117
 msgid "The password fails the dictionary check"
-msgstr ""
+msgstr "Пароль сөздікті тексеруден өтпеді"
 
 #: src/error.c:120 src/error.c:124
 msgid "Unknown setting"
-msgstr ""
+msgstr "Белгісіз баптау"
 
 #: src/error.c:127
 msgid "Bad integer value of setting"
-msgstr ""
+msgstr "Баптаудың жарамсыз бүтін мәні"
 
 #: src/error.c:131
 msgid "Bad integer value"
-msgstr ""
+msgstr "Жарамсыз бүтін мәні"
 
 #: src/error.c:134
 #, c-format
 msgid "Setting %s is not of integer type"
-msgstr ""
+msgstr "%s баптауы бүтін сан түріне жатпайды"
 
 #: src/error.c:138
 msgid "Setting is not of integer type"
-msgstr ""
+msgstr "Баптау бүтін сан түріне жатпайды"
 
 #: src/error.c:141
 #, c-format
 msgid "Setting %s is not of string type"
-msgstr ""
+msgstr "%s баптауы жол түріне жатпайды"
 
 #: src/error.c:145
 msgid "Setting is not of string type"
-msgstr ""
+msgstr "Баптау жол түріне жатпайды"
 
 #: src/error.c:147
 msgid "Opening the configuration file failed"
-msgstr ""
+msgstr "Баптаулар файлын ашу сәтсіз аяқталды"
 
 #: src/error.c:149
 msgid "The configuration file is malformed"
-msgstr ""
+msgstr "Баптаулар файлының пішімі жарамсыз"
 
 #: src/error.c:151
 msgid "Fatal failure"
-msgstr ""
+msgstr "Қатаң қате"
 
 #: src/error.c:153
 msgid "Unknown error"
