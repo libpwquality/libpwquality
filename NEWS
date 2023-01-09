@@ -24,7 +24,7 @@ Release 1.4.1
   in the pwquality.conf config file.
 * Fix uninitialized memory in word distance calculations.
 * Fix possible one byte buffer underflow when parsing the config file.
-* Return default cracklib dictionary path if not overriden.
+* Return default cracklib dictionary path if not overridden.
 * Update translations from Zanata.
 
 Release 1.4.0
