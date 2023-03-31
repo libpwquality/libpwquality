@@ -33,9 +33,11 @@ BuildRequires: gettext
 BuildRequires: pam-devel
 %if %{with python2}
 BuildRequires: python2-devel
+BuildRequires: python2-setuptools
 %endif
 %if %{with python3}
 BuildRequires: python3-devel
+BuildRequires: python3-setuptools
 %endif
 
 URL: https://github.com/libpwquality/libpwquality/
@@ -103,15 +105,6 @@ cp -a . %{py3dir}
 pushd %{py3dir}
 %endif
 %if %{with python3}
-# setuptools >= 60 changes the environment to use its bundled copy of distutils
-# by default, not the Python-bundled one. To run the Python's standard library
-# distutils, the environment variable must be set.
-# Although technically setuptools is not needed for this package, if it's
-# pulled by another package, it changes the environment and consequently,
-# the build fails. This was reported in:
-# https://github.com/pypa/setuptools/issues/3143
-export SETUPTOOLS_USE_DISTUTILS=stdlib
-
 %configure \
 	--with-securedir=%{_moduledir} \
 	--with-pythonsitedir=%{python3_sitearch} \
