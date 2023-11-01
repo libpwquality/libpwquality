@@ -238,7 +238,7 @@ simple(pwquality_settings_t *pwq, const char *new, void **auxerror)
                         } else
                                 sameclass++;
                 }
-                if (pwq->max_class_repeat > 1 && sameclass > pwq->max_class_repeat) {
+                if (pwq->max_class_repeat > 0 && sameclass > pwq->max_class_repeat) {
                         if (auxerror)
                                 *auxerror = (void *)(long)pwq->max_class_repeat;
                         return PWQ_ERROR_MAX_CLASS_REPEAT;
