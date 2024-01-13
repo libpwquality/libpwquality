@@ -7,13 +7,13 @@
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
 # simmon <simmon@nplob.com>, 2021.
 # Seong-ho Cho <darkcircle.0426@gmail.com>, 2021.
-# 김인수 <simmon@nplob.com>, 2022, 2023.
+# 김인수 <simmon@nplob.com>, 2022, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2022-11-18 11:22+0100\n"
-"PO-Revision-Date: 2023-05-18 18:20+0000\n"
+"PO-Revision-Date: 2024-01-13 03:37+0000\n"
 "Last-Translator: 김인수 <simmon@nplob.com>\n"
 "Language-Team: Korean <https://translate.fedoraproject.org/projects/"
 "libpwquality/app/ko/>\n"
@@ -22,12 +22,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.3.1\n"
 
 #: src/pam_pwquality.c:244
 #, c-format
 msgid "BAD PASSWORD: %s"
-msgstr "잘못된 비밀번호: %s"
+msgstr "불량한 비밀번호: %s"
 
 #: src/pwscore.c:22
 #, c-format
