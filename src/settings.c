@@ -20,6 +20,9 @@
 #include "pwquality.h"
 #include "pwqprivate.h"
 
+static const char pwquality_base_cfgfile[] = PWQUALITY_BASE_CFGFILE;
+static char pwquality_default_cfgfile[PATH_MAX] = PWQUALITY_DEFAULT_CFGFILE;
+
 /* returns default pwquality settings to be used in other library calls */
 pwquality_settings_t *
 pwquality_default_settings(void)
@@ -127,7 +130,9 @@ read_config_file(pwquality_settings_t *pwq, const char *cfgfile, void **auxerror
         f = fopen(cfgfile, "r");
         if (f == NULL) {
                 /* ignore non-existent default config file */
-                if (errno == ENOENT && strcmp(cfgfile, PWQUALITY_DEFAULT_CFGFILE) == 0)
+                if (errno == ENOENT && cfgfile == pwquality_default_cfgfile)
+                        return read_config_file(pwq, pwquality_base_cfgfile, auxerror);
+                if (errno == ENOENT && cfgfile == pwquality_base_cfgfile)
                         return 0;
                 return PWQ_ERROR_CFGFILE_OPEN;
         }
@@ -219,6 +224,54 @@ comp_func(const struct dirent **a, const struct dirent **b)
         return strcmp ((*a)->d_name, (*b)->d_name);
 }
 
+static int
+merge_namelists(struct dirent **base, int m, struct dirent **override, int n, struct dirent ***ret, signed char **isbaseret)
+{
+        struct dirent **result;
+        signed char *isbase;
+        int cmp;
+        int i, j, k;
+
+        result = calloc(m + n, sizeof(*result));
+        if (!result)
+                return PWQ_ERROR_MEM_ALLOC;
+
+        isbase = calloc(m + n, sizeof(*isbase));
+        if (!isbase) {
+                free(result);
+                return PWQ_ERROR_MEM_ALLOC;
+        }
+
+        for (i = j = k = 0; j < m && k < n; ++i) {
+                cmp = comp_func((const struct dirent **)base + j, (const struct dirent **)override + k);
+
+                if (cmp < 0) {
+                        result[i] = base[j++];
+                        isbase[i] = 1;
+                } else if (cmp == 0) {
+                        result[i] = override[k++];
+                        free(base[j++]);
+                } else {
+                        result[i] = override[k++];
+                }
+        }
+
+        if (j < m) {
+                memcpy(result + i, base + j, (m - j) * sizeof(*result));
+                memset(isbase + i, 1, (m - j) * sizeof(*isbase));
+        }
+        if (k < n)
+                memcpy(result + i, override + k, (n - k) * sizeof(*result));
+
+        free(base);
+        free(override);
+
+        *ret = result;
+        *isbaseret = isbase;
+
+        return i + (m - j) + (n - k);
+}
+
 /* parse the configuration file (if NULL then the default one) */
 int
 pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile, void **auxerror)
@@ -228,11 +281,12 @@ pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile, void **aux
         int n;
         int i;
         int rv = 0;
+        signed char *isbase = NULL;
 
         if (auxerror)
                 *auxerror = NULL;
         if (cfgfile == NULL)
-                cfgfile = PWQUALITY_DEFAULT_CFGFILE;
+                cfgfile = pwquality_default_cfgfile;
 
         /* read "*.conf" files from "<cfgfile>.d" directory first */
 
@@ -251,7 +305,42 @@ pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile, void **aux
                 } /* other errors are ignored */
         }
 
+        if (cfgfile == pwquality_default_cfgfile) {
+                const char basedirname[] = PWQUALITY_BASE_CFGFILE ".d";
+                struct dirent **basenamelist;
+                int m, nm;
+
+                /* we do not care about scandir races here so we use scandir */
+                m = scandir(basedirname, &basenamelist, filter_conf, comp_func);
+
+                if (m < 0) {
+                        if (errno == ENOMEM) {
+                                rv = PWQ_ERROR_MEM_ALLOC;
+                        } /* other errors are ignored */
+                } else if (n < 0) {
+                        namelist = basenamelist;
+                        n = m;
+                        isbase = calloc(n, sizeof(*isbase));
+                        if (isbase != NULL)
+                                memset(isbase, 1, n * sizeof(*isbase));
+                        else
+                                rv = PWQ_ERROR_MEM_ALLOC;
+                } else {
+                        nm = merge_namelists(basenamelist, m, namelist, n, &namelist, &isbase);
+                        if (nm < 0) {
+                                for (i = 0; i < m; i++)
+                                        free(basenamelist[i]);
+
+                                free(basenamelist);
+                                rv = nm;
+                        } else {
+                                n = nm;
+                        }
+                }
+        }
+
         for (i = 0; i < n; i++) {
+                char *subcfgdir = dirname;
                 char *subcfg;
 
                 if (rv) {
@@ -259,7 +348,9 @@ pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile, void **aux
                         continue;
                 }
 
-                if (asprintf(&subcfg, "%s/%s", dirname, namelist[i]->d_name) < 0)
+                if (isbase != NULL && isbase[i])
+                        subcfgdir = PWQUALITY_BASE_CFGFILE ".d";
+                if (asprintf(&subcfg, "%s/%s", subcfgdir, namelist[i]->d_name) < 0)
                         rv = PWQ_ERROR_MEM_ALLOC;
                 else {
                         rv = read_config_file(pwq, subcfg, auxerror);
@@ -272,11 +363,19 @@ pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile, void **aux
         }
         free(dirname);
         free(namelist);
+        free(isbase);
 
         if (rv)
                 return rv;
 
         return read_config_file(pwq, cfgfile, auxerror);
+}
+
+/* change the default configuration file */
+void
+pwquality_set_default_config_name(const char *cfgfile)
+{
+        memccpy(pwquality_default_cfgfile, cfgfile, '\0', PATH_MAX - 1);
 }
 
 /* useful for setting the options as configured on a pam module

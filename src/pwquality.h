@@ -93,6 +93,10 @@ int
 pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile,
         void **auxerror);
 
+/* Set the default configuration file for use by pwquality_read_config() */
+void
+pwquality_set_default_config_name(const char *cfgfile);
+
 /* Useful for setting the options as configured on a pam module
  * command line in form of <opt>=<val> */
 int
