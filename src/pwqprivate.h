@@ -71,6 +71,10 @@ struct setting_mapping {
 #define PWQ_MIN_WORD_LENGTH      4
 #define PWQ_MAX_PASSWD_BUF_LEN   16300
 
+#ifndef PWQUALITY_BASE_CFGFILE
+#define PWQUALITY_BASE_CFGFILE "/usr/lib/security/pwquality.conf"
+#endif
+
 #ifndef PWQUALITY_DEFAULT_CFGFILE
 #define PWQUALITY_DEFAULT_CFGFILE "/etc/security/pwquality.conf"
 #endif
