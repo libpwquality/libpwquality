@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2022-11-18 11:22+0100\n"
-"PO-Revision-Date: 2024-01-13 03:37+0000\n"
+"PO-Revision-Date: 2024-01-19 10:37+0000\n"
 "Last-Translator: 김인수 <simmon@nplob.com>\n"
 "Language-Team: Korean <https://translate.fedoraproject.org/projects/"
 "libpwquality/app/ko/>\n"
@@ -144,7 +144,7 @@ msgstr "비밀번호는 너무 적은 비-영숫자 문자가 있습니다"
 #: src/error.c:76
 #, c-format
 msgid "The password is shorter than %ld characters"
-msgstr "비밀번호는 %ld 개의 문자 보다 짧습니다"
+msgstr "비밀번호가 %ld개의 문자보다 짧습니다"
 
 #: src/error.c:79
 msgid "The password is too short"
