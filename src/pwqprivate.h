@@ -33,6 +33,8 @@ struct pwquality_settings {
         int local_users_only;
         char *bad_words;
         char *dict_path;
+        char *base_cfgfile;
+        char *default_cfgfile;
 };
 
 struct setting_mapping {
@@ -71,13 +73,20 @@ struct setting_mapping {
 #define PWQ_MIN_WORD_LENGTH      4
 #define PWQ_MAX_PASSWD_BUF_LEN   16300
 
-#ifndef PWQUALITY_BASE_CFGFILE
-#define PWQUALITY_BASE_CFGFILE "/usr/lib/security/pwquality.conf"
+#ifndef PWQUALITY_BASE_PATH
+#define PWQUALITY_BASE_PATH "/usr/lib"
 #endif
 
-#ifndef PWQUALITY_DEFAULT_CFGFILE
-#define PWQUALITY_DEFAULT_CFGFILE "/etc/security/pwquality.conf"
+#ifndef PWQUALITY_DEFAULT_PATH
+#define PWQUALITY_DEFAULT_PATH "/etc"
 #endif
+
+#ifndef PWQUALITY_DEFAULT_NAME
+#define PWQUALITY_DEFAULT_NAME "security/pwquality.conf"
+#endif
+
+#define PWQUALITY_BASE_CFGFILE PWQUALITY_BASE_PATH "/" PWQUALITY_DEFAULT_NAME
+#define PWQUALITY_DEFAULT_CFGFILE PWQUALITY_DEFAULT_PATH "/" PWQUALITY_DEFAULT_NAME
 
 #endif /* PWQPRIVATE_H */
 
