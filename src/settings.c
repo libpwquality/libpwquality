@@ -20,18 +20,22 @@
 #include "pwquality.h"
 #include "pwqprivate.h"
 
-static const char pwquality_base_cfgfile[] = PWQUALITY_BASE_CFGFILE;
-static char pwquality_default_cfgfile[PATH_MAX] = PWQUALITY_DEFAULT_CFGFILE;
-
 /* returns default pwquality settings to be used in other library calls */
 pwquality_settings_t *
 pwquality_default_settings(void)
 {
         pwquality_settings_t *pwq;
+        char *base_cfgfile, *default_cfgfile;
 
         pwq = calloc(1, sizeof(*pwq));
-        if (!pwq)
+        base_cfgfile = strdup(PWQUALITY_BASE_CFGFILE);
+        default_cfgfile = strdup(PWQUALITY_DEFAULT_CFGFILE);
+        if (!pwq || !base_cfgfile || !default_cfgfile) {
+                free(pwq);
+                free(base_cfgfile);
+                free(default_cfgfile);
                 return NULL;
+        }
 
         pwq->diff_ok = PWQ_DEFAULT_DIFF_OK;
         pwq->min_length = PWQ_DEFAULT_MIN_LENGTH;
@@ -46,6 +50,8 @@ pwquality_default_settings(void)
         pwq->retry_times = PWQ_DEFAULT_RETRY_TIMES;
         pwq->enforce_for_root = PWQ_DEFAULT_ENFORCE_ROOT;
         pwq->local_users_only = PWQ_DEFAULT_LOCAL_USERS;
+        pwq->base_cfgfile = base_cfgfile;
+        pwq->default_cfgfile = default_cfgfile;
 
         return pwq;
 }
@@ -57,6 +63,8 @@ pwquality_free_settings(pwquality_settings_t *pwq)
         if (pwq) {
                 free(pwq->dict_path);
                 free(pwq->bad_words);
+                free(pwq->base_cfgfile);
+                free(pwq->default_cfgfile);
                 free(pwq);
         }
 }
@@ -130,9 +138,9 @@ read_config_file(pwquality_settings_t *pwq, const char *cfgfile, void **auxerror
         f = fopen(cfgfile, "r");
         if (f == NULL) {
                 /* ignore non-existent default config file */
-                if (errno == ENOENT && cfgfile == pwquality_default_cfgfile)
-                        return read_config_file(pwq, pwquality_base_cfgfile, auxerror);
-                if (errno == ENOENT && cfgfile == pwquality_base_cfgfile)
+                if (errno == ENOENT && cfgfile == pwq->default_cfgfile)
+                        return read_config_file(pwq, pwq->base_cfgfile, auxerror);
+                if (errno == ENOENT && cfgfile == pwq->base_cfgfile)
                         return 0;
                 return PWQ_ERROR_CFGFILE_OPEN;
         }
@@ -282,16 +290,22 @@ pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile, void **aux
         int i;
         int rv = 0;
         signed char *isbase = NULL;
+        char *basedirname = NULL;
 
         if (auxerror)
                 *auxerror = NULL;
         if (cfgfile == NULL)
-                cfgfile = pwquality_default_cfgfile;
+                cfgfile = pwq->default_cfgfile;
 
         /* read "*.conf" files from "<cfgfile>.d" directory first */
 
         if (asprintf(&dirname, "%s.d", cfgfile) < 0)
                 return PWQ_ERROR_MEM_ALLOC;
+        if (cfgfile == pwq->default_cfgfile &&
+            asprintf(&basedirname, "%s.d", pwq->base_cfgfile) < 0) {
+                free(dirname);
+                return PWQ_ERROR_MEM_ALLOC;
+        }
 
         /* we do not care about scandir races here so we use scandir */
         n = scandir(dirname, &namelist, filter_conf, comp_func);
@@ -301,12 +315,12 @@ pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile, void **aux
 
                 if (errno == ENOMEM) {
                         free(dirname);
+                        free(basedirname);
                         return PWQ_ERROR_MEM_ALLOC;
                 } /* other errors are ignored */
         }
 
-        if (cfgfile == pwquality_default_cfgfile) {
-                const char basedirname[] = PWQUALITY_BASE_CFGFILE ".d";
+        if (cfgfile == pwq->default_cfgfile) {
                 struct dirent **basenamelist;
                 int m, nm;
 
@@ -349,7 +363,7 @@ pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile, void **aux
                 }
 
                 if (isbase != NULL && isbase[i])
-                        subcfgdir = PWQUALITY_BASE_CFGFILE ".d";
+                        subcfgdir = basedirname;
                 if (asprintf(&subcfg, "%s/%s", subcfgdir, namelist[i]->d_name) < 0)
                         rv = PWQ_ERROR_MEM_ALLOC;
                 else {
@@ -361,9 +375,10 @@ pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile, void **aux
 
                 free(namelist[i]);
         }
+        free(isbase);
+        free(basedirname);
         free(dirname);
         free(namelist);
-        free(isbase);
 
         if (rv)
                 return rv;
@@ -371,11 +386,28 @@ pwquality_read_config(pwquality_settings_t *pwq, const char *cfgfile, void **aux
         return read_config_file(pwq, cfgfile, auxerror);
 }
 
-/* change the default configuration file */
-void
-pwquality_set_default_config_name(const char *cfgfile)
+/* change the default configuration file name */
+int
+pwquality_set_config_name(pwquality_settings_t *pwq, const char *cfgname)
 {
-        memccpy(pwquality_default_cfgfile, cfgfile, '\0', PATH_MAX - 1);
+        char *base_cfgfile, *default_cfgfile;
+
+        if (cfgname == NULL)
+                cfgname = PWQUALITY_DEFAULT_NAME;
+
+        if (asprintf(&base_cfgfile, "%s/%s", PWQUALITY_BASE_PATH, cfgname) < 0)
+                return PWQ_ERROR_MEM_ALLOC;
+        if (asprintf(&default_cfgfile, "%s/%s", PWQUALITY_DEFAULT_PATH, cfgname) < 0) {
+                free(base_cfgfile);
+                return PWQ_ERROR_MEM_ALLOC;
+        }
+
+        free(pwq->base_cfgfile);
+        pwq->base_cfgfile = base_cfgfile;
+        free(pwq->default_cfgfile);
+        pwq->default_cfgfile = default_cfgfile;
+
+        return 0;
 }
 
 /* useful for setting the options as configured on a pam module
