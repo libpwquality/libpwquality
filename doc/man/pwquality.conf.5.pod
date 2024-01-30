@@ -109,7 +109,7 @@ using the cracklib library. (default 1)
 
 If nonzero, check whether the password (with possible modifications)
 contains the user name in some form. It is not performed for user names shorter
-than 3 characters. (default 1)
+than 4 characters. (default 1)
 
 =item B<usersubstr=>I<N>
 

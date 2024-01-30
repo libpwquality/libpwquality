@@ -204,7 +204,7 @@ is enabled.
 If nonzero, check whether the password (with possible modifications)
 contains the user name in some form. The default is 1 which means that
 this check is enabled. It is not performed for user names shorter
-than 3 characters.
+than 4 characters.
 
 =item B<usersubstr=>I<N>
 
