@@ -105,6 +105,7 @@ pwquality_generate(pwquality_settings_t *pwq, int entropy_bits, char **password)
         char entropy[(PWQ_MAX_ENTROPY_BITS+PWQ_MAX_ENTROPY_BITS/9)/8 + 2];
         char *tmp;
         int maxlen;
+        int rv = 0;
         int try = 0;
 
         *password = NULL;
@@ -159,20 +160,23 @@ pwquality_generate(pwquality_settings_t *pwq, int entropy_bits, char **password)
                         *ptr = consonants1[idx];
                         ++ptr;
                 }
-        } while (pwquality_check(pwq, tmp, NULL, NULL, NULL) < 0 &&
+        } while ((rv = pwquality_check(pwq, tmp, NULL, NULL, NULL)) < 0 &&
                  ++try < PWQ_NUM_GENERATION_TRIES);
 
         /* clean up */
         memset(entropy, '\0', sizeof(entropy));
 
         if (try >= PWQ_NUM_GENERATION_TRIES) {
+                if (rv != PWQ_ERROR_CRACKLIB_CHECK)
+                        rv = PWQ_ERROR_GENERATION_FAILED;
+
                 free(tmp);
-                return PWQ_ERROR_GENERATION_FAILED;
+                return rv;
         }
 
         *password = tmp;
         tmp = NULL;
-        return 0;
+        return rv;
 }
 
 
