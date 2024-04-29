@@ -118,7 +118,7 @@ AC_SUBST(SECUREDIR)
 
 AC_ARG_WITH(sconfigdir,
 	AS_HELP_STRING([--with-sconfigdir=DIR],[path to PAM conf files @<:@default=$sysconfdir/security@:>@]),
-	SCONFIGDIR=$enableval, SCONFIGDIR=$sysconfdir/security)
+	SCONFIGDIR=$withval, SCONFIGDIR=$sysconfdir/security)
 AC_SUBST(SCONFIGDIR)
 
 AC_ARG_ENABLE([python-bindings],
