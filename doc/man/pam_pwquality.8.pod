@@ -111,14 +111,18 @@ the old one.
 
 =item B<minlen=>I<N>
 
-The minimum acceptable size for the new password (plus one if credits are not
-disabled which is the default). In addition to the number of characters in
-the new password, credit (of +1 in length) is given for each different kind
-of character (I<other>, I<upper>, I<lower> and I<digit>). The default for this
-parameter is I<8>. Note that there is a pair of length limits also in
-I<Cracklib>, which is used for dictionary checking, a "way too short" limit
-of I<4> which is hard coded in and a build time defined limit (I<6>) that will
-be checked without reference to B<minlen>.
+The minimum acceptable size for the new password. In addition to the number of
+characters in the new password, credit (up to the individual credit setting in
+length) is given for each different kind of character (I<other>, I<upper>,
+I<lower> and I<digit>). Set the individual I<credit> settings to 0 or negative
+to have I<minlen> count as true length of the new password in characters.
+
+The default for this parameter is I<8>.
+
+Note that there is a pair of length limits also in I<Cracklib>, which is used
+for dictionary checking, a "way too short" limit of I<4> which is hard coded
+in and a build time defined limit (I<6>) that will be checked without
+reference to B<minlen>.
 
 =item B<dcredit=>I<N>
 
@@ -164,7 +168,7 @@ password.
 
 The minimum number of required classes of characters for the new password.
 The four classes are digits, upper and lower letters and other characters.
-The difference to the B<credit> check is that a specific class if of
+The difference to the B<credit> check is that a specific class of
 characters is not required. Instead I<N> out of four of the classes are
 required. By default the check is disabled.
 
