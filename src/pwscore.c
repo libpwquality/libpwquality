@@ -20,6 +20,11 @@
 void
 usage(const char *progname) {
         fprintf(stderr, _("Usage: %s [user]\n"), progname);
+        /*
+         *   TODO: Remove the prepended spaces below to improve
+         *   translatability if the text is changed.
+         *   https://github.com/libpwquality/libpwquality/issues/93
+         */
         fprintf(stderr, _("       The command reads the password to be scored from the standard input.\n"));
 }
 
