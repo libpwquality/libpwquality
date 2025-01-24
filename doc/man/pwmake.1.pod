@@ -39,7 +39,7 @@ F</etc/security/pwquality.conf> - The configuration file for the libpwquality
 library which can be changed by the user.
 
 F</usr/lib/security/pwquality.conf> - The default configuration file if
-/etc/security/pwquality.conf is not available.
+F</etc/security/pwquality.conf> is not available.
 
 =head1 RETURN CODES
 

@@ -12,7 +12,7 @@ F</etc/security/pwquality.conf>
 
 F</etc/security/pwquality.conf.d/*.conf>
 
-Default configuration files if there are no in /etc/security available:
+Default configuration files if there are none in F</etc/security> available:
 
 F</usr/lib/security/pwquality.conf>
 
