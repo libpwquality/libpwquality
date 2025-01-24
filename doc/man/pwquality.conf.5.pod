@@ -6,9 +6,17 @@ pwquality.conf - configuration for the libpwquality library
 
 =head1 SYNOPSIS
 
+Configuration files which can be adapted/changed by the user:
+
 F</etc/security/pwquality.conf>
 
 F</etc/security/pwquality.conf.d/*.conf>
+
+Default configuration files if there are none in F</etc/security> available:
+
+F</usr/lib/security/pwquality.conf>
+
+F</usr/lib/security/pwquality.conf.d/*.conf>
 
 =head1 DESCRIPTION
 
