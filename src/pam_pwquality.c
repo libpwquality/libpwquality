@@ -15,7 +15,6 @@
 #include <ctype.h>
 #include <limits.h>
 #include <syslog.h>
-#include <libintl.h>
 #include <stdio.h>
 #include <pwd.h>
 #include <errno.h>
