@@ -164,7 +164,7 @@ pwquality_generate(pwquality_settings_t *pwq, int entropy_bits, char **password)
                  ++try < PWQ_NUM_GENERATION_TRIES);
 
         /* clean up */
-        memset(entropy, '\0', sizeof(entropy));
+        explicit_bzero(entropy, sizeof(entropy));
 
         if (try >= PWQ_NUM_GENERATION_TRIES) {
                 if (rv != PWQ_ERROR_CRACKLIB_CHECK)
