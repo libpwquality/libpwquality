@@ -74,7 +74,7 @@ main(int argc, char *argv[])
         rv = pwquality_generate(pwq, (int)bits, &password);
         pwquality_free_settings(pwq);
 
-        if (rv != 0) {
+        if (rv < 0) {
                 fprintf(stderr, "Error: %s\n", pwquality_strerror(NULL, 0, rv, NULL));
                 exit(1);
         }
