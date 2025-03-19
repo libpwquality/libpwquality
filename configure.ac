@@ -32,6 +32,12 @@ AC_PROG_INSTALL
 AC_PROG_LN_S
 AC_PROG_LIBTOOL
 
+AC_CHECK_FUNCS(
+explicit_bzero
+memset_explicit
+memset_s
+)
+
 dnl and some hacks to use /etc
 test "${prefix}" = "NONE" && prefix="/usr"
 if test ${prefix} = '/usr'

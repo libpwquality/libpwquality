@@ -42,6 +42,26 @@ static char consonants2[] = { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm',
         '%', '^', '&', '*', '(', ')', '-', '+', '=', '[',
         ']', ';', '.', ',' }; /* 6 bits */
 
+/**
+ * The function explicit_bzero() is a nonstandard extension.
+ * Some other implementations maybe memset_explicit() or memset_s().
+ */
+#ifdef HAVE_EXPLICIT_BZERO
+/* do nothing */
+#elif defined HAVE_MEMSET_EXPLICIT
+#  define explicit_bzero(s, len) memset_explicit(s, '\0', len)
+#elif defined HAVE_MEMSET_S
+#  define explicit_bzero(s, len) memset_s(s, len, '\0', len)
+#else
+static inline void explicit_bzero(void *s, size_t len)
+{
+    if (s) {
+        memset(s, '\0', len);
+        __asm__ volatile("" : : "r"(s) : "memory");
+    }
+}
+#endif
+
 static int
 get_entropy_bits(char *buf, int nbits)
 {
@@ -164,7 +184,7 @@ pwquality_generate(pwquality_settings_t *pwq, int entropy_bits, char **password)
                  ++try < PWQ_NUM_GENERATION_TRIES);
 
         /* clean up */
-        memset(entropy, '\0', sizeof(entropy));
+        explicit_bzero(entropy, sizeof(entropy));
 
         if (try >= PWQ_NUM_GENERATION_TRIES) {
                 if (rv != PWQ_ERROR_CRACKLIB_CHECK)
