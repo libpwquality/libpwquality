@@ -6,20 +6,22 @@
 # Cheng-Chia Tseng <pswo10680@gmail.com>, 2012.
 # Terry Chuang <tchuang@redhat.com>, 2008, 2009.
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
+# hsu zangmen <chzang55@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2022-11-18 11:22+0100\n"
-"PO-Revision-Date: 2017-05-26 08:59+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2025-04-06 04:06+0000\n"
+"Last-Translator: hsu zangmen <chzang55@gmail.com>\n"
+"Language-Team: Chinese (Traditional) <https://translate.fedoraproject.org/"
+"projects/libpwquality/app/zh_TW/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Zanata 4.6.2\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #: src/pam_pwquality.c:244
 #, c-format
@@ -64,7 +66,7 @@ msgstr "用法：%s <entropy-bits>\n"
 #, c-format
 msgid ""
 "Warning: Value %ld is outside of the allowed entropy range, adjusting it.\n"
-msgstr ""
+msgstr "警告： 值 %ld 超出允許的熵範圍，請調整。\n"
 
 #: src/error.c:31
 msgid "Memory allocation error when setting"
