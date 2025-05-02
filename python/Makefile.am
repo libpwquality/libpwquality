@@ -11,10 +11,10 @@ CLEANFILES = *~ constants.c *.so
 EXTRA_DIST = pwquality.c setup.py
 
 all-local:
-	CFLAGS="${CFLAGS} -fno-strict-aliasing" @PYTHONBINARY@ setup.py build --build-base py$(PYTHONREV)
+	CFLAGS="${CFLAGS} -fno-strict-aliasing" @PYTHONBINARY@ -P -mbuild --no-isolation --wheel --outdir py$(PYTHONREV)
 
 install-exec-local:
-	CFLAGS="${CFLAGS} -fno-strict-aliasing" @PYTHONBINARY@ setup.py build --build-base py$(PYTHONREV) install --root ${DESTDIR} --prefix=${prefix} --install-lib=$(pythonsitedir)
+	CFLAGS="${CFLAGS} -fno-strict-aliasing" @PYTHONBINARY@ -minstaller py$(PYTHONREV)/*.whl --destdir ${DESTDIR} --prefix=${prefix}
 
 clean-local:
 	rm -rf py$(PYTHONREV)
