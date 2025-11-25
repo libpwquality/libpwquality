@@ -36,6 +36,7 @@ extern "C" {
 #define PWQ_SETTING_ENFORCE_ROOT    19
 #define PWQ_SETTING_LOCAL_USERS     20
 #define PWQ_SETTING_USER_SUBSTR     21
+#define PWQ_SETTING_ALLOW_CLASSES   22
 
 #define PWQ_MAX_ENTROPY_BITS       256
 #define PWQ_MIN_ENTROPY_BITS       56
@@ -72,6 +73,7 @@ extern "C" {
 #define PWQ_ERROR_MAX_CLASS_REPEAT             -27
 #define PWQ_ERROR_BAD_WORDS                    -28
 #define PWQ_ERROR_MAX_SEQUENCE                 -29
+#define PWQ_ERROR_NOT_ALLOWED_CLASS            -30
 
 typedef struct pwquality_settings pwquality_settings_t;
 
@@ -141,7 +143,7 @@ pwquality_generate(pwquality_settings_t *pwq, int entropy_bits,
  * is not returned.
  * Not passing the *auxerror into pwquality_strerror() can lead to memory leaks.
  * The score depends on PWQ_SETTING_MIN_LENGTH. If it is set higher,
- * the score for the same passwords will be lower. */ 
+ * the score for the same passwords will be lower. */
 int
 pwquality_check(pwquality_settings_t *pwq, const char *password,
         const char *oldpassword, const char *user, void **auxerror);
