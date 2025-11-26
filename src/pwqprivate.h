@@ -35,6 +35,7 @@ struct pwquality_settings {
         char *dict_path;
         char *base_cfgfile;
         char *default_cfgfile;
+        char *allow_classes;
 };
 
 struct setting_mapping {
@@ -49,6 +50,7 @@ struct setting_mapping {
 #define PWQ_DEFAULT_UP_CREDIT    0
 #define PWQ_DEFAULT_LOW_CREDIT   0
 #define PWQ_DEFAULT_OTH_CREDIT   0
+#define PWQ_DEFAULT_ALLOWCLASSES "ludo"
 
 #ifdef HAVE_CRACK_H
 #define PWQ_DEFAULT_DICT_CHECK   1
