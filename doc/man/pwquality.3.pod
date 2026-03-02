@@ -138,4 +138,4 @@ L<pwquality.conf(5)>
 
 =head1 AUTHORS
 
-Tomas Mraz <tmraz@redhat.com>
+Tomas Mraz <tm@t8m.info>
