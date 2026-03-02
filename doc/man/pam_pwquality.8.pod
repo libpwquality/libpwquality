@@ -331,6 +331,6 @@ L<pam.conf(5)>, L<PAM(8)>
 
 =head1 AUTHORS
 
-Tomas Mraz <tmraz@redhat.com>
+Tomas Mraz <tm@t8m.info>
 
 Original author of B<pam_cracklib> module Cristian Gafton <gafton@redhat.com>

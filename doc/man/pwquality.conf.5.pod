@@ -180,4 +180,4 @@ L<pwscore(1)>, L<pwmake(1)>, L<pam_pwquality(8)>
 
 =head1 AUTHORS
 
-Tomas Mraz <tmraz@redhat.com>
+Tomas Mraz <tm@t8m.info>
