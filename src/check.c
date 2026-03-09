@@ -385,7 +385,7 @@ wordcheck(pwquality_settings_t *pwq, const char *new,
                 return PWQ_ERROR_BAD_WORDS;
 
         dist = distance(new, word);
-        if (dist >= 0 && dist < PWQ_DEFAULT_DIFF_OK)
+        if (dist >= 0 && dist < pwq->diff_ok)
                 return PWQ_ERROR_BAD_WORDS;
 
         /* now reverse the wordname, we can do that in place
@@ -406,7 +406,7 @@ wordcheck(pwquality_settings_t *pwq, const char *new,
                 return PWQ_ERROR_BAD_WORDS;
 
         dist = distance(new, word);
-        if (dist >= 0 && dist < PWQ_DEFAULT_DIFF_OK)
+        if (dist >= 0 && dist < pwq->diff_ok)
                 return PWQ_ERROR_BAD_WORDS;
 
         return 0;
