@@ -115,7 +115,7 @@ consume_entropy(char *buf, int bits, int *remaining, int *offset)
         }
 
         *offset += bits;
-        return low;    
+        return low;
 }
 
 /* generate a random password according to the settings */

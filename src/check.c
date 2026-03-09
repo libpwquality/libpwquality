@@ -49,7 +49,7 @@ palindrome(const char *new)
  * the other
  */
 
-static int 
+static int
 distdifferent(const char *old, const char *new,
               size_t i, size_t j)
 {
@@ -243,6 +243,34 @@ simple(pwquality_settings_t *pwq, const char *new, void **auxerror)
                                 *auxerror = (void *)(long)pwq->max_class_repeat;
                         return PWQ_ERROR_MAX_CLASS_REPEAT;
                 }
+        }
+        if (digits > 0) {
+            if (strpbrk(pwq->allow_classes, "d") == NULL) {
+                if (auxerror)
+                    *auxerror = strdup("digits");
+                return PWQ_ERROR_NOT_ALLOWED_CLASS;
+            }
+        }
+        if (uppers > 0) {
+            if (strpbrk(pwq->allow_classes, "u") == NULL) {
+                if (auxerror)
+                    *auxerror = strdup("uppercase");
+                return PWQ_ERROR_NOT_ALLOWED_CLASS;
+            }
+        }
+        if (lowers > 0) {
+            if (strpbrk(pwq->allow_classes, "l") == NULL) {
+                if (auxerror)
+                    *auxerror = strdup("lowercase");
+                return PWQ_ERROR_NOT_ALLOWED_CLASS;
+            }
+        }
+        if (others > 0) {
+            if (strpbrk(pwq->allow_classes, "o") == NULL) {
+                if (auxerror)
+                    *auxerror = strdup("other");
+                return PWQ_ERROR_NOT_ALLOWED_CLASS;
+            }
         }
 
         if ((pwq->dig_credit >= 0) && (digits > pwq->dig_credit))

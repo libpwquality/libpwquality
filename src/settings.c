@@ -25,15 +25,17 @@ pwquality_settings_t *
 pwquality_default_settings(void)
 {
         pwquality_settings_t *pwq;
-        char *base_cfgfile, *default_cfgfile;
+        char *base_cfgfile, *default_cfgfile, *allow_classes;
 
         pwq = calloc(1, sizeof(*pwq));
         base_cfgfile = strdup(PWQUALITY_BASE_CFGFILE);
         default_cfgfile = strdup(PWQUALITY_DEFAULT_CFGFILE);
-        if (!pwq || !base_cfgfile || !default_cfgfile) {
+        allow_classes = strdup(PWQ_DEFAULT_ALLOWCLASSES);
+        if (!pwq || !base_cfgfile || !default_cfgfile || !allow_classes) {
                 free(pwq);
                 free(base_cfgfile);
                 free(default_cfgfile);
+                free(allow_classes);
                 return NULL;
         }
 
@@ -52,6 +54,7 @@ pwquality_default_settings(void)
         pwq->local_users_only = PWQ_DEFAULT_LOCAL_USERS;
         pwq->base_cfgfile = base_cfgfile;
         pwq->default_cfgfile = default_cfgfile;
+        pwq->allow_classes = allow_classes;
 
         return pwq;
 }
@@ -65,6 +68,7 @@ pwquality_free_settings(pwquality_settings_t *pwq)
                 free(pwq->bad_words);
                 free(pwq->base_cfgfile);
                 free(pwq->default_cfgfile);
+                free(pwq->allow_classes);
                 free(pwq);
         }
 }
@@ -90,7 +94,8 @@ static const struct setting_mapping s_map[] = {
  { "dictpath", PWQ_SETTING_DICT_PATH, PWQ_TYPE_STR},
  { "retry", PWQ_SETTING_RETRY_TIMES, PWQ_TYPE_INT},
  { "enforce_for_root", PWQ_SETTING_ENFORCE_ROOT, PWQ_TYPE_SET},
- { "local_users_only", PWQ_SETTING_LOCAL_USERS, PWQ_TYPE_SET}
+ { "local_users_only", PWQ_SETTING_LOCAL_USERS, PWQ_TYPE_SET},
+ { "allowclasses", PWQ_SETTING_ALLOW_CLASSES, PWQ_TYPE_STR}
 };
 
 /* set setting name with value */
@@ -530,6 +535,10 @@ pwquality_set_str_value(pwquality_settings_t *pwq, int setting,
                 free(pwq->dict_path);
                 pwq->dict_path = dup;
                 break;
+        case PWQ_SETTING_ALLOW_CLASSES:
+                free(pwq->allow_classes);
+                pwq->allow_classes = dup;
+                break;
         default:
                 free(dup);
                 return PWQ_ERROR_NON_STR_SETTING;
@@ -620,6 +629,9 @@ pwquality_get_str_value(pwquality_settings_t *pwq, int setting, const char **val
                 #else
                         *value = NULL;
                 #endif
+                break;
+        case PWQ_SETTING_ALLOW_CLASSES:
+                *value = pwq->allow_classes;
                 break;
         default:
                 return PWQ_ERROR_NON_STR_SETTING;

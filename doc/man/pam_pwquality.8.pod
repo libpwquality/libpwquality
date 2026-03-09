@@ -254,6 +254,13 @@ This argument is used to I<force> the module to not prompt the user for
 a new password but use the one provided by the previously stacked
 B<password> module.
 
+=item B<allowclasses=>I<< "ludo" >>
+
+The list of letters, that represent allowed charachter classes,
+that are allowed in password (digits, uppercase, lowercase, others).
+"d" is for digits, "u" is for uppercase, "l" is for lowercase,
+"o" is for others.
+
 =back
 
 =head1 MODULE TYPES PROVIDED
