@@ -240,14 +240,15 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
                                 msg = pwquality_strerror(buf, sizeof(buf), retval, auxerror);
                                 if (ctrl & PAM_DEBUG_ARG)
                                         pam_syslog(pamh, LOG_DEBUG, "bad password: %s", msg);
-                                pam_error(pamh, _("BAD PASSWORD: %s"), msg);
                                 pwquality_get_int_value(options.pwq, PWQ_SETTING_ENFORCING, &enforcing);
                                 pwquality_get_int_value(options.pwq, PWQ_SETTING_ENFORCE_ROOT, &enforce_for_root);
-
                                 if (enforcing && (getuid() || enforce_for_root ||
                                     (flags & PAM_CHANGE_EXPIRED_AUTHTOK))) {
+                                        pam_error(pamh, _("BAD PASSWORD: %s"), msg);
                                         pam_set_item(pamh, PAM_AUTHTOK, NULL);
                                         continue;
+                                } else {
+                                        pam_info(pamh, _("WARNING: Weak password: %s.\nEnter it again to use it anyway."), msg);
                                 }
                         } else {
                                 if (ctrl & PAM_DEBUG_ARG)
