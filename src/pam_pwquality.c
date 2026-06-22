@@ -248,7 +248,7 @@ pam_sm_chauthtok(pam_handle_t *pamh, int flags,
                                         pam_set_item(pamh, PAM_AUTHTOK, NULL);
                                         continue;
                                 } else {
-                                        pam_info(pamh, _("WARNING: Weak password: %s.\nEnter it again to use it anyway."), msg);
+                                        pam_info(pamh, _("WARNING: Weak password: %s\nPassword quality requirements are not enforced."), msg);
                                 }
                         } else {
                                 if (ctrl & PAM_DEBUG_ARG)
