@@ -82,6 +82,11 @@ module arguments override the settings in the configuration file.
 
 =over 4
 
+=item B<conf=>I</path/to/pwquality.conf>
+
+Path to the configuration file to use instead of the default
+F</etc/security/pwquality.conf>.
+
 =item B<debug>
 
 This option makes the module write information to L<syslog(3)>

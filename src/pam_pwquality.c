@@ -57,13 +57,22 @@ _pam_parse (pam_handle_t *pamh, struct module_options *opt,
         pwquality_settings_t *pwq;
         void *auxerror;
         char buf[PWQ_MAX_ERROR_MESSAGE_LEN];
+        const char *cfgfile = NULL;
+        int i;
 
         pwq = pwquality_default_settings();
         if (pwq == NULL)
                 return -1;
 
+        /* scan arguments for conf= first so we load the right config file */
+        for (i = 0; i < argc; i++) {
+                if (!strncmp(argv[i], "conf=", 5)) {
+                        cfgfile = argv[i] + 5;
+                }
+        }
+
         /* just log error here */
-        if ((rv=pwquality_read_config(pwq, NULL, &auxerror)) != 0)
+        if ((rv=pwquality_read_config(pwq, cfgfile, &auxerror)) != 0)
                 pam_syslog(pamh, LOG_ERR,
                         "Reading pwquality configuration file failed: %s",
                         pwquality_strerror(buf, sizeof(buf), rv, auxerror));
@@ -72,7 +81,9 @@ _pam_parse (pam_handle_t *pamh, struct module_options *opt,
         for (ctrl = 0; argc-- > 0; ++argv) {
                 if (!strcmp(*argv, "debug"))
                         ctrl |= PAM_DEBUG_ARG;
-                else if (!strncmp(*argv, "type=", 5))
+                else if (!strncmp(*argv, "conf=", 5)) {
+                        /* already handled above */;
+                } else if (!strncmp(*argv, "type=", 5))
                         pam_set_item (pamh, PAM_AUTHTOK_TYPE, *argv+5);
                 else if (!strncmp(*argv, "difignore=", 10)) {
                         /* ignored for compatibility with pam_cracklib */
