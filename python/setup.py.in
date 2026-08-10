@@ -35,7 +35,7 @@ pwqmodule = Extension('pwquality',
             sources = ['pwquality.c'],
             include_dirs = ['../src'],
             library_dirs = ['../src/.libs'],
-            libraries = ['pwquality'])
+            libraries = ['pwquality', 'python@PYTHONREV@'])
 
 setup(
     name = 'pwquality',
