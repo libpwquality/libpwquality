@@ -8,13 +8,13 @@
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2017. #zanata
 # Tomáš Mráz <tmraz@fedoraproject.org>, 2017. #zanata
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2019. #zanata
-# naly zzwd <xeanhort007@gmail.com>, 2024.
+# naly zzwd <xeanhort007@gmail.com>, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PWQuality library\n"
 "Report-Msgid-Bugs-To: http://fedorahosted.org/libpwquality\n"
 "POT-Creation-Date: 2022-11-18 11:22+0100\n"
-"PO-Revision-Date: 2024-10-28 17:56+0000\n"
+"PO-Revision-Date: 2025-12-15 12:15+0000\n"
 "Last-Translator: naly zzwd <xeanhort007@gmail.com>\n"
 "Language-Team: Catalan <https://translate.fedoraproject.org/projects/"
 "libpwquality/app/ca/>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.7.2\n"
+"X-Generator: Weblate 5.14.3\n"
 
 #: src/pam_pwquality.c:244
 #, c-format
@@ -171,11 +171,11 @@ msgstr "La contrasenya no conté prou classes de caràcters"
 #: src/error.c:90
 #, c-format
 msgid "The password contains more than %ld same characters consecutively"
-msgstr "La contrasenya conté consecutivament més de %ld caràcters idèntics "
+msgstr "La contrasenya conté consecutivament més de %ld caràcters idèntics"
 
 #: src/error.c:93
 msgid "The password contains too many same characters consecutively"
-msgstr "La contrasenya conté consecutivament massa caràcters idèntics "
+msgstr "La contrasenya conté consecutivament massa caràcters idèntics"
 
 #: src/error.c:96
 #, c-format
@@ -184,13 +184,13 @@ msgid ""
 "consecutively"
 msgstr ""
 "La contrasenya conté consecutivament més de %ld caràcters de la mateixa "
-"classe "
+"classe"
 
 #: src/error.c:99
 msgid ""
 "The password contains too many characters of the same class consecutively"
 msgstr ""
-"La contrasenya conté consecutivament massa caràcters de la mateixa classe "
+"La contrasenya conté consecutivament massa caràcters de la mateixa classe"
 
 #: src/error.c:102
 #, c-format
