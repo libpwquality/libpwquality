@@ -79,6 +79,11 @@ distcalculate(int **distances, const char *old, const char *new,
                 return distances[i][j];
         }
 
+        /* Guard against stack overflow on long inputs */
+        if (i + j > 200) {
+                return (int)(i > j ? i : j);
+        }
+
         tmp = distcalculate(distances, old, new, i - 1, j - 1);
         tmp = MIN(tmp, distcalculate(distances, old, new, i, j - 1));
         tmp = MIN(tmp, distcalculate(distances, old, new, i - 1,     j));
