@@ -156,6 +156,8 @@ pwquality_strerror(char *buf, size_t len, int rv, void *auxerror)
                     return buf;
                 }
                 return _("The password contains disallowed character class");
+        case PWQ_ERROR_INPUT_TOO_LONG:
+                return _("The password is too long");
         default:
                 return _("Unknown error");
         }
