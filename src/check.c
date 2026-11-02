@@ -9,6 +9,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <limits.h>   /* INT_MAX, used for length upper-bound checking */
+
 #ifdef HAVE_CRACK_H
 #include <crack.h>
 #endif
@@ -44,93 +46,132 @@ palindrome(const char *new)
 }
 
 /*
- * Calculate how different two strings are in terms of the number of
- * character removals, additions, and changes needed to go from one to
- * the other
+ * Compute the Levenshtein distance between two strings.
+ *
+ * Iterative Wagner-Fischer DP with two-row rolling array:
+ *   - No recursion, constant stack depth, eliminating the original
+ *     recursive implementation's stack overflow risk;
+ *   - O(min(m,n)) space instead of the original O(m*n) int** matrix;
+ *   - Returns the exact edit distance for any input length without
+ *     breaking caller semantics.
  */
-
-static int
-distdifferent(const char *old, const char *new,
-              size_t i, size_t j)
-{
-        char c, d;
-
-        if ((i == 0) || (strlen(old) < i)) {
-                c = 0;
-        } else {
-                c = old[i - 1];
-        }
-
-        if ((j == 0) || (strlen(new) < j)) {
-                d = 0;
-        } else {
-                d = new[j - 1];
-        }
-        return (c != d);
-}
-
-static int
-distcalculate(int **distances, const char *old, const char *new,
-              size_t i, size_t j)
-{
-        int tmp = 0;
-
-        if (distances[i][j] != -1) {
-                return distances[i][j];
-        }
-
-        tmp = distcalculate(distances, old, new, i - 1, j - 1);
-        tmp = MIN(tmp, distcalculate(distances, old, new, i, j - 1));
-        tmp = MIN(tmp, distcalculate(distances, old, new, i - 1,     j));
-        tmp += distdifferent(old, new, i, j);
-
-        distances[i][j] = tmp;
-
-        return tmp;
-}
-
 static int
 distance(const char *old, const char *new)
 {
-        int **distances = NULL;
-        size_t m, n, i, j;
+        const char *s, *t;          /* s: longer string,  t: shorter string */
+        int *prev = NULL;           /* previous row D[i-1][*] */
+        int *curr = NULL;           /* current row D[i][*]   */
+        int *swaprow;
+        size_t m, n, i, j, tmp;
         int r = -1;
+        int cost, del, ins, sub;
 
         m = strlen(old);
         n = strlen(new);
-        distances = calloc(m + 1, sizeof(int*));
-        if (distances == NULL)
+
+        /*
+         * Let s point to the longer string and t to the shorter one.
+         * The rolling array is allocated by t's length n, so we take
+         * n = min(m,n).  The Levenshtein distance is symmetric, so
+         * swapping the arguments does not affect the result.
+         */
+        if (m < n) {
+                s = new;
+                t = old;
+                tmp = m;
+                m = n;
+                n = tmp;
+        } else {
+                s = old;
+                t = new;
+        }
+
+        /*
+         * The upper bound of the distance is max(m,n) = m.
+         * The recurrence can produce prev[j] + 1, whose maximum is
+         * m + 1, so we must ensure m + 1 <= INT_MAX to avoid integer
+         * overflow.  Likewise curr[0] = (int)i requires i <= INT_MAX.
+         *
+         * Therefore we require m <= INT_MAX - 1.
+         * Unreachable for any real-world password (~2 GB string),
+         * but kept for strictness.
+         */
+        if (m > (size_t)(INT_MAX - 1))
                 return -1;
 
-        for (i = 0; i <= m; i++) {
-                distances[i] = calloc(n + 1, sizeof(int));
-                if (distances[i] == NULL)
-                        goto allocfail;
+        prev = malloc((n + 1) * sizeof(int));
+        curr = malloc((n + 1) * sizeof(int));
+        if (prev == NULL || curr == NULL)
+                goto out;           /* r stays -1; free(NULL) is safe */
 
-                for(j = 0; j <= n; j++) {
-                        distances[i][j] = -1;
+        /*
+         * Base case: D[0][j] = j.
+         * The initial prev row corresponds to i = 0 (empty prefix of s).
+         * prev[j] = cost of turning the empty string into t[0..j-1],
+         * which equals j insertions.
+         */
+        for (j = 0; j <= n; j++)
+                prev[j] = (int)j;
+
+        /*
+         * Main loop: compute D[i][*] row by row.
+         * At the start of each iteration, prev = D[i-1][*] (previous row,
+         * already known) and curr will be filled in as D[i][*] (current
+         * row, to be computed).  After each row, prev and curr are
+         * swapped so that prev points to the freshly computed row for
+         * the next iteration, while curr reuses the old prev row.
+         */
+        for (i = 1; i <= m; i++) {
+                /*
+                 * Base column: D[i][0] = i.
+                 * Turning s[0..i-1] into the empty string requires i deletions.
+                 */
+                curr[0] = (int)i;
+
+                for (j = 1; j <= n; j++) {
+                        /*
+                         * cost = 0 if s[i-1] == t[j-1] (no substitution needed),
+                         * cost = 1 otherwise.
+                         */
+                        cost = (s[i - 1] != t[j - 1]);
+
+                        /*
+                         * Three candidates:
+                         *   del = D[i-1][j]   + 1 → delete s[i-1] (above)
+                         *   ins = D[i][j-1]   + 1 → insert t[j-1] (left, already computed)
+                         *   sub = D[i-1][j-1] + cost → substitute/match (upper-left)
+                         *
+                         * Using prev (previous row) and curr (current row):
+                         *   prev[j]   = D[i-1][j]
+                         *   curr[j-1] = D[i][j-1]
+                         *   prev[j-1] = D[i-1][j-1]
+                         */
+                        del = prev[j] + 1;
+                        ins = curr[j - 1] + 1;
+                        sub = prev[j - 1] + cost;
+
+                        /* D[i][j] = min(del, ins, sub) */
+                        curr[j] = MIN(MIN(del, ins), sub);
                 }
+
+                /* Roll the rows: prev <- curr, curr <- old prev (reused next round) */
+                swaprow = prev;
+                prev = curr;
+                curr = swaprow;
         }
 
-        for (i = 0; i <= m; i++) {
-                distances[i][0] = i;
-        }
+        /*
+         * After the loop, prev points to the m-th row (D[m][*]).
+         * D[m][n] is the full edit distance.
+         * When m == 0 (both strings empty, or n > 0), the loop body is
+         * never entered, prev is still the initial row 0, and prev[n] = n
+         * equals the correct distance.
+         */
+        r = prev[n];
 
-        for (j = 0; j <= n; j++) {
-                distances[0][j] = j;
-        }
-
-        r = distcalculate(distances, old, new, m, n);
-
-allocfail:
-        for (i = 0; i <= m; i++) {
-                if (distances[i]) {
-                        memset(distances[i], 0, sizeof(int) * (n + 1));
-                        free(distances[i]);
-                }
-        }
-        free(distances);
-
+out:
+        free(prev);
+        free(curr);
         return r;
 }
 
