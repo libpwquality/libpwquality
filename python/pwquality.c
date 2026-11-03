@@ -332,9 +332,19 @@ pwqsettings_setstr(PWQSettings *self, PyObject *value, void *setting)
                         if (!value_as_bytes)
                                 return -1;
                         s = PyBytes_AsString(value_as_bytes);
-                        Py_DECREF(value_as_bytes);
-                        if (!s)
+                        if (!s) {
+                                Py_DECREF(value_as_bytes);
                                 return -1;
+                        }
+                        /* s points inside value_as_bytes, use it before DECREF */
+                        rc = pwquality_set_str_value(self->pwq,
+                                (int)(ssize_t)setting, s);
+                        Py_DECREF(value_as_bytes);
+                        if (rc < 0) {
+                                pwqerror(rc, NULL);
+                                return -1;
+                        }
+                        return 0;
                 } else {
                         PyErr_SetString(PyExc_TypeError, "expected unicode string");
                 }
