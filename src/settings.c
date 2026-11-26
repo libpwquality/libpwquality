@@ -220,15 +220,12 @@ read_config_file(pwquality_settings_t *pwq, const char *cfgfile, void **auxerror
 static int
 filter_conf(const struct dirent *d)
 {
-        const char *p;
+        size_t len = strlen(d->d_name);
 
-        if ((p = strstr(d->d_name, ".conf")) == NULL)
+        if (len < 5)
                 return 0;
 
-        if (p[5] != '\0')
-                return 0;
-
-        return 1;
+        return strcmp(d->d_name + len - 5, ".conf") == 0;
 }
 
 static int
