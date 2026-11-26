@@ -24,6 +24,10 @@
 #endif
 #define MIN(_a, _b) (((_a) < (_b)) ? (_a) : (_b))
 
+/* Upper bound on password length.  This bounds the work done by
+ * distance() and rejects pathological inputs early. */
+#define PWQ_MAX_PASSWORD_LENGTH 1024
+
 /* Helper functions */
 
 /*
@@ -44,93 +48,128 @@ palindrome(const char *new)
 }
 
 /*
- * Calculate how different two strings are in terms of the number of
- * character removals, additions, and changes needed to go from one to
- * the other
+ * Compute the Levenshtein distance between two strings.
+ *
+ * Iterative Wagner-Fischer DP with two-row rolling array:
+ *   - No recursion, constant stack depth, eliminating the original
+ *     recursive implementation's stack overflow risk;
+ *   - O(min(m,n)) space instead of the original O(m*n) int** matrix;
+ *   - Returns the exact edit distance for inputs up to
+ *     PWQ_MAX_PASSWORD_LENGTH, and -1 otherwise.
  */
-
-static int
-distdifferent(const char *old, const char *new,
-              size_t i, size_t j)
-{
-        char c, d;
-
-        if ((i == 0) || (strlen(old) < i)) {
-                c = 0;
-        } else {
-                c = old[i - 1];
-        }
-
-        if ((j == 0) || (strlen(new) < j)) {
-                d = 0;
-        } else {
-                d = new[j - 1];
-        }
-        return (c != d);
-}
-
-static int
-distcalculate(int **distances, const char *old, const char *new,
-              size_t i, size_t j)
-{
-        int tmp = 0;
-
-        if (distances[i][j] != -1) {
-                return distances[i][j];
-        }
-
-        tmp = distcalculate(distances, old, new, i - 1, j - 1);
-        tmp = MIN(tmp, distcalculate(distances, old, new, i, j - 1));
-        tmp = MIN(tmp, distcalculate(distances, old, new, i - 1,     j));
-        tmp += distdifferent(old, new, i, j);
-
-        distances[i][j] = tmp;
-
-        return tmp;
-}
-
 static int
 distance(const char *old, const char *new)
 {
-        int **distances = NULL;
-        size_t m, n, i, j;
+        const char *s, *t;          /* s: longer string,  t: shorter string */
+        int *prev = NULL;           /* previous row D[i-1][*] */
+        int *curr = NULL;           /* current row D[i][*]   */
+        int *swaprow = NULL;
+        size_t m, n, i, j, tmp;
         int r = -1;
+        int cost, del, ins, sub;
 
         m = strlen(old);
         n = strlen(new);
-        distances = calloc(m + 1, sizeof(int*));
-        if (distances == NULL)
+
+        /*
+         * Let s point to the longer string and t to the shorter one.
+         * The rolling array is allocated by t's length n, so we take
+         * n = min(m,n).  The Levenshtein distance is symmetric, so
+         * swapping the arguments does not affect the result.
+         */
+        if (m < n) {
+                s = new;
+                t = old;
+                tmp = m;
+                m = n;
+                n = tmp;
+        } else {
+                s = old;
+                t = new;
+        }
+
+        /*
+         * Reject inputs above the supported limit.  This bounds the
+         * work done by distance() and keeps m well below INT_MAX, so
+         * the m + 1 intermediate values in the recurrence cannot
+         * overflow an int.
+         */
+        if (m > PWQ_MAX_PASSWORD_LENGTH)
                 return -1;
 
-        for (i = 0; i <= m; i++) {
-                distances[i] = calloc(n + 1, sizeof(int));
-                if (distances[i] == NULL)
-                        goto allocfail;
+        prev = malloc((n + 1) * sizeof(int));
+        curr = malloc((n + 1) * sizeof(int));
+        if (prev == NULL || curr == NULL)
+                goto out;           /* r stays -1; free(NULL) is safe */
 
-                for(j = 0; j <= n; j++) {
-                        distances[i][j] = -1;
+        /*
+         * Base case: D[0][j] = j.
+         * The initial prev row corresponds to i = 0 (empty prefix of s).
+         * prev[j] = cost of turning the empty string into t[0..j-1],
+         * which equals j insertions.
+         */
+        for (j = 0; j <= n; j++)
+                prev[j] = (int)j;
+
+        /*
+         * Main loop: compute D[i][*] row by row.
+         * At the start of each iteration, prev = D[i-1][*] (previous row,
+         * already known) and curr will be filled in as D[i][*] (current
+         * row, to be computed).  After each row, prev and curr are
+         * swapped so that prev points to the freshly computed row for
+         * the next iteration, while curr reuses the old prev row.
+         */
+        for (i = 1; i <= m; i++) {
+                /*
+                 * Base column: D[i][0] = i.
+                 * Turning s[0..i-1] into the empty string requires i deletions.
+                 */
+                curr[0] = (int)i;
+
+                for (j = 1; j <= n; j++) {
+                        /*
+                         * cost = 0 if s[i-1] == t[j-1] (no substitution needed),
+                         * cost = 1 otherwise.
+                         */
+                        cost = (s[i - 1] != t[j - 1]);
+
+                        /*
+                         * Three candidates:
+                         *   del = D[i-1][j]   + 1 → delete s[i-1] (above)
+                         *   ins = D[i][j-1]   + 1 → insert t[j-1] (left, already computed)
+                         *   sub = D[i-1][j-1] + cost → substitute/match (upper-left)
+                         *
+                         * Using prev (previous row) and curr (current row):
+                         *   prev[j]   = D[i-1][j]
+                         *   curr[j-1] = D[i][j-1]
+                         *   prev[j-1] = D[i-1][j-1]
+                         */
+                        del = prev[j] + 1;
+                        ins = curr[j - 1] + 1;
+                        sub = prev[j - 1] + cost;
+
+                        /* D[i][j] = min(del, ins, sub) */
+                        curr[j] = MIN(MIN(del, ins), sub);
                 }
+
+                /* Roll the rows: prev <- curr, curr <- old prev (reused next round) */
+                swaprow = prev;
+                prev = curr;
+                curr = swaprow;
         }
 
-        for (i = 0; i <= m; i++) {
-                distances[i][0] = i;
-        }
+        /*
+         * After the loop, prev points to the m-th row (D[m][*]).
+         * D[m][n] is the full edit distance.
+         * When m == 0 (both strings empty, or n > 0), the loop body is
+         * never entered, prev is still the initial row 0, and prev[n] = n
+         * equals the correct distance.
+         */
+        r = prev[n];
 
-        for (j = 0; j <= n; j++) {
-                distances[0][j] = j;
-        }
-
-        r = distcalculate(distances, old, new, m, n);
-
-allocfail:
-        for (i = 0; i <= m; i++) {
-                if (distances[i]) {
-                        memset(distances[i], 0, sizeof(int) * (n + 1));
-                        free(distances[i]);
-                }
-        }
-        free(distances);
-
+out:
+        free(prev);
+        free(curr);
         return r;
 }
 
@@ -410,6 +449,16 @@ wordcheck(pwquality_settings_t *pwq, const char *new,
          * words; it will be contained one way or another anyway. */
         if (wordlen < PWQ_MIN_WORD_LENGTH)
                 return 0;
+        /*
+         * Length-difference lower bound: if word is longer than new by at
+         * least PWQ_DEFAULT_DIFF_OK, the edit distance is at least that
+         * large, so this word cannot be "too similar". Also skip words
+         * above PWQ_MAX_PASSWORD_LENGTH so distance() is never called with
+         * an oversized input.
+         */
+        if ((size_t)wordlen > strlen(new) + PWQ_DEFAULT_DIFF_OK ||
+            (size_t)wordlen > PWQ_MAX_PASSWORD_LENGTH)
+                return 0;
 
         if (strstr(new, word) != NULL)
                 return PWQ_ERROR_BAD_WORDS;
@@ -572,6 +621,11 @@ password_check(pwquality_settings_t *pwq,
         int rv = 0;
         char *oldmono = NULL, *newmono, *wrapped = NULL;
         char *usermono = NULL;
+
+        /* Reject oversized inputs before duplicating or comparing them. */
+        if (strlen(new) > PWQ_MAX_PASSWORD_LENGTH ||
+            (old != NULL && strlen(old) > PWQ_MAX_PASSWORD_LENGTH))
+                return PWQ_ERROR_INPUT_TOO_LONG;
 
         newmono = str_lower(x_strdup(new));
         if (!newmono)

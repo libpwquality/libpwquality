@@ -74,6 +74,7 @@ extern "C" {
 #define PWQ_ERROR_BAD_WORDS                    -28
 #define PWQ_ERROR_MAX_SEQUENCE                 -29
 #define PWQ_ERROR_DISALLOWED_CLASS             -30
+#define PWQ_ERROR_INPUT_TOO_LONG               -31
 
 typedef struct pwquality_settings pwquality_settings_t;
 
